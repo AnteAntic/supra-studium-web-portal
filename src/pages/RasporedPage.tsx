@@ -948,7 +948,7 @@ export default function RasporedPage() {
 
       {/* Prijava i cijene section */}
       {/* Lokacije section */}
-      <section className="py-24 bg-gradient-to-b from-background to-supra-ivory">
+      <section id="lokacije-odrzavanja" className="py-24 bg-gradient-to-b from-background to-supra-ivory">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{
             opacity: 0,

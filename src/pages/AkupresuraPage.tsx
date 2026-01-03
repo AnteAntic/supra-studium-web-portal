@@ -1709,7 +1709,7 @@ const AkupresuraPage = () => {
                   </p>
                   <p className="text-[#444] leading-relaxed mt-3">
                     📍 Popis svih gradova i nadolazećih lokacija možeš pronaći ovdje:{' '}
-                    <a href="/raspored#popis-lokacija" className="text-[#C9A86C] hover:text-[#B8956B] font-medium underline underline-offset-2 transition-colors">
+                    <a href="/raspored#lokacije-odrzavanja" className="text-[#C9A86C] hover:text-[#B8956B] font-medium underline underline-offset-2 transition-colors">
                       Pogledaj lokacije
                     </a>
                   </p>
