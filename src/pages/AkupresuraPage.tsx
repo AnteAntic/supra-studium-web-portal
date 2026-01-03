@@ -1743,7 +1743,7 @@ const AkupresuraPage = () => {
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4">
                   <p className="text-[#444] leading-relaxed">
-                    Da, po završetku edukacije dobivaš certifikat s upisom u e-radnu knjižicu, koji potvrđuje tvoje znanje i dodatno jača tvoju profesionalnu vjerodostojnost.
+                    Da, nakon završetka edukacije dobivaš uvjerenje koje se može upisati u e-radnu knjižicu kao dodatno obrazovanje u skladu s člankom 2. Pravilnika o elektroničkom zapisu (NN 79/2013). To je službeni dokument koji potvrđuje tvoje znanje i doprinosi tvojoj stručnosti na tržištu rada.
                   </p>
                 </AccordionContent>
               </AccordionItem>
