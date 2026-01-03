@@ -292,12 +292,6 @@ const AkupresuraPage = () => {
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
       city: "Zagreb",
-      dates: "14.–16. 11. 2025."
-    }, {
-      city: "Slavonski Brod",
-      dates: "12.–14. 12. 2025."
-    }, {
-      city: "Zagreb",
       dates: "27.–29. 03. 2026."
     }]} price="Early bird cijena: 390 €" ctaText="Prijavi se" theme="light" />
 
