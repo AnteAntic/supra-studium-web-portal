@@ -1705,7 +1705,13 @@ const AkupresuraPage = () => {
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4">
                   <p className="text-[#444] leading-relaxed">
-                    Tečaj se održava u Zagrebu od 14. do 16. studenog 2025. Lokacija je lako dostupna i osigurava ti ugodnu atmosferu za učenje i praksu. Sve detalje o adresi i dolasku dobit ćeš nakon prijave.
+                    Naš glavni tečaj održava se jednom godišnje u Zagrebu, a u drugim gradovima Hrvatske (kao što su Split, Rijeka, Osijek...) svake dvije godine, ovisno o interesu. Lokacije su pažljivo odabrane kako bismo ti osigurali lakoću dolaska i ugodno iskustvo učenja.
+                  </p>
+                  <p className="text-[#444] leading-relaxed mt-3">
+                    📍 Popis svih gradova i nadolazećih lokacija možeš pronaći ovdje:{' '}
+                    <a href="/raspored#popis-lokacija" className="text-[#C9A86C] hover:text-[#B8956B] font-medium underline underline-offset-2 transition-colors">
+                      Pogledaj lokacije
+                    </a>
                   </p>
                 </AccordionContent>
               </AccordionItem>
