@@ -1,8 +1,38 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+
 export const ContactFooter = () => {
+  const [formData, setFormData] = useState({
+    ime: "",
+    prezime: "",
+    email: "",
+    poruka: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const subject = `Upit od ${formData.ime} ${formData.prezime}`;
+    const body = `Ime: ${formData.ime}
+Prezime: ${formData.prezime}
+Email: ${formData.email}
+
+Poruka:
+${formData.poruka}`;
+    
+    const mailtoLink = `mailto:ante.a@web.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
   return <footer id="kontakt" className="relative py-20 bg-[#0E0E0E] text-white overflow-hidden">
       {/* Diagonal pattern background */}
       <div className="absolute inset-0 opacity-[0.05]" style={{
@@ -127,36 +157,66 @@ export const ContactFooter = () => {
                     Pošaljite nam poruku
                   </h3>
                   
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-white/90 mb-2 font-medium">Ime</label>
-                        <input type="text" className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01]" placeholder="Vaše ime" />
+                        <input 
+                          type="text" 
+                          name="ime"
+                          value={formData.ime}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01]" 
+                          placeholder="Vaše ime" 
+                        />
                       </div>
                       <div>
                         <label className="block text-white/90 mb-2 font-medium">Prezime</label>
-                        <input type="text" className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01]" placeholder="Vaše prezime" />
+                        <input 
+                          type="text" 
+                          name="prezime"
+                          value={formData.prezime}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01]" 
+                          placeholder="Vaše prezime" 
+                        />
                       </div>
                     </div>
                     
                     <div>
                       <label className="block text-white/90 mb-2 font-medium">Email</label>
-                      <input type="email" className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01]" placeholder="vas.email@example.com" />
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01]" 
+                        placeholder="vas.email@example.com" 
+                      />
                     </div>
                     
                     <div>
                       <label className="block text-white/90 mb-2 font-medium">Poruka</label>
-                      <textarea rows={4} className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01] resize-none" placeholder="Opišite kako vam možemo pomoći..." />
+                      <textarea 
+                        rows={4} 
+                        name="poruka"
+                        value={formData.poruka}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:border-primary focus:bg-white/15 focus:ring-2 focus:ring-[#B48A1E] transition-all duration-300 hover:bg-white/15 hover:scale-[1.01] resize-none" 
+                        placeholder="Opišite kako vam možemo pomoći..." 
+                      />
                     </div>
                     
-                    <a 
-                      href="https://5694f0fd.sibforms.com/serve/MUIFAOs4ZuXxMKp4E6OJZAlkghxH86yc0VpKZMzvj1AlsrKhc4cLBDBY9WaBoeIuOHyXf2NJenq0rxXMRZDSJpyVQsjUZ97m3lmDobO_SD_6O9qDUZtBJinN9O0QZ0fBTdJk0ooP8bihntndqxZM31gih2HMWqvB0698-PPpdvSrFbmCzrY5XPEWHVgv5AKym43COwDYevehRvGW"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 focus:outline-none focus:ring-2 focus:ring-[#B48A1E] inline-block text-center"
+                    <button 
+                      type="submit"
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 focus:outline-none focus:ring-2 focus:ring-[#B48A1E]"
                     >
-                      Prijavite se
-                    </a>
+                      Pošalji poruku
+                    </button>
                   </form>
                 </CardContent>
               </Card>
