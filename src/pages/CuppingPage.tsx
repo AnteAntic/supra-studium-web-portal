@@ -236,7 +236,7 @@ const CuppingPage = () => {
 
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
-      city: "Split",
+      city: "Zagreb",
       dates: "1. 2. 2026."
     }]} price="300 €" ctaText="Prijavi se" theme="light" />
 
