@@ -26,11 +26,9 @@ const CrossfrictionPage = () => {
   });
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -41,15 +39,13 @@ const CrossfrictionPage = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden -mt-20">
         {/* Black overlay that fades in on scroll */}
-        <div 
-          className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300"
-          style={{ opacity: blackOverlay }}
-        />
+        <div className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300" style={{
+        opacity: blackOverlay
+      }} />
         
         <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/lovable-uploads/cb2ecdd8-d460-4768-8a2f-40a7f5513772.png)`
@@ -143,7 +139,9 @@ const CrossfrictionPage = () => {
             }} whileTap={{
               scale: 0.98
             }}>
-                <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0" onClick={() => document.getElementById('moduli-po-gradovima')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0" onClick={() => document.getElementById('moduli-po-gradovima')?.scrollIntoView({
+                behavior: 'smooth'
+              })}>
                   Upiši seminar
                 </Button>
               </motion.div>
@@ -245,7 +243,7 @@ const CrossfrictionPage = () => {
                   lineHeight: '1.6',
                   color: '#D4AF37',
                   fontWeight: 'bold'
-                }} className="text-lg leading-relaxed mb-6 text-center text-white-90 text-slate-100">U Body Reset pristupu, bol nije izoliran problem – već poziv na dublje razumijevanje tijela. Kroz integraciju mišićnog, fascijalnog, zglobnog i živčanog sustava, učimo gledati širu sliku i stvarati tretmane koji ne samo da uklanjaju bol, već vraćaju funkcionalnost, ravnotežu i lakoću pokreta.</p>
+                }} className="text-lg leading-relaxed mb-6 text-center text-white-90 text-slate-100 font-normal">U Body Reset pristupu, bol nije izoliran problem – već poziv na dublje razumijevanje tijela. Kroz integraciju mišićnog, fascijalnog, zglobnog i živčanog sustava, učimo gledati širu sliku i stvarati tretmane koji ne samo da uklanjaju bol, već vraćaju funkcionalnost, ravnotežu i lakoću pokreta.</p>
                   
                   <div className="text-center">
                     <p className="mb-4 text-white/90" style={{
