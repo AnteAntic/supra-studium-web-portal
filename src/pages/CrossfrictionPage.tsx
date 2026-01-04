@@ -1114,7 +1114,7 @@ const CrossfrictionPage = () => {
                   <div className="w-16 h-16 bg-[#B9975B]/20 backdrop-blur-sm rounded-full mx-auto mb-6 flex items-center justify-center border border-[#B9975B]/30 group-hover:scale-110 transition-all duration-300">
                     <BookOpen className="h-8 w-8 text-[#B9975B]" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-4">BONUS #1</h4>
+                  <h4 className="text-xl font-bold text-white mb-4 group-hover:opacity-0 transition-opacity duration-300">BONUS #1</h4>
                   <p className="text-lg font-semibold text-[#B9975B] mb-2">PDF priručnik 34 stranice</p>
                   <p className="text-white/80 text-sm">jasnih koraka</p>
                 </div>
@@ -1151,7 +1151,7 @@ const CrossfrictionPage = () => {
                       💬
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-4">BONUS #2</h4>
+                  <h4 className="text-xl font-bold text-white mb-4 group-hover:opacity-0 transition-opacity duration-300">BONUS #2</h4>
                   <p className="text-lg font-semibold text-[#B9975B] mb-2">Osobno mentoriranje</p>
                   <p className="text-white/80 text-sm">instruktora</p>
                 </div>
@@ -1186,7 +1186,7 @@ const CrossfrictionPage = () => {
                   <div className="w-16 h-16 bg-[#B9975B]/20 backdrop-blur-sm rounded-full mx-auto mb-6 flex items-center justify-center border border-[#B9975B]/30 group-hover:scale-110 transition-all duration-300">
                     <Activity className="h-8 w-8 text-[#B9975B]" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-4">BONUS #3</h4>
+                  <h4 className="text-xl font-bold text-white mb-4 group-hover:opacity-0 transition-opacity duration-300">BONUS #3</h4>
                   <p className="text-lg font-semibold text-[#B9975B] mb-2">17 GB literature</p>
                   <p className="text-white/80 text-sm">za stalni razvoj</p>
                 </div>
