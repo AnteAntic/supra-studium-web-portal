@@ -143,7 +143,7 @@ const CrossfrictionPage = () => {
             }} whileTap={{
               scale: 0.98
             }}>
-                <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0">
+                <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0" onClick={() => document.getElementById('moduli-po-gradovima')?.scrollIntoView({ behavior: 'smooth' })}>
                   Upiši seminar
                 </Button>
               </motion.div>
