@@ -188,9 +188,6 @@ const CrossfrictionPage = () => {
 
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
-      city: "Zagreb (CFM2)",
-      dates: "6.–7. 12. 2025."
-    }, {
       city: "Split (CFM1)",
       dates: "24.–25. 01. 2026."
     }, {
