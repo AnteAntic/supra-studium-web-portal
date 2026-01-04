@@ -58,11 +58,9 @@ if (typeof document !== 'undefined' && !document.getElementById('smooth-scroll-s
 }
 const CuppingPage = () => {
   const [blackOverlay, setBlackOverlay] = React.useState(0);
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -73,15 +71,13 @@ const CuppingPage = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden -mt-20">
         {/* Black overlay that fades in on scroll */}
-        <div 
-          className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300"
-          style={{ opacity: blackOverlay }}
-        />
+        <div className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300" style={{
+        opacity: blackOverlay
+      }} />
         
         <motion.div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 100%), url(/lovable-uploads/f24de08b-302e-4c5a-bf63-8aa00555f3d8.png)`
@@ -235,12 +231,12 @@ const CuppingPage = () => {
     }, {
       icon: "🏅",
       title: "Certifikat Koji Vrijedi",
-      subtitle: "Upisivo u e-radnu knjižicu kao dodatno obrazovanje.\nMeđunarodno priznati certifikat od World Federation of Massage - Manual Therapy - Nuad Thai."
+      subtitle: "Upis u e-radnu knjižicu. Međunarodno priznato znanje koje diže tvoju cijenu i otvara nova tržišta."
     }]} accentIndex={1} bg="dark" />
 
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
-      city: "Zagreb",
+      city: "Split",
       dates: "1. 2. 2026."
     }]} price="300 €" ctaText="Prijavi se" theme="light" />
 
@@ -832,32 +828,25 @@ const CuppingPage = () => {
               }} viewport={{
                 once: true
               }} className="space-y-4">
-                  {[
-                    "Hands-on vođenje – radite odmah uz instruktora",
-                    "Pravi slučajevi – odmah vidite rezultate dok učite",
-                    "Male grupe – osobna pažnja, sigurnost i podrška",
-                    "Sve je osigurano – oprema, materijali, individualni pristup"
-                  ].map((benefit, index) => (
-                    <motion.div key={index} initial={{
-                      opacity: 0,
-                      x: -20
-                    }} whileInView={{
-                      opacity: 1,
-                      x: 0
-                    }} transition={{
-                      duration: 0.6,
-                      delay: 0.4 + index * 0.1
-                    }} viewport={{
-                      once: true
-                    }} className="flex items-start gap-3">
+                  {["Hands-on vođenje – radite odmah uz instruktora", "Pravi slučajevi – odmah vidite rezultate dok učite", "Male grupe – osobna pažnja, sigurnost i podrška", "Sve je osigurano – oprema, materijali, individualni pristup"].map((benefit, index) => <motion.div key={index} initial={{
+                  opacity: 0,
+                  x: -20
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} transition={{
+                  duration: 0.6,
+                  delay: 0.4 + index * 0.1
+                }} viewport={{
+                  once: true
+                }} className="flex items-start gap-3">
                       <span className="text-[#D4AF37] text-lg mt-0.5 flex-shrink-0" aria-label="Check">✔️</span>
                       <span className="text-[#333333] leading-relaxed" style={{
-                        fontFamily: 'Inter, sans-serif'
-                      }}>
+                    fontFamily: 'Inter, sans-serif'
+                  }}>
                         {benefit}
                       </span>
-                    </motion.div>
-                  ))}
+                    </motion.div>)}
                 </motion.div>
 
                 {/* Closing italic line */}
@@ -893,8 +882,8 @@ const CuppingPage = () => {
               }} className="flex items-center gap-3 text-[#B48A1E] font-semibold">
                   <span className="text-2xl" aria-label="Video">🎥</span>
                   <span style={{
-                    fontFamily: 'Inter, sans-serif'
-                  }}>Pogledajte kako izgleda seminar u stvarnosti:</span>
+                  fontFamily: 'Inter, sans-serif'
+                }}>Pogledajte kako izgleda seminar u stvarnosti:</span>
                 </motion.div>
               </motion.div>
 
@@ -913,14 +902,10 @@ const CuppingPage = () => {
             }} className="flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-md">
                   <div className="relative rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.25)] transition-all duration-300">
-                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                      <iframe
-                        className="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/0nyxaDct2Mw?si=Js1Qw8i7KO7LAejM"
-                        title="Cupping seminar - kako izgleda u stvarnosti"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                    <div className="relative w-full" style={{
+                    paddingBottom: '56.25%'
+                  }}>
+                      <iframe className="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/0nyxaDct2Mw?si=Js1Qw8i7KO7LAejM" title="Cupping seminar - kako izgleda u stvarnosti" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                     </div>
                   </div>
                   {/* Subtle golden glow border on hover */}
@@ -931,33 +916,25 @@ const CuppingPage = () => {
 
             {/* CTA Block - PDF Download */}
             <motion.div initial={{
-              opacity: 0,
-              y: 30
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.6,
-              delay: 0.4
-            }} viewport={{
-              once: true
-            }} className="mt-16 text-center px-4">
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.6,
+            delay: 0.4
+          }} viewport={{
+            once: true
+          }} className="mt-16 text-center px-4">
               <div className="bg-[#fdf9f3] p-4 md:p-8 rounded-2xl border border-[#E9E2CF] max-w-2xl mx-auto">
                 <p className="text-lg md:text-xl font-semibold text-[#B48A1E] mb-6" style={{
-                  fontFamily: 'Playfair Display, serif'
-                }}>
+                fontFamily: 'Playfair Display, serif'
+              }}>
                   📥 Želite više detalja o seminaru?
                 </p>
-                <Button
-                  asChild
-                  className="bg-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#000000] text-white border-none transition-all duration-300 px-4 py-4 md:px-8 md:py-6 text-base md:text-lg rounded-lg shadow-lg hover:shadow-xl hover:scale-105 w-full md:w-auto"
-                >
-                  <a 
-                    href="https://www.dropbox.com/scl/fi/aku28pxzau8i2l3dy5gnx/Cupping.pdf?rlkey=5397z1ty166esvgqf50a0yn50&st=qlnv77xs&dl=0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3"
-                  >
+                <Button asChild className="bg-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#000000] text-white border-none transition-all duration-300 px-4 py-4 md:px-8 md:py-6 text-base md:text-lg rounded-lg shadow-lg hover:shadow-xl hover:scale-105 w-full md:w-auto">
+                  <a href="https://www.dropbox.com/scl/fi/aku28pxzau8i2l3dy5gnx/Cupping.pdf?rlkey=5397z1ty166esvgqf50a0yn50&st=qlnv77xs&dl=0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3">
                     <Download className="h-5 w-5" />
                     <span className="whitespace-normal">Preuzmi PDF brošuru</span>
                   </a>
@@ -1024,40 +1001,40 @@ const CuppingPage = () => {
                 once: true
               }} className="space-y-6">
                   <p className="text-lg text-[#333333] leading-relaxed" style={{
-                    fontFamily: 'Inter, sans-serif'
-                  }}>
+                  fontFamily: 'Inter, sans-serif'
+                }}>
                     <strong className="text-xl text-[#1a1a1a]">Ante Antić</strong> je terapeut s više od 16 godina rada u praksi i edukaciji, poznat po sposobnosti da kompleksne koncepte prenese jasno, praktično i s rezultatima koje klijenti osjete već nakon prvog tretmana.
                   </p>
                   
                   <p className="text-lg text-[#333333] leading-relaxed" style={{
-                    fontFamily: 'Inter, sans-serif'
-                  }}>
+                  fontFamily: 'Inter, sans-serif'
+                }}>
                     Njegov pristup cuppingu temelji se na dubljem razumijevanju — ne koristi se "šaljicama" samo za efekt, već kao dijagnostičko-terapijskim alatom koji donosi stvarnu promjenu. Kroz <strong>Body Reset</strong> pristup kombinira znanja iz akupresure, trigger point terapije, fascijalnog rada i funkcionalne masaže.
                   </p>
 
                   {/* Quote Box */}
                   <motion.div initial={{
-                    opacity: 0,
-                    y: 30
-                  }} whileInView={{
-                    opacity: 1,
-                    y: 0
-                  }} transition={{
-                    duration: 0.6,
-                    delay: 0.4
-                  }} viewport={{
-                    once: true
-                  }} className="bg-gradient-to-r from-[#fdf9f3] to-white p-6 rounded-[12px] border-l-4 border-[#D4AF37] shadow-[0_4px_16px_rgba(212,175,55,0.1)]">
+                  opacity: 0,
+                  y: 30
+                }} whileInView={{
+                  opacity: 1,
+                  y: 0
+                }} transition={{
+                  duration: 0.6,
+                  delay: 0.4
+                }} viewport={{
+                  once: true
+                }} className="bg-gradient-to-r from-[#fdf9f3] to-white p-6 rounded-[12px] border-l-4 border-[#D4AF37] shadow-[0_4px_16px_rgba(212,175,55,0.1)]">
                     <p className="text-[#333333] italic text-lg leading-relaxed" style={{
-                      fontFamily: 'Inter, sans-serif'
-                    }}>
+                    fontFamily: 'Inter, sans-serif'
+                  }}>
                       "Moja vizija je da svaki terapeut, bez obzira na razinu iskustva, nauči jasno, primjenjivo i učinkovito koristiti cupping – kao sredstvo koje vraća pokret, smanjuje bol i vraća povjerenje u tijelo."
                     </p>
                   </motion.div>
 
                   <p className="text-lg text-[#333333] leading-relaxed" style={{
-                    fontFamily: 'Inter, sans-serif'
-                  }}>
+                  fontFamily: 'Inter, sans-serif'
+                }}>
                     Do sada je više od 900 terapeuta prošlo njegove edukacije, opisujući ga kao predavača koji ne prenosi samo tehnike, već <strong>filozofiju terapijskog rada</strong> – s poštovanjem prema klijentu, tijelu i znanju koje se temelji na stvarnoj praksi.
                   </p>
                 </motion.div>
@@ -1141,9 +1118,7 @@ const CuppingPage = () => {
                 once: true
               }} className="text-lg text-[#333333] leading-relaxed" style={{
                 fontFamily: 'Inter, sans-serif'
-              }}>
-                  Za cijenu jedne masaže na kojoj bi bio gost – možeš naučiti tehniku koja će te izdvojiti iz mase terapeuta i klijentima donijeti iskustvo koje će pamtiti.
-                </motion.p>
+              }}>Znanje koje ti donosi više prepoznatljivosti, više rezultata i više klijenata koji se vraćaju.</motion.p>
 
                 {/* Price Block */}
                 <motion.div initial={{
@@ -1166,10 +1141,10 @@ const CuppingPage = () => {
                   {/* Early Bird Badge */}
                   <div className="flex justify-center mb-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] to-[#c19b2a] text-[#111111] px-6 py-3 rounded-full font-bold text-sm shadow-lg" style={{
-                      fontFamily: 'Inter, sans-serif'
-                    }}>
+                    fontFamily: 'Inter, sans-serif'
+                  }}>
                       <Clock className="w-5 h-5" />
-                      <span>Early Bird – vrijedi do 10.12.2025.</span>
+                      <span>Early Bird – vrijedi do 20.12.2025.</span>
                     </div>
                   </div>
 
@@ -1189,8 +1164,7 @@ const CuppingPage = () => {
                     </p>
                     <p className="text-[#666666] text-sm" style={{
                     fontFamily: 'Inter, sans-serif'
-                  }}>
-                      ⏳ Nakon 10.12.2025. cijena raste na <span className="font-bold text-[#333333]">360 €</span>
+                  }}>⏳ Nakon 20.12.2025. cijena raste na 360 €<span className="font-bold text-[#333333]">360 €</span>
                     </p>
                   </div>
                 </motion.div>
@@ -1208,26 +1182,19 @@ const CuppingPage = () => {
               }} viewport={{
                 once: true
               }} className="flex justify-center">
-                  <motion.a 
-                    href="https://tally.so/r/wA5kvD"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 0 30px rgba(212,175,55,0.5)"
-                    }} 
-                    whileTap={{
-                      scale: 0.95
-                    }} 
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 17
-                    }}
-                  >
+                  <motion.a href="https://tally.so/r/wA5kvD" target="_blank" rel="noopener noreferrer" whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(212,175,55,0.5)"
+                }} whileTap={{
+                  scale: 0.95
+                }} transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 17
+                }}>
                     <Button size="lg" className="bg-[#D4AF37] hover:bg-[#c79f33] hover:text-white text-[#111111] px-12 py-6 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#B48A1E] focus:ring-offset-2" style={{
-                      fontFamily: 'Inter, sans-serif'
-                    }}>
+                    fontFamily: 'Inter, sans-serif'
+                  }}>
                       Rezerviraj mjesto sada
                     </Button>
                   </motion.a>
@@ -1249,8 +1216,8 @@ const CuppingPage = () => {
             }}>
                 <div className="bg-[#fdf9f3] p-6 rounded-[18px] border border-[#E9E2CF] shadow-lg">
                   <h4 className="text-2xl font-bold text-[#B48A1E] mb-6" style={{
-                    fontFamily: 'Playfair Display, serif'
-                  }}>
+                  fontFamily: 'Playfair Display, serif'
+                }}>
                     ✅ Uključen paket vrijednosti
                   </h4>
                   
@@ -1258,10 +1225,14 @@ const CuppingPage = () => {
                     <div className="flex gap-3">
                       <span className="text-[#D4AF37] text-xl flex-shrink-0">🔸</span>
                       <div>
-                        <h5 className="font-bold text-[#333333] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <h5 className="font-bold text-[#333333] mb-1" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Jednodnevna intenzivna edukacija
                         </h5>
-                        <p className="text-[#666666] text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <p className="text-[#666666] text-sm leading-relaxed" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Praktični tečaj pun znanja koje možeš odmah primijeniti u radu s klijentima.
                         </p>
                       </div>
@@ -1270,10 +1241,14 @@ const CuppingPage = () => {
                     <div className="flex gap-3">
                       <span className="text-[#D4AF37] text-xl flex-shrink-0">🔸</span>
                       <div>
-                        <h5 className="font-bold text-[#333333] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <h5 className="font-bold text-[#333333] mb-1" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           PDF priručnik o cuppingu
                         </h5>
-                        <p className="text-[#666666] text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <p className="text-[#666666] text-sm leading-relaxed" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Tvoj osobni vodič kroz sve ključne tehnike i principe terapije.
                         </p>
                       </div>
@@ -1282,10 +1257,14 @@ const CuppingPage = () => {
                     <div className="flex gap-3">
                       <span className="text-[#D4AF37] text-xl flex-shrink-0">🔸</span>
                       <div>
-                        <h5 className="font-bold text-[#333333] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <h5 className="font-bold text-[#333333] mb-1" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Anatomske ilustracije i protokoli (85 str.)
                         </h5>
-                        <p className="text-[#666666] text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <p className="text-[#666666] text-sm leading-relaxed" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Vizualno jasni postupnici sa slikama, uključujući tretman lica i anticelulitni protokol.
                         </p>
                       </div>
@@ -1294,10 +1273,14 @@ const CuppingPage = () => {
                     <div className="flex gap-3">
                       <span className="text-[#D4AF37] text-xl flex-shrink-0">🔸</span>
                       <div>
-                        <h5 className="font-bold text-[#333333] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <h5 className="font-bold text-[#333333] mb-1" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           3 mjeseca mentorskog praćenja
                         </h5>
-                        <p className="text-[#666666] text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <p className="text-[#666666] text-sm leading-relaxed" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Podrška i sigurnost nakon edukacije – nisi prepušten sam sebi.
                         </p>
                       </div>
@@ -1306,10 +1289,14 @@ const CuppingPage = () => {
                     <div className="flex gap-3">
                       <span className="text-[#D4AF37] text-xl flex-shrink-0">🔸</span>
                       <div>
-                        <h5 className="font-bold text-[#333333] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <h5 className="font-bold text-[#333333] mb-1" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Certifikat s upisom u e-radnu knjižicu
                         </h5>
-                        <p className="text-[#666666] text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <p className="text-[#666666] text-sm leading-relaxed" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Dokaz tvoje stručnosti koji se može upisati kao dodatno obrazovanje.
                         </p>
                       </div>
@@ -1318,10 +1305,14 @@ const CuppingPage = () => {
                     <div className="flex gap-3">
                       <span className="text-[#D4AF37] text-xl flex-shrink-0">🔸</span>
                       <div>
-                        <h5 className="font-bold text-[#333333] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <h5 className="font-bold text-[#333333] mb-1" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Doživotni pristup materijalima
                         </h5>
-                        <p className="text-[#666666] text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <p className="text-[#666666] text-sm leading-relaxed" style={{
+                        fontFamily: 'Inter, sans-serif'
+                      }}>
                           Uvijek možeš obnoviti znanje i pratiti nadogradnje.
                         </p>
                       </div>
@@ -1329,7 +1320,9 @@ const CuppingPage = () => {
                   </div>
 
                   <div className="mt-6 pt-6 border-t border-[#E9E2CF]">
-                    <p className="text-center text-[#B48A1E] font-semibold text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <p className="text-center text-[#B48A1E] font-semibold text-sm" style={{
+                    fontFamily: 'Inter, sans-serif'
+                  }}>
                       💡 Sve što ti treba za siguran start u profesionalnoj cupping terapiji
                     </p>
                   </div>
