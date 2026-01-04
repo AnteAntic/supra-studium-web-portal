@@ -231,7 +231,7 @@ const CuppingPage = () => {
     }, {
       icon: "🏅",
       title: "Certifikat Koji Vrijedi",
-      subtitle: "Upis u e-radnu knjižicu. Međunarodno priznato znanje koje diže tvoju cijenu i otvara nova tržišta."
+      subtitle: "Upisivo u e-radnu knjižicu kao dodatno obrazovanje.\nMeđunarodno priznati certifikat od Svijetske federacije za masažu (F.M.T.M.N.T)."
     }]} accentIndex={1} bg="dark" />
 
       {/* Unified Sticky Bar */}
