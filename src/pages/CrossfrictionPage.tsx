@@ -180,7 +180,7 @@ const CrossfrictionPage = () => {
       icon: "🏆",
       title: "Certifikat",
       subtitle: "Službeno priznanje",
-      small: "upis u e-radnu knjižicu + mentorska podrška nakon edukacije"
+      small: "upis u e-radnu knjižicu kao dodatno obrazovanje + mentorska podrška"
     }, {
       icon: "🎯",
       title: "Pametnije",
