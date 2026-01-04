@@ -414,9 +414,7 @@ const CrossfrictionPage = () => {
                 
                 {/* Testimonial */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mt-8">
-                  <p className="text-[#F9F9F9] italic mb-3 text-lg">
-                    "Nakon ovog seminara nisam više 'gasila požar' kod klijenata – nego sam naučila kako rješavati stvarne uzroke."
-                  </p>
+                  <p className="text-[#F9F9F9] italic mb-3 text-lg">"Nakon ovog seminara nisam više gasila požar kod klijenata, nego sam naučila rješavati stvarne probleme."</p>
                   <p className="text-[#B9975B] font-semibold">— Sara, fizioterapeutkinja</p>
                 </div>
                 
