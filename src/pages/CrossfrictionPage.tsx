@@ -243,7 +243,7 @@ const CrossfrictionPage = () => {
                   lineHeight: '1.6',
                   color: '#D4AF37',
                   fontWeight: 'bold'
-                }} className="text-lg leading-relaxed mb-6 text-center text-white-90 text-primary font-normal">U Body Reset pristupu, bol nije izoliran problem – već poziv na dublje razumijevanje tijela. Kroz integraciju mišićnog, fascijalnog, zglobnog i živčanog sustava, učimo gledati širu sliku i stvarati tretmane koji ne samo da uklanjaju bol, već vraćaju funkcionalnost, ravnotežu i lakoću pokreta.</p>
+                }} className="text-lg leading-relaxed mb-6 text-center text-white-90 font-normal text-primary">U Body Reset pristupu, bol nije izoliran problem – već poziv na dublje razumijevanje tijela. Kroz integraciju mišićnog, fascijalnog, zglobnog i živčanog sustava, učimo gledati širu sliku i stvarati tretmane koji ne samo da uklanjaju bol, već vraćaju funkcionalnost, ravnotežu i lakoću pokreta.</p>
                   
                   <div className="text-center">
                     <p className="mb-4 text-white/90" style={{
