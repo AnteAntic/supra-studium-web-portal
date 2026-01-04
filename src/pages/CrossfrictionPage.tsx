@@ -64,7 +64,7 @@ const CrossfrictionPage = () => {
             delay: 0.2,
             duration: 0.6
           }} className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-[#d4af37]/20 border border-[#d4af37]/30 rounded-full backdrop-blur-sm">
-              <span className="text-[#d4af37] font-bold text-sm uppercase tracking-wide">NOVO IZDANJE 2025.</span>
+              <span className="text-[#d4af37] font-bold text-sm uppercase tracking-wide">NOVO IZDANJE 2026.</span>
             </motion.div>
             
             {/* Main Title with Shimmer */}
