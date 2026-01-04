@@ -1927,7 +1927,9 @@ const CrossfrictionPage = () => {
                   <AccordionContent className="text-[#F5F5DC] leading-relaxed transition-all duration-500 data-[state=open]:animate-accordion-down">
                     <div className="relative">
                       <span className="group-data-[state=open]:bg-gradient-to-r group-data-[state=open]:from-[#B9975B] group-data-[state=open]:via-[#D4AF37] group-data-[state=open]:to-[#B9975B] group-data-[state=open]:bg-clip-text group-data-[state=open]:text-transparent group-data-[state=open]:animate-pulse">
-                        Tečaj nije bodovan bodovima komore, ali dobivate diplomu s međunarodnim priznanjem i upisom u e-radnu knjižicu.
+                        Tečaj nije bodovan službenim bodovima komore, ali po završetku dobivate uvjerenje koje je moguće upisati u e-radnu knjižicu kao dodatno obrazovanje. Ovaj program je takoðer priznat i verificiran od Svjetske federacije za masažu, manualnu terapiju i Nuad Thai.
+To je službeni dokaz stručnosti koji može pomoći kod zapošljavanja ili rada na tržištu.
+
                       </span>
                     </div>
                   </AccordionContent>
