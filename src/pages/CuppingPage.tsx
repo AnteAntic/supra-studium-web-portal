@@ -1376,7 +1376,7 @@ const CuppingPage = () => {
                 answer: "👉 Naravno! Seminar je kreiran i za potpune početnike i za terapeute s iskustvom. Sve učimo korak po korak kroz praktičan rad, tako da odmah osjetiš sigurnost i razumiješ tehniku."
               }, {
                 question: "❓ Što sve dobivam kada se prijavim?",
-                answer: "👉 Cijena uključuje sve što ti treba – cjelodnevnu edukaciju, materijale i opremu za rad, praktične vježbe pod vodstvom instruktora, službeni certifikat koji se upisuje u e-radnu knjižicu i trajnu podršku i nakon završetka seminara."
+                answer: "👉 Cijena uključuje sve što ti treba – cjelodnevnu edukaciju, radne materijale i opremu, praktične vježbe uz vodstvo instruktora, službeno uvjerenje koje se može upisati u e-radnu knjižicu kao dodatno obrazovanje, te mentorsku podršku i nakon završetka seminara."
               }, {
                 question: "❓ Hoću li znati primijeniti tehniku već sljedeći dan?",
                 answer: "👉 Da! Edukacija je 80% praktična. Već od prvog sata radiš na stvarnim slučajevima, tako da nakon seminara možeš sigurno i učinkovito primjenjivati cupping u svom radu i dobivati rezultate koji oduševljavaju klijente."
