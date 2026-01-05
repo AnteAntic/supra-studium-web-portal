@@ -177,8 +177,8 @@ const CuppingPage = () => {
               stiffness: 400,
               damping: 17
             }}>
-                <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] text-black px-8 py-4 text-lg font-bold rounded-xl shadow-lg transition-all duration-300">
-                  Upiši seminar
+                <Button asChild size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] text-black px-8 py-4 text-lg font-bold rounded-xl shadow-lg transition-all duration-300">
+                  <a href="#jedan-dan">Upiši seminar</a>
                 </Button>
               </motion.div>
               
@@ -1065,7 +1065,7 @@ const CuppingPage = () => {
       </section>
 
       {/* Investment Section - Light Mode */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-b from-[#ffffff] to-[#fdf9f3]">
+      <section id="jedan-dan" className="py-20 relative overflow-hidden bg-gradient-to-b from-[#ffffff] to-[#fdf9f3] scroll-mt-20">
         {/* Gold hairline separator */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4/5 h-px bg-[#D4AF37] opacity-40"></div>
         
