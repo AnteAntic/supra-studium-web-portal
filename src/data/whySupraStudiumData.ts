@@ -4,7 +4,7 @@ export const reasons = [
   {
     icon: Heart,
     title: "Prijateljska atmosfera",
-    description: "Učite u okruženju puno topline i razumijevanja gdje svaki polaznik osjeća podršku.",
+    description: "Učite u okruženju punom topline i razumijevanja, gdje se svaki polaznik osjeća podržano.",
     background: "/lovable-uploads/142c0ac0-66f1-4956-aa2b-f0d3228aeba8.png"
   },
   {
