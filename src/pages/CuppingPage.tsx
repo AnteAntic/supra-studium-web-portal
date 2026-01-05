@@ -1379,7 +1379,7 @@ const CuppingPage = () => {
                 answer: "👉 Cijena uključuje sve što ti treba – cjelodnevnu edukaciju, radne materijale i opremu, praktične vježbe uz vodstvo instruktora, službeno uvjerenje koje se može upisati u e-radnu knjižicu kao dodatno obrazovanje, te mentorsku podršku i nakon završetka seminara."
               }, {
                 question: "❓ Hoću li znati primijeniti tehniku već sljedeći dan?",
-                answer: "👉 Da! Edukacija je 80% praktična. Već od prvog sata radiš na stvarnim slučajevima, tako da nakon seminara možeš sigurno i učinkovito primjenjivati cupping u svom radu i dobivati rezultate koji oduševljavaju klijente."
+                answer: "👉 Da! Edukacija je 90% praktična. Već od prvog sata radiš na stvarnim slučajevima, tako da nakon seminara možeš sigurno i učinkovito primjenjivati cupping u svom radu i dobivati rezultate koji oduševljavaju klijente."
               }, {
                 question: "❓ Mogu li platiti u ratama?",
                 answer: "👉 Razumijemo da je edukacija ulaganje, ali zbog ograničenog broja mjesta (samo 12 polaznika) i ekskluzivnosti programa – uplate primamo isključivo jednokratno. Na taj način osiguravamo kvalitetnu organizaciju i posvećenost svakom polazniku bez administrativnih prepreka."
