@@ -15,8 +15,8 @@ export const reasons = [
   },
   {
     icon: Globe,
-    title: "Akreditirano. Globalno. Vaše.",
-    description: "Partnerstvo s World Federation i EU priznanje.",
+    title: "Međunarodno priznato obrazovanje.",
+    description: "U suradnji sa Svjetskom federacijom za masažu, manualnu terapiju i Nuad Thai (F.M.T.M.N.T).",
     background: "/lovable-uploads/7cb22c6c-ea23-475f-b314-2d753f828667.png"
   },
   {
