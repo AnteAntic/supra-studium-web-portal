@@ -10,7 +10,7 @@ export const reasons = [
   {
     icon: Award,
     title: "Priznati program",
-    description: "Naši tečajevi su priznati i certificirani, omogućavaju vam profesionalni rast.",
+    description: "Naši tečajevi su priznati i certificirani te vam omogućuju profesionalni rast.",
     background: "/lovable-uploads/3c28eab8-79df-4481-969f-6c199cccafa1.png"
   },
   {
