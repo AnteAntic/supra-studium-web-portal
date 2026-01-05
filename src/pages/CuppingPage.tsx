@@ -192,7 +192,7 @@ const CuppingPage = () => {
               damping: 17
             }}>
                 <Button asChild variant="outline" size="lg" className="backdrop-blur-md bg-white/10 border-[#d4af37] text-white hover:bg-white/20 hover:text-[#d4af37] px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300">
-                  <a href="#why-cupping">Saznaj više</a>
+                  <a href="#cupping-techniques">Saznaj više</a>
                 </Button>
               </motion.div>
             </motion.div>
