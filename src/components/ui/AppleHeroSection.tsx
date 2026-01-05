@@ -40,7 +40,6 @@ function AppleHeroSection() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]); // Parallax at 0.9x speed
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.3], [0.4, 0.7]);
-  
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -51,15 +50,13 @@ function AppleHeroSection() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
   return <>
       <HeroHeader />
       <main ref={heroRef} className="overflow-hidden relative min-h-screen">
         {/* White overlay that fades in on scroll */}
-        <div 
-          className="absolute inset-0 bg-white z-[35] pointer-events-none transition-opacity duration-300"
-          style={{ opacity: whiteOverlay }}
-        />
+        <div className="absolute inset-0 bg-white z-[35] pointer-events-none transition-opacity duration-300" style={{
+        opacity: whiteOverlay
+      }} />
         
         {/* Diagonal Background Pattern */}
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
@@ -215,7 +212,8 @@ function AppleHeroSection() {
                 delay: 0.8
               }} className="mb-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg max-w-3xl mx-auto">
                   <BodyText className="text-white/85 text-center" maxLines={6}>
-                    Supra Studium nije samo učilište – to je pokret koji oblikuje novu generaciju terapeuta: onih koji znaju, osjećaju i djeluju s utjecajem. S više znanja, više prisutnosti i većim utjecajem. Pridruži se edukaciji koja ostavlja trag – u tijelu, umu i zajednici.
+                    Supra Studium nije samo učilište – to je pokret koji oblikuje novu generaciju terapeuta: onih koji znaju, osjećaju i djeluju s jasnoćom i svrhom.
+S više znanja, više prisutnosti i dubljim djelovanjem. Pridruži se edukaciji koja ostavlja trag – u tijelu, umu i zajednici.
                   </BodyText>
                 </motion.div>
 
