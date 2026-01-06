@@ -92,7 +92,7 @@ export default function ManualTherapySchoolPage() {
       <CourseStickyBar
         locations={[
           { city: "Rijeka", dates: "8.-9.11.", stage: "3. stupanj" },
-          { city: "Zagreb", dates: "21-22.03.", stage: "2. stupanj" },
+          { city: "Zagreb", dates: "21-22.03.", stage: "3. stupanj" },
           { city: "Zagreb", dates: "6.–8. 2. 2026.", stage: "1. stupanj" }
         ]}
         price="390 €"
