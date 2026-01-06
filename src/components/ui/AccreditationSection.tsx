@@ -1,26 +1,20 @@
-
 'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
 const AccreditationSection = () => {
-  return (
-    <section className="relative py-12 md:py-20 lg:py-28 bg-gradient-to-br from-supra-ivory to-muted/30">
+  return <section className="relative py-12 md:py-20 lg:py-28 bg-gradient-to-br from-supra-ivory to-muted/30">
       {/* Diagonal Background Pattern */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
+      <div className="absolute inset-0 pointer-events-none" style={{
+      backgroundImage: `repeating-linear-gradient(
             45deg,
             #a58d4e 0px,
             #a58d4e 1px,
             transparent 1px,
             transparent 20px
           )`,
-          opacity: 0.03
-        }}
-      />
+      opacity: 0.03
+    }} />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-sm border border-border/30 p-6 sm:p-8 md:p-12 lg:p-16 shadow-lg">
@@ -29,13 +23,18 @@ const AccreditationSection = () => {
           <div className="w-full h-px bg-gradient-to-r from-transparent via-supra-golden/40 to-transparent mb-16 md:mb-20" />
 
           {/* Header Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 md:mb-20"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6,
+          delay: 0.2
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16 md:mb-20">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 md:mb-10">
               <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-supra-golden to-supra-navy flex items-center justify-center shadow-lg flex-shrink-0">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,20 +61,30 @@ const AccreditationSection = () => {
             {/* Left Column - Text Content */}
             <div className="lg:col-span-2 space-y-6 md:space-y-8 lg:space-y-10">
               <div className="space-y-4 md:space-y-6 lg:space-y-8">
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group"
-                >
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.4 }}
-                    viewport={{ once: true }}
-                    className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors"
-                  >
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.3
+              }} viewport={{
+                once: true
+              }} className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group">
+                  <motion.div initial={{
+                  opacity: 0,
+                  scale: 0
+                }} whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }} transition={{
+                  duration: 0.4,
+                  delay: 0.4
+                }} viewport={{
+                  once: true
+                }} className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors">
                     <span className="text-xl" role="img" aria-label="Svijet">🌍</span>
                   </motion.div>
                   <div>
@@ -88,20 +97,30 @@ const AccreditationSection = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group"
-                >
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.6 }}
-                    viewport={{ once: true }}
-                    className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors"
-                  >
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.5
+              }} viewport={{
+                once: true
+              }} className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group">
+                  <motion.div initial={{
+                  opacity: 0,
+                  scale: 0
+                }} whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }} transition={{
+                  duration: 0.4,
+                  delay: 0.6
+                }} viewport={{
+                  once: true
+                }} className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors">
                     <span className="text-xl" role="img" aria-label="Suradnja">🤝</span>
                   </motion.div>
                   <div>
@@ -114,20 +133,30 @@ const AccreditationSection = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group"
-                >
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.8 }}
-                    viewport={{ once: true }}
-                    className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors"
-                  >
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.7
+              }} viewport={{
+                once: true
+              }} className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group">
+                  <motion.div initial={{
+                  opacity: 0,
+                  scale: 0
+                }} whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }} transition={{
+                  duration: 0.4,
+                  delay: 0.8
+                }} viewport={{
+                  once: true
+                }} className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors">
                     <span className="text-xl" role="img" aria-label="Hrvatska">🇭🇷</span>
                   </motion.div>
                   <div>
@@ -140,20 +169,30 @@ const AccreditationSection = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.9 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group"
-                >
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 1.0 }}
-                    viewport={{ once: true }}
-                    className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors"
-                  >
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.5,
+                delay: 0.9
+              }} viewport={{
+                once: true
+              }} className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-supra-golden/20 shadow-md hover:shadow-xl hover:border-supra-golden/40 transition-all duration-300 group">
+                  <motion.div initial={{
+                  opacity: 0,
+                  scale: 0
+                }} whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }} transition={{
+                  duration: 0.4,
+                  delay: 1.0
+                }} viewport={{
+                  once: true
+                }} className="w-10 h-10 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-supra-golden/30 transition-colors">
                     <span className="text-xl" role="img" aria-label="Europska unija">🇪🇺</span>
                   </motion.div>
                   <div>
@@ -168,13 +207,18 @@ const AccreditationSection = () => {
               </div>
 
               {/* Closing Statement */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.1 }}
-                viewport={{ once: true }}
-                className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-supra-golden/10 to-supra-navy/10 backdrop-blur-sm border border-supra-golden/30 shadow-lg"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.5,
+              delay: 1.1
+            }} viewport={{
+              once: true
+            }} className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-supra-golden/10 to-supra-navy/10 backdrop-blur-sm border border-supra-golden/30 shadow-lg">
                 <div className="w-8 h-8 rounded-full bg-supra-golden/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-lg" role="img" aria-label="Pokazuje">👉</span>
                 </div>
@@ -184,21 +228,31 @@ const AccreditationSection = () => {
               </motion.div>
 
               {/* Prominent Badge Section */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 pt-6 md:pt-8"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.5,
+              delay: 0.6
+            }} viewport={{
+              once: true
+            }} className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 pt-6 md:pt-8">
                 <div className="inline-flex items-center gap-3 bg-gradient-to-r from-supra-golden to-supra-golden/80 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group min-h-[48px] touch-manipulation">
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.7 }}
-                    viewport={{ once: true }}
-                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center"
-                  >
+                  <motion.div initial={{
+                  opacity: 0,
+                  scale: 0
+                }} whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }} transition={{
+                  duration: 0.4,
+                  delay: 0.7
+                }} viewport={{
+                  once: true
+                }} className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -207,13 +261,18 @@ const AccreditationSection = () => {
                 </div>
                 
                 <div className="inline-flex items-center gap-3 bg-gradient-to-r from-supra-navy to-supra-navy/80 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group min-h-[48px] touch-manipulation">
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.8 }}
-                    viewport={{ once: true }}
-                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center"
-                  >
+                  <motion.div initial={{
+                  opacity: 0,
+                  scale: 0
+                }} whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }} transition={{
+                  duration: 0.4,
+                  delay: 0.8
+                }} viewport={{
+                  once: true
+                }} className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -222,13 +281,18 @@ const AccreditationSection = () => {
                 </div>
 
                 <div className="inline-flex items-center gap-3 text-supra-gray w-full sm:w-auto justify-center">
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.9 }}
-                    viewport={{ once: true }}
-                    className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0"
-                  >
+                  <motion.div initial={{
+                  opacity: 0,
+                  scale: 0
+                }} whileInView={{
+                  opacity: 1,
+                  scale: 1
+                }} transition={{
+                  duration: 0.4,
+                  delay: 0.9
+                }} viewport={{
+                  once: true
+                }} className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
                     <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -238,14 +302,18 @@ const AccreditationSection = () => {
               </motion.div>
 
               {/* e-Radna knjižica Section */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.25 }}
-                viewport={{ once: true }}
-                className="relative max-w-4xl mx-auto mt-10 p-6 md:p-8 lg:p-10 rounded-2xl bg-white/65 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-transparent"
-                aria-label="Informacije o upisu u e-Radnu knjižicu (ERPS)"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.8,
+              delay: 0.25
+            }} viewport={{
+              once: true
+            }} className="relative max-w-4xl mx-auto mt-10 p-6 md:p-8 lg:p-10 rounded-2xl bg-white/65 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-transparent" aria-label="Informacije o upisu u e-Radnu knjižicu (ERPS)">
                 {/* Golden rim overlay */}
                 <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-br from-[#d4af37]/40 to-transparent pointer-events-none" />
                 
@@ -285,40 +353,53 @@ const AccreditationSection = () => {
                   </div>
 
                   {/* Image */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <img 
-                      src="/lovable-uploads/e-radna-knjizica.png" 
-                      alt="Upisivo u e-Radnu knjižicu" 
-                      className="mx-auto mt-8 w-[200px] md:w-[240px] drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] rounded-lg"
-                      loading="lazy"
-                    />
+                  <motion.div initial={{
+                  opacity: 0,
+                  y: 10
+                }} whileInView={{
+                  opacity: 1,
+                  y: 0
+                }} transition={{
+                  duration: 0.8,
+                  delay: 0.5
+                }} viewport={{
+                  once: true
+                }}>
+                    <img src="/lovable-uploads/e-radna-knjizica.png" alt="Upisivo u e-Radnu knjižicu" className="mx-auto mt-8 w-[200px] md:w-[240px] drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] rounded-lg" loading="lazy" />
                   </motion.div>
                 </div>
               </motion.div>
             </div>
 
             {/* Right Column - Visual Elements Stack */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 30,
+            scale: 0.95
+          }} whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1
+          }} transition={{
+            duration: 0.8,
+            delay: 0.3
+          }} viewport={{
+            once: true
+          }} className="space-y-8">
               
               {/* Enhanced Federation Logo Card */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-white/50 group hover:shadow-3xl hover:scale-[1.02] transition-all duration-500"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0.9
+            }} whileInView={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.6,
+              delay: 0.4
+            }} viewport={{
+              once: true
+            }} className="relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-white/50 group hover:shadow-3xl hover:scale-[1.02] transition-all duration-500">
                 {/* Glassmorphism overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
                 
@@ -334,17 +415,10 @@ const AccreditationSection = () => {
                 
                 {/* Image Container with Aspect Ratio */}
                 <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-supra-ivory/50 to-muted/10">
-                  <img 
-                    src="/lovable-uploads/94a3e24b-7ccc-4c9c-ac33-3f26d98fbc1e.png" 
-                    alt="World Federation of Massage and Manual Therapy certificate logo" 
-                    className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg"
-                    onLoad={() => console.log('World Federation logo loaded successfully')}
-                    onError={(e) => {
-                      console.error('Failed to load World Federation logo:', e);
-                      console.log('Attempting to load from:', e.currentTarget.src);
-                    }}
-                    loading="eager"
-                  />
+                  <img alt="World Federation of Massage and Manual Therapy certificate logo" className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg" onLoad={() => console.log('World Federation logo loaded successfully')} onError={e => {
+                  console.error('Failed to load World Federation logo:', e);
+                  console.log('Attempting to load from:', e.currentTarget.src);
+                }} loading="eager" src="/lovable-uploads/e630d065-db45-414c-83be-31b3006d043a.jpg" />
                 </div>
                 
                 {/* Content */}
@@ -359,13 +433,18 @@ const AccreditationSection = () => {
               </motion.div>
 
               {/* Enhanced Certificate Image */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="relative group"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0.9
+            }} whileInView={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.6,
+              delay: 0.6
+            }} viewport={{
+              once: true
+            }} className="relative group">
                 {/* Premium glow background */}
                 <div className="absolute -inset-2 bg-gradient-to-r from-supra-golden/20 via-supra-navy/15 to-supra-golden/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -374,12 +453,7 @@ const AccreditationSection = () => {
                   {/* Inner glow */}
                   <div className="absolute inset-2 bg-gradient-to-br from-white/30 to-transparent rounded-2xl pointer-events-none" />
                   
-                  <img 
-                    src="/lovable-uploads/3c28eab8-79df-4481-969f-6c199cccafa1.png" 
-                    alt="Međunarodna diploma i certifikat akreditacije" 
-                    className="relative w-full h-auto rounded-2xl object-cover shadow-xl filter drop-shadow-lg group-hover:drop-shadow-2xl transition-all duration-500"
-                    loading="lazy"
-                  />
+                  <img src="/lovable-uploads/3c28eab8-79df-4481-969f-6c199cccafa1.png" alt="Međunarodna diploma i certifikat akreditacije" className="relative w-full h-auto rounded-2xl object-cover shadow-xl filter drop-shadow-lg group-hover:drop-shadow-2xl transition-all duration-500" loading="lazy" />
                 </div>
               </motion.div>
             </motion.div>
@@ -387,8 +461,6 @@ const AccreditationSection = () => {
 
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AccreditationSection;
