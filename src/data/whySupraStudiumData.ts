@@ -34,7 +34,7 @@ export const reasons = [
   {
     icon: Award,
     title: "Feel & Heal Festival",
-    description: "Festival dodira koji okuplja terapeute iz cijelog svijeta. Supra Studium je edukacijski partner prvog hrvatskog prvenstva u masaži, manualnoj terapiji i Nuad Thai.",
+    description: "Festival dodira koji okuplja terapeute i stručnjake iz cijelog svijeta. Supra Studium je organizator ovog hrvatskog prvenstva u masaži, manualnoj terapiji.",
     background: "/lovable-uploads/feel-heal-festival-new.jpg"
   }
 ];
