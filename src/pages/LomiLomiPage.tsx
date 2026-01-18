@@ -98,7 +98,7 @@ const LomiLomiPage: React.FC = () => {
   return <>
     {/* Sticky Course Bar */}
     <CourseStickyBar locations={[{
-      city: "Zagreb",
+      city: "Zagreb Modul 1",
       dates: "18. - 19.04.2026."
     }]} price="" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
     
