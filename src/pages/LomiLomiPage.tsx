@@ -14,7 +14,7 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import TextShimmer from '@/components/ui/TextShimmer';
 import { CourseHighlights } from '@/components/ui/CourseHighlights';
 import AutoCarousel from '@/components/ui/AutoCarousel';
-import { StickyNotificationBar } from '@/components/ui/StickyNotificationBar';
+import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 const LomiLomiPage: React.FC = () => {
   const {
     toast
@@ -98,11 +98,16 @@ const LomiLomiPage: React.FC = () => {
     (e.currentTarget as HTMLFormElement).reset();
   };
   return <>
-    {/* Sticky Notification Bar */}
-    <StickyNotificationBar
-      message="Sljedeći Lomi Lomi tečaj je u pripremi. Želiš biti prvi koji saznaje kad kreće?"
-      ctaText="Obavijesti me"
-      ctaLink="https://tally.so/r/wA5kvD"
+    {/* Sticky Course Bar */}
+    <CourseStickyBar 
+      locations={[{
+        city: "Zagreb",
+        dates: "18. - 19.04.2026."
+      }]} 
+      price="" 
+      ctaText="Prijavi se" 
+      ctaHref="https://tally.so/r/wA5kvD"
+      theme="light" 
     />
     
     <div
