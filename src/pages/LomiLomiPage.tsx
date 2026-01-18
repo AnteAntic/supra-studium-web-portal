@@ -395,12 +395,20 @@ const LomiLomiPage: React.FC = () => {
             </TabsContent>
             <TabsContent value="cert">
               <Card>
-                <CardContent className="p-6 space-y-2">
-                  <ul className="list-disc pl-5 text-muted-foreground space-y-1">
-                    <li>Certifikat Učilišta Supra Studium</li>
-                    <li>Upis u e-radnu knjižicu kao dodatno obrazovanje</li>
-                    <li>Mentorska podrška i materijali</li>
-                  </ul>
+                <CardContent className="p-0">
+                  <img 
+                    src="/lovable-uploads/e-radna-knjizica.png" 
+                    alt="Certifikat i praksa" 
+                    className="w-full h-48 object-cover rounded-t-[var(--radius)]" 
+                    loading="lazy" 
+                  />
+                  <div className="p-6 space-y-2">
+                    <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+                      <li>Certifikat Učilišta Supra Studium</li>
+                      <li>Upis u e-radnu knjižicu kao dodatno obrazovanje</li>
+                      <li>Mentorska podrška i materijali</li>
+                    </ul>
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>
