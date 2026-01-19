@@ -550,7 +550,7 @@ const LomiLomiPage: React.FC = () => {
             <CarouselContent>
               {[{
                 src: "/lovable-uploads/1f55607a-581e-4803-b62e-212cc10e53c6.png",
-                q: "Osjetila sam potpuni zaokret – tehnika i prisutnost u jednom.",
+                q: "Osjetila sam veliku promjenu, kao da su se tehnika i prisutnost odjednom uskladile.",
                 a: "Maja K."
               }, {
                 src: "/lovable-uploads/dc1c502c-5eb2-44b6-b41d-15c6242c444b.png",
