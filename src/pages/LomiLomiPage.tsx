@@ -132,7 +132,7 @@ const LomiLomiPage: React.FC = () => {
         }} />
         
         <div className="absolute inset-0 bg-cover bg-center" style={{
-          backgroundImage: `linear-gradient(to bottom, hsl(var(--overlay-dark) / 0.55), hsl(var(--overlay-dark) / 0.9)), url(/lovable-uploads/869511d2-0596-4bc9-8a5b-8beae598be59.png)`,
+          backgroundImage: `linear-gradient(to bottom, hsl(var(--overlay-dark) / 0.55), hsl(var(--overlay-dark) / 0.9)), url(/lovable-uploads/lomi-lomi-hero-sharp.jpeg)`,
           backgroundAttachment: "fixed"
         }} aria-hidden />
         {/* golden glow accents */}
