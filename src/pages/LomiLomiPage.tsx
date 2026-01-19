@@ -625,7 +625,7 @@ const LomiLomiPage: React.FC = () => {
             <AccordionItem value="q4">
               <AccordionTrigger>Koji su načini plaćanja?</AccordionTrigger>
               <AccordionContent>
-                Uplata kotizacije na žiro račun Učilišta. Moguće rezervirati jedno po jedno ili oba modula s popustom.
+                Uplata kotizacije na žiro račun Učilišta. Moguće rezervirati jedno po jedno ili oba modula s ukupnim popustom od 100 Eur.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
