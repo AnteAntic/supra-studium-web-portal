@@ -617,7 +617,9 @@ const LomiLomiPage: React.FC = () => {
             <AccordionItem value="q3">
               <AccordionTrigger>Dobivam li službeni certifikat?</AccordionTrigger>
               <AccordionContent>
-                Da. Certifikat Učilišta Supra Studium s upisom u e-radnu knjižicu.
+                Da. Dobivaš uvjerenje Učilišta Supra Studium koje se može upisati u e-radnu knjižicu kao dodatno obrazovanje.
+                <br /><br />
+                Program je verificiran i međunarodno priznat od Svjetske federacije za masažu, manualnu terapiju i Nuad Thai, što znači da tvoje znanje ima potvrdu na europskoj i svjetskoj razini – prepoznato kod poslodavaca, organizacija i natjecanja.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="q4">
