@@ -397,9 +397,9 @@ const LomiLomiPage: React.FC = () => {
               <Card>
                 <CardContent className="p-0">
                   <img 
-                    src="/lovable-uploads/e-radna-knjizica.png" 
-                    alt="Certifikat i praksa" 
-                    className="w-full h-48 object-cover rounded-t-[var(--radius)]" 
+                    src="/lovable-uploads/lomi-lomi-certifikat-grupa.jpeg" 
+                    alt="Polaznici s diplomama" 
+                    className="w-full h-48 object-cover object-center rounded-t-[var(--radius)]" 
                     loading="lazy" 
                   />
                   <div className="p-6 space-y-2">
