@@ -44,7 +44,6 @@ const AkupresuraPage = () => {
   });
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -118,9 +117,7 @@ const AkupresuraPage = () => {
   };
   const faqs = [{
     question: "Kada i gdje se održava tečaj?",
-    answer: nextCourse 
-      ? `Sljedeći tečaj se održava ${format(new Date(nextCourse.startDate), 'dd.')}–${format(new Date(nextCourse.endDate), 'dd. MM. yyyy.')} u ${nextCourse.city}, ${nextCourse.location}.`
-      : "Trenutno nema zakazanih termina. Kontaktirajte nas za informacije o sljedećem izdanju."
+    answer: nextCourse ? `Sljedeći tečaj se održava ${format(new Date(nextCourse.startDate), 'dd.')}–${format(new Date(nextCourse.endDate), 'dd. MM. yyyy.')} u ${nextCourse.city}, ${nextCourse.location}.` : "Trenutno nema zakazanih termina. Kontaktirajte nas za informacije o sljedećem izdanju."
   }, {
     question: "Trebam li prethodno iskustvo?",
     answer: "Ne, tečaj je prilagođen i početnicima i iskusnim terapeutima. Sve tehnike učimo od osnova."
@@ -155,10 +152,9 @@ const AkupresuraPage = () => {
       {/* New Hero Section with Video Background */}
       <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
         {/* Black overlay that fades in on scroll */}
-        <div 
-          className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300"
-          style={{ opacity: blackOverlay }}
-        />
+        <div className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300" style={{
+        opacity: blackOverlay
+      }} />
         
         {/* Video Background */}
         <div className="absolute inset-0 top-[-5rem]">
@@ -551,15 +547,9 @@ const AkupresuraPage = () => {
                         <p className="text-sm text-gray-600">Sve informacije o edukaciji na jednom mjestu</p>
                       </div>
                     </div>
-                    <a 
-                      href="https://www.dropbox.com/scl/fi/o6b6vqb4bt3obop6g499o/Akupresura-i-Trigger-point-terapija.pdf?rlkey=7jgwscmrsmzj5xunym7m8uy9b&st=qtcgsjuj&dl=0"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#d4af37] hover:bg-[#c19b2a] text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                      style={{
-                        boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
-                      }}
-                    >
+                    <a href="https://www.dropbox.com/scl/fi/o6b6vqb4bt3obop6g499o/Akupresura-i-Trigger-point-terapija.pdf?rlkey=7jgwscmrsmzj5xunym7m8uy9b&st=qtcgsjuj&dl=0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-[#d4af37] hover:bg-[#c19b2a] text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg" style={{
+                    boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
+                  }}>
                       <Download className="h-5 w-5" />
                       Preuzmi brošuru i istraži više detalja
                     </a>
@@ -584,13 +574,9 @@ const AkupresuraPage = () => {
                   scale: 1.02
                 }} className="group cursor-pointer">
                     <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/20" style={{
-                      boxShadow: '0 12px 40px rgba(200,162,74,0.25), 0 6px 16px rgba(0,0,0,0.15)'
-                    }}>
-                      <img 
-                        src="/lovable-uploads/a8d9f780-17c6-4718-98a2-73927a26401b.png" 
-                        alt="Akupresura tehnika" 
-                        className="w-full h-80 object-cover transition-all duration-300" 
-                      />
+                    boxShadow: '0 12px 40px rgba(200,162,74,0.25), 0 6px 16px rgba(0,0,0,0.15)'
+                  }}>
+                      <img src="/lovable-uploads/a8d9f780-17c6-4718-98a2-73927a26401b.png" alt="Akupresura tehnika" className="w-full h-80 object-cover transition-all duration-300" />
                       
                       {/* Hover glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#d4af37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -1304,45 +1290,60 @@ const AkupresuraPage = () => {
       {/* O predavaču Ante Antić */}
       <section className="py-20 bg-gradient-to-b from-[#FAF8F4] to-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 40
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6,
+          ease: "easeOut"
+        }}>
             {/* Desktop: Image left, Text right | Mobile: Stacked */}
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left side - Image */}
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="order-2 lg:order-1"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: -40
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.7,
+              ease: "easeOut"
+            }} className="order-2 lg:order-1">
                 <div className="w-full max-w-md mx-auto lg:mx-0 rounded-xl overflow-hidden border-2 border-[#D4AF37] shadow-lg hover:shadow-xl transition-all duration-300">
-                  <img
-                    src="/lovable-uploads/6f7f2e08-2f5a-42f8-a4cb-551d809913d6.png"
-                    alt="Ante Antić - Osnivač Supra Studija"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/lovable-uploads/6f7f2e08-2f5a-42f8-a4cb-551d809913d6.png" alt="Ante Antić - Osnivač Supra Studija" className="w-full h-full object-cover" />
                 </div>
               </motion.div>
 
               {/* Right side - Text Content */}
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-                className="order-1 lg:order-2 space-y-6"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: 40
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.7,
+              delay: 0.2,
+              ease: "easeOut"
+            }} className="order-1 lg:order-2 space-y-6">
                 {/* Header */}
                 <div className="space-y-2">
                   <p className="text-sm font-semibold text-[#D4AF37] uppercase tracking-wide">
                     👤 O predavaču
                   </p>
-                  <h2 className="text-4xl lg:text-5xl font-bold text-gray-900" style={{ fontFamily: 'Playfair Display' }}>
+                  <h2 className="text-4xl lg:text-5xl font-bold text-gray-900" style={{
+                  fontFamily: 'Playfair Display'
+                }}>
                     Ante Antić
                   </h2>
                   <p className="text-lg text-gray-600 font-medium">
@@ -1358,7 +1359,9 @@ const AkupresuraPage = () => {
                 </div>
 
                 {/* Bio Text */}
-                <div className="space-y-4 text-gray-700" style={{ lineHeight: '1.8' }}>
+                <div className="space-y-4 text-gray-700" style={{
+                lineHeight: '1.8'
+              }}>
                   <p className="text-base lg:text-lg leading-loose">
                     S više od <strong className="text-[#D4AF37]">16 godina rada u manualnoj terapiji</strong>, kroz ruke mi je prošlo na tisuće klijenata s kroničnim bolovima, napetošću i neuspješnim pokušajima rješenja. Trigger point terapija je jedan od alata koji uvijek iznova dokazuje svoju učinkovitost – ali samo kad se koristi precizno, promišljeno i s razumijevanjem cijelog sustava.
                   </p>
@@ -1382,23 +1385,24 @@ const AkupresuraPage = () => {
                 </div>
 
                 {/* CTA Button */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="pt-6"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                    className="inline-block"
-                  >
-                    <Button
-                      size="lg"
-                      asChild
-                      className="bg-gradient-to-r from-[#D4AF37] to-[#EBD79D] hover:from-[#D4AF37]/90 hover:to-[#EBD79D]/90 text-white font-bold px-8 py-4 text-base lg:text-lg rounded-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.6)]"
-                    >
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.6,
+                delay: 0.4
+              }} className="pt-6">
+                  <motion.div whileHover={{
+                  scale: 1.05
+                }} transition={{
+                  duration: 0.2
+                }} className="inline-block">
+                    <Button size="lg" asChild className="bg-gradient-to-r from-[#D4AF37] to-[#EBD79D] hover:from-[#D4AF37]/90 hover:to-[#EBD79D]/90 text-white font-bold px-8 py-4 text-base lg:text-lg rounded-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.6)]">
                       <a href="#kontakt">
                         👉 Postavi pitanje predavaču
                       </a>
@@ -1449,14 +1453,10 @@ const AkupresuraPage = () => {
                     <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
                       390 €
                     </div>
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium">
-                      Early-bird popust
-                    </div>
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium">Early-bird popust do 20.01.2026.</div>
                   </div>
                   
-                  <div className="text-sm text-muted-foreground text-center mb-6">
-                    Provjeri early‑bird rok za odabrani termin.
-                  </div>
+                  <div className="text-sm text-muted-foreground text-center mb-6">Nakon isteka datuma cijena kotizacije je 450 Eur.</div>
                   
                   {/* Countdown Timer */}
                   <div className="mb-8">
@@ -1801,15 +1801,16 @@ const AkupresuraPage = () => {
               💡 Još pitanja? Kontaktiraj nas – rado ćemo ti pomoći.
             </p>
             <a href="#kontakt" className="inline-block">
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 0 30px rgba(212,175,55,0.5)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="inline-block"
-              >
+              <motion.div whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(212,175,55,0.5)"
+            }} whileTap={{
+              scale: 0.95
+            }} transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 17
+            }} className="inline-block">
                 <Button size="lg" className="bg-[#D4AF37] hover:bg-[#c19b2a] text-[#111111] px-8 py-4 text-lg font-bold rounded-xl shadow-lg transition-all duration-300">
                   Pošalji upit
                 </Button>
