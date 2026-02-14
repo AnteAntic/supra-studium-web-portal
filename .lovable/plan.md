@@ -1,31 +1,40 @@
 
 
-## "Back to Top" Button on All Content Pages
+## Fix Mobile Scroll Flickering
 
-### What This Does
-Adds a small floating arrow button in the bottom-right corner of the screen that appears when you scroll down. Tapping/clicking it smoothly scrolls you back to the top of the page. It will be subtle and unobtrusive, especially useful on mobile where pages require a lot of scrolling.
+### Problem
+When scrolling on mobile, elements like text boxes, images, and CTA buttons flicker. This is caused by two main issues:
 
-### How It Works
-- The button is **hidden** when you're near the top of the page
-- It **appears** after scrolling down ~300px
-- Clicking it **smoothly scrolls** back to the top
-- It uses a small **up arrow** icon with a slight background so it's visible but not distracting
-- Works on both **mobile and desktop**
+1. **`background-attachment: fixed`** -- This CSS property is notoriously broken on mobile browsers (iOS Safari, Chrome Android). Mobile browsers handle fixed backgrounds differently, causing repaints and visual glitches during scroll.
 
-### Pages That Will Have It
-The button will be added **globally** via `App.tsx` so it appears on every page automatically. This is the cleanest approach -- pages with little content won't trigger the scroll threshold, so the button simply won't appear on short pages (like NotFound or ContactPage).
+2. **Duplicate React instances** -- Vite may bundle separate copies of React from different dependencies, causing hooks to malfunction and trigger unnecessary re-renders.
 
-### Technical Details
+### Solution
 
-**New file: `src/components/BackToTopButton.tsx`**
-- A floating button component using `framer-motion` for smooth fade in/out
-- Uses `lucide-react` `ChevronUp` or `ArrowUp` icon
-- Listens to `window.scrollY` to show/hide (threshold ~300px)
-- Positioned `fixed bottom-6 right-6` with a small semi-transparent background
-- Slightly smaller on mobile for less visual clutter
-- `z-40` so it sits above content but below modals/header
+#### 1. Remove `background-attachment: fixed` on mobile (4 files)
+Replace all `backgroundAttachment: "fixed"` with responsive behavior that only applies on desktop. On mobile, the background will simply scroll normally (no visual difference to the user, but eliminates flickering).
 
-**Modified file: `src/App.tsx`**
-- Import and place `<BackToTopButton />` inside the `<BrowserRouter>` wrapper alongside `<ScrollToTop />`
-- One instance serves all pages
+**Files to update:**
+- `src/pages/LomiLomiPage.tsx` (2 occurrences)
+- `src/pages/CalabashCertificationPage.tsx` (2 occurrences)
+- `src/pages/CrossfrictionPage.tsx` (1 occurrence)
+- `src/pages/RasporedPage.tsx` (1 occurrence)
+
+For each, change the inline `backgroundAttachment: "fixed"` to use a CSS class that only applies `background-attachment: fixed` on `md:` screens and above (via Tailwind), or remove it entirely and use `bg-scroll` on mobile.
+
+#### 2. Add React deduplication in Vite config (1 file)
+**File: `vite.config.ts`**
+Add `resolve.dedupe: ["react", "react-dom", "react/jsx-runtime"]` to prevent multiple React instances from being bundled, which can cause hooks to misfire and trigger flickering re-renders.
+
+#### 3. Add GPU acceleration hints to animated elements
+Add `will-change: transform` and `transform: translateZ(0)` (hardware acceleration) to the hero parallax containers in `AppleHeroSection.tsx` and `HeroSection.tsx` to ensure smooth compositing on mobile GPUs.
+
+### Summary of Changes
+- **`vite.config.ts`** -- Add `dedupe` for React
+- **`src/pages/LomiLomiPage.tsx`** -- Remove fixed background on mobile
+- **`src/pages/CalabashCertificationPage.tsx`** -- Remove fixed background on mobile
+- **`src/pages/CrossfrictionPage.tsx`** -- Remove fixed background on mobile
+- **`src/pages/RasporedPage.tsx`** -- Remove fixed background on mobile
+- **`src/components/ui/AppleHeroSection.tsx`** -- Add GPU acceleration hints
+- **`src/components/ui/HeroSection.tsx`** -- Add GPU acceleration hints
 
