@@ -47,7 +47,7 @@ const CrossfrictionPage = () => {
         opacity: blackOverlay
       }} />
         
-        <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{
+        <div className="absolute inset-0 bg-cover bg-center md:bg-fixed" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/lovable-uploads/cb2ecdd8-d460-4768-8a2f-40a7f5513772.png)`
       }} />
         
@@ -1576,11 +1576,8 @@ const CrossfrictionPage = () => {
       backgroundColor: '#0B0B0B'
     }}>
         {/* Background image - new image from upload */}
-        <div className="absolute inset-0 opacity-100" style={{
-        backgroundImage: `url('/lovable-uploads/3cbe21cc-644a-4c35-b785-cc0cdc00fbc8.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        <div className="absolute inset-0 opacity-100 bg-cover bg-center md:bg-fixed" style={{
+        backgroundImage: `url('/lovable-uploads/3cbe21cc-644a-4c35-b785-cc0cdc00fbc8.png')`
       }}></div>
         <div className="absolute inset-0 bg-black/40"></div>
         

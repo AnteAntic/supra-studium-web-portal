@@ -111,9 +111,8 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Hero Section with enhanced background effects */}
       <section className="relative min-h-screen flex items-center overflow-hidden -mt-20">
         {/* Background with overlays */}
-        <div className="absolute inset-0 bg-center bg-cover will-change-transform" style={{
-        backgroundImage: `url(${HERO_IMAGE})`,
-        backgroundAttachment: "fixed"
+        <div className="absolute inset-0 bg-center bg-cover will-change-transform md:bg-fixed" style={{
+        backgroundImage: `url(${HERO_IMAGE})`
       }} aria-hidden />
         
         {/* Top-to-bottom gradient for luxury depth */}
@@ -1096,9 +1095,8 @@ const CalabashCertificationPage: React.FC = () => {
       minHeight: "80vh"
     }}>
         {/* Background with dark gradient overlay */}
-        <div className="absolute inset-0 bg-center bg-cover will-change-transform" style={{
-        backgroundImage: `url(${HERO_IMAGE})`,
-        backgroundAttachment: "fixed"
+        <div className="absolute inset-0 bg-center bg-cover will-change-transform md:bg-fixed" style={{
+        backgroundImage: `url(${HERO_IMAGE})`
       }} aria-hidden />
         
         {/* Dark gradient overlay - elegant transition to footer */}
