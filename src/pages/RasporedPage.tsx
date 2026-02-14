@@ -269,7 +269,7 @@ export default function RasporedPage() {
         style={{ opacity: heroOpacity }}
       >
         {/* Background Image with Dark Overlay */}
-        <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{
+        <div className="absolute inset-0 bg-cover bg-center md:bg-fixed" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/lovable-uploads/raspored.jpeg)`
       }} />
         
@@ -725,9 +725,8 @@ export default function RasporedPage() {
         </div>
         
         {/* Parallax Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center opacity-[0.15] blur-[8px]" style={{
-        backgroundImage: 'url(/lovable-uploads/education-workshop-bg.jpg)',
-        backgroundAttachment: 'fixed'
+        <div className="absolute inset-0 bg-cover bg-center opacity-[0.15] blur-[8px] md:bg-fixed" style={{
+        backgroundImage: 'url(/lovable-uploads/education-workshop-bg.jpg)'
       }} />
         
         <div className="container mx-auto px-6 relative z-10">

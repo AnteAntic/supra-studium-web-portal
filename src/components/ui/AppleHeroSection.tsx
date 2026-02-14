@@ -72,7 +72,7 @@ function AppleHeroSection() {
 
         {/* Hero Background Video with Enhanced Overlays */}
         <motion.div style={{
-        y: backgroundY
+        y: backgroundY, willChange: 'transform', transform: 'translateZ(0)'
       }} className="absolute inset-0 z-10">
           {/* Premium gradient overlays for perfect readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/[0.38] to-black/[0.55] z-20" />

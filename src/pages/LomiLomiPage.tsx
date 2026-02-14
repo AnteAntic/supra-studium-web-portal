@@ -131,9 +131,8 @@ const LomiLomiPage: React.FC = () => {
           opacity: blackOverlay
         }} />
         
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-          backgroundImage: `linear-gradient(to bottom, hsl(var(--overlay-dark) / 0.55), hsl(var(--overlay-dark) / 0.9)), url(/lovable-uploads/lomi-lomi-hero-sharp.jpeg)`,
-          backgroundAttachment: "fixed"
+        <div className="absolute inset-0 bg-cover bg-center md:bg-fixed" style={{
+          backgroundImage: `linear-gradient(to bottom, hsl(var(--overlay-dark) / 0.55), hsl(var(--overlay-dark) / 0.9)), url(/lovable-uploads/lomi-lomi-hero-sharp.jpeg)`
         }} aria-hidden />
         {/* golden glow accents */}
         <div className="pointer-events-none absolute -top-28 -right-28 w-[460px] h-[460px] rounded-full blur-3xl" style={{
@@ -720,9 +719,8 @@ const LomiLomiPage: React.FC = () => {
 
       {/* Final CTA */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-          backgroundImage: "linear-gradient(hsl(var(--overlay-dark) / 0.75), hsl(var(--overlay-dark) / 0.9)), url(/lovable-uploads/869511d2-0596-4bc9-8a5b-8beae598be59.png)",
-          backgroundAttachment: "fixed"
+        <div className="absolute inset-0 bg-cover bg-center md:bg-fixed" style={{
+          backgroundImage: "linear-gradient(hsl(var(--overlay-dark) / 0.75), hsl(var(--overlay-dark) / 0.9)), url(/lovable-uploads/869511d2-0596-4bc9-8a5b-8beae598be59.png)"
         }} aria-hidden />
         <div className="container relative z-10 text-center">
           <h2 className="text-[clamp(2rem,5vw,2.75rem)] font-bold leading-tight mb-6" style={{

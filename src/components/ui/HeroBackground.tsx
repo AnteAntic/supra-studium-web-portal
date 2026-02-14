@@ -62,7 +62,7 @@ const HeroBackground: React.FC<HeroBackgroundProps> = ({
       {/* Background Layer */}
       <motion.div 
         className="absolute inset-0 z-0"
-        style={{ y: scrollY }}
+        style={{ y: scrollY, willChange: 'transform', transform: 'translateZ(0)' }}
       >
         {(backgroundType === 'gradient' || backgroundType === 'warm-gradient' || backgroundType === 'apple-gradient') && (
           <div 

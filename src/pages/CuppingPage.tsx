@@ -79,7 +79,7 @@ const CuppingPage = () => {
         opacity: blackOverlay
       }} />
         
-        <motion.div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{
+        <motion.div className="absolute inset-0 bg-cover bg-center md:bg-fixed" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 100%), url(/lovable-uploads/f24de08b-302e-4c5a-bf63-8aa00555f3d8.png)`
       }} initial={{
         scale: 1.1
