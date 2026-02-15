@@ -200,7 +200,7 @@ function AppleHeroSection() {
                   </HeroSubtitle>
                 </motion.div>
 
-                {/* Clean merged description with background overlay */}
+                {/* Long description - desktop only */}
                 <motion.div initial={{
                 opacity: 0,
                 y: 20
@@ -210,11 +210,27 @@ function AppleHeroSection() {
               }} transition={{
                 duration: 0.6,
                 delay: 0.8
-              }} className="mb-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg max-w-3xl mx-auto">
+              }} className="mb-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg max-w-3xl mx-auto hidden md:block">
                   <BodyText className="text-white/85 text-center" maxLines={6}>
                     Supra Studium nije samo učilište – to je pokret koji oblikuje novu generaciju terapeuta: onih koji znaju, osjećaju i djeluju s jasnoćom i svrhom.
 S više znanja, više prisutnosti i dubljim djelovanjem. Pridruži se edukaciji koja ostavlja trag – u tijelu, umu i zajednici.
                   </BodyText>
+                </motion.div>
+
+                {/* Mobile-only short subtext */}
+                <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.6,
+                delay: 0.8
+              }} className="mb-10 md:hidden">
+                  <p className="text-white/80 text-center text-base leading-relaxed max-w-sm mx-auto">
+                    Certificirane edukacije koje oblikuju novu generaciju terapeuta.
+                  </p>
                 </motion.div>
 
                 {/* CTA Buttons */}
