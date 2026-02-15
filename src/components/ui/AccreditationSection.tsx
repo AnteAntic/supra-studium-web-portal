@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 const AccreditationSection = () => {
-  return <section className="relative py-12 md:py-20 lg:py-28 bg-gradient-to-br from-supra-ivory to-muted/30">
+  return <section className="relative py-8 md:py-20 lg:py-28 bg-gradient-to-br from-supra-ivory to-muted/30">
       {/* Diagonal Background Pattern */}
       <div className="absolute inset-0 pointer-events-none" style={{
       backgroundImage: `repeating-linear-gradient(
@@ -34,29 +34,46 @@ const AccreditationSection = () => {
           delay: 0.2
         }} viewport={{
           once: true
-        }} className="text-center mb-16 md:mb-20">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 md:mb-10">
+          }} className="text-center mb-10 md:mb-20">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 md:mb-10">
               <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-supra-golden to-supra-navy flex items-center justify-center shadow-lg flex-shrink-0">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
               </div>
               <div className="text-center sm:text-left">
-                <h2 className="text-3xl sm:text-4xl md:text-4xl font-playfair font-semibold text-neutral-900 mb-6">
-                  Međunarodna akreditacija, vaša ulaznica u svijet terapija bez granica.
+                <h2 className="text-2xl sm:text-4xl md:text-4xl font-playfair font-semibold text-neutral-900 mb-4 md:mb-6">
+                  <span className="md:hidden">Međunarodno priznata akreditacija</span>
+                  <span className="hidden md:inline">Međunarodna akreditacija, vaša ulaznica u svijet terapija bez granica.</span>
                 </h2>
                 {/* Accent underline */}
                 <div className="w-24 h-1 bg-gradient-to-r from-supra-golden to-supra-golden/60 rounded-full mx-auto sm:mx-0 mt-4 mb-4"></div>
               </div>
             </div>
             
-            <p className="text-lg md:text-xl text-supra-gray max-w-4xl mx-auto leading-relaxed font-medium">
+            <p className="hidden md:block text-lg md:text-xl text-supra-gray max-w-4xl mx-auto leading-relaxed font-medium">
               Jedini u Hrvatskoj s ovakvom razinom priznanja. Naše diplome otvaraju vrata edukacijama i praksi na svjetskom tržištu.
             </p>
+
+            {/* Mobile condensed bullets */}
+            <div className="md:hidden text-left max-w-sm mx-auto space-y-3 mt-4">
+              <div className="flex items-start gap-3">
+                <span className="text-[#a58d4e] mt-0.5">✓</span>
+                <p className="text-sm text-[#221c1b]/80">Partner World Federation of Massage and Manual Therapy</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-[#a58d4e] mt-0.5">✓</span>
+                <p className="text-sm text-[#221c1b]/80">EU priznate diplome – vrijede u cijeloj Europi</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-[#a58d4e] mt-0.5">✓</span>
+                <p className="text-sm text-[#221c1b]/80">Jedini u Hrvatskoj s ovom razinom akreditacije</p>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 items-start">
+          {/* Main Content Grid - desktop only for detailed cards */}
+          <div className="hidden md:grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 items-start">
             
             {/* Left Column - Text Content */}
             <div className="lg:col-span-2 space-y-6 md:space-y-8 lg:space-y-10">
