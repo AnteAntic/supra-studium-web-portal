@@ -69,16 +69,16 @@ const benefits = [{
 export default function ManualTherapySchoolPage() {
   const [heroOpacity, setHeroOpacity] = useState(1);
   const [blackOverlay, setBlackOverlay] = useState(0);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       // Calculate hero opacity based on scroll position
       // Fade out from scroll 0 to 600px
       const scrollY = window.scrollY;
       const fadeDistance = 600;
-      const opacity = Math.max(0, 1 - (scrollY / fadeDistance));
+      const opacity = Math.max(0, 1 - scrollY / fadeDistance);
       setHeroOpacity(opacity);
-      
+
       // Black overlay increases as hero fades
       const blackOpacity = Math.min(1, scrollY / fadeDistance);
       setBlackOverlay(blackOpacity);
@@ -86,29 +86,29 @@ export default function ManualTherapySchoolPage() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return <div className="-mt-20 relative">
       {/* Unified Sticky Bar */}
       <CourseStickyBar
-        locations={[
-          { city: "Rijeka", dates: "18.-19.04.", stage: "4. stupanj" },
-          { city: "Zagreb", dates: "21-22.03.", stage: "3. stupanj" },
-          { city: "Zagreb", dates: "6.–8. 2. 2026.", stage: "1. stupanj" }
-        ]}
-        price="390 €"
-        ctaText="Prijavi se"
-        theme="light"
-      />
+      locations={[
+      { city: "Rijeka", dates: "18.-19.04.", stage: "4. stupanj" },
+      { city: "Zagreb", dates: "21-22.03.", stage: "3. stupanj" },
+      { city: "Zagreb", dates: "6.–8. 2. 2026.", stage: "1. stupanj" }]
+      }
+      price="390 €"
+      ctaText="Prijavi se"
+      theme="light" />
+
 
       {/* Enhanced Hero Section */}
-      <section 
-        className="relative min-h-screen flex items-center overflow-hidden"
-      >
+      <section
+      className="relative min-h-screen flex items-center overflow-hidden">
+
         {/* Black overlay that fades in on scroll */}
-        <div 
-          className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300"
-          style={{ opacity: blackOverlay }}
-        />
+        <div
+        className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300"
+        style={{ opacity: blackOverlay }} />
+
         
         {/* Video Background - Z-index 0 */}
         <video className="absolute inset-0 w-full h-full object-cover z-0" autoPlay muted loop playsInline poster="/lovable-uploads/2ef2738d-0fc6-4dd0-b4ed-be99f3747df4.png">
@@ -1286,9 +1286,9 @@ export default function ManualTherapySchoolPage() {
             }} className="mt-8">
               <Button className="text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg" style={{
                 backgroundColor: '#D4AF37'
-              }} onMouseEnter={e => {
+              }} onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#b9962f';
-              }} onMouseLeave={e => {
+              }} onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = '#D4AF37';
               }} onClick={() => {
                 window.open('https://www.dropbox.com/scl/fi/7tuc5bwo1ogx0nv7ij2fn/Mrsc-Aleksandar-Stosic-drmed-OMT-DO.pdf?rlkey=r241zkyuqnp55fmpq60iyjppa&st=9yb2rksc&dl=1', '_blank');
@@ -1395,9 +1395,9 @@ export default function ManualTherapySchoolPage() {
                   
                   {/* 5 Gold Stars */}
                   <div className="flex gap-1 justify-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]" />
-                    ))}
+                    {[...Array(5)].map((_, i) =>
+                  <Star key={i} className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]" />
+                  )}
                   </div>
                   
                   <blockquote className="text-gray-700 italic mb-6 leading-[1.6]" style={{
@@ -1435,9 +1435,9 @@ export default function ManualTherapySchoolPage() {
                   
                   {/* 5 Gold Stars */}
                   <div className="flex gap-1 justify-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]" />
-                    ))}
+                    {[...Array(5)].map((_, i) =>
+                  <Star key={i} className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]" />
+                  )}
                   </div>
                   
                   <blockquote className="text-gray-700 italic mb-6 leading-[1.6]" style={{
@@ -1475,9 +1475,9 @@ export default function ManualTherapySchoolPage() {
                   
                   {/* 5 Gold Stars */}
                   <div className="flex gap-1 justify-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]" />
-                    ))}
+                    {[...Array(5)].map((_, i) =>
+                  <Star key={i} className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]" />
+                  )}
                   </div>
                   
                   <blockquote className="text-gray-700 italic mb-6 leading-[1.6]" style={{
@@ -1565,12 +1565,12 @@ export default function ManualTherapySchoolPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
               {/* Card 1 - Rijeka */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20"
-              >
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20">
+
                 <div className="flex items-center mb-3" style={{ color: '#b8985f' }}>
                   <MapPin className="w-5 h-5 mr-2" />
                   <span className="font-semibold text-lg">Rijeka</span>
@@ -1584,12 +1584,12 @@ export default function ManualTherapySchoolPage() {
 
               {/* Card 2 - Zagreb MT2 */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20"
-              >
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20">
+
                 <div className="flex items-center mb-3" style={{ color: '#b8985f' }}>
                   <MapPin className="w-5 h-5 mr-2" />
                   <span className="font-semibold text-lg">Zagreb</span>
@@ -1603,12 +1603,12 @@ export default function ManualTherapySchoolPage() {
 
               {/* Card 3 - Zagreb MT1 */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20"
-              >
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20">
+
                 <div className="flex items-center mb-3" style={{ color: '#b8985f' }}>
                   <MapPin className="w-5 h-5 mr-2" />
                   <span className="font-semibold text-lg">Zagreb</span>
@@ -1625,19 +1625,19 @@ export default function ManualTherapySchoolPage() {
             <div className="flex flex-col items-center gap-6 mb-8">
               <div className="flex items-center text-white text-2xl font-bold">
                 <Euro className="w-7 h-7 mr-2" style={{ color: '#b8985f' }} />
-                <span>390 €</span>
+                <span>450 €</span>
               </div>
 
               <motion.div whileHover={{
-                scale: 1.05
-              }} whileTap={{
-                scale: 0.98
-              }}>
-                <Button 
-                  size="lg" 
-                  className="bg-[#d9b67b] hover:bg-[#b8941f] text-white px-12 py-6 text-xl rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-[#d9b67b]/30 transition-all duration-300 border-0" 
-                  onClick={() => window.open('https://tally.so/r/wA5kvD', '_blank')}
-                >
+              scale: 1.05
+            }} whileTap={{
+              scale: 0.98
+            }}>
+                <Button
+                size="lg"
+                className="bg-[#d9b67b] hover:bg-[#b8941f] text-white px-12 py-6 text-xl rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-[#d9b67b]/30 transition-all duration-300 border-0"
+                onClick={() => window.open('https://tally.so/r/wA5kvD', '_blank')}>
+
                   <MapPin className="w-6 h-6 mr-3" />
                   Rezerviraj mjesto
                 </Button>
