@@ -1579,7 +1579,7 @@ export default function ManualTherapySchoolPage() {
                   <Calendar className="w-5 h-5 mr-2" style={{ color: '#b8985f' }} />
                   <span>18.-19.04.</span>
                 </div>
-                <div className="text-[#b8985f] font-bold text-sm">3. stupanj</div>
+                <div className="text-[#b8985f] font-bold text-sm">4. stupanj</div>
               </motion.div>
 
               {/* Card 2 - Zagreb MT2 */}
