@@ -15,7 +15,7 @@ const courses = [
     description: "Naučite profesionalne tehnike manualne terapije kroz progresivni program od osnovnog do naprednog (advanced) stupnja.",
     duration: "98 sati",
     modules: "5 modula",
-    price: "390 € po modulu",
+    price: "450 € po modulu",
     location: "Zagreb, Rijeka, Split, Šibenik, Sarajevo",
     image: "/lovable-uploads/e891ab8a-6399-4ced-acc5-49a45366f6c7.png",
     tags: ["Najpopularniji"],
