@@ -1577,7 +1577,7 @@ export default function ManualTherapySchoolPage() {
                 </div>
                 <div className="flex items-center mb-2 text-white/90">
                   <Calendar className="w-5 h-5 mr-2" style={{ color: '#b8985f' }} />
-                  <span>8.-9.11.</span>
+                  <span>18.-19.04.</span>
                 </div>
                 <div className="text-[#b8985f] font-bold text-sm">3. stupanj</div>
               </motion.div>
