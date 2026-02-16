@@ -1,40 +1,21 @@
 
 
-## Fix Mobile Scroll Flickering
+## Match Mobile Card Style to Desktop
 
-### Problem
-When scrolling on mobile, elements like text boxes, images, and CTA buttons flicker. This is caused by two main issues:
+The mobile cards currently have heavy dark overlays (`from-black/60 via-black/50 to-black/40` plus `backdrop-blur-sm` plus an extra `from-black/40` inner glow), making them much darker than the desktop version. The desktop uses a subtle gold top light + vignette edge overlay and a glassmorphism text panel.
 
-1. **`background-attachment: fixed`** -- This CSS property is notoriously broken on mobile browsers (iOS Safari, Chrome Android). Mobile browsers handle fixed backgrounds differently, causing repaints and visual glitches during scroll.
+### Changes (1 file: `src/components/WhySupraCard.tsx`)
 
-2. **Duplicate React instances** -- Vite may bundle separate copies of React from different dependencies, causing hooks to malfunction and trigger unnecessary re-renders.
+**Remove the two mobile-only dark overlays** (lines 26 and 29) and replace them with the same gold top light + vignette overlay used on desktop (currently hidden on mobile via `hidden md:block`).
 
-### Solution
+**Replace the mobile plain text block** (lines 51-56) with the same glassmorphism panel used on desktop (`backdrop-blur-md bg-white/10 border border-white/10 rounded-lg`), just slightly smaller padding/font for mobile.
 
-#### 1. Remove `background-attachment: fixed` on mobile (4 files)
-Replace all `backgroundAttachment: "fixed"` with responsive behavior that only applies on desktop. On mobile, the background will simply scroll normally (no visual difference to the user, but eliminates flickering).
+Specifically:
+- Remove `md:hidden` dark overlay divs (lines 26, 29)
+- Change the desktop overlay div (line 33) from `hidden md:block` to always visible (remove those classes)
+- Change the desktop glass panel (line 43) from `hidden md:block` to always visible
+- Remove the mobile-only content div (lines 51-56) since the glass panel will now serve both
+- Adjust glass panel text sizes: `text-lg md:text-xl` for title, keep `text-sm` for description
 
-**Files to update:**
-- `src/pages/LomiLomiPage.tsx` (2 occurrences)
-- `src/pages/CalabashCertificationPage.tsx` (2 occurrences)
-- `src/pages/CrossfrictionPage.tsx` (1 occurrence)
-- `src/pages/RasporedPage.tsx` (1 occurrence)
-
-For each, change the inline `backgroundAttachment: "fixed"` to use a CSS class that only applies `background-attachment: fixed` on `md:` screens and above (via Tailwind), or remove it entirely and use `bg-scroll` on mobile.
-
-#### 2. Add React deduplication in Vite config (1 file)
-**File: `vite.config.ts`**
-Add `resolve.dedupe: ["react", "react-dom", "react/jsx-runtime"]` to prevent multiple React instances from being bundled, which can cause hooks to misfire and trigger flickering re-renders.
-
-#### 3. Add GPU acceleration hints to animated elements
-Add `will-change: transform` and `transform: translateZ(0)` (hardware acceleration) to the hero parallax containers in `AppleHeroSection.tsx` and `HeroSection.tsx` to ensure smooth compositing on mobile GPUs.
-
-### Summary of Changes
-- **`vite.config.ts`** -- Add `dedupe` for React
-- **`src/pages/LomiLomiPage.tsx`** -- Remove fixed background on mobile
-- **`src/pages/CalabashCertificationPage.tsx`** -- Remove fixed background on mobile
-- **`src/pages/CrossfrictionPage.tsx`** -- Remove fixed background on mobile
-- **`src/pages/RasporedPage.tsx`** -- Remove fixed background on mobile
-- **`src/components/ui/AppleHeroSection.tsx`** -- Add GPU acceleration hints
-- **`src/components/ui/HeroSection.tsx`** -- Add GPU acceleration hints
+No changes to the horizontal slider, section layout, or text content.
 
