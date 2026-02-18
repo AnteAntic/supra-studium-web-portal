@@ -17,6 +17,7 @@ interface CourseStickyBarProps {
   fallbackText?: string;
   theme?: 'light' | 'dark';
   className?: string;
+  soldOut?: boolean;
 }
 
 export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
@@ -26,7 +27,8 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
   ctaHref = "#enrollment",
   fallbackText,
   theme = 'light',
-  className = ""
+  className = "",
+  soldOut = false
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -43,13 +45,14 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
   }, []);
 
   const scrollToCTA = () => {
-    if (ctaHref.startsWith('#')) {
-      const element = document.getElementById(ctaHref.replace('#', ''));
+    const target = soldOut ? '#kontakt' : ctaHref;
+    if (target.startsWith('#')) {
+      const element = document.getElementById(target.replace('#', ''));
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      window.location.href = ctaHref;
+      window.location.href = target;
     }
   };
 
@@ -105,6 +108,11 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
                     </>
                   )}
                 </span>
+                {soldOut && (
+                  <span className="ml-2 inline-flex items-center rounded-full bg-red-600 px-2 py-0.5 text-[10px] font-bold uppercase text-white tracking-wide">
+                    Rasprodano
+                  </span>
+                )}
               </div>
             ))}
           </div>
@@ -114,7 +122,13 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
             size="sm"
             onClick={scrollToCTA}
             className="transition-all duration-200 font-medium px-6 py-2 rounded-full"
-            style={{
+            style={soldOut ? {
+              backgroundColor: 'transparent',
+              color: '#b8985f',
+              fontWeight: 500,
+              border: '2px solid #b8985f',
+              boxShadow: 'none'
+            } : {
               backgroundColor: '#b8985f',
               color: '#FFFFFF',
               fontWeight: 500,
@@ -122,16 +136,26 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#a17d4a';
-              e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.15)';
+              if (soldOut) {
+                e.currentTarget.style.backgroundColor = '#b8985f';
+                e.currentTarget.style.color = '#FFFFFF';
+              } else {
+                e.currentTarget.style.backgroundColor = '#a17d4a';
+                e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.15)';
+              }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#b8985f';
-              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+              if (soldOut) {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#b8985f';
+              } else {
+                e.currentTarget.style.backgroundColor = '#b8985f';
+                e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+              }
             }}
-            aria-label="Prijavi se na tečaj"
+            aria-label={soldOut ? "Obavijesti me za sljedeći termin" : "Prijavi se na tečaj"}
           >
-            Prijavi se
+            {soldOut ? 'Obavijesti me' : 'Prijavi se'}
           </Button>
         </div>
 
@@ -173,6 +197,11 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
               >
                 <div className="text-xs font-medium" style={{ color: '#222222' }}>
                   📍 <span style={{ color: '#b8985f', fontWeight: 500 }}>{location.city}</span>
+                  {soldOut && (
+                    <span className="ml-2 inline-flex items-center rounded-full bg-red-600 px-1.5 py-0.5 text-[9px] font-bold uppercase text-white tracking-wide">
+                      Rasprodano
+                    </span>
+                  )}
                 </div>
                 <div className="text-xs mt-1" style={{ color: '#b8985f', fontWeight: 500 }}>
                   {location.dates}
@@ -207,21 +236,21 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
             size="sm"
             onClick={scrollToCTA}
             className="w-full mt-2 transition-all duration-200 font-medium rounded-full"
-            style={{
+            style={soldOut ? {
+              backgroundColor: 'transparent',
+              color: '#b8985f',
+              fontWeight: 500,
+              border: '2px solid #b8985f',
+              boxShadow: 'none'
+            } : {
               backgroundColor: '#b8985f',
               color: '#FFFFFF',
               fontWeight: 500,
               border: 'none',
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#a17d4a';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#b8985f';
-            }}
           >
-            Prijavi se
+            {soldOut ? 'Obavijesti me' : 'Prijavi se'}
           </Button>
         </div>
       </div>

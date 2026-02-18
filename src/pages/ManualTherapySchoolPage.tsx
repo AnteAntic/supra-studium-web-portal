@@ -97,7 +97,8 @@ export default function ManualTherapySchoolPage() {
       }
       price="390 €"
       ctaText="Prijavi se"
-      theme="light" />
+      theme="light"
+      soldOut={true} />
 
 
       {/* Enhanced Hero Section */}
@@ -234,16 +235,12 @@ export default function ManualTherapySchoolPage() {
             delay: 0.8,
             duration: 0.8
           }} className="mb-10 md:mb-12 relative z-[3]">
-                <div className="backdrop-blur-xl bg-white/10 border border-[#D4AF37]/40 rounded-full px-6 md:px-8 py-3 md:py-4 max-w-2xl mx-auto hover:bg-white/15 transition-all duration-300">
+                <div className="backdrop-blur-xl bg-white/10 border border-red-400/40 rounded-full px-6 md:px-8 py-3 md:py-4 max-w-2xl mx-auto">
                   <div className="flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-[#D4AF37] mr-3 md:mr-4 animate-pulse flex-shrink-0"></div>
-                    <div className="overflow-hidden">
-                      <div className="ticker-content text-white font-medium text-sm md:text-base">
-                        <span className="ticker-item">Znanje koje se prenosi generacijama.</span>
-                        <span className="ticker-item">Metoda priznata od europskih federacija.</span>
-                        <span className="ticker-item">Praktične vještine koje odmah koristiš u radu.</span>
-                      </div>
-                    </div>
+                    <div className="w-2 h-2 rounded-full bg-red-500 mr-3 md:mr-4 animate-pulse flex-shrink-0"></div>
+                    <p className="text-white font-medium text-sm md:text-base">
+                      Svi termini su trenutno rasprodani. <a href="#kontakt" onClick={(e) => { e.preventDefault(); document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' }); }} className="underline underline-offset-2 hover:text-[#d9b67b] transition-colors">Kontaktirajte nas</a> za obavijest o novim datumima.
+                    </p>
                   </div>
                 </div>
             </motion.div>
@@ -1569,7 +1566,13 @@ export default function ManualTherapySchoolPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20">
+              className="relative bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 overflow-hidden">
+                {/* RASPRODANO stamp */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 z-10 pointer-events-none">
+                  <div className="bg-red-600/90 text-white font-bold uppercase text-sm tracking-wider px-4 py-1 rounded border-2 border-white shadow-lg">
+                    Rasprodano
+                  </div>
+                </div>
 
                 <div className="flex items-center mb-3" style={{ color: '#b8985f' }}>
                   <MapPin className="w-5 h-5 mr-2" />
@@ -1588,7 +1591,13 @@ export default function ManualTherapySchoolPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20">
+              className="relative bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 overflow-hidden">
+                {/* RASPRODANO stamp */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 z-10 pointer-events-none">
+                  <div className="bg-red-600/90 text-white font-bold uppercase text-sm tracking-wider px-4 py-1 rounded border-2 border-white shadow-lg">
+                    Rasprodano
+                  </div>
+                </div>
 
                 <div className="flex items-center mb-3" style={{ color: '#b8985f' }}>
                   <MapPin className="w-5 h-5 mr-2" />
@@ -1601,13 +1610,18 @@ export default function ManualTherapySchoolPage() {
                 <div className="text-[#b8985f] font-bold text-sm">3. stupanj</div>
               </motion.div>
 
-              {/* Card 3 - Zagreb MT1 */}
               <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 hover:bg-white/15 hover:border-[#b8985f]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#b8985f]/20">
+              className="relative bg-white/10 backdrop-blur-md border border-[#b8985f]/30 rounded-2xl p-6 overflow-hidden">
+                {/* RASPRODANO stamp */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 z-10 pointer-events-none">
+                  <div className="bg-red-600/90 text-white font-bold uppercase text-sm tracking-wider px-4 py-1 rounded border-2 border-white shadow-lg">
+                    Rasprodano
+                  </div>
+                </div>
 
                 <div className="flex items-center mb-3" style={{ color: '#b8985f' }}>
                   <MapPin className="w-5 h-5 mr-2" />
@@ -1635,13 +1649,14 @@ export default function ManualTherapySchoolPage() {
             }}>
                 <Button
                 size="lg"
-                className="bg-[#d9b67b] hover:bg-[#b8941f] text-white px-12 py-6 text-xl rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-[#d9b67b]/30 transition-all duration-300 border-0"
-                onClick={() => window.open('https://tally.so/r/wA5kvD', '_blank')}>
-
-                  <MapPin className="w-6 h-6 mr-3" />
-                  Rezerviraj mjesto
+                className="border-2 border-[#d9b67b] bg-transparent hover:bg-[#d9b67b] text-[#d9b67b] hover:text-white px-12 py-6 text-xl rounded-3xl shadow-xl transition-all duration-300"
+                onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}>
+                  Obavijesti me za sljedeći termin
                 </Button>
               </motion.div>
+              <p className="text-white/60 text-sm mt-4 max-w-md mx-auto text-center">
+                Ostavite nam kontakt podatke i javit ćemo vam se čim otvorimo novi termin.
+              </p>
             </div>
           </motion.div>
         </div>
