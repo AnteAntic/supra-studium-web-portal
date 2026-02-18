@@ -1,21 +1,41 @@
 
 
-## Match Mobile Card Style to Desktop
+## "Rasprodano" pečat na sve termine + obavijest za sljedeći tečaj
 
-The mobile cards currently have heavy dark overlays (`from-black/60 via-black/50 to-black/40` plus `backdrop-blur-sm` plus an extra `from-black/40` inner glow), making them much darker than the desktop version. The desktop uses a subtle gold top light + vignette edge overlay and a glassmorphism text panel.
+### Sto se mijenja
 
-### Changes (1 file: `src/components/WhySupraCard.tsx`)
+Na stranici `/skola-manualne-terapije` sva tri termina su rasprodana. Potrebno je to jasno vizualno prikazati na tri mjesta:
 
-**Remove the two mobile-only dark overlays** (lines 26 and 29) and replace them with the same gold top light + vignette overlay used on desktop (currently hidden on mobile via `hidden md:block`).
+1. **Sticky bar (gornja traka)** -- dodati "RASPRODANO" badge pored svakog termina i promijeniti CTA gumb iz "Prijavi se" u "Obavijesti me"
+2. **Hero ticker** -- zamijeniti rotirajuće poruke s jednom jasnom porukom: "Svi termini su rasprodani -- prijavite se za obavijest o novim datumima"
+3. **Enrollment sekcija (dolje)** -- dodati crveni "RASPRODANO" pečat dijagonalno preko svake kartice termina, promijeniti CTA gumb u "Obavijesti me za sljedeći termin" koji scrolla do kontakt sekcije
 
-**Replace the mobile plain text block** (lines 51-56) with the same glassmorphism panel used on desktop (`backdrop-blur-md bg-white/10 border border-white/10 rounded-lg`), just slightly smaller padding/font for mobile.
+### Detalji implementacije
 
-Specifically:
-- Remove `md:hidden` dark overlay divs (lines 26, 29)
-- Change the desktop overlay div (line 33) from `hidden md:block` to always visible (remove those classes)
-- Change the desktop glass panel (line 43) from `hidden md:block` to always visible
-- Remove the mobile-only content div (lines 51-56) since the glass panel will now serve both
-- Adjust glass panel text sizes: `text-lg md:text-xl` for title, keep `text-sm` for description
+#### 1. CourseStickyBar -- nova `soldOut` prop (src/components/ui/CourseStickyBar.tsx)
+- Dodati `soldOut?: boolean` prop na interface
+- Kad je `soldOut=true`:
+  - Pored svakog termina prikazati mali crveni badge "Rasprodano"
+  - CTA gumb mijenja tekst u "Obavijesti me" i scrolla na `#kontakt` (ContactFooter)
+  - Gumb dobiva outline stil umjesto pune gold boje
 
-No changes to the horizontal slider, section layout, or text content.
+#### 2. ManualTherapySchoolPage -- tri promjene (src/pages/ManualTherapySchoolPage.tsx)
+- **Sticky bar**: dodati `soldOut={true}` prop
+- **Hero ticker (linija ~237-249)**: zamijeniti tri ticker poruke jednom statičnom porukom: "Svi termini su trenutno rasprodani. Kontaktirajte nas za obavijest o novim datumima."
+- **Enrollment kartice (linija ~1565-1622)**: svaka od 3 kartice dobiva crveni dijagonalni "RASPRODANO" pečat (apsolutno pozicioniran, rotiran -15deg, crveni tekst s bordurom)
+- **Enrollment CTA (linija ~1636-1643)**: "Rezerviraj mjesto" mijenja se u "Obavijesti me za sljedeći termin" i umjesto otvaranja Tally forme scrolla na ContactFooter sekciju
+- Dodati kratku poruku ispod CTA-a: "Ostavite nam kontakt podatke i javit cemo vam se cim otvorimo novi termin."
+
+#### 3. Vizualni stil pecata
+- Pozadina: `bg-red-600/90`
+- Tekst: bijeli, bold, uppercase
+- Rotacija: `-rotate-12`
+- Pozicija: apsolutno centriran na kartici
+- Border: `border-2 border-white`
+- Padding: `px-4 py-1`
+- Zaobljeni kutovi
+
+### Datoteke koje se mijenjaju
+- `src/components/ui/CourseStickyBar.tsx` -- nova `soldOut` prop + badge + promjena CTA
+- `src/pages/ManualTherapySchoolPage.tsx` -- aktivirati `soldOut`, promijeniti ticker, dodati pecate, promijeniti enrollment CTA
 
