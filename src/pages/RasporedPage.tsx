@@ -15,14 +15,9 @@ const courses = [{
   location: 'Udruga Eterico',
   address: 'Ulica dr. Zdravka Kučića 39',
   courses: [{
-    name: 'Praktična radionica za Manualnu terapiju (drugi stupanj)',
-    dates: 'Petak, 7. studeni 2025. | 16:00 – 20:00',
-    price: '50 €',
-    time: '16:00 – 20:00'
-  }, {
-    name: 'Manualna terapija – 3. stupanj',
-    dates: '8. i 9. studeni 2025.',
-    price: '390 €'
+    name: 'Manualna terapija – 4. stupanj',
+    dates: '18. i 19. travanj 2026.',
+    price: '450 €'
   }]
 }, {
   city: 'Zagreb',
@@ -30,29 +25,9 @@ const courses = [{
   address: 'Ulica Frane Kesterčaneka 2b',
   courses: [{
     name: 'Akupresura & Trigger Point terapija',
-    dates: '14., 15. i 16. studeni 2025.',
+    dates: '27-29.03.2026',
+    startDate: '27.03.2026',
     price: '390 € (early bird); 460 € (redovna cijena)'
-  }, {
-    name: 'Praktična radionica za Manualnu terapiju (prvi stupanj)',
-    dates: 'Petak, 21. studeni 2025. | 16:00 – 20:00',
-    price: '50 €',
-    time: '16:00 – 20:00'
-  }, {
-    name: 'Manualna terapija – 2. stupanj',
-    dates: '22. i 23. studeni 2025.',
-    price: '390 €'
-  }, {
-    name: 'Cross Friction & Funkcionalna masaža – 2. stupanj (vrat, rame, gornji ud)',
-    dates: '6. i 7. prosinac 2025.',
-    price: '390 € – 460 €'
-  }, {
-    name: 'Cupping terapija s uvodom u TCM – jednodnevni seminar',
-    dates: 'Nedjelja, 1. veljača 2026.',
-    price: '300 € (early bird); 360 € (redovna cijena)'
-  }, {
-    name: 'Manualna terapija – 1. stupanj',
-    dates: '6., 7. i 8. veljača 2026.',
-    price: '390 €'
   }],
   note: 'Lomi Lomi masaža (Zagreb) – u izradi, termin će biti objavljen uskoro.'
 }, {
@@ -60,9 +35,10 @@ const courses = [{
   location: 'Maxi Dance Studio',
   address: 'Ulica Frane Kesterčaneka 2',
   courses: [{
-    name: 'Kalabaš masaža',
-    dates: '22. i 23. studeni 2025.',
-    price: '450 € (early bird); 500 € (redovna cijena)'
+    name: 'Lomi Lomi Masaža',
+    dates: '18. i 19. travanj 2026.',
+    price: '450 € / modul',
+    discount: 'Popust 120 € pri upisu oba modula unaprijed'
   }]
 }, {
   city: 'Slavonski Brod',
@@ -70,17 +46,8 @@ const courses = [{
   address: 'Ulica Slavonija 1',
   courses: [{
     name: 'Akupresura & Trigger Point terapija',
-    dates: '12., 13. i 14. prosinac 2025.',
+    dates: '27-29.03.2026',
     price: '390 € (early bird); 460 € (redovna cijena)'
-  }]
-}, {
-  city: 'Split',
-  location: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović',
-  address: 'Žnjanska 6',
-  courses: [{
-    name: 'Cross Friction & Funkcionalna masaža – 1. stupanj (križobolja)',
-    dates: '24. i 25. siječanj 2026.',
-    price: '390 € – 460 €'
   }]
 }];
 const locations = [{
@@ -215,6 +182,13 @@ export default function RasporedPage() {
           return new Date(year, month, day);
         }
       }
+
+      // Try DD.MM.YYYY numeric format (e.g. '27.03.2026')
+      match = dateStr.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+      if (match) {
+        return new Date(parseInt(match[3]), parseInt(match[2]) - 1, parseInt(match[1]));
+      }
+
       return null;
     };
     const formatDate = (dateStr: string): string => {
@@ -227,10 +201,11 @@ export default function RasporedPage() {
     now.setHours(0, 0, 0, 0);
     courses.forEach(location => {
       location.courses.forEach(course => {
-        const sortDate = parseDate(course.dates);
+        const dateForParsing = (course as any).startDate || course.dates;
+        const sortDate = parseDate(dateForParsing);
         if (sortDate && sortDate >= now) {
           events.push({
-            date: formatDate(course.dates),
+            date: formatDate(dateForParsing),
             city: location.city,
             courseName: course.name,
             price: course.price,
