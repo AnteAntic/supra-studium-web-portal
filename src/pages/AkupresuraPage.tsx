@@ -293,24 +293,24 @@ const AkupresuraPage = () => {
 
       <CourseHighlights items={[{
       icon: "🏆",
-      title: "24",
-      subtitle: "Sata znanja",
-      small: "Certifikat koji vrijedi - i u praksi i na papiru"
+      title: "24 sata",
+      subtitle: "edukacije",
+      small: "Intenzivan program fokusiran na praktične terapijske tehnike."
     }, {
       icon: "📅",
-      title: "3",
-      subtitle: "Dana programa",
-      small: "2 filozofije. 1 cilj: rješenje boli koje traje"
+      title: "3 dana",
+      subtitle: "praktičnog treninga",
+      small: "Uči kroz demonstracije, vježbu i rad na stvarnim primjerima."
     }, {
       icon: "🎯",
       title: "85%",
-      subtitle: "Uspješnost",
-      small: "Boli nestaje kad pritisneš pravo mjesto"
+      subtitle: "uspješnosti terapije",
+      small: "Kod pravilne primjene trigger point metode."
     }, {
       icon: "⚡️",
-      title: "90",
-      subtitle: "Sekundi",
-      small: "Bez nagađanja. Samo precizna terapija"
+      title: "90 sekundi",
+      subtitle: "do olakšanja",
+      small: "Pronađi točku boli i riješi uzrok, ne samo simptom."
     }]} accentIndex={1} bg="dark" />
 
       {/* New Premium Section - Od točke do olakšanja */}
@@ -370,7 +370,7 @@ const AkupresuraPage = () => {
             }} className="text-xl text-gray-600 mb-10 max-w-2xl leading-relaxed" style={{
               fontFamily: 'Inter, sans-serif'
             }}>
-                Akupresura i trigger point terapija spajaju drevne istočnjačke mudrosti i moderne zapadne prakse za brzo i trajno rješavanje miofascijalne boli. Ne boli.
+                Akupresura i trigger point terapija spajaju drevne istočnjačke mudrosti i moderne zapadne prakse za brzo i trajno rješavanje miofascijalne boli.
               </motion.p>
 
               {/* CTA Buttons */}
