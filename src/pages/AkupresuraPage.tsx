@@ -177,7 +177,7 @@ const AkupresuraPage = () => {
             <div className="mx-auto max-w-4xl relative w-full text-center">
               {/* Transparent Content Box */}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg">
-                {/* Micro Badge */}
+                {/* Micro Badge - Small label */}
                 <motion.div initial={{
                 opacity: 0,
                 scale: 0.9
@@ -187,11 +187,11 @@ const AkupresuraPage = () => {
               }} transition={{
                 delay: 0.2,
                 duration: 0.6
-              }} className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-[#d4af37]/20 border border-[#d4af37]/30 rounded-full backdrop-blur-sm">
-                  <span className="text-[#d4af37] font-bold text-sm uppercase tracking-wide">Novo izdanje 2025.</span>
+              }} className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#d4af37]/20 border border-[#d4af37]/30 rounded-full backdrop-blur-sm">
+                  <span className="text-[#d4af37] font-bold text-sm uppercase tracking-wide">Akupresura & Trigger Point Terapija</span>
                 </motion.div>
 
-                {/* Main Title with Shimmer */}
+                {/* Main Title with Shimmer - Two-line structure */}
                 <motion.div initial={{
                 opacity: 0,
                 y: 30
@@ -206,10 +206,10 @@ const AkupresuraPage = () => {
                     <span className="block font-playfair font-normal text-white/90 drop-shadow-lg text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-2 tracking-wide" style={{
                     textShadow: '0 4px 8px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3)'
                   }}>
-                      Edukacija
+                      Tehnika koja donosi
                     </span>
                     <TextShimmer className="font-playfair font-bold text-white drop-shadow-xl tracking-wide text-shadow-lg relative z-[4] [--base-gradient-color:#ffd700] [--base-color:#ffffff] [text-shadow:0_6px_12px_rgba(0,0,0,0.6),0_3px_6px_rgba(0,0,0,0.4),0_1px_3px_rgba(0,0,0,0.3)]" duration={2.5} spread={3}>
-                      AKUPRESURA & TRIGGER POINT TERAPIJA
+                      OLAKŠANJE U 90 SEKUNDI
                     </TextShimmer>
                   </div>
                 </motion.div>
@@ -225,13 +225,13 @@ const AkupresuraPage = () => {
                 delay: 0.6,
                 duration: 0.6
               }} className="mb-6">
-                  <h2 className="text-[clamp(20px,3vw,28px)] leading-relaxed tracking-wide font-medium text-[#d4af37] text-center drop-shadow-md">
-                    Nauči precizno uklanjati bol u vratu i leđima u 90 sekundi
+                  <h2 className="text-[clamp(18px,2.8vw,26px)] leading-relaxed tracking-wide font-medium text-[#d4af37] text-center drop-shadow-md">
+                    Sistemski pristup koji donosi ponovljive rezultate – već od prvog tretmana
                   </h2>
                 </motion.div>
 
-                {/* Description */}
-                <motion.p initial={{
+                {/* Key Benefits - Compact single line */}
+                <motion.div initial={{
                 opacity: 0,
                 y: 30
               }} animate={{
@@ -240,14 +240,43 @@ const AkupresuraPage = () => {
               }} transition={{
                 delay: 0.8,
                 duration: 0.8
-              }} className="text-lg md:text-xl mb-8 text-white/90 max-w-4xl mx-auto leading-relaxed text-center" style={{
-                fontFamily: 'Inter, sans-serif',
-                textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
-              }}>
-                  ✔ 2 dana intenzivne praktične edukacije<br/>
-                  ✔ Tehnike koje odmah koristiš u praksi<br/>
-                  ✔ Certifikat + 3 mjeseca mentorstva
-                </motion.p>
+              }} className="mb-8">
+                  <div className="inline-flex flex-wrap justify-center gap-4 md:gap-6 text-white/90 text-sm md:text-base font-medium px-4">
+                    <span className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-[#d4af37]" />
+                      3 dana edukacije
+                    </span>
+                    <span className="hidden sm:inline text-white/40">•</span>
+                    <span className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-[#d4af37]" />
+                      Instant primjena
+                    </span>
+                    <span className="hidden sm:inline text-white/40">•</span>
+                    <span className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-[#d4af37]" />
+                      Certifikat
+                    </span>
+                  </div>
+                </motion.div>
+
+                {/* Urgency Info - Limited Spots */}
+                <motion.div initial={{
+                opacity: 0,
+                scale: 0.95
+              }} animate={{
+                opacity: 1,
+                scale: 1
+              }} transition={{
+                delay: 1.0,
+                duration: 0.6
+              }} className="mb-6">
+                  <div className="inline-flex items-center gap-3 bg-red-500/90 backdrop-blur-sm px-6 py-3 rounded-full border border-red-400/50">
+                    <Users className="w-5 h-5 text-white" />
+                    <span className="text-white font-bold text-base">
+                      ⚠️ Ostala samo 4 mjesta!
+                    </span>
+                  </div>
+                </motion.div>
 
                 {/* CTA Buttons */}
                 <motion.div initial={{
@@ -265,9 +294,10 @@ const AkupresuraPage = () => {
                 }} whileTap={{
                   scale: 0.98
                 }}>
-                    <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0" onClick={scrollToPricing}>
-                      👉 Rezerviraj svoje mjesto sada
+                    <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-black px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0" onClick={scrollToPricing}>
+                      Osiguraj mjesto - 450€
                     </Button>
+                    <p className="text-white/70 text-xs mt-2 text-center">24h praktične edukacije</p>
                   </motion.div>
                   
                   <motion.div whileHover={{
@@ -291,7 +321,7 @@ const AkupresuraPage = () => {
       <CourseStickyBar locations={[{
       city: "Zagreb",
       dates: "27.–29. 03. 2026."
-    }]} price="Early bird cijena: 390 €" ctaText="Prijavi se" theme="light" />
+    }]} price="450 € • Samo 4 mjesta!" ctaText="Prijavi se" theme="light" />
 
       <CourseHighlights items={[{
       icon: "🏆",
@@ -351,9 +381,9 @@ const AkupresuraPage = () => {
             }} className="text-5xl lg:text-6xl font-bold mb-8 leading-tight" style={{
               fontFamily: 'Playfair Display, serif'
             }}>
-                Tehnika koja donosi{' '}
+                Nauči precizno uklanjati{' '}
                 <span className="bg-gradient-to-r from-gray-900 via-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
-                  olakšanje
+                  bol u vratu i leđima
                 </span>{' '}
                 u 90 sekundi
               </motion.h2>
@@ -427,8 +457,8 @@ const AkupresuraPage = () => {
               }} whileTap={{
                 scale: 0.98
               }} className="relative group">
-                  <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0 group-hover:animate-pulse" onClick={scrollToPricing}>
-                    Upiši – iskoristi early bird popust 390 €
+                  <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-black px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0 group-hover:animate-pulse" onClick={scrollToPricing}>
+                    Osiguraj mjesto - 450€
                   </Button>
                   <div className="absolute inset-0 rounded-2xl bg-[#d4af37] blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10" />
                 </motion.div>
