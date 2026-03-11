@@ -226,7 +226,7 @@ const AkupresuraPage = () => {
                 duration: 0.6
               }} className="mb-6">
                   <h2 className="text-[clamp(20px,3vw,28px)] leading-relaxed tracking-wide font-medium text-[#d4af37] text-center drop-shadow-md">
-                    Moć dodira koji liječi – spoj tradicije i suvremene znanosti
+                    Nauči precizno uklanjati bol u vratu i leđima u 90 sekundi
                   </h2>
                 </motion.div>
 
@@ -244,7 +244,9 @@ const AkupresuraPage = () => {
                 fontFamily: 'Inter, sans-serif',
                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
               }}>
-                  Akupresura i trigger point terapija spajaju istočnu mudrost i zapadnu preciznost. Kroz ovu edukaciju naučit ćeš prepoznati i tretirati skrivene izvore boli, vratiti slobodu pokreta i pomoći tijelu da se samo regenerira.
+                  ✔ 2 dana intenzivne praktične edukacije<br/>
+                  ✔ Tehnike koje odmah koristiš u praksi<br/>
+                  ✔ Certifikat + 3 mjeseca mentorstva
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -264,7 +266,7 @@ const AkupresuraPage = () => {
                   scale: 0.98
                 }}>
                     <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0" onClick={scrollToPricing}>
-                      Upiši seminar
+                      👉 Rezerviraj svoje mjesto sada
                     </Button>
                   </motion.div>
                   
@@ -349,14 +351,14 @@ const AkupresuraPage = () => {
             }} className="text-5xl lg:text-6xl font-bold mb-8 leading-tight" style={{
               fontFamily: 'Playfair Display, serif'
             }}>
-                Od točke do{' '}
+                Tehnika koja donosi{' '}
                 <span className="bg-gradient-to-r from-gray-900 via-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
-                  olakšanja
+                  olakšanje
                 </span>{' '}
                 u 90 sekundi
               </motion.h2>
 
-              <motion.p initial={{
+              <motion.div initial={{
               opacity: 0,
               y: 30
             }} whileInView={{
@@ -367,11 +369,45 @@ const AkupresuraPage = () => {
               delay: 0.2
             }} viewport={{
               once: true
-            }} className="text-xl text-gray-600 mb-10 max-w-2xl leading-relaxed" style={{
+            }} className="mb-10 max-w-2xl space-y-6" style={{
               fontFamily: 'Inter, sans-serif'
             }}>
-                Akupresura i trigger point terapija spajaju drevne istočnjačke mudrosti i moderne zapadne prakse za brzo i trajno rješavanje miofascijalne boli.
-              </motion.p>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Sustavna i precizna metoda koja ti omogućuje da pouzdano identificiraš izvor boli i interveniraš s jasnoćom, sigurnošću i kontrolom.
+                </p>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  U tri dana intenzivnog praktičnog rada savladat ćeš protokole koji donose mjerljive rezultate – već tijekom tretmana.
+                </p>
+                <p className="text-xl text-gray-700 leading-relaxed font-semibold">
+                  Ovo nije još jedna radionica o bolnim točkama. Ovo je strukturirani pristup koji podiže razinu tvoje terapijske prakse.
+                </p>
+                
+                <div className="mt-8 pt-8 border-t border-gray-200">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6" style={{
+                    fontFamily: 'Playfair Display, serif'
+                  }}>
+                    Za koga je ova edukacija?
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-6 h-6 text-[#d4af37] mt-1 flex-shrink-0" />
+                      <span className="text-lg text-gray-700">Za terapeute koji žele raditi precizno, a ne nasumično</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-6 h-6 text-[#d4af37] mt-1 flex-shrink-0" />
+                      <span className="text-lg text-gray-700">Za profesionalce koji žele stabilne i ponovljive rezultate</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-6 h-6 text-[#d4af37] mt-1 flex-shrink-0" />
+                      <span className="text-lg text-gray-700">Za one koji žele diferencijaciju temeljenu na znanju, ne marketingu</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-6 h-6 text-[#d4af37] mt-1 flex-shrink-0" />
+                      <span className="text-lg text-gray-700">Za terapeute koji žele veći profesionalni autoritet i sigurnost u radu</span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
 
               {/* CTA Buttons */}
               <motion.div initial={{
@@ -455,138 +491,6 @@ const AkupresuraPage = () => {
       background: '#FFFDF9'
     }}>
         <div className="max-w-6xl mx-auto px-6">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.4
-        }} viewport={{
-          once: true
-        }}>
-            <div className="backdrop-blur-[12px] bg-white/70 border border-[#EADFC9] rounded-2xl p-16 shadow-xl hover:shadow-2xl transition-all duration-300" style={{
-            boxShadow: '0 8px 30px rgba(0,0,0,0.06), 0 2px 8px rgba(200,162,74,0.1)'
-          }}>
-              <div className="grid md:grid-cols-2 gap-16 items-start">
-                {/* Text Content - Left */}
-                <div className="space-y-8">
-                  <motion.h2 initial={{
-                  opacity: 0,
-                  y: 20
-                }} whileInView={{
-                  opacity: 1,
-                  y: 0
-                }} transition={{
-                  duration: 0.4,
-                  delay: 0.1
-                }} viewport={{
-                  once: true
-                }} className="text-5xl font-extrabold text-gray-900 mb-6 relative leading-tight" style={{
-                  fontFamily: 'Playfair Display, serif'
-                }}>
-                    👉 Kombinacija znanosti i tradicije koja donosi rezultate
-                    
-                    {/* Animated gold accent line */}
-                    <motion.div initial={{
-                    width: 0
-                  }} whileInView={{
-                    width: '80px'
-                  }} transition={{
-                    duration: 0.6,
-                    delay: 0.3
-                  }} viewport={{
-                    once: true
-                  }} className="h-1 bg-gradient-to-r from-[#d4af37] to-[#c19b2a] mt-5" />
-                  </motion.h2>
-                  
-                  <motion.div initial={{
-                  opacity: 0,
-                  y: 20
-                }} whileInView={{
-                  opacity: 1,
-                  y: 0
-                }} transition={{
-                  duration: 0.4,
-                  delay: 0.2
-                }} viewport={{
-                  once: true
-                }} className="space-y-6">
-                    <p className="text-base text-gray-700 leading-loose" style={{
-                    fontFamily: 'Inter, sans-serif',
-                    lineHeight: '1.8'
-                  }}>
-                      Čak <span className="font-bold text-[#d4af37] text-xl">85%</span> kroničnih bolova ima korijen u mišićno-fascijalnim disfunkcijama. Na ovoj edukaciji naučit ćete kako prepoznati i ukloniti uzrok boli kroz <span className="font-semibold text-[#d4af37]">precizan pritisak</span> i <span className="font-semibold text-[#d4af37]">dijagnostiku</span>.
-                    </p>
-                    <p className="text-base text-gray-700 leading-loose" style={{
-                    fontFamily: 'Inter, sans-serif',
-                    lineHeight: '1.8'
-                  }}>
-                      Tri dana rada spojit će dvije filozofije – <span className="font-semibold text-[#d4af37]">istočnu akupresuru</span> i <span className="font-semibold text-[#d4af37]">zapadni trigger point</span> – u snažan pristup tretiranju glavobolja, bolova u vratu, ramenima, leđima, križima, glutealnoj regiji i stopalima.
-                    </p>
-                  </motion.div>
-
-                  {/* CTA Block */}
-                  <motion.div initial={{
-                  opacity: 0,
-                  y: 20
-                }} whileInView={{
-                  opacity: 1,
-                  y: 0
-                }} transition={{
-                  duration: 0.4,
-                  delay: 0.3
-                }} viewport={{
-                  once: true
-                }} className="mt-8 p-6 bg-gradient-to-br from-[#FFFDF9] to-[#FFF9F0] border-2 border-[#d4af37]/30 rounded-xl">
-                    <div className="flex items-start gap-3 mb-4">
-                      <span className="text-2xl">📥</span>
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">Želite saznati više o programu?</h3>
-                        <p className="text-sm text-gray-600">Sve informacije o edukaciji na jednom mjestu</p>
-                      </div>
-                    </div>
-                    <a href="https://www.dropbox.com/scl/fi/o6b6vqb4bt3obop6g499o/Akupresura-i-Trigger-point-terapija.pdf?rlkey=7jgwscmrsmzj5xunym7m8uy9b&st=qtcgsjuj&dl=0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-[#d4af37] hover:bg-[#c19b2a] text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg" style={{
-                    boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
-                  }}>
-                      <Download className="h-5 w-5" />
-                      Preuzmi brošuru i istraži više detalja
-                    </a>
-                  </motion.div>
-                </div>
-                
-                {/* Image - Right */}
-                <div className="relative">
-                  <motion.div initial={{
-                  opacity: 0,
-                  scale: 0.9
-                }} whileInView={{
-                  opacity: 1,
-                  scale: 1
-                }} transition={{
-                  duration: 0.4,
-                  delay: 0.2
-                }} viewport={{
-                  once: true
-                }} whileHover={{
-                  y: -8,
-                  scale: 1.02
-                }} className="group cursor-pointer">
-                    <div className="relative rounded-2xl overflow-hidden border-2 border-[#d4af37]/20" style={{
-                    boxShadow: '0 12px 40px rgba(200,162,74,0.25), 0 6px 16px rgba(0,0,0,0.15)'
-                  }}>
-                      <img src="/lovable-uploads/a8d9f780-17c6-4718-98a2-73927a26401b.png" alt="Akupresura tehnika" className="w-full h-80 object-cover transition-all duration-300" />
-                      
-                      {/* Hover glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#d4af37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute inset-0 ring-0 group-hover:ring-2 group-hover:ring-[#d4af37]/50 rounded-2xl transition-all duration-300" />
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
