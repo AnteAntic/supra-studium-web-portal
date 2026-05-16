@@ -55,64 +55,64 @@ const AkupresuraPage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const testimonials = [{
-    text: "Ovo je najkorisniji tečaj koji sam ikada pohađala. Već prvog dana sam mogla primjenjivati tehnike na klijentima.",
-    author: "Ana Marić",
+    text: "Nisam očekivala da ću već drugog dana prepoznati trigger točku na vratu palpacijom i osjetiti kako popušta pod prstom. Taj osjećaj potvrde da si na pravom mjestu — nema ga u knjigama.",
+    author: "Ana M.",
     role: "Fizioterapeut",
     rating: 5
   }, {
-    text: "Ante objašnjava kompleksne tehnike na vrlo jednostavan način. Odličan praktični pristup.",
-    author: "Marko Petrović",
-    role: "Mazer",
+    text: "Ante ne objašnjava samo što raditi, nego zašto tijelo reagira upravo tako. Tek kad razumiješ mehanizam, počneš raditi s pouzdanjem — a ne na sreću.",
+    author: "Marko P.",
+    role: "Maser",
     rating: 5
   }, {
-    text: "Nakon tečaja sam povećala prihode za 40%. Klijenti su oduševljeni rezultatima.",
-    author: "Petra Novak",
+    text: "Klijenti s kroničnom tenzijskom glavoboljom s kojima nisam napredovala tjednima — nakon primjene distalnih točaka protokola dobivam rezultate već u prvom tretmanu.",
+    author: "Petra N.",
     role: "Kineziterapeut",
     rating: 5
   }];
   const benefits = [{
-    icon: "🌟",
-    title: "Energetski obrazac 6 ključnih meridijana",
-    description: "Naučite prepoznati i balansirati energetske putove tijela"
+    icon: "🧭",
+    title: "Dijagnostički protokol: punoća/praznina",
+    description: "Naučiš prepoznati energetsko stanje tkiva palpacijom — i na temelju toga biraš tehniku, ne nagađaš."
   }, {
     icon: "📍",
-    title: "30+ akupresurnih točaka",
-    description: "Precizna lokacija i primjena najvažnijih terapijskih točaka"
+    title: "18 preciznih akupresurnih točaka",
+    description: "Lokacija, indikacije i tehnika za točke kao što su SI 3, BL 60, GB 21 — svaka s konkretnim protokolom za specifičan simptom."
   }, {
     icon: "⚡",
-    title: "Trigger-point '90 s switch-off' tehnika",
-    description: "Brza i efikasna metoda za uklanjanje mišićnih čvorova"
+    title: "90-sekundni ishemijski pritisak (ICT)",
+    description: "Inhibition Compression Technique — kontinuirani pritisak koji resetira živčano-mišićni signal i deaktivira trigger točku."
   }, {
     icon: "❄️",
-    title: "Ice & Stretch metoda za trajne rezultate",
-    description: "Kombinirana tehnika za dugotrajno rješavanje problema"
+    title: "Ice & Stretch — Hans Kraus metoda",
+    description: "Hladnoća resetira mišićnu informaciju, istezanje reprogramira tkivo na novo stanje. Najefikasnija neinvazivna metoda za trajno gašenje trigger točaka."
   }, {
-    icon: "🏃",
-    title: "Neuromuskularno istezanje & PIR",
-    description: "Napredne tehnike za povećanje pokretljivosti"
+    icon: "🔬",
+    title: "PIR i neuromuskularno istezanje",
+    description: "Post-izometrijska relaksacija za eliminaciju hipertonusa — dublje i dugotrajnije od klasičnog istezanja."
   }, {
     icon: "🏠",
-    title: "Kućne vježbe za klijente",
-    description: "Praktični savjeti koje možete dati svojim klijentima"
+    title: "Protokoli za kućne vježbe klijenata",
+    description: "Konkretne upute što dati klijentu između tretmana — da terapija traje, a ne da se bol vraća za tjedan dana."
   }];
   const courseSchedule = {
     petak: {
-      title: "Dan 1: Akupresura osnove",
-      subtitle: "🔑 \"Dodir koji vraća ravnotežu\"",
-      content: ["Energetska dijagnostika i mapiranje tijela", "30+ ključnih akupresurnih točaka za bolna stanja", "Tehnike za glavobolje i migrene", "Terapija bolova u leđima i vratu", "Praktične vježbe u paru – odmah primjenjivo u praksi"],
-      hookBox: "Upoznaj 6 energetskih meridijana i nauči koristiti akupresuru za trenutačno olakšanje bola i napetosti."
+      title: "Dan 1: Akupresura — sustav koji razumiješ",
+      subtitle: "Dijagnostika, meridijani i 18 točaka koje moraš znati",
+      content: ["3-koračni dijagnostički protokol: punoća/praznina → odabir meridijana → tehnika", "Lokalne vs. distalne točke — kada koja i zašto to bitno mijenja rezultat", "Akupresura za okcipitalnu, lateralnu i frontalnu glavobolju", "Točke za križa, vrat i rame s pratećim meridijanima (BL, SI, GB)", "Tonifikacija vs. disperzija: odabir pritiska prema vrsti i intenzitetu boli"],
+      hookBox: "Na kraju prvog dana znaš procijeniti je li klijent energetski pun ili prazan — i točno znaš što s tim."
     },
     subota: {
-      title: "Dan 2: Trigger-point terapija",
-      subtitle: "⚡ \"90 sekundi do olakšanja\"",
-      content: ["Anatomija i lokacija najvažnijih trigger pointova", "90-sekundna switch-off tehnika", "Ice & Stretch metodologija za trajne rezultate", "Rad s kroničnim bolnim stanjima (vrat, ramena, leđa, zdjelica, noge)", "Case study – praktični primjeri iz prakse"],
-      hookBox: "Nauči kako preciznim pritiskom opustiti mišićni čvor i ukloniti bol – bez nagađanja."
+      title: "Dan 2: Trigger point terapija — lociranje i gašenje",
+      subtitle: "Palpacija, 90-sekundna ICT tehnika i Ice & Stretch metoda",
+      content: ["Kako pronaći trigger točku: napeta traka, bolno mjesto, referentna bol koja se širi", "Deep stroking massage kao priprema tkiva za dublji rad", "Ishemijski pritisak — 90-sekundna ICT tehnika korak po korak (3 stopa)", "Ice & Stretch po Hansu Krausu — hladnoća resetira, istezanje reprogramira", "Trigger točke za križa, tenzijsku glavobolju i ramena"],
+      hookBox: "Na kraju drugog dana prstima prepoznaješ napetu traku i znaš je deaktivirati u 90 sekundi."
     },
     nedjelja: {
-      title: "Dan 3: Integracija i primjena",
-      subtitle: "🌟 \"Spoj Istoka i Zapada u tvojoj praksi\"",
-      content: ["Kombiniranje akupresure i trigger-point terapije", "Protokoli za glavobolje, bolove u vratu, ramenima, zdjelici i nogama", "Kućne vježbe i savjeti za klijente – terapija koja traje i nakon tretmana", "Neuromuskularno istezanje & PIR tehnike za povećanje pokretljivosti", "Q&A s instruktorom – razrješenje svih tvojih pitanja"],
-      hookBox: "Integriraj najbolje od istočnih i zapadnih tehnika i stvori dvostruko učinkovitiju praksu."
+      title: "Dan 3: Integracija — protokol koji funkcionira u praksi",
+      subtitle: "PIR, kombiniranje tehnika i protokoli koje odmah koristiš",
+      content: ["Post-izometrijska relaksacija (PIR) — statička kontrakcija + pasivno istezanje", "Kombiniranje akupresure i trigger point terapije u jednom tretmanu", "Protokoli za kuk, koljeno, gležanj i donji ud", "Kućne vježbe i upute za klijente — terapija koja traje između tretmana", "Q&A: konkretni slučajevi iz prakse, tvoja pitanja, direktni odgovori"],
+      hookBox: "Odlaziš s protokolima za 6 najčešćih bolnih stanja — spremnima za primjenu već sljedećeg ponedjeljka."
     }
   };
   const faqs = [{
@@ -120,19 +120,19 @@ const AkupresuraPage = () => {
     answer: nextCourse ? `Sljedeći tečaj se održava ${format(new Date(nextCourse.startDate), 'dd.')}–${format(new Date(nextCourse.endDate), 'dd. MM. yyyy.')} u ${nextCourse.city}, ${nextCourse.location}.` : "Trenutno nema zakazanih termina. Kontaktirajte nas za informacije o sljedećem izdanju."
   }, {
     question: "Trebam li prethodno iskustvo?",
-    answer: "Ne, tečaj je prilagođen i početnicima i iskusnim terapeutima. Sve tehnike učimo od osnova."
+    answer: "Ne. Tečaj je struktuiran tako da od nule gradiš razumijevanje — teorija, demonstracija, vježba u paru. Iskusni terapeuti dobivaju sistemski okvir za ono što intutivno već rade."
   }, {
     question: "Što je uključeno u cijenu?",
-    answer: "Cijena uključuje 24 sata edukacije, certificiranje, materijale, refreshmente i pristup online materijalima."
+    answer: "24 sata edukacije, materijali, refreshmenti i certifikat s upisom u e-radnu knjižicu."
   }, {
     question: "Mogu li plaćati na rate?",
-    answer: "Da, nudimo mogućnost plaćanja u 2-3 rate. Kontaktirajte nas za detalje."
+    answer: "Da, plaćanje u 2–3 rate je moguće. Kontaktiraj nas direktno za dogovor."
   }, {
     question: "Što ako ne mogu doći jedan dan?",
-    answer: "Nudimo mogućnost nadoknade propuštenih sati na sljedećem terminu bez dodatne naplate."
+    answer: "Propuštene sate možeš nadoknaditi na sljedećem terminu, bez dodatne naplate."
   }, {
     question: "Dobivam li certifikat?",
-    answer: "Da, nakon uspješnog završetka dobivate certifikat s upisom u e-radnu knjižicu."
+    answer: "Da, certifikat dobiva svaki polaznik koji završi tečaj, s upisom u e-radnu knjižicu."
   }];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -165,153 +165,129 @@ const AkupresuraPage = () => {
           </video>
         </div>
 
-        {/* Dark Overlay for Readability */}
-        <div className="absolute inset-0 bg-black/50" />
+        {/* Cinematic left-side darkening — text zone gets separation, right stays atmospheric */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(100deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.62) 28%, rgba(0,0,0,0.22) 55%, transparent 78%)'
+        }} />
+        {/* Top vignette — nav legibility */}
+        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/25 to-transparent" />
 
-        {/* Hero Content with Fade Out Effect */}
+        {/* Hero Content — editorial bottom-left positioning */}
         <motion.div style={{
         opacity,
         y
       }} className="absolute inset-0">
-          <div className="container mx-auto px-6 pt-24 relative z-10 h-full flex items-center">
-            <div className="mx-auto max-w-4xl relative w-full text-center">
-              {/* Transparent Content Box */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg">
-                {/* Micro Badge - Small label */}
-                <motion.div initial={{
-                opacity: 0,
-                scale: 0.9
-              }} animate={{
-                opacity: 1,
-                scale: 1
-              }} transition={{
-                delay: 0.2,
-                duration: 0.6
-              }} className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#d4af37]/20 border border-[#d4af37]/30 rounded-full backdrop-blur-sm">
-                  <span className="text-[#d4af37] font-bold text-sm uppercase tracking-wide">Akupresura & Trigger Point Terapija</span>
-                </motion.div>
+          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[16%]">
+            <div className="max-w-2xl relative w-full">
 
-                {/* Main Title with Shimmer - Two-line structure */}
-                <motion.div initial={{
+              {/* Category label — whisper level */}
+              <motion.div initial={{
                 opacity: 0,
-                y: 30
+                y: 5
               }} animate={{
                 opacity: 1,
                 y: 0
+              }} transition={{
+                delay: 0.3,
+                duration: 0.8
+              }} className="mb-5">
+                <span className="text-[#d4af37]/55 text-[10px] font-normal uppercase tracking-[0.28em]">
+                  Akupresura & Trigger Point Terapija · Zagreb
+                </span>
+              </motion.div>
+
+              {/* Thin separator line — editorial weight */}
+              <motion.div initial={{
+                opacity: 0,
+                scaleX: 0
+              }} animate={{
+                opacity: 1,
+                scaleX: 1
               }} transition={{
                 delay: 0.4,
-                duration: 0.8
-              }} className="mb-8 md:mb-10">
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[-0.01em] leading-[0.9] text-center relative z-[4] px-4">
-                    <span className="block font-playfair font-normal text-white/90 drop-shadow-lg text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-2 tracking-wide" style={{
-                    textShadow: '0 4px 8px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3)'
-                  }}>
-                      Tehnika koja donosi
-                    </span>
-                    <TextShimmer className="font-playfair font-bold text-white drop-shadow-xl tracking-wide text-shadow-lg relative z-[4] [--base-gradient-color:#ffd700] [--base-color:#ffffff] [text-shadow:0_6px_12px_rgba(0,0,0,0.6),0_3px_6px_rgba(0,0,0,0.4),0_1px_3px_rgba(0,0,0,0.3)]" duration={2.5} spread={3}>
-                      OLAKŠANJE U 90 SEKUNDI
-                    </TextShimmer>
-                  </div>
-                </motion.div>
+                duration: 0.6,
+                ease: "easeOut"
+              }} className="origin-left mb-7">
+                <div className="w-10 h-px bg-[#d4af37]/30" />
+              </motion.div>
 
-                {/* Strong Subtitle */}
-                <motion.div initial={{
+              {/* Headline — confident, not dominant */}
+              <motion.div initial={{
                 opacity: 0,
-                y: 20
+                y: 10
               }} animate={{
                 opacity: 1,
                 y: 0
               }} transition={{
-                delay: 0.6,
-                duration: 0.6
-              }} className="mb-6">
-                  <h2 className="text-[clamp(18px,2.8vw,26px)] leading-relaxed tracking-wide font-medium text-[#d4af37] text-center drop-shadow-md">
-                    Sistemski pristup koji donosi ponovljive rezultate – već od prvog tretmana
-                  </h2>
-                </motion.div>
-
-                {/* Key Benefits - Compact single line */}
-                <motion.div initial={{
-                opacity: 0,
-                y: 30
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                delay: 0.8,
-                duration: 0.8
+                delay: 0.5,
+                duration: 0.9,
+                ease: "easeOut"
               }} className="mb-8">
-                  <div className="inline-flex flex-wrap justify-center gap-4 md:gap-6 text-white/90 text-sm md:text-base font-medium px-4">
-                    <span className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#d4af37]" />
-                      3 dana edukacije
-                    </span>
-                    <span className="hidden sm:inline text-white/40">•</span>
-                    <span className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#d4af37]" />
-                      Instant primjena
-                    </span>
-                    <span className="hidden sm:inline text-white/40">•</span>
-                    <span className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#d4af37]" />
-                      Certifikat
-                    </span>
-                  </div>
-                </motion.div>
+                <h1 className="font-playfair font-semibold text-white leading-[1.2] text-2xl sm:text-3xl md:text-[2rem]"
+                    style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.3)' }}>
+                  Kada znaš da si<br />na pravom mjestu.
+                </h1>
+              </motion.div>
 
-                {/* Urgency Info - Limited Spots */}
-                <motion.div initial={{
+              {/* Subheadline — secondary, reads comfortably */}
+              <motion.div initial={{
                 opacity: 0,
-                scale: 0.95
-              }} animate={{
-                opacity: 1,
-                scale: 1
-              }} transition={{
-                delay: 1.0,
-                duration: 0.6
-              }} className="mb-6">
-                  <div className="inline-flex items-center gap-3 bg-red-500/90 backdrop-blur-sm px-6 py-3 rounded-full border border-red-400/50">
-                    <Users className="w-5 h-5 text-white" />
-                    <span className="text-white font-bold text-base">
-                      ⚠️ Ostala samo 4 mjesta!
-                    </span>
-                  </div>
-                </motion.div>
-
-                {/* CTA Buttons */}
-                <motion.div initial={{
-                opacity: 0,
-                y: 30
+                y: 6
               }} animate={{
                 opacity: 1,
                 y: 0
               }} transition={{
-                delay: 0.8,
+                delay: 0.7,
                 duration: 0.8
-              }} className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <motion.div whileHover={{
-                  scale: 1.05
-                }} whileTap={{
-                  scale: 0.98
-                }}>
-                    <Button size="lg" className="bg-[#d4af37] hover:bg-[#c19b2a] text-black px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 border-0" onClick={scrollToPricing}>
-                      Osiguraj mjesto - 450€
-                    </Button>
-                    <p className="text-white/70 text-xs mt-2 text-center">24h praktične edukacije</p>
-                  </motion.div>
-                  
-                  <motion.div whileHover={{
-                  scale: 1.05
-                }} whileTap={{
-                  scale: 0.98
-                }}>
-                    <Button size="lg" className="bg-white/10 backdrop-blur-md border-2 border-[#d4af37] text-white hover:bg-[#d4af37]/20 px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-[#d4af37]/25" onClick={() => setVideoModalOpen(true)}>
-                      🎥 Pogledaj video
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </motion.div>
-                </motion.div>
-              </div>
+              }} className="mb-9">
+                <p className="text-sm font-normal text-white/72 leading-relaxed max-w-md">
+                  Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom.
+                </p>
+              </motion.div>
+
+              {/* Facts — contextual, not decorative */}
+              <motion.div initial={{
+                opacity: 0,
+                y: 4
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                delay: 0.9,
+                duration: 0.7
+              }} className="mb-9">
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/35 text-[11px] font-normal tracking-wider">
+                  <span>3 dana</span>
+                  <span>·</span>
+                  <span>Rad u paru</span>
+                  <span>·</span>
+                  <span>Certifikat</span>
+                </div>
+              </motion.div>
+
+              {/* CTA — calm institutional authority */}
+              <motion.div initial={{
+                opacity: 0,
+                y: 4
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                delay: 1.1,
+                duration: 0.7
+              }} className="flex flex-row items-center gap-4">
+                <Button
+                  className="bg-[#d4af37]/90 hover:bg-[#d4af37] text-black px-5 py-2 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-500 border-0 shadow-none h-auto"
+                  onClick={scrollToPricing}>
+                  Pogledaj program
+                </Button>
+                <button
+                  className="text-white/68 hover:text-white/90 text-xs font-normal tracking-[0.12em] transition-colors duration-400 bg-transparent border-0 cursor-pointer p-0"
+                  onClick={() => setVideoModalOpen(true)}>
+                  — Pogledaj video
+                </button>
+              </motion.div>
+
             </div>
           </div>
         </motion.div>
@@ -321,7 +297,7 @@ const AkupresuraPage = () => {
       <CourseStickyBar locations={[{
       city: "Zagreb",
       dates: "27.–29. 03. 2026."
-    }]} price="450 € • Samo 4 mjesta!" ctaText="Prijavi se" theme="light" />
+    }]} price="27.–29. 03. 2026. · Zagreb" ctaText="Rezerviraj mjesto" theme="light" />
 
       <CourseHighlights items={[{
       icon: "🏆",
@@ -335,14 +311,14 @@ const AkupresuraPage = () => {
       small: "Uči kroz demonstracije, vježbu i rad na stvarnim primjerima."
     }, {
       icon: "🎯",
-      title: "85%",
-      subtitle: "uspješnosti terapije",
-      small: "Kod pravilne primjene trigger point metode."
+      title: "2 sustava",
+      subtitle: "akupresura + trigger point",
+      small: "Meridijanski obrasci i palpatorni test u jednom programu."
     }, {
-      icon: "⚡️",
-      title: "90 sekundi",
-      subtitle: "do olakšanja",
-      small: "Pronađi točku boli i riješi uzrok, ne samo simptom."
+      icon: "🖐️",
+      title: "Hands-on",
+      subtitle: "rad u paru",
+      small: "Većina edukacije odvija se rukama — demonstracija, vježba, korekcija."
     }]} accentIndex={1} bg="dark" />
 
       {/* New Premium Section - Od točke do olakšanja */}
