@@ -12,7 +12,7 @@ import { CourseHighlights } from '@/components/ui/CourseHighlights';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CountdownTimer } from '@/components/ui/CountdownTimer';
 import AutoCarousel from '@/components/ui/AutoCarousel';
-import { ContactFooter } from '@/components/ContactFooter';
+import { CourseFooter } from '@/components/CourseFooter';
 const HERO_IMAGE = "/lovable-uploads/3118d6a4-0a56-49d4-ae18-b4a87a937529.png"; // WhatsApp Image 2025-08-11
 const VIDEO_URL = "https://www.dropbox.com/scl/fi/ca9w2cbvrc12p8u9wwcul/Kalabas_V1.mp4?rlkey=ja673238zig4sh0abz0if6yml&st=4doqeh2l&dl=0";
 const CalabashCertificationPage: React.FC = () => {
@@ -1283,7 +1283,7 @@ const CalabashCertificationPage: React.FC = () => {
         </div>
       </section>
 
-      <ContactFooter />
+      <CourseFooter />
     </div>;
 };
 export default CalabashCertificationPage;

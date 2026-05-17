@@ -12,7 +12,7 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import TextShimmer from '@/components/ui/TextShimmer';
 import { CourseHighlights } from '@/components/ui/CourseHighlights';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
-import { ContactFooter } from '@/components/ContactFooter';
+import { CourseFooter } from '@/components/CourseFooter';
 import AutoCarousel from '@/components/ui/AutoCarousel';
 
 // Add smooth scrolling CSS and shimmer animations
@@ -1673,7 +1673,7 @@ const CuppingPage = () => {
         </div>
       </section>
 
-      <ContactFooter />
+      <CourseFooter />
     </div>;
 };
 export default CuppingPage;

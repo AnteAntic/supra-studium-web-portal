@@ -12,7 +12,7 @@ import HeroTitle from '@/components/ui/HeroTitle';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { CourseHighlights } from '@/components/ui/CourseHighlights';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
-import { ContactFooter } from '@/components/ContactFooter';
+import { CourseFooter } from '@/components/CourseFooter';
 import AutoCarousel from '@/components/ui/AutoCarousel';
 const CrossfrictionPage = () => {
   const [showFullBio, setShowFullBio] = useState(false);
@@ -2328,7 +2328,7 @@ To je službeni dokaz stručnosti koji može pomoći kod zapošljavanja ili rada
         </div>
       </section>
 
-      <ContactFooter />
+      <CourseFooter />
     </div>;
 };
 export default CrossfrictionPage;

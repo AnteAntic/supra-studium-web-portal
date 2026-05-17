@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ExternalLink, Award, BookOpen, Users, Clock, MapPin, GraduationCap, CheckCircle, Calendar, Download, Play, ArrowRight, Euro, UserCheck, MapPinIcon, Trophy, Target, Building, X, Puzzle, Medal, Globe, Star } from "lucide-react";
 import HeroSection from '@/components/ui/HeroSection';
-import { ContactFooter } from '@/components/ContactFooter';
+import { CourseFooter } from '@/components/CourseFooter';
 import AutoCarousel from '@/components/ui/AutoCarousel';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import TextShimmer from '@/components/ui/TextShimmer';
@@ -1741,6 +1741,6 @@ export default function ManualTherapySchoolPage() {
         </div>
       </section>
 
-      <ContactFooter />
+      <CourseFooter />
     </div>;
 }

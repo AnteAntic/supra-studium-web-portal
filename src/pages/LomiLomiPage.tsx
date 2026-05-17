@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Play, Calendar, Euro, MapPin, Clock, Users, Star, HeartHandshake, Sparkles, ChevronUp, BookOpen, ArrowRight } from "lucide-react";
-import { ContactFooter } from "@/components/ContactFooter";
+import { CourseFooter } from "@/components/ContactFooter";
 import { useToast } from "@/hooks/use-toast";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import HeroTitle from '@/components/ui/HeroTitle';
@@ -1134,7 +1134,7 @@ const LomiLomiPage: React.FC = () => {
         </div>
       </section>
 
-      <ContactFooter />
+      <CourseFooter />
     </div>
   </>;
 };
