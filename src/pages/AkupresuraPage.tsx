@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle, Users, Award, Play, ChevronDown, ChevronRight, ChevronLeft, Star, Calendar, MapPin, Euro, X, Target, TrendingUp, Zap, ArrowRight, BookOpen, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -16,6 +16,7 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import TextShimmer from '@/components/ui/TextShimmer';
 import { CourseHighlights } from '@/components/ui/CourseHighlights';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
+import { CourseHero } from '@/components/CourseHero';
 import { ContactFooter } from '@/components/ContactFooter';
 import AutoCarousel from '@/components/ui/AutoCarousel';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,32 +29,9 @@ const AkupresuraPage = () => {
   const [activeTab, setActiveTab] = useState("petak");
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [blackOverlay, setBlackOverlay] = useState(0);
-
   // Get next course date
   const nextCourse = getNextCourseDate(akupresuraSchedule);
 
-  // Scroll effects
-  const containerRef = useRef<HTMLDivElement>(null);
-  const heroRef = useRef<HTMLElement>(null);
-  const {
-    scrollYProgress
-  } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const fadeDistance = 600;
-      const blackOpacity = Math.min(1, scrollY / fadeDistance);
-      setBlackOverlay(blackOpacity);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   const testimonials = [{
     text: "Nisam očekivala da ću već drugog dana prepoznati trigger točku na vratu palpacijom i osjetiti kako popušta pod prstom. Taj osjećaj potvrde da si na pravom mjestu — nema ga u knjigama.",
     author: "Ana M.",
@@ -149,177 +127,27 @@ const AkupresuraPage = () => {
     }
   };
   return <div className="min-h-screen bg-white">
-      {/* New Hero Section with Video Background */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
-        {/* Black overlay that fades in on scroll */}
-        <div className="absolute inset-0 bg-black z-[3] pointer-events-none transition-opacity duration-300" style={{
-        opacity: blackOverlay
-      }} />
-        
-        {/* Video Background */}
-        <div className="absolute inset-0 top-[-5rem]">
-          <video autoPlay loop muted playsInline poster="/poster-hero.jpg" className="w-full h-full object-cover" style={{
-          objectPosition: 'top center'
-        }}>
-            <source src="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&st=ym2v8jte&raw=1" type="video/mp4" />
-          </video>
-        </div>
-
-        {/* Cinematic left-side darkening — text zone gets separation, right stays atmospheric */}
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(100deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.62) 28%, rgba(0,0,0,0.22) 55%, transparent 78%)'
-        }} />
-        {/* Top vignette — nav legibility */}
-        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/25 to-transparent" />
-
-        {/* Hero Content — editorial bottom-left positioning */}
-        <motion.div style={{
-        opacity,
-        y
-      }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[16%]">
-            <div className="max-w-2xl relative w-full">
-
-              {/* Category label — whisper level */}
-              <motion.div initial={{
-                opacity: 0,
-                y: 5
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                delay: 0.3,
-                duration: 0.8
-              }} className="mb-5">
-                <span className="text-[#d4af37]/55 text-[10px] font-normal uppercase tracking-[0.28em]">
-                  Akupresura & Trigger Point Terapija · Zagreb
-                </span>
-              </motion.div>
-
-              {/* Thin separator line — editorial weight */}
-              <motion.div initial={{
-                opacity: 0,
-                scaleX: 0
-              }} animate={{
-                opacity: 1,
-                scaleX: 1
-              }} transition={{
-                delay: 0.4,
-                duration: 0.6,
-                ease: "easeOut"
-              }} className="origin-left mb-7">
-                <div className="w-10 h-px bg-[#d4af37]/30" />
-              </motion.div>
-
-              {/* Headline — confident, not dominant */}
-              <motion.div initial={{
-                opacity: 0,
-                y: 10
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                delay: 0.5,
-                duration: 0.9,
-                ease: "easeOut"
-              }} className="mb-8">
-                <h1 className="font-playfair font-semibold text-white leading-[1.2] text-2xl sm:text-3xl md:text-[2rem]"
-                    style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.3)' }}>
-                  Kada znaš da si<br />na pravom mjestu.
-                </h1>
-              </motion.div>
-
-              {/* Subheadline — secondary, reads comfortably */}
-              <motion.div initial={{
-                opacity: 0,
-                y: 6
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                delay: 0.7,
-                duration: 0.8
-              }} className="mb-9">
-                <p className="text-sm font-normal text-white/72 leading-relaxed max-w-md">
-                  Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom.
-                </p>
-              </motion.div>
-
-              {/* Facts — contextual, not decorative */}
-              <motion.div initial={{
-                opacity: 0,
-                y: 4
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                delay: 0.9,
-                duration: 0.7
-              }} className="mb-9">
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/35 text-[11px] font-normal tracking-wider">
-                  <span>3 dana</span>
-                  <span>·</span>
-                  <span>Rad u paru</span>
-                  <span>·</span>
-                  <span>Certifikat</span>
-                </div>
-              </motion.div>
-
-              {/* CTA — calm institutional authority */}
-              <motion.div initial={{
-                opacity: 0,
-                y: 4
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                delay: 1.1,
-                duration: 0.7
-              }} className="flex flex-row items-center gap-4">
-                <Button
-                  className="bg-[#d4af37]/90 hover:bg-[#d4af37] text-black px-5 py-2 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-500 border-0 shadow-none h-auto"
-                  onClick={scrollToPricing}>
-                  Pogledaj program
-                </Button>
-                <button
-                  className="text-white/68 hover:text-white/90 text-xs font-normal tracking-[0.12em] transition-colors duration-400 bg-transparent border-0 cursor-pointer p-0"
-                  onClick={() => setVideoModalOpen(true)}>
-                  — Pogledaj video
-                </button>
-              </motion.div>
-
-            </div>
-          </div>
-        </motion.div>
-      </section>
+      <CourseHero
+        category="Akupresura & Trigger Point Terapija · Zagreb"
+        headline={<>Kada znaš da si<br />na pravom mjestu.</>}
+        subheadline="Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom."
+        videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&st=ym2v8jte&raw=1"
+        videoPoster="/poster-hero.jpg"
+        primaryCTA={{ label: "Pogledaj program", onClick: scrollToPricing }}
+        secondaryCTA={{ label: "Pogledaj video", onClick: () => setVideoModalOpen(true) }}
+        facts={[
+          { field: "Trajanje", value: "3 dana", detail: "intenzivan praktičan rad" },
+          { field: "Opseg", value: "24 sata", detail: "edukacije" },
+          { field: "Metodika", value: "Akupresura & Trigger Point", detail: "2 komplementarna sustava" },
+          { field: "Format", value: "Rad u paru", detail: "demonstracija i korekcija" },
+        ]}
+      />
 
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
       city: "Zagreb",
       dates: "27.–29. 03. 2026."
     }]} price="27.–29. 03. 2026. · Zagreb" ctaText="Rezerviraj mjesto" theme="light" />
-
-      <CourseHighlights items={[{
-      icon: "🏆",
-      title: "24 sata",
-      subtitle: "edukacije",
-      small: "Intenzivan program fokusiran na praktične terapijske tehnike."
-    }, {
-      icon: "📅",
-      title: "3 dana",
-      subtitle: "praktičnog treninga",
-      small: "Uči kroz demonstracije, vježbu i rad na stvarnim primjerima."
-    }, {
-      icon: "🎯",
-      title: "2 sustava",
-      subtitle: "akupresura + trigger point",
-      small: "Meridijanski obrasci i palpatorni test u jednom programu."
-    }, {
-      icon: "🖐️",
-      title: "Hands-on",
-      subtitle: "rad u paru",
-      small: "Većina edukacije odvija se rukama — demonstracija, vježba, korekcija."
-    }]} accentIndex={1} bg="dark" />
 
       {/* New Premium Section - Od točke do olakšanja */}
       <section className="relative py-24 overflow-hidden bg-white">
