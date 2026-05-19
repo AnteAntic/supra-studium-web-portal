@@ -103,7 +103,7 @@ export function CourseHero({
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
-                <span className="text-[#d4af37]/60 text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block">
+                <span className="text-[#B89A4F]/75 text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block">
                   {category}
                 </span>
               </motion.div>
@@ -115,7 +115,7 @@ export function CourseHero({
                 transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
                 className="origin-left mb-8"
               >
-                <div className="w-10 h-px bg-[#d4af37]/38" />
+                <div className="w-10 h-px bg-[#B89A4F]/45" />
               </motion.div>
 
               {/* Headline */}
@@ -153,7 +153,7 @@ export function CourseHero({
                 className="flex flex-row items-center gap-4"
               >
                 <Button
-                  className="bg-[#d4af37]/90 hover:bg-[#d4af37] text-black px-5 py-2 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-500 border-0 shadow-none h-auto"
+                  className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-5 py-2 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-300 border-0 shadow-none h-auto"
                   onClick={primaryCTA.onClick}
                 >
                   {primaryCTA.label}

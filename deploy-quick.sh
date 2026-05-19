@@ -25,10 +25,7 @@ set ssl:verify-certificate no
 set ftp:passive-mode on
 lcd $LOCAL_DIR
 cd $REMOTE_DIR
-put index.html
-mirror -R --verbose --exclude lovable-uploads/ --exclude videos/ assets/ assets/
-put favicon.ico
-put robots.txt
+mirror -R --verbose --exclude lovable-uploads/ --exclude videos/ . .
 bye
 EOF
 

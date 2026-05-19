@@ -1,74 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
-import CountdownBadge from '@/components/ui/CountdownBadge';
-import EnhancedLearningCard from '@/components/ui/EnhancedLearningCard';
-import QuickTipCard from '@/components/ui/QuickTipCard';
-import FloatingElement from '@/components/ui/FloatingElement';
-import ImageCarousel from '@/components/ui/ImageCarousel';
-import HeroTitle from '@/components/ui/HeroTitle';
-import SectionTitle from '@/components/ui/SectionTitle';
-import TextShimmer from '@/components/ui/TextShimmer';
-import { CourseHighlights } from '@/components/ui/CourseHighlights';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CourseHero } from '@/components/CourseHero';
 import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
-import { akupresuraSchedule, getNextCourseDate } from '@/data/courseSchedules';
-import { format } from 'date-fns';
 const AkupresuraPage = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
-  // Get next course date
-  const nextCourse = getNextCourseDate(akupresuraSchedule);
-
-  const benefits = [{
-    icon: "🧭",
-    title: "Dijagnostički protokol: punoća/praznina",
-    description: "Naučiš prepoznati energetsko stanje tkiva palpacijom — i na temelju toga biraš tehniku, ne nagađaš."
-  }, {
-    icon: "📍",
-    title: "18 preciznih akupresurnih točaka",
-    description: "Lokacija, indikacije i tehnika za točke kao što su SI 3, BL 60, GB 21 — svaka s konkretnim protokolom za specifičan simptom."
-  }, {
-    icon: "⚡",
-    title: "90-sekundni ishemijski pritisak (ICT)",
-    description: "Inhibition Compression Technique — kontinuirani pritisak koji resetira živčano-mišićni signal i deaktivira trigger točku."
-  }, {
-    icon: "❄️",
-    title: "Ice & Stretch — Hans Kraus metoda",
-    description: "Hladnoća resetira mišićnu informaciju, istezanje reprogramira tkivo na novo stanje. Najefikasnija neinvazivna metoda za trajno gašenje trigger točaka."
-  }, {
-    icon: "🔬",
-    title: "PIR i neuromuskularno istezanje",
-    description: "Post-izometrijska relaksacija za eliminaciju hipertonusa — dublje i dugotrajnije od klasičnog istezanja."
-  }, {
-    icon: "🏠",
-    title: "Protokoli za kućne vježbe klijenata",
-    description: "Konkretne upute što dati klijentu između tretmana — da terapija traje, a ne da se bol vraća za tjedan dana."
-  }];
-  const courseSchedule = {
-    petak: {
-      title: "Dan 1: Akupresura — sustav koji razumiješ",
-      subtitle: "Dijagnostika, meridijani i 18 točaka koje moraš znati",
-      content: ["3-koračni dijagnostički protokol: punoća/praznina → odabir meridijana → tehnika", "Lokalne vs. distalne točke — kada koja i zašto to bitno mijenja rezultat", "Akupresura za okcipitalnu, lateralnu i frontalnu glavobolju", "Točke za križa, vrat i rame s pratećim meridijanima (BL, SI, GB)", "Tonifikacija vs. disperzija: odabir pritiska prema vrsti i intenzitetu boli"],
-      hookBox: "Na kraju prvog dana znaš procijeniti je li klijent energetski pun ili prazan — i točno znaš što s tim."
-    },
-    subota: {
-      title: "Dan 2: Trigger point terapija — lociranje i gašenje",
-      subtitle: "Palpacija, 90-sekundna ICT tehnika i Ice & Stretch metoda",
-      content: ["Kako pronaći trigger točku: napeta traka, bolno mjesto, referentna bol koja se širi", "Deep stroking massage kao priprema tkiva za dublji rad", "Ishemijski pritisak — 90-sekundna ICT tehnika korak po korak (3 stopa)", "Ice & Stretch po Hansu Krausu — hladnoća resetira, istezanje reprogramira", "Trigger točke za križa, tenzijsku glavobolju i ramena"],
-      hookBox: "Na kraju drugog dana prstima prepoznaješ napetu traku i znaš je deaktivirati u 90 sekundi."
-    },
-    nedjelja: {
-      title: "Dan 3: Integracija — protokol koji funkcionira u praksi",
-      subtitle: "PIR, kombiniranje tehnika i protokoli koje odmah koristiš",
-      content: ["Post-izometrijska relaksacija (PIR) — statička kontrakcija + pasivno istezanje", "Kombiniranje akupresure i trigger point terapije u jednom tretmanu", "Protokoli za kuk, koljeno, gležanj i donji ud", "Kućne vježbe i upute za klijente — terapija koja traje između tretmana", "Q&A: konkretni slučajevi iz prakse, tvoja pitanja, direktni odgovori"],
-      hookBox: "Odlaziš s protokolima za 6 najčešćih bolnih stanja — spremnima za primjenu već sljedećeg ponedjeljka."
-    }
-  };
   const scrollToProgram = () => {
     const element = document.getElementById('program');
     if (element) {
@@ -97,8 +37,8 @@ const AkupresuraPage = () => {
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
       city: "Zagreb",
-      dates: "27.–29. 03. 2026."
-    }]} price="27.–29. 03. 2026. · Zagreb" ctaText="Rezerviraj mjesto" theme="light" />
+      dates: "termin u pripremi"
+    }]} price="" ctaText="Rezerviraj mjesto" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
 
       {/* Klinička observacija */}
       <section className="bg-white pt-24 pb-0">
@@ -155,9 +95,9 @@ const AkupresuraPage = () => {
 
             {/* Right: Clinical documentation image */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
               viewport={{ once: true }}
               className="lg:pt-16"
             >
@@ -460,9 +400,9 @@ const AkupresuraPage = () => {
             ].map((img, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, delay: i * 0.08, ease: 'easeOut' }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.9, delay: i * 0.1, ease: 'easeOut' }}
                 viewport={{ once: true }}
                 className={i > 0 ? 'mt-14' : ''}
               >
@@ -496,9 +436,9 @@ const AkupresuraPage = () => {
 
               {/* Left — photograph */}
               <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, ease: 'easeOut' }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
                 viewport={{ once: true }}
               >
                 <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
@@ -529,7 +469,7 @@ const AkupresuraPage = () => {
                 <div className="w-10 h-px mb-7" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
 
                 <h2
-                  className="font-playfair font-semibold leading-[1.2] mb-8 text-[2rem] md:text-[2.3rem]"
+                  className="font-playfair font-semibold leading-[1.2] mb-8 text-[1.85rem] md:text-[2.1rem]"
                   style={{ color: '#1F1D1A' }}
                 >
                   Ante Antić
@@ -571,11 +511,11 @@ const AkupresuraPage = () => {
 
                 {/* CTA */}
                 <button
-                  className="text-[11px] uppercase tracking-[0.18em] font-normal py-3 px-7 transition-colors duration-300"
-                  style={{ border: '1px solid rgba(0,0,0,0.22)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = '#B89A4F'; (e.currentTarget as HTMLButtonElement).style.color = '#B89A4F'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(0,0,0,0.22)'; (e.currentTarget as HTMLButtonElement).style.color = '#3D3A35'; }}
-                  onClick={scrollToProgram}
+                  className="text-[11px] uppercase tracking-[0.18em] font-normal py-3 px-8 transition-colors duration-300"
+                  style={{ border: '1px solid rgba(0,0,0,0.28)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
+                  onMouseEnter={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = '#B89A4F'; b.style.borderColor = '#B89A4F'; b.style.color = '#fff'; }}
+                  onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
+                  onClick={() => { const el = document.getElementById('kontakt'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
                 >
                   Kontaktiraj za informacije
                 </button>
@@ -618,7 +558,7 @@ const AkupresuraPage = () => {
                 </p>
 
                 <p className="text-[12.5px] leading-[1.65] font-normal mb-6" style={{ color: '#7A7570' }}>
-                  Rana prijava do 20. 01. omogućuje sudjelovanje po cijeni od 390 €.
+                  Rana prijava omogućuje sudjelovanje po povoljnijim uvjetima kada je dostupna.
                 </p>
 
                 <div className="mb-8" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} />
@@ -628,11 +568,11 @@ const AkupresuraPage = () => {
                 </p>
 
                 <button
-                  className="text-[11px] uppercase tracking-[0.18em] font-normal py-3 px-12 transition-colors duration-300"
-                  style={{ border: '1px solid rgba(0,0,0,0.35)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
+                  className="text-[11px] uppercase tracking-[0.18em] font-normal py-3 px-8 transition-colors duration-300"
+                  style={{ border: '1px solid rgba(0,0,0,0.28)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
                   onMouseEnter={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = '#B89A4F'; b.style.borderColor = '#B89A4F'; b.style.color = '#fff'; }}
-                  onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.35)'; b.style.color = '#3D3A35'; }}
-                  onClick={() => window.open('https://tally.so/r/wA5kvD', '_blank')}
+                  onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
+                  onClick={() => window.open('https://tally.so/r/wA5kvD', '_blank', 'noopener,noreferrer')}
                 >
                   Rezerviraj mjesto
                 </button>
@@ -672,7 +612,7 @@ const AkupresuraPage = () => {
                     Termin i lokacija
                   </p>
                   <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
-                    27.–29. 03. 2026. · Zagreb<br />
+                    Termin: u pripremi · Zagreb<br />
                     <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Medical Body Balance</span><br />
                     Ul. Frane Kesterčanka 2b
                   </p>
