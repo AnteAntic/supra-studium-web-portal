@@ -745,7 +745,7 @@ const CrossfrictionPage = () => {
               <div className="mt-3 flex items-start gap-3">
                 <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
                 <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
-                  Preciznost nastaje kroz promatranje odgovora, ne kroz silu.
+                  Pritisak se ne pojačava. Mijenja se smjer.
                 </p>
               </div>
             </motion.div>
@@ -771,7 +771,7 @@ const CrossfrictionPage = () => {
                 <div className="mt-3 flex items-start gap-3">
                   <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
                   <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
-                    Klinička sigurnost dolazi iz razumijevanja promjene.
+                    Promjena se prvo osjeti pod rukom. Tek onda postaje odluka.
                   </p>
                 </div>
               </div>
@@ -798,7 +798,7 @@ const CrossfrictionPage = () => {
                 <div className="mt-3 flex items-start gap-3">
                   <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
                   <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
-                    Terapijska odluka nastaje tijekom rada, ne prije njega.
+                    Nitko u prostoriji ne promatra pasivno.
                   </p>
                 </div>
               </div>
