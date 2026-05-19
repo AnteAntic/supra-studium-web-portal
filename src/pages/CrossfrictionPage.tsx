@@ -63,7 +63,7 @@ const CrossfrictionPage = () => {
                   dio obrasca.
                 </h2>
                 <p className="text-[14px] leading-[1.82] font-normal mb-10" style={{ color: '#5F5A52', maxWidth: '38ch' }}>
-                  CFM Body Reset Method nije skup tehnika. To je struktura kliničkog razmišljanja koja povezuje palpaciju, fascijalni odgovor, funkciju i terapijsku odluku u jedan koherentan protokol.
+                  CFM Body Reset Method nije skup tehnika. To je okvir kliničkog razmišljanja koji palpatorni nalaz, tkivnu napetost i funkcionalne odnose pretvara u jednu terapijsku odluku.
                 </p>
                 <p className="text-[13px] leading-[1.72] font-normal" style={{ color: '#8A8580', maxWidth: '36ch' }}>
                   Četiri sustava. Jedan okvir. Svaki tretman počinje ovdje.
@@ -189,16 +189,10 @@ const CrossfrictionPage = () => {
                   prestane biti jedina informacija.
                 </h2>
                 <p
-                  className="text-[14px] leading-[1.82] font-normal mb-6"
+                  className="text-[14px] leading-[1.82] font-normal"
                   style={{ color: 'rgba(255,255,255,0.56)', maxWidth: '36ch' }}
                 >
                   CFM ne mijenja samo način rada. Mijenja način na koji terapeut interpretira ono što vidi, osjeća i povezuje tijekom tretmana.
-                </p>
-                <p
-                  className="text-[14px] leading-[1.82] font-normal"
-                  style={{ color: 'rgba(255,255,255,0.44)', maxWidth: '36ch' }}
-                >
-                  Bol više nije jedina referenca. Tkivo, funkcija i obrazac postaju dio iste informacije.
                 </p>
               </motion.div>
 
@@ -285,7 +279,7 @@ const CrossfrictionPage = () => {
                   style={{ color: '#1F1D1A' }}
                 >
                   Tri faze jednog<br />
-                  kliničkog protokola.
+                  terapijskog okvira.
                 </h2>
                 <p
                   className="text-[14.5px] leading-[1.82] font-normal mb-5"
@@ -309,7 +303,7 @@ const CrossfrictionPage = () => {
                     num: '02',
                     phase: 'Reset',
                     statement: 'Ne tretiraš samo mjesto boli.\nResetiraš tkivni odgovor, ne samo simptom.',
-                    body: 'Manualni rad, cross friction, fascijalna obrada i funkcionalna masaža koriste se prema odgovoru tkiva, ne prema unaprijed zadanoj rutini.',
+                    body: 'Manualni rad, cross friction, fascijalna obrada i funkcionalna masaža biraju se prema palpatornom nalazu — ne prema rutini.',
                     py: 'py-12',
                   },
                   {
@@ -406,11 +400,11 @@ const CrossfrictionPage = () => {
               </p>
 
               <p className="text-[14.5px] leading-[1.78] font-normal mb-7" style={{ color: '#3D3A35' }}>
-                Cross friction i funkcionalna masaža nisu dvije zasebne metode. To je jedan klinički protokol s dva komplementarna ulaza: tkivna restrikcija i funkcionalni obrazac pokreta.
+                Cross friction i funkcionalna masaža nisu dvije zasebne metode. To je jedan klinički pristup s dva ulaza: tkivna restrikcija i funkcionalno ograničenje kretanja.
               </p>
 
               <p className="text-[14.5px] leading-[1.78] font-normal mb-14" style={{ color: '#5F5A52' }}>
-                Terapijska odluka više ne dolazi unaprijed. Nastaje iz onoga što tijelo pokazuje, u realnom vremenu tretmana.
+                Palpatorni nalaz počinje određivati smjer tretmana — ne anatomska lokalizacija simptoma.
               </p>
 
               <div className="w-6 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.25)' }} />
@@ -423,7 +417,7 @@ const CrossfrictionPage = () => {
                   'Razliku između lokalne zaštite i sistemskog obrasca kompenzacije',
                   'Kada palpatorni nalaz odgovara funkcionalnom ograničenju u pokretu',
                   'Znakove tkivnog odgovora koji ukazuju na promjenu ili rezistenciju',
-                  'Trenutak kada tretman prelazi s tehnike na klinički dijalog s tijelom',
+                  'Granicu između mehaničke restrikcije i regulatornog odgovora tkiva',
                 ].map((item, i) => (
                   <div key={i} className="py-4" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
                     <p className="text-[14px] leading-[1.6] font-normal" style={{ color: '#1F1D1A' }}>
@@ -510,8 +504,8 @@ const CrossfrictionPage = () => {
                 className="font-playfair font-semibold leading-[1.22] text-[1.9rem] md:text-[2.2rem]"
                 style={{ color: '#1F1D1A' }}
               >
-                Tri razine kliničkog<br />
-                terapijskog razmišljanja.
+                Tri razine kliničke<br />
+                kompetencije.
               </h2>
               <p className="text-[14px] leading-[1.82] font-normal mt-8" style={{ color: '#7A7570', maxWidth: '52ch' }}>
                 Program ne gradi samo tehnički repertoar — gradi sposobnost prepoznavanja kako tijelo kompenzira, reagira i može se terapijski resetirati kao cjelina.
@@ -549,8 +543,8 @@ const CrossfrictionPage = () => {
                 desc: 'Treći modul nije o više tehnika. On je o sposobnosti donošenja kliničke odluke u tijeku tretmana — integraciji palpacijskog nalaza, funkcionalnog obrasca i tkivnog odgovora u jedan koherentan terapijski dijalog.',
                 items: [
                   'Složene prezentacije: višestruka restrikcija, kronični obrazac, nelinearna logika simptoma',
-                  'Terapijsko razmišljanje u pokretu — odluka nastaje iz onoga što tijelo pokazuje, ne iz protokola',
-                  'Cross Friction i funkcionalna masaža kao jedan protokol — slijed određuje nalaz, ne redoslijed',
+                  'Terapijsko razmišljanje u pokretu — palpatorni nalaz određuje smjer, ne unaprijed zadani redoslijed',
+                  'Cross Friction i funkcionalna masaža kao kontinuirani klinički odgovor — slijed određuje nalaz, ne pozicija u shemi',
                   'Procjena, intervencija i provjera promjene kao jedan integrirani klinički čin',
                 ],
                 note: null,
@@ -716,7 +710,7 @@ const CrossfrictionPage = () => {
             className="max-w-3xl mx-auto mb-12"
           >
             <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
-              Klinički rad
+              Edukacijska praksa
             </p>
             <div className="w-10 h-px mb-7" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
             <h2
@@ -825,16 +819,13 @@ const CrossfrictionPage = () => {
             className="max-w-2xl mx-auto"
           >
             <h2
-              className="font-playfair font-semibold leading-[1.30] mb-8"
+              className="font-playfair font-semibold leading-[1.30]"
               style={{ fontSize: 'clamp(1.65rem, 3.2vw, 2.15rem)', color: 'rgba(255,255,255,0.88)' }}
             >
               Terapijska odluka ne nastaje iz protokola.
               <br />
               Nastaje iz onoga što tijelo pokaže.
             </h2>
-            <p className="text-[13px] leading-[1.72] font-normal" style={{ color: 'rgba(255,255,255,0.34)', letterSpacing: '0.02em' }}>
-              Cross friction i funkcionalna integracija kao jedan terapijski dijalog.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -930,10 +921,10 @@ const CrossfrictionPage = () => {
 
                 <div style={{ maxWidth: '42ch' }}>
                   <p className="text-[13.5px] leading-[1.95] font-normal mb-8" style={{ color: '#6B6560' }}>
-                    Razvijen iz godina rada s prezentacijama gdje izolirana tehnika više nije bila dovoljna. Iz onoga što tijelo pokazuje — ne iz protokola koji se primjenjuje.
+                    Razvijen iz višegodišnjeg rada s prezentacijama gdje tkivni nalaz nije odgovarao predviđenom redoslijedu. Gdje je funkcionalni odgovor bio jedini pouzdan vodič.
                   </p>
                   <p className="text-[13.5px] leading-[1.95] font-normal mb-16" style={{ color: '#6B6560' }}>
-                    Spaja cross friction, palpacijsku preciznost i razumijevanje kompenzacijskih obrazaca u jedan klinički dijalog s tijelom.
+                    Spaja cross friction, palpacijsku preciznost i razumijevanje tkivnih odnosa u jedan klinički dijalog s tijelom.
                   </p>
 
                   {/* Manifesto quote — refined vertical accent */}
@@ -958,7 +949,13 @@ const CrossfrictionPage = () => {
                   </div>
                 </div>
 
-                <div className="mt-14" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
+                <p
+                  className="text-[12.5px] leading-[1.75] font-normal mt-14"
+                  style={{ color: 'rgba(0,0,0,0.36)', maxWidth: '42ch', fontStyle: 'italic' }}
+                >
+                  Taj proces odvija se vikendom, u parovima — u jednakom kliničkom formatu na svakoj lokaciji.
+                </p>
+                <div className="mt-8" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
                 <p
                   className="text-[10px] uppercase tracking-[0.22em] font-normal mt-5"
                   style={{ color: 'rgba(0,0,0,0.20)' }}
