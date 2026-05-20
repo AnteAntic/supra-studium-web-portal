@@ -388,15 +388,26 @@ export default function CuppingPage() {
         </div>
       </section>
 
-      {/* ── Photo intermezzo ─────────────────────────────────── */}
-      <section className="relative h-[55vh] overflow-hidden">
-        <img
-          src="/lovable-uploads/cup-intermezzo-aplikacija.jpg"
-          alt="Primjena vakuumske čaše — aplikacijski moment"
-          className="w-full h-full object-cover"
-          loading="lazy"
-          style={{ filter: "grayscale(8%)", objectPosition: "center 62%" }}
-        />
+      {/* ── Video intermezzo ─────────────────────────────────── */}
+      <section className="relative h-[55vh] overflow-hidden bg-[#0e0e0e]">
+        <div className="absolute inset-0 pointer-events-none">
+          <iframe
+            src="https://www.youtube.com/embed/R5xBOQ2GQ-g?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=R5xBOQ2GQ-g"
+            allow="autoplay; encrypted-media"
+            title=""
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: "100vw",
+              height: "56.25vw",
+              minHeight: "100%",
+              minWidth: "177.78vh",
+              transform: "translate(-50%, -50%)",
+              border: "none",
+            }}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0e0e0e]/55 via-[#0e0e0e]/20 to-transparent" />
         <div className="absolute bottom-10 left-8 md:left-16">
           <p className="text-[10px] uppercase tracking-[0.28em] text-white/50">
