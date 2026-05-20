@@ -62,7 +62,7 @@ const fadeUp = {
 
 const facts = [
   { field: "Format", value: "1 dan", detail: "10 sati kliničkog rada" },
-  { field: "Gradovi", value: "5 lokacija", detail: "Zagreb · Split · Rijeka · Osijek · Zadar" },
+  { field: "Lokacije", value: "Zagreb +", detail: "Slavonski Brod · Rijeka · Split" },
   { field: "Kotizacija", value: "390 €", detail: "materijal i potvrda uključeni" },
   { field: "Polaznici", value: "Do 12", detail: "individualni nadzor rada" },
 ];
@@ -99,7 +99,7 @@ export default function CuppingPage() {
             src="/lovable-uploads/cup-hero-vakuum.jpg"
             alt="Vakuumske čaše — cupping terapija"
             className="w-full h-full object-cover"
-            style={{ objectPosition: "center 40%" }}
+            style={{ objectPosition: "55% 30%" }}
           />
         </div>
 
@@ -421,7 +421,7 @@ export default function CuppingPage() {
                 Metoda
               </p>
               <h2 className="font-playfair text-3xl text-white leading-snug">
-                Tri protokola koje ne naučiš nigdje drugdje.
+                Tri protokola razvijena iz kliničke prakse.
               </h2>
             </motion.div>
             <motion.div
@@ -596,14 +596,15 @@ export default function CuppingPage() {
               Masažni terapeut · Predavač · Osnivač Supra Studium
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
-              Predaje cupping od 2017. godine. Program nije preveden iz stranih materijala — nastao je
-              iz kliničke prakse i rada s pacijentima. Svaka tehnika u programu ima svoju indikaciju,
-              mehanizam djelovanja i kontraindikaciju.
+              Program nije nastao iz certificiranih skripti ili prevedenih materijala. Razvijen je
+              kroz godine rada s kroničnom napetošću, fascijalnim restrikcijama i klijentima kod kojih
+              klasična masaža nije donosila promjenu. Svaka tehnika u programu ima klinički razlog
+              postojanja — indikaciju, mehanizam i granicu primjene.
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
-              Predaje u malim grupama. Svaki polaznik dobiva izravnu korekciju tehnike. Polaznici
-              odlaze s protokolima koje mogu primijeniti sljedeći dan — ne tek nakon daljnjih
-              edukacija.
+              Edukacija se odvija u malim grupama. Svaki polaznik prolazi tehnike u paru, s izravnom
+              korekcijom. Cilj nije demonstracija — cilj je da polaznik razumije što radi i zašto,
+              i da to može ponoviti sljedeći dan u ordinaciji.
             </p>
             <blockquote className="border-l border-[#a58d4e]/30 pl-5 mt-8">
               <p className="text-sm text-[#3b3b3b]/70 leading-relaxed italic font-playfair">
@@ -632,12 +633,16 @@ export default function CuppingPage() {
               Termini i kotizacija
             </p>
             <h2 className="font-playfair text-3xl text-[#ede9e3] leading-snug">
-              Pet gradova. Jedan dan.
+              Edukacije se organiziraju periodično.
             </h2>
           </motion.div>
 
           <div className="space-y-px bg-[#201e1a]">
-            {termini.map((t, i) => (
+            {[
+              { lokacija: "Zagreb", napomena: "redovita organizacija", cijena: "390 €" },
+              { lokacija: "Slavonski Brod", napomena: "u suradnji s lokalnim organizatorima", cijena: "390 €" },
+              { lokacija: "Rijeka / Split", napomena: "periodični termini prema interesu", cijena: "390 €" },
+            ].map((t, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
@@ -648,15 +653,28 @@ export default function CuppingPage() {
                 className="bg-[#141311] grid grid-cols-[1fr_auto_auto] gap-6 px-8 py-6 items-center"
               >
                 <div>
-                  <p className="text-sm text-[#ede9e3] font-medium">{t.grad}</p>
+                  <p className="text-sm text-[#ede9e3] font-medium">{t.lokacija}</p>
+                  <p className="text-xs mt-0.5" style={{ color: "rgba(237,233,227,0.32)" }}>{t.napomena}</p>
                 </div>
                 <p className="text-xs uppercase tracking-wider" style={{ color: "rgba(237,233,227,0.38)" }}>
-                  {t.datum}
+                  Na upit
                 </p>
                 <p className="text-sm text-[#ede9e3]">{t.cijena}</p>
               </motion.div>
             ))}
           </div>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.3}
+            viewport={{ once: true }}
+            className="mt-6 text-xs"
+            style={{ color: "rgba(237,233,227,0.32)" }}
+          >
+            Sve lokacije i termini dostupni su na upit.
+          </motion.p>
 
           <motion.div
             variants={fadeUp}
