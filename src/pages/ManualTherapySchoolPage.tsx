@@ -434,7 +434,7 @@ export default function ManualTherapySchoolPage() {
               alt="Mr.sc. A. Stošić — voditelj škole"
               className="w-full object-cover aspect-[4/5]"
               loading="lazy"
-              style={{ filter: "grayscale(8%)", objectPosition: "72% 15%", transform: "scale(1.12)", transformOrigin: "right top" }}
+              style={{ filter: "grayscale(8%)", objectPosition: "72% 4%", transform: "scale(1.12)", transformOrigin: "right top" }}
             />
           </motion.div>
 
@@ -473,7 +473,7 @@ export default function ManualTherapySchoolPage() {
       </section>
 
       {/* Kotizacija */}
-      <section className="py-24 px-6 bg-[#111111]" id="kotizacija">
+      <section className="py-24 px-6 bg-[#141311]" id="kotizacija">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -490,7 +490,7 @@ export default function ManualTherapySchoolPage() {
             </h2>
           </motion.div>
 
-          <div className="space-y-px bg-[#1c1c1c]">
+          <div className="space-y-px bg-[#201e1a]">
             {termini.map((t, i) => (
               <motion.div
                 key={i}
@@ -499,7 +499,7 @@ export default function ManualTherapySchoolPage() {
                 whileInView="visible"
                 custom={i * 0.07}
                 viewport={{ once: true }}
-                className="bg-[#111111] grid grid-cols-[1fr_auto_auto_auto] gap-6 px-8 py-6 items-center"
+                className="bg-[#141311] grid grid-cols-[1fr_auto_auto_auto] gap-6 px-8 py-6 items-center"
               >
                 <div>
                   <p className="text-sm text-[#ede9e3] font-medium">{t.stupanj}</p>
@@ -516,7 +516,7 @@ export default function ManualTherapySchoolPage() {
                   onMouseEnter={e => (e.currentTarget.style.color = '#ede9e3')}
                   onMouseLeave={e => (e.currentTarget.style.color = '#9e8a46')}
                 >
-                  PDF →
+                  PDF Program →
                 </a>
               </motion.div>
             ))}
@@ -563,7 +563,7 @@ export default function ManualTherapySchoolPage() {
             <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Česta pitanja
             </p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A]">Prije upisa.</h2>
+            <h2 className="font-playfair text-3xl text-[#1F1D1A]">Najčešća pitanja prije početka.</h2>
           </motion.div>
 
           <motion.div

@@ -198,19 +198,19 @@ export function CourseHero({
                 }}
               >
                 <div
-                  className="text-[8.5px] uppercase tracking-[0.25em] mb-2 font-normal"
+                  className="text-[9.5px] uppercase tracking-[0.25em] mb-2 font-normal"
                   style={{ color: '#B89A4F' }}
                 >
                   {item.field}
                 </div>
                 <div
-                  className="text-[16px] font-medium leading-snug"
+                  className="text-[18px] font-medium leading-snug"
                   style={{ color: '#0e0e0e' }}
                 >
                   {item.value}
                 </div>
                 <div
-                  className="text-[11px] mt-1 font-normal leading-relaxed"
+                  className="text-[12px] mt-1 font-normal leading-relaxed"
                   style={{ color: '#3b3b3b' }}
                 >
                   {item.detail}
