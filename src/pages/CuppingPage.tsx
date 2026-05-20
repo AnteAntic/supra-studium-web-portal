@@ -48,7 +48,7 @@ const faq = [
   },
   {
     q: "Kako se ovaj tečaj razlikuje od standardnih cupping edukacija?",
-    a: "Jedini tečaj u regiji koji integrira TKM meridijane, 9 kliznih tehnika i anti-age protokol lica u jednom danu. Sadržaj nije preuzet iz stranih materijala — razvijen je iz kliničke prakse i testiran na pacijentima.",
+    a: "Jedini tečaj u regiji koji integrira TKM meridijane, 9 kliznih tehnika i anti-age protokol lica u jednom danu. Sadržaj nije preuzet iz stranih materijala — razvijen je iz kliničke prakse.",
   },
 ];
 
@@ -296,12 +296,10 @@ export default function CuppingPage() {
             <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
               Svaka tehnika masaže komprimira tkivo — pritišće prema dole. Cupping radi obrnuto:
               negativni pritisak podiže fasciju, odvaja slojeve, otvara prostor za cirkulaciju i limfu.
-              To nije varijacija masaže. To je drugačiji princip rada s tijelom.
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed">
               Terapeuti koji prvi put rade s čašama opisuju isto iznenađenje — tkivo reagira na mjestima
-              gdje manualni pritisak nije dostizao. Tečaj počinje razumijevanjem tog mehanizma, ne
-              samo primjenom tehnika.
+              gdje manualni pritisak nije dostizao. Tečaj počinje razumijevanjem tog mehanizma.
             </p>
           </motion.div>
         </div>
@@ -393,16 +391,16 @@ export default function CuppingPage() {
       {/* ── Photo intermezzo ─────────────────────────────────── */}
       <section className="relative h-[55vh] overflow-hidden">
         <img
-          src="/lovable-uploads/cup-intermezzo-nadzor.jpg"
-          alt="Voditelj nadzire praktični rad polaznika"
+          src="/lovable-uploads/cup-intermezzo-aplikacija.jpg"
+          alt="Primjena vakuumske čaše — aplikacijski moment"
           className="w-full h-full object-cover"
           loading="lazy"
-          style={{ filter: "grayscale(8%)", objectPosition: "center 30%" }}
+          style={{ filter: "grayscale(8%)", objectPosition: "center 62%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0e0e0e]/55 via-[#0e0e0e]/20 to-transparent" />
         <div className="absolute bottom-10 left-8 md:left-16">
           <p className="text-[10px] uppercase tracking-[0.28em] text-white/50">
-            Praktični rad · Cupping tečaj
+            Primjena · vakuumska čaša
           </p>
         </div>
       </section>
@@ -433,8 +431,7 @@ export default function CuppingPage() {
             >
               <p className="text-sm text-white/55 leading-relaxed">
                 Program nije preuzet iz stranih edukacija. Razvijen je iz kliničke prakse kroz
-                više godina rada s pacijentima. Tri protokola koje polaznici dobivaju ne postoje
-                kao standardni sadržaj ni na jednom tečaju u regiji.
+                više godina rada s pacijentima.
               </p>
             </motion.div>
           </div>
@@ -637,11 +634,23 @@ export default function CuppingPage() {
             </h2>
           </motion.div>
 
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.1}
+            viewport={{ once: true }}
+            className="text-sm leading-relaxed mb-10 max-w-md"
+            style={{ color: "rgba(237,233,227,0.45)" }}
+          >
+            Program se održava u manjim grupama, ovisno o rasporedu i organizaciji partnera.
+          </motion.p>
+
           <div className="space-y-px bg-[#201e1a]">
             {[
-              { lokacija: "Zagreb", napomena: "redovita organizacija", cijena: "390 €" },
-              { lokacija: "Slavonski Brod", napomena: "u suradnji s lokalnim organizatorima", cijena: "390 €" },
-              { lokacija: "Rijeka / Split", napomena: "periodični termini prema interesu", cijena: "390 €" },
+              { lokacija: "Zagreb", napomena: "redovita organizacija" },
+              { lokacija: "Slavonski Brod", napomena: "u suradnji s lokalnim organizatorima" },
+              { lokacija: "Rijeka / Split", napomena: "periodični termini prema interesu" },
             ].map((t, i) => (
               <motion.div
                 key={i}
@@ -650,28 +659,35 @@ export default function CuppingPage() {
                 whileInView="visible"
                 custom={i * 0.07}
                 viewport={{ once: true }}
-                className="bg-[#141311] grid grid-cols-[1fr_auto_auto] gap-6 px-8 py-6 items-center"
+                className="bg-[#141311] px-8 py-5"
               >
-                <div>
-                  <p className="text-sm text-[#ede9e3] font-medium">{t.lokacija}</p>
-                  <p className="text-xs mt-0.5" style={{ color: "rgba(237,233,227,0.32)" }}>{t.napomena}</p>
-                </div>
-                <p className="text-xs uppercase tracking-wider" style={{ color: "rgba(237,233,227,0.38)" }}>
-                  Na upit
-                </p>
-                <p className="text-sm text-[#ede9e3]">{t.cijena}</p>
+                <p className="text-sm text-[#ede9e3] font-medium">{t.lokacija}</p>
+                <p className="text-xs mt-0.5" style={{ color: "rgba(237,233,227,0.32)" }}>{t.napomena}</p>
               </motion.div>
             ))}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              custom={0.25}
+              viewport={{ once: true }}
+              className="bg-[#141311] px-8 py-6 flex items-baseline gap-4"
+            >
+              <p className="text-[10px] uppercase tracking-[0.22em]" style={{ color: "rgba(237,233,227,0.38)" }}>
+                Kotizacija
+              </p>
+              <p className="font-playfair text-2xl text-[#ede9e3]">390 €</p>
+            </motion.div>
           </div>
 
           <motion.p
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            custom={0.3}
+            custom={0.35}
             viewport={{ once: true }}
-            className="mt-6 text-xs"
-            style={{ color: "rgba(237,233,227,0.32)" }}
+            className="mt-5 text-xs"
+            style={{ color: "rgba(237,233,227,0.28)" }}
           >
             Sve lokacije i termini dostupni su na upit.
           </motion.p>
