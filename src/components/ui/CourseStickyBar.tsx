@@ -102,14 +102,20 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
 
         {/* Mobile */}
         <div className="md:hidden flex items-center justify-between gap-4 py-2">
-          <span className="text-[10px] uppercase tracking-[0.18em] font-normal" style={{ color: '#5F5A52' }}>
-            {locations.map((loc, i) => (
-              <span key={i}>
-                {i > 0 && <span style={{ color: 'rgba(0,0,0,0.18)' }}>{' / '}</span>}
-                <span style={{ color: '#B89A4F' }}>{loc.city}</span>
-                {' · '}{loc.dates}
-              </span>
-            ))}
+          <span className="text-[10px] uppercase tracking-[0.15em] font-normal leading-none" style={{ color: '#5F5A52' }}>
+            {locations.length === 1 ? (
+              <>
+                <span style={{ color: '#B89A4F' }}>{locations[0].city}</span>
+                {' · '}{locations[0].dates}
+              </>
+            ) : (
+              locations.slice(0, 3).map((loc, i) => (
+                <span key={i}>
+                  {i > 0 && <span style={{ color: 'rgba(0,0,0,0.22)' }}>{' · '}</span>}
+                  <span style={{ color: '#B89A4F' }}>{loc.city}</span>
+                </span>
+              ))
+            )}
           </span>
           <button
             className="flex-shrink-0 text-[10px] uppercase tracking-[0.15em] font-normal py-2 px-5 transition-colors duration-300"

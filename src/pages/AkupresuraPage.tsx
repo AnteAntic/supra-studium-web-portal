@@ -23,7 +23,7 @@ const AkupresuraPage = () => {
         headline={<>Kada znaš da si<br />na pravom mjestu.</>}
         subheadline="Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom."
         videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&st=ym2v8jte&raw=1"
-        videoPoster="/poster-hero.jpg"
+        videoPoster="/lovable-uploads/a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png"
         primaryCTA={{ label: "Pogledaj program", onClick: scrollToProgram }}
         secondaryCTA={{ label: "Pogledaj video", onClick: () => setVideoModalOpen(true) }}
         facts={[
@@ -411,6 +411,7 @@ const AkupresuraPage = () => {
                     src={img.src}
                     alt={img.alt}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                     style={{ display: 'block' }}
                   />
                 </div>
@@ -515,7 +516,7 @@ const AkupresuraPage = () => {
                   style={{ border: '1px solid rgba(0,0,0,0.28)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
                   onMouseEnter={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = '#B89A4F'; b.style.borderColor = '#B89A4F'; b.style.color = '#fff'; }}
                   onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
-                  onClick={() => { const el = document.getElementById('kontakt'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
+                  onClick={() => { const el = document.getElementById('pricing'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
                 >
                   Kontaktiraj za informacije
                 </button>

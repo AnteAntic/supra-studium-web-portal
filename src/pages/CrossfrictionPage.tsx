@@ -13,7 +13,7 @@ const CrossfrictionPage = () => {
   };
 
   const scrollToLocations = () => {
-    const el = document.getElementById('lokacije');
+    const el = document.getElementById('pricing');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 

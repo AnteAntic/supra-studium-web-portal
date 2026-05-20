@@ -72,7 +72,7 @@ export function CourseHero({
           className="absolute inset-0 hidden md:block"
           style={{
             background:
-              'linear-gradient(108deg, rgba(10,8,6,0.62) 0%, rgba(10,8,6,0.42) 32%, rgba(10,8,6,0.10) 58%, transparent 76%)',
+              'linear-gradient(108deg, rgba(10,8,6,0.50) 0%, rgba(10,8,6,0.30) 32%, rgba(10,8,6,0.08) 58%, transparent 76%)',
           }}
         />
 
@@ -81,7 +81,7 @@ export function CourseHero({
           className="absolute inset-0 md:hidden"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(8,6,4,0.52) 0%, rgba(8,6,4,0.44) 28%, rgba(8,6,4,0.32) 52%, rgba(8,6,4,0.20) 72%, rgba(8,6,4,0.28) 100%)',
+              'linear-gradient(to bottom, rgba(8,6,4,0.42) 0%, rgba(8,6,4,0.34) 28%, rgba(8,6,4,0.22) 52%, rgba(8,6,4,0.14) 72%, rgba(8,6,4,0.22) 100%)',
           }}
         />
 
@@ -175,43 +175,43 @@ export function CourseHero({
       </section>
 
       {/* ── Facts Band ─────────────────────────────────────────── */}
-      <section className="bg-[#F4F1EA]">
+      <section className="bg-[#F4F1EA] pt-5">
         <div className="container mx-auto px-6 md:px-10">
           <div
             className="grid grid-cols-2 md:grid-cols-4"
             style={{
-              borderTop: '1px solid rgba(0,0,0,0.06)',
-              borderBottom: '1px solid rgba(0,0,0,0.06)',
+              borderTop: '1px solid rgba(0,0,0,0.08)',
+              borderBottom: '1px solid rgba(0,0,0,0.08)',
             }}
           >
             {facts.map((item, i) => (
               <div
                 key={i}
                 className={[
-                  'py-10 px-6 md:px-8',
+                  'py-7 px-6 md:px-8',
                   i === 0 ? 'pl-0' : '',
                   i === 3 ? 'md:pr-0' : '',
                 ].join(' ')}
                 style={{
-                  borderLeft: i !== 0 ? '1px solid rgba(0,0,0,0.10)' : 'none',
-                  borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.10)' : 'none',
+                  borderLeft: i !== 0 ? '1px solid rgba(0,0,0,0.08)' : 'none',
+                  borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.08)' : 'none',
                 }}
               >
                 <div
-                  className="text-[8.5px] uppercase tracking-[0.22em] mb-4 font-normal"
+                  className="text-[8.5px] uppercase tracking-[0.25em] mb-2 font-normal"
                   style={{ color: '#B89A4F' }}
                 >
                   {item.field}
                 </div>
                 <div
-                  className="text-[14px] font-normal leading-snug"
-                  style={{ color: '#1F1D1A' }}
+                  className="text-[16px] font-medium leading-snug"
+                  style={{ color: '#0e0e0e' }}
                 >
                   {item.value}
                 </div>
                 <div
-                  className="text-[11px] mt-2 font-normal leading-relaxed"
-                  style={{ color: '#5F5A52' }}
+                  className="text-[11px] mt-1 font-normal leading-relaxed"
+                  style={{ color: '#3b3b3b' }}
                 >
                   {item.detail}
                 </div>
