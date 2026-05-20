@@ -77,7 +77,7 @@ export default function OUcilistuPage() {
           className="absolute inset-0 hidden md:block"
           style={{
             background:
-              "linear-gradient(108deg, rgba(10,8,6,0.56) 0%, rgba(10,8,6,0.32) 34%, rgba(10,8,6,0.10) 60%, transparent 78%)",
+              "linear-gradient(108deg, rgba(10,8,6,0.68) 0%, rgba(10,8,6,0.40) 34%, rgba(10,8,6,0.12) 60%, transparent 78%)",
           }}
         />
 
@@ -272,7 +272,7 @@ export default function OUcilistuPage() {
               <img
                 src="/lovable-uploads/ante-tretman-900.webp"
                 alt="Ante Antić — klinički rad"
-                className="w-full object-cover aspect-[16/7]"
+                className="w-full object-cover aspect-[16/5]"
                 loading="lazy"
                 style={{
                   filter: "grayscale(10%)",
@@ -334,10 +334,10 @@ export default function OUcilistuPage() {
               viewport={{ once: true }}
             >
               <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
-                Međunarodni kontekst
+                Praksa i suradnja
               </p>
               <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug">
-                Struka, edukacija i međunarodni kontekst.
+                Praksa, edukacija i međunarodni kontekst.
               </h2>
             </motion.div>
             <motion.div
@@ -400,7 +400,7 @@ export default function OUcilistuPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-[10px] uppercase tracking-[0.38em] text-[#B89A4F] mb-8">
               Polaznici
             </p>
             <div className="w-10 h-px bg-[#a58d4e]/30" />
