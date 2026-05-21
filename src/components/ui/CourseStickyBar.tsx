@@ -88,6 +88,12 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
             ))}
           </div>
 
+          {price && (
+            <span className="flex-shrink-0 text-[13px] font-medium" style={{ color: '#1F1D1A' }}>
+              {price}
+            </span>
+          )}
+
           <button
             className="flex-shrink-0 text-[10.5px] uppercase tracking-[0.18em] font-normal py-2.5 px-8"
             style={{

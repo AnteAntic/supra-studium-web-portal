@@ -22,7 +22,7 @@ const AkupresuraPage = () => {
         category="Akupresura & Trigger Point Terapija · Zagreb"
         headline={<>Kada znaš da si<br />na pravom mjestu.</>}
         subheadline="Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom."
-        videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&st=ym2v8jte&raw=1"
+        videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&raw=1"
         videoPoster="/lovable-uploads/a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png"
         primaryCTA={{ label: "Pogledaj program", onClick: scrollToProgram }}
         secondaryCTA={{ label: "Pogledaj video", onClick: () => setVideoModalOpen(true) }}
@@ -38,7 +38,7 @@ const AkupresuraPage = () => {
       <CourseStickyBar locations={[{
       city: "Zagreb",
       dates: "termin u pripremi"
-    }]} price="" ctaText="Rezerviraj mjesto" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
+    }]} price="450 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
 
       {/* Klinička observacija */}
       <section className="bg-white pt-24 pb-0">
@@ -518,10 +518,82 @@ const AkupresuraPage = () => {
                   onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
                   onClick={() => { const el = document.getElementById('pricing'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
                 >
-                  Kontaktiraj za informacije
+                  Pogledaj program
                 </button>
 
               </motion.div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Nakon edukacije — testimonials */}
+      <section style={{ background: '#F7F3EE' }} className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="mb-16"
+            >
+              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                Nakon edukacije
+              </p>
+              <div className="w-10 h-px mb-7" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#7A7570', maxWidth: '48ch' }}>
+                Kratka iskustva terapeuta koji su završili edukaciju.
+              </p>
+            </motion.div>
+
+            <div>
+              {[
+                {
+                  text: 'Velik dio edukacije temelji se na praktičnom radu koji se odmah može primijeniti u svakodnevnom radu.',
+                  attr: 'Bruna Prnjak, fizioterapeutkinja',
+                },
+                {
+                  text: 'Dobila sam puno više nego što sam očekivala od same edukacije.',
+                  attr: 'Aleksandra Aleks, polaznica ATP edukacije',
+                },
+                {
+                  text: 'Osjećam veću sigurnost u radu, a klijenti mi sve više poklanjaju povjerenje.',
+                  attr: 'Irena Škarić, terapeutkinja',
+                },
+                {
+                  text: 'Ante nesebično dijeli znanje i objašnjava kompleksne stvari na jasan način.',
+                  attr: 'Alena Jurić, polaznica manualne terapije',
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.65, delay: i * 0.07, ease: 'easeOut' }}
+                  viewport={{ once: true }}
+                  className={i > 0 ? 'mt-16 pt-14' : ''}
+                  style={i > 0 ? { borderTop: '1px solid rgba(0,0,0,0.07)' } : {}}
+                >
+                  <p
+                    className="font-playfair leading-[1.55] mb-5"
+                    style={{
+                      fontSize: '1.2rem',
+                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.82)',
+                    }}
+                  >
+                    {item.text}
+                  </p>
+                  <p
+                    className="text-[11px] uppercase tracking-[0.2em] font-normal"
+                    style={{ color: 'rgba(31,29,26,0.40)' }}
+                  >
+                    {item.attr}
+                  </p>
+                </motion.div>
+              ))}
             </div>
 
           </div>
@@ -559,7 +631,7 @@ const AkupresuraPage = () => {
                 </p>
 
                 <p className="text-[12.5px] leading-[1.65] font-normal mb-6" style={{ color: '#7A7570' }}>
-                  Rana prijava omogućuje sudjelovanje po povoljnijim uvjetima kada je dostupna.
+                  Termini i uvjeti prijave navedeni su u registracijskom obrascu.
                 </p>
 
                 <div className="mb-8" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} />
@@ -575,7 +647,7 @@ const AkupresuraPage = () => {
                   onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
                   onClick={() => window.open('https://tally.so/r/wA5kvD', '_blank', 'noopener,noreferrer')}
                 >
-                  Rezerviraj mjesto
+                  Prijavi se
                 </button>
               </motion.div>
 
@@ -772,7 +844,7 @@ const AkupresuraPage = () => {
         }} exit={{
           scale: 0.8,
           opacity: 0
-        }} className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden" onClick={e => e.stopPropagation()}>
+        }} className="relative w-full max-w-4xl aspect-video bg-black rounded-sm overflow-hidden" onClick={e => e.stopPropagation()}>
               <Button variant="ghost" size="icon" className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white" onClick={() => setVideoModalOpen(false)}>
                 <X className="w-6 h-6" />
               </Button>
