@@ -128,12 +128,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
                 {' · '}{locations[0].dates}
               </>
             ) : (
-              locations.slice(0, 3).map((loc, i) => (
-                <span key={i}>
-                  {i > 0 && <span style={{ color: 'rgba(0,0,0,0.22)' }}>{' · '}</span>}
-                  <span style={{ color: '#B89A4F' }}>{loc.city}</span>
-                </span>
-              ))
+              <span style={{ color: '#B89A4F' }}>{locations[0].city}</span>
             )}
           </span>
           <button

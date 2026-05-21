@@ -27,8 +27,8 @@ const CrossfrictionPage = () => {
 
       <CourseStickyBar
         locations={[
-          { city: "Zagreb", dates: "redovita organizacija" },
-          { city: "Slavonski Brod", dates: "u suradnji s partnerima" },
+          { city: "Zagreb", dates: "redovito" },
+          { city: "Slavonski Brod", dates: "povremeno" },
           { city: "Rijeka / Split", dates: "periodično" },
         ]}
         price=""
@@ -544,7 +544,7 @@ const CrossfrictionPage = () => {
                 items: [
                   'Složene prezentacije: višestruka restrikcija, kronični obrazac, nelinearna logika simptoma',
                   'Terapijsko razmišljanje u pokretu — palpatorni nalaz određuje smjer, ne unaprijed zadani redoslijed',
-                  'Cross Friction i funkcionalna masaža kao kontinuirani klinički odgovor — slijed određuje nalaz, ne pozicija u shemi',
+                  'Cross friction i funkcionalna masaža kao kontinuirani klinički odgovor — slijed određuje nalaz, ne pozicija u shemi',
                   'Procjena, intervencija i provjera promjene kao jedan integrirani klinički čin',
                 ],
                 note: null,
