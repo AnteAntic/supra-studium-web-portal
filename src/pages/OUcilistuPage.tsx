@@ -316,8 +316,8 @@ export default function OUcilistuPage() {
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed">
               Potpredsjednik je Svjetske federacije masaže, manualne terapije i Nuad Thaia
-              za Hrvatsku te sudjeluje u organizaciji Hrvatskog prvenstva u masaži i manualnoj
-              terapiji.
+              za Hrvatsku. Sudjeluje kao međunarodni sudac i organizator stručnih natjecanja
+              iz masaže i manualne terapije.
             </p>
           </motion.div>
         </div>
@@ -469,7 +469,7 @@ export default function OUcilistuPage() {
               },
               {
                 naziv: "E-radna knjižica",
-                opis: "Pohađanje programa može se evidentirati pod kategorijom dodatnog obrazovanja, sukladno primjenjivom administrativnom postupku.",
+                opis: "Pohađanje programa može se evidentirati pod kategorijom dodatnog obrazovanja, sukladno Zakonu o mirovinskom osiguranju, čl. 104. i 108. (NN 79/2013), čl. 2.",
               },
               {
                 naziv: "Međunarodna suradnja",
@@ -516,10 +516,18 @@ export default function OUcilistuPage() {
                 Polaznici Supra Studija sudjeluju i osvajaju medalje na hrvatskim i međunarodnim
                 prvenstvima masaže i manualne terapije.
               </p>
-              <p className="text-sm text-[#3b3b3b] leading-relaxed">
+              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
                 Sudjelovanje na prvenstvima dio je razvoja terapeuta kroz praksu, evaluaciju
                 i međunarodnu razmjenu iskustva.
               </p>
+              <a
+                href="https://feel-heal-festival-6k1kkp5.gamma.site/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] uppercase tracking-[0.22em] text-[#B89A4F]/70 hover:text-[#B89A4F] transition-colors duration-200"
+              >
+                Pogledaj stranicu prvenstva
+              </a>
             </motion.div>
             <motion.div
               variants={fadeUp}

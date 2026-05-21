@@ -18,10 +18,24 @@ const COURSES: Course[] = [
     status: 'active',
   },
   {
+    id: 'akupresura',
+    name: 'Akupresura i Trigger Point terapija',
+    desc: 'Precizan rad s akupresurnim i miofascijalnim točkama boli.',
+    href: '/akupresura-trigger-point',
+    status: 'active',
+  },
+  {
     id: 'cross-friction',
     name: 'Cross Friction i funkcionalna masaža',
     desc: 'Precizan rad na fasciji, ožiljčima i funkcionalnim ograničenjima.',
     href: '/crossfriction-funkcionalna-masaza',
+    status: 'active',
+  },
+  {
+    id: 'cupping',
+    name: 'Cupping terapija',
+    desc: 'Vakuum terapija za rad s fascijom, cirkulacijom i mišićnom napetosti.',
+    href: '/cupping-terapija',
     status: 'active',
   },
   {
