@@ -531,19 +531,19 @@ const AkupresuraPage = () => {
       {/* Nakon edukacije — testimonials */}
       <section style={{ background: '#F7F3EE' }} className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="mb-14"
+              className="mb-10"
             >
               <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Nakon edukacije
               </p>
-              <div className="w-10 h-px mb-7" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <div className="w-10 h-px mb-5" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
               <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#7A7570', maxWidth: '48ch' }}>
                 Kratka iskustva terapeuta koji su završili edukaciju.
               </p>
@@ -574,15 +574,15 @@ const AkupresuraPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.65, delay: i * 0.07, ease: 'easeOut' }}
                   viewport={{ once: true }}
-                  className={i > 0 ? 'mt-16 pt-14' : ''}
+                  className={i > 0 ? 'mt-10 pt-8' : ''}
                   style={i > 0 ? { borderTop: '1px solid rgba(0,0,0,0.07)' } : {}}
                 >
                   <p
-                    className="font-playfair mb-5"
+                    className="font-playfair mb-3"
                     style={{
-                      fontSize: i === 0 ? '1.45rem' : '1.18rem',
-                      lineHeight: i === 0 ? '1.58' : '1.67',
-                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.68)',
+                      fontSize: i === 0 ? '1.28rem' : '1.12rem',
+                      lineHeight: i === 0 ? '1.55' : '1.65',
+                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.78)',
                     }}
                   >
                     {item.text}

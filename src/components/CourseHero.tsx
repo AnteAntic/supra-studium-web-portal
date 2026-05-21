@@ -65,23 +65,32 @@ export function CourseHero({
         </div>
 
         {/* Base tonal settle */}
-        <div className="absolute inset-0 bg-black/8" />
+        <div className="absolute inset-0 bg-black/10" />
 
-        {/* Desktop: soft left-to-right atmospheric zone */}
+        {/* Desktop: cinematic left text zone */}
         <div
           className="absolute inset-0 hidden md:block"
           style={{
             background:
-              'linear-gradient(108deg, rgba(10,8,6,0.42) 0%, rgba(10,8,6,0.24) 32%, rgba(10,8,6,0.05) 58%, transparent 76%)',
+              'linear-gradient(to right, rgba(12,9,6,0.72) 0%, rgba(12,9,6,0.52) 26%, rgba(12,9,6,0.18) 52%, rgba(12,9,6,0.04) 66%, transparent 78%)',
           }}
         />
 
-        {/* Mobile: vertical atmospheric gradient */}
+        {/* Desktop: radial depth behind headline area */}
+        <div
+          className="absolute inset-0 hidden md:block"
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 80% at 12% 60%, rgba(8,5,2,0.32) 0%, transparent 100%)',
+          }}
+        />
+
+        {/* Mobile: readable vertical gradient */}
         <div
           className="absolute inset-0 md:hidden"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(8,6,4,0.35) 0%, rgba(8,6,4,0.27) 28%, rgba(8,6,4,0.17) 52%, rgba(8,6,4,0.10) 72%, rgba(8,6,4,0.17) 100%)',
+              'linear-gradient(to bottom, rgba(10,7,4,0.52) 0%, rgba(10,7,4,0.40) 25%, rgba(10,7,4,0.24) 50%, rgba(10,7,4,0.14) 72%, rgba(10,7,4,0.22) 100%)',
           }}
         />
 
