@@ -65,14 +65,14 @@ export function CourseHero({
         </div>
 
         {/* Base tonal settle */}
-        <div className="absolute inset-0 bg-black/12" />
+        <div className="absolute inset-0 bg-black/8" />
 
         {/* Desktop: soft left-to-right atmospheric zone */}
         <div
           className="absolute inset-0 hidden md:block"
           style={{
             background:
-              'linear-gradient(108deg, rgba(10,8,6,0.50) 0%, rgba(10,8,6,0.30) 32%, rgba(10,8,6,0.08) 58%, transparent 76%)',
+              'linear-gradient(108deg, rgba(10,8,6,0.42) 0%, rgba(10,8,6,0.24) 32%, rgba(10,8,6,0.05) 58%, transparent 76%)',
           }}
         />
 
@@ -81,7 +81,7 @@ export function CourseHero({
           className="absolute inset-0 md:hidden"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(8,6,4,0.42) 0%, rgba(8,6,4,0.34) 28%, rgba(8,6,4,0.22) 52%, rgba(8,6,4,0.14) 72%, rgba(8,6,4,0.22) 100%)',
+              'linear-gradient(to bottom, rgba(8,6,4,0.35) 0%, rgba(8,6,4,0.27) 28%, rgba(8,6,4,0.17) 52%, rgba(8,6,4,0.10) 72%, rgba(8,6,4,0.17) 100%)',
           }}
         />
 

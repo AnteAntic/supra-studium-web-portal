@@ -98,7 +98,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
           )}
 
           <button
-            className="flex-shrink-0 text-[10.5px] uppercase tracking-[0.18em] font-normal py-2.5 px-8"
+            className="flex-shrink-0 text-[10px] uppercase tracking-[0.22em] font-normal py-3 px-8 rounded-none"
             style={{
               border: '1px solid rgba(0,0,0,0.14)',
               color: '#3D3A35',

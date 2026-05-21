@@ -20,7 +20,7 @@ const AkupresuraPage = () => {
   return <div className="min-h-screen bg-white">
       <CourseHero
         category="Akupresura & Trigger Point Terapija · Zagreb"
-        headline={<>Kada znaš da si<br />na pravom mjestu.</>}
+        headline={<>Tkivo uvijek daje odgovor.</>}
         subheadline="Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom."
         videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&raw=1"
         videoPoster="/lovable-uploads/a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png"
@@ -578,10 +578,11 @@ const AkupresuraPage = () => {
                   style={i > 0 ? { borderTop: '1px solid rgba(0,0,0,0.07)' } : {}}
                 >
                   <p
-                    className="font-playfair leading-[1.65] mb-5"
+                    className="font-playfair mb-5"
                     style={{
-                      fontSize: '1.35rem',
-                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.88)',
+                      fontSize: i === 0 ? '1.45rem' : '1.18rem',
+                      lineHeight: i === 0 ? '1.58' : '1.67',
+                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.68)',
                     }}
                   >
                     {item.text}
@@ -637,7 +638,7 @@ const AkupresuraPage = () => {
                 <div className="mb-8" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} />
 
                 <p className="text-[12px] leading-[1.6] font-normal mb-14" style={{ color: '#9A9590' }}>
-                  Broj mjesta ograničen je kapacitetom praktičnog rada u paru.
+                  Rad u malim grupama.
                 </p>
 
                 <button
@@ -720,11 +721,11 @@ const AkupresuraPage = () => {
             <Accordion type="single" collapsible defaultValue="item-0">
 
               <AccordionItem value="item-0" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+                <AccordionTrigger className="py-7 text-left hover:no-underline text-[14.5px] font-normal [&>svg]:opacity-20 [&>svg]:w-3 [&>svg]:h-3" style={{ color: '#1F1D1A' }}>
                   Kada i gdje se održava edukacija?
                 </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <p className="text-[14px] leading-[1.8]" style={{ color: '#5F5A52' }}>
+                <AccordionContent className="pb-8">
+                  <p className="text-[14px] leading-[1.85]" style={{ color: '#5F5A52' }}>
                     Glavna edukacija održava se jednom godišnje u Zagrebu.
                     Edukacije u drugim gradovima organiziraju se ovisno o interesu i rasporedu programa tijekom godine.
                   </p>
@@ -735,7 +736,7 @@ const AkupresuraPage = () => {
               </AccordionItem>
 
               <AccordionItem value="item-1" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+                <AccordionTrigger className="py-7 text-left hover:no-underline text-[14.5px] font-normal [&>svg]:opacity-20 [&>svg]:w-3 [&>svg]:h-3" style={{ color: '#1F1D1A' }}>
                   Je li potrebno prethodno iskustvo?
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
@@ -757,18 +758,18 @@ const AkupresuraPage = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+                <AccordionTrigger className="py-7 text-left hover:no-underline text-[14.5px] font-normal [&>svg]:opacity-20 [&>svg]:w-3 [&>svg]:h-3" style={{ color: '#1F1D1A' }}>
                   Dobiva li se certifikat nakon edukacije?
                 </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <p className="text-[14px] leading-[1.8]" style={{ color: '#5F5A52' }}>
+                <AccordionContent className="pb-8">
+                  <p className="text-[14px] leading-[1.85]" style={{ color: '#5F5A52' }}>
                     Nakon završetka programa izdaje se potvrda o edukaciji koja se može evidentirati kao dodatno stručno obrazovanje u e-radnoj knjižici.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-3" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+                <AccordionTrigger className="py-7 text-left hover:no-underline text-[14.5px] font-normal [&>svg]:opacity-20 [&>svg]:w-3 [&>svg]:h-3" style={{ color: '#1F1D1A' }}>
                   Što je uključeno u kotizaciju?
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
@@ -793,11 +794,11 @@ const AkupresuraPage = () => {
               </AccordionItem>
 
               <AccordionItem value="item-4" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+                <AccordionTrigger className="py-7 text-left hover:no-underline text-[14.5px] font-normal [&>svg]:opacity-20 [&>svg]:w-3 [&>svg]:h-3" style={{ color: '#1F1D1A' }}>
                   Što ako nisam u mogućnosti prisustvovati jednom dijelu edukacije?
                 </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <p className="text-[14px] leading-[1.8]" style={{ color: '#5F5A52' }}>
+                <AccordionContent className="pb-8">
+                  <p className="text-[14px] leading-[1.85]" style={{ color: '#5F5A52' }}>
                     Polaznicima ostaju dostupni edukacijski materijali i dodatne upute za samostalno ponavljanje gradiva nakon edukacije.
                   </p>
                 </AccordionContent>
