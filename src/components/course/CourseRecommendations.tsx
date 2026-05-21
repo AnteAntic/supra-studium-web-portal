@@ -52,13 +52,6 @@ const COURSES: Course[] = [
     href: '/calabash-certifikacija',
     status: 'active',
   },
-  {
-    id: 'soulscan',
-    name: 'Soulscan – intuitivno čitanje duše',
-    desc: 'Intuitivni pristup radu s emocionalnim i energetskim obrascima.',
-    href: null,
-    status: 'coming-soon',
-  },
 ];
 
 interface CourseRecommendationsProps {

@@ -89,10 +89,29 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
           </div>
 
           <button
-            className="flex-shrink-0 text-[10.5px] uppercase tracking-[0.18em] font-normal py-2.5 px-8 transition-colors duration-300"
-            style={{ border: '1px solid rgba(0,0,0,0.28)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
-            onMouseEnter={e => { const b = e.currentTarget; b.style.background = '#B89A4F'; b.style.borderColor = '#B89A4F'; b.style.color = '#fff'; }}
-            onMouseLeave={e => { const b = e.currentTarget; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
+            className="flex-shrink-0 text-[10.5px] uppercase tracking-[0.18em] font-normal py-2.5 px-8"
+            style={{
+              border: '1px solid rgba(0,0,0,0.14)',
+              color: '#3D3A35',
+              background: 'rgba(250,248,244,0.96)',
+              cursor: 'pointer',
+              boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+              transition: 'all 0.6s ease',
+            }}
+            onMouseEnter={e => {
+              const b = e.currentTarget;
+              b.style.background = 'rgba(184,154,79,0.92)';
+              b.style.borderColor = 'rgba(184,154,79,0.70)';
+              b.style.color = '#1a1714';
+              b.style.boxShadow = '0 2px 8px rgba(184,154,79,0.18)';
+            }}
+            onMouseLeave={e => {
+              const b = e.currentTarget;
+              b.style.background = 'rgba(250,248,244,0.96)';
+              b.style.borderColor = 'rgba(0,0,0,0.14)';
+              b.style.color = '#3D3A35';
+              b.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
+            }}
             onClick={handleCTA}
             aria-label={soldOut ? 'Obavijesti me za sljedeći termin' : 'Rezerviraj mjesto na edukaciji'}
           >
@@ -118,10 +137,27 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
             )}
           </span>
           <button
-            className="flex-shrink-0 text-[10px] uppercase tracking-[0.15em] font-normal py-2 px-5 transition-colors duration-300"
-            style={{ border: '1px solid rgba(0,0,0,0.28)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
-            onMouseEnter={e => { const b = e.currentTarget; b.style.background = '#B89A4F'; b.style.borderColor = '#B89A4F'; b.style.color = '#fff'; }}
-            onMouseLeave={e => { const b = e.currentTarget; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
+            className="flex-shrink-0 text-[10px] uppercase tracking-[0.15em] font-normal py-2 px-5"
+            style={{
+              border: '1px solid rgba(0,0,0,0.14)',
+              color: '#3D3A35',
+              background: 'rgba(250,248,244,0.96)',
+              cursor: 'pointer',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+              transition: 'all 0.6s ease',
+            }}
+            onMouseEnter={e => {
+              const b = e.currentTarget;
+              b.style.background = 'rgba(184,154,79,0.92)';
+              b.style.borderColor = 'rgba(184,154,79,0.70)';
+              b.style.color = '#1a1714';
+            }}
+            onMouseLeave={e => {
+              const b = e.currentTarget;
+              b.style.background = 'rgba(250,248,244,0.96)';
+              b.style.borderColor = 'rgba(0,0,0,0.14)';
+              b.style.color = '#3D3A35';
+            }}
             onClick={handleCTA}
           >
             {soldOut ? 'Obavijesti me' : ctaText}

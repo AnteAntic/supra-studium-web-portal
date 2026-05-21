@@ -507,7 +507,7 @@ const CrossfrictionPage = () => {
                 Tri razine kliničke<br />
                 kompetencije.
               </h2>
-              <p className="text-[14px] leading-[1.82] font-normal mt-8" style={{ color: '#7A7570', maxWidth: '52ch' }}>
+              <p className="text-[14px] leading-[1.82] font-normal mt-8" style={{ color: '#7A7570', maxWidth: '46ch' }}>
                 Program ne gradi samo tehnički repertoar — gradi sposobnost prepoznavanja kako tijelo kompenzira, reagira i može se terapijski resetirati kao cjelina.
               </p>
             </motion.div>
@@ -855,7 +855,7 @@ const CrossfrictionPage = () => {
       </section>
 
       {/* Dark manifesto */}
-      <section style={{ background: '#1A1814' }} className="py-28 md:py-36">
+      <section style={{ background: '#1A1814' }} className="py-20 md:py-24">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -877,7 +877,7 @@ const CrossfrictionPage = () => {
       </section>
 
       {/* Metodološki pristup — manifesto */}
-      <section style={{ background: '#FAF8F4' }} className="relative py-28 md:py-32 overflow-hidden">
+      <section style={{ background: '#FAF8F4' }} className="relative py-20 md:py-24 overflow-hidden">
 
         {/* Parchment grain — tactile surface depth */}
         <div
@@ -965,11 +965,11 @@ const CrossfrictionPage = () => {
 
                 <div className="mb-10" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
 
-                <div style={{ maxWidth: '42ch' }}>
-                  <p className="text-[13.5px] leading-[1.95] font-normal mb-8" style={{ color: '#6B6560' }}>
+                <div style={{ maxWidth: '38ch' }}>
+                  <p className="text-[13px] leading-[1.92] font-normal mb-10" style={{ color: '#7A7570' }}>
                     Razvijen iz višegodišnjeg rada s prezentacijama gdje tkivni nalaz nije odgovarao predviđenom redoslijedu. Gdje je funkcionalni odgovor bio jedini pouzdan vodič.
                   </p>
-                  <p className="text-[13.5px] leading-[1.95] font-normal mb-16" style={{ color: '#6B6560' }}>
+                  <p className="text-[13px] leading-[1.92] font-normal mb-16" style={{ color: '#7A7570' }}>
                     Spaja cross friction, palpacijsku preciznost i razumijevanje tkivnih odnosa u jedan klinički dijalog s tijelom.
                   </p>
 
@@ -1017,14 +1017,17 @@ const CrossfrictionPage = () => {
       </section>
 
       {/* Field observations */}
-      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="py-24 md:py-28">
+      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="py-14 md:py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
 
-            <div className="grid md:grid-cols-3 gap-0">
+            <div
+              className="grid md:grid-cols-3"
+              style={{ borderTop: '1px solid rgba(0,0,0,0.08)', borderBottom: '1px solid rgba(0,0,0,0.08)' }}
+            >
               {[
                 {
-                  statement: 'Program mi je promijenio pristup palpaciji — počeo sam čitati tkivo, a ne samo reagirati na simptom.',
+                  statement: 'Program mi je promijenio pristup palpaciji i radu s lokomotornim sustavom.',
                   ime: 'Ante T.',
                   struka: 'fizioterapeut',
                 },
@@ -1045,32 +1048,33 @@ const CrossfrictionPage = () => {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.9, delay: i * 0.1, ease: 'easeOut' }}
                   viewport={{ once: true }}
-                  className="py-10 md:py-0 md:px-10"
+                  className="py-10 md:py-12 md:px-10"
                   style={{
-                    borderTop: '1px solid rgba(0,0,0,0.07)',
-                    ...(i > 0 ? { borderLeft: '0px' } : {}),
+                    borderTop: i > 0 ? '1px solid rgba(0,0,0,0.08)' : 'none',
+                    borderLeft: i > 0 ? '0' : 'none',
                   }}
                 >
-                  <div
-                    className="md:hidden"
-                    style={{ borderTop: i > 0 ? '1px solid rgba(0,0,0,0.07)' : 'none' }}
-                  />
                   <p
-                    className="font-playfair font-normal leading-[1.65] mb-6"
-                    style={{ fontSize: '15px', fontStyle: 'italic', color: '#1F1D1A' }}
+                    className="font-playfair font-normal leading-[1.68] mb-7"
+                    style={{ fontSize: '17px', fontStyle: 'italic', color: '#1F1D1A' }}
                   >
                     "{item.statement}"
                   </p>
                   <p
-                    className="text-[10px] uppercase tracking-[0.22em] font-normal"
-                    style={{ color: 'rgba(0,0,0,0.35)' }}
+                    className="text-[10.5px] uppercase tracking-[0.24em] font-normal"
+                    style={{ color: 'rgba(0,0,0,0.40)' }}
                   >
-                    {item.ime} · {item.struka}
+                    {item.ime}
+                  </p>
+                  <p
+                    className="text-[10px] uppercase tracking-[0.18em] font-normal mt-1"
+                    style={{ color: 'rgba(0,0,0,0.26)' }}
+                  >
+                    {item.struka}
                   </p>
                 </motion.div>
               ))}
             </div>
-            <div className="mt-10" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
 
           </div>
         </div>
@@ -1080,7 +1084,7 @@ const CrossfrictionPage = () => {
       <section
         id="pricing"
         style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }}
-        className="pt-24 pb-36"
+        className="pt-16 pb-28"
       >
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
@@ -1099,7 +1103,7 @@ const CrossfrictionPage = () => {
                 </p>
                 <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
 
-                <p className="text-[14px] leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '44ch' }}>
+                <p className="text-[14px] leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '40ch' }}>
                   Dvodnevna klinička edukacija. Teorija, palpacija i primjena u jednom kontinuiranom procesu učenja.
                 </p>
 

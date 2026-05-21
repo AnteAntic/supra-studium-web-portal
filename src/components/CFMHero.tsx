@@ -44,10 +44,26 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
         />
       </motion.div>
 
-      {/* Base atmospheric tonal layer — warm charcoal, not black mask */}
+      {/* Base atmospheric tonal layer — warm charcoal */}
       <div
         className="absolute inset-0"
-        style={{ background: 'rgba(14,11,7,0.15)' }}
+        style={{ background: 'rgba(16,10,4,0.20)' }}
+      />
+
+      {/* Cinematic edge vignette */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 130% 130% at 50% 50%, transparent 28%, rgba(6,4,2,0.32) 100%)',
+        }}
+      />
+
+      {/* Radial text-zone darkening — grounds the headline */}
+      <div
+        className="absolute inset-0 hidden md:block"
+        style={{
+          background: 'radial-gradient(ellipse 68% 75% at 22% 78%, rgba(8,5,2,0.42) 0%, transparent 100%)',
+        }}
       />
 
       {/* Desktop: directional text-zone — warm charcoal left, atmosphere right */}
