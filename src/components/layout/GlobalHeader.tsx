@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import NavHeader from '@/components/ui/nav-header';
 import supaStudiumLogo from '@/assets/supra-studium-logo.png';
@@ -34,8 +33,8 @@ const menuItems = [{
   name: 'RASPORED',
   href: '/raspored'
 }, {
-  name: 'VIDEO AKADEMIJA',
-  href: '/video-akademija'
+  name: 'O UČILIŠTU',
+  href: '/o-ucilistu'
 }, {
   name: 'KONTAKT',
   href: '#kontakt'
@@ -116,13 +115,6 @@ const GlobalHeader = () => {
                         </Link>}
                     </li>)}
                 </ul>
-              </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button size="sm" asChild>
-                  <Link to="/prijava">
-                    <span>Prijava</span>
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>

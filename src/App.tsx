@@ -21,6 +21,7 @@ import LomiLomiPage from "./pages/LomiLomiPage";
 import CalabashCertificationPage from "./pages/CalabashCertificationPage";
 import SoulScanPage from "./pages/SoulScanPage";
 import RasporedPage from "./pages/RasporedPage";
+import OUcilistuPage from "./pages/OUcilistuPage";
 import LogoProcessorPage from "./pages/LogoProcessorPage";
 
 const queryClient = new QueryClient();
@@ -48,7 +49,7 @@ const App = () => (
               <Route path="/soulscan" element={<SoulScanPage />} />
               <Route path="/video-akademija" element={<VideoAcademyPage />} />
               <Route path="/raspored" element={<RasporedPage />} />
-              <Route path="/o-ucilistu" element={<Index />} />
+              <Route path="/o-ucilistu" element={<OUcilistuPage />} />
               <Route path="/prijava" element={<RegistrationPage />} />
               <Route path="/kontakt" element={<ContactPage />} />
               <Route path="/logo-processor" element={<LogoProcessorPage />} />

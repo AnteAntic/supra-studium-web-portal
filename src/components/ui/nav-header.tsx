@@ -11,7 +11,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { PrijavaButton } from "@/components/ui/PrijavaButton";
 
 function NavHeader() {
   const [position, setPosition] = useState({
@@ -36,13 +35,11 @@ function NavHeader() {
       >
         <TecajeviDropdown setPosition={setPosition} isActive={location.pathname.includes('/tecajevi') || location.pathname.includes('skola-manualne') || location.pathname.includes('crossfriction') || location.pathname.includes('akupresura') || location.pathname.includes('cupping') || location.pathname.includes('lomi-lomi') || location.pathname.includes('calabash')} />
         <Tab setPosition={setPosition} href="/raspored" isActive={location.pathname === '/raspored'}>RASPORED</Tab>
-        <Tab setPosition={setPosition} href="/video-akademija" isActive={location.pathname === '/video-akademija'}>VIDEO AKADEMIJA</Tab>
+        <Tab setPosition={setPosition} href="/o-ucilistu" isActive={location.pathname === '/o-ucilistu'}>O UČILIŠTU</Tab>
         <Tab setPosition={setPosition} href="#kontakt" onClick={scrollToFooter} isActive={false}>KONTAKT</Tab>
 
         <Cursor position={position} />
       </ul>
-      
-      <PrijavaButton className="ml-4" />
     </div>
   );
 }
