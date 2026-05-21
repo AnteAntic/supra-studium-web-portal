@@ -13,13 +13,18 @@
 
 ## DEPLOY WORKFLOW
 
-### Brzi deploy (samo promijenjeni assets — koristiti ovo):
+### Brzi deploy (samo promijenjeni assets):
 ```bash
 ./deploy-quick.sh
 ```
-Preskače `lovable-uploads/` (33MB) i `videos/` (2MB). Uploadava samo `index.html` + `assets/`.
+Preskače `lovable-uploads/` i `videos/`. Uploadava samo `index.html` + `assets/`.  
+⚠️ **Ako si dodao nove slike u `public/lovable-uploads/`**, koristi puni deploy ili ručni upload:
 
-### Puni deploy (s backupom):
+```bash
+lftp ftp.uciliste-suprastudium.hr -e "set ssl:verify-certificate no; lcd public/lovable-uploads; cd public_html/lovable-uploads; mput nova-slika.jpg; bye"
+```
+
+### Puni deploy (s backupom, uključuje lovable-uploads):
 ```bash
 ./deploy.sh
 ```
@@ -49,6 +54,16 @@ deploy.sh           ← Puni deploy s backupom
 deploy-quick.sh     ← Brzi deploy (preporučeno)
 CLAUDE.md           ← Ovaj fajl
 ```
+
+---
+
+## DESIGN SYSTEM
+
+**Referentni dokument:** `DESIGN.md` — sadrži sve reusable UI obrasce, typography scale, boje, motion, kotizacija tablicu, FAQ pattern, sticky bar konvenciju, image direction.
+
+**Referentna implementacija:** `src/pages/ManualTherapySchoolPage.tsx` — najzrelija course page. Ekstrakcija obrazaca, ne copy-paste.
+
+**Brand/copy pravila:** `BRAND_SYSTEM.md`
 
 ---
 
