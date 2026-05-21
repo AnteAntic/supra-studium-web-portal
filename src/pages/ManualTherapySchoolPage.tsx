@@ -7,11 +7,11 @@ import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
 
 const pdfLinks = {
-  1: 'https://www.dropbox.com/scl/fi/hv3ggccj3bigoyxofngyf/raspored-1_stupanj.pdf?rlkey=8dhuv93b1aueor9438q4ngbve&st=8jkdb8g1&dl=1',
-  2: 'https://www.dropbox.com/scl/fi/s1peg49p41h6rj9iwywu1/raspored-2_stupanj.pdf?rlkey=ofw87spp5r6rr5umtada7vfax&st=c9vvlbxz&dl=1',
-  3: 'https://www.dropbox.com/scl/fi/4akk4tra87tjilms69dxp/raspored-3_stupanj.pdf?rlkey=vlhmcvvjx8a1d5ymqo5fhpe63&st=98yii60m&dl=1',
-  4: 'https://www.dropbox.com/scl/fi/bz93bt9daloo9mq0os52r/raspored-4_stupanj.pdf?rlkey=da0aa3adr8565p4picpncaugs&st=p02jdd4f&dl=1',
-  5: 'https://www.dropbox.com/scl/fi/l8xz55gi1u927casmxz1g/raspored-5-stupanj.pdf?rlkey=vlhmcvvjx8a1d5ymqo5fhpe63&st=2mm38cft&dl=1',
+  1: 'https://www.dropbox.com/scl/fi/hv3ggccj3bigoyxofngyf/raspored-1_stupanj.pdf?rlkey=8dhuv93b1aueor9438q4ngbve&dl=1',
+  2: 'https://www.dropbox.com/scl/fi/s1peg49p41h6rj9iwywu1/raspored-2_stupanj.pdf?rlkey=ofw87spp5r6rr5umtada7vfax&dl=1',
+  3: 'https://www.dropbox.com/scl/fi/4akk4tra87tjilms69dxp/raspored-3_stupanj.pdf?rlkey=2wqrsm3iy5rc7lplkh3j7s6w5&dl=1',
+  4: 'https://www.dropbox.com/scl/fi/bz93bt9daloo9mq0os52r/raspored-4_stupanj.pdf?rlkey=da0aa3adr8565p4picpncaugs&dl=1',
+  5: 'https://www.dropbox.com/scl/fi/l8xz55gi1u927casmxz1g/raspored-5-stupanj.pdf?rlkey=vlhmcvvjx8a1d5ymqo5fhpe63&dl=1',
 };
 
 const stupnjevi = [
@@ -133,7 +133,7 @@ export default function ManualTherapySchoolPage() {
       <CourseStickyBar
         locations={[{ city: 'Zagreb', dates: 'Na upit' }]}
         price=""
-        ctaText="Pošalji upit"
+        ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
       />
@@ -366,14 +366,14 @@ export default function ManualTherapySchoolPage() {
       </section>
 
       {/* Dr. Stošić interview — cinematic placeholder until video is ready */}
-      <section className="py-20 px-6" style={{ backgroundColor: '#F0EDE6' }}>
+      <section className="pt-12 pb-20 px-6" style={{ backgroundColor: '#F0EDE6' }}>
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="mb-10"
+            className="mb-6"
           >
             <p
               className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5"
@@ -671,7 +671,7 @@ export default function ManualTherapySchoolPage() {
             viewport={{ once: true }}
             className="relative overflow-hidden"
           >
-            <div className="overflow-hidden" style={{ aspectRatio: '4/5' }}>
+            <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
               <img
                 src="/lovable-uploads/mt-stosic-demonstracija.jpg"
                 alt="Mr.sc. A. Stošić — voditelj škole"
@@ -784,14 +784,14 @@ export default function ManualTherapySchoolPage() {
                 className="font-playfair leading-[1.5]"
                 style={{
                   fontSize: i === 0 ? 'clamp(1.2rem, 2.5vw, 1.45rem)' : '1.1rem',
-                  color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.72)',
+                  color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.82)',
                 }}
               >
                 {obs.text}
               </p>
               <p
                 className="text-[9.5px] uppercase tracking-[0.20em] font-normal"
-                style={{ color: 'rgba(31,29,26,0.26)' }}
+                style={{ color: 'rgba(31,29,26,0.40)' }}
               >
                 {obs.attr}
               </p>
@@ -839,7 +839,7 @@ export default function ManualTherapySchoolPage() {
                 whileInView="visible"
                 custom={i * 0.07}
                 viewport={{ once: true }}
-                className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_120px_80px_auto] gap-4 md:gap-8 py-6 items-center"
+                className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_120px_80px_auto] gap-4 md:gap-8 py-7 items-center"
                 style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
               >
                 <div>
@@ -851,7 +851,7 @@ export default function ManualTherapySchoolPage() {
                   </p>
                   <p
                     className="text-[11px] mt-0.5 font-normal"
-                    style={{ color: 'rgba(237,233,227,0.28)' }}
+                    style={{ color: 'rgba(237,233,227,0.20)' }}
                   >
                     {t.lokacija}
                   </p>
@@ -924,7 +924,7 @@ export default function ManualTherapySchoolPage() {
                 (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'rgba(212,175,55,0.90)';
               }}
             >
-              Pošalji upit
+              Prijavi se
             </a>
             <a
               href="https://wa.me/385958558953"
