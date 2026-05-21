@@ -27,9 +27,9 @@ const CrossfrictionPage = () => {
 
       <CourseStickyBar
         locations={[
-          { city: "Zagreb", dates: "termin u pripremi" },
-          { city: "Split", dates: "termin u pripremi" },
-          { city: "Rijeka", dates: "termin u pripremi" },
+          { city: "Zagreb", dates: "redovita organizacija" },
+          { city: "Slavonski Brod", dates: "u suradnji s partnerima" },
+          { city: "Rijeka / Split", dates: "periodično" },
         ]}
         price=""
         ctaText="Rezerviraj mjesto"
@@ -698,6 +698,52 @@ const CrossfrictionPage = () => {
         </div>
       </section>
 
+      {/* Atmosfera edukacije — Modul II */}
+      <section style={{ background: '#F4F1EA' }} className="py-20 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="mb-10"
+            >
+              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+                Atmosfera edukacije
+              </p>
+              <div className="w-8 h-px" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1.0, delay: 0.1, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/5mOaGUuDrWU?rel=0&modestbranding=1&iv_load_policy=3&color=white"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 'none',
+                  }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="CFM Body Reset — Modul II"
+                />
+              </div>
+              <p className="mt-4 text-[11px] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
+                CFM Body Reset Method — Modul II · Rameni pojas i cervikalna regija
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Klinički rad */}
       <section style={{ background: '#FAF8F4' }} className="pt-20 pb-0">
         <div className="container mx-auto px-6">
@@ -953,7 +999,7 @@ const CrossfrictionPage = () => {
                   className="text-[12.5px] leading-[1.75] font-normal mt-14"
                   style={{ color: 'rgba(0,0,0,0.36)', maxWidth: '42ch', fontStyle: 'italic' }}
                 >
-                  Taj proces odvija se vikendom, u parovima — u jednakom kliničkom formatu na svakoj lokaciji.
+                  Taj proces odvija se vikendom, u parovima — u jednakom kliničkom formatu bez obzira na lokaciju.
                 </p>
                 <div className="mt-8" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
                 <p
@@ -1044,61 +1090,39 @@ const CrossfrictionPage = () => {
                 <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                   Termini i lokacije
                 </p>
+                <p className="text-[13px] leading-[1.78] font-normal mb-7" style={{ color: '#5F5A52' }}>
+                  Edukacije se organiziraju periodično. Program se održava u manjim grupama, ovisno o rasporedu i organizaciji partnera.
+                </p>
                 <div>
                   {[
-                    { city: 'Zagreb', date: 'termin u pripremi' },
-                    { city: 'Split', date: 'termin u pripremi' },
-                    { city: 'Rijeka', date: 'termin u pripremi' },
+                    { city: 'Zagreb', note: 'redovita organizacija' },
+                    { city: 'Slavonski Brod', note: 'u suradnji s lokalnim organizatorima' },
+                    { city: 'Rijeka / Split', note: 'periodični termini prema interesu' },
                   ].map((loc, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-between py-6"
+                      className="flex items-baseline justify-between py-5"
                       style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
                     >
-                      <div>
-                        <p
-                          className="font-playfair font-medium leading-tight mb-1.5"
-                          style={{ fontSize: '1.22rem', color: '#1F1D1A' }}
-                        >
-                          {loc.city}
-                        </p>
-                        <p
-                          className="text-[10px] uppercase tracking-[0.20em] font-normal"
-                          style={{ color: 'rgba(0,0,0,0.26)' }}
-                        >
-                          {loc.date}
-                        </p>
-                      </div>
-                      <button
-                        className="text-[10px] uppercase tracking-[0.16em] font-normal py-2.5 px-7 flex-shrink-0"
-                        style={{
-                          border: '1px solid rgba(0,0,0,0.18)',
-                          color: '#4A4540',
-                          background: 'transparent',
-                          cursor: 'pointer',
-                          transition: 'background-color 0.55s ease, border-color 0.55s ease, color 0.45s ease',
-                          outline: 'none',
-                        }}
-                        onMouseEnter={e => {
-                          const b = e.currentTarget as HTMLButtonElement;
-                          b.style.background = 'rgba(184,154,79,0.10)';
-                          b.style.borderColor = 'rgba(184,154,79,0.50)';
-                          b.style.color = '#2A2522';
-                        }}
-                        onMouseLeave={e => {
-                          const b = e.currentTarget as HTMLButtonElement;
-                          b.style.background = 'transparent';
-                          b.style.borderColor = 'rgba(0,0,0,0.18)';
-                          b.style.color = '#4A4540';
-                        }}
-                        onClick={() => window.open('https://tally.so/r/wA5kvD', '_blank', 'noopener,noreferrer')}
+                      <p
+                        className="font-playfair font-medium leading-tight"
+                        style={{ fontSize: '1.1rem', color: '#1F1D1A' }}
                       >
-                        Prijavi se
-                      </button>
+                        {loc.city}
+                      </p>
+                      <p
+                        className="text-[11px] font-normal"
+                        style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}
+                      >
+                        {loc.note}
+                      </p>
                     </div>
                   ))}
-                  <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
+                  <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', marginBottom: '1.8rem' }} />
                 </div>
+                <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.38)', fontStyle: 'italic' }}>
+                  Sve lokacije i termini dostupni su na upit.
+                </p>
               </motion.div>
 
               {/* Right — What's included */}
@@ -1203,7 +1227,7 @@ const CrossfrictionPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
                     <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
-                      Edukacije se održavaju u Zagrebu, Splitu i Rijeci. Svaka lokacija provodi isti dvodnevni program, vikendom od 9:00 do 16:00. Točni datumi objavljuju se u rasporedu edukacija.
+                      Primarna lokacija je Zagreb. Edukacije se povremeno organiziraju u Slavonskom Brodu (u suradnji s lokalnim partnerima) te periodično u Rijeci i Splitu prema interesu. Program je dvodnevni, vikendom od 9:00 do 16:00. Točni termini objavljuju se u rasporedu edukacija.
                     </p>
                   </AccordionContent>
                 </AccordionItem>

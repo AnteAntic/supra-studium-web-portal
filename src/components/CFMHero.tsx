@@ -20,24 +20,27 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
   return (
     <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
 
-      {/* Background — documentary dissolve entrance */}
+      {/* Background — YouTube video, Modul I */}
       <motion.div
-        className="absolute inset-0 top-[-5rem]"
+        className="absolute inset-0 top-[-5rem] overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.4, ease: 'easeOut' }}
+        transition={{ duration: 1.8, ease: 'easeOut' }}
       >
-        <img
-          src="/lovable-uploads/cb2ecdd8-d460-4768-8a2f-40a7f5513772.png"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          className="w-full h-full object-cover"
+        <iframe
+          src="https://www.youtube.com/embed/KiDLo2J4CjA?autoplay=1&mute=1&loop=1&playlist=KiDLo2J4CjA&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&playsinline=1"
+          className="absolute"
           style={{
-            objectPosition: '60% 16%',
-            transform: 'scale(1.08)',
-            transformOrigin: '60% 18%',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: 'max(100%, calc(100vh * 1.7778))',
+            height: 'max(100%, calc(100vw * 0.5625))',
+            pointerEvents: 'none',
+            border: 'none',
           }}
+          allow="autoplay; encrypted-media"
+          title=""
         />
       </motion.div>
 
@@ -182,7 +185,7 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
                 '2 dana',
                 'Rad u paru',
                 'Certifikat',
-                'Zagreb · Split · Rijeka',
+                'Periodične edukacije u manjim grupama.',
               ].map((item, i) => (
                 <React.Fragment key={item}>
                   {i > 0 && (
@@ -261,7 +264,7 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
                 }}
                 onClick={onScrollToLocations}
               >
-                — Pregled lokacija
+                — Termini i kotizacija
               </button>
             </motion.div>
 
