@@ -72,7 +72,7 @@ const GlobalHeader = () => {
     >
       <nav data-state={menuState && 'active'} className="group">
         <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', 'bg-background/95 backdrop-blur-lg border rounded-2xl border-border/50 shadow-sm', isScrolled && 'max-w-4xl lg:px-5')}>
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-2 lg:gap-0 lg:py-3">
             <div className="flex w-full justify-between lg:w-auto">
             <Link to="/" aria-label="home" className="flex items-center cursor-pointer">
               {/* Desktop Logo */}

@@ -134,7 +134,7 @@ const AkupresuraPage = () => {
       </section>
 
       {/* Intermezzo */}
-      <section style={{ background: '#F4F1EA' }} className="py-16 md:py-20">
+      <section style={{ background: '#F4F1EA' }} className="py-12 md:py-14">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -161,7 +161,7 @@ const AkupresuraPage = () => {
       </section>
 
       {/* Program kompetencija */}
-      <section style={{ background: '#F4F1EA' }} className="pt-4 pb-14">
+      <section style={{ background: '#F4F1EA' }} className="pb-12">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
 
@@ -170,7 +170,7 @@ const AkupresuraPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="mb-16"
+              className="mb-12"
             >
               <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Program kompetencija
@@ -244,7 +244,7 @@ const AkupresuraPage = () => {
       </section>
 
       {/* Program edukacije */}
-      <section id="program" style={{ background: '#F4F1EA' }} className="pb-28">
+      <section id="program" style={{ background: '#F4F1EA' }} className="pb-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
 
@@ -254,9 +254,9 @@ const AkupresuraPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="mb-16"
+              className="mb-12"
             >
-              <div className="pt-8 mb-8" />
+              <div className="pt-4 mb-4" />
               <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Struktura programa
               </p>
@@ -313,7 +313,7 @@ const AkupresuraPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: dayIdx * 0.08, ease: 'easeOut' }}
                 viewport={{ once: true }}
-                className={dayIdx > 0 ? 'mt-10 pt-10' : ''}
+                className={dayIdx > 0 ? 'mt-8 pt-8' : ''}
                 style={dayIdx > 0 ? { borderTop: '1px solid rgba(0,0,0,0.10)' } : undefined}
               >
                 <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-4" style={{ color: '#B89A4F' }}>
@@ -353,7 +353,7 @@ const AkupresuraPage = () => {
       </section>
 
       {/* Dokumentacija rada */}
-      <section style={{ background: '#FAF8F4' }} className="py-24">
+      <section style={{ background: '#FAF8F4' }} className="py-20">
         <div className="container mx-auto px-6">
 
           {/* Header — narrow column */}
@@ -429,7 +429,7 @@ const AkupresuraPage = () => {
       </section>
 
       {/* O predavaču */}
-      <section style={{ background: '#FAF8F4' }} className="py-24">
+      <section style={{ background: '#FAF8F4' }} className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
 
@@ -493,7 +493,7 @@ const AkupresuraPage = () => {
                   Profesionalni kontekst
                 </p>
 
-                <div className="mb-10">
+                <div className="mb-14">
                   {[
                     'Vice President za Hrvatsku — World Massage Federation',
                     'Organizator International Croatian Massage Championshipa',
@@ -529,16 +529,16 @@ const AkupresuraPage = () => {
       </section>
 
       {/* Nakon edukacije — testimonials */}
-      <section style={{ background: '#F7F3EE' }} className="py-24">
+      <section style={{ background: '#F7F3EE' }} className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="mb-16"
+              className="mb-14"
             >
               <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Nakon edukacije
@@ -578,10 +578,10 @@ const AkupresuraPage = () => {
                   style={i > 0 ? { borderTop: '1px solid rgba(0,0,0,0.07)' } : {}}
                 >
                   <p
-                    className="font-playfair leading-[1.55] mb-5"
+                    className="font-playfair leading-[1.65] mb-5"
                     style={{
-                      fontSize: '1.2rem',
-                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.82)',
+                      fontSize: '1.35rem',
+                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.88)',
                     }}
                   >
                     {item.text}
@@ -624,7 +624,7 @@ const AkupresuraPage = () => {
                 </p>
 
                 <p
-                  className="font-playfair font-semibold leading-none mb-3"
+                  className="font-playfair font-semibold leading-none mb-6"
                   style={{ fontSize: '3.8rem', color: '#1F1D1A' }}
                 >
                   450 €
@@ -636,12 +636,12 @@ const AkupresuraPage = () => {
 
                 <div className="mb-8" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} />
 
-                <p className="text-[12px] leading-[1.6] font-normal mb-12" style={{ color: '#9A9590' }}>
+                <p className="text-[12px] leading-[1.6] font-normal mb-14" style={{ color: '#9A9590' }}>
                   Broj mjesta ograničen je kapacitetom praktičnog rada u paru.
                 </p>
 
                 <button
-                  className="text-[11px] uppercase tracking-[0.18em] font-normal py-3 px-8 transition-colors duration-300"
+                  className="text-[11px] uppercase tracking-[0.18em] font-normal py-3.5 px-12 transition-colors duration-300"
                   style={{ border: '1px solid rgba(0,0,0,0.28)', color: '#3D3A35', background: 'transparent', cursor: 'pointer' }}
                   onMouseEnter={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = '#B89A4F'; b.style.borderColor = '#B89A4F'; b.style.color = '#fff'; }}
                   onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.background = 'transparent'; b.style.borderColor = 'rgba(0,0,0,0.28)'; b.style.color = '#3D3A35'; }}
@@ -698,7 +698,7 @@ const AkupresuraPage = () => {
       </section>
 
       {/* FAQ */}
-      <section style={{ background: '#FAF8F4' }} className="py-24">
+      <section style={{ background: '#FAF8F4' }} className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
 
@@ -717,10 +717,10 @@ const AkupresuraPage = () => {
               </h2>
             </motion.div>
 
-            <Accordion type="single" collapsible>
+            <Accordion type="single" collapsible defaultValue="item-0">
 
-              <AccordionItem value="item-0" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-                <AccordionTrigger className="py-5 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+              <AccordionItem value="item-0" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
                   Kada i gdje se održava edukacija?
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
@@ -734,8 +734,8 @@ const AkupresuraPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-1" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-                <AccordionTrigger className="py-5 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+              <AccordionItem value="item-1" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
                   Je li potrebno prethodno iskustvo?
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
@@ -756,8 +756,8 @@ const AkupresuraPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-2" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-                <AccordionTrigger className="py-5 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+              <AccordionItem value="item-2" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
                   Dobiva li se certifikat nakon edukacije?
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
@@ -767,8 +767,8 @@ const AkupresuraPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-3" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-                <AccordionTrigger className="py-5 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+              <AccordionItem value="item-3" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
                   Što je uključeno u kotizaciju?
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
@@ -792,8 +792,8 @@ const AkupresuraPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-4" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-                <AccordionTrigger className="py-5 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
+              <AccordionItem value="item-4" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                <AccordionTrigger className="py-6 text-left hover:no-underline text-[15px] font-medium" style={{ color: '#1F1D1A' }}>
                   Što ako nisam u mogućnosti prisustvovati jednom dijelu edukacije?
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
@@ -804,9 +804,9 @@ const AkupresuraPage = () => {
               </AccordionItem>
 
             </Accordion>
-            <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} />
+            <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }} />
 
-            <div className="mt-16">
+            <div className="mt-10">
               <p className="text-[13px] font-normal" style={{ color: '#7A7570' }}>
                 Još pitanja?
               </p>

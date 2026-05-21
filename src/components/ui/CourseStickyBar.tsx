@@ -23,13 +23,14 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
   ctaText = 'Prijavi se',
   ctaHref = '#enrollment',
   className = '',
+  price = '',
   soldOut = false,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > window.innerHeight * 1.4);
+      setIsVisible(window.scrollY > window.innerHeight * 0.9);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -55,8 +56,10 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       className={`fixed top-20 left-0 right-0 z-40 ${className}`}
       style={{
-        backgroundColor: '#FAF8F4',
-        borderBottom: '1px solid rgba(0,0,0,0.08)',
+        backgroundColor: 'rgba(250,248,244,0.94)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(0,0,0,0.06)',
       }}
       role="region"
       aria-label="Detalji termina i prijava"
@@ -64,7 +67,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center justify-between gap-8 py-2">
+        <div className="hidden md:flex items-center justify-between gap-8 py-1.5">
           <div className="flex items-center gap-6">
             {locations.map((location, i) => (
               <span

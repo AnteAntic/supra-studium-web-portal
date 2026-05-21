@@ -153,7 +153,7 @@ export function CourseHero({
                 className="flex flex-row items-center gap-4"
               >
                 <Button
-                  className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-5 py-2 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-300 border-0 shadow-none h-auto"
+                  className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-7 py-2.5 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-300 border-0 shadow-none h-auto"
                   onClick={primaryCTA.onClick}
                 >
                   {primaryCTA.label}
