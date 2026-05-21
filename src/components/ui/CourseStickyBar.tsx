@@ -64,7 +64,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center justify-between gap-8 py-3.5">
+        <div className="hidden md:flex items-center justify-between gap-8 py-3">
           <div className="flex items-center gap-6">
             {locations.map((location, i) => (
               <span

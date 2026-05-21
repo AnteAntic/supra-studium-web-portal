@@ -838,7 +838,7 @@ const CrossfrictionPage = () => {
                     alt="Mentorski rad — vođena klinička korekcija"
                     loading="lazy"
                     className="w-full h-full object-cover"
-                    style={{ display: 'block', objectPosition: 'center top' }}
+                    style={{ display: 'block', objectPosition: 'center top', filter: 'saturate(0.82) sepia(0.06) brightness(0.97)' }}
                   />
                 </div>
                 <div className="mt-3 flex items-start gap-3">
@@ -912,7 +912,7 @@ const CrossfrictionPage = () => {
                     className="w-full h-full object-cover"
                     style={{
                       display: 'block',
-                      objectPosition: 'center 12%',
+                      objectPosition: 'center 20%',
                       filter: 'contrast(1.04) brightness(0.94)',
                       transition: 'transform 1.1s cubic-bezier(0.25, 0.1, 0.25, 1), filter 1.1s ease',
                     }}
@@ -952,6 +952,8 @@ const CrossfrictionPage = () => {
                   Metodološki pristup
                 </p>
                 <div className="w-10 h-px mb-11" style={{ backgroundColor: 'rgba(184,154,79,0.32)' }} />
+
+                <div className="w-8 h-px mb-10" style={{ backgroundColor: 'rgba(0,0,0,0.10)' }} />
 
                 <h2
                   className="font-playfair font-semibold leading-[1.22] mb-14"
@@ -1017,7 +1019,7 @@ const CrossfrictionPage = () => {
       </section>
 
       {/* Field observations */}
-      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="py-14 md:py-16">
+      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="py-10 md:py-12">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
 
