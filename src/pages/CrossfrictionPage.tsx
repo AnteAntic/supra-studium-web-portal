@@ -1016,6 +1016,66 @@ const CrossfrictionPage = () => {
         </div>
       </section>
 
+      {/* Field observations */}
+      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="py-24 md:py-28">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+
+            <div className="grid md:grid-cols-3 gap-0">
+              {[
+                {
+                  statement: 'Program mi je promijenio pristup palpaciji — počeo sam čitati tkivo, a ne samo reagirati na simptom.',
+                  ime: 'Ante T.',
+                  struka: 'fizioterapeut',
+                },
+                {
+                  statement: 'Cross friction protokole primjenjujem odmah po povratku u ordinaciju. Rezultati su mjerljivi.',
+                  ime: 'Maja K.',
+                  struka: 'masoterapeutkinja',
+                },
+                {
+                  statement: 'Razumijevanje fascijalnog odgovora promijenilo je način na koji gradim svaki tretman.',
+                  ime: 'Hrvoje B.',
+                  struka: 'kineziolog',
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.9, delay: i * 0.1, ease: 'easeOut' }}
+                  viewport={{ once: true }}
+                  className="py-10 md:py-0 md:px-10"
+                  style={{
+                    borderTop: '1px solid rgba(0,0,0,0.07)',
+                    ...(i > 0 ? { borderLeft: '0px' } : {}),
+                  }}
+                >
+                  <div
+                    className="md:hidden"
+                    style={{ borderTop: i > 0 ? '1px solid rgba(0,0,0,0.07)' : 'none' }}
+                  />
+                  <p
+                    className="font-playfair font-normal leading-[1.65] mb-6"
+                    style={{ fontSize: '15px', fontStyle: 'italic', color: '#1F1D1A' }}
+                  >
+                    "{item.statement}"
+                  </p>
+                  <p
+                    className="text-[10px] uppercase tracking-[0.22em] font-normal"
+                    style={{ color: 'rgba(0,0,0,0.35)' }}
+                  >
+                    {item.ime} · {item.struka}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-10" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
+
+          </div>
+        </div>
+      </section>
+
       {/* Kotizacija edukacije */}
       <section
         id="pricing"
