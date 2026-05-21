@@ -379,50 +379,88 @@ const AkupresuraPage = () => {
             </p>
           </motion.div>
 
-          {/* Editorial image blocks */}
+          {/* Editorial image blocks — asymmetric composition */}
           <div className="max-w-4xl mx-auto">
-            {[
-              {
-                src: '/lovable-uploads/b843e565-9cd4-4b52-8f3d-02b24514415b.png',
-                alt: 'Ante Antić — palpacija u radu',
-                caption: 'Preciznost ne dolazi iz sile pritiska, nego iz sposobnosti opažanja reakcije.',
-              },
-              {
-                src: '/lovable-uploads/b8e614dd-f6f8-4898-8d54-86f1245e6b74.png',
-                alt: 'Akupresurne točke na leđima',
-                caption: 'Kada prestaneš tražiti samo bolnu točku, počinješ vidjeti obrazac.',
-              },
-              {
-                src: '/lovable-uploads/96995098-9ffc-48e4-b20b-f599490baac9.png',
-                alt: 'Rad u paru — klinička demonstracija',
-                caption: 'Klinička sigurnost razvija se kroz ponavljanje, ne kroz intuiciju.',
-              },
-            ].map((img, i) => (
+
+            {/* Primary image — dominant, full width, cinematic ratio */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              <div className="overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                <img
+                  src="/lovable-uploads/b843e565-9cd4-4b52-8f3d-02b24514415b.png"
+                  alt="Ante Antić — palpacija u radu"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  style={{ display: 'block' }}
+                />
+              </div>
+              <div className="mt-4 flex items-start gap-4">
+                <div className="w-4 h-px mt-2 flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.18)' }} />
+                <p className="text-[12px] leading-[1.65] font-normal" style={{ color: '#7A7570', letterSpacing: '0.025em' }}>
+                  Preciznost ne dolazi iz sile pritiska, nego iz opažanja reakcije.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Secondary pair — asymmetric two-column */}
+            <div className="grid grid-cols-5 gap-5 mt-5 items-end">
+
+              {/* Left — slightly wider, 4/3 */}
               <motion.div
-                key={i}
+                className="col-span-3"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.9, delay: i * 0.1, ease: 'easeOut' }}
+                transition={{ duration: 0.9, delay: 0.1, ease: 'easeOut' }}
                 viewport={{ once: true }}
-                className={i > 0 ? 'mt-14' : ''}
               >
-                <div className="overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
                   <img
-                    src={img.src}
-                    alt={img.alt}
+                    src="/lovable-uploads/b8e614dd-f6f8-4898-8d54-86f1245e6b74.png"
+                    alt="Akupresurne točke na leđima"
                     className="w-full h-full object-cover"
                     loading="lazy"
                     style={{ display: 'block' }}
                   />
                 </div>
-                <div className="mt-4 flex items-start gap-4">
-                  <div className="w-4 h-px mt-2 flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.18)' }} />
-                  <p className="text-[12px] leading-[1.65] font-normal" style={{ color: '#7A7570', letterSpacing: '0.025em' }}>
-                    {img.caption}
+                <div className="mt-3 flex items-start gap-3">
+                  <div className="w-3 h-px mt-2 flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.15)' }} />
+                  <p className="text-[11px] leading-[1.65] font-normal" style={{ color: '#7A7570', letterSpacing: '0.025em' }}>
+                    Kada prestaneš tražiti samo bolnu točku, počinješ vidjeti obrazac.
                   </p>
                 </div>
               </motion.div>
-            ))}
+
+              {/* Right — narrower, 1/1, offset upward */}
+              <motion.div
+                className="col-span-2 mb-10"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+                viewport={{ once: true }}
+              >
+                <div className="overflow-hidden" style={{ aspectRatio: '1/1' }}>
+                  <img
+                    src="/lovable-uploads/96995098-9ffc-48e4-b20b-f599490baac9.png"
+                    alt="Rad u paru — klinička demonstracija"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    style={{ display: 'block' }}
+                  />
+                </div>
+                <div className="mt-3 flex items-start gap-3">
+                  <div className="w-3 h-px mt-2 flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.15)' }} />
+                  <p className="text-[11px] leading-[1.65] font-normal" style={{ color: '#7A7570', letterSpacing: '0.025em' }}>
+                    Sigurnost se razvija kroz ponavljanje.
+                  </p>
+                </div>
+              </motion.div>
+
+            </div>
+
           </div>
 
         </div>
@@ -574,15 +612,15 @@ const AkupresuraPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.65, delay: i * 0.07, ease: 'easeOut' }}
                   viewport={{ once: true }}
-                  className={i > 0 ? 'mt-10 pt-8' : ''}
+                  className={i > 0 ? 'mt-8 pt-7' : ''}
                   style={i > 0 ? { borderTop: '1px solid rgba(0,0,0,0.07)' } : {}}
                 >
                   <p
-                    className="font-playfair mb-3"
+                    className="font-playfair mb-2"
                     style={{
-                      fontSize: i === 0 ? '1.28rem' : '1.12rem',
+                      fontSize: i === 0 ? '1.18rem' : '1.13rem',
                       lineHeight: i === 0 ? '1.55' : '1.65',
-                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.78)',
+                      color: i === 0 ? '#1F1D1A' : 'rgba(31,29,26,0.80)',
                     }}
                   >
                     {item.text}

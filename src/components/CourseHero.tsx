@@ -72,7 +72,7 @@ export function CourseHero({
           className="absolute inset-0 hidden md:block"
           style={{
             background:
-              'linear-gradient(to right, rgba(12,9,6,0.72) 0%, rgba(12,9,6,0.52) 26%, rgba(12,9,6,0.18) 52%, rgba(12,9,6,0.04) 66%, transparent 78%)',
+              'linear-gradient(to right, rgba(12,9,6,0.82) 0%, rgba(12,9,6,0.60) 28%, rgba(12,9,6,0.20) 52%, rgba(12,9,6,0.04) 66%, transparent 78%)',
           }}
         />
 
