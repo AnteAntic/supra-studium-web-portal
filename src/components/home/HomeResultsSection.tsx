@@ -10,6 +10,7 @@ const alumni = [
   'Dalibor Dvoraček',
   'Andreas Živković',
   'Mihael Besten',
+  'Sandra Dragaš',
 ];
 
 export function HomeResultsSection() {

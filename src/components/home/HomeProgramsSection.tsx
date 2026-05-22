@@ -2,19 +2,19 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const flagshipProgram = {
-  title: 'CFM Body Reset Method',
+  title: 'Škola manualne terapije dr. Stošića',
   label: 'Flagship program škole',
-  text: 'Metodologija iz koje je razvijen Supra pristup radu s tkivom, pokretom i palpacijom.',
-  href: '/crossfriction-funkcionalna-masaza',
-  image: '/lovable-uploads/fh-sudionica-masaza.webp',
+  text: 'Institucionalni program koji gradi kliničko razmišljanje, palpacijsku preciznost i strukturu terapijskog procesa.',
+  href: '/skola-manualne-terapije',
+  image: '/lovable-uploads/mt-stosic-demonstracija.jpg',
 };
 
 const featuredPrograms = [
   {
-    title: 'Manualna terapija',
-    text: 'Institucionalni program usmjeren na kliničko razmišljanje, palpaciju i strukturu terapijskog procesa.',
-    href: '/skola-manualne-terapije',
-    image: '/lovable-uploads/ante-tretman-1400.webp',
+    title: 'CFM Body Reset Method',
+    text: 'Metodologija iz koje je razvijen Supra pristup radu s tkivom, pokretom i palpacijom.',
+    href: '/crossfriction-funkcionalna-masaza',
+    image: '/lovable-uploads/fh-sudionica-masaza.webp',
   },
   {
     title: 'Akupresura & Trigger Point',

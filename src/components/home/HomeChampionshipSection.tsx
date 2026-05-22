@@ -27,7 +27,7 @@ export function HomeChampionshipSection() {
                 className="font-playfair font-semibold leading-[1.22] text-[1.55rem] md:text-[1.75rem]"
                 style={{ color: '#1F1D1A' }}
               >
-                Feel &amp; Heal Festival.
+                Croatian International Massage, Manual Therapy &amp; Nuad Thai Championship
               </h2>
             </motion.div>
             <motion.div

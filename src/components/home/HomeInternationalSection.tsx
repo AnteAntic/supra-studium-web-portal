@@ -6,7 +6,7 @@ const images = [
     caption: 'Međunarodni sudionici — različite države, isti standardi rada.',
   },
   {
-    src: '/lovable-uploads/cmc-sutkinja-trofej.jpg',
+    src: '/lovable-uploads/fh-organizator-razgovor.webp',
     caption: 'Sudačka uloga na europskim natjecanjima.',
   },
   {
