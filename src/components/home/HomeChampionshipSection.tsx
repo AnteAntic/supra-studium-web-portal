@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 // TODO: Upload DAY 1 RECAP FINAL.mp4 and DAY 2 RECAP CHAMPIONSHIP.mp4 to YouTube
 // Then replace these placeholder strings with the actual YouTube video IDs
-const YOUTUBE_DAY1_ID = ''; // e.g. 'dQw4w9WgXcQ'
-const YOUTUBE_DAY2_ID = ''; // e.g. 'dQw4w9WgXcQ'
+const YOUTUBE_DAY1_ID = '-oBdblqBztk';
+const YOUTUBE_DAY2_ID = 'HCA6DKciCoM';
 
 export function HomeChampionshipSection() {
   return (
