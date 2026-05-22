@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-18T00:00:00.000Z",
+  "title": "Design System: Supra Studium",
+  "extensions": {
+    "colorMeta": {
+      "clinical-brass": {
+        "role": "primary",
+        "displayName": "Clinical Brass",
+        "canonical": "oklch(60% 0.09 76)",
+        "tonalRamp": [
+          "oklch(15% 0.04 76)",
+          "oklch(25% 0.06 76)",
+          "oklch(35% 0.07 76)",
+          "oklch(45% 0.08 76)",
+          "oklch(55% 0.09 76)",
+          "oklch(65% 0.09 76)",
+          "oklch(78% 0.07 76)",
+          "oklch(90% 0.04 76)"
+        ]
+      },
+      "brass-bright": {
+        "role": "primary",
+        "displayName": "Brass Bright",
+        "canonical": "oklch(74% 0.14 80)",
+        "tonalRamp": [
+          "oklch(20% 0.08 80)",
+          "oklch(30% 0.10 80)",
+          "oklch(40% 0.12 80)",
+          "oklch(52% 0.14 80)",
+          "oklch(62% 0.14 80)",
+          "oklch(74% 0.14 80)",
+          "oklch(85% 0.10 80)",
+          "oklch(94% 0.05 80)"
+        ]
+      },
+      "institute-ink": {
+        "role": "neutral",
+        "displayName": "Institute Ink",
+        "canonical": "oklch(12% 0.002 85)",
+        "tonalRamp": [
+          "oklch(10% 0.002 85)",
+          "oklch(18% 0.002 85)",
+          "oklch(28% 0.002 85)",
+          "oklch(40% 0.002 85)",
+          "oklch(55% 0.002 85)",
+          "oklch(70% 0.002 85)",
+          "oklch(85% 0.002 85)",
+          "oklch(95% 0.002 85)"
+        ]
+      },
+      "archival-ivory": {
+        "role": "neutral",
+        "displayName": "Archival Ivory",
+        "canonical": "oklch(97% 0.004 80)",
+        "tonalRamp": [
+          "oklch(35% 0.002 80)",
+          "oklch(50% 0.003 80)",
+          "oklch(65% 0.003 80)",
+          "oklch(75% 0.003 80)",
+          "oklch(85% 0.004 80)",
+          "oklch(92% 0.004 80)",
+          "oklch(97% 0.004 80)",
+          "oklch(99% 0.002 80)"
+        ]
+      },
+      "anatomical-navy": {
+        "role": "neutral",
+        "displayName": "Anatomical Navy",
+        "canonical": "oklch(17% 0.04 250)",
+        "tonalRamp": [
+          "oklch(10% 0.03 250)",
+          "oklch(17% 0.04 250)",
+          "oklch(25% 0.05 250)",
+          "oklch(35% 0.05 250)",
+          "oklch(50% 0.05 250)",
+          "oklch(65% 0.04 250)",
+          "oklch(80% 0.03 250)",
+          "oklch(92% 0.01 250)"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(28% 0.002 85)",
+        "tonalRamp": [
+          "oklch(12% 0.002 85)",
+          "oklch(20% 0.002 85)",
+          "oklch(28% 0.002 85)",
+          "oklch(40% 0.002 85)",
+          "oklch(55% 0.002 85)",
+          "oklch(70% 0.002 85)",
+          "oklch(85% 0.002 85)",
+          "oklch(95% 0.002 85)"
+        ]
+      },
+      "instrument-teal": {
+        "role": "secondary",
+        "displayName": "Instrument Teal",
+        "canonical": "oklch(58% 0.06 215)",
+        "tonalRamp": [
+          "oklch(20% 0.05 215)",
+          "oklch(30% 0.06 215)",
+          "oklch(40% 0.07 215)",
+          "oklch(50% 0.07 215)",
+          "oklch(58% 0.06 215)",
+          "oklch(68% 0.06 215)",
+          "oklch(80% 0.04 215)",
+          "oklch(92% 0.02 215)"
+        ]
+      },
+      "ghost-border": {
+        "role": "neutral",
+        "displayName": "Ghost Border",
+        "canonical": "oklch(90% 0 0)",
+        "tonalRamp": [
+          "oklch(20% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(75% 0 0)",
+          "oklch(83% 0 0)",
+          "oklch(90% 0 0)",
+          "oklch(97% 0 0)"
+        ]
+      },
+      "documentary-dark": {
+        "role": "neutral",
+        "displayName": "Documentary Dark",
+        "canonical": "oklch(7% 0.002 85)",
+        "tonalRamp": [
+          "oklch(7% 0.002 85)",
+          "oklch(15% 0.002 85)",
+          "oklch(25% 0.002 85)",
+          "oklch(38% 0.002 85)",
+          "oklch(52% 0.002 85)",
+          "oklch(68% 0.002 85)",
+          "oklch(82% 0.002 85)",
+          "oklch(95% 0.002 85)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headlines and page-defining statements only. Mixed case. Max 2 lines. Text-shadow only in video contexts."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and sub-page headers. The chapter heading voice."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Named sections, card headers, curriculum day titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running copy. Clinical specificity lives here. Max line length 65–75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Category annotations, location tags, course metadata. Rendered in Clinical Brass at 55% opacity. The annotation layer."
+      }
+    },
+    "shadows": [
+      {
+        "name": "video-text",
+        "value": "0 2px 16px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.3)",
+        "purpose": "Legibility tool for display text over video backgrounds only. Never used in body sections."
+      },
+      {
+        "name": "sticky-bar-ambient",
+        "value": "0 2px 8px rgba(0,0,0,0.08)",
+        "purpose": "Diffuse ambient lift on the course sticky bar when the page has scrolled. Structural only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Default easing for state transitions (hover, focus, accordion). Smooth, no bounce."
+      },
+      {
+        "name": "ease-out-editorial",
+        "value": "cubic-bezier(0.22, 0.9, 0.29, 1)",
+        "purpose": "Editorial entrance animations (fade-scale-in). Slightly slower deceleration for a more deliberate feel."
+      },
+      {
+        "name": "hero-stagger-base",
+        "value": "0.3s",
+        "purpose": "Base delay for the hero entrance sequence. Each subsequent element adds 0.2s."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button Primary",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Institutional stamp CTA. Brass fill, uppercase, squared. Used in hero and body sections.",
+      "html": "<button class=\"ds-btn-primary\">Pogledaj program</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; background-color: rgba(212, 175, 55, 0.9); color: #1a1a1a; padding: 8px 20px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 8px; border: none; cursor: pointer; transition: background-color 0.5s ease; white-space: nowrap; } .ds-btn-primary:hover { background-color: #d4af37; } .ds-btn-primary:focus-visible { outline: 2px solid #a58d4e; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.5; pointer-events: none; }"
+    },
+    {
+      "name": "Button Ghost",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary text CTA for video hero contexts. Em-dash prefix, no border, white at 68% opacity.",
+      "html": "<button class=\"ds-btn-ghost\">— Pogledaj video</button>",
+      "css": ".ds-btn-ghost { background: transparent; border: none; color: rgba(255, 255, 255, 0.68); font-family: 'Inter', system-ui, sans-serif; font-size: 0.75rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; cursor: pointer; padding: 0; transition: color 0.4s ease; } .ds-btn-ghost:hover { color: rgba(255, 255, 255, 0.9); } .ds-btn-ghost:focus-visible { outline: 2px solid #a58d4e; outline-offset: 2px; }"
+    },
+    {
+      "name": "Category Label",
+      "kind": "custom",
+      "description": "The annotation layer. 10px uppercase, tracking 0.28em, muted brass. Identifies subject and location.",
+      "html": "<span class=\"ds-category-label\">Akupresura &amp; Trigger Point Terapija &middot; Zagreb</span>",
+      "css": ".ds-category-label { display: inline-block; font-family: 'Inter', system-ui, sans-serif; font-size: 0.625rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.28em; color: rgba(212, 175, 55, 0.55); }"
+    },
+    {
+      "name": "Editorial Separator",
+      "kind": "custom",
+      "description": "40px × 1px brass line. Appears between category label and headline. The signature micro-element.",
+      "html": "<div class=\"ds-separator\"></div>",
+      "css": ".ds-separator { width: 40px; height: 1px; background-color: rgba(212, 175, 55, 0.3); transform-origin: left; }"
+    },
+    {
+      "name": "Course Meta Strip",
+      "kind": "custom",
+      "description": "Inline fact row below CTAs. Pure information, no decoration.",
+      "html": "<div class=\"ds-meta-strip\"><span>3 dana</span><span>&middot;</span><span>Rad u paru</span><span>&middot;</span><span>Certifikat</span></div>",
+      "css": ".ds-meta-strip { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 4px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.35); }"
+    },
+    {
+      "name": "FAQ Accordion Item",
+      "kind": "custom",
+      "description": "Minimal accordion for FAQ sections. No card wrapper, Ghost Border dividers.",
+      "html": "<div class=\"ds-accordion-item\"><button class=\"ds-accordion-trigger\">Kada i gdje se održava tečaj?<svg class=\"ds-accordion-icon\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\"><path d=\"M4 6l4 4 4-4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button><div class=\"ds-accordion-content\"><p>Sljedeći tečaj se održava 27.–29. 03. 2026. u Zagrebu, Prostor XY.</p></div></div>",
+      "css": ".ds-accordion-item { border-bottom: 1px solid #e3e3e3; } .ds-accordion-trigger { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 16px 0; background: transparent; border: none; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; font-size: 1rem; font-weight: 500; color: #1a1a1a; text-align: left; } .ds-accordion-trigger:hover .ds-accordion-icon { opacity: 0.6; } .ds-accordion-trigger:focus-visible { outline: 2px solid #a58d4e; outline-offset: 2px; } .ds-accordion-icon { flex-shrink: 0; color: #3b3b3b; transition: transform 0.2s ease-out, opacity 0.2s ease-out; } .ds-accordion-content { padding-bottom: 16px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: #3b3b3b; line-height: 1.6; }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "description": "Playfair Display headline with optional brass label above. Chapter heading voice.",
+      "html": "<div class=\"ds-section-title\"><span class=\"ds-section-label\">Program</span><h2 class=\"ds-section-headline\">Što počinješ primjećivati</h2></div>",
+      "css": ".ds-section-title { display: flex; flex-direction: column; gap: 8px; } .ds-section-label { font-family: 'Inter', system-ui, sans-serif; font-size: 0.625rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.28em; color: rgba(165, 141, 78, 0.7); } .ds-section-headline { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 500; line-height: 1.3; color: #1a1a1a; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Documentary Frame",
+    "overview": "Supra Studium is not a course platform. It is an institution — and the interface communicates that distinction through what it refuses to do. No urgency mechanics, no persuasion scaffolding, no decorative warmth. The site reads like the opening sequence of a documentary: unhurried, specific, already in motion. The camera (the layout) finds the subject (the content) without commentary.\n\nThe palette is a warm archive. Ivory stock, near-black ink, brass used as a letterpress accent and never as a highlight. Typography is editorial: Playfair Display for institutional authority, Inter for clinical precision. White space carries the weight that other sites assign to selling copy.\n\nThis system explicitly rejects the aesthetic grammar of online wellness marketing — soft gradients, \"journey\" language, countdown-to-close CTAs, social-proof tickers — and equally rejects SaaS landing-page construction: hero metrics, benefit card grids, identical icon rows.",
+    "keyCharacteristics": [
+      "Warm neutral base (Archival Ivory) with near-black text — light theme, not stark white",
+      "Two brass tones: Clinical Brass for system accents, Brass Bright for hero-context expressions only",
+      "Playfair Display for editorial headings; Inter for clinical body and label text",
+      "Full-bleed video heroes with cinematic gradient overlays, not glassmorphism panels",
+      "Flat elevation by default; depth from tonal section transitions, not shadows",
+      "CTAs are institutional stamps: uppercase, tracked, small, squared",
+      "Labels: 10px uppercase, tracking 0.28em, muted brass — the annotation layer"
+    ],
+    "rules": [
+      {
+        "name": "The One Brass Rule",
+        "body": "Brass appears on at most 10% of any body-section surface. It marks; it does not fill. When brass occupies more than 10% of a surface, that surface must be the hero video context.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Tone Brass Rule",
+        "body": "Clinical Brass (#a58d4e) is the system token. Brass Bright (#d4af37) is the hero expression. Never swap them: Brass Bright on a body section reads as shimmer; Clinical Brass in the hero reads as dull.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mixed-Case Rule",
+        "body": "Display headlines are mixed case, never all-caps. All-caps at display size reads as campaign; mixed case reads as authored. Labels and CTAs use uppercase, but they are 10–12px — the stamp, not the voice.",
+        "section": "typography"
+      },
+      {
+        "name": "The Scale Gap Rule",
+        "body": "Every typographic step maintains at minimum a 1.25 ratio. A flat scale signals a template. The gap between display (32px) and body (14px) is a 2.3 ratio — large enough to read as editorial hierarchy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-by-Default Rule",
+        "body": "Surfaces are flat at rest. A shadow that appears without a state change (hover, scroll-trigger, focus) is decoration. Decoration signals insecurity. Remove it.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Tonal Depth Rule",
+        "body": "Section-to-section contrast replaces elevation. Ivory-to-dark transitions carry more atmosphere than any box-shadow. Use Documentary Dark sections to create depth, not drop shadows on cards.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Playfair Display for any heading that speaks with institutional authority.",
+      "Do position hero content in the lower-left, not centered. Asymmetric composition is the documentary convention.",
+      "Do write display headlines in mixed case.",
+      "Do use uppercase, tracking-0.28em labels at 10px for category annotations.",
+      "Do allow white space to carry credibility.",
+      "Do write copy in the clinical, observational voice.",
+      "Do use the left-heavy cinematic gradient on video heroes.",
+      "Do use WCAG 2.1 AA contrast ratios.",
+      "Do cite specific anatomy: palpacija, reakcija tkiva, napeta traka, trigger točka, PIR.",
+      "Do use tonal section transitions for depth instead of shadows or cards."
+    ],
+    "donts": [
+      "Don't use rounded-2xl (32px radius) or larger on CTA buttons.",
+      "Don't apply scale(1.05) or any scale transform on CTA hover.",
+      "Don't use a uniform bg-black/50 overlay on video backgrounds.",
+      "Don't use glassmorphism as a decorative hero content wrapper.",
+      "Don't show the price in the CTA button label.",
+      "Don't use red urgency badges, countdown timers, or scarcity copy.",
+      "Don't use gradient text (background-clip: text + gradient). The .hero-shimmer and .shimmer-gold CSS classes are deprecated.",
+      "Don't build identical card grids with same-size icon + heading + paragraph rows.",
+      "Don't use startup SaaS aesthetics: hero metrics, social-proof ticker rails, gradient accent cards.",
+      "Don't use wellness marketing language: transformiraj, moć dodira, investiraj u sebe, premium, ekskluzivno, breakthrough.",
+      "Don't reference the aesthetic of Udemy, Coursera, or Mindvalley.",
+      "Don't use soft pastels, leaf motifs, or coaching energy.",
+      "Don't add text-shadow to headings in body sections."
+    ]
+  }
+}

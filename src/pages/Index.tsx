@@ -1,44 +1,27 @@
-import AppleHeroSection from "@/components/ui/AppleHeroSection";
-import AccreditationSection from "@/components/ui/AccreditationSection";
-import { Courses } from "@/components/Courses";
-import { ContactFooter } from "@/components/ContactFooter";
-import { ManualnaTherapyHeroSection } from "@/components/ManualnaTherapyHeroSection";
-import { PremiumWhySupraStudium } from "@/components/PremiumWhySupraStudium";
-import { Testimonials } from "@/components/Testimonials";
-import ERPSAccordion from "@/components/ERPSAccordion";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { HomeHero } from '@/components/home/HomeHero';
+import { HomeProgramsSection } from '@/components/home/HomeProgramsSection';
+import { HomeCredentialsSection } from '@/components/home/HomeCredentialsSection';
+import { HomeInternationalSection } from '@/components/home/HomeInternationalSection';
+import { HomeChampionshipSection } from '@/components/home/HomeChampionshipSection';
+import { HomeERPSSection } from '@/components/home/HomeERPSSection';
+import { HomeResultsSection } from '@/components/home/HomeResultsSection';
+import { HomeTestimonialsSection } from '@/components/home/HomeTestimonialsSection';
+import { HomeFounderSection } from '@/components/home/HomeFounderSection';
+import { ContactFooter } from '@/components/ContactFooter';
 
-const Index = () => {
-  const isMobile = useIsMobile();
-
-  // Mobile order: Hero, Cards, Courses, Testimonials, Accreditation, ERPS, Footer
-  // Desktop order: Hero, Cards, Accreditation, Courses, MT Hero, Testimonials, Footer
-  
-  if (isMobile) {
-    return (
-      <div className="bg-background font-inter -mt-20">
-        <AppleHeroSection />
-        <PremiumWhySupraStudium />
-        <Courses />
-        <Testimonials />
-        <AccreditationSection />
-        <ERPSAccordion />
-        <ContactFooter />
-      </div>
-    );
-  }
-
-  return (
-    <div className="bg-background font-inter -mt-20">
-      <AppleHeroSection />
-      <PremiumWhySupraStudium />
-      <AccreditationSection />
-      <Courses />
-      <ManualnaTherapyHeroSection />
-      <Testimonials />
-      <ContactFooter />
-    </div>
-  );
-};
+const Index = () => (
+  <div className="bg-background -mt-20">
+    <HomeHero />
+    <HomeProgramsSection />
+    <HomeCredentialsSection />
+    <HomeInternationalSection />
+    <HomeChampionshipSection />
+    <HomeERPSSection />
+    <HomeResultsSection />
+    <HomeTestimonialsSection />
+    <HomeFounderSection />
+    <ContactFooter />
+  </div>
+);
 
 export default Index;
