@@ -149,9 +149,9 @@ export function HomeChampionshipSection() {
           {/* Bottom image strip */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { src: '/lovable-uploads/cmc-ruke-closeup.jpg', alt: 'Detalj rada — ruke terapeuta' },
-              { src: '/lovable-uploads/cmc-dvorana-panorama.jpg', alt: 'Natjecanje — dvorana i publika' },
-              { src: '/lovable-uploads/fh-pobjednici-trofej.jpg', alt: 'Pobjednici na bini' },
+              { src: '/lovable-uploads/cmc-sajo-dry-ice.jpg', alt: 'Natjecanje — Sajo dry ice duo masaža', objectPosition: 'center center' },
+              { src: '/lovable-uploads/cmc-dvorana-panorama.jpg', alt: 'Natjecanje — dvorana i publika', objectPosition: 'center center' },
+              { src: '/lovable-uploads/cmc-pobjednici-banner.jpg', alt: 'Pobjednici — trofeje i medalje uz CMC banner', objectPosition: 'center 20%' },
             ].map((img, i) => (
               <motion.div
                 key={i}
@@ -165,6 +165,7 @@ export function HomeChampionshipSection() {
                     src={img.src}
                     alt={img.alt}
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: img.objectPosition }}
                     loading="lazy"
                   />
                 </div>
