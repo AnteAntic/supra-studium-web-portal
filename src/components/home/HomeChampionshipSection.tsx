@@ -24,8 +24,8 @@ export function HomeChampionshipSection() {
               </p>
               <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
               <h2
-                className="font-playfair font-semibold leading-[1.22] text-[1.55rem] md:text-[1.75rem]"
-                style={{ color: '#1F1D1A' }}
+                className="font-playfair font-semibold leading-[1.22] text-[1.3rem] md:text-[1.75rem]"
+                style={{ color: '#1F1D1A', textWrap: 'balance' } as React.CSSProperties}
               >
                 Croatian International Massage, Manual Therapy &amp; Nuad Thai Championship
               </h2>
@@ -149,9 +149,9 @@ export function HomeChampionshipSection() {
           {/* Bottom image strip */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { src: '/lovable-uploads/cmc-sajo-dry-ice.jpg', alt: 'Natjecanje — Sajo dry ice duo masaža', objectPosition: 'center center' },
+              { src: '/lovable-uploads/cmc-sajo-dry-ice-v2.jpg', alt: 'Natjecanje — Sajo dry ice duo masaža', objectPosition: 'center center' },
               { src: '/lovable-uploads/cmc-dvorana-panorama.jpg', alt: 'Natjecanje — dvorana i publika', objectPosition: 'center center' },
-              { src: '/lovable-uploads/cmc-pobjednici-banner.jpg', alt: 'Pobjednici — trofeje i medalje uz CMC banner', objectPosition: 'center 20%' },
+              { src: '/lovable-uploads/cmc-pobjednici-banner-v2.jpg', alt: 'Pobjednici — trofeje i medalje uz CMC banner', objectPosition: 'center 20%' },
             ].map((img, i) => (
               <motion.div
                 key={i}

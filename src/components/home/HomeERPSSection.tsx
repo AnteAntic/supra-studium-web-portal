@@ -21,7 +21,7 @@ export function HomeERPSSection() {
               <div>
                 <h2
                   className="font-playfair font-semibold leading-[1.25] text-[1.35rem] md:text-[1.5rem] mb-5"
-                  style={{ color: '#1F1D1A' }}
+                  style={{ color: '#1F1D1A', textWrap: 'balance' } as React.CSSProperties}
                 >
                   Edukacija dokumentirana i formalno evidentirana.
                 </h2>

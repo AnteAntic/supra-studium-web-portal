@@ -154,8 +154,9 @@ export const ContactFooter = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label style={labelStyle}>Ime</label>
+                    <label htmlFor="cf-ime" style={labelStyle}>Ime</label>
                     <input
+                      id="cf-ime"
                       type="text"
                       name="ime"
                       value={formData.ime}
@@ -169,8 +170,9 @@ export const ContactFooter = () => {
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Prezime</label>
+                    <label htmlFor="cf-prezime" style={labelStyle}>Prezime</label>
                     <input
+                      id="cf-prezime"
                       type="text"
                       name="prezime"
                       value={formData.prezime}
@@ -186,8 +188,9 @@ export const ContactFooter = () => {
                 </div>
 
                 <div>
-                  <label style={labelStyle}>Email</label>
+                  <label htmlFor="cf-email" style={labelStyle}>Email</label>
                   <input
+                    id="cf-email"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -202,8 +205,9 @@ export const ContactFooter = () => {
                 </div>
 
                 <div>
-                  <label style={labelStyle}>Poruka</label>
+                  <label htmlFor="cf-poruka" style={labelStyle}>Poruka</label>
                   <textarea
+                    id="cf-poruka"
                     rows={5}
                     name="poruka"
                     value={formData.poruka}
@@ -258,7 +262,7 @@ export const ContactFooter = () => {
                 { href: 'https://www.facebook.com/profile.php?id=100078666409012', Icon: Facebook, label: 'Facebook' },
                 { href: 'https://www.instagram.com/suprastudium/', Icon: Instagram, label: 'Instagram' },
                 { href: 'https://www.youtube.com/@anteantic7905', Icon: Youtube, label: 'YouTube' },
-                { href: '#', Icon: Linkedin, label: 'LinkedIn' },
+                { href: 'https://www.linkedin.com/company/supra-studium', Icon: Linkedin, label: 'LinkedIn' },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
