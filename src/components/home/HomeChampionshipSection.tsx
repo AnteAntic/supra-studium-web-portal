@@ -37,14 +37,10 @@ export function HomeChampionshipSection() {
               viewport={{ once: true }}
               className="pt-2 md:pt-16"
             >
-              <p className="text-[14px] leading-[1.75] font-normal mb-5" style={{ color: '#3D3A35' }}>
+              <p className="text-[14px] leading-[1.75] font-normal mb-8" style={{ color: '#3D3A35' }}>
                 Učilište Supra Studium sudjeluje u organizaciji međunarodnog hrvatskog prvenstva
-                iz masaže i manualne terapije kroz edukaciju, stručni kadar i razvoj
-                natjecateljskog standarda.
-              </p>
-              <p className="text-[13px] leading-[1.70] font-normal mb-8" style={{ color: '#7A7570' }}>
-                Projekt vode Ante Antić i Awudi, edukator Supra Studium programa Lomi Lomi i
-                Kalabaš masaže.
+                iz masaže i manualne terapije kroz edukacijski, stručni i organizacijski rad
+                Ante Antića i Awudija, edukatora Supra Studium programa Lomi Lomi i Kalabaš masaže.
               </p>
               <a
                 href="https://fh-participants-7z477wy.gamma.site/"

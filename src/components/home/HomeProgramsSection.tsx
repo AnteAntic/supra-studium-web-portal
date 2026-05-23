@@ -14,7 +14,7 @@ const featuredPrograms = [
     title: 'CFM Body Reset Method',
     text: 'Metodologija iz koje je razvijen Supra pristup radu s tkivom, pokretom i palpacijom.',
     href: '/crossfriction-funkcionalna-masaza',
-    image: '/lovable-uploads/fh-sudionica-masaza.webp',
+    image: '/lovable-uploads/cfm-tretman-closeup.jpg',
   },
   {
     title: 'Akupresura & Trigger Point',

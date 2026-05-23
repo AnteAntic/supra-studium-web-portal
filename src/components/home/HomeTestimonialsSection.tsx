@@ -6,16 +6,8 @@ const testimonials = [
     attr: 'Bruna Prnjak, fizioterapeutkinja',
   },
   {
-    text: 'Dobila sam puno više nego što sam očekivala od same edukacije.',
-    attr: 'Aleksandra Aleks, polaznica',
-  },
-  {
     text: 'Osjećam veću sigurnost u radu, a klijenti mi sve više poklanjaju povjerenje.',
     attr: 'Irena Škarić, terapeutkinja',
-  },
-  {
-    text: 'Ante nesebično dijeli znanje i objašnjava kompleksne stvari na jasan način.',
-    attr: 'Alena Jurić, polaznica',
   },
 ];
 

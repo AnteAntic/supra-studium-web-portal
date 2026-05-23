@@ -6,12 +6,12 @@ const images = [
     caption: 'Međunarodni sudionici — različite države, isti standardi rada.',
   },
   {
-    src: '/lovable-uploads/fh-organizator-razgovor.webp',
-    caption: 'Sudačka uloga na europskim natjecanjima.',
+    src: '/lovable-uploads/ante-sudac-lecce.jpg',
+    caption: 'Međunarodna sudačka uloga na europskim natjecanjima.',
   },
   {
-    src: '/lovable-uploads/cmc-thai-stretch.jpg',
-    caption: 'Demonstracija tehnika — edukativni kontekst natjecanja.',
+    src: '/lovable-uploads/ante-predavac-lecce.jpg',
+    caption: 'Međunarodno predavanje na Holos World Congressu u Lecceu.',
   },
 ];
 
@@ -48,12 +48,13 @@ export function HomeInternationalSection() {
               className="pt-2 md:pt-16"
             >
               <p className="text-[14px] leading-[1.75] font-normal mb-5" style={{ color: '#3D3A35' }}>
-                Ante Antić redovito sudjeluje kao međunarodni sudac, edukator i predstavnik struke
-                na europskim prvenstvima i stručnim kongresima iz masaže i manualne terapije.
+                Ante Antić sudjeluje kao međunarodni sudac i predavač na stručnim događanjima u
+                Hrvatskoj, Italiji i Bugarskoj, u kontekstu masaže, manualne terapije i integrirane
+                medicine.
               </p>
               <p className="text-[13px] leading-[1.70] font-normal" style={{ color: '#7A7570' }}>
                 Međunarodni kontekst škole razvija se kroz kontinuiranu suradnju s edukatorima,
-                organizacijama i prvenstvima u Hrvatskoj, Italiji i Bugarskoj.
+                organizacijama i natjecanjima u Europi.
               </p>
             </motion.div>
           </div>

@@ -28,11 +28,14 @@ export function HomeERPSSection() {
               </div>
               <div>
                 <p className="text-[13.5px] leading-[1.75] font-normal mb-5" style={{ color: '#3D3A35' }}>
-                  Programi edukacije mogu se evidentirati u e-radnoj knjižici pod kategorijom
-                  dodatnog obrazovanja, sukladno administrativnom postupku i dostupnoj dokumentaciji.
+                  Pohađanje programa može se evidentirati u e-radnoj knjižici pod kategorijom
+                  dodatnog obrazovanja, sukladno dostupnoj dokumentaciji i primjenjivom
+                  administrativnom postupku.
                 </p>
                 <p className="text-[12px] leading-[1.68] font-normal" style={{ color: '#7A7570' }}>
-                  Detalji evidentiranja dostupni su polaznicima unutar informacija o programu.
+                  Supra Studium je registrirano učilište za obrazovanje odraslih. Po završetku
+                  programa polaznici dobivaju potvrdu s urudžbenim brojem, klasom i pečatom ustanove,
+                  koja zadovoljava uvjete za evidentiranje u ERPS.
                 </p>
               </div>
             </div>

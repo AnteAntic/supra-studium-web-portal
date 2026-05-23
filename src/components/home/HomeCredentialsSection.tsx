@@ -47,14 +47,18 @@ export function HomeCredentialsSection() {
               >
                 Excellence National School.
               </h2>
-              <p className="text-[14px] leading-[1.75] font-normal mb-8" style={{ color: '#3D3A35' }}>
+              <p className="text-[14px] leading-[1.75] font-normal mb-6" style={{ color: '#3D3A35' }}>
                 Supra Studium prepoznat je od World Federation of Massage, Manual Therapy &amp; Nuad Thai
-                kao <em>Excellence National School</em> — nacionalna referentna točka za kvalitetu
-                edukacije i stručnog razvoja u području masaže i manualne terapije.
+                kao <em>Excellence National School</em>.
               </p>
-              <p className="text-[13px] leading-[1.72] font-normal" style={{ color: '#7A7570' }}>
-                Suradnje, edukacije i međunarodni stručni kontekst škole razvijaju se kroz europske
-                kongrese, prvenstva i organizacije iz područja masaže i manualne terapije.
+              <p className="text-[13px] leading-[1.72] font-normal mb-5" style={{ color: '#5F5A52' }}>
+                Za polaznike to znači da se edukacije razvijaju u međunarodnom stručnom kontekstu,
+                uz povezanost s europskim natjecanjima, kongresima i edukatorima iz područja masaže,
+                manualne terapije i Nuad Thai tradicije.
+              </p>
+              <p className="text-[12px] leading-[1.68] font-normal" style={{ color: '#7A7570' }}>
+                Ovo priznanje ne mijenja nacionalne administrativne postupke, ali potvrđuje stručni
+                standard škole i njezinu međunarodnu povezanost.
               </p>
             </motion.div>
 
