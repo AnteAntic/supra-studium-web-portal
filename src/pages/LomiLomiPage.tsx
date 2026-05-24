@@ -167,7 +167,7 @@ const LomiLomiPage: React.FC = () => {
         />
 
         <motion.div style={{ opacity: heroOpacity, y: heroY }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[8%]">
+          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[15%] md:pb-[10%]">
             <div className="w-full" style={{ maxWidth: '50rem' }}>
 
               <motion.div
@@ -177,8 +177,8 @@ const LomiLomiPage: React.FC = () => {
                 className="mb-6"
               >
                 <span
-                  className="text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.28em] block"
-                  style={{ color: 'rgba(212,175,55,0.55)' }}
+                  className="text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.35em] block"
+                  style={{ color: 'rgba(212,175,55,0.68)' }}
                 >
                   Ancient Wave Lomi Lomi · Zagreb
                 </span>
@@ -190,7 +190,7 @@ const LomiLomiPage: React.FC = () => {
                 transition={{ delay: 0.50, duration: 0.7, ease: 'easeOut' }}
                 className="origin-left mb-9"
               >
-                <div className="w-10 h-px" style={{ backgroundColor: 'rgba(212,175,55,0.40)' }} />
+                <div className="w-12 h-px" style={{ backgroundColor: 'rgba(212,175,55,0.48)' }} />
               </motion.div>
 
               <motion.div
@@ -200,8 +200,8 @@ const LomiLomiPage: React.FC = () => {
                 className="mb-9"
               >
                 <h1
-                  className="font-playfair font-semibold text-white leading-[1.17] text-[2.05rem] sm:text-[2.35rem] md:text-[2.7rem]"
-                  style={{ textShadow: '0 2px 24px rgba(0,0,0,0.72), 0 1px 6px rgba(0,0,0,0.40)' }}
+                  className="font-playfair font-semibold text-white leading-[1.12] text-[2.15rem] sm:text-[2.45rem] md:text-[2.9rem]"
+                  style={{ textShadow: '0 2px 28px rgba(0,0,0,0.80), 0 1px 8px rgba(0,0,0,0.45)' }}
                 >
                   Val koji počinje<br />
                   u plućima.
@@ -215,8 +215,8 @@ const LomiLomiPage: React.FC = () => {
                 className="mb-9"
               >
                 <p
-                  className="text-[13.5px] sm:text-[14px] font-normal leading-[1.75]"
-                  style={{ color: 'rgba(255,255,255,0.58)', maxWidth: '44ch' }}
+                  className="text-[13.5px] sm:text-[14.5px] font-normal leading-[1.82]"
+                  style={{ color: 'rgba(255,255,255,0.68)', maxWidth: '44ch' }}
                 >
                   Havajska tehnika koja terapeuta uči disati s klijentom —
                   i iz toga izvući pokret koji ne iscrpljuje ni jednog ni drugog.
@@ -237,7 +237,7 @@ const LomiLomiPage: React.FC = () => {
                     )}
                     <span
                       className="font-normal"
-                      style={{ fontSize: '11px', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.35)' }}
+                      style={{ fontSize: '11px', letterSpacing: '0.07em', color: 'rgba(255,255,255,0.44)' }}
                     >
                       {item}
                     </span>
@@ -570,8 +570,8 @@ const LomiLomiPage: React.FC = () => {
             custom={0}
           >
             <div
-              className="grid gap-2"
-              style={{ gridTemplateColumns: '1.4fr 1fr', gridTemplateRows: 'auto auto' }}
+              className="grid gap-[5px]"
+              style={{ gridTemplateColumns: '1.55fr 1fr', gridTemplateRows: 'auto auto' }}
             >
               {/* Image 1 — dominant teaching moment */}
               <div
@@ -641,7 +641,7 @@ const LomiLomiPage: React.FC = () => {
                   src="/lovable-uploads/lomi-predavac-awudi-smijeh.jpg"
                   alt="Dr. Awudi Atitsogbui — voditelj Lomi Lomi edukacije"
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center top' }}
+                  style={{ objectPosition: 'center 12%' }}
                   loading="lazy"
                 />
               </div>
@@ -662,14 +662,18 @@ const LomiLomiPage: React.FC = () => {
                 Dr. Awudi Atitsogbui
               </h2>
               <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
-                Više od 19 godina podučava Lomi Lomi i afro-healing tehnike. Individualno i u
-                masterclass formatu, radio je s više od 820 terapeuta diljem Italije, Švicarske,
-                Norveške, Srbije, Indije, Zapadne Afrike i Hrvatske.
+                Devetnaest godina, osam zemalja, 820 polaznika. Terapeut koji dođe na
+                njegovu edukaciju ne odlazi s novom rutinom — odlazi s drukčijim
+                razumijevanjem onoga što već radi.
               </p>
               <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
-                Školovan na havajskim otocima u tradiciji drevnog Wave Lomi Lomija. Trostruki
-                svjetski prvak u Lomi Lomi masaži — tehnika kojom osvaja natjecanja ista je
-                ona koju podučava na edukacijama.
+                Predsjednik Svjetske federacije masaže, manualne terapije i Nuad Thaija.
+                Suorganizator Hrvatskog međunarodnog prvenstva u masaži. Trostruki svjetski
+                prvak u manualnim terapijama — ista tehnika kojom osvaja natjecanja
+                podučava se na ovoj edukaciji.
+              </p>
+              <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
+                Školovan u tradiciji drevnog Wave Lomi Lomija na havajskim otocima.
               </p>
               <p className="text-[13.5px] leading-[1.88] font-normal" style={{ color: '#7A7570' }}>
                 Tečaj se provodi na engleskom. Komunikacija je fizička, ne verbalna —
