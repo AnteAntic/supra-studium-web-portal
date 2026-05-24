@@ -549,47 +549,45 @@ const CalabashCertificationPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Editorial photo grid */}
-      <div style={{ background: '#F0EDE6' }} className="py-2">
-        <div className="container mx-auto px-6">
-          <motion.div
-            variants={fadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
+      {/* Editorial image intermezzo — single cinematic frame */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ aspectRatio: '21/9', background: '#0E0C09' }}
+      >
+        <img
+          src="/lovable-uploads/cal-awudi-tikva-demonstracija.jpeg"
+          alt="Dr. Awudi Atitsogbui — proceduralni rad s kalabašem"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            objectPosition: 'center 65%',
+            filter: 'saturate(0.36) contrast(1.20) brightness(0.86)',
+          }}
+          loading="lazy"
+        />
+        {/* Top: strong crush — cabinet and clutter are in portrait 0–65%, this crop starts at 66% — top gradient seals any bleed */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(6,4,2,0.94) 0%, rgba(6,4,2,0.55) 18%, rgba(6,4,2,0.08) 38%, transparent 52%, rgba(6,4,2,0.65) 100%)' }}
+        />
+        {/* Radial vignette — spotlight on center work zone, crushes corners */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse 62% 72% at 48% 52%, transparent 0%, rgba(6,4,2,0.28) 55%, rgba(6,4,2,0.72) 80%, rgba(6,4,2,0.90) 100%)' }}
+        />
+        {/* Additional left edge kill — compression brace */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, rgba(6,4,2,0.78) 0%, rgba(6,4,2,0.18) 20%, transparent 36%)' }}
+        />
+        {/* Observational quote — bottom left */}
+        <div className="absolute bottom-6 left-8 md:bottom-10 md:left-12">
+          <p
+            className="font-playfair font-normal text-[0.95rem] md:text-[1.15rem] leading-[1.55]"
+            style={{ color: 'rgba(255,255,255,0.62)', maxWidth: '38ch' }}
           >
-            <div className="grid gap-2" style={{ gridTemplateColumns: '1fr 0.62fr' }}>
-              <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                <img
-                  src="/lovable-uploads/cal-awudi-gourd-focus.jpeg"
-                  alt="Dr. Awudi — precizna primjena kalabaša, fokus na tkivu"
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 55%' }}
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="overflow-hidden flex-1">
-                  <img
-                    src="/lovable-uploads/3118d6a4-0a56-49d4-ae18-b4a87a937529.png"
-                    alt="Polaznici na Kalabaš certifikaciji"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="overflow-hidden flex-1">
-                  <img
-                    src="/lovable-uploads/cal-awudi-bilateral-gourds-work.jpeg"
-                    alt="Dr. Awudi — bilateralni rad s kalabašem na dubokim tkivima"
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: 'center 68%' }}
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            Kalabaš ne zamjenjuje ruku.<br className="hidden md:block" />
+            Produžuje njezinu preciznost.
+          </p>
         </div>
       </div>
 
