@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CourseFooter } from "@/components/CourseFooter";
 import { CourseRecommendations } from "@/components/course/CourseRecommendations";
@@ -12,26 +13,26 @@ const fadeUp = {
 };
 
 const facts = [
-  { field: "Pristup", value: "Klinički", detail: "praktičan rad i palpacija" },
-  { field: "Polaznici", value: "900+", detail: "educiranih terapeuta" },
-  { field: "Programi", value: "6", detail: "specijaliziranih programa" },
-  { field: "Suradnja", value: "Međunarodna", detail: "federacije, prvenstva i gostujući predavači" },
+  { field: "Pristup",    value: "Klinički",       detail: "palpacija, procjena i praktičan rad" },
+  { field: "Polaznici",  value: "900+",            detail: "educiranih terapeuta" },
+  { field: "Programi",  value: "6",               detail: "specijaliziranih programa" },
+  { field: "Suradnja",  value: "Međunarodna",     detail: "WFMMT federacija, predsjednici i suci" },
 ];
 
 const alumni = [
   {
-    text: "Veliki dio edukacije baziran je na vježbama koje odmah mogu primijeniti u praksi.",
-    ime: "Bruna P.",
+    text: "Velik dio edukacije temelji se na vježbama koje se odmah mogu primijeniti u svakodnevnom radu.",
+    ime: "Bruna Prnjak",
     struka: "fizioterapeutkinja",
   },
   {
     text: "Nisam požalila ni vremena ni novca uloženog u edukaciju.",
-    ime: "Alena J.",
+    ime: "Alena Jurić",
     struka: "fizioterapeutkinja",
   },
   {
-    text: "Edukacije kod Ante i dr. Stošića — bez rezerve preporučujem.",
-    ime: "Todor F.",
+    text: "Edukacije kod Ante i dr. Stošića preporučujem bez rezerve.",
+    ime: "Todor Filipović",
     struka: "fizioterapeut",
   },
 ];
@@ -45,7 +46,7 @@ export default function OUcilistuPage() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const y       = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,47 +55,54 @@ export default function OUcilistuPage() {
   return (
     <div className="bg-[#F4F1EA] min-h-screen">
 
-      {/* ── Hero ───────────────────────────────────────────────── */}
+      {/* ── Hero ───────────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
 
+        {/* Video — o-ucilistu-hero.mp4 when available; falls back to home-hero.mp4 */}
         <div className="absolute inset-0 top-[-5rem]">
           <video
             autoPlay
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
+            poster="/videos/home-hero-poster.jpg"
             className="w-full h-full object-cover"
-            style={{ objectPosition: "top center" }}
+            style={{ objectPosition: "center center" }}
           >
-            <source src="/videos/o-ucilistu-hero.mp4" type="video/mp4" />
+            {/* Replace with /videos/o-ucilistu-hero.mp4 when ready */}
+            <source src="/videos/home-hero.mp4" type="video/mp4" />
           </video>
         </div>
 
-        <div className="absolute inset-0 bg-black/38" />
+        {/* Base overlay */}
+        <div className="absolute inset-0 bg-black/32" />
 
+        {/* Desktop: left-dark gradient so text stays readable */}
         <div
           className="absolute inset-0 hidden md:block"
           style={{
             background:
-              "linear-gradient(108deg, rgba(10,8,6,0.68) 0%, rgba(10,8,6,0.40) 34%, rgba(10,8,6,0.12) 60%, transparent 78%)",
+              "linear-gradient(108deg, rgba(10,8,6,0.84) 0%, rgba(10,8,6,0.56) 38%, rgba(10,8,6,0.18) 64%, transparent 82%)",
           }}
         />
 
+        {/* Mobile: vertical gradient */}
         <div
           className="absolute inset-0 md:hidden"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(8,6,4,0.44) 0%, rgba(8,6,4,0.34) 28%, rgba(8,6,4,0.22) 52%, rgba(8,6,4,0.14) 72%, rgba(8,6,4,0.22) 100%)",
+              "linear-gradient(to bottom, rgba(8,6,4,0.48) 0%, rgba(8,6,4,0.36) 28%, rgba(8,6,4,0.24) 52%, rgba(8,6,4,0.16) 72%, rgba(8,6,4,0.24) 100%)",
           }}
         />
 
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/18 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/22 to-transparent" />
+        {/* Top and bottom vignette */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/24 to-transparent" />
 
         <motion.div style={{ opacity, y }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-center">
-            <div className="max-w-xl relative w-full" style={{ marginTop: "-3%" }}>
+          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[14%]">
+            <div className="max-w-xl relative w-full">
 
               <motion.div
                 initial={{ opacity: 0, y: 5 }}
@@ -102,7 +110,7 @@ export default function OUcilistuPage() {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
-                <span className="text-[#B89A4F]/75 text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block">
+                <span className="text-[#B89A4F]/75 text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.24em] sm:tracking-[0.30em]">
                   O učilištu · Supra Studium
                 </span>
               </motion.div>
@@ -116,28 +124,62 @@ export default function OUcilistuPage() {
                 <div className="w-10 h-px bg-[#B89A4F]/45" />
               </motion.div>
 
-              <motion.div
+              <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: "easeOut" }}
-                className="mb-9"
+                className="font-playfair font-semibold text-white leading-[1.18] text-[1.75rem] sm:text-[2rem] md:text-[2.15rem] mb-7"
+                style={{ textShadow: "0 1px 14px rgba(0,0,0,0.36), 0 1px 4px rgba(0,0,0,0.20)" }}
               >
-                <h1
-                  className="font-playfair font-semibold text-white leading-[1.18] text-[1.75rem] sm:text-[2rem] md:text-[2.1rem]"
-                  style={{ textShadow: "0 1px 12px rgba(0,0,0,0.38), 0 1px 3px rgba(0,0,0,0.22)" }}
-                >
-                  Nova generacija manualnih terapeuta.
-                </h1>
-              </motion.div>
+                Učilište nastalo iz<br className="hidden sm:block" /> rada rukama.
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="text-[13px] font-normal leading-[1.68] max-w-[38ch] mb-9"
+                style={{ color: 'rgba(255,255,255,0.80)' }}
+              >
+                Supra Studium povezuje kliničku preciznost, manualnu terapiju,
+                međunarodnu suradnju i edukacije koje se temelje na stvarnom
+                radu s tijelom.
+              </motion.p>
 
               <motion.div
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
+                transition={{ delay: 0.9, duration: 0.7 }}
+                className="flex items-center gap-5"
               >
-                <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-sm">
-                  Znanje, palpacija i praktičan rad u fokusu svake edukacije. Supra Studium povezuje terapeute koji žele jasniji osjećaj u radu i sigurnost u tretmanu.
-                </p>
+                <Link
+                  to="/#edukacije"
+                  className="text-[10.5px] uppercase tracking-[0.14em] font-normal py-3 px-7 transition-colors duration-300"
+                  style={{
+                    border: '1px solid rgba(184,154,79,0.55)',
+                    color: 'rgba(255,255,255,0.85)',
+                    background: 'transparent',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(184,154,79,0.14)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(184,154,79,0.75)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.background = 'transparent';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(184,154,79,0.55)';
+                  }}
+                >
+                  Pogledaj edukacije
+                </Link>
+                <a
+                  href="#pristup"
+                  className="text-[10.5px] uppercase tracking-[0.14em] font-normal transition-colors duration-300"
+                  style={{ color: 'rgba(255,255,255,0.45)' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.45)'; }}
+                >
+                  — O pristupu
+                </a>
               </motion.div>
 
             </div>
@@ -145,27 +187,23 @@ export default function OUcilistuPage() {
         </motion.div>
       </section>
 
-      {/* ── Facts Band ─────────────────────────────────────────── */}
-      <section className="bg-[#F4F1EA] pt-5">
+      {/* ── Facts band ─────────────────────────────────────────────────── */}
+      <section className="bg-[#F4F1EA] pt-5 pb-2">
         <div className="container mx-auto px-6 md:px-10">
           <div
             className="grid grid-cols-2 md:grid-cols-4"
             style={{
-              borderTop: "1px solid rgba(0,0,0,0.08)",
+              borderTop:    "1px solid rgba(0,0,0,0.08)",
               borderBottom: "1px solid rgba(0,0,0,0.08)",
             }}
           >
             {facts.map((item, i) => (
               <div
                 key={i}
-                className={[
-                  "py-7 px-6 md:px-8",
-                  i === 0 ? "pl-0" : "",
-                  i === 3 ? "md:pr-0" : "",
-                ].join(" ")}
+                className={["py-7 px-6 md:px-8", i === 0 ? "pl-0" : "", i === 3 ? "md:pr-0" : ""].join(" ")}
                 style={{
-                  borderLeft: i !== 0 ? "1px solid rgba(0,0,0,0.08)" : "none",
-                  borderBottom: i < 2 ? "1px solid rgba(0,0,0,0.08)" : "none",
+                  borderLeft:   i !== 0 ? "1px solid rgba(0,0,0,0.08)" : "none",
+                  borderBottom: i < 2   ? "1px solid rgba(0,0,0,0.08)" : "none",
                 }}
               >
                 <div className="text-[9.5px] uppercase tracking-[0.25em] mb-2 font-normal" style={{ color: "#B89A4F" }}>
@@ -183,8 +221,8 @@ export default function OUcilistuPage() {
         </div>
       </section>
 
-      {/* ── Institutional text ─────────────────────────────────── */}
-      <section className="py-24 px-6">
+      {/* ── Što je Supra Studium ────────────────────────────────────────── */}
+      <section id="pristup" className="py-24 px-6">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeUp}
@@ -195,7 +233,7 @@ export default function OUcilistuPage() {
             <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Što je Supra Studium
             </p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug">
+            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug" style={{ textWrap: 'balance' } as React.CSSProperties}>
               Nije seminar. Nije tečaj vikend formata.
             </h2>
           </motion.div>
@@ -208,25 +246,30 @@ export default function OUcilistuPage() {
           >
             <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
               Supra Studium je edukacijsko okruženje za hands-on terapeute koji žele bolje
-              kliničko rasuđivanje, precizniji dodir i strukturiran praktični rad. Svaki program
-              razvijen je iz kliničke prakse — ne iz prevedenih stranih materijala.
+              kliničko rasuđivanje, precizniji dodir i strukturiran praktičan rad. Svaki
+              program razvijen je iz kliničke prakse — ne iz prevedenih stranih materijala.
+            </p>
+            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
+              Polaznici rade u malim grupama, s izravnom korekcijom tehnike i stalnom
+              povratnom informacijom. CFM Body Reset Method, manualna terapija po dr. Stošiću,
+              akupresura i trigger point terapija — svaki program ima jasno definiran klinički
+              cilj i primjenjivu strukturu.
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed">
-              Polaznici rade u malim grupama, s izravnom korekcijom tehnike. Cilj je da terapeut
-              sutradan u ordinaciji radi drukčije nego dan prije.
+              Cilj je da terapeut sutradan u ordinaciji radi drukčije nego dan prije.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Observation cards ─────────────────────────────────── */}
+      {/* ── Observation cards ──────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-[#FAF8F4]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-px bg-[#e3e3e3]">
             {[
-              { text: "Praktičan rad u parovima od prvog sata. Ne demonstracija — iskustvo." },
-              { text: "Svaka tehnika dolazi s indikacijom, mehanizmom i granicom primjene." },
-              { text: "Terapeuti koji završe tečaj ne znaju samo što rade — znaju zašto." },
+              { text: "Praktičan rad u parovima od prvog sata. Ne demonstracija — iskustvo u ruci." },
+              { text: "Svaka tehnika dolazi s indikacijom, mehanizmom djelovanja i granicom primjene." },
+              { text: "Terapeuti koji završe tečaj ne znaju samo što rade — znaju zašto i kada." },
             ].map((card, i) => (
               <motion.div
                 key={i}
@@ -246,7 +289,7 @@ export default function OUcilistuPage() {
         </div>
       </section>
 
-      {/* ── Osnivač ────────────────────────────────────────────── */}
+      {/* ── Osnivač ────────────────────────────────────────────────────── */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
@@ -259,25 +302,19 @@ export default function OUcilistuPage() {
             <div className="overflow-hidden">
               <img
                 src="/lovable-uploads/ante-founder-portret.jpg"
-                alt="Ante Antić — osnivač Supra Studium"
+                alt="Ante Antić — osnivač Supra Studium, terapeut i predavač"
                 className="w-full object-cover aspect-[4/5]"
                 loading="lazy"
-                style={{
-                  filter: "grayscale(8%)",
-                  objectPosition: "center 20%",
-                }}
+                style={{ filter: "grayscale(8%)", objectPosition: "center 20%" }}
               />
             </div>
             <div className="overflow-hidden">
               <img
                 src="/lovable-uploads/ante-tretman-900.webp"
-                alt="Ante Antić — klinički rad"
+                alt="Ante Antić — klinički rad, manualna terapija"
                 className="w-full object-cover aspect-[16/5]"
                 loading="lazy"
-                style={{
-                  filter: "grayscale(10%)",
-                  objectPosition: "center 35%",
-                }}
+                style={{ filter: "grayscale(10%)", objectPosition: "center 35%" }}
               />
             </div>
           </motion.div>
@@ -301,29 +338,30 @@ export default function OUcilistuPage() {
               Terapeut · Predavač · Osnivač Supra Studium
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
-              Ante Antić radi kao terapeut od 2008. godine. Klinički rad s kroničnom boli,
-              fascijalnim restrikcijama i funkcionalnim ograničenjima postao je temelj
-              edukacijskog smjera Supra Studija.
+              Ante Antić radi kao terapeut od 2008. godine. Klinički rad s kroničnom
+              boli, fascijalnim restrikcijama i funkcionalnim ograničenjima postao je
+              temelj edukacijskog smjera Supra Studija. Specijalizirao se za palpatornu
+              dijagnostiku, trigger point terapiju i CFM Body Reset Method.
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
-              Edukacijski rad započeo je 2012. kao direktan nastavak rada s pacijentima i
-              praktične primjene manualnih tehnika u ordinaciji.
+              Edukacijski rad započeo je 2012. kao direktan nastavak rada s pacijentima.
+              U sklopu učilišta predaje akupresuru, trigger point terapiju, cupping
+              terapiju te cross-friction i funkcionalnu masažu. Sudjelovao je u razvoju
+              Škole manualne terapije s dr. Stošićem.
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
-              U sklopu učilišta predaje akupresuru, trigger point terapiju, cupping terapiju
-              te cross friction i funkcionalnu masažu. Sudjelovao je u razvoju i organizaciji
-              škole manualne terapije s dr. Stošićem.
+              Potpredsjednik je Svjetske federacije masaže, manualne terapije i Nuad
+              Thaia (WFMMT) za Hrvatsku. Sudjeluje kao međunarodni sudac na natjecanjima
+              iz masaže i manualne terapije — u Hrvatskoj, Italiji i Bugarskoj.
             </p>
             <p className="text-sm text-[#3b3b3b] leading-relaxed">
-              Potpredsjednik je Svjetske federacije masaže, manualne terapije i Nuad Thaia
-              za Hrvatsku. Sudjeluje kao međunarodni sudac i organizator stručnih natjecanja
-              iz masaže i manualne terapije.
+              Gostujući predavač na Holos World Congressu u Lecceu, Italija.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Struka, edukacija i međunarodni kontekst ───────────── */}
+      {/* ── Praksa i međunarodni kontekst — image grid ─────────────────── */}
       <section className="py-24 px-6 bg-[#FAF8F4]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
@@ -334,10 +372,10 @@ export default function OUcilistuPage() {
               viewport={{ once: true }}
             >
               <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
-                Praksa i suradnja
+                Metode i utjecaji
               </p>
-              <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug">
-                Praksa, edukacija i međunarodni kontekst.
+              <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug" style={{ textWrap: 'balance' } as React.CSSProperties}>
+                Klinički rad, natjecanja i međunarodna suradnja.
               </h2>
             </motion.div>
             <motion.div
@@ -348,21 +386,36 @@ export default function OUcilistuPage() {
               viewport={{ once: true }}
             >
               <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
-                Supra Studium povezuje praktičnu edukaciju terapeuta, međunarodnu suradnju
-                i sudjelovanje u razvoju hrvatske scene masaže i manualne terapije.
+                Program škole temelji se na manualnoj terapiji, palpaciji, kliničkoj
+                procjeni i strukturiranom praktičnom radu. Svaki program ima jasno
+                definiran klinički cilj i primjenjivu strukturu.
               </p>
               <p className="text-sm text-[#3b3b3b] leading-relaxed">
-                Kroz edukacije, prvenstva i suradnje s predavačima iz regije, učilište razvija
-                prostor u kojem se znanje provjerava kroz praktičan rad, a ne samo kroz teoriju.
+                Međunarodna suradnja i stručna događanja dodatno proširuju edukacijski
+                kontekst škole — kroz rad s federacijama, sudjelovanje na natjecanjima
+                i razmjenu stručnih standarda.
               </p>
             </motion.div>
           </div>
 
+          {/* Three-column image grid */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { src: "/lovable-uploads/fh-tretman-glava.jpg", caption: "Kranijalna palpacija" },
-              { src: "/lovable-uploads/fh-tretman-fokus.jpg", caption: "Bamboo bodywork" },
-              { src: "/lovable-uploads/fh-tretman-noge.jpg", caption: "Nuad Thai natjecanje" },
+              {
+                src: "/lovable-uploads/mt-practicni-rad-kral.jpg",
+                alt: "Palpacija — Škola manualne terapije, praktičan rad s terapeutima",
+                caption: "Palpacija i procjena",
+              },
+              {
+                src: "/lovable-uploads/fh-sudionica-masaza.webp",
+                alt: "Terapijski dodir — sudionica Prima Feel & Heal festivala prima masažu",
+                caption: "Terapijski dodir",
+              },
+              {
+                src: "/lovable-uploads/cmc-thai-stretch.jpg",
+                alt: "Međunarodno natjecanje iz manualne terapije — stretching tehnika",
+                caption: "Međunarodni kontekst",
+              },
             ].map((img, i) => (
               <motion.figure
                 key={i}
@@ -375,7 +428,7 @@ export default function OUcilistuPage() {
                 <div className="aspect-[3/4] overflow-hidden">
                   <img
                     src={img.src}
-                    alt={img.caption}
+                    alt={img.alt}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     style={{ filter: "grayscale(8%)" }}
@@ -390,17 +443,17 @@ export default function OUcilistuPage() {
         </div>
       </section>
 
-      {/* ── Alumni — editorial statements ──────────────────────── */}
-      <section className="py-24 px-6">
+      {/* ── Polaznici — editorial statements ──────────────────────────── */}
+      <section className="py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-10"
           >
-            <p className="text-[10px] uppercase tracking-[0.38em] text-[#B89A4F] mb-8">
+            <p className="text-[10px] uppercase tracking-[0.38em] text-[#B89A4F] mb-6">
               Polaznici
             </p>
             <div className="w-10 h-px bg-[#a58d4e]/30" />
@@ -415,21 +468,26 @@ export default function OUcilistuPage() {
                 whileInView="visible"
                 custom={i * 0.08}
                 viewport={{ once: true }}
-                className="bg-[#F4F1EA] grid md:grid-cols-[1fr_auto] gap-8 px-8 py-7 items-baseline"
+                className="bg-[#F4F1EA] grid md:grid-cols-[1fr_auto] gap-6 px-8 py-5 items-baseline"
               >
                 <p className="text-sm text-[#1F1D1A] leading-relaxed font-playfair italic">
                   "{item.text}"
                 </p>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#3b3b3b]/45 whitespace-nowrap">
-                  {item.ime} · {item.struka}
-                </p>
+                <div className="text-right">
+                  <span className="block text-[11px] font-medium tracking-[0.08em] text-[#1F1D1A]/70 whitespace-nowrap">
+                    {item.ime}
+                  </span>
+                  <span className="block text-[10px] uppercase tracking-[0.18em] text-[#3b3b3b]/45 whitespace-nowrap mt-0.5">
+                    {item.struka}
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Akreditacija i status ──────────────────────────────── */}
+      {/* ── Formalni okvir — dark section ─────────────────────────────── */}
       <section className="py-24 px-6 bg-[rgb(20,18,16)]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
@@ -453,10 +511,14 @@ export default function OUcilistuPage() {
               custom={0.15}
               viewport={{ once: true }}
             >
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(237,233,227,0.68)" }}>
-                Učilište Supra Studium izdaje potvrde o pohađanju za sve završene programe.
-                Pohađanje se može evidentirati u e-radnoj knjižici pod dodatnim obrazovanjem,
-                sukladno važećem administrativnom postupku.
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(237,233,227,0.68)" }}>
+                Učilište Supra Studium registrirano je učilište za obrazovanje odraslih.
+                Po završetku programa polaznici dobivaju potvrdu s urudžbenim brojem,
+                klasom i pečatom ustanove.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(237,233,227,0.54)" }}>
+                Pohađanje se može evidentirati u e-radnoj knjižici pod kategorijom
+                dodatnog obrazovanja, sukladno važećem administrativnom postupku.
               </p>
             </motion.div>
           </div>
@@ -465,19 +527,19 @@ export default function OUcilistuPage() {
             {[
               {
                 naziv: "Potvrda o edukaciji",
-                opis: "Svaki završeni program dokumentira se potvrdom Učilišta Supra Studium. Može se koristiti kao prilog u evidenciji stručnog usavršavanja.",
+                opis: "Svaki završeni program dokumentira se potvrdom Učilišta Supra Studium s urudžbenim brojem, klasom i pečatom. Može se koristiti kao prilog u evidenciji stručnog usavršavanja.",
               },
               {
-                naziv: "E-radna knjižica",
-                opis: "Pohađanje programa može se evidentirati pod kategorijom dodatnog obrazovanja, sukladno Zakonu o mirovinskom osiguranju, čl. 104. i 108. (NN 79/2013), čl. 2.",
+                naziv: "E-radna knjižica (ERPS)",
+                opis: "Pohađanje programa može se evidentirati pod kategorijom dodatnog obrazovanja sukladno dostupnoj dokumentaciji i primjenjivom administrativnom postupku. Potvrda zadovoljava uvjete za evidenciju u ERPS sustavu.",
               },
               {
-                naziv: "Međunarodna suradnja",
-                opis: "Suradnja s međunarodnim federacijama i stručnim tijelima iz područja manualne terapije i masaže. Gostujući predavači iz regije sudjeluju u određenim programima.",
+                naziv: "World Federation of Massage, Manual Therapy & Nuad Thai",
+                opis: "Supra Studium djeluje u okviru WFMMT federacije. Ante Antić potpredsjednik je federacije za Hrvatsku i sudjeluje u razvoju stručnih standarda na međunarodnoj razini.",
               },
               {
-                naziv: "Hrvatsko prvenstvo u masaži i manualnoj terapiji",
-                opis: "Supra Studium povezan je s organizacijom i stručnom podrškom natjecanja iz masaže i manualne terapije na nacionalnoj razini.",
+                naziv: "Hrvatsko međunarodno natjecanje — masaža i manualna terapija",
+                opis: "Supra Studium sudjeluje u organizaciji i stručnoj podršci natjecanja iz masaže, manualne terapije i Nuad Thaia na nacionalnoj razini. Polaznici osvajaju medalje na regionalnim i međunarodnim natjecanjima.",
               },
             ].map((item, i) => (
               <motion.div
@@ -499,7 +561,7 @@ export default function OUcilistuPage() {
         </div>
       </section>
 
-      {/* ── Credibility strip — Championship ──────────────────── */}
+      {/* ── Natjecanja ─────────────────────────────────────────────────── */}
       <section className="py-20 px-6 bg-[#F4F1EA]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -512,21 +574,26 @@ export default function OUcilistuPage() {
               <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
                 Natjecanja
               </p>
+              <div className="w-10 h-px bg-[#B89A4F]/28 mb-8" />
               <p className="text-sm text-[#3b3b3b] leading-relaxed mb-4">
-                Polaznici Supra Studija sudjeluju i osvajaju medalje na hrvatskim i međunarodnim
-                prvenstvima masaže i manualne terapije.
+                Polaznici Supra Studija sudjeluju i osvajaju medalje na hrvatskim i
+                međunarodnim natjecanjima masaže i manualne terapije.
               </p>
               <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
-                Sudjelovanje na prvenstvima dio je razvoja terapeuta kroz praksu, evaluaciju
-                i međunarodnu razmjenu iskustva.
+                Sudjelovanje na natjecanjima dio je razvoja terapeuta kroz evaluaciju
+                pod pritiskom, međunarodnu razmjenu tehnike i povratnu informaciju
+                od licenciranih sudaca.
               </p>
               <a
-                href="https://feel-heal-festival-6k1kkp5.gamma.site/"
+                href="https://fh-participants-7z477wy.gamma.site/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] uppercase tracking-[0.22em] text-[#B89A4F]/70 hover:text-[#B89A4F] transition-colors duration-200"
+                className="text-[11px] uppercase tracking-[0.22em] transition-colors duration-200"
+                style={{ color: "rgba(184,154,79,0.70)" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#B89A4F'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(184,154,79,0.70)'; }}
               >
-                Pogledaj stranicu prvenstva
+                Pogledaj stranicu natjecanja
               </a>
             </motion.div>
             <motion.div
@@ -538,8 +605,8 @@ export default function OUcilistuPage() {
               className="overflow-hidden"
             >
               <img
-                src="/lovable-uploads/fh-prvaci-podijelj.jpg"
-                alt="Hrvatsko prvenstvo u masaži i manualnoj terapiji — Supra Studium"
+                src="/lovable-uploads/fh-pobjednici-trofej.jpg"
+                alt="Pobjednici Hrvatskog natjecanja u masaži i manualnoj terapiji — Supra Studium polaznici"
                 className="w-full object-cover"
                 loading="lazy"
                 style={{ filter: "grayscale(8%)", objectPosition: "center 30%" }}
@@ -549,7 +616,7 @@ export default function OUcilistuPage() {
         </div>
       </section>
 
-      <CourseRecommendations currentCourse="soulscan" />
+      <CourseRecommendations currentCourse="o-ucilistu" />
       <CourseFooter />
     </div>
   );
