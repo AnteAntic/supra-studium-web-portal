@@ -18,7 +18,7 @@ const moduli = [
   {
     broj: '01',
     naziv: 'Zlatna formula',
-    opis: 'Povijest i filozofija havajskog Lomi Lomija, 7 načela Hune kao radni okvir terapeuta, vitalne energetske točke tijela, kontrola disanja kao tehnička osnova, kompletna sekvenca zlatne formule.',
+    opis: 'Povijest i filozofija havajskog Lomi Lomija, 7 načela Hune kao radni okvir terapeuta, ključne anatomske zone i točke kontakta, kontrola disanja kao tehnička osnova, kompletna sekvenca zlatne formule.',
     trajanje: '2 dana',
   },
   {
@@ -134,10 +134,17 @@ const LomiLomiPage: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.8, ease: 'easeOut' }}
         >
-          <div
-            className="absolute w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: 'url(/lovable-uploads/lomi-hero-awudi-masaza.jpg)' }}
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/videos/lomi-hero-poster.jpg"
+            className="absolute w-full h-full object-cover"
+            style={{ objectPosition: 'center center' }}
+          >
+            <source src="/videos/lomi-hero.mp4" type="video/mp4" />
+          </video>
         </motion.div>
 
         {/* Overlay stack — MTHero pattern */}
@@ -562,34 +569,55 @@ const LomiLomiPage: React.FC = () => {
             viewport={{ once: true }}
             custom={0}
           >
-            <div className="grid gap-2" style={{ gridTemplateColumns: '1fr 0.62fr' }}>
-              <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
+            <div
+              className="grid gap-2"
+              style={{ gridTemplateColumns: '1.4fr 1fr', gridTemplateRows: 'auto auto' }}
+            >
+              {/* Image 1 — dominant teaching moment */}
+              <div
+                className="overflow-hidden relative"
+                style={{ aspectRatio: '4/3', gridRow: '1', gridColumn: '1' }}
+              >
                 <img
                   src="/lovable-uploads/lomi-grid-instrukcija-awudi-ante.png"
-                  alt="Dr. Awudi i Ante Antić zajedno korigiraju palpaciju vrata"
+                  alt="Dr. Awudi i Ante Antić zajedno korigiraju tehniku na polazniku"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: 'center' }}
                   loading="lazy"
                 />
+                <div className="absolute bottom-4 left-5">
+                  <p className="text-[9px] uppercase tracking-[0.20em] font-normal" style={{ color: 'rgba(255,255,255,0.48)' }}>
+                    Korekcija tehnike · Zagreb 2025.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <div className="overflow-hidden flex-1">
-                  <img
-                    src="/lovable-uploads/lomi-grid-podlaktica-duo.jpg"
-                    alt="Demonstracija zahvata podlakticom"
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: 'center top' }}
-                    loading="lazy"
-                  />
-                </div>
-                <div className="overflow-hidden flex-1">
-                  <img
-                    src="/lovable-uploads/lomi-grid-donji-ud.jpg"
-                    alt="Rad s donjim udom — demonstracija i korekcija"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+
+              {/* Image 2 — tall portrait spanning both rows */}
+              <div
+                className="overflow-hidden"
+                style={{ gridRow: '1 / 3', gridColumn: '2' }}
+              >
+                <img
+                  src="/lovable-uploads/lomi-grid-podlaktica-duo.jpg"
+                  alt="Demonstracija zahvata podlakticom"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center top' }}
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Image 3 — smaller supporting detail */}
+              <div
+                className="overflow-hidden"
+                style={{ aspectRatio: '16/7', gridRow: '2', gridColumn: '1' }}
+              >
+                <img
+                  src="/lovable-uploads/lomi-grid-donji-ud.jpg"
+                  alt="Rad s donjim udom — sekvenca i korekcija"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 40%' }}
+                  loading="lazy"
+                />
               </div>
             </div>
           </motion.div>

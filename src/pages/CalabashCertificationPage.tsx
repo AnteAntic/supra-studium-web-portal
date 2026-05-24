@@ -129,8 +129,8 @@ const CalabashCertificationPage: React.FC = () => {
           transition={{ duration: 1.8, ease: 'easeOut' }}
         >
           <div
-            className="absolute w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: 'url(/lovable-uploads/3118d6a4-0a56-49d4-ae18-b4a87a937529.png)' }}
+            className="absolute w-full h-full bg-cover"
+            style={{ backgroundImage: 'url(/lovable-uploads/lomi-hero-awudi-masaza.jpg)', backgroundPosition: 'center 30%' }}
           />
         </motion.div>
 
