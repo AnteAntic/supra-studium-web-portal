@@ -139,6 +139,7 @@ const LomiLomiPage: React.FC = () => {
             muted
             loop
             playsInline
+            preload="metadata"
             poster="/videos/lomi-hero-poster.jpg"
             className="absolute w-full h-full object-cover"
             style={{ objectPosition: 'center center' }}
@@ -569,14 +570,11 @@ const LomiLomiPage: React.FC = () => {
             viewport={{ once: true }}
             custom={0}
           >
-            <div
-              className="grid gap-[5px]"
-              style={{ gridTemplateColumns: '1.55fr 1fr', gridTemplateRows: 'auto auto' }}
-            >
+            <div className="grid gap-[5px] grid-cols-1 md:grid-cols-[1.55fr_1fr]">
               {/* Image 1 — dominant teaching moment */}
               <div
-                className="overflow-hidden relative"
-                style={{ aspectRatio: '4/3', gridRow: '1', gridColumn: '1' }}
+                className="overflow-hidden relative md:col-start-1 md:row-start-1"
+                style={{ aspectRatio: '4/3' }}
               >
                 <img
                   src="/lovable-uploads/lomi-grid-instrukcija-awudi-ante.png"
@@ -586,16 +584,15 @@ const LomiLomiPage: React.FC = () => {
                   loading="lazy"
                 />
                 <div className="absolute bottom-4 left-5">
-                  <p className="text-[9px] uppercase tracking-[0.20em] font-normal" style={{ color: 'rgba(255,255,255,0.48)' }}>
+                  <p className="text-[9px] uppercase tracking-[0.22em] font-normal" style={{ color: 'rgba(255,255,255,0.48)' }}>
                     Korekcija tehnike · Zagreb 2025.
                   </p>
                 </div>
               </div>
 
-              {/* Image 2 — tall portrait spanning both rows */}
+              {/* Image 2 — tall portrait: 3/4 on mobile, spans both rows on desktop */}
               <div
-                className="overflow-hidden"
-                style={{ gridRow: '1 / 3', gridColumn: '2' }}
+                className="overflow-hidden aspect-[3/4] md:aspect-auto md:col-start-2 md:row-start-1 md:row-span-2"
               >
                 <img
                   src="/lovable-uploads/lomi-grid-podlaktica-duo.jpg"
@@ -608,8 +605,8 @@ const LomiLomiPage: React.FC = () => {
 
               {/* Image 3 — smaller supporting detail */}
               <div
-                className="overflow-hidden"
-                style={{ aspectRatio: '16/7', gridRow: '2', gridColumn: '1' }}
+                className="overflow-hidden md:col-start-1 md:row-start-2"
+                style={{ aspectRatio: '16/7' }}
               >
                 <img
                   src="/lovable-uploads/lomi-grid-donji-ud.jpg"
