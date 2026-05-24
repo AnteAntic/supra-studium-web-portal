@@ -17,24 +17,22 @@ const fadeIn = {
 const moduli = [
   {
     broj: '01',
-    naziv: 'Osnove i sigurna primjena',
-    opis: 'Anatomija zahvata, drža kalabaša, gliding po površinskim i dubokim mišićnim slojevima. Sigurna primjena bez preopterećenja terapeuta.',
-    trajanje: '8 sati',
+    naziv: 'Mehanika kontakta',
+    opis: 'Anatomija drže, transfer težine tijela, gliding po površinskim i dubokim slojevima. Kalabaš se uvodi tek kad je tkivna slika jasna — svaki zahvat počinje palpacijom, ne protokolom.',
+    trajanje: '9 sati',
   },
   {
     broj: '02',
-    naziv: 'Dijagnostika i tretman',
-    opis: 'Miofascijalni pristup — kompresija, mobilizacija fascije i sekvence za leđa, ramena i kukove. Procjena tkiva i adaptacija vektora sile.',
-    trajanje: '8 sati',
+    naziv: 'Tkivna procjena i adaptacija',
+    opis: 'Kompresija, fascijalna mobilizacija, ciljane sekvence za leđa, ramena i kukove. Vektor sile se prilagođava reakciji tkiva u realnom vremenu — ne unaprijed određenom obrascu.',
+    trajanje: '9 sati',
   },
 ];
 
-const tehnike = [
-  'Gliding s kalabašom po površinskim i dubokim mišićnim slojevima',
-  'Kompresija i mobilizacija fascije',
-  'Sekvence leđa, ramena i kukova',
-  'Miofascijalno otpuštanje bez preopterećenja terapeuta',
-  'Procjena tkiva i adaptacija vektora sile',
+const metodaKlinicki = [
+  'Tkivo ne reagira na silu — reagira na smjer i kontinuitet.',
+  'Duboki rad ne zahtijeva veći pritisak. Zahtijeva bolji vektor.',
+  'Terapeut koji precizno pozicionira tijelo ne troši snagu — primjenjuje mehaniku.',
 ];
 
 const faq = [
@@ -130,7 +128,7 @@ const CalabashCertificationPage: React.FC = () => {
         >
           <div
             className="absolute w-full h-full bg-cover"
-            style={{ backgroundImage: 'url(/lovable-uploads/lomi-hero-awudi-masaza.jpg)', backgroundPosition: 'center 30%' }}
+            style={{ backgroundImage: 'url(/lovable-uploads/cal-hero-gourds-bilateral-closeup.jpeg)', backgroundPosition: 'center 45%' }}
           />
         </motion.div>
 
@@ -197,8 +195,8 @@ const CalabashCertificationPage: React.FC = () => {
                   className="font-playfair font-semibold text-white leading-[1.17] text-[2.05rem] sm:text-[2.35rem] md:text-[2.7rem]"
                   style={{ textShadow: '0 2px 24px rgba(0,0,0,0.72), 0 1px 6px rgba(0,0,0,0.40)' }}
                 >
-                  Dubina bez<br />
-                  pritiska ruke.
+                  Alat koji tkivo<br />
+                  prepoznaje.
                 </h1>
               </motion.div>
 
@@ -212,8 +210,8 @@ const CalabashCertificationPage: React.FC = () => {
                   className="text-[13.5px] sm:text-[14px] font-normal leading-[1.75]"
                   style={{ color: 'rgba(255,255,255,0.58)', maxWidth: '44ch' }}
                 >
-                  Kalabaš masaža — afrička tradicija i miofascijalni pristup
-                  kombinirani u alatu koji klijenti ne zaboravljaju.
+                  Precizna mehanika vektora i miofascijalnog kontakta —
+                  tehnika koja štedi terapeuta bez kompromisa na dubini.
                 </p>
               </motion.div>
 
@@ -224,7 +222,7 @@ const CalabashCertificationPage: React.FC = () => {
                 className="mb-14 flex flex-wrap items-center"
                 style={{ columnGap: '14px', rowGap: '4px' }}
               >
-                {['2 modula', '16 sati', 'Rad s alatom', 'Certifikat'].map((item, i) => (
+                {['2 modula', '18 sati', 'Rad s alatom', 'Certifikat'].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
                       <span style={{ color: 'rgba(255,255,255,0.24)', fontSize: '11px', lineHeight: 1 }}>·</span>
@@ -298,7 +296,7 @@ const CalabashCertificationPage: React.FC = () => {
             style={{ borderLeft: '1px solid rgba(0,0,0,0.07)' }}
           >
             {[
-              { label: 'Format', value: '2 dana · 16 sati' },
+              { label: 'Format', value: '2 dana · 18 sati' },
               { label: 'Voditelj', value: 'Dr. Awudi Atitsogbui' },
               { label: 'Termin', value: 'Uskoro 2026.' },
               { label: 'Završetak', value: 'Certifikat Supra Studium' },
@@ -349,10 +347,14 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0.15}
               className="pt-1 md:pt-16"
             >
-              <p className="text-[13.5px] leading-[1.88] font-normal" style={{ color: '#7A7570' }}>
-                Kalabaš se koristi kao produžetak ruke — s kontroliranom silom i vektorom koji standardnom
-                zahvatu nije dostupan. Rezultat nije dramatičan, ali je opipljiv: tkivo reagira drukčije
+              <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
+                Kalabaš je produžetak ruke s vektorom koji standardnom zahvatu nije dostupan.
+                Rezultat nije dramatičan — ali je opipljiv i ponovljiv. Tkivo reagira drukčije
                 na alat nego na dlan.
+              </p>
+              <p className="text-[12px] leading-[1.75] font-normal" style={{ color: '#B89A4F', letterSpacing: '0.01em' }}>
+                Tehnika koja se rijetko podučava u Europi —<br className="hidden md:block" />
+                a gotovo nikada u strukturiranom kliničkom formatu.
               </p>
             </motion.div>
           </div>
@@ -361,19 +363,19 @@ const CalabashCertificationPage: React.FC = () => {
           <div className="max-w-5xl mx-auto mt-20">
             {[
               {
-                label: 'Terapeut i alat',
-                heading: 'Terapeut s kalabašom ne troši manje pažnje — troši drukčiju silu.',
-                body: 'Zamor ruku terapeuta u dubokom radu nije pitanje snage, nego vektora. Kalabaš mijenja kut i distribuciju pritiska, što dugoročno štiti terapeuta bez smanjenja dubine zahvata.',
+                label: 'Terapeut i karijera',
+                heading: 'Duboki rad nije pitanje težine terapeuta.',
+                body: 'Terapeut koji radi s kalabašom distribuira opterećenje kroz alat, ne kroz metakarpofalangealne zglobove. To nije pitanje ugode danas — to je pitanje koliko dugo karijera traje.',
               },
               {
-                label: 'Fascija i pritisak',
-                heading: 'Dubinsko tkivo ne traži veći pritisak — traži bolji vektor.',
-                body: 'Fascijalni slojevi reagiraju na smjer i brzinu više nego na samu silu. Gliding s kalabašom omogućuje precizno praćenje miofascijalnih traka, što je dlanom teže postići bez gubitka kontrole.',
+                label: 'Fascija i vektor',
+                heading: 'Tkivo ne reagira na silu. Reagira na kontinuitet smjera.',
+                body: 'Fascijalni slojevi se otpuštaju kada je vektor konzistentan — ne kada je sila velika. Gliding s kalabašom drži smjer sekunda za sekundom, što dlanom nije izvedivo na isti način.',
               },
               {
-                label: 'Klijentovo iskustvo',
-                heading: 'Klijent koji je bio na tretmanu s kalabašom pamti razliku.',
-                body: 'Ne nužno zato što je bio iznenađen alatom, nego zato što su napetosti popustile tamo gdje prethodni tretmani nisu stigli. To je klinički ishod, ne efekt novosti.',
+                label: 'Klinički ishod',
+                heading: 'Kalabaš rasterećuje šaku, ne odgovornost terapeuta.',
+                body: 'Alat mijenja mehaniku — ali ne i klinički zahtjev. Palpacija, procjena i prilagodba vektora ostaju posao terapeuta. Kalabaš samo omogućuje da se taj posao radi dulje i preciznije.',
               },
             ].map((row, i) => (
               <motion.div
@@ -406,35 +408,32 @@ const CalabashCertificationPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Photo intermezzo */}
-      <div style={{ background: '#F0EDE6' }} className="py-2">
-        <div className="container mx-auto px-6">
-          <motion.div
-            variants={fadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
+      {/* Video intermezzo */}
+      <div style={{ background: '#1A1814' }}>
+        <div className="w-full overflow-hidden relative" style={{ aspectRatio: '21/9' }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 40%' }}
           >
-            <div className="w-full overflow-hidden relative" style={{ aspectRatio: '21/9' }}>
-              <img
-                src="/lovable-uploads/f8638ba1-5e0f-4295-b885-f5c4abd7a407.png"
-                alt="Kalabaš masaža — praktičan rad s dr. Awudijem"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'center' }}
-                loading="lazy"
-              />
-              <div
-                className="absolute inset-0"
-                style={{ background: 'linear-gradient(to right, rgba(10,8,5,0.40) 0%, transparent 50%)' }}
-              />
-              <div className="absolute bottom-6 left-8">
-                <p className="text-[10px] uppercase tracking-[0.22em] font-normal" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                  Zagreb, studeni 2025.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+            <source src="/videos/cal-procedural.mp4" type="video/mp4" />
+          </video>
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to right, rgba(8,6,3,0.55) 0%, rgba(8,6,3,0.15) 50%, transparent 75%)' }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to top, rgba(8,6,3,0.35) 0%, transparent 40%)' }}
+          />
+          <div className="absolute bottom-6 left-8">
+            <p className="text-[10px] uppercase tracking-[0.22em] font-normal" style={{ color: 'rgba(255,255,255,0.38)' }}>
+              Zagreb, studeni 2025.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -454,12 +453,11 @@ const CalabashCertificationPage: React.FC = () => {
                 Metoda
               </p>
               <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22] mb-6" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                Što se uči<br />
-                na edukaciji.
+                Metodologija<br />
+                u dva dana.
               </h2>
               <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
-                Dva dana su strukturirana prema principu: razumijevanje tkiva dolazi prije tehnike.
-                Alat se uvodi tek kad je pristup jasan.
+                Razumijevanje tkiva dolazi prije tehnike. Alat se uvodi tek kad je palpacijska slika jasna — ne ranije.
               </p>
             </motion.div>
 
@@ -471,13 +469,13 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0.12}
               className="pt-1 md:pt-16"
             >
-              {tehnike.map((t, i) => (
+              {metodaKlinicki.map((t, i) => (
                 <div
-                  key={t}
-                  className="py-4"
+                  key={i}
+                  className="py-6"
                   style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
                 >
-                  <p className="text-[13.5px] font-normal leading-snug" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  <p className="font-playfair font-normal text-[1.05rem] leading-[1.45]" style={{ color: 'rgba(255,255,255,0.72)' }}>
                     {t}
                   </p>
                 </div>
@@ -506,7 +504,7 @@ const CalabashCertificationPage: React.FC = () => {
                 Program
               </p>
               <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: '#1F1D1A' }}>
-                Dva dana. Dva modula.
+                Struktura programa.
               </h2>
             </motion.div>
 
@@ -564,16 +562,17 @@ const CalabashCertificationPage: React.FC = () => {
             <div className="grid gap-2" style={{ gridTemplateColumns: '1fr 0.62fr' }}>
               <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
                 <img
-                  src="/lovable-uploads/48cde861-683b-4dfb-a1e6-d338811129f7.png"
-                  alt="Kalabaš tehnika — detalj rada"
+                  src="/lovable-uploads/cal-awudi-gourd-focus.jpeg"
+                  alt="Dr. Awudi — precizna primjena kalabaša, fokus na tkivu"
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 55%' }}
                   loading="lazy"
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <div className="overflow-hidden flex-1">
                   <img
-                    src="/lovable-uploads/bb83dd83-aacc-4c52-b104-6c7c083f6f62.png"
+                    src="/lovable-uploads/3118d6a4-0a56-49d4-ae18-b4a87a937529.png"
                     alt="Polaznici na Kalabaš certifikaciji"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -581,9 +580,10 @@ const CalabashCertificationPage: React.FC = () => {
                 </div>
                 <div className="overflow-hidden flex-1">
                   <img
-                    src="/lovable-uploads/c87f7781-19c9-4e78-947a-eafbcf5a1802.png"
-                    alt="Praktičan rad na edukaciji"
+                    src="/lovable-uploads/cal-awudi-bilateral-gourds-work.jpeg"
+                    alt="Dr. Awudi — bilateralni rad s kalabašem na dubokim tkivima"
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center 68%' }}
                     loading="lazy"
                   />
                 </div>
@@ -630,18 +630,19 @@ const CalabashCertificationPage: React.FC = () => {
                 Dr. Awudi Atitsogbui
               </h2>
               <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
-                Licencirani ajurvedski liječnik (BAMS) i terapijski edukator s iskustvom rada na tri kontinenta.
-                Kalabaš masažu razvio je kao sustavnu metodu — ne kao scenski detalj, nego kao terapijski alat
-                za rad s dubokim tkivom i miofascijalnim slojevima.
+                Awudi kalabaš masažu nije preuzeo iz tradicije kao spektakl — razvio je kao sustavnu metodu.
+                Sa jasno definiranom mehanikom drže, vektora sile i pozicioniranja tijela koje štiti
+                terapeuta jednako koliko i klijenta.
               </p>
               <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
-                Višestruki rekorder u masaži, prepoznat od Svjetske federacije manualne terapije.
-                Podučavao je terapeute u Italiji, Gani i Hrvatskoj — fokus mu je na prenosivosti znanja
-                u praksu, ne na spektaklu demonstracije.
+                Terapeuti mu vjeruju jer ne radi razliku između demonstracije i prenošenja znanja.
+                Svaki zahvat objašnjava kao biomehanički događaj: što se događa u tkivu, zašto taj vektor,
+                zašto ta brzina. Polaznici odlaze s razumijevanjem, ne s receptom.
               </p>
               <p className="text-[13.5px] leading-[1.88] font-normal" style={{ color: '#7A7570' }}>
-                Na edukaciji u Zagrebu radi u malim grupama. Svaki polaznik dobiva direktnu povratnu
-                informaciju na tehniku, ne samo promatranje demonstracije.
+                Njegovo središnje pitanje nije "što se radi" — nego "zašto to tijelo terapeuta može raditi
+                desetljećima bez kompromisa na dubini." Na edukaciji u Zagrebu radi u malim grupama,
+                s direktnom povratnom informacijom na svaki zahvat.
               </p>
             </motion.div>
 
