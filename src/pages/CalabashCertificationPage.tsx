@@ -560,30 +560,30 @@ const CalabashCertificationPage: React.FC = () => {
           className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectPosition: 'center 65%',
-            filter: 'saturate(0.36) contrast(1.20) brightness(0.86)',
+            filter: 'saturate(0.52) contrast(1.12) brightness(0.92) blur(0.4px)',
           }}
           loading="lazy"
         />
-        {/* Top: strong crush — cabinet and clutter are in portrait 0–65%, this crop starts at 66% — top gradient seals any bleed */}
+        {/* Top: seals clutter — bottom lifted to give frame air */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, rgba(6,4,2,0.94) 0%, rgba(6,4,2,0.55) 18%, rgba(6,4,2,0.08) 38%, transparent 52%, rgba(6,4,2,0.65) 100%)' }}
+          style={{ background: 'linear-gradient(to bottom, rgba(6,4,2,0.94) 0%, rgba(6,4,2,0.52) 18%, rgba(6,4,2,0.06) 38%, transparent 56%, rgba(6,4,2,0.28) 100%)' }}
         />
-        {/* Radial vignette — spotlight on center work zone, crushes corners */}
+        {/* Radial vignette — softer, spotlights work zone without closing down frame */}
         <div
           className="absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse 62% 72% at 48% 52%, transparent 0%, rgba(6,4,2,0.28) 55%, rgba(6,4,2,0.72) 80%, rgba(6,4,2,0.90) 100%)' }}
+          style={{ background: 'radial-gradient(ellipse 62% 75% at 48% 50%, transparent 0%, rgba(6,4,2,0.14) 50%, rgba(6,4,2,0.50) 78%, rgba(6,4,2,0.74) 100%)' }}
         />
-        {/* Additional left edge kill — compression brace */}
+        {/* Left edge — compression brace, softened */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(6,4,2,0.78) 0%, rgba(6,4,2,0.18) 20%, transparent 36%)' }}
+          style={{ background: 'linear-gradient(to right, rgba(6,4,2,0.72) 0%, rgba(6,4,2,0.14) 22%, transparent 38%)' }}
         />
-        {/* Observational quote — bottom left */}
-        <div className="absolute bottom-6 left-8 md:bottom-10 md:left-12">
+        {/* Observational quote — field annotation, not overlay text */}
+        <div className="absolute bottom-8 left-10 md:bottom-14 md:left-16">
           <p
-            className="font-playfair font-normal text-[0.95rem] md:text-[1.15rem] leading-[1.55]"
-            style={{ color: 'rgba(255,255,255,0.62)', maxWidth: '38ch' }}
+            className="font-playfair font-normal text-[0.88rem] md:text-[1.05rem] leading-[1.82]"
+            style={{ color: 'rgba(255,255,255,0.50)', maxWidth: '36ch' }}
           >
             Kalabaš ne zamjenjuje ruku.<br className="hidden md:block" />
             Produžuje njezinu preciznost.
