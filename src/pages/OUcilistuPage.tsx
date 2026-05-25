@@ -58,7 +58,6 @@ export default function OUcilistuPage() {
       {/* ── Hero ───────────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
 
-        {/* Video — o-ucilistu-hero.mp4 when available; falls back to home-hero.mp4 */}
         <div className="absolute inset-0 top-[-5rem]">
           <video
             autoPlay
@@ -66,12 +65,11 @@ export default function OUcilistuPage() {
             muted
             playsInline
             preload="metadata"
-            poster="/videos/home-hero-poster.jpg"
+            poster="/videos/o-ucilistu-poster.jpg"
             className="w-full h-full object-cover"
             style={{ objectPosition: "center center" }}
           >
-            {/* Replace with /videos/o-ucilistu-hero.mp4 when ready */}
-            <source src="/videos/home-hero.mp4" type="video/mp4" />
+            <source src="/videos/o-ucilistu-hero.mp4" type="video/mp4" />
           </video>
         </div>
 
