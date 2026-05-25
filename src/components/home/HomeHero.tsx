@@ -9,7 +9,7 @@ export function HomeHero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   return (
-    <section ref={heroRef} className="relative overflow-hidden -mt-20" style={{ minHeight: '82vh' }}>
+    <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
 
       {/* Video */}
       <div className="absolute inset-0">
@@ -19,12 +19,12 @@ export function HomeHero() {
           loop
           playsInline
           preload="metadata"
-          poster="/videos/home-hero-poster.jpg"
+          poster="/videos/home-hero-2026-poster.jpg"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center center' }}
         >
-          <source src="/videos/home-hero.mp4" type="video/mp4" />
-          <img src="/videos/home-hero-poster.jpg" alt="Supra Studium edukacija" className="w-full h-full object-cover" />
+          <source src="/videos/home-hero-2026.mp4" type="video/mp4" />
+          <img src="/videos/home-hero-2026-poster.jpg" alt="Supra Studium edukacija" className="w-full h-full object-cover" />
         </video>
       </div>
 
@@ -63,7 +63,7 @@ export function HomeHero() {
 
       {/* Content */}
       <motion.div style={{ opacity, y }} className="absolute inset-0">
-        <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[14%] md:pb-[12%]">
+        <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[20%] md:pb-[12%]">
           <div className="max-w-xl w-full">
 
             {/* Eyebrow */}
@@ -120,7 +120,7 @@ export function HomeHero() {
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.7 }}
-              className="flex flex-row items-center gap-5"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5"
             >
               <Link
                 to="/tecajevi"
