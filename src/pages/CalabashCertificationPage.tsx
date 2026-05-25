@@ -549,43 +549,48 @@ const CalabashCertificationPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Editorial image intermezzo — single cinematic frame */}
+      {/* Editorial image intermezzo — documentary frame */}
       <div
         className="relative w-full overflow-hidden"
-        style={{ aspectRatio: '21/9', background: '#0E0C09' }}
+        style={{ aspectRatio: '21/9', background: '#1A1510' }}
       >
         <img
-          src="/lovable-uploads/cal-awudi-tikva-demonstracija.jpeg"
-          alt="Dr. Awudi Atitsogbui — proceduralni rad s kalabašem"
+          src="/lovable-uploads/cal-awudi-razgovor-narancasta.jpeg"
+          alt="Dr. Awudi Atitsogbui — edukacija s kalabašem, Zagreb 2025."
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            objectPosition: 'center 65%',
-            filter: 'saturate(0.52) contrast(1.12) brightness(0.92) blur(0.4px)',
+            objectPosition: 'center 28%',
+            filter: 'saturate(0.78) contrast(1.06) brightness(1.0)',
           }}
           loading="lazy"
         />
-        {/* Top: seals clutter — bottom lifted to give frame air */}
+        {/* Gentle base warm tone */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, rgba(6,4,2,0.94) 0%, rgba(6,4,2,0.52) 18%, rgba(6,4,2,0.06) 38%, transparent 56%, rgba(6,4,2,0.28) 100%)' }}
+          style={{ background: 'rgba(10,6,2,0.10)' }}
         />
-        {/* Radial vignette — softer, spotlights work zone without closing down frame */}
+        {/* Edge vignette — cinematic frame without killing the image */}
         <div
           className="absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse 62% 75% at 48% 50%, transparent 0%, rgba(6,4,2,0.14) 50%, rgba(6,4,2,0.50) 78%, rgba(6,4,2,0.74) 100%)' }}
+          style={{ background: 'radial-gradient(ellipse 90% 90% at 50% 50%, transparent 40%, rgba(8,5,2,0.22) 72%, rgba(8,5,2,0.48) 100%)' }}
         />
-        {/* Left edge — compression brace, softened */}
+        {/* Bottom gradient — text zone only */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(6,4,2,0.72) 0%, rgba(6,4,2,0.14) 22%, transparent 38%)' }}
+          style={{ background: 'linear-gradient(to top, rgba(8,5,2,0.52) 0%, rgba(8,5,2,0.22) 28%, transparent 52%)' }}
         />
-        {/* Observational quote — field annotation, not overlay text */}
+        {/* Left edge — quote readability */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, rgba(8,5,2,0.38) 0%, rgba(8,5,2,0.10) 30%, transparent 50%)' }}
+        />
+        {/* Observational quote — field annotation */}
         <div className="absolute bottom-8 left-10 md:bottom-14 md:left-16">
           <p
             className="font-playfair font-normal text-[0.88rem] md:text-[1.05rem] leading-[1.82]"
-            style={{ color: 'rgba(255,255,255,0.50)', maxWidth: '36ch' }}
+            style={{ color: 'rgba(255,255,255,0.62)', maxWidth: '36ch' }}
           >
-            Kalabaš ne zamjenjuje ruku.<br className="hidden md:block" />
+            Kalabaš ne zamjenjuje ruku.{' '}<br className="hidden md:block" />
             Produžuje njezinu preciznost.
           </p>
         </div>
