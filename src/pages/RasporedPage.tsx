@@ -12,6 +12,11 @@ const fadeUp = {
   }),
 };
 
+const tickerItems = [
+  'MANUALNA TERAPIJA', 'ATP TERAPIJA', 'KALABAŠ CERTIFIKACIJA',
+  'LOMI LOMI', 'CUPPING TERAPIJA', 'CFM', 'ZAGREB', 'RIJEKA', 'SPLIT',
+];
+
 const pathways = [
   {
     id: 'manualna',
@@ -24,8 +29,8 @@ const pathways = [
       '3. stupanj — klinička primjena i evaluacija',
       '4. stupanj — specijalizacija i integracija',
     ],
-    image: '/lovable-uploads/mt-stosic-demonstracija.jpg',
-    imagePos: 'center 30%',
+    image: '/lovable-uploads/raspored-pathway-manualna.jpg',
+    imagePos: 'center 32%',
     ctaLabel: 'Pogledaj program',
     ctaHref: '/manualna-terapija',
     flip: false,
@@ -51,15 +56,15 @@ const pathways = [
     id: 'holisticki',
     num: '03',
     label: 'Holistički i tradicionalni pristupi',
-    tagline: 'Cjeloviti terapeutski pristupi s međunarodnim predavačima i dugom tradicijom primjene.',
+    tagline: 'Cjeloviti pristupi radu kroz ritam, prisutnost i manualnu preciznost.',
     courses: [
-      'Lomi Lomi masaža — havajski holistički tretman',
-      'Thai terapeutski pristupi',
+      'Lomi Lomi masaža',
+      'Kalabaš terapijski pristupi',
     ],
-    image: '/lovable-uploads/lomi-intermezzo-duo-demonstracija.jpg',
-    imagePos: 'center 35%',
-    ctaLabel: 'Pogledaj Lomi Lomi',
-    ctaHref: '/lomi-lomi',
+    image: '/lovable-uploads/raspored-pathway-holisticki.jpg',
+    imagePos: 'center 38%',
+    ctaLabel: 'Pogledaj edukacije',
+    ctaHref: '/tecajevi',
     flip: false,
   },
 ];
@@ -104,6 +109,13 @@ export default function RasporedPage() {
 
   return (
     <div className="-mt-20">
+      <style>{`
+        @keyframes ticker-scroll {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        .ticker-track { animation: ticker-scroll 72s linear infinite; }
+      `}</style>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative min-h-screen overflow-hidden">
@@ -282,6 +294,28 @@ export default function RasporedPage() {
         </div>
       </section>
 
+      {/* ── Ticker ────────────────────────────────────────────────── */}
+      <div
+        className="bg-[#141311] overflow-hidden"
+        style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}
+      >
+        <div className="ticker-track flex whitespace-nowrap py-3">
+          {[...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center text-[8px] uppercase tracking-[0.34em] font-normal px-7 flex-shrink-0"
+              style={{ color: 'rgba(184,154,79,0.32)' }}
+            >
+              {item}
+              <span
+                className="ml-7 w-px h-2 inline-block flex-shrink-0"
+                style={{ background: 'rgba(184,154,79,0.14)' }}
+              />
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ── Edukacijski Putevi ────────────────────────────────────── */}
       <section className="bg-[#FAF8F4] py-24">
         <div className="container mx-auto px-6">
@@ -295,9 +329,12 @@ export default function RasporedPage() {
             className="mb-20"
           >
             <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-4">Programi</p>
-            <h2 className="font-playfair text-3xl sm:text-4xl text-[#1F1D1A] leading-[1.2] max-w-lg">
+            <h2 className="font-playfair text-3xl sm:text-4xl text-[#1F1D1A] leading-[1.2] max-w-lg mb-5">
               Edukacijski putevi.
             </h2>
+            <p className="text-[11px] text-[#5a5450] leading-[1.72] max-w-[46ch]">
+              Programi razvijani kroz dugogodišnji praktični rad i edukaciju terapeuta iz Hrvatske i inozemstva.
+            </p>
           </motion.div>
 
           {/* Pathway rows */}
@@ -398,9 +435,9 @@ export default function RasporedPage() {
 
           <div className="space-y-px bg-[#201e1a] max-w-2xl">
             {[
-              { month: 'Rujan',    code: '09' },
-              { month: 'Listopad', code: '10' },
-              { month: 'Studeni',  code: '11' },
+              { month: 'Rujan',    code: '09', sub: 'Manualna terapija, ATP, CFM.' },
+              { month: 'Listopad', code: '10', sub: 'Kalabaš, Lomi Lomi, specijalizacije.' },
+              { month: 'Studeni',  code: '11', sub: 'Napredni seminari i intenzivi.' },
             ].map((item, i) => (
               <motion.div
                 key={item.month}
@@ -409,9 +446,9 @@ export default function RasporedPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.1}
-                className="bg-[#141311] grid grid-cols-[7rem_1fr] md:grid-cols-[10rem_1fr] gap-6 md:gap-10 px-6 md:px-8 py-7 items-center"
+                className="bg-[#141311] grid grid-cols-[7rem_1fr] md:grid-cols-[10rem_1fr] gap-6 md:gap-10 px-6 md:px-8 py-7 items-start"
               >
-                <div>
+                <div className="pt-0.5">
                   <p
                     className="text-[9px] uppercase tracking-[0.24em] mb-1.5"
                     style={{ color: 'rgba(184,154,79,0.52)' }}
@@ -422,12 +459,18 @@ export default function RasporedPage() {
                     {item.month}
                   </p>
                 </div>
-                <div className="border-l border-[#2e2b27] pl-6 md:pl-8">
+                <div className="border-l border-[#2e2b27] pl-6 md:pl-8 pt-0.5">
                   <p
-                    className="text-[10px] uppercase tracking-[0.22em]"
+                    className="text-[10px] uppercase tracking-[0.22em] mb-2"
                     style={{ color: 'rgba(237,233,227,0.30)' }}
                   >
-                    Datumi u finalnom usklađivanju
+                    Datumi u finalnom usklađivanju.
+                  </p>
+                  <p
+                    className="text-[11px] leading-[1.6]"
+                    style={{ color: 'rgba(237,233,227,0.18)' }}
+                  >
+                    {item.sub}
                   </p>
                 </div>
               </motion.div>
@@ -440,8 +483,14 @@ export default function RasporedPage() {
             whileInView="visible"
             viewport={{ once: true }}
             custom={0.35}
-            className="mt-12"
+            className="mt-10"
           >
+            <p
+              className="text-[10px] leading-[1.7] mb-8 max-w-md"
+              style={{ color: 'rgba(237,233,227,0.26)', letterSpacing: '0.04em' }}
+            >
+              Edukacije se održavaju u Zagrebu, Rijeci i Splitu u manjim praktičnim grupama.
+            </p>
             <a
               href="https://tally.so/r/wA5kvD"
               target="_blank"
@@ -472,40 +521,40 @@ export default function RasporedPage() {
       {/* ── Documentary Intermezzo ────────────────────────────────── */}
       <section className="relative h-[55vh] overflow-hidden">
         <img
-          src="/lovable-uploads/mt-parovi-rada.jpg"
-          alt="Praktičan rad u parovima — edukacija manualne terapije."
+          src="/lovable-uploads/raspored-intermezzo-edukacija.jpg"
+          alt="Instruktor demonstrira tehniku polaznicima — edukacija manualne terapije."
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            objectPosition: 'center 40%',
-            filter: 'saturate(0.80) contrast(1.04) brightness(0.90)',
+            objectPosition: 'center 35%',
+            filter: 'saturate(0.82) contrast(1.03) brightness(0.93)',
           }}
           loading="lazy"
         />
-        {/* Base warm tone */}
-        <div className="absolute inset-0" style={{ background: 'rgba(10,6,2,0.12)' }} />
-        {/* Edge vignette */}
+        {/* Gentle base tone */}
+        <div className="absolute inset-0" style={{ background: 'rgba(10,6,2,0.08)' }} />
+        {/* Edge vignette — restrained */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 88% 88% at 50% 50%, transparent 40%, rgba(8,5,2,0.22) 72%, rgba(8,5,2,0.50) 100%)',
+              'radial-gradient(ellipse 92% 92% at 50% 50%, transparent 48%, rgba(8,5,2,0.18) 74%, rgba(8,5,2,0.42) 100%)',
           }}
         />
-        {/* Bottom transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#FAF8F4] to-transparent" />
+        {/* Bottom transition — reduced fog */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#FAF8F4] to-transparent" />
         {/* Left edge */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to right, rgba(8,5,2,0.32) 0%, rgba(8,5,2,0.08) 28%, transparent 48%)',
+              'linear-gradient(to right, rgba(8,5,2,0.28) 0%, rgba(8,5,2,0.06) 26%, transparent 44%)',
           }}
         />
         {/* Quote */}
-        <div className="absolute bottom-10 md:bottom-16 container mx-auto px-6 left-0 right-0">
+        <div className="absolute bottom-10 md:bottom-14 container mx-auto px-6 left-0 right-0">
           <p
             className="font-playfair font-normal text-[0.9rem] md:text-[1.05rem] leading-[1.82] max-w-[40ch]"
-            style={{ color: 'rgba(255,255,255,0.62)' }}
+            style={{ color: 'rgba(255,255,255,0.64)' }}
           >
             "Znanje mora biti primjenjivo već u ponedjeljak."
           </p>
@@ -584,13 +633,19 @@ export default function RasporedPage() {
               Prijavi interes i primi informacije među prvima.
             </p>
             <a
-              href="https://tally.so/r/wA5kvD"
+              href="https://5694f0fd.sibforms.com/serve/MUIFAOs4ZuXxMKp4E6OJZAlkghxH86yc0VpKZMzvj1AlsrKhc4cLBDBY9WaBoeIuOHyXf2NJenq0rxXMRZDSJpyVQsjUZ97m3lmDobO_SD_6O9qDUZtBJinN9O0QZ0fBTdJk0ooP8bihntndqxZM31gih2HMWqvB0698-PPpdvSrFbmCzrY5XPEWHVgv5AKym43COwDYevehRvGW"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] px-8 py-3 text-[10px] font-medium rounded-sm tracking-[0.20em] uppercase transition-colors duration-300"
             >
               Prijavi interes
             </a>
+            <p
+              className="text-[10px] mt-5 tracking-[0.06em]"
+              style={{ color: 'rgba(237,233,227,0.24)' }}
+            >
+              Primi nove termine i informacije među prvima.
+            </p>
           </motion.div>
         </div>
       </section>
