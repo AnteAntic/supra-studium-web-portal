@@ -21,6 +21,7 @@ import LomiLomiPage from "./pages/LomiLomiPage";
 import CalabashCertificationPage from "./pages/CalabashCertificationPage";
 import SoulScanPage from "./pages/SoulScanPage";
 import RasporedPage from "./pages/RasporedPage";
+import ThreeDStretchingPage from "./pages/ThreeDStretchingPage";
 import OUcilistuPage from "./pages/OUcilistuPage";
 import LogoProcessorPage from "./pages/LogoProcessorPage";
 
@@ -47,6 +48,7 @@ const App = () => (
               <Route path="/lomi-lomi" element={<LomiLomiPage />} />
               <Route path="/calabash-certifikacija" element={<CalabashCertificationPage />} />
               <Route path="/soulscan" element={<SoulScanPage />} />
+              <Route path="/3d-advanced-therapeutic-stretching" element={<ThreeDStretchingPage />} />
               <Route path="/video-akademija" element={<VideoAcademyPage />} />
               <Route path="/raspored" element={<RasporedPage />} />
               <Route path="/o-ucilistu" element={<OUcilistuPage />} />

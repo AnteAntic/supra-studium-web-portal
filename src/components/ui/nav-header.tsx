@@ -32,7 +32,8 @@ function NavHeader({ onLight = false }: { onLight?: boolean }) {
             location.pathname.includes('akupresura') ||
             location.pathname.includes('cupping') ||
             location.pathname.includes('lomi-lomi') ||
-            location.pathname.includes('calabash')
+            location.pathname.includes('calabash') ||
+            location.pathname.includes('3d-advanced')
           }
         />
         <Tab href="/raspored" isActive={location.pathname === '/raspored'} onLight={onLight}>RASPORED</Tab>
@@ -67,6 +68,7 @@ const TecajeviDropdown = ({
     { title: "Cupping terapija",                   href: "/cupping-terapija" },
     { title: "Lomi Lomi masaža",                   href: "/lomi-lomi" },
     { title: "Kalabaš masaža",                     href: "/calabash-certifikacija" },
+    { title: "3D Advanced Therapeutic Stretching", href: "/3d-advanced-therapeutic-stretching" },
   ];
 
   const defaultColor = isActive ? COLOR.active(onLight) : COLOR.inactive(onLight);

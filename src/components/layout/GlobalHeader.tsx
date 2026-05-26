@@ -28,6 +28,9 @@ const menuItems = [{
   }, {
     name: 'Kalabaš masaža',
     href: '/calabash-certifikacija'
+  }, {
+    name: '3D Advanced Therapeutic Stretching',
+    href: '/3d-advanced-therapeutic-stretching'
   }]
 }, {
   name: 'RASPORED',

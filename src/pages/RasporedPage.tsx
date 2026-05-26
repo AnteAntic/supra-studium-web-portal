@@ -61,7 +61,7 @@ const pathways: Pathway[] = [
     courses: [
       { text: 'Akupresura & Trigger Point terapija',    href: '/akupresura-trigger-point' },
       { text: 'Crossfriction & Funkcionalna masaža',    href: '/crossfriction-funkcionalna-masaza' },
-      { type: 'advanced', text: '3D Advanced Therapeutic Stretching', sub: 'mobilnost, fascijalne linije i integrirani terapijski stretching' },
+      { type: 'advanced', text: '3D Advanced Therapeutic Stretching', sub: 'mobilnost, fascijalne linije i integrirani terapijski stretching', href: '/3d-advanced-therapeutic-stretching' },
       { text: 'Cupping terapija',                       href: '/cupping-terapija' },
     ],
     image: '/lovable-uploads/raspored-pathway-holisticki-v2.jpg',
