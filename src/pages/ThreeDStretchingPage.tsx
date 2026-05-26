@@ -353,7 +353,7 @@ const ThreeDStretchingPage = () => {
               viewport={{ once: true }}
               className="lg:pt-16"
             >
-              <div style={{ aspectRatio: '4/5', overflow: 'hidden' }}>
+              <div style={{ aspectRatio: '3/2', overflow: 'hidden' }}>
                 <img
                   src="/lovable-uploads/3ds-technique-1.jpg"
                   alt="3D Therapeutic Stretching — klinička demonstracija"
@@ -362,7 +362,7 @@ const ThreeDStretchingPage = () => {
                   style={{
                     filter: 'brightness(0.96) saturate(0.82) contrast(1.02)',
                     display: 'block',
-                    objectPosition: 'center 25%',
+                    objectPosition: 'center 35%',
                   }}
                 />
               </div>
@@ -665,14 +665,14 @@ const ThreeDStretchingPage = () => {
               viewport={{ once: true }}
               className="mt-8 md:mt-10"
             >
-              <div className="md:ml-auto md:max-w-[52%]">
-                <div className="overflow-hidden" style={{ aspectRatio: '4/5' }}>
+              <div className="md:ml-auto md:max-w-[62%]">
+                <div className="overflow-hidden" style={{ aspectRatio: '3/2' }}>
                   <img
-                    src="/lovable-uploads/3ds-technique-3.jpg"
+                    src="/lovable-uploads/3ds-technique-1.jpg"
                     alt="Precizan terapijski kontakt — MET u primjeni"
                     loading="lazy"
                     className="w-full h-full object-cover"
-                    style={{ display: 'block', objectPosition: 'center 20%', filter: 'brightness(0.96) saturate(0.80)' }}
+                    style={{ display: 'block', objectPosition: 'center 38%', filter: 'brightness(0.96) saturate(0.80)' }}
                   />
                 </div>
                 <div className="mt-3 flex items-start gap-3">
