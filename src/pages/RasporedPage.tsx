@@ -197,7 +197,10 @@ export default function RasporedPage() {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-5"
               >
-                <span className="text-[#B89A4F]/70 text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.26em] sm:tracking-[0.32em]">
+                <span
+                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.26em] sm:tracking-[0.32em]"
+                  style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
+                >
                   Supra Studium
                 </span>
               </motion.div>

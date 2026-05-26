@@ -108,7 +108,10 @@ export default function OUcilistuPage() {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
-                <span className="text-[#B89A4F]/75 text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.24em] sm:tracking-[0.30em]">
+                <span
+                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.24em] sm:tracking-[0.30em]"
+                  style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
+                >
                   O učilištu · Supra Studium
                 </span>
               </motion.div>
