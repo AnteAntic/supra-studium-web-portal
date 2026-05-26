@@ -50,7 +50,7 @@ const pathways: Pathway[] = [
     image: '/lovable-uploads/raspored-pathway-manualna-v2.jpg',
     imagePos: 'center 38%',
     ctaLabel: 'Pogledaj program',
-    ctaHref: '/skola-manualne-terapije',
+    ctaHref: '#jesen-2026',
     flip: false,
   },
   {
@@ -67,7 +67,7 @@ const pathways: Pathway[] = [
     image: '/lovable-uploads/raspored-pathway-holisticki-v2.jpg',
     imagePos: 'center 34%',
     ctaLabel: 'Pogledaj edukacije',
-    ctaHref: '/skola-manualne-terapije',
+    ctaHref: '#jesen-2026',
     flip: true,
   },
   {
@@ -82,7 +82,7 @@ const pathways: Pathway[] = [
     image: '/lovable-uploads/raspored-pathway-holisticki-lomi.jpg',
     imagePos: 'center 28%',
     ctaLabel: 'Pogledaj edukacije',
-    ctaHref: '/skola-manualne-terapije',
+    ctaHref: '#jesen-2026',
     flip: false,
   },
 ];
@@ -456,15 +456,30 @@ export default function RasporedPage() {
                     >
                       Termini uskoro
                     </span>
-                    <Link
-                      to={path.ctaHref}
-                      className="text-[10px] uppercase tracking-[0.18em] font-normal transition-colors duration-300"
-                      style={{ color: 'rgba(31,29,26,0.52)' }}
-                      onMouseEnter={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.85)')}
-                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.52)')}
-                    >
-                      {path.ctaLabel} →
-                    </Link>
+                    {path.ctaHref.startsWith('#') ? (
+                      <button
+                        onClick={() => {
+                          const el = document.getElementById(path.ctaHref.slice(1));
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
+                        className="text-[10px] uppercase tracking-[0.18em] font-normal transition-colors duration-300 cursor-pointer"
+                        style={{ color: 'rgba(31,29,26,0.52)' }}
+                        onMouseEnter={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.85)')}
+                        onMouseLeave={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.52)')}
+                      >
+                        {path.ctaLabel} →
+                      </button>
+                    ) : (
+                      <Link
+                        to={path.ctaHref}
+                        className="text-[10px] uppercase tracking-[0.18em] font-normal transition-colors duration-300"
+                        style={{ color: 'rgba(31,29,26,0.52)' }}
+                        onMouseEnter={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.85)')}
+                        onMouseLeave={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.52)')}
+                      >
+                        {path.ctaLabel} →
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -475,7 +490,7 @@ export default function RasporedPage() {
       </section>
 
       {/* ── Seasonal Timeline ─────────────────────────────────────── */}
-      <section className="bg-[#141311] py-24">
+      <section id="jesen-2026" className="bg-[#141311] py-24">
         <div className="container mx-auto px-6">
 
           <motion.div
