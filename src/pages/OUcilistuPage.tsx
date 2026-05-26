@@ -15,7 +15,7 @@ const fadeUp = {
 const facts = [
   { field: "Pristup",    value: "Klinički",       detail: "palpacija, procjena i praktičan rad" },
   { field: "Polaznici",  value: "900+",            detail: "educiranih terapeuta" },
-  { field: "Programi",  value: "6",               detail: "specijaliziranih programa" },
+  { field: "Programi",  value: "7",               detail: "specijaliziranih programa" },
   { field: "Suradnja",  value: "Međunarodna",     detail: "WFMMT federacija, predsjednici i suci" },
 ];
 

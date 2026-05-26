@@ -52,6 +52,13 @@ const COURSES: Course[] = [
     href: '/calabash-certifikacija',
     status: 'active',
   },
+  {
+    id: '3d-stretching',
+    name: '3D Advanced Therapeutic Stretching',
+    desc: 'MET, STR i fascijalna integracija za precizan terapijski rad s mobilnošću.',
+    href: '/3d-advanced-therapeutic-stretching',
+    status: 'active',
+  },
 ];
 
 interface CourseRecommendationsProps {

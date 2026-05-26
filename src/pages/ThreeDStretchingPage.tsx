@@ -132,7 +132,7 @@ function ThreeDHero({
                 className="text-[13.5px] sm:text-[14px] font-normal leading-[1.75]"
                 style={{ color: 'rgba(255,255,255,0.58)', maxWidth: '44ch' }}
               >
-                Terapijski stretching kao klinički alat — MET, STR i fascijalna integracija za terapeute koji žele preciznije raditi s mobilnošću i kompenzacijskim obrascima kretanja.
+                Terapijski stretching kao klinički alat za terapeute koji žele preciznije razumjeti mobilnost, kompenzacijske obrasce i odgovor tkiva na pokret.
               </p>
             </motion.div>
 
@@ -284,8 +284,8 @@ const ThreeDStretchingPage = () => {
       <FactsBand />
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: 'termin u pripremi' }]}
-        price="u pripremi"
+        locations={[{ city: 'Zagreb', dates: 'prve grupe uskoro' }]}
+        price="uskoro"
         ctaText="Prijavi interes"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
@@ -316,14 +316,9 @@ const ThreeDStretchingPage = () => {
               <p className="text-[14px] leading-[1.65] font-normal mb-10" style={{ color: '#5F5A52' }}>
                 Razlika između pasivnog rastezanja i terapijskog stretchinga nije u snazi povlačenja — nego u razumijevanju zašto je tkivo gdje jest.
               </p>
-              <div className="space-y-5 mb-12">
-                <p className="text-[15px] leading-[1.72] font-normal" style={{ color: '#3D3A35' }}>
-                  3D Advanced Therapeutic Stretching gradi sposobnost terapeuta da prepozna fascijalne restrikcije, neuralne napetosti i kompenzacijske obrasce u pokretu — i da ih tretira kroz precizne, neurofiziološkim principima vođene tehnike.
-                </p>
-                <p className="text-[15px] leading-[1.72] font-normal" style={{ color: '#3D3A35' }}>
-                  MET, STR i PNF nisu zasebni protokoli. To su ulazi u isti razgovor s tkivom — svaki iz drugog kuta.
-                </p>
-              </div>
+              <p className="text-[15px] leading-[1.78] font-normal mb-12" style={{ color: '#3D3A35' }}>
+                MET, STR i PNF nisu zasebni protokoli. To su ulazi u isti razgovor s tkivom — svaki iz drugog kuta, svaki s drugačijim odgovorom.
+              </p>
 
               <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 Što počinješ primjećivati
@@ -657,32 +652,6 @@ const ThreeDStretchingPage = () => {
               </div>
             </motion.div>
 
-            {/* Image 2 — narrow, right-anchored */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.95, ease: 'easeOut' }}
-              viewport={{ once: true }}
-              className="mt-8 md:mt-10"
-            >
-              <div className="md:ml-auto md:max-w-[62%]">
-                <div className="overflow-hidden" style={{ aspectRatio: '3/2' }}>
-                  <img
-                    src="/lovable-uploads/3ds-technique-1.jpg"
-                    alt="Precizan terapijski kontakt — MET u primjeni"
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                    style={{ display: 'block', objectPosition: 'center 38%', filter: 'brightness(0.96) saturate(0.80)' }}
-                  />
-                </div>
-                <div className="mt-3 flex items-start gap-3">
-                  <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
-                  <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
-                    Korekcija položaja određuje hoće li tkivo surađivati ili se zaštititi.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
 
           </div>
         </div>
@@ -744,7 +713,7 @@ const ThreeDStretchingPage = () => {
                     style={{
                       display: 'block',
                       objectPosition: 'center 20%',
-                      filter: 'contrast(1.02) brightness(0.95) saturate(0.88)',
+                      filter: 'contrast(1.02) brightness(0.88) saturate(0.30) sepia(0.12)',
                       transition: 'transform 1.1s cubic-bezier(0.25, 0.1, 0.25, 1)',
                     }}
                     onMouseEnter={e => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1.016)'; }}
@@ -958,9 +927,9 @@ const ThreeDStretchingPage = () => {
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '2.8rem', paddingBottom: '0.6rem' }}>
                   <p
                     className="font-playfair font-semibold leading-none"
-                    style={{ fontSize: '4.4rem', color: '#1F1D1A', letterSpacing: '-0.02em' }}
+                    style={{ fontSize: '2.8rem', color: 'rgba(31,29,26,0.45)', letterSpacing: '-0.01em' }}
                   >
-                    u pripremi
+                    Otvaranje prijava uskoro
                   </p>
                 </div>
                 <div style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: '2.2rem', marginBottom: '2.4rem' }}>
@@ -996,7 +965,7 @@ const ThreeDStretchingPage = () => {
                 </p>
                 <div>
                   {[
-                    { city: 'Zagreb', note: 'termin u pripremi' },
+                    { city: 'Zagreb', note: 'otvaranje prijava uskoro' },
                   ].map((loc, i) => (
                     <div
                       key={i}
