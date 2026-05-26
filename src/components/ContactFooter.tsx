@@ -138,8 +138,8 @@ export const ContactFooter = () => {
                     maxWidth: '28ch',
                   }}
                 >
-                  Odgovaramo osobno.<br />
-                  Bez automatiziranih odgovora i generičkih prijava.
+                  Prijava je jednostavna i jasna.<br />
+                  Nakon prijave dobivate sve potrebne informacije o terminu, lokaciji i pripremi za edukaciju.
                 </p>
               </div>
             </motion.div>
