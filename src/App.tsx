@@ -3,13 +3,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import GlobalHeader from "./components/layout/GlobalHeader";
 import ScrollToTop from "./components/ScrollToTop";
 import BackToTopButton from "./components/BackToTopButton";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import CoursesPage from "./pages/CoursesPage";
+// CoursesPage retired — /tecajevi redirects to /skola-manualne-terapije
 import VideoAcademyPage from "./pages/VideoAcademyPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import ContactPage from "./pages/ContactPage";
@@ -39,7 +39,7 @@ const App = () => (
           <main className="pt-20">
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/tecajevi" element={<CoursesPage />} />
+              <Route path="/tecajevi" element={<Navigate to="/skola-manualne-terapije" replace />} />
               <Route path="/skola-manualne-terapije" element={<ManualTherapySchoolPage />} />
               <Route path="/crossfriction-funkcionalna-masaza" element={<CrossfrictionPage />} />
               <Route path="/akupresura-trigger-point" element={<AkupresuraPage />} />

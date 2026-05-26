@@ -123,7 +123,7 @@ export function HomeHero() {
               className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5"
             >
               <Link
-                to="/tecajevi"
+                to="/skola-manualne-terapije"
                 className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-7 py-2.5 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-300 inline-block"
               >
                 Pogledaj edukacije
