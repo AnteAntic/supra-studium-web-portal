@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import NavHeader from '@/components/ui/nav-header';
@@ -9,7 +9,7 @@ import supaStudiumLogo from '@/assets/supra-studium-logo.png';
 
 const menuItems = [{
   name: 'TEČAJEVI',
-  href: '/tecajevi',
+  href: '/skola-manualne-terapije',
   submenu: [{
     name: 'Škola manualne terapije',
     href: '/skola-manualne-terapije'
@@ -42,6 +42,7 @@ const menuItems = [{
 
 const GlobalHeader = () => {
   const [menuState, setMenuState] = useState(false);
+  const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -102,7 +103,7 @@ const GlobalHeader = () => {
               </Link>
 
               <button
-                onClick={() => setMenuState(!menuState)}
+                onClick={() => { setMenuState(m => { if (m) setExpandedMobile(null); return !m; }); }}
                 aria-label={menuState ? 'Close Menu' : 'Open Menu'}
                 className={cn(
                   'relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden transition-colors duration-300',
@@ -132,6 +133,37 @@ const GlobalHeader = () => {
                         {item.name}
                         <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#B89A4F] transition-all duration-300 group-hover/mitem:w-full" />
                       </button>
+                    ) : item.submenu ? (
+                      <div>
+                        <button
+                          onClick={() => setExpandedMobile(expandedMobile === item.name ? null : item.name)}
+                          className="relative inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] font-medium text-[#1F1D1A]/60 hover:text-[#1F1D1A] transition-colors duration-200 group/mitem"
+                        >
+                          {item.name}
+                          <ChevronDown
+                            className={cn(
+                              'w-3 h-3 transition-transform duration-200 flex-shrink-0',
+                              expandedMobile === item.name ? 'rotate-180' : 'rotate-0'
+                            )}
+                          />
+                          <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#B89A4F] transition-all duration-300 group-hover/mitem:w-full" />
+                        </button>
+                        {expandedMobile === item.name && (
+                          <ul className="mt-3.5 ml-0.5 space-y-3 border-l border-[#B89A4F]/20 pl-4">
+                            {item.submenu.map((sub, si) => (
+                              <li key={si}>
+                                <Link
+                                  to={sub.href}
+                                  onClick={() => { setMenuState(false); setExpandedMobile(null); }}
+                                  className="text-[12px] tracking-[0.06em] font-normal text-[#1F1D1A]/55 hover:text-[#B89A4F] transition-colors duration-200"
+                                >
+                                  {sub.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                     ) : (
                       <Link
                         to={item.href}
