@@ -17,20 +17,38 @@ const tickerItems = [
   'LOMI LOMI', 'CUPPING TERAPIJA', 'CFM', 'ZAGREB', 'RIJEKA', 'SPLIT',
 ];
 
-const pathways = [
+type CourseItem =
+  | { type?: 'regular'; text: string }
+  | { type: 'advanced'; text: string; sub?: string };
+
+interface Pathway {
+  id: string;
+  num: string;
+  label: string;
+  tagline: string;
+  courses: CourseItem[];
+  image: string;
+  imagePos: string;
+  ctaLabel: string;
+  ctaHref: string;
+  flip: boolean;
+}
+
+const pathways: Pathway[] = [
   {
     id: 'manualna',
     num: '01',
     label: 'Manualna terapija',
-    tagline: 'Strukturirani program napredovanja u 4 stupnja — od osnova do kliničke specijalizacije.',
+    tagline: 'Strukturirani program napredovanja u 5 stupnjeva — od osnova do kliničke integracije.',
     courses: [
-      '1. stupanj — osnove i uvod u palpaciju',
-      '2. stupanj — napredna tehnika i mobilizacija',
-      '3. stupanj — klinička primjena i evaluacija',
-      '4. stupanj — specijalizacija i integracija',
+      { text: '1. stupanj — osnove i uvod u palpaciju' },
+      { text: '2. stupanj — napredna tehnika i mobilizacija' },
+      { text: '3. stupanj — klinička primjena i evaluacija' },
+      { text: '4. stupanj — specijalizacija i integracija' },
+      { type: 'advanced', text: '5. stupanj — advanced level i integracija kompleksnih kliničkih pristupa' },
     ],
-    image: '/lovable-uploads/raspored-pathway-manualna.jpg',
-    imagePos: 'center 32%',
+    image: '/lovable-uploads/raspored-pathway-manualna-v2.jpg',
+    imagePos: 'center 38%',
     ctaLabel: 'Pogledaj program',
     ctaHref: '/manualna-terapija',
     flip: false,
@@ -41,13 +59,13 @@ const pathways = [
     label: 'Specijalizacije',
     tagline: 'Fokusirani intenzivi za konkretne kliničke pristupe. Svaki program stoji samostalno.',
     courses: [
-      'Akupresura & Trigger Point terapija',
-      'Crossfriction & Funkcionalna masaža',
-      'Kalabaš certifikacija',
-      'Cupping terapija',
+      { text: 'Akupresura & Trigger Point terapija' },
+      { text: 'Crossfriction & Funkcionalna masaža' },
+      { type: 'advanced', text: '3D Advanced Therapeutic Stretching', sub: 'mobilnost, fascijalne linije i integrirani terapijski stretching' },
+      { text: 'Cupping terapija' },
     ],
-    image: '/lovable-uploads/cmc-edukacija-sira.jpg',
-    imagePos: 'center 40%',
+    image: '/lovable-uploads/raspored-pathway-specijalizacije.jpg',
+    imagePos: 'center 42%',
     ctaLabel: 'Pogledaj edukacije',
     ctaHref: '/tecajevi',
     flip: true,
@@ -58,11 +76,11 @@ const pathways = [
     label: 'Holistički i tradicionalni pristupi',
     tagline: 'Cjeloviti pristupi radu kroz ritam, prisutnost i manualnu preciznost.',
     courses: [
-      'Lomi Lomi masaža',
-      'Kalabaš terapijski pristupi',
+      { text: 'Lomi Lomi masaža' },
+      { text: 'Kalabaš terapijski pristupi' },
     ],
-    image: '/lovable-uploads/raspored-pathway-holisticki.jpg',
-    imagePos: 'center 38%',
+    image: '/lovable-uploads/raspored-pathway-holisticki-v2.jpg',
+    imagePos: 'center 34%',
     ctaLabel: 'Pogledaj edukacije',
     ctaHref: '/tecajevi',
     flip: false,
@@ -114,7 +132,7 @@ export default function RasporedPage() {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
         }
-        .ticker-track { animation: ticker-scroll 72s linear infinite; }
+        .ticker-track { animation: ticker-scroll 82s linear infinite; }
       `}</style>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
@@ -304,7 +322,7 @@ export default function RasporedPage() {
             <span
               key={i}
               className="inline-flex items-center text-[8px] uppercase tracking-[0.34em] font-normal px-7 flex-shrink-0"
-              style={{ color: 'rgba(184,154,79,0.32)' }}
+              style={{ color: 'rgba(184,154,79,0.22)' }}
             >
               {item}
               <span
@@ -329,7 +347,7 @@ export default function RasporedPage() {
             className="mb-20"
           >
             <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-4">Programi</p>
-            <h2 className="font-playfair text-3xl sm:text-4xl text-[#1F1D1A] leading-[1.2] max-w-lg mb-5">
+            <h2 className="font-playfair font-semibold text-4xl sm:text-5xl text-[#1F1D1A] leading-[1.15] max-w-lg mb-5">
               Edukacijski putevi.
             </h2>
             <p className="text-[11px] text-[#5a5450] leading-[1.72] max-w-[46ch]">
@@ -357,7 +375,7 @@ export default function RasporedPage() {
                     className="w-full h-full object-cover"
                     style={{
                       objectPosition: path.imagePos,
-                      filter: 'grayscale(8%)',
+                      filter: 'brightness(0.96) saturate(0.82) contrast(1.02)',
                     }}
                     loading="lazy"
                   />
@@ -383,13 +401,42 @@ export default function RasporedPage() {
                   <p className="text-[12px] text-[#5a5450] leading-[1.72] mb-7 max-w-[34ch]">
                     {path.tagline}
                   </p>
-                  <ul className="space-y-2.5 mb-9">
-                    {path.courses.map((course, ci) => (
-                      <li key={ci} className="flex items-center gap-3 text-[12px] text-[#3b3b3b] leading-[1.6]">
-                        <span className="w-1 h-1 rounded-full bg-[#B89A4F]/55 flex-shrink-0" />
-                        {course}
-                      </li>
-                    ))}
+                  <ul className="space-y-3 mb-9">
+                    {path.courses.map((course, ci) => {
+                      const isAdvanced = course.type === 'advanced';
+                      return (
+                        <li key={ci} className={`flex items-start gap-3 text-[12px] leading-[1.6] ${isAdvanced ? '' : 'text-[#3b3b3b]'}`}
+                          style={isAdvanced ? { color: 'rgba(59,57,54,0.82)' } : undefined}
+                        >
+                          <span
+                            className="w-1 h-1 rounded-full flex-shrink-0 mt-[0.45em]"
+                            style={{ background: isAdvanced ? 'rgba(184,154,79,0.75)' : 'rgba(184,154,79,0.55)' }}
+                          />
+                          <span>
+                            {isAdvanced ? (
+                              <>
+                                {(() => {
+                                  const numMatch = course.text.match(/^(\d+\.\s*)(.*)/s);
+                                  return numMatch ? (
+                                    <>
+                                      <span style={{ color: 'rgba(184,154,79,0.82)' }}>{numMatch[1].trim()}</span>
+                                      {' '}{numMatch[2]}
+                                    </>
+                                  ) : course.text;
+                                })()}
+                                {'sub' in course && course.sub && (
+                                  <span className="block text-[11px] mt-0.5" style={{ color: 'rgba(90,84,80,0.65)' }}>
+                                    {course.sub}
+                                  </span>
+                                )}
+                              </>
+                            ) : (
+                              course.text
+                            )}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                   <div className="flex items-center gap-6">
                     <span
@@ -446,7 +493,7 @@ export default function RasporedPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.1}
-                className="bg-[#141311] grid grid-cols-[7rem_1fr] md:grid-cols-[10rem_1fr] gap-6 md:gap-10 px-6 md:px-8 py-7 items-start"
+                className="bg-[#141311] hover:bg-[#181614] transition-colors duration-300 group grid grid-cols-[7rem_1fr] md:grid-cols-[10rem_1fr] gap-6 md:gap-10 px-6 md:px-8 py-7 items-start"
               >
                 <div className="pt-0.5">
                   <p
@@ -459,7 +506,7 @@ export default function RasporedPage() {
                     {item.month}
                   </p>
                 </div>
-                <div className="border-l border-[#2e2b27] pl-6 md:pl-8 pt-0.5">
+                <div className="border-l border-[#2e2b27] group-hover:border-[#B89A4F]/30 transition-colors duration-300 pl-6 md:pl-8 pt-0.5">
                   <p
                     className="text-[10px] uppercase tracking-[0.22em] mb-2"
                     style={{ color: 'rgba(237,233,227,0.30)' }}
@@ -593,12 +640,12 @@ export default function RasporedPage() {
                   className="border-0 border-t first:border-t-0"
                   style={{ borderColor: 'rgba(0,0,0,0.08)' }}
                 >
-                  <AccordionTrigger className="py-5 text-left hover:no-underline group">
-                    <span className="text-[13px] font-medium text-[#1F1D1A] leading-[1.5] group-hover:text-[#B89A4F] transition-colors duration-300 pr-6">
+                  <AccordionTrigger className="py-6 text-left hover:no-underline group">
+                    <span className="text-[14px] font-medium text-[#1F1D1A] leading-[1.5] group-hover:text-[#B89A4F] transition-colors duration-300 pr-6">
                       {item.q}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-6">
+                  <AccordionContent className="pb-8">
                     <p className="text-[12px] text-[#3b3b3b] leading-[1.78]">
                       {item.a}
                     </p>
@@ -641,10 +688,10 @@ export default function RasporedPage() {
               Prijavi interes
             </a>
             <p
-              className="text-[10px] mt-5 tracking-[0.06em]"
+              className="text-[10px] mt-5 tracking-[0.08em]"
               style={{ color: 'rgba(237,233,227,0.24)' }}
             >
-              Primi nove termine i informacije među prvima.
+              Manje grupe. Praktičan rad. Individualni pristup.
             </p>
           </motion.div>
         </div>
