@@ -178,8 +178,8 @@ const LomiLomiPage: React.FC = () => {
                 className="mb-6"
               >
                 <span
-                  className="text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.35em] block"
-                  style={{ color: 'rgba(212,175,55,0.68)' }}
+                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.35em] block"
+                  style={{ color: 'rgba(212,175,55,0.72)' }}
                 >
                   Ancient Wave Lomi Lomi · Zagreb
                 </span>

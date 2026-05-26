@@ -112,7 +112,7 @@ export function CourseHero({
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
-                <span className="text-[#B89A4F]/75 text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block">
+                <span className="text-[#B89A4F]/72 text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block">
                   {category}
                 </span>
               </motion.div>

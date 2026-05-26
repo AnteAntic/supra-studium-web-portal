@@ -124,8 +124,8 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
               className="mb-6"
             >
               <span
-                className="text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.28em] block"
-                style={{ color: 'rgba(212,175,55,0.55)' }}
+                className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.28em] block"
+                style={{ color: 'rgba(212,175,55,0.72)' }}
               >
                 CFM Body Reset Method
               </span>
