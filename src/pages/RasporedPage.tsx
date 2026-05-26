@@ -50,7 +50,7 @@ const pathways: Pathway[] = [
     image: '/lovable-uploads/raspored-pathway-manualna-v2.jpg',
     imagePos: 'center 38%',
     ctaLabel: 'Pogledaj program',
-    ctaHref: '/manualna-terapija',
+    ctaHref: '/skola-manualne-terapije',
     flip: false,
   },
   {
@@ -64,10 +64,10 @@ const pathways: Pathway[] = [
       { type: 'advanced', text: '3D Advanced Therapeutic Stretching', sub: 'mobilnost, fascijalne linije i integrirani terapijski stretching' },
       { text: 'Cupping terapija' },
     ],
-    image: '/lovable-uploads/raspored-pathway-specijalizacije.jpg',
-    imagePos: 'center 42%',
+    image: '/lovable-uploads/raspored-pathway-holisticki-v2.jpg',
+    imagePos: 'center 34%',
     ctaLabel: 'Pogledaj edukacije',
-    ctaHref: '/tecajevi',
+    ctaHref: '/skola-manualne-terapije',
     flip: true,
   },
   {
@@ -79,10 +79,10 @@ const pathways: Pathway[] = [
       { text: 'Lomi Lomi masaža' },
       { text: 'Kalabaš terapijski pristupi' },
     ],
-    image: '/lovable-uploads/raspored-pathway-holisticki-v2.jpg',
-    imagePos: 'center 34%',
+    image: '/lovable-uploads/raspored-pathway-holisticki-lomi.jpg',
+    imagePos: 'center 22%',
     ctaLabel: 'Pogledaj edukacije',
-    ctaHref: '/tecajevi',
+    ctaHref: '/lomi-lomi',
     flip: false,
   },
 ];
@@ -267,7 +267,7 @@ export default function RasporedPage() {
                   Prijavi interes
                 </a>
                 <Link
-                  to="/tecajevi"
+                  to="/skola-manualne-terapije"
                   className="text-[10px] font-normal tracking-[0.14em] uppercase transition-colors duration-300"
                   style={{ color: 'rgba(255,255,255,0.62)' }}
                   onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.88)')}
