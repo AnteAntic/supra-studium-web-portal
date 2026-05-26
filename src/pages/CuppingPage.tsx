@@ -104,23 +104,32 @@ export default function CuppingPage() {
         </div>
 
         {/* Base tonal settle */}
-        <div className="absolute inset-0 bg-black/12" />
+        <div className="absolute inset-0 bg-black/15" />
 
-        {/* Desktop: soft left-to-right atmospheric zone */}
+        {/* Desktop: cinematic left text zone */}
         <div
           className="absolute inset-0 hidden md:block"
           style={{
             background:
-              "linear-gradient(108deg, rgba(10,8,6,0.54) 0%, rgba(10,8,6,0.32) 34%, rgba(10,8,6,0.10) 60%, transparent 78%)",
+              "linear-gradient(to right, rgba(12,9,6,0.84) 0%, rgba(12,9,6,0.62) 28%, rgba(12,9,6,0.20) 52%, rgba(12,9,6,0.04) 66%, transparent 78%)",
           }}
         />
 
-        {/* Mobile: vertical atmospheric gradient */}
+        {/* Desktop: radial depth behind headline */}
+        <div
+          className="absolute inset-0 hidden md:block"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 80% at 12% 60%, rgba(8,5,2,0.36) 0%, transparent 100%)",
+          }}
+        />
+
+        {/* Mobile: vertical gradient */}
         <div
           className="absolute inset-0 md:hidden"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(8,6,4,0.42) 0%, rgba(8,6,4,0.34) 28%, rgba(8,6,4,0.22) 52%, rgba(8,6,4,0.14) 72%, rgba(8,6,4,0.22) 100%)",
+              "linear-gradient(to bottom, rgba(10,7,4,0.60) 0%, rgba(10,7,4,0.46) 25%, rgba(10,7,4,0.28) 50%, rgba(10,7,4,0.16) 72%, rgba(10,7,4,0.28) 100%)",
           }}
         />
 
