@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
@@ -268,6 +268,11 @@ function FactsBand() {
 
 /* ─── Page ──────────────────────────────────────────────────────── */
 const ThreeDStretchingPage = () => {
+  useEffect(() => {
+    document.title = '3D Advanced Therapeutic Stretching — Dr. Awudi | Supra Studium';
+    return () => { document.title = 'Supra Studium — Kliničke edukacije za terapeute'; };
+  }, []);
+
   const scrollToProgram = () => {
     const el = document.getElementById('program');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
