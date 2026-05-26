@@ -174,10 +174,10 @@ export default function OUcilistuPage() {
                 </Link>
                 <a
                   href="#pristup"
-                  className="text-[10.5px] uppercase tracking-[0.14em] font-normal transition-colors duration-300"
-                  style={{ color: 'rgba(255,255,255,0.45)' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.45)'; }}
+                  className="text-[10.5px] uppercase tracking-[0.14em] font-normal"
+                  style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.72)'; }}
                 >
                   — O pristupu
                 </a>

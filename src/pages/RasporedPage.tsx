@@ -271,10 +271,10 @@ export default function RasporedPage() {
                 </a>
                 <Link
                   to="/skola-manualne-terapije"
-                  className="text-[10px] font-normal tracking-[0.14em] uppercase transition-colors duration-300"
-                  style={{ color: 'rgba(255,255,255,0.62)' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.88)')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.62)')}
+                  className="text-[10px] font-normal tracking-[0.14em] uppercase"
+                  style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.95)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.72)')}
                 >
                   — Pogledaj edukacije
                 </Link>

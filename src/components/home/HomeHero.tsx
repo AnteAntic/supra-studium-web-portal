@@ -133,7 +133,10 @@ export function HomeHero() {
               </Link>
               <Link
                 to="/o-ucilistu"
-                className="text-white/68 hover:text-white/90 text-xs font-normal tracking-[0.12em] transition-colors duration-300"
+                className="text-xs font-normal tracking-[0.12em]"
+                style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.72)'; }}
               >
                 — O učilištu
               </Link>

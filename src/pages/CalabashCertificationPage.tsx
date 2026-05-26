@@ -267,16 +267,17 @@ const CalabashCertificationPage: React.FC = () => {
                   style={{
                     fontSize: '11px',
                     letterSpacing: '0.16em',
-                    color: 'rgba(255,255,255,0.65)',
+                    color: 'rgba(255,255,255,0.72)',
+                    textShadow: '0 1px 2px rgba(0,0,0,0.45)',
                     transition: 'color 0.35s ease',
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.88)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.65)'; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.95)'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.72)'; }}
                   onClick={() => kotizacijaRef.current?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <span
                     aria-hidden="true"
-                    style={{ display: 'block', width: '18px', height: '1px', backgroundColor: 'rgba(212,175,55,0.45)', flexShrink: 0 }}
+                    style={{ display: 'block', width: '18px', height: '1px', backgroundColor: 'rgba(212,175,55,0.55)', flexShrink: 0 }}
                   />
                   Termini i kotizacija
                 </button>

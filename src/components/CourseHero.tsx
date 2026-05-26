@@ -173,7 +173,10 @@ export function CourseHero({
 
                 {secondaryCTA && (
                   <button
-                    className="text-white/68 hover:text-white/90 text-xs font-normal tracking-[0.12em] transition-colors duration-400 bg-transparent border-0 cursor-pointer p-0"
+                    className="text-xs font-normal tracking-[0.12em] bg-transparent border-0 cursor-pointer p-0"
+                    style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.95)'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.72)'; }}
                     onClick={secondaryCTA.onClick}
                   >
                     — {secondaryCTA.label}

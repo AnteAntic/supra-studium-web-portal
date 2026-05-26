@@ -267,16 +267,15 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
                 style={{
                   fontSize: '11px',
                   letterSpacing: '0.12em',
-                  color: 'rgba(255,255,255,0.52)',
+                  color: 'rgba(255,255,255,0.72)',
+                  textShadow: '0 1px 2px rgba(0,0,0,0.45)',
                   transition: 'color 0.35s ease',
                 }}
                 onMouseEnter={e => {
-                  (e.currentTarget as HTMLButtonElement).style.color =
-                    'rgba(255,255,255,0.80)';
+                  (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.95)';
                 }}
                 onMouseLeave={e => {
-                  (e.currentTarget as HTMLButtonElement).style.color =
-                    'rgba(255,255,255,0.52)';
+                  (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.72)';
                 }}
                 onClick={onScrollToLocations}
               >
