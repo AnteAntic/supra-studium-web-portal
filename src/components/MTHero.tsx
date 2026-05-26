@@ -170,8 +170,7 @@ export function MTHero({ onScrollToProgram, onScrollToPricing }: MTHeroProps) {
                 className="text-[13.5px] sm:text-[14px] font-normal leading-[1.75]"
                 style={{ color: 'rgba(255,255,255,0.58)', maxWidth: '44ch' }}
               >
-                Pet stupnjeva dijagnostičkog razmišljanja — od lumbalne
-                kralješnice do cervikalnih manipulacija.
+                Škola manualne terapije kroz pet stupnjeva — od dijagnostičkog razmišljanja do precizne terapijske primjene, pod vodstvom dr. Aleksandra Stošića.
               </p>
             </motion.div>
 
