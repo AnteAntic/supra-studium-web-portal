@@ -18,8 +18,8 @@ const tickerItems = [
 ];
 
 type CourseItem =
-  | { type?: 'regular'; text: string }
-  | { type: 'advanced'; text: string; sub?: string };
+  | { type?: 'regular'; text: string; href?: string }
+  | { type: 'advanced'; text: string; sub?: string; href?: string };
 
 interface Pathway {
   id: string;
@@ -41,11 +41,11 @@ const pathways: Pathway[] = [
     label: 'Manualna terapija',
     tagline: 'Strukturirani program napredovanja u 5 stupnjeva — od osnova do kliničke integracije.',
     courses: [
-      { text: '1. stupanj — osnove i uvod u palpaciju' },
-      { text: '2. stupanj — napredna tehnika i mobilizacija' },
-      { text: '3. stupanj — klinička primjena i evaluacija' },
-      { text: '4. stupanj — specijalizacija i integracija' },
-      { type: 'advanced', text: '5. stupanj — advanced level i integracija kompleksnih kliničkih pristupa' },
+      { text: '1. stupanj — osnove i uvod u palpaciju',                           href: '/skola-manualne-terapije' },
+      { text: '2. stupanj — napredna tehnika i mobilizacija',                     href: '/skola-manualne-terapije' },
+      { text: '3. stupanj — klinička primjena i evaluacija',                      href: '/skola-manualne-terapije' },
+      { text: '4. stupanj — specijalizacija i integracija',                       href: '/skola-manualne-terapije' },
+      { type: 'advanced', text: '5. stupanj — advanced level i integracija kompleksnih kliničkih pristupa', href: '/skola-manualne-terapije' },
     ],
     image: '/lovable-uploads/raspored-pathway-manualna-v2.jpg',
     imagePos: 'center 38%',
@@ -59,10 +59,10 @@ const pathways: Pathway[] = [
     label: 'Specijalizacije',
     tagline: 'Fokusirani intenzivi za konkretne kliničke pristupe. Svaki program stoji samostalno.',
     courses: [
-      { text: 'Akupresura & Trigger Point terapija' },
-      { text: 'Crossfriction & Funkcionalna masaža' },
+      { text: 'Akupresura & Trigger Point terapija',    href: '/akupresura-trigger-point' },
+      { text: 'Crossfriction & Funkcionalna masaža',    href: '/crossfriction-funkcionalna-masaza' },
       { type: 'advanced', text: '3D Advanced Therapeutic Stretching', sub: 'mobilnost, fascijalne linije i integrirani terapijski stretching' },
-      { text: 'Cupping terapija' },
+      { text: 'Cupping terapija',                       href: '/cupping-terapija' },
     ],
     image: '/lovable-uploads/raspored-pathway-holisticki-v2.jpg',
     imagePos: 'center 34%',
@@ -76,13 +76,13 @@ const pathways: Pathway[] = [
     label: 'Holistički i tradicionalni pristupi',
     tagline: 'Cjeloviti pristupi radu kroz ritam, prisutnost i manualnu preciznost.',
     courses: [
-      { text: 'Lomi Lomi masaža' },
-      { text: 'Kalabaš terapijski pristupi' },
+      { text: 'Lomi Lomi masaža',              href: '/lomi-lomi' },
+      { text: 'Kalabaš terapijski pristupi',   href: '/calabash-certifikacija' },
     ],
     image: '/lovable-uploads/raspored-pathway-holisticki-lomi.jpg',
-    imagePos: 'center 22%',
+    imagePos: 'center 28%',
     ctaLabel: 'Pogledaj edukacije',
-    ctaHref: '/lomi-lomi',
+    ctaHref: '/skola-manualne-terapije',
     flip: false,
   },
 ];
@@ -365,10 +365,10 @@ export default function RasporedPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.08}
-                className={`flex flex-col ${path.flip ? 'md:flex-row-reverse' : 'md:flex-row'} border-t border-[#e3e0d8] py-0 md:min-h-[22rem]`}
+                className={`flex flex-col ${path.flip ? 'md:flex-row-reverse' : 'md:flex-row'} border-t border-[#e3e0d8] py-0 md:min-h-[22rem] md:max-h-[24rem]`}
               >
                 {/* Photo */}
-                <div className="w-full md:w-[54%] aspect-[4/3] md:aspect-auto overflow-hidden">
+                <div className={`w-full md:w-[54%] md:aspect-auto overflow-hidden ${path.id === 'holisticki' ? 'aspect-[3/2]' : 'aspect-[4/3]'}`}>
                   <img
                     src={path.image}
                     alt={path.label}
@@ -404,6 +404,30 @@ export default function RasporedPage() {
                   <ul className="space-y-3 mb-9">
                     {path.courses.map((course, ci) => {
                       const isAdvanced = course.type === 'advanced';
+                      const linkCls = "transition-colors duration-[180ms] ease-out hover:text-[#B89A4F] hover:underline underline-offset-[3px]";
+                      const linkStyle: React.CSSProperties = { textDecorationColor: 'rgba(184,154,79,0.35)' };
+
+                      const innerContent = isAdvanced ? (
+                        <>
+                          {(() => {
+                            const numMatch = course.text.match(/^(\d+\.\s*)(.*)/s);
+                            return numMatch ? (
+                              <>
+                                <span style={{ color: 'rgba(184,154,79,0.82)' }}>{numMatch[1].trim()}</span>
+                                {' '}{numMatch[2]}
+                              </>
+                            ) : course.text;
+                          })()}
+                          {'sub' in course && course.sub && (
+                            <span className="block text-[11px] mt-0.5" style={{ color: 'rgba(90,84,80,0.65)' }}>
+                              {course.sub}
+                            </span>
+                          )}
+                        </>
+                      ) : (
+                        course.text
+                      );
+
                       return (
                         <li key={ci} className={`flex items-start gap-3 text-[12px] leading-[1.6] ${isAdvanced ? '' : 'text-[#3b3b3b]'}`}
                           style={isAdvanced ? { color: 'rgba(59,57,54,0.82)' } : undefined}
@@ -413,25 +437,12 @@ export default function RasporedPage() {
                             style={{ background: isAdvanced ? 'rgba(184,154,79,0.75)' : 'rgba(184,154,79,0.55)' }}
                           />
                           <span>
-                            {isAdvanced ? (
-                              <>
-                                {(() => {
-                                  const numMatch = course.text.match(/^(\d+\.\s*)(.*)/s);
-                                  return numMatch ? (
-                                    <>
-                                      <span style={{ color: 'rgba(184,154,79,0.82)' }}>{numMatch[1].trim()}</span>
-                                      {' '}{numMatch[2]}
-                                    </>
-                                  ) : course.text;
-                                })()}
-                                {'sub' in course && course.sub && (
-                                  <span className="block text-[11px] mt-0.5" style={{ color: 'rgba(90,84,80,0.65)' }}>
-                                    {course.sub}
-                                  </span>
-                                )}
-                              </>
+                            {course.href ? (
+                              <Link to={course.href} className={linkCls} style={linkStyle}>
+                                {innerContent}
+                              </Link>
                             ) : (
-                              course.text
+                              innerContent
                             )}
                           </span>
                         </li>
