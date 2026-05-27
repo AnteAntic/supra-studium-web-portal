@@ -242,7 +242,7 @@ const CrossfrictionPage = () => {
                     </p>
                     <p
                       className="font-playfair font-normal leading-[1.52] mt-1"
-                      style={{ fontSize: '18px', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+                      style={{ fontSize: '18px', color: 'rgba(255,255,255,0.58)', fontStyle: 'italic' }}
                     >
                       {item.b}
                     </p>

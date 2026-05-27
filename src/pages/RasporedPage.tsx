@@ -543,14 +543,14 @@ export default function RasporedPage() {
                 </div>
                 <div className="border-l border-[#2e2b27] group-hover:border-[#B89A4F]/30 transition-colors duration-300 pl-6 md:pl-8 pt-0.5">
                   <p
-                    className="text-[10px] uppercase tracking-[0.22em] mb-2"
-                    style={{ color: 'rgba(237,233,227,0.30)' }}
+                    className="text-[11px] uppercase tracking-[0.14em] mb-2"
+                    style={{ color: 'rgba(237,233,227,0.58)' }}
                   >
                     Datumi u finalnom usklađivanju.
                   </p>
                   <p
-                    className="text-[11px] leading-[1.6]"
-                    style={{ color: 'rgba(237,233,227,0.18)' }}
+                    className="text-[13px] leading-[1.6]"
+                    style={{ color: 'rgba(237,233,227,0.62)' }}
                   >
                     {item.sub}
                   </p>
@@ -568,8 +568,8 @@ export default function RasporedPage() {
             className="mt-10"
           >
             <p
-              className="text-[10px] leading-[1.7] mb-8 max-w-md"
-              style={{ color: 'rgba(237,233,227,0.26)', letterSpacing: '0.04em' }}
+              className="text-[13px] leading-[1.7] mb-8 max-w-md"
+              style={{ color: 'rgba(237,233,227,0.62)' }}
             >
               Edukacije se održavaju u Zagrebu, Rijeci i Splitu u manjim praktičnim grupama.
             </p>
@@ -577,20 +577,20 @@ export default function RasporedPage() {
               href="https://tally.so/r/wA5kvD"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-[10px] uppercase tracking-[0.20em] font-normal border px-6 py-3 rounded-sm transition-colors duration-300"
+              className="inline-block text-[11px] uppercase tracking-[0.16em] font-normal border px-6 py-3 rounded-sm transition-colors duration-300"
               style={{
-                color: 'rgba(237,233,227,0.58)',
-                borderColor: 'rgba(237,233,227,0.18)',
+                color: 'rgba(237,233,227,0.72)',
+                borderColor: 'rgba(237,233,227,0.28)',
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.color = 'rgba(237,233,227,0.85)';
-                el.style.borderColor = 'rgba(237,233,227,0.38)';
+                el.style.color = 'rgba(237,233,227,0.92)';
+                el.style.borderColor = 'rgba(237,233,227,0.52)';
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.color = 'rgba(237,233,227,0.58)';
-                el.style.borderColor = 'rgba(237,233,227,0.18)';
+                el.style.color = 'rgba(237,233,227,0.72)';
+                el.style.borderColor = 'rgba(237,233,227,0.28)';
               }}
             >
               Prijavi interes — primi obavijest
@@ -710,7 +710,7 @@ export default function RasporedPage() {
             </h2>
             <p
               className="text-[13px] leading-[1.72] mb-11 max-w-[32ch] mx-auto"
-              style={{ color: 'rgba(237,233,227,0.48)' }}
+              style={{ color: 'rgba(237,233,227,0.68)' }}
             >
               Prijavi interes i primi informacije među prvima.
             </p>
@@ -723,8 +723,8 @@ export default function RasporedPage() {
               Prijavi interes
             </a>
             <p
-              className="text-[10px] mt-5 tracking-[0.08em]"
-              style={{ color: 'rgba(237,233,227,0.24)' }}
+              className="text-[11px] mt-5 tracking-[0.06em]"
+              style={{ color: 'rgba(237,233,227,0.48)' }}
             >
               Manje grupe. Praktičan rad. Individualni pristup.
             </p>

@@ -466,7 +466,7 @@ const LomiLomiPage: React.FC = () => {
                 Ritam prije sile.<br />
                 Dijagnostika prije sekvence.
               </h2>
-              <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
+              <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Dva modula su strukturirana prema načelu: razumijevanje dolazi
                 prije alata. Terapeut koji zna zašto radi što radi — radi to
                 drukčije već od prvog dana.
@@ -585,7 +585,7 @@ const LomiLomiPage: React.FC = () => {
                   loading="lazy"
                 />
                 <div className="absolute bottom-4 left-5">
-                  <p className="text-[9px] uppercase tracking-[0.22em] font-normal" style={{ color: 'rgba(255,255,255,0.48)' }}>
+                  <p className="text-[10px] uppercase tracking-[0.14em] font-normal" style={{ color: 'rgba(255,255,255,0.65)' }}>
                     Korekcija tehnike · Zagreb 2025.
                   </p>
                 </div>

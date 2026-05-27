@@ -288,8 +288,8 @@ export default function ManualTherapySchoolPage() {
           />
           <div className="absolute bottom-8 left-8 md:left-14">
             <p
-              className="text-[9px] uppercase tracking-[0.28em] font-normal"
-              style={{ color: 'rgba(255,255,255,0.42)' }}
+              className="text-[10px] uppercase tracking-[0.16em] font-normal"
+              style={{ color: 'rgba(255,255,255,0.65)' }}
             >
               Praktični rad · Stupanj I
             </p>
@@ -458,7 +458,7 @@ export default function ManualTherapySchoolPage() {
             </h2>
             <p
               className="text-[13.5px] leading-[1.82] font-normal"
-              style={{ color: 'rgba(237,233,227,0.42)' }}
+              style={{ color: 'rgba(237,233,227,0.68)' }}
             >
               Svaka tehnika je klinički alat s indikacijom i kontraindikacijom. Program ih ne
               predaje kao kolekciju — predaje ih kroz dijagnostičko razmišljanje.
@@ -850,15 +850,15 @@ export default function ManualTherapySchoolPage() {
                     {t.stupanj}
                   </p>
                   <p
-                    className="text-[11px] mt-0.5 font-normal"
-                    style={{ color: 'rgba(237,233,227,0.20)' }}
+                    className="text-[12px] mt-0.5 font-normal"
+                    style={{ color: 'rgba(237,233,227,0.56)' }}
                   >
                     {t.lokacija}
                   </p>
                 </div>
                 <p
-                  className="hidden md:block text-[11px] uppercase tracking-[0.12em] font-normal"
-                  style={{ color: 'rgba(237,233,227,0.32)' }}
+                  className="hidden md:block text-[12px] uppercase tracking-[0.08em] font-normal"
+                  style={{ color: 'rgba(237,233,227,0.62)' }}
                 >
                   {t.datum}
                 </p>
@@ -934,15 +934,15 @@ export default function ManualTherapySchoolPage() {
               style={{
                 fontSize: '11px',
                 letterSpacing: '0.12em',
-                color: 'rgba(255,255,255,0.42)',
+                color: 'rgba(255,255,255,0.62)',
                 transition: 'color 0.35s ease',
                 textDecoration: 'none',
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)';
+                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.90)';
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.42)';
+                (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.62)';
               }}
             >
               — Pitanja na WhatsApp

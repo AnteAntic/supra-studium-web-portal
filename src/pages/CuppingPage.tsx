@@ -667,7 +667,7 @@ export default function CuppingPage() {
             custom={0.1}
             viewport={{ once: true }}
             className="text-sm leading-relaxed mb-10 max-w-md"
-            style={{ color: "rgba(237,233,227,0.45)" }}
+            style={{ color: "rgba(237,233,227,0.68)" }}
           >
             Program se održava u manjim grupama, ovisno o rasporedu i organizaciji partnera.
           </motion.p>
@@ -688,7 +688,7 @@ export default function CuppingPage() {
                 className="bg-[#141311] px-8 py-5"
               >
                 <p className="text-sm text-[#ede9e3] font-medium">{t.lokacija}</p>
-                <p className="text-xs mt-0.5" style={{ color: "rgba(237,233,227,0.32)" }}>{t.napomena}</p>
+                <p className="text-[12px] mt-0.5" style={{ color: "rgba(237,233,227,0.58)" }}>{t.napomena}</p>
               </motion.div>
             ))}
             <motion.div
@@ -699,7 +699,7 @@ export default function CuppingPage() {
               viewport={{ once: true }}
               className="bg-[#141311] px-8 py-6 flex items-baseline gap-4"
             >
-              <p className="text-[10px] uppercase tracking-[0.22em]" style={{ color: "rgba(237,233,227,0.38)" }}>
+              <p className="text-[11px] uppercase tracking-[0.14em]" style={{ color: "rgba(237,233,227,0.62)" }}>
                 Kotizacija
               </p>
               <p className="font-playfair text-2xl text-[#ede9e3]">390 €</p>
@@ -712,8 +712,8 @@ export default function CuppingPage() {
             whileInView="visible"
             custom={0.35}
             viewport={{ once: true }}
-            className="mt-5 text-xs"
-            style={{ color: "rgba(237,233,227,0.28)" }}
+            className="mt-5 text-[13px]"
+            style={{ color: "rgba(237,233,227,0.60)" }}
           >
             Sve lokacije i termini dostupni su na upit.
           </motion.p>

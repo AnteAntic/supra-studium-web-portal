@@ -431,7 +431,7 @@ const CalabashCertificationPage: React.FC = () => {
             style={{ background: 'linear-gradient(to top, rgba(8,6,3,0.35) 0%, transparent 40%)' }}
           />
           <div className="absolute bottom-6 left-8">
-            <p className="text-[10px] uppercase tracking-[0.22em] font-normal" style={{ color: 'rgba(255,255,255,0.38)' }}>
+            <p className="text-[11px] uppercase tracking-[0.14em] font-normal" style={{ color: 'rgba(255,255,255,0.62)' }}>
               Zagreb, studeni 2025.
             </p>
           </div>
@@ -457,7 +457,7 @@ const CalabashCertificationPage: React.FC = () => {
                 Metodologija<br />
                 u dva dana.
               </h2>
-              <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
+              <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Razumijevanje tkiva dolazi prije tehnike. Alat se uvodi tek kad je palpacijska slika jasna — ne ranije.
               </p>
             </motion.div>
@@ -766,7 +766,7 @@ const CalabashCertificationPage: React.FC = () => {
                     Cijena i early bird bit će objavljeni uz potvrdu termina
                   </p>
                 </div>
-                <p className="text-[13px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.38)' }}>
+                <p className="text-[13px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.62)' }}>
                   TBD
                 </p>
               </div>
@@ -779,7 +779,7 @@ const CalabashCertificationPage: React.FC = () => {
                   gap: '2rem',
                 }}
               >
-                <p className="text-[13px] font-normal" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                <p className="text-[13px] font-normal" style={{ color: 'rgba(255,255,255,0.68)' }}>
                   U kotizaciju su uključeni nastavni materijali, certifikat i dva ručno izrađena kalabaša
                 </p>
                 <p className="text-[13px] font-normal whitespace-nowrap" style={{ color: 'rgba(184,154,79,0.65)' }}>
