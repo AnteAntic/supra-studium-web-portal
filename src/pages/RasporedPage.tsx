@@ -13,8 +13,8 @@ const fadeUp = {
 };
 
 const tickerItems = [
-  'MANUALNA TERAPIJA', 'ATP TERAPIJA', 'KALABAŠ CERTIFIKACIJA',
-  'LOMI LOMI', 'CUPPING TERAPIJA', 'CFM', 'ZAGREB', 'RIJEKA', 'SPLIT',
+  'Manualna terapija', 'ATP terapija', 'Kalabaš certifikacija',
+  'Lomi Lomi', 'Cupping terapija', 'CFM Body Reset',
 ];
 
 type CourseItem =
@@ -237,7 +237,10 @@ export default function RasporedPage() {
                 transition={{ delay: 0.65, duration: 0.8 }}
                 className="mb-3"
               >
-                <p className="text-[13px] font-normal text-white/72 leading-[1.6]">
+                <p
+                  className="text-[13px] font-normal leading-[1.6]"
+                  style={{ color: 'rgba(255,255,255,0.90)', textShadow: '0 1px 3px rgba(0,0,0,0.55)' }}
+                >
                   Novi termini za jesen 2026. dolaze uskoro.
                 </p>
               </motion.div>
@@ -249,7 +252,10 @@ export default function RasporedPage() {
                 transition={{ delay: 0.78, duration: 0.8 }}
                 className="mb-10"
               >
-                <p className="text-[12px] font-normal leading-[1.72] max-w-sm" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                <p
+                  className="text-[12px] font-normal leading-[1.72] max-w-sm"
+                  style={{ color: 'rgba(255,255,255,0.65)', textShadow: '0 1px 2px rgba(0,0,0,0.40)' }}
+                >
                   Specijalizirane edukacije manualne terapije, funkcionalnog rada i terapeutskih pristupa.
                 </p>
               </motion.div>
@@ -291,22 +297,22 @@ export default function RasporedPage() {
           <div className="container mx-auto px-6 py-5">
             <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2.5">
               <span
-                className="text-[9px] uppercase tracking-[0.30em] font-normal"
-                style={{ color: 'rgba(184,154,79,0.68)' }}
+                className="text-[10px] uppercase tracking-[0.18em] font-normal"
+                style={{ color: 'rgba(184,154,79,0.90)' }}
               >
                 Zagreb · Rijeka · Split
               </span>
               <span className="hidden sm:block w-px h-3 bg-[#3a3530]" />
               <span
-                className="text-[9px] uppercase tracking-[0.26em] font-normal text-center sm:text-left"
-                style={{ color: 'rgba(237,233,227,0.36)' }}
+                className="text-[10px] uppercase tracking-[0.16em] font-normal text-center sm:text-left"
+                style={{ color: 'rgba(237,233,227,0.72)' }}
               >
                 Jesenski termini u finalnom usklađivanju
               </span>
               <span className="hidden sm:block w-px h-3 bg-[#3a3530]" />
               <span
-                className="text-[9px] uppercase tracking-[0.26em] font-normal"
-                style={{ color: 'rgba(184,154,79,0.50)' }}
+                className="text-[10px] uppercase tracking-[0.18em] font-normal"
+                style={{ color: 'rgba(184,154,79,0.72)' }}
               >
                 Ograničene grupe
               </span>
@@ -320,17 +326,17 @@ export default function RasporedPage() {
         className="bg-[#141311] overflow-hidden"
         style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}
       >
-        <div className="ticker-track flex whitespace-nowrap py-3">
+        <div className="ticker-track flex whitespace-nowrap py-3.5">
           {[...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
             <span
               key={i}
-              className="inline-flex items-center text-[8px] uppercase tracking-[0.34em] font-normal px-7 flex-shrink-0"
-              style={{ color: 'rgba(184,154,79,0.22)' }}
+              className="inline-flex items-center text-[10px] tracking-[0.18em] font-normal px-8 flex-shrink-0"
+              style={{ color: 'rgba(184,154,79,0.55)' }}
             >
               {item}
               <span
-                className="ml-7 w-px h-2 inline-block flex-shrink-0"
-                style={{ background: 'rgba(184,154,79,0.14)' }}
+                className="ml-8 w-px h-2.5 inline-block flex-shrink-0"
+                style={{ background: 'rgba(184,154,79,0.30)' }}
               />
             </span>
           ))}
@@ -368,7 +374,7 @@ export default function RasporedPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.08}
-                className={`flex flex-col ${path.flip ? 'md:flex-row-reverse' : 'md:flex-row'} border-t border-[#e3e0d8] py-0 md:min-h-[22rem] md:max-h-[24rem]`}
+                className={`flex flex-col-reverse ${path.flip ? 'md:flex-row-reverse' : 'md:flex-row'} border-t border-[#e3e0d8] pb-10 md:pb-0 md:min-h-[22rem] md:max-h-[24rem]`}
               >
                 {/* Photo */}
                 <div className={`w-full md:w-[54%] md:aspect-auto overflow-hidden ${path.id === 'holisticki' ? 'aspect-[3/2]' : 'aspect-[4/3]'}`}>
