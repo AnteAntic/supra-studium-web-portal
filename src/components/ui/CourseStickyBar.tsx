@@ -54,7 +54,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -100, opacity: 0 }}
       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      className={`fixed top-20 left-0 right-0 z-40 ${className}`}
+      className={`fixed top-[57px] md:top-20 left-0 right-0 z-40 ${className}`}
       style={{
         backgroundColor: 'rgba(250,248,244,0.94)',
         backdropFilter: 'blur(10px)',
