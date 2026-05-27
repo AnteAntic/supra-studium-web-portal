@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CourseStickyBar } from "@/components/ui/CourseStickyBar";
@@ -191,11 +191,34 @@ export default function CuppingPage() {
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
-                className="mb-10"
+                className="mb-5"
               >
                 <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-sm">
                   9 kliznih tehnika, 3 specijalizirana protokola i TKM integracija. Jedan dan koji mijenja kako radiš s mekim tkivom.
                 </p>
+              </motion.div>
+
+              {/* Meta strip */}
+              <motion.div
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.05, duration: 0.85, ease: 'easeOut' }}
+                className="mb-12 flex flex-wrap items-center"
+                style={{ columnGap: '14px', rowGap: '4px' }}
+              >
+                {['1 dan', 'Rad u paru', 'Certifikat', '9 kliznih tehnika'].map((item, i) => (
+                  <React.Fragment key={item}>
+                    {i > 0 && (
+                      <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '11px', lineHeight: 1 }}>·</span>
+                    )}
+                    <span
+                      className="font-medium"
+                      style={{ fontSize: '11px', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
+                    >
+                      {item}
+                    </span>
+                  </React.Fragment>
+                ))}
               </motion.div>
 
               {/* CTA group */}

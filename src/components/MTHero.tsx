@@ -192,7 +192,7 @@ export function MTHero({ onScrollToProgram, onScrollToPricing }: MTHeroProps) {
                   {i > 0 && (
                     <span
                       style={{
-                        color: 'rgba(255,255,255,0.24)',
+                        color: 'rgba(255,255,255,0.32)',
                         fontSize: '11px',
                         lineHeight: 1,
                       }}
@@ -201,11 +201,12 @@ export function MTHero({ onScrollToProgram, onScrollToPricing }: MTHeroProps) {
                     </span>
                   )}
                   <span
-                    className="font-normal"
+                    className="font-medium"
                     style={{
                       fontSize: '11px',
-                      letterSpacing: '0.05em',
-                      color: 'rgba(255,255,255,0.35)',
+                      letterSpacing: '0.11em',
+                      color: 'rgba(255,255,255,0.78)',
+                      textShadow: '0 1px 2px rgba(0,0,0,0.45)',
                     }}
                   >
                     {item}

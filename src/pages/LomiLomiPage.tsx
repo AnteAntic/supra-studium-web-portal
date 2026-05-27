@@ -234,11 +234,11 @@ const LomiLomiPage: React.FC = () => {
                 {['2 modula', '4 dana', 'Ritam i dijagnostika', 'Certifikat'].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
-                      <span style={{ color: 'rgba(255,255,255,0.24)', fontSize: '11px', lineHeight: 1 }}>·</span>
+                      <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '11px', lineHeight: 1 }}>·</span>
                     )}
                     <span
-                      className="font-normal"
-                      style={{ fontSize: '11px', letterSpacing: '0.07em', color: 'rgba(255,255,255,0.44)' }}
+                      className="font-medium"
+                      style={{ fontSize: '11px', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
                     >
                       {item}
                     </span>
