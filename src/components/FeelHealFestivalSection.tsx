@@ -49,7 +49,7 @@ export const FeelHealFestivalSection = () => {
             >
               <figure>
                 <img 
-                  src="/lovable-uploads/feel-heal-festival.jpg" 
+                  src="/lovable-uploads/feel-heal-festival.webp"
                   alt="Feel & Heal Festival - Croatian Massage Championship pobjednici" 
                   className="rounded-xl shadow-lg object-cover w-full max-w-xl mx-auto lg:mx-0 hover:scale-[1.01] hover:shadow-2xl transition-all duration-300"
                 />

@@ -602,7 +602,7 @@ export default function ManualTherapySchoolPage() {
             >
               <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
                 <img
-                  src="/lovable-uploads/mt-stosic-anatomija.jpg"
+                  src="/lovable-uploads/mt-stosic-anatomija.webp"
                   alt="Mr.sc. A. Stošić — anatomska demonstracija"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -628,7 +628,7 @@ export default function ManualTherapySchoolPage() {
               >
                 <div className="overflow-hidden h-full" style={{ minHeight: '160px' }}>
                   <img
-                    src="/lovable-uploads/mt-parovi-rada.jpg"
+                    src="/lovable-uploads/mt-parovi-rada.webp"
                     alt="Parovi u praktičnom radu"
                     className="w-full h-full object-cover"
                     loading="lazy"

@@ -556,7 +556,7 @@ const CalabashCertificationPage: React.FC = () => {
         style={{ aspectRatio: '21/9', background: '#1A1510' }}
       >
         <img
-          src="/lovable-uploads/cal-awudi-razgovor-narancasta.jpeg"
+          src="/lovable-uploads/cal-awudi-razgovor-narancasta.webp"
           alt="Dr. Awudi Atitsogbui — edukacija s kalabašem, Zagreb 2025."
           className="absolute inset-0 w-full h-full object-cover"
           style={{
