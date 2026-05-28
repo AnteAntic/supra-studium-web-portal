@@ -80,6 +80,14 @@ export default function CuppingPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'Cupping & Ventuzoterapija — 9 kliznih tehnika | Supra Studium';
+    const descText = 'Klinički cupping tečaj: 9 kliznih tehnika, vakuumski Pin & Stretch, limfodrenažni i anti-age protokol. 1 dan, do 12 polaznika. Zagreb, Split, Rijeka.';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
+    meta.setAttribute('content', descText);
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
+    link.setAttribute('href', window.location.origin + '/cupping-terapija');
   }, []);
 
   const scrollToKotizacija = () => {

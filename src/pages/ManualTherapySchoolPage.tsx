@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { MTHero } from '@/components/MTHero';
@@ -124,6 +124,17 @@ export default function ManualTherapySchoolPage() {
   const scrollToPricing = () => {
     pricingRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    document.title = 'Škola Manualne Terapije — 5 stupnjeva, 99 sati | Supra Studium';
+    const descText = 'Pet stupnjeva manualne terapije pod vodstvom dr. Aleksandra Stošića — od dijagnostičkog razmišljanja do precizne terapijske primjene. Zagreb.';
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
+    meta.setAttribute('content', descText);
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
+    link.setAttribute('href', window.location.origin + '/skola-manualne-terapije');
+  }, []);
 
   return (
     <div style={{ backgroundColor: '#FAF8F4' }} className="min-h-screen">

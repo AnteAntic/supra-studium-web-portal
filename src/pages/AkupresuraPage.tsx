@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,18 @@ import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
 const AkupresuraPage = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Akupresura & Trigger Point — Klinička edukacija | Supra Studium';
+    const descText = 'Klinička edukacija akupresure i trigger point metode za terapeute. 3 dana, 24 sata intenzivnog rada u paru. Obrazac boli, palpacija i lokalna/distalna točka. Zagreb.';
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
+    meta.setAttribute('content', descText);
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
+    link.setAttribute('href', window.location.origin + '/akupresura-trigger-point');
+  }, []);
+
   const scrollToProgram = () => {
     const element = document.getElementById('program');
     if (element) {

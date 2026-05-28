@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
@@ -16,6 +16,17 @@ const CrossfrictionPage = () => {
     const el = document.getElementById('pricing');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    document.title = 'CFM Body Reset Method — Škola terapijskog razmišljanja | Supra Studium';
+    const descText = 'Metodologija palpacije i funkcionalnog razmišljanja za terapeute koji žele razumjeti logiku tkivnog odgovora. Periodične edukacije u Zagrebu, Slavonskom Brodu i Rijeci.';
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
+    meta.setAttribute('content', descText);
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
+    link.setAttribute('href', window.location.origin + '/crossfriction-funkcionalna-masaza');
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">

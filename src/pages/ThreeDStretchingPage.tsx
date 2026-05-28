@@ -271,6 +271,13 @@ function FactsBand() {
 const ThreeDStretchingPage = () => {
   useEffect(() => {
     document.title = '3D Advanced Therapeutic Stretching — Dr. Awudi | Supra Studium';
+    const descText = 'Terapijski stretching kao klinički alat — mobilnost, kompenzacijski obrasci i odgovor tkiva na pokret. 2 dana, 16 sati, dr. Awudi. Zagreb.';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
+    meta.setAttribute('content', descText);
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
+    link.setAttribute('href', window.location.origin + '/3d-advanced-therapeutic-stretching');
     return () => { document.title = 'Supra Studium — Kliničke edukacije za terapeute'; };
   }, []);
 
