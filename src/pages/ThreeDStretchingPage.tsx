@@ -297,9 +297,9 @@ const ThreeDStretchingPage = () => {
       <FactsBand />
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: 'prve grupe uskoro' }]}
-        price="uskoro"
-        ctaText="Prijavi interes"
+        locations={[{ city: 'Zagreb', dates: '31.10.–1.11.2026.' }]}
+        price="450 €"
+        ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
       />
@@ -940,15 +940,15 @@ const ThreeDStretchingPage = () => {
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '2.8rem', paddingBottom: '0.6rem' }}>
                   <p
                     className="font-playfair font-semibold leading-none"
-                    style={{ fontSize: '2.8rem', color: 'rgba(31,29,26,0.45)', letterSpacing: '-0.01em' }}
+                    style={{ fontSize: '2.8rem', color: '#1F1D1A', letterSpacing: '-0.01em' }}
                   >
-                    Otvaranje prijava uskoro
+                    450 €
                   </p>
                 </div>
                 <div style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: '2.2rem', marginBottom: '2.4rem' }}>
                   <p className="text-[13px] leading-[1.72] font-normal mt-4" style={{ color: '#7A7570' }}>
-                    Kotizacija uključuje materijale i certifikat.
-                    <br />Uplata i rezervacija po dogovoru.
+                    Early bird: ušteda 50 € uz uplatu do 30.9.2026.{/* ⚠️ TODO: potvrdi točan datum early bird deadlinea — koristiti 30.09. jer rujan ima 30 dana */}
+                    <br />Kotizacija uključuje materijale i certifikat.
                   </p>
                 </div>
 
@@ -978,7 +978,7 @@ const ThreeDStretchingPage = () => {
                 </p>
                 <div>
                   {[
-                    { city: 'Zagreb', note: 'otvaranje prijava uskoro' },
+                    { city: 'Zagreb', note: '31.10.–1.11.2026. · Maxi Dance Studio · 9–17 h' },
                   ].map((loc, i) => (
                     <div
                       key={i}
@@ -996,7 +996,7 @@ const ThreeDStretchingPage = () => {
                   <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', marginBottom: '1.8rem' }} />
                 </div>
                 <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.38)', fontStyle: 'italic' }}>
-                  Prijavite interes — obavijestit ćemo vas čim termin bude potvrđen.
+                  Frane Kesterčaneka 2, Zagreb (ispod bolnice Rebro).
                 </p>
               </motion.div>
 

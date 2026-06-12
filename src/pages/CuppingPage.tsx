@@ -18,7 +18,7 @@ const tehnike = [
 ];
 
 const termini = [
-  { grad: "Zagreb", datum: "Na upit", cijena: "390 €" },
+  { grad: "Zagreb", datum: "1.11.2026.", cijena: "390 €" },
   { grad: "Split", datum: "Na upit", cijena: "390 €" },
   { grad: "Rijeka", datum: "Na upit", cijena: "390 €" },
   { grad: "Osijek", datum: "Na upit", cijena: "390 €" },
@@ -309,7 +309,7 @@ export default function CuppingPage() {
       </section>
 
       <CourseStickyBar
-        locations={[{ city: "Zagreb", dates: "Na upit" }]}
+        locations={[{ city: "Zagreb", dates: "1.11.2026." }]}
         price=""
         ctaText="Pošalji upit"
         ctaHref="https://tally.so/r/wA5kvD"
@@ -705,7 +705,7 @@ export default function CuppingPage() {
 
           <div className="space-y-px bg-[#201e1a]">
             {[
-              { lokacija: "Zagreb", napomena: "redovita organizacija" },
+              { lokacija: "Zagreb", napomena: "1.11.2026. · Maxi Dance Studio" },
               { lokacija: "Slavonski Brod", napomena: "u suradnji s lokalnim organizatorima" },
               { lokacija: "Rijeka / Split", napomena: "periodični termini prema interesu" },
             ].map((t, i) => (
@@ -746,7 +746,7 @@ export default function CuppingPage() {
             className="mt-5 text-[13px]"
             style={{ color: "rgba(237,233,227,0.60)" }}
           >
-            Sve lokacije i termini dostupni su na upit.
+            Zagreb potvrđen · ostali gradovi na upit.
           </motion.p>
 
           <motion.div

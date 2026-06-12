@@ -38,11 +38,9 @@ const CrossfrictionPage = () => {
 
       <CourseStickyBar
         locations={[
-          { city: "Zagreb", dates: "redovito" },
-          { city: "Slavonski Brod", dates: "povremeno" },
-          { city: "Rijeka / Split", dates: "periodično" },
+          { city: "Zagreb", dates: "30.–31.01.2027." },
         ]}
-        price=""
+        price="460 €"
         ctaText="Rezerviraj mjesto"
         ctaHref="https://tally.so/r/wA5kvD"
       />
@@ -1168,11 +1166,11 @@ const CrossfrictionPage = () => {
                   Termini i lokacije
                 </p>
                 <p className="text-[13px] leading-[1.78] font-normal mb-7" style={{ color: '#5F5A52' }}>
-                  Edukacije se organiziraju periodično. Program se održava u manjim grupama, ovisno o rasporedu i organizaciji partnera.
+                  Sljedeći termin potvrđen. Program se održava u manjim grupama s individualnim feedbackom.
                 </p>
                 <div>
                   {[
-                    { city: 'Zagreb', note: 'redovita organizacija' },
+                    { city: 'Zagreb', note: '30.–31.01.2027. · Poliklinika Body Balance · 9–17 h' },
                     { city: 'Slavonski Brod', note: 'u suradnji s lokalnim organizatorima' },
                     { city: 'Rijeka / Split', note: 'periodični termini prema interesu' },
                   ].map((loc, i) => (
@@ -1198,7 +1196,7 @@ const CrossfrictionPage = () => {
                   <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', marginBottom: '1.8rem' }} />
                 </div>
                 <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.38)', fontStyle: 'italic' }}>
-                  Sve lokacije i termini dostupni su na upit.
+                  Ostali gradovi — termini na upit.
                 </p>
               </motion.div>
 
@@ -1304,7 +1302,7 @@ const CrossfrictionPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
                     <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
-                      Primarna lokacija je Zagreb. Edukacije se povremeno organiziraju u Slavonskom Brodu (u suradnji s lokalnim partnerima) te periodično u Rijeci i Splitu prema interesu. Program je dvodnevni, vikendom od 9:00 do 16:00. Točni termini objavljuju se u rasporedu edukacija.
+                      Sljedeći termin: 30.–31.01.2027., Poliklinika Body Balance (Frane Kesterčaneka 2b, Zagreb), od 9 do 17 sati. Edukacije se povremeno organiziraju i u Slavonskom Brodu te Rijeci/Splitu prema interesu.
                     </p>
                   </AccordionContent>
                 </AccordionItem>

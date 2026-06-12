@@ -10,13 +10,12 @@ export interface CourseDate {
 
 export const akupresuraSchedule: CourseDate[] = [
   {
-    id: 'akupresura-zg-mar-2026',
+    id: 'akupresura-zg-nov-2026',
     courseName: 'Akupresura & Trigger Point Terapija',
-    startDate: '2026-03-27T09:00:00+01:00',
-    endDate: '2026-03-29T17:00:00+01:00',
-    location: 'Poliklinika Medical Body Balance, ul. Frane Kesterčaneka 2b',
+    startDate: '2026-11-14T09:00:00+01:00',
+    endDate: '2026-11-15T17:00:00+01:00',
+    location: 'Maxi Dance Studio, Frane Kesterčaneka 2',
     city: 'Zagreb',
-    earlyBirdDeadline: '2026-02-01T23:59:59+01:00'
   }
 ];
 

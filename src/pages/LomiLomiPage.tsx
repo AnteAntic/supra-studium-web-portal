@@ -72,7 +72,7 @@ const faq = [
   {
     pitanje: 'Gdje i kada se edukacija održava?',
     odgovor:
-      'Edukacija se organizira u Zagrebu. Sljedeći termin: 18.–19. travnja 2026. (Modul I). Termin Modula II bit će potvrđen uz prijavu.',
+      'Edukacija se organizira u Zagrebu — Poliklinika Body Balance, Frane Kesterčaneka 2b. Sljedeći termin: 12.–13. rujna 2026. (Modul I). Termin Modula II bit će potvrđen uz prijavu.',
   },
   {
     pitanje: 'Organiziraju li se tečajevi i u drugim gradovima?',
@@ -118,7 +118,7 @@ const LomiLomiPage: React.FC = () => {
     <div className="min-h-screen" style={{ background: '#FAF8F4' }}>
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: '18.–19.04.2026.' }]}
+        locations={[{ city: 'Zagreb', dates: '12.–13.9.2026.' }]}
         price="450 € / 780 €"
         ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
@@ -308,7 +308,7 @@ const LomiLomiPage: React.FC = () => {
             {[
               { label: 'Format', value: '2 × vikend (4 dana)' },
               { label: 'Voditelj', value: 'Dr. Awudi Atitsogbui' },
-              { label: 'Termin', value: '18.–19.04.2026.' },
+              { label: 'Termin', value: '12.–13.9.2026.' },
               { label: 'Završetak', value: 'Certifikat Supra Studium' },
             ].map(item => (
               <div
@@ -782,7 +782,7 @@ const LomiLomiPage: React.FC = () => {
                 Termini i kotizacija
               </p>
               <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                Zagreb · 18.–19. travnja 2026.
+                Zagreb · 12.–13. rujna 2026.
               </h2>
             </motion.div>
 
