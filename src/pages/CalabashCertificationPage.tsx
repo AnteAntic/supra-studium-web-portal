@@ -64,12 +64,12 @@ const faq = [
   {
     pitanje: 'Gdje se edukacija održava?',
     odgovor:
-      'Edukacija se odvija u Zagrebu. Točna lokacija bit će potvrđena uz objavu termina za 2026. godinu. Za prethodnu generaciju (studeni 2025.) korišten je Maxidance Studio, ul. Frane Kesterčaneka 2.',
+      'Edukacija se odvija u Zagrebu — Poliklinika Body Balance, Frane Kesterčaneka 2b. Termin: 10.–11. listopada 2026.',
   },
   {
-    pitanje: 'Kada će biti objavljen termin za 2026.?',
+    pitanje: 'Koji je termin za 2026.?',
     odgovor:
-      'Termin za sljedeću generaciju još nije potvrđen. Prijavom interesa putem obrasca bit ćeš prvi obaviješten čim termin i kotizacija budu objavljeni.',
+      'Termin je potvrđen: 10.–11. listopada 2026. (Poliklinika Body Balance, Zagreb). Kotizacija: 450 € — early bird ušteda 50 € vrijedi do 10.8.2026.',
   },
 ];
 
@@ -110,8 +110,8 @@ const CalabashCertificationPage: React.FC = () => {
     <div className="min-h-screen" style={{ background: '#FAF8F4' }}>
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: 'Termin 2026. (uskoro)' }]}
-        price="500 €"
+        locations={[{ city: 'Zagreb', dates: '10.–11.10.2026.' }]}
+        price="450 €"
         ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
@@ -744,30 +744,19 @@ const CalabashCertificationPage: React.FC = () => {
               className="mb-12"
             >
               <div
-                className="py-5 grid items-center"
-                style={{ gridTemplateColumns: '1fr auto', borderTop: '1px solid rgba(255,255,255,0.08)', gap: '2rem' }}
-              >
-                <p className="text-[13px] font-normal" style={{ color: 'rgba(255,255,255,0.50)' }}>
-                  Kotizacija (prethodna generacija, studeni 2025.)
-                </p>
-                <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                  500 €
-                </p>
-              </div>
-              <div
                 className="py-5 grid items-start"
                 style={{ gridTemplateColumns: '1fr auto', borderTop: '1px solid rgba(255,255,255,0.08)', gap: '2rem' }}
               >
                 <div>
-                  <p className="text-[13px] font-normal mb-1" style={{ color: 'rgba(255,255,255,0.50)' }}>
-                    Termin 2026.
+                  <p className="text-[13px] font-normal mb-1" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                    10.–11. listopada 2026.
                   </p>
-                  <p className="text-[11px] font-normal" style={{ color: 'rgba(184,154,79,0.55)' }}>
-                    Cijena i early bird bit će objavljeni uz potvrdu termina
+                  <p className="text-[11px] font-normal" style={{ color: 'rgba(184,154,79,0.72)' }}>
+                    Poliklinika Body Balance, Zagreb · early bird -50 € do 10.8.
                   </p>
                 </div>
-                <p className="text-[13px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.62)' }}>
-                  TBD
+                <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                  450 €
                 </p>
               </div>
               <div

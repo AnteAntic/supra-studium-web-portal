@@ -71,11 +71,11 @@ const postupnikKoraci = [
 ];
 
 const termini = [
-  { stupanj: 'Stupanj I', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[1] },
-  { stupanj: 'Stupanj II', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
+  { stupanj: 'Stupanj I', datum: '20.–22.11.2026. · 9–18 h', lokacija: 'Poliklinika Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[1] },
+  { stupanj: 'Stupanj II', datum: '5.–6.12.2026. · 9–17 h', lokacija: 'Maxi Dance Studio, Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
   { stupanj: 'Stupanj III', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[3] },
   { stupanj: 'Stupanj IV', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[4] },
-  { stupanj: 'Stupanj V', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[5] },
+  { stupanj: 'Stupanj V', datum: 'ned. 8.11.2026. · 9–17 h', lokacija: 'Maxi Dance Studio, Zagreb', cijena: '550 €', pdf: pdfLinks[5] },
 ];
 
 const faq = [
@@ -97,7 +97,7 @@ const faq = [
   },
   {
     q: 'Gdje se program odvija?',
-    a: 'U kliničkom prostoru u Zagrebu. Točna lokacija i parkiralište dostavljaju se pri prijavi.',
+    a: 'Edukacije se odvijaju u kliničkim prostorima u Zagrebu — Poliklinika Body Balance (Frane Kesterčaneka 2b) i Maxi Dance Studio (Frane Kesterčaneka 2, ispod bolnice Rebro). Točna lokacija i upute za parking navode se u potvrdi prijave.',
   },
   {
     q: 'Što je "Postupnik manualnog terapeuta"?',
@@ -142,7 +142,11 @@ export default function ManualTherapySchoolPage() {
       <MTHero onScrollToProgram={scrollToProgram} onScrollToPricing={scrollToPricing} />
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: 'Na upit' }]}
+        locations={[
+          { city: 'Stupanj V', dates: 'ned. 8.11.' },
+          { city: 'Stupanj I', dates: '20.–22.11.' },
+          { city: 'Stupanj II', dates: '5.–6.12.' },
+        ]}
         price=""
         ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"

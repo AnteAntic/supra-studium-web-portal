@@ -25,7 +25,7 @@ const ROOT = resolve(__dirname, '..');
 
 const CONTEXT_FILES = [
   { path: 'CLAUDE.md', label: 'PROJECT BRIEF (CLAUDE.md)' },
-  { path: 'BRAND_SYSTEM.md', label: 'BRAND SYSTEM (BRAND_SYSTEM.md)' },
+  { path: 'SUPRA_BRAND_SYSTEM_v2/01_SHARED_CORE.md', label: 'BRAND SYSTEM — SOURCE OF TRUTH (01_SHARED_CORE.md)' },
   { path: 'AI_STATUS.md', label: 'CURRENT STATUS & NEXT TASK (AI_STATUS.md)' },
 ];
 

@@ -49,7 +49,7 @@ const AkupresuraPage = () => {
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
       city: "Zagreb",
-      dates: "termin u pripremi"
+      dates: "14.–15.11.2026."
     }]} price="450 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
 
       {/* Klinička observacija */}
@@ -736,9 +736,9 @@ const AkupresuraPage = () => {
                     Termin i lokacija
                   </p>
                   <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
-                    Termin: u pripremi · Zagreb<br />
-                    <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Medical Body Balance</span><br />
-                    Ul. Frane Kesterčanka 2b
+                    14.–15.11.2026. · Zagreb<br />
+                    <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Maxi Dance Studio</span><br />
+                    Frane Kesterčaneka 2 (ispod bolnice Rebro)
                   </p>
                 </div>
               </motion.div>
@@ -776,11 +776,10 @@ const AkupresuraPage = () => {
                 </AccordionTrigger>
                 <AccordionContent className="pb-8">
                   <p className="text-[14px] leading-[1.85]" style={{ color: '#5F5A52' }}>
-                    Glavna edukacija održava se jednom godišnje u Zagrebu.
-                    Edukacije u drugim gradovima organiziraju se ovisno o interesu i rasporedu programa tijekom godine.
+                    Termin: 14.–15. studenog 2026., Zagreb — Maxi Dance Studio, Frane Kesterčaneka 2 (ispod bolnice Rebro).
                   </p>
                   <p className="text-[14px] leading-[1.8] mt-3" style={{ color: '#5F5A52' }}>
-                    Aktualni termini i lokacije objavljuju se kroz raspored edukacija.
+                    Edukacija se organizira jednom godišnje. Termine u drugim gradovima možeš pratiti na stranici rasporeda.
                   </p>
                 </AccordionContent>
               </AccordionItem>
