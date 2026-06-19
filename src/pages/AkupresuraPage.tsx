@@ -49,7 +49,7 @@ const AkupresuraPage = () => {
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[{
       city: "Zagreb",
-      dates: "termin u pripremi"
+      dates: "9–11.10.2026"
     }]} price="450 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
 
       {/* Klinička observacija */}
@@ -736,7 +736,7 @@ const AkupresuraPage = () => {
                     Termin i lokacija
                   </p>
                   <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
-                    Termin: u pripremi · Zagreb<br />
+                    Termin: 9–11.10.2026 · Zagreb<br />
                     <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Medical Body Balance</span><br />
                     Ul. Frane Kesterčanka 2b
                   </p>
