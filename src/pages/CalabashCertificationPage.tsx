@@ -195,8 +195,8 @@ const CalabashCertificationPage: React.FC = () => {
                   className="font-playfair font-semibold text-white leading-[1.17] text-[2.05rem] sm:text-[2.35rem] md:text-[2.7rem]"
                   style={{ textShadow: '0 2px 24px rgba(0,0,0,0.72), 0 1px 6px rgba(0,0,0,0.40)' }}
                 >
-                  Alat koji tkivo<br />
-                  prepoznaje.
+                  Dubina bez sile.<br />
+                  Kalabaš mijenja način kontakta s tkivom.
                 </h1>
               </motion.div>
 

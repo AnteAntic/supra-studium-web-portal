@@ -102,7 +102,8 @@ export function HomeHero() {
                 className="font-playfair font-semibold text-white leading-[1.18] text-[1.85rem] sm:text-[2.1rem] md:text-[2.3rem]"
                 style={{ textShadow: '0 2px 16px rgba(0,0,0,0.42), 0 1px 4px rgba(0,0,0,0.28)' }}
               >
-                Preciznost počinje pod prstima.
+                Dobar terapeut zna tehniku.<br />
+                Odličan zna što traži.
               </h1>
             </motion.div>
 
@@ -114,7 +115,7 @@ export function HomeHero() {
               className="mb-10"
             >
               <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-sm">
-                Edukacija terapeuta kroz palpaciju, kliničku observaciju i praktičan rad.
+                Edukacija kroz palpaciju, kliničku procjenu i razumijevanje tkivnog odgovora.
               </p>
             </motion.div>
 

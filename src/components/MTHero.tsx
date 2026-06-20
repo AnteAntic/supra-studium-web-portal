@@ -154,8 +154,8 @@ export function MTHero({ onScrollToProgram, onScrollToPricing }: MTHeroProps) {
                     '0 2px 24px rgba(0,0,0,0.72), 0 1px 6px rgba(0,0,0,0.40)',
                 }}
               >
-                Terapija koja<br />
-                zna zašto.
+                Manualna terapija počinje<br />
+                gdje tehnika staje.
               </h1>
             </motion.div>
 

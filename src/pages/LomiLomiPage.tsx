@@ -204,8 +204,8 @@ const LomiLomiPage: React.FC = () => {
                   className="font-playfair font-semibold text-white leading-[1.12] text-[2.15rem] sm:text-[2.45rem] md:text-[2.9rem]"
                   style={{ textShadow: '0 2px 28px rgba(0,0,0,0.80), 0 1px 8px rgba(0,0,0,0.45)' }}
                 >
-                  Val koji počinje<br />
-                  u plućima.
+                  Lomi Lomi počinje dahom.<br />
+                  Ruke ga samo slijede.
                 </h1>
               </motion.div>
 

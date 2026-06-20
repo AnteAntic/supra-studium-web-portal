@@ -163,7 +163,7 @@ export default function CuppingPage() {
                   className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
-                  Cupping & Ventuzoterapija · Supra Studium
+                  Cupping Edukacija · Zagreb
                 </span>
               </motion.div>
 
@@ -202,7 +202,7 @@ export default function CuppingPage() {
                 className="mb-5"
               >
                 <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-sm">
-                  9 kliznih tehnika, 3 specijalizirana protokola i TKM integracija. Jedan dan koji mijenja kako radiš s mekim tkivom.
+                  Jednodnevna edukacija koja obuhvaća 9 kliznih tehnika, 3 specijalizirana protokola i TKM integraciju.
                 </p>
               </motion.div>
 

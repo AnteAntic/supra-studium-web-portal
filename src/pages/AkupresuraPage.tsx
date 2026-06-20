@@ -32,7 +32,7 @@ const AkupresuraPage = () => {
   return <div className="min-h-screen bg-white">
       <CourseHero
         category="Akupresura & Trigger Point Terapija · Zagreb"
-        headline={<>Tkivo uvijek daje odgovor.</>}
+        headline={<>Tkivo uvijek daje odgovor.<br />Znaš li ga pročitati?</>}
         subheadline="Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom."
         videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&raw=1"
         videoPoster="/lovable-uploads/a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png"
