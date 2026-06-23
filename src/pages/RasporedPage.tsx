@@ -283,15 +283,16 @@ export default function RasporedPage() {
                 >
                   Prijavi interes
                 </a>
-                <Link
-                  to="/skola-manualne-terapije"
+                <a
+                  href="#jesen-2026"
                   className="text-[10px] font-normal tracking-[0.14em] uppercase"
                   style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
                   onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.95)')}
                   onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.72)')}
+                  onClick={e => { e.preventDefault(); document.getElementById('jesen-2026')?.scrollIntoView({ behavior: 'smooth' }); }}
                 >
-                  — Pogledaj edukacije
-                </Link>
+                  — Raspored 2026–2027
+                </a>
               </motion.div>
 
             </div>
