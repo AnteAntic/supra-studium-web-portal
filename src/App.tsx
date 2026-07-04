@@ -10,7 +10,6 @@ import BackToTopButton from "./components/BackToTopButton";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 // CoursesPage retired — /tecajevi redirects to /skola-manualne-terapije
-import VideoAcademyPage from "./pages/VideoAcademyPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import ContactPage from "./pages/ContactPage";
 import ManualTherapySchoolPage from "./pages/ManualTherapySchoolPage";
@@ -19,7 +18,7 @@ import AkupresuraPage from "./pages/AkupresuraPage";
 import CuppingPage from "./pages/CuppingPage";
 import LomiLomiPage from "./pages/LomiLomiPage";
 import CalabashCertificationPage from "./pages/CalabashCertificationPage";
-import SoulScanPage from "./pages/SoulScanPage";
+// SoulScanPage unrouted 2026-07 — stale Feb 2025 term; file kept for future reschedule
 import RasporedPage from "./pages/RasporedPage";
 import ThreeDStretchingPage from "./pages/ThreeDStretchingPage";
 import OUcilistuPage from "./pages/OUcilistuPage";
@@ -47,9 +46,7 @@ const App = () => (
               <Route path="/cupping-terapija" element={<CuppingPage />} />
               <Route path="/lomi-lomi" element={<LomiLomiPage />} />
               <Route path="/calabash-certifikacija" element={<CalabashCertificationPage />} />
-              <Route path="/soulscan" element={<SoulScanPage />} />
               <Route path="/3d-advanced-therapeutic-stretching" element={<ThreeDStretchingPage />} />
-              <Route path="/video-akademija" element={<VideoAcademyPage />} />
               <Route path="/raspored" element={<RasporedPage />} />
               <Route path="/o-ucilistu" element={<OUcilistuPage />} />
               <Route path="/prijava" element={<RegistrationPage />} />

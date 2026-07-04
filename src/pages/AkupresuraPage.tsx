@@ -895,7 +895,7 @@ const AkupresuraPage = () => {
           scale: 0.8,
           opacity: 0
         }} className="relative w-full max-w-4xl aspect-video bg-black rounded-sm overflow-hidden" onClick={e => e.stopPropagation()}>
-              <Button variant="ghost" size="icon" className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white" onClick={() => setVideoModalOpen(false)}>
+              <Button variant="ghost" size="icon" className="absolute top-4 right-4 z-10 bg-[#141311]/70 hover:bg-[#141311]/85 text-white" onClick={() => setVideoModalOpen(false)}>
                 <X className="w-6 h-6" />
               </Button>
               
