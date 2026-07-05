@@ -118,8 +118,11 @@ Hero je pilot za cijeli novi Supra web direction. Ključne odluke:
 
 ## BRAND WRITING SYSTEM
 
-Glavni dokument: `SUPRA_WEB_WRITING_MANIFEST_v1.txt` u ovom folderu.  
-(Ako nije tu, traži ga u: `/Users/ante/Library/Mobile Documents/com~apple~CloudDocs/Cowork OS/`)
+**Kanonski source of truth (Cowork OS):**
+- `/Users/ante/Library/Mobile Documents/com~apple~CloudDocs/Cowork OS/SUPRA_BRAND_SYSTEM_v2/01_SHARED_CORE.md` — ton, tri glasa, claim pravila, forbidden/allowed language
+- `/Users/ante/Library/Mobile Documents/com~apple~CloudDocs/Cowork OS/SUPRA_BRAND_SYSTEM_v2/02_WEB_SYSTEM.md` — web-specifična pravila
+
+Lokalni `BRAND_SYSTEM.md` i `SUPRA_WEB_WRITING_MANIFEST_v1.txt` (u ovom folderu) su radne kopije — kod proturječja vrijedi SUPRA_BRAND_SYSTEM_v2.
 
 Ključna pravila:
 
