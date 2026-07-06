@@ -25,3 +25,4 @@ dist-ssr
 backups/
 .env
 NEXT_CLAUDE_PROMPT.md
+_unused_arhiva/
