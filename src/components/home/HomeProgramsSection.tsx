@@ -20,14 +20,14 @@ const featuredPrograms = [
     title: 'Akupresura & Trigger Point',
     text: 'Program usmjeren na reakciju tkiva, preciznost palpacije i praktičnu primjenu terapijskih protokola.',
     href: '/akupresura-trigger-point',
-    image: '/lovable-uploads/a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png',
+    image: '/lovable-uploads/atp-program-kartica.webp',
   },
 ];
 
 const secondaryPrograms = [
-  { title: 'Cupping terapija', href: '/cupping-terapija', image: '/lovable-uploads/cup-hero-vakuum.jpg' },
+  { title: 'Cupping terapija', href: '/cupping-terapija', image: '/lovable-uploads/cup-hero-vakuum.webp' },
   { title: 'Lomi Lomi masaža', href: '/lomi-lomi', image: '/lovable-uploads/lomi-lomi-hero-sharp.jpeg' },
-  { title: 'Kalabaš masaža', href: '/calabash-certifikacija', image: '/lovable-uploads/f8638ba1-5e0f-4295-b885-f5c4abd7a407.png' },
+  { title: 'Kalabaš masaža', href: '/calabash-certifikacija', image: '/lovable-uploads/cal-program-kartica.webp' },
   { title: '3D Advanced Therapeutic Stretching', href: '/3d-advanced-therapeutic-stretching', image: '/lovable-uploads/3ds-technique-1.jpg' },
 ];
 

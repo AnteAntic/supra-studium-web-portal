@@ -102,7 +102,7 @@ const HeroBackground: React.FC<HeroBackgroundProps> = ({
         
         {backgroundType === 'video' && backgroundSrc && (
           <>
-            <video
+            <video preload="metadata"
               autoPlay
               muted
               loop

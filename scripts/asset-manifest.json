@@ -1,0 +1,295 @@
+[
+  {
+    "old": "58feb348-e906-407b-b136-b7cf851b4ae3.png",
+    "new": "kontakt-hero-ucionica.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/ContactPage.tsx"
+    ],
+    "oldKB": 752,
+    "newKB": 207
+  },
+  {
+    "old": "96995098-9ffc-48e4-b20b-f599490baac9.png",
+    "new": "atp-rad-u-paru-demonstracija.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/AkupresuraPage.tsx"
+    ],
+    "oldKB": 74,
+    "newKB": 29
+  },
+  {
+    "old": "a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png",
+    "new": "atp-program-kartica.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeProgramsSection.tsx",
+      "src/pages/AkupresuraPage.tsx"
+    ],
+    "oldKB": 133,
+    "newKB": 41
+  },
+  {
+    "old": "b843e565-9cd4-4b52-8f3d-02b24514415b.png",
+    "new": "atp-ante-palpacija.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/AkupresuraPage.tsx"
+    ],
+    "oldKB": 59,
+    "newKB": 22
+  },
+  {
+    "old": "b8e614dd-f6f8-4898-8d54-86f1245e6b74.png",
+    "new": "atp-akupresurne-tocke-leda.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/AkupresuraPage.tsx"
+    ],
+    "oldKB": 55,
+    "newKB": 16
+  },
+  {
+    "old": "bee0fe5c-f3fc-4b13-a5c2-533b30c4d78f.png",
+    "new": "cal-dr-awudi-portret.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/CalabashCertificationPage.tsx"
+    ],
+    "oldKB": 64,
+    "newKB": 23
+  },
+  {
+    "old": "cmc-ceremonija.jpg",
+    "new": "cmc-ceremonija.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeChampionshipSection.tsx"
+    ],
+    "oldKB": 1348,
+    "newKB": 250
+  },
+  {
+    "old": "cmc-dvorana-panorama.jpg",
+    "new": "cmc-dvorana-panorama.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeChampionshipSection.tsx"
+    ],
+    "oldKB": 1241,
+    "newKB": 217
+  },
+  {
+    "old": "cmc-grupna-zastave.jpg",
+    "new": "cmc-grupna-zastave.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeInternationalSection.tsx"
+    ],
+    "oldKB": 408,
+    "newKB": 169
+  },
+  {
+    "old": "cmc-pobjednici-banner-v2.jpg",
+    "new": "cmc-pobjednici-banner-v2.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeChampionshipSection.tsx"
+    ],
+    "oldKB": 1291,
+    "newKB": 276
+  },
+  {
+    "old": "cmc-pobjednici.jpg",
+    "new": "cmc-pobjednici.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeChampionshipSection.tsx"
+    ],
+    "oldKB": 1291,
+    "newKB": 276
+  },
+  {
+    "old": "cmc-proslava-trofej.jpg",
+    "new": "cmc-proslava-trofej.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeChampionshipSection.tsx"
+    ],
+    "oldKB": 1108,
+    "newKB": 217
+  },
+  {
+    "old": "cmc-sajo-dry-ice-v2.jpg",
+    "new": "cmc-sajo-dry-ice-v2.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeChampionshipSection.tsx"
+    ],
+    "oldKB": 1021,
+    "newKB": 138
+  },
+  {
+    "old": "cup-grid-lumbar.jpg",
+    "new": "cup-grid-lumbar.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/CuppingPage.tsx"
+    ],
+    "oldKB": 425,
+    "newKB": 75
+  },
+  {
+    "old": "cup-grid-vrat.jpg",
+    "new": "cup-grid-vrat.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/CuppingPage.tsx"
+    ],
+    "oldKB": 668,
+    "newKB": 197
+  },
+  {
+    "old": "cup-hero-vakuum.jpg",
+    "new": "cup-hero-vakuum.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeProgramsSection.tsx",
+      "src/pages/CuppingPage.tsx"
+    ],
+    "oldKB": 466,
+    "newKB": 115
+  },
+  {
+    "old": "f8638ba1-5e0f-4295-b885-f5c4abd7a407.png",
+    "new": "cal-program-kartica.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/home/HomeProgramsSection.tsx"
+    ],
+    "oldKB": 72,
+    "newKB": 38
+  },
+  {
+    "old": "feel-heal-festival.webp",
+    "new": "feel-heal-festival.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/components/FeelHealFestivalSection.tsx"
+    ],
+    "oldKB": 415,
+    "newKB": 382
+  },
+  {
+    "old": "fh-pobjednici-trofej.jpg",
+    "new": "fh-pobjednici-trofej.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/OUcilistuPage.tsx"
+    ],
+    "oldKB": 666,
+    "newKB": 245
+  },
+  {
+    "old": "lomi-grid-donji-ud.jpg",
+    "new": "lomi-grid-donji-ud.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/LomiLomiPage.tsx"
+    ],
+    "oldKB": 1826,
+    "newKB": 242
+  },
+  {
+    "old": "lomi-grid-podlaktica-duo.jpg",
+    "new": "lomi-grid-podlaktica-duo.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/LomiLomiPage.tsx"
+    ],
+    "oldKB": 1766,
+    "newKB": 218
+  },
+  {
+    "old": "lomi-intermezzo-duo-demonstracija.jpg",
+    "new": "lomi-intermezzo-duo-demonstracija.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/LomiLomiPage.tsx"
+    ],
+    "oldKB": 1507,
+    "newKB": 212
+  },
+  {
+    "old": "lomi-predavac-awudi-smijeh.jpg",
+    "new": "lomi-predavac-awudi-smijeh.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/ThreeDStretchingPage.tsx",
+      "src/pages/LomiLomiPage.tsx"
+    ],
+    "oldKB": 1599,
+    "newKB": 165
+  },
+  {
+    "old": "lomi-zavrsnica-zagrljaj.jpg",
+    "new": "lomi-zavrsnica-zagrljaj.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/LomiLomiPage.tsx"
+    ],
+    "oldKB": 1753,
+    "newKB": 172
+  },
+  {
+    "old": "raspored-hero-edukacija.jpg",
+    "new": "raspored-hero-edukacija.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/RasporedPage.tsx"
+    ],
+    "oldKB": 1062,
+    "newKB": 149
+  },
+  {
+    "old": "raspored-intermezzo-edukacija.jpg",
+    "new": "raspored-intermezzo-edukacija.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/RasporedPage.tsx"
+    ],
+    "oldKB": 1096,
+    "newKB": 183
+  },
+  {
+    "old": "raspored-pathway-holisticki-lomi.jpg",
+    "new": "raspored-pathway-holisticki-lomi.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/RasporedPage.tsx"
+    ],
+    "oldKB": 330,
+    "newKB": 103
+  },
+  {
+    "old": "raspored-pathway-holisticki-v2.jpg",
+    "new": "raspored-pathway-holisticki-v2.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/RasporedPage.tsx"
+    ],
+    "oldKB": 326,
+    "newKB": 76
+  },
+  {
+    "old": "raspored-pathway-manualna-v2.jpg",
+    "new": "raspored-pathway-manualna-v2.webp",
+    "dir": "public/lovable-uploads",
+    "refs": [
+      "src/pages/RasporedPage.tsx"
+    ],
+    "oldKB": 384,
+    "newKB": 102
+  }
+]

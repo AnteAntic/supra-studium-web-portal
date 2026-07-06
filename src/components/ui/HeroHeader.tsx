@@ -57,7 +57,7 @@ const HeroHeader = () => {
                 aria-label="home" 
                 className="flex items-center cursor-pointer"
               >
-                <img 
+                <img width={1920} height={587} 
                   src="/lovable-uploads/supra-studium-logo-desktop.png" 
                   alt="Supra Studium Logo" 
                   className="hidden md:block h-11 w-auto object-contain"
@@ -67,7 +67,7 @@ const HeroHeader = () => {
                   }}
                 />
                 {/* Mobile Logo */}
-                <img 
+                <img width={1920} height={587} 
                   src="/lovable-uploads/supra-studium-logo-desktop.png" 
                   alt="Supra Studium Logo" 
                   className="block md:hidden h-8 w-auto object-contain"

@@ -23,7 +23,7 @@ function ThreeDHero({
 
       {/* Static image background */}
       <div className="absolute inset-0">
-        <img
+        <img fetchPriority="high" width={1400} height={735}
           src="/lovable-uploads/3ds-hero.jpg"
           alt="3D Advanced Therapeutic Stretching"
           className="w-full h-full object-cover"
@@ -362,7 +362,7 @@ const ThreeDStretchingPage = () => {
               className="lg:pt-16"
             >
               <div style={{ aspectRatio: '3/2', overflow: 'hidden' }}>
-                <img
+                <img width={1400} height={748}
                   src="/lovable-uploads/3ds-technique-1.jpg"
                   alt="3D Therapeutic Stretching — klinička demonstracija"
                   loading="lazy"
@@ -649,7 +649,7 @@ const ThreeDStretchingPage = () => {
               viewport={{ once: true }}
             >
               <div className="overflow-hidden" style={{ aspectRatio: '16/9' }}>
-                <img
+                <img width={1400} height={821}
                   src="/lovable-uploads/3ds-technique-2.jpg"
                   alt="3D Stretching — terapijska demonstracija"
                   loading="lazy"
@@ -718,8 +718,8 @@ const ThreeDStretchingPage = () => {
                 className="lg:-ml-6 xl:-ml-10"
               >
                 <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
-                  <img
-                    src="/lovable-uploads/lomi-predavac-awudi-smijeh.jpg"
+                  <img width={1920} height={2880}
+                    src="/lovable-uploads/lomi-predavac-awudi-smijeh.webp"
                     alt="Dr. Awudi Atitsogbui — instruktor"
                     loading="lazy"
                     className="w-full h-full object-cover"

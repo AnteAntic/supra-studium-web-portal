@@ -47,7 +47,7 @@ const pathways: Pathway[] = [
       { text: '4. stupanj — specijalizacija i integracija',                       href: '/skola-manualne-terapije' },
       { type: 'advanced', text: '5. stupanj — advanced level i integracija kompleksnih kliničkih pristupa', href: '/skola-manualne-terapije' },
     ],
-    image: '/lovable-uploads/raspored-pathway-manualna-v2.jpg',
+    image: '/lovable-uploads/raspored-pathway-manualna-v2.webp',
     imagePos: 'center 38%',
     ctaLabel: 'Pogledaj program',
     ctaHref: '#jesen-2026',
@@ -64,7 +64,7 @@ const pathways: Pathway[] = [
       { type: 'advanced', text: '3D Advanced Therapeutic Stretching', sub: 'mobilnost, fascijalne linije i integrirani terapijski stretching', href: '/3d-advanced-therapeutic-stretching' },
       { text: 'Cupping terapija',                       href: '/cupping-terapija' },
     ],
-    image: '/lovable-uploads/raspored-pathway-holisticki-v2.jpg',
+    image: '/lovable-uploads/raspored-pathway-holisticki-v2.webp',
     imagePos: 'center 34%',
     ctaLabel: 'Pogledaj edukacije',
     ctaHref: '#jesen-2026',
@@ -79,7 +79,7 @@ const pathways: Pathway[] = [
       { text: 'Lomi Lomi masaža',              href: '/lomi-lomi' },
       { text: 'Kalabaš terapijski pristupi',   href: '/calabash-certifikacija' },
     ],
-    image: '/lovable-uploads/raspored-pathway-holisticki-lomi.jpg',
+    image: '/lovable-uploads/raspored-pathway-holisticki-lomi.webp',
     imagePos: 'center 28%',
     ctaLabel: 'Pogledaj edukacije',
     ctaHref: '#jesen-2026',
@@ -147,8 +147,8 @@ export default function RasporedPage() {
       <section ref={heroRef} className="relative min-h-screen overflow-hidden">
 
         {/* Photo */}
-        <img
-          src="/lovable-uploads/raspored-hero-edukacija.jpg"
+        <img fetchPriority="high" width={1920} height={1280}
+          src="/lovable-uploads/raspored-hero-edukacija.webp"
           alt="Edukacija manualne terapije — grupna demonstracija"
           className="absolute inset-0 w-full h-full object-cover"
           style={{
@@ -613,8 +613,8 @@ export default function RasporedPage() {
 
       {/* ── Documentary Intermezzo ────────────────────────────────── */}
       <section className="relative h-[55vh] overflow-hidden">
-        <img
-          src="/lovable-uploads/raspored-intermezzo-edukacija.jpg"
+        <img width={1365} height={2048}
+          src="/lovable-uploads/raspored-intermezzo-edukacija.webp"
           alt="Instruktor demonstrira tehniku polaznicima — edukacija manualne terapije."
           className="absolute inset-0 w-full h-full object-cover"
           style={{

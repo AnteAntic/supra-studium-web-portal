@@ -16,7 +16,7 @@ export default function ContactPage() {
         primaryCta={{ text: "Pošaljite poruku", href: "#kontakt" }}
         secondaryCta={{ text: "Nazovite nas", href: "tel:+385123456789" }}
         backgroundType="image"
-        backgroundSrc="/lovable-uploads/58feb348-e906-407b-b136-b7cf851b4ae3.png"
+        backgroundSrc="/lovable-uploads/kontakt-hero-ucionica.webp"
         overlayOpacity={0.6}
         theme="light"
         showScrollIndicator={true}

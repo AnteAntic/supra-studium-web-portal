@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const images = [
   {
-    src: '/lovable-uploads/cmc-grupna-zastave.jpg',
+    src: '/lovable-uploads/cmc-grupna-zastave.webp',
     caption: 'Međunarodni sudionici — različite države, isti standardi rada.',
   },
   {

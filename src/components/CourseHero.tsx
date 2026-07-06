@@ -51,7 +51,7 @@ export function CourseHero({
 
         {/* Video */}
         <div className="absolute inset-0 top-[-5rem]">
-          <video
+          <video preload="metadata"
             autoPlay
             loop
             muted

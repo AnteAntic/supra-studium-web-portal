@@ -17,7 +17,7 @@ export function HomeCredentialsSection() {
               className="md:col-span-1"
             >
               <div className="mb-8">
-                <img
+                <img width={400} height={368}
                   src="/lovable-uploads/fmtmnt-logo.png"
                   alt="World Federation of Massage, Manual Therapy & Nuad Thai"
                   className="w-28 h-28 object-contain"

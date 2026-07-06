@@ -288,7 +288,7 @@ export default function ManualTherapySchoolPage() {
           className="relative w-full"
           style={{ aspectRatio: '21/9' }}
         >
-          <img
+          <img width={1400} height={933}
             src="/lovable-uploads/mt-practicni-rad-kral.jpg"
             alt="Praktični rad — manualna terapija kralješnice"
             className="absolute inset-0 w-full h-full object-cover"
@@ -605,7 +605,7 @@ export default function ManualTherapySchoolPage() {
               viewport={{ once: true }}
             >
               <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                <img
+                <img width={1800} height={1200}
                   src="/lovable-uploads/mt-stosic-anatomija.webp"
                   alt="Mr.sc. A. Stošić — anatomska demonstracija"
                   className="w-full h-full object-cover"
@@ -631,7 +631,7 @@ export default function ManualTherapySchoolPage() {
                 className="flex-1"
               >
                 <div className="overflow-hidden h-full" style={{ minHeight: '160px' }}>
-                  <img
+                  <img width={1800} height={1200}
                     src="/lovable-uploads/mt-parovi-rada.webp"
                     alt="Parovi u praktičnom radu"
                     className="w-full h-full object-cover"
@@ -656,7 +656,7 @@ export default function ManualTherapySchoolPage() {
                 className="flex-1"
               >
                 <div className="overflow-hidden h-full" style={{ minHeight: '160px' }}>
-                  <img
+                  <img width={1400} height={933}
                     src="/lovable-uploads/mt-palpacija-lumbalna.jpg"
                     alt="Palpacija lumbalne regije"
                     className="w-full h-full object-cover"
@@ -687,7 +687,7 @@ export default function ManualTherapySchoolPage() {
             className="relative overflow-hidden"
           >
             <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
-              <img
+              <img width={1600} height={1066}
                 src="/lovable-uploads/mt-stosic-demonstracija.jpg"
                 alt="Mr.sc. A. Stošić — voditelj škole"
                 className="w-full h-full object-cover"

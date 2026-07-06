@@ -17,7 +17,7 @@ export function HomeFounderSection() {
               viewport={{ once: true }}
             >
               <div className="overflow-hidden" style={{ aspectRatio: '4/5' }}>
-                <img
+                <img width={1400} height={1051}
                   src="/lovable-uploads/ante-founder-portret.jpg"
                   alt="Ante Antić — osnivač Supra Studium"
                   className="w-full h-full object-cover object-top"

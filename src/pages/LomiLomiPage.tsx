@@ -426,8 +426,8 @@ const LomiLomiPage: React.FC = () => {
             custom={0}
           >
             <div className="w-full overflow-hidden relative" style={{ aspectRatio: '21/9' }}>
-              <img
-                src="/lovable-uploads/lomi-intermezzo-duo-demonstracija.jpg"
+              <img width={1920} height={2880}
+                src="/lovable-uploads/lomi-intermezzo-duo-demonstracija.webp"
                 alt="Demonstracija Lomi Lomi tehnike — dvoje instruktora, Zagreb 2025."
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center 30%' }}
@@ -577,7 +577,7 @@ const LomiLomiPage: React.FC = () => {
                 className="overflow-hidden relative md:col-start-1 md:row-start-1"
                 style={{ aspectRatio: '4/3' }}
               >
-                <img
+                <img width={1920} height={1279}
                   src="/lovable-uploads/lomi-grid-instrukcija-awudi-ante.png"
                   alt="Dr. Awudi i Ante Antić zajedno korigiraju tehniku na polazniku"
                   className="w-full h-full object-cover"
@@ -595,8 +595,8 @@ const LomiLomiPage: React.FC = () => {
               <div
                 className="overflow-hidden aspect-[3/4] md:aspect-auto md:col-start-2 md:row-start-1 md:row-span-2"
               >
-                <img
-                  src="/lovable-uploads/lomi-grid-podlaktica-duo.jpg"
+                <img width={1920} height={2880}
+                  src="/lovable-uploads/lomi-grid-podlaktica-duo.webp"
                   alt="Demonstracija zahvata podlakticom"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: 'center top' }}
@@ -609,8 +609,8 @@ const LomiLomiPage: React.FC = () => {
                 className="overflow-hidden md:col-start-1 md:row-start-2"
                 style={{ aspectRatio: '16/7' }}
               >
-                <img
-                  src="/lovable-uploads/lomi-grid-donji-ud.jpg"
+                <img width={1920} height={2880}
+                  src="/lovable-uploads/lomi-grid-donji-ud.webp"
                   alt="Rad s donjim udom — sekvenca i korekcija"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: 'center 40%' }}
@@ -635,8 +635,8 @@ const LomiLomiPage: React.FC = () => {
               custom={0}
             >
               <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
-                <img
-                  src="/lovable-uploads/lomi-predavac-awudi-smijeh.jpg"
+                <img width={1920} height={2880}
+                  src="/lovable-uploads/lomi-predavac-awudi-smijeh.webp"
                   alt="Dr. Awudi Atitsogbui — voditelj Lomi Lomi edukacije"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: 'center 12%' }}
@@ -753,8 +753,8 @@ const LomiLomiPage: React.FC = () => {
             custom={0}
           >
             <div className="w-full overflow-hidden" style={{ aspectRatio: '16/7' }}>
-              <img
-                src="/lovable-uploads/lomi-zavrsnica-zagrljaj.jpg"
+              <img width={1920} height={2880}
+                src="/lovable-uploads/lomi-zavrsnica-zagrljaj.webp"
                 alt="Završnica edukacije — Zagreb 2025."
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center 30%' }}

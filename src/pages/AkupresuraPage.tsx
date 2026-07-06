@@ -35,7 +35,7 @@ const AkupresuraPage = () => {
         headline={<>Tkivo uvijek daje odgovor.<br />Znaš li ga pročitati?</>}
         subheadline="Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom."
         videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&raw=1"
-        videoPoster="/lovable-uploads/a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png"
+        videoPoster="/lovable-uploads/atp-program-kartica.webp"
         primaryCTA={{ label: "Pogledaj program", onClick: scrollToProgram }}
         secondaryCTA={{ label: "Pogledaj video", onClick: () => setVideoModalOpen(true) }}
         facts={[
@@ -117,8 +117,8 @@ const AkupresuraPage = () => {
                 className="relative cursor-pointer"
                 onClick={() => setVideoModalOpen(true)}
               >
-                <img
-                  src="/lovable-uploads/a52bc10d-78ab-46e0-8ee4-13bf1e57e3d9.png"
+                <img loading="lazy" width={1280} height={714}
+                  src="/lovable-uploads/atp-program-kartica.webp"
                   alt="Akupresura — klinička demonstracija"
                   className="w-full h-auto object-cover"
                   style={{ filter: 'grayscale(6%)' }}
@@ -402,8 +402,8 @@ const AkupresuraPage = () => {
               viewport={{ once: true }}
             >
               <div className="overflow-hidden" style={{ aspectRatio: '16/9' }}>
-                <img
-                  src="/lovable-uploads/b843e565-9cd4-4b52-8f3d-02b24514415b.png"
+                <img width={427} height={640}
+                  src="/lovable-uploads/atp-ante-palpacija.webp"
                   alt="Ante Antić — palpacija u radu"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -430,8 +430,8 @@ const AkupresuraPage = () => {
                 viewport={{ once: true }}
               >
                 <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                  <img
-                    src="/lovable-uploads/b8e614dd-f6f8-4898-8d54-86f1245e6b74.png"
+                  <img width={480} height={640}
+                    src="/lovable-uploads/atp-akupresurne-tocke-leda.webp"
                     alt="Akupresurne točke na leđima"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -455,8 +455,8 @@ const AkupresuraPage = () => {
                 viewport={{ once: true }}
               >
                 <div className="overflow-hidden" style={{ aspectRatio: '1/1' }}>
-                  <img
-                    src="/lovable-uploads/96995098-9ffc-48e4-b20b-f599490baac9.png"
+                  <img width={640} height={427}
+                    src="/lovable-uploads/atp-rad-u-paru-demonstracija.webp"
                     alt="Rad u paru — klinička demonstracija"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -493,7 +493,7 @@ const AkupresuraPage = () => {
                 viewport={{ once: true }}
               >
                 <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
-                  <img
+                  <img width={1400} height={1867}
                     src="/lovable-uploads/ante-tretman-1400.webp"
                     srcSet="/lovable-uploads/ante-tretman-900.webp 900w, /lovable-uploads/ante-tretman-1400.webp 1400w"
                     sizes="(max-width: 1023px) 100vw, 50vw"

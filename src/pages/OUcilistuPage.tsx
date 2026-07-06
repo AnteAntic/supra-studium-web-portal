@@ -309,7 +309,7 @@ export default function OUcilistuPage() {
             className="flex flex-col gap-3"
           >
             <div className="overflow-hidden">
-              <img
+              <img width={1400} height={1051}
                 src="/lovable-uploads/ante-founder-portret.jpg"
                 alt="Ante Antić — osnivač Supra Studium, terapeut i predavač"
                 className="w-full object-cover aspect-[4/5]"
@@ -318,7 +318,7 @@ export default function OUcilistuPage() {
               />
             </div>
             <div className="overflow-hidden">
-              <img
+              <img width={900} height={1200}
                 src="/lovable-uploads/ante-tretman-900.webp"
                 alt="Ante Antić — klinički rad, manualna terapija"
                 className="w-full object-cover aspect-[16/5]"
@@ -613,8 +613,8 @@ export default function OUcilistuPage() {
               viewport={{ once: true }}
               className="overflow-hidden"
             >
-              <img
-                src="/lovable-uploads/fh-pobjednici-trofej.jpg"
+              <img width={1920} height={2880}
+                src="/lovable-uploads/fh-pobjednici-trofej.webp"
                 alt="Pobjednici Hrvatskog natjecanja u masaži i manualnoj terapiji — Supra Studium polaznici"
                 className="w-full object-cover"
                 loading="lazy"

@@ -103,8 +103,8 @@ export default function CuppingPage() {
 
         {/* Image */}
         <div className="absolute inset-0 top-[-5rem]">
-          <img
-            src="/lovable-uploads/cup-hero-vakuum.jpg"
+          <img fetchPriority="high" width={1536} height={2048}
+            src="/lovable-uploads/cup-hero-vakuum.webp"
             alt="Vakuumske čaše — cupping terapija"
             className="w-full h-full object-cover"
             style={{ objectPosition: "55% 30%" }}
@@ -577,8 +577,8 @@ export default function CuppingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-3 gap-3">
             {[
-              { src: "/lovable-uploads/cup-grid-lumbar.jpg", caption: "Vakuumska aplikacija — lumbalna regija" },
-              { src: "/lovable-uploads/cup-grid-vrat.jpg", caption: "Face cupping — vrat i dekoltea" },
+              { src: "/lovable-uploads/cup-grid-lumbar.webp", caption: "Vakuumska aplikacija — lumbalna regija" },
+              { src: "/lovable-uploads/cup-grid-vrat.webp", caption: "Face cupping — vrat i dekoltea" },
               { src: "/lovable-uploads/cup-grid-sliding.jpg", caption: "Klizni cupping — trapezius" },
             ].map((img, i) => (
               <motion.figure
@@ -617,7 +617,7 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="relative overflow-hidden"
           >
-            <img
+            <img width={1066} height={1600}
               src="/lovable-uploads/cup-mentor-portret.jpg"
               alt="Ante Antić — voditelj cupping tečaja"
               className="w-full object-cover aspect-[4/5]"

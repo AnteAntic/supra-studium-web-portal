@@ -103,8 +103,8 @@ export function HomeChampionshipSection() {
                 viewport={{ once: true }}
               >
                 <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                  <img
-                    src="/lovable-uploads/cmc-ceremonija.jpg"
+                  <img width={1920} height={1280}
+                    src="/lovable-uploads/cmc-ceremonija.webp"
                     alt="Feel & Heal Festival — ceremonija proglašenja"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -119,8 +119,8 @@ export function HomeChampionshipSection() {
                   viewport={{ once: true }}
                 >
                   <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                    <img
-                      src="/lovable-uploads/cmc-proslava-trofej.jpg"
+                    <img width={1365} height={2048}
+                      src="/lovable-uploads/cmc-proslava-trofej.webp"
                       alt="Proslava — pobjednici s trofejima"
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -134,8 +134,8 @@ export function HomeChampionshipSection() {
                   viewport={{ once: true }}
                 >
                   <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                    <img
-                      src="/lovable-uploads/cmc-pobjednici.jpg"
+                    <img width={1365} height={2048}
+                      src="/lovable-uploads/cmc-pobjednici.webp"
                       alt="Pobjednici — tri trofeja"
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -149,9 +149,9 @@ export function HomeChampionshipSection() {
           {/* Bottom image strip */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { src: '/lovable-uploads/cmc-sajo-dry-ice-v2.jpg', alt: 'Natjecanje — Sajo dry ice duo masaža', objectPosition: 'center center' },
-              { src: '/lovable-uploads/cmc-dvorana-panorama.jpg', alt: 'Natjecanje — dvorana i publika', objectPosition: 'center center' },
-              { src: '/lovable-uploads/cmc-pobjednici-banner-v2.jpg', alt: 'Pobjednici — trofeje i medalje uz CMC banner', objectPosition: 'center 20%' },
+              { src: '/lovable-uploads/cmc-sajo-dry-ice-v2.webp', alt: 'Natjecanje — Sajo dry ice duo masaža', objectPosition: 'center center' },
+              { src: '/lovable-uploads/cmc-dvorana-panorama.webp', alt: 'Natjecanje — dvorana i publika', objectPosition: 'center center' },
+              { src: '/lovable-uploads/cmc-pobjednici-banner-v2.webp', alt: 'Pobjednici — trofeje i medalje uz CMC banner', objectPosition: 'center 20%' },
             ].map((img, i) => (
               <motion.div
                 key={i}

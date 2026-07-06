@@ -60,7 +60,7 @@ const LogoProcessorPage = () => {
           <div className="border rounded-lg p-6 bg-card">
             <h2 className="text-lg font-semibold mb-4">Original Logo</h2>
             <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 p-8 rounded-lg flex items-center justify-center">
-              <img 
+              <img loading="lazy" width={1632} height={640} 
                 src="/lovable-uploads/logo-sharp-back.png" 
                 alt="Original Logo" 
                 className="max-h-32 w-auto"

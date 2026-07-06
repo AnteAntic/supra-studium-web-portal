@@ -27,7 +27,7 @@ export function MTHero({ onScrollToProgram, onScrollToPricing }: MTHeroProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.8, ease: 'easeOut' }}
       >
-        <video
+        <video preload="metadata"
           autoPlay
           loop
           muted

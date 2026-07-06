@@ -789,10 +789,9 @@ const CrossfrictionPage = () => {
               viewport={{ once: true }}
             >
               <div className="overflow-hidden" style={{ aspectRatio: '16/9' }}>
-                <img
+                <img fetchPriority="high"
                   src="/cfm-hero-documentation.jpg"
                   alt="Klinička koncentracija — terapijsko promatranje"
-                  loading="lazy"
                   className="w-full h-full object-cover"
                   style={{ display: 'block', objectPosition: 'center 30%' }}
                 />

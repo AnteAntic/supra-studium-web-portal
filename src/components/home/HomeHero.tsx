@@ -24,7 +24,7 @@ export function HomeHero() {
           style={{ objectPosition: 'center center' }}
         >
           <source src="/videos/home-hero-2026.mp4" type="video/mp4" />
-          <img src="/videos/home-hero-2026-poster.jpg" alt="Supra Studium edukacija" className="w-full h-full object-cover" />
+          <img width={1280} height={720} src="/videos/home-hero-2026-poster.jpg" alt="Supra Studium edukacija" className="w-full h-full object-cover" />
         </video>
       </div>
 

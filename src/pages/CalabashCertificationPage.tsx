@@ -412,7 +412,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Video intermezzo */}
       <div style={{ background: '#1A1814' }}>
         <div className="w-full overflow-hidden relative" style={{ aspectRatio: '21/9' }}>
-          <video
+          <video preload="metadata"
             autoPlay
             muted
             loop
@@ -555,7 +555,7 @@ const CalabashCertificationPage: React.FC = () => {
         className="relative w-full overflow-hidden"
         style={{ aspectRatio: '21/9', background: '#1A1510' }}
       >
-        <img
+        <img width={2880} height={2160}
           src="/lovable-uploads/cal-awudi-razgovor-narancasta.webp"
           alt="Dr. Awudi Atitsogbui — edukacija s kalabašem, Zagreb 2025."
           className="absolute inset-0 w-full h-full object-cover"
@@ -610,8 +610,8 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0}
             >
               <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
-                <img
-                  src="/lovable-uploads/bee0fe5c-f3fc-4b13-a5c2-533b30c4d78f.png"
+                <img width={427} height={640}
+                  src="/lovable-uploads/cal-dr-awudi-portret.webp"
                   alt="Dr. Awudi Atitsogbui"
                   className="w-full h-full object-cover"
                   loading="lazy"
