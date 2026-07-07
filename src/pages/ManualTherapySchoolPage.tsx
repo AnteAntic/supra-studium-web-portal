@@ -73,8 +73,8 @@ const postupnikKoraci = [
 
 const termini = [
   { stupanj: 'Stupanj I', datum: '20.–22.11.2026. · 9–18 h', lokacija: 'Poliklinika Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[1] },
-  { stupanj: 'Stupanj II', datum: '5.–6.12.2026. · 9–17 h', lokacija: 'Maxi Dance Studio, Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
-  { stupanj: 'Stupanj III', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[3] },
+  { stupanj: 'Stupanj II', datum: '12.–13.12.2026. · 9–17 h', lokacija: 'Poliklinika Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
+  { stupanj: 'Stupanj III', datum: '30.–31.01.2027. · 9–17 h', lokacija: 'Poliklinika Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[3] },
   { stupanj: 'Stupanj IV', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[4] },
   { stupanj: 'Stupanj V', datum: 'ned. 8.11.2026. · 9–17 h', lokacija: 'Maxi Dance Studio, Zagreb', cijena: '550 €', pdf: pdfLinks[5] },
 ];
@@ -155,7 +155,8 @@ export default function ManualTherapySchoolPage() {
         locations={[
           { city: 'Stupanj V', dates: 'ned. 8.11.' },
           { city: 'Stupanj I', dates: '20.–22.11.' },
-          { city: 'Stupanj II', dates: '5.–6.12.' },
+          { city: 'Stupanj II', dates: '12.–13.12.' },
+          { city: 'Stupanj III', dates: '30.–31.01.' },
         ]}
         price=""
         ctaText="Prijavi se"
