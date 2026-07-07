@@ -249,7 +249,7 @@ export default function RasporedPage() {
                   className="text-[13px] font-normal leading-[1.6]"
                   style={{ color: 'rgba(255,255,255,0.90)', textShadow: '0 1px 3px rgba(0,0,0,0.55)' }}
                 >
-                  Svi jesenski termini potvrđeni — rujan 2026. do siječnja 2027.
+                  Svi termini potvrđeni — rujan 2026. do veljače 2027.
                 </p>
               </motion.div>
 
@@ -316,7 +316,7 @@ export default function RasporedPage() {
                 className="text-[10px] uppercase tracking-[0.16em] font-normal text-center sm:text-left"
                 style={{ color: 'rgba(237,233,227,0.72)' }}
               >
-                Lomi Lomi · 12.9. — Kalabaš · 10.10. — Cupping · 1.11. — MT1 · 20.11. — CFM · 30.1.
+                Lomi Lomi · 12.9. — Kalabaš · 10.10. — Cupping · 1.11. — MT1 · 20.11. — CFM · 6.2.
               </span>
               <span className="hidden sm:block w-px h-3 bg-[#3a3530]" />
               <span
@@ -530,7 +530,8 @@ export default function RasporedPage() {
               { month: 'Listopad', code: '10', year: '2026', status: 'Termini potvrđeni.', sub: 'Kalabaš · 10.–11.10. — ATP · 9.–11.10. — 3D Stretching · 31.10.–1.11.' },
               { month: 'Studeni',  code: '11', year: '2026', status: 'Termini potvrđeni.', sub: 'Cupping · 1.11. — Propedeutika · 7.11. — MT5 Advanced · 8.11. — MT1 · 20.–22.11.' },
               { month: 'Prosinac', code: '12', year: '2026', status: 'Termin potvrđen.', sub: 'MT2 · 12.–13.12.' },
-              { month: 'Siječanj', code: '01', year: '2027', status: 'Termini potvrđeni.', sub: 'MT3 · 30.–31.01. — CFM Body Reset · 30.–31.01.' },
+              { month: 'Siječanj', code: '01', year: '2027', status: 'Termin potvrđen.', sub: 'MT3 · 30.–31.01.' },
+              { month: 'Veljača',  code: '02', year: '2027', status: 'Termin potvrđen.', sub: 'CFM Body Reset · 6.–7.02.' },
             ].map((item, i) => (
               <motion.div
                 key={item.month}

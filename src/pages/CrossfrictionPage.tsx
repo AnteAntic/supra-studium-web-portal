@@ -29,8 +29,8 @@ const CrossfrictionPage = () => {
       name: 'CFM Body Reset Method — Crossfriction funkcionalna masaža',
       description: 'Dvodnevna edukacija metodologije palpacije i funkcionalnog razmišljanja — logika tkivnog odgovora u kliničkoj praksi.',
       path: '/crossfriction-funkcionalna-masaza',
-      startDate: '2027-01-30',
-      endDate: '2027-01-31',
+      startDate: '2027-02-06',
+      endDate: '2027-02-07',
       priceEUR: 460,
       location: 'Zagreb',
     }));
@@ -47,9 +47,9 @@ const CrossfrictionPage = () => {
 
       <CourseStickyBar
         locations={[
-          { city: "Zagreb", dates: "30.–31.01.2027." },
+          { city: "Zagreb", dates: "6.–7.02.2027." },
         ]}
-        price="460 €"
+        price="460 € EB"
         ctaText="Rezerviraj mjesto"
         ctaHref="https://tally.so/r/wA5kvD"
       />
@@ -1108,68 +1108,109 @@ const CrossfrictionPage = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
 
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="mb-14"
+            >
+              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                Kotizacija edukacije
+              </p>
+              <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <p className="text-[14px] leading-[1.82] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                CFM Body Reset Method nije običan tečaj masaže — to je strukturirani sustav kliničkog razmišljanja kroz tri modula. Svaki modul gradi na prethodnom. Možeš se prijaviti na jedan modul ili rezervirati sva tri odjednom uz posebnu cijenu.
+              </p>
+            </motion.div>
 
-              {/* Left — Pricing + locations */}
+            {/* Pricing cards */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 mb-16"
+              style={{ border: '1px solid rgba(0,0,0,0.08)' }}
+            >
+              {/* Card: 1 modul */}
+              <div className="p-10" style={{ background: 'white', borderRight: '1px solid rgba(0,0,0,0.08)' }}>
+                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-7" style={{ color: '#B89A4F' }}>
+                  Jedan modul
+                </p>
+                <p
+                  className="font-playfair font-semibold leading-none mb-1"
+                  style={{ fontSize: '3.8rem', color: '#1F1D1A', letterSpacing: '-0.02em' }}
+                >
+                  460 €
+                </p>
+                <p className="text-[12px] font-normal mb-1" style={{ color: '#B89A4F' }}>
+                  Early Bird cijena
+                </p>
+                <p className="text-[12px] font-normal mb-8" style={{ color: 'rgba(0,0,0,0.30)', textDecoration: 'line-through' }}>
+                  Redovna cijena: 500 €
+                </p>
+                <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} className="pt-7 space-y-4">
+                  {[
+                    { bold: 'Early Bird vrijedi do 45 dana', rest: ' prije početka edukacije.' },
+                    { bold: 'Akontacija 100 €', rest: ' za rezervaciju mjesta.' },
+                    { bold: 'Ostatak kotizacije', rest: ' plaća se najkasnije 30 dana prije edukacije.' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-3">
+                      <span className="flex-shrink-0 mt-[3px]" style={{ color: '#B89A4F', fontSize: '11px' }}>—</span>
+                      <p className="text-[13px] leading-[1.68] font-normal" style={{ color: '#5F5A52' }}>
+                        <span style={{ color: '#1F1D1A', fontWeight: 500 }}>{item.bold}</span>{item.rest}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card: 3 modula */}
+              <div className="p-10" style={{ background: '#1F1D1A' }}>
+                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-7" style={{ color: 'rgba(184,154,79,0.75)' }}>
+                  Paket — sva 3 modula
+                </p>
+                <p
+                  className="font-playfair font-semibold leading-none mb-1"
+                  style={{ fontSize: '3.8rem', color: 'rgba(255,255,255,0.90)', letterSpacing: '-0.02em' }}
+                >
+                  1.290 €
+                </p>
+                <p className="text-[12px] font-normal mb-1" style={{ color: 'rgba(184,154,79,0.75)' }}>
+                  Ušteda 210 €
+                </p>
+                <p className="text-[12px] font-normal mb-8" style={{ color: 'rgba(255,255,255,0.25)', textDecoration: 'line-through' }}>
+                  Redovna cijena: 1.500 €
+                </p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }} className="pt-7">
+                  <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.52)' }}>
+                    Rezerviraj sva tri modula unaprijed i uštedi 210 €. CFM sustav daje punu kliničku sliku tek kada se prođe kroz sve tri razine — od palpacije do funkcionalne integracije.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Locations + What's included — 2 col */}
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-20">
+
+              {/* Left — Locations */}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
                 viewport={{ once: true }}
               >
-                <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
-                  Kotizacija edukacije
-                </p>
-                <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
-
-                <p className="text-[14px] leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '40ch' }}>
-                  Dvodnevna klinička edukacija. Teorija, palpacija i primjena u jednom kontinuiranom procesu učenja.
-                </p>
-
-                {/* Price — ceremonial block */}
-                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '2.8rem', paddingBottom: '0.6rem' }}>
-                  <p
-                    className="font-playfair font-semibold leading-none"
-                    style={{ fontSize: '4.4rem', color: '#1F1D1A', letterSpacing: '-0.02em' }}
-                  >
-                    460 €
-                  </p>
-                </div>
-                <div style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: '2.2rem', marginBottom: '2.4rem' }}>
-                  <p className="text-[13px] leading-[1.72] font-normal mt-4" style={{ color: '#7A7570' }}>
-                    Kotizacija uključuje sve materijale, priručnik i mentorsku podršku.
-                    <br />Uplata i rezervacija po dogovoru.
-                  </p>
-                </div>
-
-                {/* Emotional anchor */}
                 <p
                   className="font-playfair font-normal mb-6"
-                  style={{
-                    fontSize: 'clamp(0.9rem, 1.1vw, 0.97rem)',
-                    lineHeight: '1.75',
-                    color: '#3D3935',
-                    fontStyle: 'italic',
-                    maxWidth: '40ch',
-                  }}
+                  style={{ fontSize: 'clamp(0.9rem, 1.1vw, 0.97rem)', lineHeight: '1.75', color: '#3D3935', fontStyle: 'italic', maxWidth: '40ch' }}
                 >
                   Broj mjesta ograničen je kvalitetom praktičnog rada — ne kapacitetom dvorane.
                 </p>
-
-                {/* Editorial note — column balance */}
-                <p
-                  className="font-normal mb-14"
-                  style={{
-                    fontSize: '12.5px',
-                    lineHeight: '1.78',
-                    color: 'rgba(0,0,0,0.50)',
-                    maxWidth: '40ch',
-                  }}
-                >
+                <p className="font-normal mb-12" style={{ fontSize: '12.5px', lineHeight: '1.78', color: 'rgba(0,0,0,0.50)', maxWidth: '40ch' }}>
                   Edukacija je organizirana u malim grupama s fokusom na individualni feedback i praktičnu korekciju rada.
                 </p>
-
-                {/* Locations */}
                 <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                   Termini i lokacije
                 </p>
@@ -1178,25 +1219,15 @@ const CrossfrictionPage = () => {
                 </p>
                 <div>
                   {[
-                    { city: 'Zagreb', note: '30.–31.01.2027. · Poliklinika Body Balance · 9–17 h' },
+                    { city: 'Zagreb', note: '6.–7.02.2027. · Poliklinika Body Balance · 9–17 h' },
                     { city: 'Slavonski Brod', note: 'u suradnji s lokalnim organizatorima' },
                     { city: 'Rijeka / Split', note: 'periodični termini prema interesu' },
                   ].map((loc, i) => (
-                    <div
-                      key={i}
-                      className="flex items-baseline justify-between py-5"
-                      style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
-                    >
-                      <p
-                        className="font-playfair font-medium leading-tight"
-                        style={{ fontSize: '1.1rem', color: '#1F1D1A' }}
-                      >
+                    <div key={i} className="flex items-baseline justify-between py-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+                      <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.1rem', color: '#1F1D1A' }}>
                         {loc.city}
                       </p>
-                      <p
-                        className="text-[11px] font-normal"
-                        style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}
-                      >
+                      <p className="text-[11px] font-normal" style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}>
                         {loc.note}
                       </p>
                     </div>
@@ -1221,38 +1252,15 @@ const CrossfrictionPage = () => {
                 </p>
                 <div>
                   {[
-                    {
-                      title: '16 sati kliničke prakse',
-                      note: 'Palpacija, protokoli i klinička procjena u kontinuiranom radu s partnerom.',
-                    },
-                    {
-                      title: 'Digitalni priručnik',
-                      note: 'Protokoli, anatomske ilustracije i referentni materijali za nastavak samostalnog rada.',
-                    },
-                    {
-                      title: 'Mentorska podrška — 3 mjeseca',
-                      note: 'Pitanja iz prakse, klinički kontekst i individualni feedback nakon edukacije.',
-                    },
-                    {
-                      title: 'Certifikat i e-radna knjižica',
-                      note: 'Potvrda o završenoj edukaciji s upisom sati u e-radnu knjižicu.',
-                    },
-                    {
-                      title: 'Trajni pristup materijalima',
-                      note: 'Svi edukacijski materijali dostupni bez vremenskog ograničenja.',
-                    },
+                    { title: '16 sati kliničke prakse', note: 'Palpacija, protokoli i klinička procjena u kontinuiranom radu s partnerom.' },
+                    { title: 'Digitalni priručnik', note: 'Protokoli, anatomske ilustracije i referentni materijali za nastavak samostalnog rada.' },
+                    { title: 'Mentorska podrška — 3 mjeseca', note: 'Pitanja iz prakse, klinički kontekst i individualni feedback nakon edukacije.' },
+                    { title: 'Certifikat i e-radna knjižica', note: 'Potvrda o završenoj edukaciji s upisom sati u e-radnu knjižicu.' },
+                    { title: 'Trajni pristup materijalima', note: 'Svi edukacijski materijali dostupni bez vremenskog ograničenja.' },
                   ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="py-6"
-                      style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
-                    >
-                      <p className="text-[14.5px] leading-snug font-medium mb-2" style={{ color: '#1F1D1A' }}>
-                        {item.title}
-                      </p>
-                      <p className="text-[12.5px] leading-[1.70] font-normal" style={{ color: '#8A8480' }}>
-                        {item.note}
-                      </p>
+                    <div key={i} className="py-6" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+                      <p className="text-[14.5px] leading-snug font-medium mb-2" style={{ color: '#1F1D1A' }}>{item.title}</p>
+                      <p className="text-[12.5px] leading-[1.70] font-normal" style={{ color: '#8A8480' }}>{item.note}</p>
                     </div>
                   ))}
                   <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
@@ -1260,6 +1268,88 @@ const CrossfrictionPage = () => {
               </motion.div>
 
             </div>
+
+            {/* Bonus za prvih 8 */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="pt-16"
+              style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}
+            >
+              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                Bonus za prvih 8 prijavljenih
+              </p>
+              <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <p className="text-[14px] leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '52ch' }}>
+                Prvih 8 polaznika koji rezerviraju mjesto dobivaju četiri dodatna resursa koja nisu dio standardnog programa.
+              </p>
+              <div className="grid md:grid-cols-2" style={{ border: '1px solid rgba(0,0,0,0.07)' }}>
+                {[
+                  {
+                    n: '01',
+                    title: 'Dodatni Body Reset protokol',
+                    note: 'Poseban radni protokol koji pomaže polazniku povezati pregled, terapijski plan i redoslijed tretmana.',
+                  },
+                  {
+                    n: '02',
+                    title: 'Zoom Q&A nakon modula',
+                    note: 'Jedan zajednički online susret nakon edukacije za pitanja, ponavljanje i razjašnjenje primjene u praksi.',
+                  },
+                  {
+                    n: '03',
+                    title: 'Poseban PDF izvan standardne skripte',
+                    note: 'Dodatni stručni materijal za lakšu primjenu CFM postupka u radu s klijentima.',
+                  },
+                  {
+                    n: '04',
+                    title: 'Promatranje tretmana uživo',
+                    note: 'Mogućnost promatranja rada jedan na jedan s pravim klijentima. Organizira se prema dogovoru, dostupnosti i uz poštivanje privatnosti klijenta — u Poliklinici Body Balance u Zagrebu ili u ordinaciji u Zatonu kod Šibenika. Najveći uvid dolazi kroz stvarne slučajeve i promatranje kliničkog razmišljanja u praksi.',
+                  },
+                ].map((bonus, i) => (
+                  <div
+                    key={i}
+                    className="p-8"
+                    style={{
+                      background: 'white',
+                      borderRight: i % 2 === 0 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                      borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                    }}
+                  >
+                    <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
+                      {bonus.n}
+                    </p>
+                    <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                      {bonus.title}
+                    </p>
+                    <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                      {bonus.note}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-5"
+            >
+              <a
+                href="https://tally.so/r/wA5kvD"
+                className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-8 py-3 text-[10px] font-medium rounded-sm tracking-[0.18em] uppercase transition-colors duration-300 inline-block"
+              >
+                Rezerviraj svoje mjesto
+              </a>
+              <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.40)', fontStyle: 'italic' }}>
+                Akontacija 100 € potvrđuje rezervaciju. Ostatak se plaća 30 dana prije edukacije.
+              </p>
+            </motion.div>
+
           </div>
         </div>
       </section>
@@ -1310,7 +1400,7 @@ const CrossfrictionPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
                     <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
-                      Sljedeći termin: 30.–31.01.2027., Poliklinika Body Balance (Frane Kesterčaneka 2b, Zagreb), od 9 do 17 sati. Edukacije se povremeno organiziraju i u Slavonskom Brodu te Rijeci/Splitu prema interesu.
+                      Sljedeći termin: 6.–7.02.2027., Poliklinika Body Balance (Frane Kesterčaneka 2b, Zagreb), od 9 do 17 sati. Edukacije se povremeno organiziraju i u Slavonskom Brodu te Rijeci/Splitu prema interesu.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
