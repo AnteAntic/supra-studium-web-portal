@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CourseStickyBar } from "@/components/ui/CourseStickyBar";
 import { CourseFooter } from "@/components/CourseFooter";
 import { CourseRecommendations } from "@/components/course/CourseRecommendations";
+import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb } from '@/lib/seo';
 
 const tehnike = [
   { naziv: "Statički cupping", opis: "Lokalizirana dekompresija tkiva. Indikacija: trigger točke, mišićni spazam, periostalne adhezije." },
@@ -80,14 +81,21 @@ export default function CuppingPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Cupping & Ventuzoterapija — 9 kliznih tehnika | Supra Studium';
-    const descText = 'Klinički cupping tečaj: 9 kliznih tehnika, vakuumski Pin & Stretch, limfodrenažni i anti-age protokol. 1 dan, do 12 polaznika. Zagreb, Split, Rijeka.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', window.location.origin + '/cupping-terapija');
+    setPageMeta({
+      title: 'Cupping & Ventuzoterapija — 9 kliznih tehnika | Supra Studium',
+      description: 'Klinički cupping tečaj: 9 kliznih tehnika, vakuumski Pin & Stretch, limfodrenažni i anti-age protokol. 1 dan, do 12 polaznika. Zagreb, Split, Rijeka.',
+      path: '/cupping-terapija',
+      ogImage: '/lovable-uploads/cup-hero-vakuum.webp',
+    });
+    setJsonLd('course', courseSchema({
+      name: 'Cupping & Ventuzoterapija',
+      description: 'Jednodnevni klinički cupping tečaj: 9 kliznih tehnika, vakuumski Pin & Stretch, limfodrenažni i anti-age protokol.',
+      path: '/cupping-terapija',
+      startDate: '2026-11-01',
+      priceEUR: 390,
+      location: 'Zagreb',
+    }));
+    setJsonLd('breadcrumb', courseBreadcrumb('Cupping & Ventuzoterapija', '/cupping-terapija'));
   }, []);
 
   const scrollToKotizacija = () => {

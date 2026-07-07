@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CourseFooter } from "@/components/CourseFooter";
 import { CourseRecommendations } from "@/components/course/CourseRecommendations";
+import { setPageMeta } from '@/lib/seo';
 
 const fadeUp = {
   hidden: { opacity: 0 },
@@ -50,14 +51,12 @@ export default function OUcilistuPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'O učilištu | Supra Studium';
-    const descText = 'Supra Studium — učilište za kliničke edukacije terapeuta. Pristup temeljen na razumijevanju tkivnog odgovora, ne na skupljanju tehnika.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', window.location.origin + '/o-ucilistu');
+    setPageMeta({
+      title: 'O učilištu | Supra Studium',
+      description: 'Supra Studium — učilište za kliničke edukacije terapeuta. Pristup temeljen na razumijevanju tkivnog odgovora, ne na skupljanju tehnika.',
+      path: '/o-ucilistu',
+      ogImage: '/videos/o-ucilistu-poster.jpg',
+    });
   }, []);
 
   return (

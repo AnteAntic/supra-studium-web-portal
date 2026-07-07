@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
 import { CourseFooter } from '@/components/CourseFooter';
+import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb, faqSchema } from '@/lib/seo';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 16 },
@@ -87,23 +88,23 @@ const CalabashCertificationPage: React.FC = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '42%']);
 
   useEffect(() => {
-    document.title = 'Kalabaš masaža – Certifikacija | Supra Studium';
-    const descText =
-      'Certifikacija Therapeutic Calabash Deep Tissue Myofascial Release s dr. Awudijem — afrička tradicija i miofascijalni pristup u jednom alatu.';
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]');
-    if (!link) {
-      link = document.createElement('link');
-      link.setAttribute('rel', 'canonical');
-      document.head.appendChild(link);
-    }
-    link.setAttribute('href', window.location.origin + '/calabash-certifikacija');
+    setPageMeta({
+      title: 'Kalabaš masaža – Certifikacija | Supra Studium',
+      description: 'Certifikacija Therapeutic Calabash Deep Tissue Myofascial Release s dr. Awudijem — afrička tradicija i miofascijalni pristup u jednom alatu.',
+      path: '/calabash-certifikacija',
+      ogImage: '/lovable-uploads/cal-hero-gourds-bilateral-closeup.jpeg',
+    });
+    setJsonLd('course', courseSchema({
+      name: 'Kalabaš masaža — Therapeutic Calabash Deep Tissue Myofascial Release',
+      description: 'Dvodnevna certifikacija kalabaš masaže s dr. Awudijem Atitsogbuijem — afrička tradicija i miofascijalni pristup u jednom alatu.',
+      path: '/calabash-certifikacija',
+      startDate: '2026-10-10',
+      endDate: '2026-10-11',
+      priceEUR: 450,
+      location: 'Zagreb',
+    }));
+    setJsonLd('breadcrumb', courseBreadcrumb('Kalabaš masaža', '/calabash-certifikacija'));
+    setJsonLd('faq', faqSchema(faq.map((f) => ({ question: f.pitanje, answer: f.odgovor }))));
   }, []);
 
   return (

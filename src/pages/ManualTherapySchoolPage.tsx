@@ -5,6 +5,7 @@ import { MTHero } from '@/components/MTHero';
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
+import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb, faqSchema } from '@/lib/seo';
 
 const pdfLinks = {
   1: 'https://www.dropbox.com/scl/fi/hv3ggccj3bigoyxofngyf/raspored-1_stupanj.pdf?rlkey=8dhuv93b1aueor9438q4ngbve&dl=1',
@@ -126,14 +127,23 @@ export default function ManualTherapySchoolPage() {
   };
 
   useEffect(() => {
-    document.title = 'Škola Manualne Terapije — 5 stupnjeva, 99 sati | Supra Studium';
-    const descText = 'Pet stupnjeva manualne terapije pod vodstvom dr. Aleksandra Stošića — od dijagnostičkog razmišljanja do precizne terapijske primjene. Zagreb.';
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]');
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', window.location.origin + '/skola-manualne-terapije');
+    setPageMeta({
+      title: 'Škola Manualne Terapije — 5 stupnjeva, 99 sati | Supra Studium',
+      description: 'Pet stupnjeva manualne terapije pod vodstvom dr. Aleksandra Stošića — od dijagnostičkog razmišljanja do precizne terapijske primjene. Zagreb.',
+      path: '/skola-manualne-terapije',
+      ogImage: '/lovable-uploads/mt-palpacija-lumbalna.jpg',
+    });
+    setJsonLd('course', courseSchema({
+      name: 'Škola manualne terapije — 5 stupnjeva',
+      description: 'Škola manualne terapije kroz pet stupnjeva (99 sati) pod vodstvom dr. Aleksandra Stošića — od dijagnostičkog razmišljanja do precizne terapijske primjene.',
+      path: '/skola-manualne-terapije',
+      startDate: '2026-11-20',
+      endDate: '2026-11-22',
+      priceEUR: 390,
+      location: 'Zagreb',
+    }));
+    setJsonLd('breadcrumb', courseBreadcrumb('Škola manualne terapije', '/skola-manualne-terapije'));
+    setJsonLd('faq', faqSchema(faq.map((f) => ({ question: f.q, answer: f.a }))));
   }, []);
 
   return (

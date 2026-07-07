@@ -112,7 +112,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Accessibility Enhancement */}
       <div className="sr-only">
-        <h1>{title}</h1>
+        <p>{title}</p>
         <p>{description}</p>
         <a href={primaryCta.href}>{primaryCta.text}</a>
         <a href={secondaryCta.href}>{secondaryCta.text}</a>

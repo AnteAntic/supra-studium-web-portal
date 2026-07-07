@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
+import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb } from '@/lib/seo';
 
 /* ─── Inline hero (static image, no video) ─────────────────────── */
 function ThreeDHero({
@@ -270,14 +271,22 @@ function FactsBand() {
 /* ─── Page ──────────────────────────────────────────────────────── */
 const ThreeDStretchingPage = () => {
   useEffect(() => {
-    document.title = '3D Advanced Therapeutic Stretching — Dr. Awudi | Supra Studium';
-    const descText = 'Terapijski stretching kao klinički alat — mobilnost, kompenzacijski obrasci i odgovor tkiva na pokret. 2 dana, 16 sati, dr. Awudi. Zagreb.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', window.location.origin + '/3d-advanced-therapeutic-stretching');
+    setPageMeta({
+      title: '3D Advanced Therapeutic Stretching — Dr. Awudi | Supra Studium',
+      description: 'Terapijski stretching kao klinički alat — mobilnost, kompenzacijski obrasci i odgovor tkiva na pokret. 2 dana, 16 sati, dr. Awudi. Zagreb.',
+      path: '/3d-advanced-therapeutic-stretching',
+      ogImage: '/lovable-uploads/3ds-technique-1.jpg',
+    });
+    setJsonLd('course', courseSchema({
+      name: '3D Advanced Therapeutic Stretching',
+      description: 'Dvodnevna edukacija terapijskog stretchinga kao kliničkog alata (16 sati) s dr. Awudijem — mobilnost, kompenzacijski obrasci i odgovor tkiva na pokret.',
+      path: '/3d-advanced-therapeutic-stretching',
+      startDate: '2026-10-31',
+      endDate: '2026-11-01',
+      priceEUR: 450,
+      location: 'Zagreb',
+    }));
+    setJsonLd('breadcrumb', courseBreadcrumb('3D Advanced Therapeutic Stretching', '/3d-advanced-therapeutic-stretching'));
     return () => { document.title = 'Supra Studium — Kliničke edukacije za terapeute'; };
   }, []);
 

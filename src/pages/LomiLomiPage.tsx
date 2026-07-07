@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
 import { CourseFooter } from '@/components/CourseFooter';
+import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb, faqSchema } from '@/lib/seo';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 16 },
@@ -95,23 +96,23 @@ const LomiLomiPage: React.FC = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '42%']);
 
   useEffect(() => {
-    document.title = 'Lomi Lomi masaža — Ancient Wave | Supra Studium';
-    const descText =
-      'Ancient Wave Lomi Lomi — havajska tehnika u kojoj ritam, dah i pokret čine jednu sekvencu. Certifikacija u Zagrebu s dr. Awudijem Atitsogbuijem.';
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]');
-    if (!link) {
-      link = document.createElement('link');
-      link.setAttribute('rel', 'canonical');
-      document.head.appendChild(link);
-    }
-    link.setAttribute('href', window.location.origin + '/lomi-lomi');
+    setPageMeta({
+      title: 'Lomi Lomi masaža — Ancient Wave | Supra Studium',
+      description: 'Ancient Wave Lomi Lomi — havajska tehnika u kojoj ritam, dah i pokret čine jednu sekvencu. Certifikacija u Zagrebu s dr. Awudijem Atitsogbuijem.',
+      path: '/lomi-lomi',
+      ogImage: '/videos/lomi-hero-poster.jpg',
+    });
+    setJsonLd('course', courseSchema({
+      name: 'Lomi Lomi masaža — Ancient Wave',
+      description: 'Dvodnevna certifikacija havajske Lomi Lomi tehnike (Ancient Wave) s dr. Awudijem Atitsogbuijem — ritam, dah i pokret u jednoj sekvenci.',
+      path: '/lomi-lomi',
+      startDate: '2026-09-12',
+      endDate: '2026-09-13',
+      priceEUR: 450,
+      location: 'Zagreb',
+    }));
+    setJsonLd('breadcrumb', courseBreadcrumb('Lomi Lomi masaža', '/lomi-lomi'));
+    setJsonLd('faq', faqSchema(faq.map((f) => ({ question: f.pitanje, answer: f.odgovor }))));
   }, []);
 
   return (

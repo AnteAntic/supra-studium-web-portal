@@ -5,6 +5,7 @@ import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CFMHero } from '@/components/CFMHero';
 import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
+import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb } from '@/lib/seo';
 
 const CrossfrictionPage = () => {
   const scrollToProgram = () => {
@@ -18,14 +19,22 @@ const CrossfrictionPage = () => {
   };
 
   useEffect(() => {
-    document.title = 'CFM Body Reset Method — Škola terapijskog razmišljanja | Supra Studium';
-    const descText = 'Metodologija palpacije i funkcionalnog razmišljanja za terapeute koji žele razumjeti logiku tkivnog odgovora. Periodične edukacije u Zagrebu, Slavonskom Brodu i Rijeci.';
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]');
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', window.location.origin + '/crossfriction-funkcionalna-masaza');
+    setPageMeta({
+      title: 'CFM Body Reset Method — Škola terapijskog razmišljanja | Supra Studium',
+      description: 'Metodologija palpacije i funkcionalnog razmišljanja za terapeute koji žele razumjeti logiku tkivnog odgovora. Periodične edukacije u Zagrebu, Slavonskom Brodu i Rijeci.',
+      path: '/crossfriction-funkcionalna-masaza',
+      ogImage: '/lovable-uploads/cfm-tretman-closeup.jpg',
+    });
+    setJsonLd('course', courseSchema({
+      name: 'CFM Body Reset Method — Crossfriction funkcionalna masaža',
+      description: 'Dvodnevna edukacija metodologije palpacije i funkcionalnog razmišljanja — logika tkivnog odgovora u kliničkoj praksi.',
+      path: '/crossfriction-funkcionalna-masaza',
+      startDate: '2027-01-30',
+      endDate: '2027-01-31',
+      priceEUR: 460,
+      location: 'Zagreb',
+    }));
+    setJsonLd('breadcrumb', courseBreadcrumb('CFM Body Reset Method', '/crossfriction-funkcionalna-masaza'));
   }, []);
 
   return (

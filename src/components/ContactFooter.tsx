@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 const inputBase: React.CSSProperties = {
   border: '1px solid rgba(255,255,255,0.10)',
@@ -251,6 +252,35 @@ export const ContactFooter = () => {
             </motion.div>
 
           </div>
+
+          {/* Site links — tiha navigacija za posjetitelje i crawlere */}
+          <nav
+            aria-label="Sve stranice"
+            className="pb-10 mb-2 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-2"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem' }}
+          >
+            {[
+              { to: '/skola-manualne-terapije', label: 'Škola manualne terapije' },
+              { to: '/crossfriction-funkcionalna-masaza', label: 'CFM Body Reset' },
+              { to: '/akupresura-trigger-point', label: 'Akupresura & Trigger Point' },
+              { to: '/cupping-terapija', label: 'Cupping & Ventuzoterapija' },
+              { to: '/lomi-lomi', label: 'Lomi Lomi masaža' },
+              { to: '/calabash-certifikacija', label: 'Kalabaš masaža' },
+              { to: '/3d-advanced-therapeutic-stretching', label: '3D Therapeutic Stretching' },
+              { to: '/raspored', label: 'Raspored edukacija' },
+              { to: '/o-ucilistu', label: 'O učilištu' },
+              { to: '/kontakt', label: 'Kontakt' },
+            ].map(({ to, label }) => (
+              <RouterLink
+                key={to}
+                to={to}
+                className="text-[11px] font-normal py-1 transition-colors duration-300 hover:text-[#B89A4F]"
+                style={{ color: 'rgba(255,255,255,0.40)' }}
+              >
+                {label}
+              </RouterLink>
+            ))}
+          </nav>
 
           {/* Bottom bar */}
           <div

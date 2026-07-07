@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ContactFooter } from '@/components/ContactFooter';
+import { setPageMeta, setJsonLd, faqSchema } from '@/lib/seo';
 
 const fadeUp = {
   hidden: { opacity: 0 },
@@ -123,14 +124,13 @@ export default function RasporedPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Raspored edukacija 2026 | Supra Studium';
-    const descText = 'Pregled svih termina kliničkih edukacija Supra Studium — Zagreb, Split, Rijeka. Manualna terapija, CFM, akupresura, cupping, Lomi Lomi i kalabaš.';
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', window.location.origin + '/raspored');
+    setPageMeta({
+      title: 'Raspored edukacija 2026 | Supra Studium',
+      description: 'Pregled svih termina kliničkih edukacija Supra Studium — Zagreb, Split, Rijeka. Manualna terapija, CFM, akupresura, cupping, Lomi Lomi i kalabaš.',
+      path: '/raspored',
+      ogImage: '/lovable-uploads/raspored-hero-edukacija.webp',
+    });
+    setJsonLd('faq', faqSchema(faqItems.map((f) => ({ question: f.q, answer: f.a }))));
   }, []);
 
   return (

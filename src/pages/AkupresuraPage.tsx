@@ -7,18 +7,27 @@ import { CourseStickyBar } from '@/components/ui/CourseStickyBar';
 import { CourseHero } from '@/components/CourseHero';
 import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
+import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb } from '@/lib/seo';
 const AkupresuraPage = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   useEffect(() => {
-    document.title = 'Akupresura & Trigger Point — Klinička edukacija | Supra Studium';
-    const descText = 'Klinička edukacija akupresure i trigger point metode za terapeute. 3 dana, 24 sata intenzivnog rada u paru. Obrazac boli, palpacija i lokalna/distalna točka. Zagreb.';
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
-    meta.setAttribute('content', descText);
-    let link = document.querySelector('link[rel="canonical"]');
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', window.location.origin + '/akupresura-trigger-point');
+    setPageMeta({
+      title: 'Akupresura & Trigger Point — Klinička edukacija | Supra Studium',
+      description: 'Klinička edukacija akupresure i trigger point metode za terapeute. 3 dana, 24 sata intenzivnog rada u paru. Obrazac boli, palpacija i lokalna/distalna točka. Zagreb.',
+      path: '/akupresura-trigger-point',
+      ogImage: '/lovable-uploads/atp-program-kartica.webp',
+    });
+    setJsonLd('course', courseSchema({
+      name: 'Akupresura & Trigger Point Terapija',
+      description: 'Trodnevna klinička edukacija akupresure i trigger point metode za terapeute — obrazac boli, palpacija, lokalna i distalna točka.',
+      path: '/akupresura-trigger-point',
+      startDate: '2026-10-09',
+      endDate: '2026-10-11',
+      priceEUR: 450,
+      location: 'Poliklinika Body Balance, Zagreb',
+    }));
+    setJsonLd('breadcrumb', courseBreadcrumb('Akupresura & Trigger Point', '/akupresura-trigger-point'));
   }, []);
 
   const scrollToProgram = () => {
