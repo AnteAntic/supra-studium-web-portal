@@ -49,24 +49,28 @@ const termini = [
     grad: 'Zagreb',
     datum: '12.–13.9.2026.',
     lokacija: 'Poliklinika Body Balance, Frane Kesterčaneka 2b',
+    earlyBird: '29.07.2026.',
   },
   {
     modul: 'Modul 1',
     grad: 'Split',
     datum: '14.–15.11.2026.',
     lokacija: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6',
+    earlyBird: '30.09.2026.',
   },
   {
     modul: 'Modul 1',
     grad: 'Rijeka',
     datum: '6.–7.02.2027.',
     lokacija: 'Udruga Eterico, Ul. Zdravka Kučića 39',
+    earlyBird: '23.12.2026.',
   },
   {
     modul: 'Modul 2',
     grad: 'Zagreb',
     datum: '10.–11.04.2027.',
     lokacija: 'Poliklinika Medical Body Balance, Frane Kesterčaneka 2b',
+    earlyBird: '24.02.2027.',
   },
 ];
 
@@ -891,9 +895,14 @@ const LomiLomiPage: React.FC = () => {
                       {t.datum}
                     </p>
                   </div>
-                  <p className="text-[12px] font-normal mt-2 leading-[1.6]" style={{ color: 'rgba(255,255,255,0.42)' }}>
-                    {t.lokacija}
-                  </p>
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1.5 mt-2">
+                    <p className="text-[12px] font-normal leading-[1.6]" style={{ color: 'rgba(255,255,255,0.42)' }}>
+                      {t.lokacija}
+                    </p>
+                    <p className="text-[10px] uppercase tracking-[0.14em] font-medium whitespace-nowrap" style={{ color: 'rgba(184,154,79,0.85)' }}>
+                      Early Bird do {t.earlyBird}
+                    </p>
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -952,6 +961,9 @@ const LomiLomiPage: React.FC = () => {
                   </p>
                 </div>
               </div>
+              <p className="text-[12px] leading-[1.68] font-normal mt-6" style={{ color: 'rgba(255,255,255,0.40)', fontStyle: 'italic' }}>
+                Prijave za svaki termin zatvaraju se 45 dana prije početka edukacije. Nakon isteka tog roka više nije moguće rezervirati mjesto.
+              </p>
             </motion.div>
 
             {/* Rezervacija mjesta */}
@@ -969,7 +981,6 @@ const LomiLomiPage: React.FC = () => {
               </p>
               <div className="space-y-4">
                 {[
-                  { bold: 'Prijave su otvorene', rest: ' do 45 dana prije početka pojedine edukacije. Nakon isteka roka prijave više nisu moguće.' },
                   { bold: 'Akontacija 100 €', rest: ' potvrđuje rezervaciju mjesta.' },
                   { bold: 'Preostali iznos kotizacije', rest: ' plaća se najkasnije 30 dana prije početka edukacije.' },
                   { bold: 'Broj mjesta', rest: ' ograničen je na maksimalno 12 polaznika.' },
