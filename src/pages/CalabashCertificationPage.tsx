@@ -36,6 +36,74 @@ const metodaKlinicki = [
   'Terapeut koji precizno pozicionira tijelo ne troši snagu — primjenjuje mehaniku.',
 ];
 
+const terminiKalabas = [
+  {
+    grad: 'Split',
+    datum: '18.–19.09.2026.',
+    lokacija: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6',
+    earlyBird: '04.08.2026.',
+  },
+  {
+    grad: 'Rijeka',
+    datum: '25.–26.09.2026.',
+    lokacija: 'Udruga Eterico, Ul. Zdravka Kučića 39',
+    earlyBird: '11.08.2026.',
+  },
+  {
+    grad: 'Zagreb',
+    datum: '06.–07.03.2027.',
+    lokacija: 'Poliklinika Medical Body Balance, Frane Kesterčaneka 2b',
+    earlyBird: '20.01.2027.',
+  },
+];
+
+const ukljuceno = [
+  'Dva originalna ručno izrađena Kalabaš alata',
+  'Nastavni materijali',
+  'Certifikat Učilišta Supra Studium',
+  'Praktičan rad u maloj grupi',
+  'Mentorstvo nakon edukacije',
+  'Pristup dodatnim stručnim materijalima',
+];
+
+const bonusiKalabas: { n: string; title: string; note: string; bullets?: string[]; disclaimer?: string }[] = [
+  {
+    n: '01',
+    title: 'VIP Observer Pass — Official Croatian Massage & Manual Therapy Championship',
+    note: 'Besplatan VIP Observer Pass za sva tri dana prvenstva.',
+    bullets: [
+      'Pristup svim natjecanjima',
+      'Pristup stručnim radionicama',
+      'Promatranje najboljih terapeuta iz Hrvatske i inozemstva',
+      'Networking s međunarodnim sucima, edukatorima i terapeutima',
+    ],
+  },
+  {
+    n: '02',
+    title: 'Online Q&A nakon edukacije',
+    note: 'Jedan zajednički online susret nakon edukacije za pitanja, ponavljanje i razmjenu iskustava iz prakse.',
+  },
+  {
+    n: '03',
+    title: 'Ekskluzivni stručni PDF',
+    note: 'Dodatni stručni materijal koji nije dio standardne skripte.',
+  },
+  {
+    n: '04',
+    title: 'Mogućnost promatranja tretmana uživo',
+    note: 'Mogućnost promatranja rada iskusnog terapeuta tijekom tretmana s pravim klijentima, prema dogovoru i dostupnosti termina. Tijekom promatranja uči se:',
+    bullets: [
+      'Razgovor s klijentom',
+      'Procjena stanja',
+      'Razmišljanje terapeuta',
+      'Odabir tehnika',
+      'Prilagodba tretmana stvarnoj osobi',
+      'Završna evaluacija tretmana',
+    ],
+    disclaimer: 'Promatranje se organizira prema dogovoru, raspoloživosti termina i uz prethodnu suglasnost klijenta.',
+  },
+];
+
 const faq = [
   {
     pitanje: 'Je li tečaj namijenjen svim terapeutima?',
@@ -50,7 +118,7 @@ const faq = [
   {
     pitanje: 'Što je uključeno u kotizaciju?',
     odgovor:
-      'U cijenu su uključeni nastavni materijali, praktični rad u paru kroz oba dana, certifikat Supra Studium škole i dva ručno izrađena kalabaša.',
+      'U cijenu su uključena dva originalna ručno izrađena Kalabaš alata, nastavni materijali, praktičan rad u maloj grupi, certifikat Učilišta Supra Studium, mentorstvo nakon edukacije i pristup dodatnim stručnim materijalima.',
   },
   {
     pitanje: 'Koliko polaznika sudjeluje u grupi?',
@@ -65,12 +133,12 @@ const faq = [
   {
     pitanje: 'Gdje se edukacija održava?',
     odgovor:
-      'Edukacija se odvija u Zagrebu — Poliklinika Body Balance, Frane Kesterčaneka 2b. Termin: 10.–11. listopada 2026.',
+      'Edukacija se održava u tri grada: Split (18.–19.09.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6), Rijeka (25.–26.09.2026., Udruga Eterico, Ul. Zdravka Kučića 39) i Zagreb (06.–07.03.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
   },
   {
-    pitanje: 'Koji je termin za 2026.?',
+    pitanje: 'Kolika je kotizacija?',
     odgovor:
-      'Termin je potvrđen: 10.–11. listopada 2026. (Poliklinika Body Balance, Zagreb). Kotizacija: 450 € — early bird ušteda 50 € vrijedi do 10.8.2026.',
+      'Early Bird kotizacija iznosi 490 €, redovna cijena je 540 €. Rezervacija se potvrđuje akontacijom od 100 €, a preostali iznos plaća se najkasnije 30 dana prije početka edukacije. Early Bird rok razlikuje se po terminu i naveden je uz svaki grad.',
   },
 ];
 
@@ -98,10 +166,10 @@ const CalabashCertificationPage: React.FC = () => {
       name: 'Kalabaš masaža — Therapeutic Calabash Deep Tissue Myofascial Release',
       description: 'Dvodnevna certifikacija kalabaš masaže s dr. Awudijem Atitsogbuijem — afrička tradicija i miofascijalni pristup u jednom alatu.',
       path: '/calabash-certifikacija',
-      startDate: '2026-10-10',
-      endDate: '2026-10-11',
-      priceEUR: 450,
-      location: 'Zagreb',
+      startDate: '2026-09-18',
+      endDate: '2026-09-19',
+      priceEUR: 490,
+      location: 'Split',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('Kalabaš masaža', '/calabash-certifikacija'));
     setJsonLd('faq', faqSchema(faq.map((f) => ({ question: f.pitanje, answer: f.odgovor }))));
@@ -111,8 +179,12 @@ const CalabashCertificationPage: React.FC = () => {
     <div className="min-h-screen" style={{ background: '#FAF8F4' }}>
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: '10.–11.10.2026.' }]}
-        price="450 €"
+        locations={[
+          { city: 'Split', dates: '18.–19.9.2026.' },
+          { city: 'Rijeka', dates: '25.–26.9.2026.' },
+          { city: 'Zagreb', dates: '6.–7.3.2027.' },
+        ]}
+        price="Early Bird od 490 €"
         ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
@@ -173,7 +245,7 @@ const CalabashCertificationPage: React.FC = () => {
                   className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.28em] block"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
-                  Kalabaš Certifikacija · Zagreb
+                  Kalabaš Certifikacija · 2026 – 2027
                 </span>
               </motion.div>
 
@@ -223,7 +295,7 @@ const CalabashCertificationPage: React.FC = () => {
                 className="mb-14 flex flex-wrap items-center"
                 style={{ columnGap: '14px', rowGap: '4px' }}
               >
-                {['2 modula', '18 sati', 'Rad s alatom', 'Certifikat'].map((item, i) => (
+                {['2 dana', '18 sati', 'Rad s alatom', 'Certifikat'].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
                       <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '11px', lineHeight: 1 }}>·</span>
@@ -300,7 +372,7 @@ const CalabashCertificationPage: React.FC = () => {
             {[
               { label: 'Format', value: '2 dana · 18 sati' },
               { label: 'Voditelj', value: 'Dr. Awudi Atitsogbui' },
-              { label: 'Termin', value: 'Uskoro 2026.' },
+              { label: 'Prvi termin', value: 'Split · 18.–19.9.2026.' },
               { label: 'Završetak', value: 'Certifikat Supra Studium' },
             ].map(item => (
               <div
@@ -719,6 +791,7 @@ const CalabashCertificationPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
 
+            {/* Header + intro */}
             <motion.div
               variants={fadeIn}
               initial="hidden"
@@ -730,63 +803,131 @@ const CalabashCertificationPage: React.FC = () => {
               <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-5" style={{ color: 'rgba(184,154,79,0.65)' }}>
                 Termini i kotizacija
               </p>
-              <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                Zagreb · 10.–11. listopada 2026.
+              <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22] mb-6" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                Tri grada. Dva dana.
               </h2>
+              <p className="text-[13.5px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '54ch' }}>
+                Kalabaš edukacija traje dva dana i održava se u malim grupama kako bi svaki polaznik dobio dovoljno praktičnog rada i individualne korekcije.
+              </p>
             </motion.div>
 
+            {/* Price card */}
             <motion.div
               variants={fadeIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={0.10}
-              className="mb-12"
+              custom={0.08}
+              className="mb-16 p-8 md:p-10"
+              style={{ border: '1px solid rgba(184,154,79,0.38)', background: 'rgba(184,154,79,0.06)' }}
             >
-              <div
-                className="py-5 grid items-start"
-                style={{ gridTemplateColumns: '1fr auto', borderTop: '1px solid rgba(255,255,255,0.08)', gap: '2rem' }}
-              >
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                 <div>
-                  <p className="text-[13px] font-normal mb-1" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                    10.–11. listopada 2026.
-                  </p>
-                  <p className="text-[11px] font-normal" style={{ color: 'rgba(184,154,79,0.72)' }}>
-                    Poliklinika Body Balance, Zagreb · early bird -50 € do 10.8.
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <p className="font-playfair font-semibold leading-none" style={{ fontSize: '3.4rem', color: 'rgba(255,255,255,0.95)', letterSpacing: '-0.02em' }}>
+                      490 €
+                    </p>
+                    <p className="text-[12px] font-normal" style={{ color: 'rgba(184,154,79,0.85)' }}>
+                      Early Bird
+                    </p>
+                  </div>
+                  <p className="text-[12px] font-normal" style={{ color: 'rgba(255,255,255,0.30)', textDecoration: 'line-through' }}>
+                    Redovna cijena: 540 €
                   </p>
                 </div>
-                <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                  450 €
-                </p>
-              </div>
-              <div
-                className="py-5 grid items-center"
-                style={{
-                  gridTemplateColumns: '1fr auto',
-                  borderTop: '1px solid rgba(255,255,255,0.08)',
-                  borderBottom: '1px solid rgba(255,255,255,0.08)',
-                  gap: '2rem',
-                }}
-              >
-                <p className="text-[13px] font-normal" style={{ color: 'rgba(255,255,255,0.68)' }}>
-                  U kotizaciju su uključeni nastavni materijali, certifikat i dva ručno izrađena kalabaša
-                </p>
-                <p className="text-[13px] font-normal whitespace-nowrap" style={{ color: 'rgba(184,154,79,0.65)' }}>
-                  Uključeno
-                </p>
+                <div className="flex gap-10 md:gap-12 md:pb-2">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                      Akontacija
+                    </p>
+                    <p className="text-[15px] font-normal" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                      100 €
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                      Grupa
+                    </p>
+                    <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                      Max. 12 polaznika
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
+            {/* Termini list */}
             <motion.div
               variants={fadeIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={0.14}
-              className="mb-10"
+              custom={0.12}
+              className="mb-14"
+            >
+              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-2" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                Termini
+              </p>
+              {terminiKalabas.map((t, i) => (
+                <div
+                  key={i}
+                  className="py-7 grid gap-5 md:gap-8 md:grid-cols-[1fr_auto] md:items-center"
+                  style={{
+                    borderTop: '1px solid rgba(255,255,255,0.08)',
+                    ...(i === terminiKalabas.length - 1 && { borderBottom: '1px solid rgba(255,255,255,0.08)' }),
+                  }}
+                >
+                  <div>
+                    <div className="flex items-baseline gap-3 mb-1.5">
+                      <p className="font-playfair font-medium text-[1.15rem] leading-tight" style={{ color: 'rgba(255,255,255,0.92)' }}>
+                        {t.grad}
+                      </p>
+                      <p className="text-[13px] font-normal" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                        {t.datum}
+                      </p>
+                    </div>
+                    <p className="text-[12px] font-normal leading-[1.6] mb-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
+                      {t.lokacija}
+                    </p>
+                    <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: 'rgba(184,154,79,0.85)' }}>
+                      Early Bird do {t.earlyBird}
+                    </p>
+                  </div>
+                  <a
+                    href="https://tally.so/r/wA5kvD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-normal uppercase cursor-pointer whitespace-nowrap inline-block text-center md:justify-self-end"
+                    style={{
+                      fontSize: '11px',
+                      letterSpacing: '0.12em',
+                      padding: '9px 24px',
+                      borderRadius: '4px',
+                      backgroundColor: 'rgba(212,175,55,0.90)',
+                      color: '#1a1a1a',
+                      textDecoration: 'none',
+                      transition: 'background-color 0.5s ease',
+                    }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#d4af37'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'rgba(212,175,55,0.90)'; }}
+                  >
+                    Prijavi se
+                  </a>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Rok prijave */}
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.16}
+              className="mb-16"
             >
               <p className="text-[12px] leading-[1.65] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
-                Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+                Preostali iznos kotizacije plaća se najkasnije 30 dana prije početka edukacije. Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
               </p>
               <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
                 Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
@@ -797,33 +938,113 @@ const CalabashCertificationPage: React.FC = () => {
               </p>
             </motion.div>
 
+            {/* Uključeno u kotizaciju */}
             <motion.div
               variants={fadeIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={0.18}
+              custom={0.20}
+              className="pt-12"
+              style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
             >
-              <a
-                href="https://tally.so/r/wA5kvD"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-normal uppercase cursor-pointer whitespace-nowrap inline-block"
-                style={{
-                  fontSize: '11px',
-                  letterSpacing: '0.12em',
-                  padding: '8px 20px',
-                  borderRadius: '4px',
-                  backgroundColor: 'rgba(212,175,55,0.90)',
-                  color: '#1a1a1a',
-                  textDecoration: 'none',
-                  transition: 'background-color 0.5s ease',
-                }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#d4af37'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'rgba(212,175,55,0.90)'; }}
+              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-6" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                Uključeno u kotizaciju
+              </p>
+
+              <div
+                className="p-6 mb-8 flex items-start gap-4"
+                style={{ border: '1px solid rgba(184,154,79,0.30)', background: 'rgba(184,154,79,0.06)' }}
               >
-                Prijavi interes
-              </a>
+                <span className="flex-shrink-0 mt-[2px]" style={{ color: 'rgba(184,154,79,0.85)', fontSize: '13px' }}>◆</span>
+                <p className="text-[14px] leading-[1.6] font-medium" style={{ color: 'rgba(255,255,255,0.90)' }}>
+                  U cijenu su uključena 2 originalna ručno izrađena Kalabaš alata.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-x-10">
+                {ukljuceno.map((item, i) => (
+                  <div key={i} className="py-4 flex gap-3" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                    <span className="flex-shrink-0 mt-[3px]" style={{ color: 'rgba(184,154,79,0.55)', fontSize: '11px' }}>—</span>
+                    <p className="text-[13.5px] leading-[1.55] font-normal" style={{ color: 'rgba(255,255,255,0.68)' }}>
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Bonus za prva 3 prijavljena */}
+      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="pt-24 pb-28">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              className="mb-12"
+            >
+              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                Bonus za prva 3 prijavljena
+              </p>
+              <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
+                Prva 3 polaznika koja rezerviraju mjesto dobivaju dodatne resurse koji nisu dio standardnog programa.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.10}
+            >
+              <div className="grid md:grid-cols-2" style={{ border: '1px solid rgba(0,0,0,0.07)' }}>
+                {bonusiKalabas.map((bonus, i) => (
+                  <div
+                    key={i}
+                    className="p-8"
+                    style={{
+                      background: 'white',
+                      borderRight: i % 2 === 0 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                      borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                    }}
+                  >
+                    <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
+                      {bonus.n}
+                    </p>
+                    <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                      {bonus.title}
+                    </p>
+                    <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                      {bonus.note}
+                    </p>
+                    {bonus.bullets && (
+                      <ul className="mt-4 space-y-2">
+                        {bonus.bullets.map((b, j) => (
+                          <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
+                            <span className="flex-shrink-0" style={{ color: 'rgba(184,154,79,0.55)' }}>—</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {bonus.disclaimer && (
+                      <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
+                        {bonus.disclaimer}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
           </div>
