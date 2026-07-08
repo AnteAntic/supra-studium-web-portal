@@ -961,8 +961,15 @@ const LomiLomiPage: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <p className="text-[12px] leading-[1.68] font-normal mt-6" style={{ color: 'rgba(255,255,255,0.40)', fontStyle: 'italic' }}>
-                Prijave za svaki termin zatvaraju se 45 dana prije početka edukacije. Nakon isteka tog roka više nije moguće rezervirati mjesto.
+              <p className="text-[12px] leading-[1.68] font-normal mt-6" style={{ color: 'rgba(255,255,255,0.40)' }}>
+                Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+              </p>
+              <p className="text-[12px] leading-[1.68] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.40)' }}>
+                Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
+                <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: 'rgba(184,154,79,0.85)' }}>info@uciliste-suprastudium.hr</a>
+                {' '}ili nazovi{' '}
+                <a href="tel:+385958558953" style={{ color: 'rgba(184,154,79,0.85)' }}>095 855 89 53</a>.
+                Ako postoji slobodno mjesto i organizacijske mogućnosti to dopuštaju, provjerit ćemo mogućnost naknadne prijave.
               </p>
             </motion.div>
 

@@ -1148,12 +1148,14 @@ const CrossfrictionPage = () => {
                 <p className="text-[12px] font-normal mb-1" style={{ color: '#B89A4F' }}>
                   Early Bird cijena
                 </p>
-                <p className="text-[12px] font-normal mb-8" style={{ color: 'rgba(0,0,0,0.30)', textDecoration: 'line-through' }}>
+                <p className="text-[12px] font-normal mb-2" style={{ color: 'rgba(0,0,0,0.30)', textDecoration: 'line-through' }}>
                   Redovna cijena: 500 €
+                </p>
+                <p className="text-[11px] uppercase tracking-[0.16em] font-medium mb-8" style={{ color: '#B89A4F' }}>
+                  Early Bird do 23.12.2026.
                 </p>
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} className="pt-7 space-y-4">
                   {[
-                    { bold: 'Early Bird vrijedi do 45 dana', rest: ' prije početka edukacije.' },
                     { bold: 'Akontacija 100 €', rest: ' za rezervaciju mjesta.' },
                     { bold: 'Ostatak kotizacije', rest: ' plaća se najkasnije 30 dana prije edukacije.' },
                   ].map((item, i) => (
@@ -1165,6 +1167,16 @@ const CrossfrictionPage = () => {
                     </div>
                   ))}
                 </div>
+                <p className="text-[12px] leading-[1.65] font-normal mt-6" style={{ color: 'rgba(0,0,0,0.40)' }}>
+                  Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+                </p>
+                <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(0,0,0,0.40)' }}>
+                  Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
+                  <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: '#B89A4F' }}>info@uciliste-suprastudium.hr</a>
+                  {' '}ili nazovi{' '}
+                  <a href="tel:+385958558953" style={{ color: '#B89A4F' }}>095 855 89 53</a>.
+                  Ako postoji slobodno mjesto i organizacijske mogućnosti to dopuštaju, provjerit ćemo mogućnost naknadne prijave.
+                </p>
               </div>
 
               {/* Card: 3 modula */}

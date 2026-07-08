@@ -974,6 +974,27 @@ export default function ManualTherapySchoolPage() {
               — Pitanja na WhatsApp
             </a>
           </motion.div>
+
+          <motion.div
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.42}
+            viewport={{ once: true }}
+            className="mt-10 pt-8"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <p className="text-[12px] leading-[1.65] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
+              Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+            </p>
+            <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
+              Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
+              <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: '#B89A4F' }}>info@uciliste-suprastudium.hr</a>
+              {' '}ili nazovi{' '}
+              <a href="tel:+385958558953" style={{ color: '#B89A4F' }}>095 855 89 53</a>.
+              Ako postoji slobodno mjesto i organizacijske mogućnosti to dopuštaju, provjerit ćemo mogućnost naknadne prijave.
+            </p>
+          </motion.div>
         </div>
       </section>
 

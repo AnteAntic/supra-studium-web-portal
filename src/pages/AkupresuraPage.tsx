@@ -740,11 +740,10 @@ const AkupresuraPage = () => {
                   Early Bird do 25.08.2026.
                 </p>
 
-                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} className="pt-7 space-y-4 mb-10">
+                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} className="pt-7 space-y-4 mb-8">
                   {[
                     { bold: 'Akontacija 100 €', rest: ' potvrđuje rezervaciju mjesta.' },
                     { bold: 'Preostali iznos', rest: ' plaća se najkasnije 30 dana prije početka edukacije.' },
-                    { bold: 'Prijave se zatvaraju', rest: ' 45 dana prije početka edukacije — nakon isteka roka rezervacija više nije moguća.' },
                     { bold: 'Broj mjesta', rest: ' ograničen je na maksimalno 12 polaznika.' },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
@@ -755,6 +754,17 @@ const AkupresuraPage = () => {
                     </div>
                   ))}
                 </div>
+
+                <p className="text-[12px] leading-[1.65] font-normal mb-1" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                  Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+                </p>
+                <p className="text-[12px] leading-[1.65] font-normal mb-10" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                  Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
+                  <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: '#B89A4F' }}>info@uciliste-suprastudium.hr</a>
+                  {' '}ili nazovi{' '}
+                  <a href="tel:+385958558953" style={{ color: '#B89A4F' }}>095 855 89 53</a>.
+                  Ako postoji slobodno mjesto i organizacijske mogućnosti to dopuštaju, provjerit ćemo mogućnost naknadne prijave.
+                </p>
 
                 <button
                   className="text-[11px] uppercase tracking-[0.18em] font-normal py-3.5 px-12 transition-colors duration-300"

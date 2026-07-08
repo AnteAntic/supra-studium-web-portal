@@ -731,8 +731,7 @@ const CalabashCertificationPage: React.FC = () => {
                 Termini i kotizacija
               </p>
               <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                Termin za 2026.<br />
-                bit će objavljen uskoro.
+                Zagreb · 10.–11. listopada 2026.
               </h2>
             </motion.div>
 
@@ -776,6 +775,26 @@ const CalabashCertificationPage: React.FC = () => {
                   Uključeno
                 </p>
               </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.14}
+              className="mb-10"
+            >
+              <p className="text-[12px] leading-[1.65] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
+                Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+              </p>
+              <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
+                Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
+                <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: 'rgba(184,154,79,0.85)' }}>info@uciliste-suprastudium.hr</a>
+                {' '}ili nazovi{' '}
+                <a href="tel:+385958558953" style={{ color: 'rgba(184,154,79,0.85)' }}>095 855 89 53</a>.
+                Ako postoji slobodno mjesto i organizacijske mogućnosti to dopuštaju, provjerit ćemo mogućnost naknadne prijave.
+              </p>
             </motion.div>
 
             <motion.div
