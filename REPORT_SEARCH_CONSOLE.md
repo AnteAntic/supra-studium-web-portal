@@ -13,7 +13,8 @@
 | GSC — ručne kazne (manual actions) | ✅ Nema |
 | GSC — sigurnosni problemi | ✅ Nema |
 | GSC — Domain property (DNS) | 🟡 **Pripremljen, čeka tvoj DNS TXT zapis** |
-| Bing Webmaster Tools | 🟡 **Čeka tvoju prijavu** (ne mogu unositi lozinku) |
+| Bing Webmaster Tools | ✅ **Postavljen** (import iz GSC-a, sitemap crawlan, 9 stranica poslano) |
+| Bonus popravak — meta description naslovnice | ✅ **Skraćen i deployan** (Bing flag) |
 
 ---
 
@@ -71,29 +72,36 @@ TTL:         zadano (npr. 3600)
 
 ---
 
-## 2. Bing Webmaster Tools — čeka tvoju prijavu
+## 2. Bing Webmaster Tools — ✅ postavljeno
 
-Otvorio sam `bing.com/webmasters`. **Nisi prijavljen**, a prijavu i autorizaciju ne mogu odraditi umjesto tebe (ne unosim lozinke niti odobravam OAuth pristup).
+Ante se prijavio i uvezao site iz Google Search Consolea. Dovršeno (2026-07-08):
 
-**Preporučeni minimalni put (najbrži):**
-1. Otvori https://www.bing.com/webmasters i klikni **Sign In** (prijavi se **Google računom dublay2@gmail.com** radi koraka 2).
-2. Na početnom ekranu odaberi **"Import your sites from Google Search Console"** → odobri pristup.
-   - Bing tada **automatski** preuzme verificirani property i **sitemap** iz GSC-a — nema ručne verifikacije ni ponovnog slanja sitemapa.
-3. Ako ne želiš import: **Add site** → `https://uciliste-suprastudium.hr/` → verifikacija **HTML meta tag** (mogu ti dodati isti stil taga u `index.html` i redeployati, kao za Google), pa u Bingu **Submit sitemap**: `https://uciliste-suprastudium.hr/sitemap.xml`.
+- **Site verificiran** (auto, kroz GSC import) — property `uciliste-suprastudium.hr` aktivan.
+- **Sitemap:** automatski uvezen i **uspješno crawlan** — status **Success**, **11 URL-ova otkriveno**, 0 grešaka, 0 upozorenja. (Bing je crawlao odmah — brže od Googlea.)
+- **Indeksiranje zatraženo za svih 9 glavnih stranica** preko "URL Submission" (dnevna kvota 10.000 URL-ova — praktički neograničeno): naslovnica + 7 course stranica + `/raspored`.
+- **Naslovnica:** Bing "URL Inspection" → **"Indexed successfully / URL can be indexed by Bing"** ✅; **2 markup tipa** (naš JSON-LD se čita) ✅.
+- **Nema crawl grešaka ni sigurnosnih problema.**
 
-> Bing je važan i za **AI pretragu** — ChatGPT Search i Copilot koriste Bingov indeks. Zato je ovaj korak vrijedan iako je Bingov tržišni udio manji.
+### Nalaz i popravak: meta description naslovnice
+Bing "URL Inspection" (i **Bing Index** i **Live URL**) javio je grešku **"Meta Description too long or too short"** na naslovnici. Statički opis u `index.html` bio je ~185 znakova (predugačak; ideal 120–160).
+- ✅ **Popravljeno:** skraćeno na ~137 znakova, buildano, deployano na produkciju i commitano. Bing će novi opis pokupiti pri idućem crawlu (re-indeksiranje već zatraženo).
 
-**Kad se prijaviš, javi — mogu te dalje voditi kroz import ili dodati Bing meta tag u kod i deployati.**
+### Nalaz: "H1 tag missing" (bio je zastarjeli keš — riješeno)
+Bingov **keširani** crawl (Bing Index) prikazivao je "H1 tag missing" na naslovnici, ali **Live URL** (svjež dohvat) tu grešku **više ne prikazuje** — h1 je prisutan i Bing ga vidi. To je bio keš od prije Faza C deploya; nije potrebna nikakva akcija.
+
+> Bing je važan i za **AI pretragu** — ChatGPT Search i Copilot koriste Bingov indeks.
 
 ---
 
 ## 3. Preporuke (redoslijed)
 
-1. **Sada (5 min):** dodaj DNS TXT zapis (sekcija 1.5) i dovrši Bing prijavu + import (sekcija 2).
-2. **Za 2–3 dana:** provjeri u GSC-u — je li sitemap status "Uspješno", jesu li se stranice počele indeksirati (izvještaj "Stranice"), ima li novih upozorenja.
-3. **Za 2–3 tjedna:** provjeri "Uspješnost" (Performance) — upiti, pozicije, klikovi za "manualna terapija edukacija", "trigger point tečaj", "tečaj masaže zagreb".
+1. **Sada (jedini preostali ručni korak):** dodaj DNS TXT zapis (sekcija 1.5) kod registrara domene i u GSC-u klikni "Potvrdi" za Domain property. Sve ostalo (GSC + Bing) je gotovo.
+2. **Za 2–3 dana:** provjeri u GSC-u — je li sitemap status "Uspješno", jesu li se stranice počele indeksirati (izvještaj "Stranice"), ima li novih upozorenja. U Bingu provjeri je li nova (kraća) meta description pokupljena.
+3. **Za 2–3 tjedna:** provjeri "Uspješnost"/"Search Performance" (GSC i Bing) — upiti, pozicije, klikovi za "manualna terapija edukacija", "trigger point tečaj", "tečaj masaže zagreb".
 4. **Nastavi po** [`SEO_AEO_STRATEGY.md`](SEO_AEO_STRATEGY.md): Google Business Profile + recenzije, NAP konzistentnost, YouTube opisi, pillar tekstovi (E-E-A-T).
 5. **Ne diraj web** do idućih većih izmjena — pusti Google/Bing da reindeksiraju.
+
+> **Napomena za Phase 2 (prerender):** Bingov keširani crawl pokazao je "H1 missing" jer Bing slabije izvršava JavaScript od Googlea. Na živom dohvatu h1 se vidi, ali ovo je još jedan dokaz da SPA bez prerendera ovisi o izvršavanju JS-a — što potvrđuje da je **prerender/SSG najveći preostali AEO potez** (AI crawleri i Bing tada dobivaju pun statički HTML).
 
 ---
 
