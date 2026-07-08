@@ -47,9 +47,15 @@ const kotizacijaData = [
 const termini = [
   {
     modul: 'Modul 1',
+    grad: 'Zagreb',
+    datum: '12.–13.9.2026.',
+    lokacija: 'Poliklinika Body Balance, Frane Kesterčaneka 2b',
+  },
+  {
+    modul: 'Modul 1',
     grad: 'Split',
     datum: '13.–15.11.2026.',
-    lokacija: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović',
+    lokacija: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6',
   },
   {
     modul: 'Modul 1',
@@ -137,12 +143,12 @@ const faq = [
   {
     pitanje: 'Gdje i kada se edukacija održava?',
     odgovor:
-      'Modul 1 održava se u Splitu (13.–15.11.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović) i u Rijeci (6.–7.02.2027., Udruga Eterico, Ul. Zdravka Kučića 39). Modul 2 održava se u Zagrebu (10.–11.04.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
+      'Modul 1 održava se u Zagrebu (12.–13.9.2026., Poliklinika Body Balance, Frane Kesterčaneka 2b), Splitu (13.–15.11.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6) i Rijeci (6.–7.02.2027., Udruga Eterico, Ul. Zdravka Kučića 39). Modul 2 održava se u Zagrebu (10.–11.04.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
   },
   {
     pitanje: 'Organiziraju li se tečajevi i u drugim gradovima?',
     odgovor:
-      'Modul 1 trenutno se održava u Splitu i Rijeci, a Modul 2 u Zagrebu. Za termine izvan objavljenog rasporeda javite se na ante.a@web.de.',
+      'Modul 1 trenutno se održava u Zagrebu, Splitu i Rijeci, a Modul 2 u Zagrebu. Za termine izvan objavljenog rasporeda javite se na ante.a@web.de.',
   },
 ];
 
@@ -162,18 +168,18 @@ const LomiLomiPage: React.FC = () => {
   useEffect(() => {
     setPageMeta({
       title: 'Lomi Lomi masaža — Ancient Wave | Supra Studium',
-      description: 'Ancient Wave Lomi Lomi — havajska tehnika u kojoj ritam, dah i pokret čine jednu sekvencu. Modul 1 u Splitu i Rijeci, Modul 2 u Zagrebu, s dr. Awudijem Atitsogbuijem.',
+      description: 'Ancient Wave Lomi Lomi — havajska tehnika u kojoj ritam, dah i pokret čine jednu sekvencu. Modul 1 u Zagrebu, Splitu i Rijeci, Modul 2 u Zagrebu, s dr. Awudijem Atitsogbuijem.',
       path: '/lomi-lomi',
       ogImage: '/videos/lomi-hero-poster.jpg',
     });
     setJsonLd('course', courseSchema({
       name: 'Lomi Lomi masaža — Ancient Wave',
-      description: 'Dvomodulna certifikacija havajske Lomi Lomi tehnike (Ancient Wave) s dr. Awudijem Atitsogbuijem — ritam, dah i pokret u jednoj sekvenci. Modul 1: Split i Rijeka. Modul 2: Zagreb.',
+      description: 'Dvomodulna certifikacija havajske Lomi Lomi tehnike (Ancient Wave) s dr. Awudijem Atitsogbuijem — ritam, dah i pokret u jednoj sekvenci. Modul 1: Zagreb, Split i Rijeka. Modul 2: Zagreb.',
       path: '/lomi-lomi',
-      startDate: '2026-11-13',
-      endDate: '2026-11-15',
+      startDate: '2026-09-12',
+      endDate: '2026-09-13',
       priceEUR: 450,
-      location: 'Split',
+      location: 'Zagreb',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('Lomi Lomi masaža', '/lomi-lomi'));
     setJsonLd('faq', faqSchema(faq.map((f) => ({ question: f.pitanje, answer: f.odgovor }))));
@@ -184,9 +190,10 @@ const LomiLomiPage: React.FC = () => {
 
       <CourseStickyBar
         locations={[
-          { city: 'Split', stage: 'Modul 1', dates: '13.–15.11.2026.' },
-          { city: 'Rijeka', stage: 'Modul 1', dates: '6.–7.02.2027.' },
-          { city: 'Zagreb', stage: 'Modul 2', dates: '10.–11.04.2027.' },
+          { city: 'Zagreb', stage: 'Modul 1', dates: '12.–13.9.' },
+          { city: 'Split', stage: 'Modul 1', dates: '13.–15.11.' },
+          { city: 'Rijeka', stage: 'Modul 1', dates: '6.–7.2.' },
+          { city: 'Zagreb', stage: 'Modul 2', dates: '10.–11.4.' },
         ]}
         price="450 € / 780 €"
         ctaText="Prijavi se"
@@ -377,7 +384,7 @@ const LomiLomiPage: React.FC = () => {
             {[
               { label: 'Format', value: 'Modul 1 + Modul 2' },
               { label: 'Voditelj', value: 'Dr. Awudi Atitsogbui' },
-              { label: 'Prvi termin', value: 'Split · 13.–15.11.2026.' },
+              { label: 'Prvi termin', value: 'Zagreb · 12.–13.9.2026.' },
               { label: 'Završetak', value: 'Certifikat Supra Studium' },
             ].map(item => (
               <div
@@ -851,7 +858,7 @@ const LomiLomiPage: React.FC = () => {
                 Termini i kotizacija
               </p>
               <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                Modul 1 u Splitu i Rijeci.<br />
+                Modul 1 kroz tri grada.<br />
                 Modul 2 u Zagrebu.
               </h2>
             </motion.div>
