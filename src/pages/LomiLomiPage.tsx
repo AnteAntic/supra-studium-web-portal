@@ -20,7 +20,7 @@ const moduli = [
     broj: '01',
     naziv: 'Zlatna formula',
     opis: 'Povijest i filozofija havajskog Lomi Lomija, 7 načela Hune kao radni okvir terapeuta, ključne anatomske zone i točke kontakta, kontrola disanja kao tehnička osnova, kompletna sekvenca zlatne formule.',
-    trajanje: '2–3 dana',
+    trajanje: '2 dana',
   },
   {
     broj: '02',
@@ -39,9 +39,8 @@ const tehnike = [
 ];
 
 const kotizacijaData = [
-  { naziv: 'Modul I — Zlatna formula', cijena: '450 €', napomena: '' },
-  { naziv: 'Modul II — Dijagnostika i terapija', cijena: '450 €', napomena: '' },
-  { naziv: 'Oba modula', cijena: '780 €', napomena: 'Ušteda 120 €' },
+  { naziv: 'Modul I — Zlatna formula', eb: '490 €', redovna: '540 €' },
+  { naziv: 'Modul II — Dijagnostika i terapija', eb: '490 €', redovna: '540 €' },
 ];
 
 const termini = [
@@ -54,7 +53,7 @@ const termini = [
   {
     modul: 'Modul 1',
     grad: 'Split',
-    datum: '13.–15.11.2026.',
+    datum: '14.–15.11.2026.',
     lokacija: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6',
   },
   {
@@ -128,7 +127,7 @@ const faq = [
   {
     pitanje: 'Mogu li upisati samo jedan modul?',
     odgovor:
-      'Da. Svaki modul je zaokružena cjelina s vlastitim certifikatom. Moduli se mogu pohađati neovisno, a popust od 120 € vrijedi za istovremenu prijavu na oba.',
+      'Da. Svaki modul je zaokružena cjelina s vlastitim certifikatom. Moduli se mogu pohađati neovisno, a popust od 100 € vrijedi za istovremenu prijavu na oba.',
   },
   {
     pitanje: 'Što je uključeno u kotizaciju?',
@@ -143,7 +142,7 @@ const faq = [
   {
     pitanje: 'Gdje i kada se edukacija održava?',
     odgovor:
-      'Modul 1 održava se u Zagrebu (12.–13.9.2026., Poliklinika Body Balance, Frane Kesterčaneka 2b), Splitu (13.–15.11.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6) i Rijeci (6.–7.02.2027., Udruga Eterico, Ul. Zdravka Kučića 39). Modul 2 održava se u Zagrebu (10.–11.04.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
+      'Modul 1 održava se u Zagrebu (12.–13.9.2026., Poliklinika Body Balance, Frane Kesterčaneka 2b), Splitu (14.–15.11.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6) i Rijeci (6.–7.02.2027., Udruga Eterico, Ul. Zdravka Kučića 39). Modul 2 održava se u Zagrebu (10.–11.04.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
   },
   {
     pitanje: 'Organiziraju li se tečajevi i u drugim gradovima?',
@@ -178,7 +177,7 @@ const LomiLomiPage: React.FC = () => {
       path: '/lomi-lomi',
       startDate: '2026-09-12',
       endDate: '2026-09-13',
-      priceEUR: 450,
+      priceEUR: 490,
       location: 'Zagreb',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('Lomi Lomi masaža', '/lomi-lomi'));
@@ -191,11 +190,11 @@ const LomiLomiPage: React.FC = () => {
       <CourseStickyBar
         locations={[
           { city: 'Zagreb', stage: 'Modul 1', dates: '12.–13.9.' },
-          { city: 'Split', stage: 'Modul 1', dates: '13.–15.11.' },
+          { city: 'Split', stage: 'Modul 1', dates: '14.–15.11.' },
           { city: 'Rijeka', stage: 'Modul 1', dates: '6.–7.2.' },
           { city: 'Zagreb', stage: 'Modul 2', dates: '10.–11.4.' },
         ]}
-        price="450 € / 780 €"
+        price="Early Bird od 490 €"
         ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
@@ -905,35 +904,84 @@ const LomiLomiPage: React.FC = () => {
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.10}
-              className="mb-12"
+              className="mb-14"
             >
-              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-2" style={{ color: 'rgba(184,154,79,0.65)' }}>
+              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-6" style={{ color: 'rgba(184,154,79,0.65)' }}>
                 Kotizacija po modulu
               </p>
-              {kotizacijaData.map((row, i) => (
-                <div
-                  key={row.naziv}
-                  className="py-5 grid items-center"
-                  style={{
-                    gridTemplateColumns: '1fr auto auto',
-                    borderTop: '1px solid rgba(255,255,255,0.08)',
-                    ...(i === kotizacijaData.length - 1 && { borderBottom: '1px solid rgba(255,255,255,0.08)' }),
-                    gap: '2rem',
-                  }}
-                >
-                  <p className="text-[13px] font-normal" style={{ color: 'rgba(255,255,255,0.50)' }}>
-                    {row.naziv}
-                  </p>
-                  {row.napomena ? (
-                    <p className="text-[11px] font-normal whitespace-nowrap" style={{ color: 'rgba(184,154,79,0.55)' }}>
-                      {row.napomena}
+
+              <div className="grid md:grid-cols-2 gap-px mb-px" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                {kotizacijaData.map((row) => (
+                  <div key={row.naziv} className="p-7" style={{ background: '#1A1814' }}>
+                    <p className="text-[12.5px] font-normal mb-6" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                      {row.naziv}
                     </p>
-                  ) : <span />}
-                  <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                    {row.cijena}
+                    <div className="flex items-baseline gap-3 mb-1">
+                      <p className="font-playfair font-semibold leading-none" style={{ fontSize: '2.4rem', color: 'rgba(255,255,255,0.92)' }}>
+                        {row.eb}
+                      </p>
+                      <p className="text-[11px] font-normal" style={{ color: 'rgba(184,154,79,0.75)' }}>
+                        Early Bird
+                      </p>
+                    </div>
+                    <p className="text-[12px] font-normal" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'line-through' }}>
+                      Redovna cijena: {row.redovna}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                className="p-7 md:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                style={{ border: '1px solid rgba(184,154,79,0.38)', background: 'rgba(184,154,79,0.07)' }}
+              >
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.20em] font-normal mb-2" style={{ color: 'rgba(184,154,79,0.85)' }}>
+                    Preporučeno
+                  </p>
+                  <p className="font-playfair font-medium text-[1.15rem]" style={{ color: 'rgba(255,255,255,0.92)' }}>
+                    Oba modula
                   </p>
                 </div>
-              ))}
+                <div className="flex items-baseline gap-4">
+                  <p className="font-playfair font-semibold leading-none" style={{ fontSize: '2.6rem', color: 'rgba(255,255,255,0.95)' }}>
+                    980 €
+                  </p>
+                  <p className="text-[12px] font-normal whitespace-nowrap" style={{ color: 'rgba(184,154,79,0.80)' }}>
+                    Ušteda 100 €
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Rezervacija mjesta */}
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.16}
+              className="mb-14 pt-12"
+              style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-6" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                Rezervacija mjesta
+              </p>
+              <div className="space-y-4">
+                {[
+                  { bold: 'Prijave su otvorene', rest: ' do 45 dana prije početka pojedine edukacije. Nakon isteka roka prijave više nisu moguće.' },
+                  { bold: 'Akontacija 100 €', rest: ' potvrđuje rezervaciju mjesta.' },
+                  { bold: 'Preostali iznos kotizacije', rest: ' plaća se najkasnije 30 dana prije početka edukacije.' },
+                  { bold: 'Broj mjesta', rest: ' ograničen je na maksimalno 12 polaznika.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3">
+                    <span className="flex-shrink-0 mt-[3px]" style={{ color: 'rgba(184,154,79,0.65)', fontSize: '11px' }}>—</span>
+                    <p className="text-[13px] leading-[1.68] font-normal" style={{ color: 'rgba(255,255,255,0.58)' }}>
+                      <span style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{item.bold}</span>{item.rest}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div
@@ -941,7 +989,7 @@ const LomiLomiPage: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={0.18}
+              custom={0.20}
             >
               <a
                 href="https://tally.so/r/wA5kvD"
@@ -983,11 +1031,11 @@ const LomiLomiPage: React.FC = () => {
               className="mb-12"
             >
               <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-6" style={{ color: '#B89A4F' }}>
-                Bonus za prvih 8 prijavljenih
+                Bonus za prvih 5 prijavljenih
               </p>
               <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
               <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
-                Cijena edukacije ostaje ista — raste njezina vrijednost. Prvih 8 prijavljenih
+                Cijena edukacije ostaje ista — raste njezina vrijednost. Prvih 5 prijavljenih
                 polaznika dobiva pet dodatnih resursa koji nisu dio standardnog programa.
               </p>
             </motion.div>
