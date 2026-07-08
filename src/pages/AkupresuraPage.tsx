@@ -8,6 +8,45 @@ import { CourseHero } from '@/components/CourseHero';
 import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
 import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb } from '@/lib/seo';
+
+const bonusi: { n: string; title: string; note: string; bullets?: string[]; disclaimer?: string }[] = [
+  {
+    n: '01',
+    title: 'VIP Observer Pass — Official Croatian Massage & Manual Therapy Championship',
+    note: 'Besplatan VIP Observer Pass za sva tri dana prvenstva.',
+    bullets: [
+      'Pristup svim natjecanjima',
+      'Pristup stručnim radionicama',
+      'Promatranje najboljih terapeuta iz Hrvatske i inozemstva',
+      'Networking s međunarodnim sucima, edukatorima i terapeutima',
+    ],
+  },
+  {
+    n: '02',
+    title: 'Online Q&A nakon edukacije',
+    note: 'Jedan zajednički online susret nakon edukacije za pitanja, ponavljanje i razmjenu iskustava iz prakse.',
+  },
+  {
+    n: '03',
+    title: 'Ekskluzivni stručni PDF',
+    note: 'Dodatni stručni materijal koji nije dio standardne skripte.',
+  },
+  {
+    n: '04',
+    title: 'Mogućnost promatranja tretmana uživo',
+    note: 'Mogućnost promatranja rada iskusnog terapeuta tijekom tretmana s pravim klijentima, prema dogovoru i dostupnosti termina. Tijekom promatranja uči se:',
+    bullets: [
+      'Razgovor s klijentom',
+      'Procjena stanja',
+      'Razmišljanje terapeuta',
+      'Odabir tehnika',
+      'Prilagodba tretmana stvarnoj osobi',
+      'Završna evaluacija tretmana',
+    ],
+    disclaimer: 'Promatranje se organizira prema dogovoru, raspoloživosti termina i uz prethodnu suglasnost klijenta.',
+  },
+];
+
 const AkupresuraPage = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
@@ -24,7 +63,7 @@ const AkupresuraPage = () => {
       path: '/akupresura-trigger-point',
       startDate: '2026-10-09',
       endDate: '2026-10-11',
-      priceEUR: 450,
+      priceEUR: 460,
       location: 'Poliklinika Body Balance, Zagreb',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('Akupresura & Trigger Point', '/akupresura-trigger-point'));
@@ -59,7 +98,7 @@ const AkupresuraPage = () => {
       <CourseStickyBar locations={[{
       city: "Zagreb",
       dates: "9.–11.10.2026."
-    }]} price="450 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
+    }]} price="Early Bird 460 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
 
       {/* Klinička observacija */}
       <section className="bg-white pt-24 pb-0">
@@ -683,22 +722,39 @@ const AkupresuraPage = () => {
                   Trodnevna praktična edukacija s fokusom na kliničku primjenu, palpaciju i integraciju terapijskih protokola.
                 </p>
 
-                <p
-                  className="font-playfair font-semibold leading-none mb-6"
-                  style={{ fontSize: '3.8rem', color: '#1F1D1A' }}
-                >
-                  450 €
+                <div className="flex items-baseline gap-3 mb-1">
+                  <p
+                    className="font-playfair font-semibold leading-none"
+                    style={{ fontSize: '3.8rem', color: '#1F1D1A' }}
+                  >
+                    460 €
+                  </p>
+                  <p className="text-[12px] font-normal" style={{ color: '#B89A4F' }}>
+                    Early Bird
+                  </p>
+                </div>
+                <p className="text-[13px] font-normal mb-2" style={{ color: 'rgba(0,0,0,0.32)', textDecoration: 'line-through' }}>
+                  Redovna cijena: 500 €
+                </p>
+                <p className="text-[11px] uppercase tracking-[0.16em] font-medium mb-8" style={{ color: '#B89A4F' }}>
+                  Early Bird do 25.08.2026.
                 </p>
 
-                <p className="text-[12.5px] leading-[1.65] font-normal mb-6" style={{ color: '#7A7570' }}>
-                  Termini i uvjeti prijave navedeni su u registracijskom obrascu.
-                </p>
-
-                <div className="mb-8" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} />
-
-                <p className="text-[12px] leading-[1.6] font-normal mb-14" style={{ color: '#9A9590' }}>
-                  Rad u malim grupama.
-                </p>
+                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} className="pt-7 space-y-4 mb-10">
+                  {[
+                    { bold: 'Akontacija 100 €', rest: ' potvrđuje rezervaciju mjesta.' },
+                    { bold: 'Preostali iznos', rest: ' plaća se najkasnije 30 dana prije početka edukacije.' },
+                    { bold: 'Prijave se zatvaraju', rest: ' 45 dana prije početka edukacije — nakon isteka roka rezervacija više nije moguća.' },
+                    { bold: 'Broj mjesta', rest: ' ograničen je na maksimalno 12 polaznika.' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-3">
+                      <span className="flex-shrink-0 mt-[3px]" style={{ color: '#B89A4F', fontSize: '11px' }}>—</span>
+                      <p className="text-[13px] leading-[1.68] font-normal" style={{ color: '#5F5A52' }}>
+                        <span style={{ color: '#1F1D1A', fontWeight: 500 }}>{item.bold}</span>{item.rest}
+                      </p>
+                    </div>
+                  ))}
+                </div>
 
                 <button
                   className="text-[11px] uppercase tracking-[0.18em] font-normal py-3.5 px-12 transition-colors duration-300"
@@ -725,11 +781,11 @@ const AkupresuraPage = () => {
                 <div>
                   {[
                     '24 sata praktične edukacije',
-                    'PDF priručnik (99 stranica)',
-                    'Anatomske ilustracije (190 stranica)',
+                    'PDF priručnik akupresure, 99 stranica',
+                    'Anatomske ilustracije i trigger point materijali, 190 stranica',
                     '3 mjeseca mentorske podrške',
-                    'Potvrda o edukaciji s upisom u e-radnu knjižicu',
-                    'Pristup materijalima',
+                    'Potvrda o edukaciji s mogućnošću upisa u e-radnu knjižicu',
+                    'Pristup dodatnim stručnim materijalima',
                   ].map((item, i) => (
                     <div key={i} className="py-3.5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
                       <p className="text-[14px] leading-[1.55] font-normal" style={{ color: '#3D3A35' }}>
@@ -744,15 +800,89 @@ const AkupresuraPage = () => {
                   <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                     Termin i lokacija
                   </p>
-                  <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
+                  <p className="text-[14px] leading-[1.75] font-normal mb-4" style={{ color: '#3D3A35' }}>
                     9.–11.10.2026. · Zagreb<br />
                     <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Body Balance</span><br />
                     Frane Kesterčaneka 2b
+                  </p>
+                  <p className="text-[11px] uppercase tracking-[0.14em] font-medium" style={{ color: '#B89A4F' }}>
+                    Early Bird do 25.08.2026.
                   </p>
                 </div>
               </motion.div>
 
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bonus za prva 3 prijavljena */}
+      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="pb-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                Bonus za prva 3 prijavljena
+              </p>
+              <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
+                Prva 3 polaznika koja rezerviraju mjesto dobivaju dodatne resurse koji nisu dio standardnog programa.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              <div className="grid md:grid-cols-2" style={{ border: '1px solid rgba(0,0,0,0.07)' }}>
+                {bonusi.map((bonus, i) => (
+                  <div
+                    key={i}
+                    className="p-8"
+                    style={{
+                      background: 'white',
+                      borderRight: i % 2 === 0 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                      borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                    }}
+                  >
+                    <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
+                      {bonus.n}
+                    </p>
+                    <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                      {bonus.title}
+                    </p>
+                    <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                      {bonus.note}
+                    </p>
+                    {bonus.bullets && (
+                      <ul className="mt-4 space-y-2">
+                        {bonus.bullets.map((b, j) => (
+                          <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
+                            <span className="flex-shrink-0" style={{ color: 'rgba(184,154,79,0.55)' }}>—</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {bonus.disclaimer && (
+                      <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
+                        {bonus.disclaimer}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
@@ -837,10 +967,11 @@ const AkupresuraPage = () => {
                   <ul className="space-y-1">
                     {[
                       '24 sata praktične edukacije',
-                      'PDF priručnik',
-                      'anatomske ilustracije i dodatne materijale',
-                      'mentorsku podršku nakon edukacije',
-                      'pristup materijalima za ponavljanje gradiva',
+                      'PDF priručnik akupresure (99 stranica)',
+                      'anatomske ilustracije i trigger point materijale (190 stranica)',
+                      '3 mjeseca mentorske podrške',
+                      'potvrdu o edukaciji s mogućnošću upisa u e-radnu knjižicu',
+                      'pristup dodatnim stručnim materijalima',
                     ].map((item, i) => (
                       <li key={i} className="text-[14px] leading-[1.8] flex gap-3" style={{ color: '#5F5A52' }}>
                         <span style={{ color: 'rgba(0,0,0,0.22)' }}>—</span>
