@@ -12,7 +12,7 @@
 | GSC — indeksiranje glavnih stranica | ✅ Zatraženo za svih 9 |
 | GSC — ručne kazne (manual actions) | ✅ Nema |
 | GSC — sigurnosni problemi | ✅ Nema |
-| GSC — Domain property (DNS) | 🟡 **Pripremljen, čeka tvoj DNS TXT zapis** |
+| GSC — Domain property (DNS) | ✅ **Verificiran** (DNS TXT dodan u cPanel Zone Editor) |
 | Bing Webmaster Tools | ✅ **Postavljen** (import iz GSC-a, sitemap crawlan, 9 stranica poslano) |
 | Bonus popravak — meta description naslovnice | ✅ **Skraćen i deployan** (Bing flag) |
 
@@ -58,17 +58,25 @@
 - **Mobile Usability:** taj izvještaj **više ne postoji** u Search Consoleu (Google ga je ukinuo u prosincu 2023.). Mobilnu upotrebljivost pratimo kroz PageSpeed/Core Web Vitals umjesto toga.
 - **Core Web Vitals:** trenutno bez podataka — treba terenske podatke (obično ~28 dana prometa). Provjeriti kasnije.
 
-### 1.5 Domain property (pripremljeno, čeka tebe)
-Uz URL-prefiks property, započeo sam i **Domain property** (`uciliste-suprastudium.hr`) i spremio ga kao "potvrdi kasnije". Domain property pokriva **sve subdomene i http+https** — robusnije za SEO. Za dovršetak **ti** trebaš dodati DNS TXT zapis kod registrara domene (ja nemam pristup registraru):
+### 1.5 Domain property — ✅ VERIFICIRAN (2026-07-08)
+Uz URL-prefiks property, dovršen je i **Domain property** (`uciliste-suprastudium.hr`) koji pokriva **sve subdomene i http+https**. DNS TXT zapis dodan je kroz **cPanel → Zone Editor** na root domene:
 
 ```
-Tip zapisa: TXT
-Host / Name: @   (root domene uciliste-suprastudium.hr)
-Vrijednost:  google-site-verification=bWaIKAeMCa0rgQEM72xXcyUmfo1dI4Cqd7G5TZhn2Uo
-TTL:         zadano (npr. 3600)
+Tip: TXT · Name: uciliste-suprastudium.hr. · TTL: 300
+Vrijednost: google-site-verification=bWaIKAeMCa0rgQEM72xXcyUmfo1dI4Cqd7G5TZhn2Uo
 ```
 
-**Koraci:** prijava kod registrara domene → DNS postavke → dodaj TXT zapis gore → spremi → u GSC-u otvori Domain property i klikni "Potvrdi". DNS propagacija zna potrajati do nekoliko sati.
+Potvrđeno: zapis vidljiv na oba autoritativna nameservera (ns1/ns2.mojsite.com) i na Google resolveru (8.8.8.8); GSC → **"Vlasništvo je potvrđeno"** (metoda: Pružatelj naziva domene).
+
+**⚠️ Ne uklanjati** ni ovaj DNS TXT zapis ni HTML meta tag — Google povremeno reverificira.
+
+**Napomene s implementacije:**
+- TTL je morao biti **300** (ne 14400) jer postojeći SPF TXT na rootu ima TTL 300, a cPanel traži isti TTL za sve TXT zapise istog imena.
+- Kod prvog unosa TXT vrijednosti kroz preglednik jedan znak se izobličio (veliko `I` → malo `l` u `…1dI4…`), pa GSC verifikacija nije prošla. Ispravljeno postavljanjem točne vrijednosti (potvrđeno hexdumpom protiv verificiranog meta taga).
+
+### Rezultat: u GSC-u postoje **obje** verzije propertyja
+- ✅ **Domain:** `uciliste-suprastudium.hr` (sc-domain)
+- ✅ **URL-prefiks:** `https://uciliste-suprastudium.hr/`
 
 ---
 
@@ -95,7 +103,7 @@ Bingov **keširani** crawl (Bing Index) prikazivao je "H1 tag missing" na naslov
 
 ## 3. Preporuke (redoslijed)
 
-1. **Sada (jedini preostali ručni korak):** dodaj DNS TXT zapis (sekcija 1.5) kod registrara domene i u GSC-u klikni "Potvrdi" za Domain property. Sve ostalo (GSC + Bing) je gotovo.
+1. **Ništa hitno — sve je postavljeno** (GSC URL-prefiks + Domain, Bing, sitemapi, indeksiranje). Ostaje samo praćenje.
 2. **Za 2–3 dana:** provjeri u GSC-u — je li sitemap status "Uspješno", jesu li se stranice počele indeksirati (izvještaj "Stranice"), ima li novih upozorenja. U Bingu provjeri je li nova (kraća) meta description pokupljena.
 3. **Za 2–3 tjedna:** provjeri "Uspješnost"/"Search Performance" (GSC i Bing) — upiti, pozicije, klikovi za "manualna terapija edukacija", "trigger point tečaj", "tečaj masaže zagreb".
 4. **Nastavi po** [`SEO_AEO_STRATEGY.md`](SEO_AEO_STRATEGY.md): Google Business Profile + recenzije, NAP konzistentnost, YouTube opisi, pillar tekstovi (E-E-A-T).
