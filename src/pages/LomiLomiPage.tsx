@@ -20,7 +20,7 @@ const moduli = [
     broj: '01',
     naziv: 'Zlatna formula',
     opis: 'Povijest i filozofija havajskog Lomi Lomija, 7 načela Hune kao radni okvir terapeuta, ključne anatomske zone i točke kontakta, kontrola disanja kao tehnička osnova, kompletna sekvenca zlatne formule.',
-    trajanje: '2 dana',
+    trajanje: '2–3 dana',
   },
   {
     broj: '02',
@@ -42,6 +42,70 @@ const kotizacijaData = [
   { naziv: 'Modul I — Zlatna formula', cijena: '450 €', napomena: '' },
   { naziv: 'Modul II — Dijagnostika i terapija', cijena: '450 €', napomena: '' },
   { naziv: 'Oba modula', cijena: '780 €', napomena: 'Ušteda 120 €' },
+];
+
+const termini = [
+  {
+    modul: 'Modul 1',
+    grad: 'Split',
+    datum: '13.–15.11.2026.',
+    lokacija: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović',
+  },
+  {
+    modul: 'Modul 1',
+    grad: 'Rijeka',
+    datum: '6.–7.02.2027.',
+    lokacija: 'Udruga Eterico, Ul. Zdravka Kučića 39',
+  },
+  {
+    modul: 'Modul 2',
+    grad: 'Zagreb',
+    datum: '10.–11.04.2027.',
+    lokacija: 'Poliklinika Medical Body Balance, Frane Kesterčaneka 2b',
+  },
+];
+
+const bonusi: { n: string; title: string; note: string; bullets?: string[]; disclaimer?: string }[] = [
+  {
+    n: '01',
+    title: 'VIP Observer Pass — Official Croatian Massage & Manual Therapy Championship',
+    note: 'Besplatan VIP Observer Pass za sva tri dana prvenstva.',
+    bullets: [
+      'Pristup svim natjecanjima',
+      'Pristup stručnim radionicama',
+      'Promatranje najboljih terapeuta iz Hrvatske i inozemstva',
+      'Networking s međunarodnim sucima, edukatorima i terapeutima',
+    ],
+  },
+  {
+    n: '02',
+    title: 'Online Zoom Q&A s dr. Awudijem',
+    note: 'Organizirani online susret nakon edukacije za pitanja, ponavljanje i razmjenu iskustava.',
+  },
+  {
+    n: '03',
+    title: 'Ekskluzivni stručni PDF',
+    note: 'Poseban edukacijski materijal koji nije dio standardne skripte.',
+  },
+  {
+    n: '04',
+    title: 'Promatranje rada dr. Awudija uživo',
+    note: 'Mogućnost promatranja rada dr. Awudija tijekom tretmana sa stvarnim klijentima u njegovoj privatnoj ordinaciji u Zagrebu. Tijekom promatranja pratite cijeli terapijski proces:',
+    bullets: [
+      'Razgovor s klijentom',
+      'Procjenu stanja',
+      'Razmišljanje terapeuta',
+      'Odabir tehnika',
+      'Prilagodbu tretmana stvarnoj osobi',
+      'Završnu evaluaciju tretmana',
+    ],
+    disclaimer: 'Promatranje se organizira prema dogovoru, raspoloživosti termina i uz prethodnu suglasnost klijenta.',
+  },
+  {
+    n: '05',
+    title: 'Prioritetna rezervacija za buduće Advanced Lomi Lomi module',
+    note: 'Polaznici ove edukacije dobivaju pravo prvenstva pri rezervaciji mjesta za buduće napredne module — prije javne objave.',
+  },
 ];
 
 const faq = [
@@ -73,12 +137,12 @@ const faq = [
   {
     pitanje: 'Gdje i kada se edukacija održava?',
     odgovor:
-      'Edukacija se organizira u Zagrebu — Poliklinika Body Balance, Frane Kesterčaneka 2b. Sljedeći termin: 12.–13. rujna 2026. (Modul I). Termin Modula II bit će potvrđen uz prijavu.',
+      'Modul 1 održava se u Splitu (13.–15.11.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović) i u Rijeci (6.–7.02.2027., Udruga Eterico, Ul. Zdravka Kučića 39). Modul 2 održava se u Zagrebu (10.–11.04.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
   },
   {
     pitanje: 'Organiziraju li se tečajevi i u drugim gradovima?',
     odgovor:
-      'Lomi Lomi edukacije organiziraju se u Zagrebu, Rijeci i Splitu ovisno o sezoni. Za informacije o terminima izvan Zagreba javite se na ante.a@web.de.',
+      'Modul 1 trenutno se održava u Splitu i Rijeci, a Modul 2 u Zagrebu. Za termine izvan objavljenog rasporeda javite se na ante.a@web.de.',
   },
 ];
 
@@ -98,18 +162,18 @@ const LomiLomiPage: React.FC = () => {
   useEffect(() => {
     setPageMeta({
       title: 'Lomi Lomi masaža — Ancient Wave | Supra Studium',
-      description: 'Ancient Wave Lomi Lomi — havajska tehnika u kojoj ritam, dah i pokret čine jednu sekvencu. Certifikacija u Zagrebu s dr. Awudijem Atitsogbuijem.',
+      description: 'Ancient Wave Lomi Lomi — havajska tehnika u kojoj ritam, dah i pokret čine jednu sekvencu. Modul 1 u Splitu i Rijeci, Modul 2 u Zagrebu, s dr. Awudijem Atitsogbuijem.',
       path: '/lomi-lomi',
       ogImage: '/videos/lomi-hero-poster.jpg',
     });
     setJsonLd('course', courseSchema({
       name: 'Lomi Lomi masaža — Ancient Wave',
-      description: 'Dvodnevna certifikacija havajske Lomi Lomi tehnike (Ancient Wave) s dr. Awudijem Atitsogbuijem — ritam, dah i pokret u jednoj sekvenci.',
+      description: 'Dvomodulna certifikacija havajske Lomi Lomi tehnike (Ancient Wave) s dr. Awudijem Atitsogbuijem — ritam, dah i pokret u jednoj sekvenci. Modul 1: Split i Rijeka. Modul 2: Zagreb.',
       path: '/lomi-lomi',
-      startDate: '2026-09-12',
-      endDate: '2026-09-13',
+      startDate: '2026-11-13',
+      endDate: '2026-11-15',
       priceEUR: 450,
-      location: 'Zagreb',
+      location: 'Split',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('Lomi Lomi masaža', '/lomi-lomi'));
     setJsonLd('faq', faqSchema(faq.map((f) => ({ question: f.pitanje, answer: f.odgovor }))));
@@ -119,7 +183,11 @@ const LomiLomiPage: React.FC = () => {
     <div className="min-h-screen" style={{ background: '#FAF8F4' }}>
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: '12.–13.9.2026.' }]}
+        locations={[
+          { city: 'Split', stage: 'Modul 1', dates: '13.–15.11.2026.' },
+          { city: 'Rijeka', stage: 'Modul 1', dates: '6.–7.02.2027.' },
+          { city: 'Zagreb', stage: 'Modul 2', dates: '10.–11.04.2027.' },
+        ]}
         price="450 € / 780 €"
         ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
@@ -182,7 +250,7 @@ const LomiLomiPage: React.FC = () => {
                   className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.35em] block"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
-                  Ancient Wave Lomi Lomi · Zagreb
+                  Ancient Wave Lomi Lomi · 2026 – 2027
                 </span>
               </motion.div>
 
@@ -232,7 +300,7 @@ const LomiLomiPage: React.FC = () => {
                 className="mb-14 flex flex-wrap items-center"
                 style={{ columnGap: '14px', rowGap: '4px' }}
               >
-                {['2 modula', '4 dana', 'Ritam i dijagnostika', 'Certifikat'].map((item, i) => (
+                {['2 modula', '3 grada', 'Ritam i dijagnostika', 'Certifikat'].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
                       <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '11px', lineHeight: 1 }}>·</span>
@@ -307,9 +375,9 @@ const LomiLomiPage: React.FC = () => {
             style={{ borderLeft: '1px solid rgba(0,0,0,0.07)' }}
           >
             {[
-              { label: 'Format', value: '2 × vikend (4 dana)' },
+              { label: 'Format', value: 'Modul 1 + Modul 2' },
               { label: 'Voditelj', value: 'Dr. Awudi Atitsogbui' },
-              { label: 'Termin', value: '12.–13.9.2026.' },
+              { label: 'Prvi termin', value: 'Split · 13.–15.11.2026.' },
               { label: 'Završetak', value: 'Certifikat Supra Studium' },
             ].map(item => (
               <div
@@ -517,7 +585,7 @@ const LomiLomiPage: React.FC = () => {
                 Program
               </p>
               <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: '#1F1D1A' }}>
-                Dva modula. Četiri dana.
+                Dva modula. Tri grada.
               </h2>
             </motion.div>
 
@@ -783,8 +851,45 @@ const LomiLomiPage: React.FC = () => {
                 Termini i kotizacija
               </p>
               <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: 'rgba(255,255,255,0.88)' }}>
-                Zagreb · 12.–13. rujna 2026.
+                Modul 1 u Splitu i Rijeci.<br />
+                Modul 2 u Zagrebu.
               </h2>
+            </motion.div>
+
+            {/* Termini po gradovima */}
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.08}
+              className="mb-14"
+            >
+              {termini.map((t, i) => (
+                <div
+                  key={i}
+                  className="py-6"
+                  style={{
+                    borderTop: '1px solid rgba(255,255,255,0.08)',
+                    ...(i === termini.length - 1 && { borderBottom: '1px solid rgba(255,255,255,0.08)' }),
+                  }}
+                >
+                  <div className="grid items-baseline gap-4" style={{ gridTemplateColumns: '1fr auto' }}>
+                    <p className="font-playfair font-medium text-[1.15rem] leading-tight" style={{ color: 'rgba(255,255,255,0.90)' }}>
+                      {t.grad}
+                      <span className="ml-3 text-[10px] uppercase tracking-[0.18em] font-normal" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                        {t.modul}
+                      </span>
+                    </p>
+                    <p className="text-[13px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                      {t.datum}
+                    </p>
+                  </div>
+                  <p className="text-[12px] font-normal mt-2 leading-[1.6]" style={{ color: 'rgba(255,255,255,0.42)' }}>
+                    {t.lokacija}
+                  </p>
+                </div>
+              ))}
             </motion.div>
 
             <motion.div
@@ -795,6 +900,9 @@ const LomiLomiPage: React.FC = () => {
               custom={0.10}
               className="mb-12"
             >
+              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-2" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                Kotizacija po modulu
+              </p>
               {kotizacijaData.map((row, i) => (
                 <div
                   key={row.naziv}
@@ -848,6 +956,84 @@ const LomiLomiPage: React.FC = () => {
               >
                 Prijavi se
               </a>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Bonus za prvih 8 ─────────────────────────────────────────────── */}
+      <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="pt-24 pb-28">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              className="mb-12"
+            >
+              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                Bonus za prvih 8 prijavljenih
+              </p>
+              <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
+                Cijena edukacije ostaje ista — raste njezina vrijednost. Prvih 8 prijavljenih
+                polaznika dobiva pet dodatnih resursa koji nisu dio standardnog programa.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.10}
+            >
+              <div className="grid md:grid-cols-2" style={{ border: '1px solid rgba(0,0,0,0.07)' }}>
+                {bonusi.map((bonus, i) => {
+                  const lastRowStart = bonusi.length % 2 === 1 ? bonusi.length - 1 : bonusi.length - 2;
+                  const isLastAlone = bonusi.length % 2 === 1 && i === bonusi.length - 1;
+                  return (
+                    <div
+                      key={i}
+                      className={`p-8 ${isLastAlone ? 'md:col-span-2' : ''}`}
+                      style={{
+                        background: 'white',
+                        borderRight: i % 2 === 0 && !isLastAlone ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                        borderBottom: i < lastRowStart ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                      }}
+                    >
+                      <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
+                        {bonus.n}
+                      </p>
+                      <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                        {bonus.title}
+                      </p>
+                      <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                        {bonus.note}
+                      </p>
+                      {bonus.bullets && (
+                        <ul className="mt-4 space-y-2">
+                          {bonus.bullets.map((b, j) => (
+                            <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
+                              <span className="flex-shrink-0" style={{ color: 'rgba(184,154,79,0.55)' }}>—</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {bonus.disclaimer && (
+                        <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
+                          {bonus.disclaimer}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </motion.div>
 
           </div>
