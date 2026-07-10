@@ -45,9 +45,9 @@ const terminiKalabas = [
   },
   {
     grad: 'Rijeka',
-    datum: '25.–26.09.2026.',
+    datum: '26.–27.09.2026.',
     lokacija: 'Udruga Eterico, Ul. Zdravka Kučića 39',
-    earlyBird: '11.08.2026.',
+    earlyBird: '12.08.2026.',
   },
   {
     grad: 'Zagreb',
@@ -133,7 +133,7 @@ const faq = [
   {
     pitanje: 'Gdje se edukacija održava?',
     odgovor:
-      'Edukacija se održava u tri grada: Split (18.–19.09.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6), Rijeka (25.–26.09.2026., Udruga Eterico, Ul. Zdravka Kučića 39) i Zagreb (06.–07.03.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
+      'Edukacija se održava u tri grada: Split (18.–19.09.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6), Rijeka (26.–27.09.2026., Udruga Eterico, Ul. Zdravka Kučića 39) i Zagreb (06.–07.03.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
   },
   {
     pitanje: 'Kolika je kotizacija?',
@@ -181,7 +181,7 @@ const CalabashCertificationPage: React.FC = () => {
       <CourseStickyBar
         locations={[
           { city: 'Split', dates: '18.–19.9.2026.' },
-          { city: 'Rijeka', dates: '25.–26.9.2026.' },
+          { city: 'Rijeka', dates: '26.–27.9.2026.' },
           { city: 'Zagreb', dates: '6.–7.3.2027.' },
         ]}
         price="Early Bird od 490 €"

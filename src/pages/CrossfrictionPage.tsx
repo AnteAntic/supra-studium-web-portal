@@ -47,7 +47,8 @@ const CrossfrictionPage = () => {
 
       <CourseStickyBar
         locations={[
-          { city: "Zagreb", dates: "6.–7.02.2027." },
+          { city: "Rijeka", dates: "modul 3 · 7.–8.11.2026." },
+          { city: "Zagreb", dates: "modul 1 · 6.–7.02.2027." },
         ]}
         price="460 € EB"
         ctaText="Rezerviraj mjesto"
@@ -1227,27 +1228,34 @@ const CrossfrictionPage = () => {
                   Termini i lokacije
                 </p>
                 <p className="text-[13px] leading-[1.78] font-normal mb-7" style={{ color: '#5F5A52' }}>
-                  Sljedeći termin potvrđen. Program se održava u manjim grupama s individualnim feedbackom.
+                  CFM se izvodi u dvije grupe — riječka je već u tijeku, zagrebačka kreće od prvog modula.
                 </p>
                 <div>
                   {[
-                    { city: 'Zagreb', note: '6.–7.02.2027. · Poliklinika Body Balance · 9–17 h' },
-                    { city: 'Slavonski Brod', note: 'u suradnji s lokalnim organizatorima' },
-                    { city: 'Rijeka / Split', note: 'periodični termini prema interesu' },
+                    { city: 'Rijeka', status: 'Grupa u tijeku', note: 'Sljedeće: modul 3 · 7.–8.11.2026.', mjesto: 'Udruga Eterico, Zdravka Kučića 39' },
+                    { city: 'Zagreb', status: 'Nova grupa', note: 'Modul 1 · 6.–7.02.2027.', mjesto: 'Poliklinika Body Balance · 9–17 h' },
                   ].map((loc, i) => (
-                    <div key={i} className="flex items-baseline justify-between py-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-                      <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.1rem', color: '#1F1D1A' }}>
-                        {loc.city}
-                      </p>
-                      <p className="text-[11px] font-normal" style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}>
+                    <div key={i} className="py-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+                      <div className="flex items-baseline justify-between mb-1.5">
+                        <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.1rem', color: '#1F1D1A' }}>
+                          {loc.city}
+                        </p>
+                        <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: '#B89A4F' }}>
+                          {loc.status}
+                        </p>
+                      </div>
+                      <p className="text-[12.5px] font-normal" style={{ color: '#5F5A52' }}>
                         {loc.note}
+                      </p>
+                      <p className="text-[11px] font-normal mt-0.5" style={{ color: 'rgba(0,0,0,0.38)' }}>
+                        {loc.mjesto}
                       </p>
                     </div>
                   ))}
                   <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', marginBottom: '1.8rem' }} />
                 </div>
                 <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.38)', fontStyle: 'italic' }}>
-                  Ostali gradovi — termini na upit.
+                  Slavonski Brod i ostali gradovi — termini na upit.
                 </p>
               </motion.div>
 
@@ -1412,7 +1420,7 @@ const CrossfrictionPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
                     <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
-                      Sljedeći termin: 6.–7.02.2027., Poliklinika Body Balance (Frane Kesterčaneka 2b, Zagreb), od 9 do 17 sati. Edukacije se povremeno organiziraju i u Slavonskom Brodu te Rijeci/Splitu prema interesu.
+                      CFM se izvodi u dvije grupe. Riječka grupa je u tijeku — sljedeći je modul 3 (7.–8.11.2026., Udruga Eterico, Rijeka). Zagrebačka grupa kreće od modula 1 (6.–7.02.2027., Poliklinika Body Balance, Frane Kesterčaneka 2b, od 9 do 17 sati). Edukacije se povremeno organiziraju i u Slavonskom Brodu te Splitu prema interesu.
                     </p>
                   </AccordionContent>
                 </AccordionItem>

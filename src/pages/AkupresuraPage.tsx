@@ -79,7 +79,7 @@ const AkupresuraPage = () => {
   };
   return <div className="min-h-screen bg-white">
       <CourseHero
-        category="Akupresura & Trigger Point Terapija · Zagreb"
+        category="Akupresura & Trigger Point Terapija · Zagreb & Split"
         headline={<>Tkivo uvijek daje odgovor.<br />Znaš li ga pročitati?</>}
         subheadline="Akupresura i trigger point terapija za terapeute koji žele preciznije čitati reakciju tkiva, obrazac boli i promjenu pod pritiskom."
         videoSrc="https://www.dropbox.com/scl/fi/zu7uftbbxjg619w0j4r2s/atpt_hero-background.mp4?rlkey=53arhybzq615h8bvnx1ewqj51&raw=1"
@@ -95,10 +95,10 @@ const AkupresuraPage = () => {
       />
 
       {/* Unified Sticky Bar */}
-      <CourseStickyBar locations={[{
-      city: "Zagreb",
-      dates: "9.–11.10.2026."
-    }]} price="Early Bird 460 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
+      <CourseStickyBar locations={[
+      { city: "Zagreb", dates: "9.–11.10.2026." },
+      { city: "Split", dates: "15.–17.1.2027." },
+    ]} price="Early Bird 460 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
 
       {/* Klinička observacija */}
       <section className="bg-white pt-24 pb-0">
@@ -808,16 +808,28 @@ const AkupresuraPage = () => {
 
                 <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
                   <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-5" style={{ color: '#B89A4F' }}>
-                    Termin i lokacija
+                    Termini i lokacije
                   </p>
-                  <p className="text-[14px] leading-[1.75] font-normal mb-4" style={{ color: '#3D3A35' }}>
-                    9.–11.10.2026. · Zagreb<br />
-                    <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Body Balance</span><br />
-                    Frane Kesterčaneka 2b
-                  </p>
-                  <p className="text-[11px] uppercase tracking-[0.14em] font-medium" style={{ color: '#B89A4F' }}>
-                    Early Bird do 25.08.2026.
-                  </p>
+                  <div className="mb-5">
+                    <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
+                      9.–11.10.2026. · Zagreb<br />
+                      <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Body Balance</span><br />
+                      Frane Kesterčaneka 2b
+                    </p>
+                    <p className="text-[11px] uppercase tracking-[0.14em] font-medium mt-2" style={{ color: '#B89A4F' }}>
+                      Early Bird do 25.08.2026.
+                    </p>
+                  </div>
+                  <div className="pt-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+                    <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
+                      15.–17.01.2027. · Split<br />
+                      <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Centar Majce &amp; Stojanović</span><br />
+                      Žnjanska 6
+                    </p>
+                    <p className="text-[11px] uppercase tracking-[0.14em] font-medium mt-2" style={{ color: '#B89A4F' }}>
+                      Early Bird do 01.12.2026.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
@@ -925,10 +937,11 @@ const AkupresuraPage = () => {
                 </AccordionTrigger>
                 <AccordionContent className="pb-8">
                   <p className="text-[14px] leading-[1.85]" style={{ color: '#5F5A52' }}>
-                    Termin: 9.–11. listopada 2026., Zagreb — Poliklinika Body Balance, Frane Kesterčaneka 2b.
+                    Zagreb: 9.–11. listopada 2026. — Poliklinika Body Balance, Frane Kesterčaneka 2b.<br />
+                    Split: 15.–17. siječnja 2027. — Centar Majce &amp; Stojanović, Žnjanska 6.
                   </p>
                   <p className="text-[14px] leading-[1.8] mt-3" style={{ color: '#5F5A52' }}>
-                    Edukacija se organizira jednom godišnje. Termine u drugim gradovima možeš pratiti na stranici rasporeda.
+                    Ostale termine i gradove možeš pratiti na stranici rasporeda.
                   </p>
                 </AccordionContent>
               </AccordionItem>

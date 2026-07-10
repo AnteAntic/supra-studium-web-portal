@@ -6,6 +6,49 @@ import { CourseFooter } from '@/components/CourseFooter';
 import { CourseRecommendations } from '@/components/course/CourseRecommendations';
 import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb } from '@/lib/seo';
 
+const terminiDAS = [
+  { city: 'Zagreb', date: '31.10.–1.11.2026.', venue: 'Maxi Dance Studio, Frane Kesterčaneka 2 · 9–17 h', eb: '16.09.2026.' },
+  { city: 'Rijeka', date: '13.–14.03.2027.', venue: 'Udruga Eterico, Zdravka Kučića 39', eb: '27.01.2027.' },
+];
+
+const bonusiDAS: { n: string; title: string; note: string; bullets?: string[]; disclaimer?: string }[] = [
+  {
+    n: '01',
+    title: 'VIP Observer Pass — Official Croatian Massage & Manual Therapy Championship',
+    note: 'Besplatan VIP Observer Pass za sva tri dana prvenstva.',
+    bullets: [
+      'Pristup svim natjecanjima',
+      'Pristup stručnim radionicama',
+      'Promatranje najboljih terapeuta iz Hrvatske i inozemstva',
+      'Networking s međunarodnim sucima, edukatorima i terapeutima',
+    ],
+  },
+  {
+    n: '02',
+    title: 'Online Q&A nakon edukacije',
+    note: 'Jedan zajednički online susret nakon edukacije za pitanja, ponavljanje i razmjenu iskustava iz prakse.',
+  },
+  {
+    n: '03',
+    title: 'Ekskluzivni stručni PDF',
+    note: 'Dodatni stručni materijal koji nije dio standardne skripte.',
+  },
+  {
+    n: '04',
+    title: 'Mogućnost promatranja tretmana uživo',
+    note: 'Mogućnost promatranja rada iskusnog terapeuta tijekom tretmana s pravim klijentima, prema dogovoru i dostupnosti termina. Tijekom promatranja uči se:',
+    bullets: [
+      'Razgovor s klijentom',
+      'Procjena stanja',
+      'Razmišljanje terapeuta',
+      'Odabir tehnika',
+      'Prilagodba tretmana stvarnoj osobi',
+      'Završna evaluacija tretmana',
+    ],
+    disclaimer: 'Promatranje se organizira prema dogovoru, raspoloživosti termina i uz prethodnu suglasnost klijenta.',
+  },
+];
+
 /* ─── Inline hero (static image, no video) ─────────────────────── */
 function ThreeDHero({
   onScrollToProgram,
@@ -306,8 +349,11 @@ const ThreeDStretchingPage = () => {
       <FactsBand />
 
       <CourseStickyBar
-        locations={[{ city: 'Zagreb', dates: '31.10.–1.11.2026.' }]}
-        price="450 €"
+        locations={[
+          { city: 'Zagreb', dates: '31.10.–1.11.2026.' },
+          { city: 'Rijeka', dates: '13.–14.3.2027.' },
+        ]}
+        price="Early Bird od 450 €"
         ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
@@ -946,18 +992,44 @@ const ThreeDStretchingPage = () => {
                 </p>
 
                 {/* Price */}
-                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '2.8rem', paddingBottom: '0.6rem' }}>
-                  <p
-                    className="font-playfair font-semibold leading-none"
-                    style={{ fontSize: '2.8rem', color: '#1F1D1A', letterSpacing: '-0.01em' }}
-                  >
-                    450 €
+                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '2.8rem' }}>
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <p
+                      className="font-playfair font-semibold leading-none"
+                      style={{ fontSize: '3rem', color: '#1F1D1A', letterSpacing: '-0.01em' }}
+                    >
+                      450 €
+                    </p>
+                    <p className="text-[12px] font-normal" style={{ color: '#B89A4F' }}>Early Bird</p>
+                  </div>
+                  <p className="text-[13px] font-normal" style={{ color: 'rgba(0,0,0,0.32)', textDecoration: 'line-through' }}>
+                    Redovna cijena: 500 €
                   </p>
                 </div>
-                <div style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: '2.2rem', marginBottom: '2.4rem' }}>
-                  <p className="text-[13px] leading-[1.72] font-normal mt-4" style={{ color: '#7A7570' }}>
-                    Early bird: ušteda 50 € uz uplatu do 30.9.2026.{/* ⚠️ TODO: potvrdi točan datum early bird deadlinea — koristiti 30.09. jer rujan ima 30 dana */}
-                    <br />Kotizacija uključuje materijale i certifikat.
+                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', marginTop: '2.2rem' }} className="pt-7 space-y-4 mb-8">
+                  {[
+                    { bold: 'Akontacija 100 €', rest: ' potvrđuje rezervaciju mjesta.' },
+                    { bold: 'Preostali iznos', rest: ' plaća se najkasnije 30 dana prije početka edukacije.' },
+                    { bold: 'Broj mjesta', rest: ' ograničen je na maksimalno 12 polaznika.' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-3">
+                      <span className="flex-shrink-0 mt-[3px]" style={{ color: '#B89A4F', fontSize: '11px' }}>—</span>
+                      <p className="text-[13px] leading-[1.68] font-normal" style={{ color: '#5F5A52' }}>
+                        <span style={{ color: '#1F1D1A', fontWeight: 500 }}>{item.bold}</span>{item.rest}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '1.8rem', marginBottom: '2.4rem' }}>
+                  <p className="text-[12px] leading-[1.65] font-normal" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                    Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+                  </p>
+                  <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                    Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
+                    <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: '#B89A4F' }}>info@uciliste-suprastudium.hr</a>
+                    {' '}ili nazovi{' '}
+                    <a href="tel:+385958558953" style={{ color: '#B89A4F' }}>095 855 89 53</a>.
+                    Ako postoji slobodno mjesto i organizacijske mogućnosti to dopuštaju, provjerit ćemo mogućnost naknadne prijave.
                   </p>
                 </div>
 
@@ -981,32 +1053,35 @@ const ThreeDStretchingPage = () => {
                   Edukacija se organizira u manjim grupama s fokusom na individualni feedback i praktičnu korekciju.
                 </p>
 
-                {/* Location */}
+                {/* Termini */}
                 <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-6" style={{ color: '#B89A4F' }}>
-                  Termin i lokacija
+                  Termini i lokacije
                 </p>
                 <div>
-                  {[
-                    { city: 'Zagreb', note: '31.10.–1.11.2026. · Maxi Dance Studio · 9–17 h' },
-                  ].map((loc, i) => (
+                  {terminiDAS.map((loc, i) => (
                     <div
                       key={i}
-                      className="flex items-baseline justify-between py-5"
+                      className="py-5"
                       style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
                     >
-                      <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.1rem', color: '#1F1D1A' }}>
-                        {loc.city}
+                      <div className="flex items-baseline justify-between mb-1.5">
+                        <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.1rem', color: '#1F1D1A' }}>
+                          {loc.city}
+                        </p>
+                        <p className="text-[11px] font-normal" style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}>
+                          {loc.date}
+                        </p>
+                      </div>
+                      <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                        {loc.venue}
                       </p>
-                      <p className="text-[11px] font-normal" style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}>
-                        {loc.note}
+                      <p className="text-[10px] uppercase tracking-[0.14em] font-medium mt-1.5" style={{ color: '#B89A4F' }}>
+                        Early Bird do {loc.eb}
                       </p>
                     </div>
                   ))}
-                  <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', marginBottom: '1.8rem' }} />
+                  <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
                 </div>
-                <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.38)', fontStyle: 'italic' }}>
-                  Frane Kesterčaneka 2, Zagreb (ispod bolnice Rebro).
-                </p>
               </motion.div>
 
               {/* Right — what's included */}
@@ -1057,6 +1132,80 @@ const ThreeDStretchingPage = () => {
               </motion.div>
 
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Bonus za prva 3 prijavljena ───────────────────────────── */}
+      <section
+        style={{ background: '#F4F1EA', borderTop: '1px solid rgba(0,0,0,0.05)' }}
+        className="pt-24 pb-28"
+      >
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                Bonus za prva 3 prijavljena
+              </p>
+              <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
+              <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
+                Prva 3 polaznika koja rezerviraju mjesto dobivaju dodatne resurse koji nisu dio standardnog programa.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              <div className="grid md:grid-cols-2" style={{ border: '1px solid rgba(0,0,0,0.07)' }}>
+                {bonusiDAS.map((bonus, i) => (
+                  <div
+                    key={i}
+                    className="p-8"
+                    style={{
+                      background: 'white',
+                      borderRight: i % 2 === 0 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                      borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                    }}
+                  >
+                    <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
+                      {bonus.n}
+                    </p>
+                    <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                      {bonus.title}
+                    </p>
+                    <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                      {bonus.note}
+                    </p>
+                    {bonus.bullets && (
+                      <ul className="mt-4 space-y-2">
+                        {bonus.bullets.map((b, j) => (
+                          <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
+                            <span className="flex-shrink-0" style={{ color: 'rgba(184,154,79,0.55)' }}>—</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {bonus.disclaimer && (
+                      <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
+                        {bonus.disclaimer}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
@@ -1176,7 +1325,7 @@ const ThreeDStretchingPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
                     <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
-                      Edukacija je u pripremi. Prijavite interes putem obrasca ili nam se obratite direktno na info@uciliste-suprastudium.hr — obavijestit ćemo vas o terminu, lokaciji i uvjetima prijave čim budu potvrđeni.
+                      Prijava se vrši putem online obrasca. Termini: Zagreb (31.10.–1.11.2026., Maxi Dance Studio) i Rijeka (13.–14.03.2027., Udruga Eterico). Rezervacija se potvrđuje akontacijom od 100 €. Za pitanja: info@uciliste-suprastudium.hr ili 095 855 89 53.
                     </p>
                   </AccordionContent>
                 </AccordionItem>

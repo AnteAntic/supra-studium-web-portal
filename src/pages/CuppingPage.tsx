@@ -19,11 +19,55 @@ const tehnike = [
 ];
 
 const termini = [
-  { grad: "Zagreb", datum: "1.11.2026.", cijena: "390 €" },
-  { grad: "Split", datum: "Na upit", cijena: "390 €" },
-  { grad: "Rijeka", datum: "Na upit", cijena: "390 €" },
-  { grad: "Osijek", datum: "Na upit", cijena: "390 €" },
-  { grad: "Zadar", datum: "Na upit", cijena: "390 €" },
+  { grad: "Split", datum: "25.10.2026.", lokacija: "Centar Majce & Stojanović, Žnjanska 6", earlyBird: "10.09.2026." },
+  { grad: "Zagreb", datum: "17.04.2027.", lokacija: "Poliklinika Body Balance, Frane Kesterčaneka 2b", earlyBird: "03.03.2027." },
+];
+
+const ukljuceno = [
+  "10 sati kliničke edukacije",
+  "9 kliznih tehnika i 3 specijalizirana protokola",
+  "Radni materijali i skripta",
+  "Potvrda o edukaciji s mogućnošću upisa u e-radnu knjižicu",
+  "Rad u maloj grupi (do 12 polaznika)",
+  "Pristup dodatnim stručnim materijalima",
+];
+
+const bonusi: { n: string; title: string; note: string; bullets?: string[]; disclaimer?: string }[] = [
+  {
+    n: "01",
+    title: "VIP Observer Pass — Official Croatian Massage & Manual Therapy Championship",
+    note: "Besplatan VIP Observer Pass za sva tri dana prvenstva.",
+    bullets: [
+      "Pristup svim natjecanjima",
+      "Pristup stručnim radionicama",
+      "Promatranje najboljih terapeuta iz Hrvatske i inozemstva",
+      "Networking s međunarodnim sucima, edukatorima i terapeutima",
+    ],
+  },
+  {
+    n: "02",
+    title: "Online Q&A nakon edukacije",
+    note: "Jedan zajednički online susret nakon edukacije za pitanja, ponavljanje i razmjenu iskustava iz prakse.",
+  },
+  {
+    n: "03",
+    title: "Ekskluzivni stručni PDF",
+    note: "Dodatni stručni materijal koji nije dio standardne skripte.",
+  },
+  {
+    n: "04",
+    title: "Mogućnost promatranja tretmana uživo",
+    note: "Mogućnost promatranja rada iskusnog terapeuta tijekom tretmana s pravim klijentima, prema dogovoru i dostupnosti termina. Tijekom promatranja uči se:",
+    bullets: [
+      "Razgovor s klijentom",
+      "Procjena stanja",
+      "Razmišljanje terapeuta",
+      "Odabir tehnika",
+      "Prilagodba tretmana stvarnoj osobi",
+      "Završna evaluacija tretmana",
+    ],
+    disclaimer: "Promatranje se organizira prema dogovoru, raspoloživosti termina i uz prethodnu suglasnost klijenta.",
+  },
 ];
 
 const faq = [
@@ -63,8 +107,8 @@ const fadeUp = {
 
 const facts = [
   { field: "Format", value: "1 dan", detail: "10 sati kliničkog rada" },
-  { field: "Lokacije", value: "Zagreb +", detail: "Slavonski Brod · Rijeka · Split" },
-  { field: "Kotizacija", value: "390 €", detail: "materijal i potvrda uključeni" },
+  { field: "Lokacije", value: "Split · Zagreb", detail: "ostali gradovi na upit" },
+  { field: "Kotizacija", value: "350 €", detail: "Early Bird · materijali uključeni" },
   { field: "Polaznici", value: "Do 12", detail: "individualni nadzor rada" },
 ];
 
@@ -83,7 +127,7 @@ export default function CuppingPage() {
     window.scrollTo(0, 0);
     setPageMeta({
       title: 'Cupping & Ventuzoterapija — 9 kliznih tehnika | Supra Studium',
-      description: 'Klinički cupping tečaj: 9 kliznih tehnika, vakuumski Pin & Stretch, limfodrenažni i anti-age protokol. 1 dan, do 12 polaznika. Zagreb, Split, Rijeka.',
+      description: 'Klinički cupping tečaj: 9 kliznih tehnika, vakuumski Pin & Stretch, limfodrenažni i anti-age protokol. 1 dan, do 12 polaznika. Split i Zagreb.',
       path: '/cupping-terapija',
       ogImage: '/lovable-uploads/cup-hero-vakuum.webp',
     });
@@ -91,9 +135,9 @@ export default function CuppingPage() {
       name: 'Cupping & Ventuzoterapija',
       description: 'Jednodnevni klinički cupping tečaj: 9 kliznih tehnika, vakuumski Pin & Stretch, limfodrenažni i anti-age protokol.',
       path: '/cupping-terapija',
-      startDate: '2026-11-01',
-      priceEUR: 390,
-      location: 'Zagreb',
+      startDate: '2026-10-25',
+      priceEUR: 350,
+      location: 'Split',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('Cupping & Ventuzoterapija', '/cupping-terapija'));
   }, []);
@@ -317,9 +361,12 @@ export default function CuppingPage() {
       </section>
 
       <CourseStickyBar
-        locations={[{ city: "Zagreb", dates: "1.11.2026." }]}
-        price=""
-        ctaText="Pošalji upit"
+        locations={[
+          { city: "Split", dates: "25.10.2026." },
+          { city: "Zagreb", dates: "17.4.2027." },
+        ]}
+        price="Early Bird od 350 €"
+        ctaText="Prijavi se"
         ctaHref="https://tally.so/r/wA5kvD"
         theme="light"
       />
@@ -684,104 +731,239 @@ export default function CuppingPage() {
       {/* ── Kotizacija ───────────────────────────────────────── */}
       <section className="py-24 px-6 bg-[#141311]" id="kotizacija">
         <div className="max-w-5xl mx-auto">
+
+          {/* Header + intro */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-12"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#9e8a46] mb-6">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-[#9e8a46] mb-5">
               Termini i kotizacija
             </p>
-            <h2 className="font-playfair text-3xl text-[#ede9e3] leading-snug">
-              Edukacije se organiziraju periodično.
+            <h2 className="font-playfair text-3xl text-[#ede9e3] leading-snug mb-6">
+              Dva grada. Jedan dan.
             </h2>
+            <p className="text-[13.5px] leading-[1.82]" style={{ color: "rgba(237,233,227,0.60)", maxWidth: "54ch" }}>
+              Jednodnevna klinička edukacija u malim grupama — 9 kliznih tehnika, 3 specijalizirana protokola i TKM integracija, s izravnom korekcijom rada.
+            </p>
           </motion.div>
 
-          <motion.p
+          {/* Price card */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.08}
+            viewport={{ once: true }}
+            className="mb-16 p-8 md:p-10"
+            style={{ border: "1px solid rgba(201,168,50,0.38)", background: "rgba(201,168,50,0.06)" }}
+          >
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+              <div>
+                <div className="flex items-baseline gap-3 mb-1">
+                  <p className="font-playfair font-semibold leading-none" style={{ fontSize: "3.4rem", color: "rgba(237,233,227,0.95)", letterSpacing: "-0.02em" }}>
+                    350 €
+                  </p>
+                  <p className="text-[12px] font-normal" style={{ color: "#c9a832" }}>
+                    Early Bird
+                  </p>
+                </div>
+                <p className="text-[12px] font-normal" style={{ color: "rgba(237,233,227,0.30)", textDecoration: "line-through" }}>
+                  Redovna cijena: 400 €
+                </p>
+              </div>
+              <div className="flex gap-10 md:gap-12 md:pb-2">
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>
+                    Akontacija
+                  </p>
+                  <p className="text-[15px] font-normal" style={{ color: "rgba(237,233,227,0.88)" }}>
+                    100 €
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>
+                    Grupa
+                  </p>
+                  <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>
+                    Max. 12 polaznika
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Termini list */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.12}
+            viewport={{ once: true }}
+            className="mb-14"
+          >
+            <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-2" style={{ color: "#9e8a46" }}>
+              Termini
+            </p>
+            {termini.map((t, i) => (
+              <div
+                key={i}
+                className="py-7 grid gap-5 md:gap-8 md:grid-cols-[1fr_auto] md:items-center"
+                style={{
+                  borderTop: "1px solid rgba(237,233,227,0.08)",
+                  ...(i === termini.length - 1 && { borderBottom: "1px solid rgba(237,233,227,0.08)" }),
+                }}
+              >
+                <div>
+                  <div className="flex items-baseline gap-3 mb-1.5">
+                    <p className="font-playfair font-medium text-[1.15rem] leading-tight" style={{ color: "rgba(237,233,227,0.92)" }}>
+                      {t.grad}
+                    </p>
+                    <p className="text-[13px] font-normal" style={{ color: "rgba(237,233,227,0.72)" }}>
+                      {t.datum}
+                    </p>
+                  </div>
+                  <p className="text-[12px] font-normal leading-[1.6] mb-2" style={{ color: "rgba(237,233,227,0.42)" }}>
+                    {t.lokacija}
+                  </p>
+                  <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: "#c9a832" }}>
+                    Early Bird do {t.earlyBird}
+                  </p>
+                </div>
+                <a
+                  href="https://tally.so/r/wA5kvD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] text-[11px] uppercase tracking-[0.12em] font-medium px-6 py-2.5 rounded-sm transition-colors duration-500 md:justify-self-end"
+                >
+                  Prijavi se
+                </a>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Rok prijave */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.16}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <p className="text-[12px] leading-[1.65] font-normal" style={{ color: "rgba(237,233,227,0.42)" }}>
+              Preostali iznos kotizacije plaća se najkasnije 30 dana prije početka edukacije. Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
+            </p>
+            <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: "rgba(237,233,227,0.42)" }}>
+              Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{" "}
+              <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: "#c9a832" }}>info@uciliste-suprastudium.hr</a>
+              {" "}ili nazovi{" "}
+              <a href="tel:+385958558953" style={{ color: "#c9a832" }}>095 855 89 53</a>.
+              Ako postoji slobodno mjesto i organizacijske mogućnosti to dopuštaju, provjerit ćemo mogućnost naknadne prijave.
+            </p>
+          </motion.div>
+
+          {/* Uključeno u kotizaciju */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={0.2}
+            viewport={{ once: true }}
+            className="pt-12"
+            style={{ borderTop: "1px solid rgba(237,233,227,0.08)" }}
+          >
+            <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-6" style={{ color: "#9e8a46" }}>
+              Uključeno u kotizaciju
+            </p>
+            <div className="grid sm:grid-cols-2 gap-x-10">
+              {ukljuceno.map((item, i) => (
+                <div key={i} className="py-4 flex gap-3" style={{ borderTop: "1px solid rgba(237,233,227,0.08)" }}>
+                  <span className="flex-shrink-0 mt-[3px]" style={{ color: "rgba(201,168,50,0.55)", fontSize: "11px" }}>—</span>
+                  <p className="text-[13.5px] leading-[1.55] font-normal" style={{ color: "rgba(237,233,227,0.68)" }}>
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12px] leading-[1.7] font-normal mt-6" style={{ color: "rgba(237,233,227,0.38)", fontStyle: "italic" }}>
+              Set čaša za rad nabavlja se zasebno — preporuke dobivaš pri prijavi.
+            </p>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* ── Bonus za prva 3 prijavljena ──────────────────────── */}
+      <section className="py-24 px-6" style={{ background: "#FAF8F4", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div className="max-w-5xl mx-auto">
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-6" style={{ color: "#B89A4F" }}>
+              Bonus za prva 3 prijavljena
+            </p>
+            <div className="w-10 h-px mb-9" style={{ backgroundColor: "rgba(184,154,79,0.28)" }} />
+            <p className="text-[14px] leading-[1.85] font-normal" style={{ color: "#5F5A52", maxWidth: "54ch" }}>
+              Prva 3 polaznika koja rezerviraju mjesto dobivaju dodatne resurse koji nisu dio standardnog programa.
+            </p>
+          </motion.div>
+
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             custom={0.1}
             viewport={{ once: true }}
-            className="text-sm leading-relaxed mb-10 max-w-md"
-            style={{ color: "rgba(237,233,227,0.68)" }}
           >
-            Program se održava u manjim grupama, ovisno o rasporedu i organizaciji partnera.
-          </motion.p>
-
-          <div className="space-y-px bg-[#201e1a]">
-            {[
-              { lokacija: "Zagreb", napomena: "1.11.2026. · Maxi Dance Studio" },
-              { lokacija: "Slavonski Brod", napomena: "u suradnji s lokalnim organizatorima" },
-              { lokacija: "Rijeka / Split", napomena: "periodični termini prema interesu" },
-            ].map((t, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                custom={i * 0.07}
-                viewport={{ once: true }}
-                className="bg-[#141311] px-8 py-5"
-              >
-                <p className="text-sm text-[#ede9e3] font-medium">{t.lokacija}</p>
-                <p className="text-[12px] mt-0.5" style={{ color: "rgba(237,233,227,0.58)" }}>{t.napomena}</p>
-              </motion.div>
-            ))}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              custom={0.25}
-              viewport={{ once: true }}
-              className="bg-[#141311] px-8 py-6 flex items-baseline gap-4"
-            >
-              <p className="text-[11px] uppercase tracking-[0.14em]" style={{ color: "rgba(237,233,227,0.62)" }}>
-                Kotizacija
-              </p>
-              <p className="font-playfair text-2xl text-[#ede9e3]">390 €</p>
-            </motion.div>
-          </div>
-
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            custom={0.35}
-            viewport={{ once: true }}
-            className="mt-5 text-[13px]"
-            style={{ color: "rgba(237,233,227,0.60)" }}
-          >
-            Zagreb potvrđen · ostali gradovi na upit.
-          </motion.p>
-
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            custom={0.4}
-            viewport={{ once: true }}
-            className="mt-12 flex flex-col sm:flex-row gap-4"
-          >
-            <a
-              href="https://tally.so/r/wA5kvD"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] text-xs uppercase tracking-[0.1em] font-medium px-5 py-2 rounded-sm transition-colors duration-500"
-            >
-              Pošalji upit
-            </a>
-            <a
-              href="https://wa.me/385958558953"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-[#ede9e3]/50 hover:text-[#ede9e3]/85 text-xs uppercase tracking-[0.1em] transition-colors duration-300"
-            >
-              — Pitanja na WhatsApp
-            </a>
+            <div className="grid md:grid-cols-2" style={{ border: "1px solid rgba(0,0,0,0.07)" }}>
+              {bonusi.map((bonus, i) => (
+                <div
+                  key={i}
+                  className="p-8"
+                  style={{
+                    background: "white",
+                    borderRight: i % 2 === 0 ? "1px solid rgba(0,0,0,0.07)" : "none",
+                    borderBottom: i < 2 ? "1px solid rgba(0,0,0,0.07)" : "none",
+                  }}
+                >
+                  <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: "2rem", color: "rgba(184,154,79,0.28)" }}>
+                    {bonus.n}
+                  </p>
+                  <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: "#1F1D1A" }}>
+                    {bonus.title}
+                  </p>
+                  <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: "#8A8480" }}>
+                    {bonus.note}
+                  </p>
+                  {bonus.bullets && (
+                    <ul className="mt-4 space-y-2">
+                      {bonus.bullets.map((b, j) => (
+                        <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: "#8A8480" }}>
+                          <span className="flex-shrink-0" style={{ color: "rgba(184,154,79,0.55)" }}>—</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {bonus.disclaimer && (
+                    <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: "rgba(0,0,0,0.42)", fontStyle: "italic" }}>
+                      {bonus.disclaimer}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </motion.div>
+
         </div>
       </section>
 
