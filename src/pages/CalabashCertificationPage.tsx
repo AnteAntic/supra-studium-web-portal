@@ -39,9 +39,9 @@ const metodaKlinicki = [
 const terminiKalabas = [
   {
     grad: 'Split',
-    datum: '18.–19.09.2026.',
+    datum: '19.–20.09.2026.',
     lokacija: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6',
-    earlyBird: '04.08.2026.',
+    earlyBird: '05.08.2026.',
   },
   {
     grad: 'Rijeka',
@@ -133,7 +133,7 @@ const faq = [
   {
     pitanje: 'Gdje se edukacija održava?',
     odgovor:
-      'Edukacija se održava u tri grada: Split (18.–19.09.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6), Rijeka (26.–27.09.2026., Udruga Eterico, Ul. Zdravka Kučića 39) i Zagreb (06.–07.03.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
+      'Edukacija se održava u tri grada: Split (19.–20.09.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6), Rijeka (26.–27.09.2026., Udruga Eterico, Ul. Zdravka Kučića 39) i Zagreb (06.–07.03.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
   },
   {
     pitanje: 'Kolika je kotizacija?',
@@ -166,8 +166,8 @@ const CalabashCertificationPage: React.FC = () => {
       name: 'Kalabaš masaža — Therapeutic Calabash Deep Tissue Myofascial Release',
       description: 'Dvodnevna certifikacija kalabaš masaže s dr. Awudijem Atitsogbuijem — afrička tradicija i miofascijalni pristup u jednom alatu.',
       path: '/calabash-certifikacija',
-      startDate: '2026-09-18',
-      endDate: '2026-09-19',
+      startDate: '2026-09-19',
+      endDate: '2026-09-20',
       priceEUR: 490,
       location: 'Split',
     }));
@@ -180,7 +180,7 @@ const CalabashCertificationPage: React.FC = () => {
 
       <CourseStickyBar
         locations={[
-          { city: 'Split', dates: '18.–19.9.2026.' },
+          { city: 'Split', dates: '19.–20.9.2026.' },
           { city: 'Rijeka', dates: '26.–27.9.2026.' },
           { city: 'Zagreb', dates: '6.–7.3.2027.' },
         ]}
@@ -372,7 +372,7 @@ const CalabashCertificationPage: React.FC = () => {
             {[
               { label: 'Format', value: '2 dana · 18 sati' },
               { label: 'Voditelj', value: 'Dr. Awudi Atitsogbui' },
-              { label: 'Prvi termin', value: 'Split · 18.–19.9.2026.' },
+              { label: 'Prvi termin', value: 'Split · 19.–20.9.2026.' },
               { label: 'Završetak', value: 'Certifikat Supra Studium' },
             ].map(item => (
               <div
