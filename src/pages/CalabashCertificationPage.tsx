@@ -60,7 +60,7 @@ const terminiKalabas = [
 const ukljuceno = [
   'Dva originalna ručno izrađena Kalabaš alata',
   'Nastavni materijali',
-  'Certifikat Učilišta Supra Studium',
+  'Certifikat Učilišta Supra Studium (upis u e-radnu knjižicu)',
   'Praktičan rad u maloj grupi',
   'Mentorstvo nakon edukacije',
   'Pristup dodatnim stručnim materijalima',

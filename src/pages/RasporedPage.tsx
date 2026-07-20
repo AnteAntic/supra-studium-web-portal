@@ -533,7 +533,7 @@ export default function RasporedPage() {
               { month: 'Siječanj', code: '01', year: '2027', status: 'Termini potvrđeni.', sub: 'ATP (Split) · 15.–17.01. — MT3 · 30.–31.01.' },
               { month: 'Veljača',  code: '02', year: '2027', status: 'Termini potvrđeni.', sub: 'CFM 1 (Zagreb) · 6.–7.02. — Lomi Lomi (Rijeka) · 6.–7.02.' },
               { month: 'Ožujak',   code: '03', year: '2027', status: 'Termini potvrđeni.', sub: 'Kalabaš (Zagreb) · 6.–7.03. — 3D Stretching (Rijeka) · 13.–14.03.' },
-              { month: 'Travanj',  code: '04', year: '2027', status: 'Termini potvrđeni.', sub: 'Lomi Lomi (Modul 2) · 10.–11.04. — Cupping (Zagreb) · 17.04. — Klinička propedeutika (Split) · 18.04.' },
+              { month: 'Travanj',  code: '04', year: '2027', status: 'Termini potvrđeni.', sub: 'Lomi Lomi (Modul 2) · 10.–11.04. — Cupping (Zagreb) · 17.04. — Procjena posture (Zagreb) · 18.04.' },
             ].map((item, i) => (
               <motion.div
                 key={item.month}

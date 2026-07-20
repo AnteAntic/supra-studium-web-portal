@@ -33,15 +33,13 @@ const principi = [
 ];
 
 const program = [
-  { vrijeme: "09:00", tema: "Komunikacija kao klinički alat — kako razgovor oblikuje procjenu." },
-  { vrijeme: "10:00", tema: "Anamneza: sustav i strategija prikupljanja korisnih podataka." },
-  { vrijeme: "11:30", tema: "Fizikalni pregled: inspekcija, palpacija, ciljani klinički testovi." },
-  { vrijeme: "13:00", tema: "Stanka." },
-  { vrijeme: "13:45", tema: "Mjesto slikovnih i laboratorijskih pretraga u radnoj dijagnozi." },
-  { vrijeme: "14:45", tema: "Od nalaza do radne dijagnoze — kliničko zaključivanje." },
-  { vrijeme: "15:45", tema: "Pisanje medicinskog nalaza: jasno, točno, korisno." },
-  { vrijeme: "16:15", tema: "Vježbe: samostalna anamneza i postavljanje radne dijagnoze." },
-  { vrijeme: "17:00", tema: "Završetak." },
+  "Komunikacija kao klinički alat — kako razgovor oblikuje procjenu.",
+  "Anamneza: sustav i strategija prikupljanja korisnih podataka.",
+  "Fizikalni pregled: inspekcija, palpacija, ciljani klinički testovi.",
+  "Mjesto slikovnih i laboratorijskih pretraga u radnoj dijagnozi.",
+  "Od nalaza do radne dijagnoze — kliničko zaključivanje.",
+  "Pisanje medicinskog nalaza: jasno, točno, korisno.",
+  "Vježbe: samostalna anamneza i postavljanje radne dijagnoze.",
 ];
 
 const slike = [
@@ -55,7 +53,7 @@ const ukljuceno = [
   "Vježbe samostalne anamneze i postavljanja radne dijagnoze",
   "Predložak za pisanje medicinskog nalaza",
   "Radni materijali",
-  "Potvrda o sudjelovanju",
+  "Potvrda o edukaciji s mogućnošću upisa u e-radnu knjižicu",
   "Rad u maloj grupi (do 20 polaznika)",
 ];
 
@@ -70,7 +68,7 @@ const faq = [
   },
   {
     q: "Dobivam li potvrdu?",
-    a: "Da. Svi polaznici dobivaju potvrdu o sudjelovanju na edukaciji.",
+    a: "Da. Svi polaznici dobivaju potvrdu o edukaciji koja se može upisati u e-radnu knjižicu, pod rubrikom dodatnog obrazovanja.",
   },
   {
     q: "Koliko je polaznika u grupi?",
@@ -249,7 +247,7 @@ export default function KlinickaPropedeutikaPage() {
                 className="mb-12 flex flex-wrap items-center"
                 style={{ columnGap: "14px", rowGap: "4px" }}
               >
-                {["1 dan", "Anamneza i pregled", "Radna dijagnoza", "Potvrda o sudjelovanju"].map((item, i) => (
+                {["1 dan · 9–17h", "Anamneza i pregled", "Radna dijagnoza", "Potvrda o edukaciji"].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
                       <span style={{ color: "rgba(255,255,255,0.32)", fontSize: "11px", lineHeight: 1 }}>·</span>
@@ -495,9 +493,12 @@ export default function KlinickaPropedeutikaPage() {
         <div className="max-w-5xl mx-auto">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-16">
             <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Program dana</p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug max-w-lg">
+            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug max-w-lg mb-4">
               Jedan dan. Od prvog pitanja do nalaza.
             </h2>
+            <p className="text-sm text-[#3b3b3b] leading-relaxed max-w-lg">
+              Jednodnevni program, od 9 do 17 sati, kroz sedam koraka procjene — s vježbama i izravnim radom.
+            </p>
           </motion.div>
 
           <div className="space-y-px bg-[#e3e3e3]">
@@ -509,16 +510,16 @@ export default function KlinickaPropedeutikaPage() {
                 whileInView="visible"
                 custom={i * 0.05}
                 viewport={{ once: true }}
-                className="bg-[#F4F1EA] grid grid-cols-[68px_1fr] md:grid-cols-[120px_1fr] gap-6 md:gap-8 px-8 py-6 items-baseline"
+                className="bg-[#F4F1EA] grid grid-cols-[48px_1fr] md:grid-cols-[80px_1fr] gap-6 md:gap-8 px-8 py-6 items-baseline"
               >
-                <p className="text-sm font-medium text-[#1F1D1A] tabular-nums">{t.vrijeme}</p>
-                <p className="text-sm text-[#3b3b3b] leading-relaxed">{t.tema}</p>
+                <span className="font-playfair text-2xl text-[#9e8a46]/30 leading-none">{String(i + 1).padStart(2, "0")}</span>
+                <p className="text-sm text-[#3b3b3b] leading-relaxed">{t}</p>
               </motion.div>
             ))}
           </div>
 
           <p className="text-[12px] leading-[1.7] font-normal mt-6 italic" style={{ color: "rgba(0,0,0,0.42)" }}>
-            Raspored je okviran i prilagođava se dinamici grupe.
+            Redoslijed je okviran i prilagođava se dinamici grupe.
           </p>
         </div>
       </section>

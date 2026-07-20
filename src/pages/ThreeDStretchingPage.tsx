@@ -1111,7 +1111,7 @@ const ThreeDStretchingPage = () => {
                     },
                     {
                       title: 'Certifikat završene edukacije',
-                      note: 'Potvrda o pohađanju s naznakom sati i metodološkog okvira.',
+                      note: 'Potvrda o pohađanju s naznakom sati i metodološkog okvira — s mogućnošću upisa u e-radnu knjižicu.',
                     },
                     {
                       title: 'Tjelesna mehanika terapeuta',
