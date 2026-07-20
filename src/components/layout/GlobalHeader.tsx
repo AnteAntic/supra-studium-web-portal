@@ -31,6 +31,9 @@ const menuItems = [{
   }, {
     name: '3D Advanced Therapeutic Stretching',
     href: '/3d-advanced-therapeutic-stretching'
+  }, {
+    name: 'Klinička propedeutika',
+    href: '/klinicka-propedeutika'
   }]
 }, {
   name: 'RASPORED',

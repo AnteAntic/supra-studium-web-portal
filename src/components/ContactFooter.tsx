@@ -267,6 +267,7 @@ export const ContactFooter = () => {
               { to: '/lomi-lomi', label: 'Lomi Lomi masaža' },
               { to: '/calabash-certifikacija', label: 'Kalabaš masaža' },
               { to: '/3d-advanced-therapeutic-stretching', label: '3D Therapeutic Stretching' },
+              { to: '/klinicka-propedeutika', label: 'Klinička propedeutika' },
               { to: '/raspored', label: 'Raspored edukacija' },
               { to: '/o-ucilistu', label: 'O učilištu' },
               { to: '/kontakt', label: 'Kontakt' },

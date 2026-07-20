@@ -44,3 +44,16 @@ Rollback evidencija: originali svih promijenjenih datoteka su u `_unused_arhiva/
 | public/videos/lomi-hero.mp4 | 4133 KB | 3421 KB |
 
 **Ukupna ušteda Faza B: 21.5 MB** (uz 29 optimiziranih slika i 2 videa).
+
+## Klinička propedeutika — nove slike (2026-07-20)
+
+Izvor: `Cowork OS/BRAND_ASSETS/photos/MT/` → sharp WebP q82.
+
+| Izvor | Novo ime | Dim. | Veličina |
+|---|---|---|---|
+| MT_leda_model_kraljeznice_uz_tijelo_palpacija.jpeg | propedeutika-hero-procjena.webp | 1920×1280 | 3891→126 KB |
+| MT_kuk_instruktor_drzi_model_zdjelice.jpeg | propedeutika-stosic-model.webp | 1400×933 | 3288→58 KB |
+| MT_koljeno_palpacija_pregled.jpg | propedeutika-palpacija-koljeno.webp | 1200×900 | 1960→33 KB |
+| MT_vrat_instruktor_manipulacija_cervikalna_publika.jpeg | propedeutika-pregled-vrat.webp | 1200×900 | 2522→58 KB |
+
+Reused: `mt-palpacija-lumbalna.jpg` (dokumentarni grid). Ušteda: 11.4 MB → 275 KB.

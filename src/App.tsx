@@ -18,6 +18,7 @@ import AkupresuraPage from "./pages/AkupresuraPage";
 import CuppingPage from "./pages/CuppingPage";
 import LomiLomiPage from "./pages/LomiLomiPage";
 import CalabashCertificationPage from "./pages/CalabashCertificationPage";
+import KlinickaPropedeutikaPage from "./pages/KlinickaPropedeutikaPage";
 // SoulScanPage unrouted 2026-07 — stale Feb 2025 term; file kept for future reschedule
 import RasporedPage from "./pages/RasporedPage";
 import ThreeDStretchingPage from "./pages/ThreeDStretchingPage";
@@ -47,6 +48,7 @@ const App = () => (
               <Route path="/lomi-lomi" element={<LomiLomiPage />} />
               <Route path="/calabash-certifikacija" element={<CalabashCertificationPage />} />
               <Route path="/3d-advanced-therapeutic-stretching" element={<ThreeDStretchingPage />} />
+              <Route path="/klinicka-propedeutika" element={<KlinickaPropedeutikaPage />} />
               <Route path="/raspored" element={<RasporedPage />} />
               <Route path="/o-ucilistu" element={<OUcilistuPage />} />
               <Route path="/prijava" element={<RegistrationPage />} />

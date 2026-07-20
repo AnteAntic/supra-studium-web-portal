@@ -59,6 +59,13 @@ const COURSES: Course[] = [
     href: '/3d-advanced-therapeutic-stretching',
     status: 'active',
   },
+  {
+    id: 'klinicka-propedeutika',
+    name: 'Klinička propedeutika',
+    desc: 'Klinička procjena prije terapije — anamneza, pregled i radna dijagnoza s dr. Stošićem.',
+    href: '/klinicka-propedeutika',
+    status: 'active',
+  },
 ];
 
 interface CourseRecommendationsProps {
