@@ -69,6 +69,7 @@ const TecajeviDropdown = ({
     { title: "Lomi Lomi masaža",                   href: "/lomi-lomi" },
     { title: "Kalabaš masaža",                     href: "/calabash-certifikacija" },
     { title: "3D Advanced Therapeutic Stretching", href: "/3d-advanced-therapeutic-stretching" },
+    { title: "Klinička propedeutika",               href: "/klinicka-propedeutika" },
   ];
 
   const defaultColor = isActive ? COLOR.active(onLight) : COLOR.inactive(onLight);

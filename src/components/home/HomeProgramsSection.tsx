@@ -29,6 +29,7 @@ const secondaryPrograms = [
   { title: 'Lomi Lomi masaža', href: '/lomi-lomi', image: '/lovable-uploads/lomi-lomi-hero-sharp.jpeg' },
   { title: 'Kalabaš masaža', href: '/calabash-certifikacija', image: '/lovable-uploads/cal-program-kartica.webp' },
   { title: '3D Advanced Therapeutic Stretching', href: '/3d-advanced-therapeutic-stretching', image: '/lovable-uploads/3ds-technique-1.jpg' },
+  { title: 'Klinička propedeutika', href: '/klinicka-propedeutika', image: '/lovable-uploads/propedeutika-stosic-model.webp' },
 ];
 
 export function HomeProgramsSection() {
@@ -49,7 +50,7 @@ export function HomeProgramsSection() {
           </p>
           <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
           <h2 className="font-playfair font-semibold text-[1.65rem] md:text-[2rem] leading-[1.22]" style={{ color: '#1F1D1A' }}>
-            Sedam programa. Jedan pristup radu.
+            Osam programa. Jedan pristup radu.
           </h2>
         </motion.div>
 
@@ -152,7 +153,7 @@ export function HomeProgramsSection() {
 
         {/* Secondary trio — Cupping, Lomi, Kalabaš */}
         <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5"
+          className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-5"
           style={{ borderTop: '1px solid rgba(0,0,0,0.07)', paddingTop: '20px' }}
         >
           {secondaryPrograms.map((prog, i) => (

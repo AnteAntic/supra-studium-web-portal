@@ -15,7 +15,7 @@ const fadeUp = {
 
 const tickerItems = [
   'Manualna terapija', 'ATP terapija', 'Kalabaš certifikacija',
-  'Lomi Lomi', 'Cupping terapija', 'CFM Body Reset',
+  'Lomi Lomi', 'Cupping terapija', 'CFM Body Reset', 'Klinička propedeutika',
 ];
 
 type CourseItem =
@@ -64,6 +64,7 @@ const pathways: Pathway[] = [
       { text: 'Crossfriction & Funkcionalna masaža',    href: '/crossfriction-funkcionalna-masaza' },
       { type: 'advanced', text: '3D Advanced Therapeutic Stretching', sub: 'mobilnost, fascijalne linije i integrirani terapijski stretching', href: '/3d-advanced-therapeutic-stretching' },
       { text: 'Cupping terapija',                       href: '/cupping-terapija' },
+      { text: 'Klinička propedeutika', sub: 'procjena, anamneza i radna dijagnoza prije terapije', href: '/klinicka-propedeutika' },
     ],
     image: '/lovable-uploads/raspored-pathway-holisticki-v2.webp',
     imagePos: 'center 34%',

@@ -224,7 +224,7 @@ export default function KlinickaPropedeutikaPage() {
                 >
                   Svaku terapiju vodi procjena.
                   <br />
-                  Malo je tko uči kako je postaviti.
+                  Nauči je postaviti — samostalno i sigurno.
                 </h1>
               </motion.div>
 
