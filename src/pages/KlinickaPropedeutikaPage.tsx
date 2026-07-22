@@ -553,13 +553,13 @@ export default function KlinickaPropedeutikaPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative overflow-hidden">
             <img
-              width={1400}
-              height={933}
+              width={933}
+              height={1400}
               src="/lovable-uploads/propedeutika-stosic-model.webp"
               alt="Dr. Aleksandar Stošić objašnjava anatomski model tijekom edukacije"
-              className="w-full object-cover aspect-[4/3]"
+              className="w-full object-cover aspect-[4/5]"
               loading="lazy"
-              style={{ filter: "grayscale(8%)", objectPosition: "center 30%" }}
+              style={{ filter: "grayscale(8%)", objectPosition: "center" }}
             />
           </motion.div>
 

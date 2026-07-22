@@ -57,3 +57,7 @@ Izvor: `Cowork OS/BRAND_ASSETS/photos/MT/` → sharp WebP q82.
 | MT_vrat_instruktor_manipulacija_cervikalna_publika.jpeg | propedeutika-pregled-vrat.webp | 1200×900 | 2522→58 KB |
 
 Reused: `mt-palpacija-lumbalna.jpg` (dokumentarni grid). Ušteda: 11.4 MB → 275 KB.
+
+## Propedeutika — rotacija slike (2026-07-21)
+
+`propedeutika-stosic-model.webp` rotirana 90° u smjeru kazaljke sata (stol je bio dijagonalan, sad je ravan/horizontalan). Format promijenjen iz 1400×933 (landscape) u 933×1400 (portrait), 58KB. Korištena na Home (kvadratna kartica, object-cover center — bez promjene koda) i na propedeutika stranici "Voditelj tečaja" (promijenjeno iz aspect-[4/3] u aspect-[4/5], po uzoru na CuppingPage instruktorsku sliku).
