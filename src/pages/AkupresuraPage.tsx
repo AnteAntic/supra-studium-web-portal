@@ -61,10 +61,10 @@ const AkupresuraPage = () => {
       name: 'Akupresura & Trigger Point Terapija',
       description: 'Trodnevna klinička edukacija akupresure i trigger point metode za terapeute — obrazac boli, palpacija, lokalna i distalna točka.',
       path: '/akupresura-trigger-point',
-      startDate: '2026-10-09',
-      endDate: '2026-10-11',
+      startDate: '2027-01-15',
+      endDate: '2027-01-17',
       priceEUR: 460,
-      location: 'Poliklinika Body Balance, Zagreb',
+      location: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović, Split',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('Akupresura & Trigger Point', '/akupresura-trigger-point'));
   }, []);
@@ -96,8 +96,8 @@ const AkupresuraPage = () => {
 
       {/* Unified Sticky Bar */}
       <CourseStickyBar locations={[
-      { city: "Zagreb", dates: "9.–11.10.2026." },
       { city: "Split", dates: "15.–17.1.2027." },
+      { city: "Zagreb", dates: "5.–7.2.2027." },
     ]} price="Early Bird 460 €" ctaText="Prijavi se" ctaHref="https://tally.so/r/wA5kvD" theme="light" />
 
       {/* Klinička observacija */}
@@ -737,7 +737,7 @@ const AkupresuraPage = () => {
                   Redovna cijena: 500 €
                 </p>
                 <p className="text-[11px] uppercase tracking-[0.16em] font-medium mb-8" style={{ color: '#B89A4F' }}>
-                  Early Bird do 25.08.2026.
+                  Early Bird do 01.12.2026.
                 </p>
 
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }} className="pt-7 space-y-4 mb-8">
@@ -812,22 +812,22 @@ const AkupresuraPage = () => {
                   </p>
                   <div className="mb-5">
                     <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
-                      9.–11.10.2026. · Zagreb<br />
-                      <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Body Balance</span><br />
-                      Frane Kesterčaneka 2b
-                    </p>
-                    <p className="text-[11px] uppercase tracking-[0.14em] font-medium mt-2" style={{ color: '#B89A4F' }}>
-                      Early Bird do 25.08.2026.
-                    </p>
-                  </div>
-                  <div className="pt-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-                    <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
                       15.–17.01.2027. · Split<br />
-                      <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Centar Majce &amp; Stojanović</span><br />
+                      <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Centar za ortopedsku manualnu terapiju Majce &amp; Stojanović</span><br />
                       Žnjanska 6
                     </p>
                     <p className="text-[11px] uppercase tracking-[0.14em] font-medium mt-2" style={{ color: '#B89A4F' }}>
                       Early Bird do 01.12.2026.
+                    </p>
+                  </div>
+                  <div className="pt-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+                    <p className="text-[14px] leading-[1.75] font-normal" style={{ color: '#3D3A35' }}>
+                      5.–7.02.2027. · Zagreb<br />
+                      <span style={{ fontWeight: 500, color: '#1F1D1A' }}>Poliklinika Medical Body Balance</span><br />
+                      Frane Kesterčaneka 2b
+                    </p>
+                    <p className="text-[11px] uppercase tracking-[0.14em] font-medium mt-2" style={{ color: '#B89A4F' }}>
+                      Early Bird do 23.12.2026.
                     </p>
                   </div>
                 </div>
@@ -937,8 +937,8 @@ const AkupresuraPage = () => {
                 </AccordionTrigger>
                 <AccordionContent className="pb-8">
                   <p className="text-[14px] leading-[1.85]" style={{ color: '#5F5A52' }}>
-                    Zagreb: 9.–11. listopada 2026. — Poliklinika Body Balance, Frane Kesterčaneka 2b.<br />
-                    Split: 15.–17. siječnja 2027. — Centar Majce &amp; Stojanović, Žnjanska 6.
+                    Split: 15.–17. siječnja 2027. — Centar za ortopedsku manualnu terapiju Majce &amp; Stojanović, Žnjanska 6.<br />
+                    Zagreb: 5.–7. veljače 2027. — Poliklinika Medical Body Balance, Frane Kesterčaneka 2b.
                   </p>
                   <p className="text-[14px] leading-[1.8] mt-3" style={{ color: '#5F5A52' }}>
                     Ostale termine i gradove možeš pratiti na stranici rasporeda.

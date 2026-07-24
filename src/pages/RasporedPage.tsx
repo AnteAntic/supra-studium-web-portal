@@ -317,7 +317,7 @@ export default function RasporedPage() {
                 className="text-[10px] uppercase tracking-[0.16em] font-normal text-center sm:text-left"
                 style={{ color: 'rgba(237,233,227,0.72)' }}
               >
-                Kalabaš · 19.9. — ATP · 9.10. — MT1 · 20.11. — CFM · 6.2. — Kalabaš ZG · 6.3. — Cupping · 17.4.
+                3D · 19.9. — Cupping · 25.10. — Propedeutika · 31.10. — CFM3 · 7.11. — MT1 · 20.11. — ATP · 15.1. — Kalabaš · 20.2. — Cupping ZG · 17.4.
               </span>
               <span className="hidden sm:block w-px h-3 bg-[#3a3530]" />
               <span
@@ -527,13 +527,13 @@ export default function RasporedPage() {
 
           <div className="space-y-px bg-[#201e1a] max-w-2xl">
             {[
-              { month: 'Rujan',    code: '09', year: '2026', status: 'Termini potvrđeni.', sub: 'Kalabaš (Split) · 19.–20.9. — Kalabaš (Rijeka) · 26.–27.9.' },
-              { month: 'Listopad', code: '10', year: '2026', status: 'Termini potvrđeni.', sub: 'ATP · 9.–11.10. — Cupping (Split) · 25.10. — Klinička propedeutika (Split) · 31.10. — 3D Stretching · 31.10.–1.11.' },
-              { month: 'Studeni',  code: '11', year: '2026', status: 'Termini potvrđeni.', sub: 'CFM 3 (Rijeka) · 7.–8.11. — MT5 Advanced · 8.11. — Lomi Lomi (Split) · 14.–15.11. — MT1 · 20.–22.11.' },
-              { month: 'Prosinac', code: '12', year: '2026', status: 'Termin potvrđen.', sub: 'MT2 · 12.–13.12.' },
+              { month: 'Rujan',    code: '09', year: '2026', status: 'Termini potvrđeni.', sub: '3D Stretching (Split) · 19.–20.9. — 3D Stretching (Rijeka) · 26.–27.9.' },
+              { month: 'Listopad', code: '10', year: '2026', status: 'Termini potvrđeni.', sub: '3D Stretching (Zagreb) · 10.–11.10. — Cupping (Split) · 25.10. — Klinička propedeutika (Split) · 31.10.' },
+              { month: 'Studeni',  code: '11', year: '2026', status: 'Termini potvrđeni.', sub: 'CFM 3 (Rijeka) · 7.–8.11. — Lomi Lomi (Split) · 14.–15.11. — MT1 · 20.–22.11.' },
+              { month: 'Prosinac', code: '12', year: '2026', status: 'Termini potvrđeni.', sub: 'MT2 · 12.–13.12. — 3D Stretching (Slavonski Brod) · 12.–13.12.' },
               { month: 'Siječanj', code: '01', year: '2027', status: 'Termini potvrđeni.', sub: 'ATP (Split) · 15.–17.01. — MT3 · 30.–31.01.' },
-              { month: 'Veljača',  code: '02', year: '2027', status: 'Termini potvrđeni.', sub: 'CFM 1 (Zagreb) · 6.–7.02. — Lomi Lomi (Rijeka) · 6.–7.02.' },
-              { month: 'Ožujak',   code: '03', year: '2027', status: 'Termini potvrđeni.', sub: 'Kalabaš (Zagreb) · 6.–7.03. — 3D Stretching (Rijeka) · 13.–14.03.' },
+              { month: 'Veljača',  code: '02', year: '2027', status: 'Termini potvrđeni.', sub: 'Lomi Lomi (Rijeka) · 6.–7.02. — ATP (Zagreb) · 5.–7.02. — MT5 Advanced (Rijeka) · 14.02. — Kalabaš (Split) · 20.–21.02.' },
+              { month: 'Ožujak',   code: '03', year: '2027', status: 'Termini potvrđeni.', sub: 'Kalabaš (Zagreb) · 6.–7.03. — Kalabaš (Rijeka) · 13.–14.03.' },
               { month: 'Travanj',  code: '04', year: '2027', status: 'Termini potvrđeni.', sub: 'Lomi Lomi (Modul 2) · 10.–11.04. — Cupping (Zagreb) · 17.04. — Procjena posture (Zagreb) · 18.04.' },
             ].map((item, i) => (
               <motion.div
@@ -730,7 +730,7 @@ export default function RasporedPage() {
               Prijavi interes i primi informacije među prvima.
             </p>
             <a
-              href="https://5694f0fd.sibforms.com/serve/MUIFAOs4ZuXxMKp4E6OJZAlkghxH86yc0VpKZMzvj1AlsrKhc4cLBDBY9WaBoeIuOHyXf2NJenq0rxXMRZDSJpyVQsjUZ97m3lmDobO_SD_6O9qDUZtBJinN9O0QZ0fBTdJk0ooP8bihntndqxZM31gih2HMWqvB0698-PPpdvSrFbmCzrY5XPEWHVgv5AKym43COwDYevehRvGW"
+              href="https://tally.so/r/wA5kvD"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] px-8 py-3 text-[10px] font-medium rounded-sm tracking-[0.20em] uppercase transition-colors duration-300"

@@ -72,11 +72,11 @@ const postupnikKoraci = [
 ];
 
 const termini = [
-  { stupanj: 'Stupanj I', datum: '20.–22.11.2026. · 9–18 h', lokacija: 'Poliklinika Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[1] },
-  { stupanj: 'Stupanj II', datum: '12.–13.12.2026. · 9–17 h', lokacija: 'Poliklinika Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
-  { stupanj: 'Stupanj III', datum: '30.–31.01.2027. · 9–17 h', lokacija: 'Poliklinika Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[3] },
+  { stupanj: 'Stupanj I', datum: '20.–22.11.2026. · 9–18 h', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[1] },
+  { stupanj: 'Stupanj II', datum: '12.–13.12.2026. · 9–17 h', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
+  { stupanj: 'Stupanj III', datum: '30.–31.01.2027. · 9–17 h', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[3] },
   { stupanj: 'Stupanj IV', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[4] },
-  { stupanj: 'Stupanj V', datum: 'ned. 8.11.2026. · 9–17 h', lokacija: 'Maxi Dance Studio, Zagreb', cijena: '550 €', pdf: pdfLinks[5] },
+  { stupanj: 'Stupanj V', datum: '14.02.2027. · 9–17 h', lokacija: 'Prostor bivše fizikalne terapije, Rijeka', cijena: '550 €', pdf: pdfLinks[5] },
 ];
 
 const faq = [
@@ -98,7 +98,7 @@ const faq = [
   },
   {
     q: 'Gdje se program odvija?',
-    a: 'Edukacije se odvijaju u kliničkim prostorima u Zagrebu — Poliklinika Body Balance (Frane Kesterčaneka 2b) i Maxi Dance Studio (Frane Kesterčaneka 2, ispod bolnice Rebro). Točna lokacija i upute za parking navode se u potvrdi prijave.',
+    a: 'Stupnjevi I–III održavaju se u Zagrebu — Poliklinika Medical Body Balance (Frane Kesterčaneka 2b). Stupanj V (advanced) održava se u Rijeci — Prostor bivše fizikalne terapije (Drage Gervaisa 2). Točna lokacija i upute za parking navode se u potvrdi prijave.',
   },
   {
     q: 'Što je "Postupnik manualnog terapeuta"?',
@@ -153,10 +153,10 @@ export default function ManualTherapySchoolPage() {
 
       <CourseStickyBar
         locations={[
-          { city: 'Stupanj V', dates: 'ned. 8.11.' },
           { city: 'Stupanj I', dates: '20.–22.11.' },
           { city: 'Stupanj II', dates: '12.–13.12.' },
           { city: 'Stupanj III', dates: '30.–31.01.' },
+          { city: 'Stupanj V', dates: '14.02.2027.' },
         ]}
         price=""
         ctaText="Prijavi se"

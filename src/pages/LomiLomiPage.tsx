@@ -144,7 +144,7 @@ const faq = [
   {
     pitanje: 'Organiziraju li se tečajevi i u drugim gradovima?',
     odgovor:
-      'Modul 1 trenutno se održava u Splitu i Rijeci, a Modul 2 u Zagrebu. Za termine izvan objavljenog rasporeda javite se na ante.a@web.de.',
+      'Modul 1 trenutno se održava u Splitu i Rijeci, a Modul 2 u Zagrebu. Za termine izvan objavljenog rasporeda javite se na info@uciliste-suprastudium.hr.',
   },
 ];
 
@@ -1027,7 +1027,7 @@ const LomiLomiPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── Bonus za prvih 8 ─────────────────────────────────────────────── */}
+      {/* ── Bonus za prvih 5 ─────────────────────────────────────────────── */}
       <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="pt-24 pb-28">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">

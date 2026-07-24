@@ -7,8 +7,10 @@ import { CourseRecommendations } from '@/components/course/CourseRecommendations
 import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb } from '@/lib/seo';
 
 const terminiDAS = [
-  { city: 'Zagreb', date: '31.10.–1.11.2026.', venue: 'Maxi Dance Studio, Frane Kesterčaneka 2 · 9–17 h', eb: '16.09.2026.' },
-  { city: 'Rijeka', date: '13.–14.03.2027.', venue: 'Udruga Eterico, Zdravka Kučića 39', eb: '27.01.2027.' },
+  { city: 'Split', date: '19.–20.09.2026.', venue: 'Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6', eb: '05.08.2026.' },
+  { city: 'Rijeka', date: '26.–27.09.2026.', venue: 'Udruga Eterico, Zdravka Kučića 39', eb: '11.08.2026.' },
+  { city: 'Zagreb', date: '10.–11.10.2026.', venue: 'Poliklinika Medical Body Balance, Frane Kesterčaneka 2b', eb: '25.08.2026.' },
+  { city: 'Slavonski Brod', date: '12.–13.12.2026.', venue: 'HK Studio, Naselje Slavonija 1', eb: '29.10.2026.' },
 ];
 
 const bonusiDAS: { n: string; title: string; note: string; bullets?: string[]; disclaimer?: string }[] = [
@@ -324,10 +326,10 @@ const ThreeDStretchingPage = () => {
       name: '3D Advanced Therapeutic Stretching',
       description: 'Dvodnevna edukacija terapijskog stretchinga kao kliničkog alata (16 sati) s dr. Awudijem — mobilnost, kompenzacijski obrasci i odgovor tkiva na pokret.',
       path: '/3d-advanced-therapeutic-stretching',
-      startDate: '2026-10-31',
-      endDate: '2026-11-01',
+      startDate: '2026-09-19',
+      endDate: '2026-09-20',
       priceEUR: 450,
-      location: 'Zagreb',
+      location: 'Split',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('3D Advanced Therapeutic Stretching', '/3d-advanced-therapeutic-stretching'));
     return () => { document.title = 'Supra Studium — Kliničke edukacije za terapeute'; };
@@ -350,8 +352,10 @@ const ThreeDStretchingPage = () => {
 
       <CourseStickyBar
         locations={[
-          { city: 'Zagreb', dates: '31.10.–1.11.2026.' },
-          { city: 'Rijeka', dates: '13.–14.3.2027.' },
+          { city: 'Split', dates: '19.–20.9.2026.' },
+          { city: 'Rijeka', dates: '26.–27.9.2026.' },
+          { city: 'Zagreb', dates: '10.–11.10.2026.' },
+          { city: 'Slavonski Brod', dates: '12.–13.12.2026.' },
         ]}
         price="Early Bird od 450 €"
         ctaText="Prijavi se"
@@ -1325,7 +1329,7 @@ const ThreeDStretchingPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
                     <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
-                      Prijava se vrši putem online obrasca. Termini: Zagreb (31.10.–1.11.2026., Maxi Dance Studio) i Rijeka (13.–14.03.2027., Udruga Eterico). Rezervacija se potvrđuje akontacijom od 100 €. Za pitanja: info@uciliste-suprastudium.hr ili 095 855 89 53.
+                      Prijava se vrši putem online obrasca. Termini: Split (19.–20.09.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović), Rijeka (26.–27.09.2026., Udruga Eterico), Zagreb (10.–11.10.2026., Poliklinika Medical Body Balance) i Slavonski Brod (12.–13.12.2026., HK Studio). Rezervacija se potvrđuje akontacijom od 100 €. Za pitanja: info@uciliste-suprastudium.hr ili 095 855 89 53.
                     </p>
                   </AccordionContent>
                 </AccordionItem>

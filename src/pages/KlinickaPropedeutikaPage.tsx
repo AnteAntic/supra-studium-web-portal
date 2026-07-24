@@ -639,7 +639,7 @@ export default function KlinickaPropedeutikaPage() {
               <div className="flex gap-10 md:gap-12 md:pb-2">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>Early Bird</p>
-                  <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>do 16.09.2026.</p>
+                  <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>do 01.10.2026.</p>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>Grupa</p>
@@ -663,10 +663,10 @@ export default function KlinickaPropedeutikaPage() {
                   <p className="text-[13px] font-normal" style={{ color: "rgba(237,233,227,0.72)" }}>31.10.2026. · 9–17h</p>
                 </div>
                 <p className="text-[12px] font-normal leading-[1.6] mb-2" style={{ color: "rgba(237,233,227,0.42)" }}>
-                  Centar za manualnu terapiju Majce &amp; Stojanović, Žnjanska 6, Split
+                  Centar za ortopedsku manualnu terapiju Majce &amp; Stojanović, Žnjanska 6, Split
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: "#c9a832" }}>
-                  Early Bird do 16.09.2026.
+                  Early Bird do 01.10.2026.
                 </p>
               </div>
               <a
@@ -698,8 +698,8 @@ export default function KlinickaPropedeutikaPage() {
           {/* Rok prijave */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={0.16} viewport={{ once: true }} className="mb-16">
             <p className="text-[12px] leading-[1.65] font-normal" style={{ color: "rgba(237,233,227,0.42)" }}>
-              Early Bird cijena vrijedi do 45 dana prije početka edukacije. Prijave se u pravilu zatvaraju
-              45 dana prije termina kako bismo na vrijeme organizirali održavanje tečaja.
+              Early Bird cijena vrijedi do 01.10.2026. Prijave se u pravilu zatvaraju
+              najkasnije 30 dana prije termina kako bismo na vrijeme organizirali održavanje tečaja.
             </p>
             <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: "rgba(237,233,227,0.42)" }}>
               Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{" "}

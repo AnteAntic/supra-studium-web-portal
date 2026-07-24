@@ -19,8 +19,8 @@ const tehnike = [
 ];
 
 const termini = [
-  { grad: "Split", datum: "25.10.2026.", lokacija: "Centar Majce & Stojanović, Žnjanska 6", earlyBird: "10.09.2026." },
-  { grad: "Zagreb", datum: "17.04.2027.", lokacija: "Poliklinika Body Balance, Frane Kesterčaneka 2b", earlyBird: "03.03.2027." },
+  { grad: "Split", datum: "25.10.2026.", lokacija: "Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6", earlyBird: "10.09.2026." },
+  { grad: "Zagreb", datum: "17.04.2027.", lokacija: "Poliklinika Medical Body Balance, Frane Kesterčaneka 2b", earlyBird: "03.03.2027." },
 ];
 
 const ukljuceno = [

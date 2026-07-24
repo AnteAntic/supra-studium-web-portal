@@ -29,10 +29,10 @@ const CrossfrictionPage = () => {
       name: 'CFM Body Reset Method — Crossfriction funkcionalna masaža',
       description: 'Dvodnevna edukacija metodologije palpacije i funkcionalnog razmišljanja — logika tkivnog odgovora u kliničkoj praksi.',
       path: '/crossfriction-funkcionalna-masaza',
-      startDate: '2027-02-06',
-      endDate: '2027-02-07',
+      startDate: '2026-11-07',
+      endDate: '2026-11-08',
       priceEUR: 460,
-      location: 'Zagreb',
+      location: 'Rijeka',
     }));
     setJsonLd('breadcrumb', courseBreadcrumb('CFM Body Reset Method', '/crossfriction-funkcionalna-masaza'));
   }, []);
@@ -48,7 +48,7 @@ const CrossfrictionPage = () => {
       <CourseStickyBar
         locations={[
           { city: "Rijeka", dates: "modul 3 · 7.–8.11.2026." },
-          { city: "Zagreb", dates: "modul 1 · 6.–7.02.2027." },
+          { city: "Zagreb", dates: "modul 1 · u najavi" },
         ]}
         price="460 € EB"
         ctaText="Rezerviraj mjesto"
@@ -1233,7 +1233,7 @@ const CrossfrictionPage = () => {
                 <div>
                   {[
                     { city: 'Rijeka', status: 'Grupa u tijeku', note: 'Sljedeće: modul 3 · 7.–8.11.2026.', mjesto: 'Udruga Eterico, Zdravka Kučića 39' },
-                    { city: 'Zagreb', status: 'Nova grupa', note: 'Modul 1 · 6.–7.02.2027.', mjesto: 'Poliklinika Body Balance · 9–17 h' },
+                    { city: 'Zagreb', status: 'U najavi', note: 'Modul 1 · termin u najavi', mjesto: 'Poliklinika Medical Body Balance · 9–17 h' },
                   ].map((loc, i) => (
                     <div key={i} className="py-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
                       <div className="flex items-baseline justify-between mb-1.5">
@@ -1420,7 +1420,7 @@ const CrossfrictionPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
                     <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
-                      CFM se izvodi u dvije grupe. Riječka grupa je u tijeku — sljedeći je modul 3 (7.–8.11.2026., Udruga Eterico, Rijeka). Zagrebačka grupa kreće od modula 1 (6.–7.02.2027., Poliklinika Body Balance, Frane Kesterčaneka 2b, od 9 do 17 sati). Edukacije se povremeno organiziraju i u Slavonskom Brodu te Splitu prema interesu.
+                      CFM se izvodi u dvije grupe. Riječka grupa je u tijeku — sljedeći je modul 3 (7.–8.11.2026., Udruga Eterico, Rijeka). Zagrebačka grupa (modul 1) je u najavi — termin objavljujemo uskoro (Poliklinika Medical Body Balance, Frane Kesterčaneka 2b). Edukacije se povremeno organiziraju i u Slavonskom Brodu te Splitu prema interesu.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
