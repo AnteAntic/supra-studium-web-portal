@@ -532,7 +532,7 @@ export default function RasporedPage() {
               { month: 'Studeni',  code: '11', year: '2026', status: 'Termini potvrđeni.', sub: 'CFM 3 (Rijeka) · 7.–8.11. — Lomi Lomi (Split) · 14.–15.11. — MT1 · 20.–22.11.' },
               { month: 'Prosinac', code: '12', year: '2026', status: 'Termini potvrđeni.', sub: 'MT2 · 12.–13.12. — 3D Stretching (Slavonski Brod) · 12.–13.12.' },
               { month: 'Siječanj', code: '01', year: '2027', status: 'Termini potvrđeni.', sub: 'ATP (Split) · 15.–17.01. — MT3 · 30.–31.01.' },
-              { month: 'Veljača',  code: '02', year: '2027', status: 'Termini potvrđeni.', sub: 'Lomi Lomi (Rijeka) · 6.–7.02. — ATP (Zagreb) · 5.–7.02. — MT5 Advanced (Rijeka) · 14.02. — Kalabaš (Split) · 20.–21.02.' },
+              { month: 'Veljača',  code: '02', year: '2027', status: 'Termini potvrđeni.', sub: 'Lomi Lomi (Rijeka) · 13.–14.02. — ATP (Zagreb) · 5.–7.02. — MT5 Advanced (Rijeka) · 14.02. — Kalabaš (Split) · 20.–21.02.' },
               { month: 'Ožujak',   code: '03', year: '2027', status: 'Termini potvrđeni.', sub: 'Kalabaš (Zagreb) · 6.–7.03. — Kalabaš (Rijeka) · 13.–14.03.' },
               { month: 'Travanj',  code: '04', year: '2027', status: 'Termini potvrđeni.', sub: 'Lomi Lomi (Modul 2) · 10.–11.04. — Cupping (Zagreb) · 17.04. — Procjena posture (Zagreb) · 18.04.' },
             ].map((item, i) => (

@@ -54,7 +54,7 @@ const termini = [
   {
     modul: 'Modul 1',
     grad: 'Rijeka',
-    datum: '6.–7.02.2027.',
+    datum: '13.–14.02.2027.',
     lokacija: 'Udruga Eterico, Ul. Zdravka Kučića 39',
     earlyBird: '23.12.2026.',
   },
@@ -139,7 +139,7 @@ const faq = [
   {
     pitanje: 'Gdje i kada se edukacija održava?',
     odgovor:
-      'Modul 1 održava se u Splitu (14.–15.11.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6) i Rijeci (6.–7.02.2027., Udruga Eterico, Ul. Zdravka Kučića 39). Modul 2 održava se u Zagrebu (10.–11.04.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
+      'Modul 1 održava se u Splitu (14.–15.11.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović, Žnjanska 6) i Rijeci (13.–14.02.2027., Udruga Eterico, Ul. Zdravka Kučića 39). Modul 2 održava se u Zagrebu (10.–11.04.2027., Poliklinika Medical Body Balance, Frane Kesterčaneka 2b).',
   },
   {
     pitanje: 'Organiziraju li se tečajevi i u drugim gradovima?',
@@ -187,7 +187,7 @@ const LomiLomiPage: React.FC = () => {
       <CourseStickyBar
         locations={[
           { city: 'Split', stage: 'Modul 1', dates: '14.–15.11.' },
-          { city: 'Rijeka', stage: 'Modul 1', dates: '6.–7.2.' },
+          { city: 'Rijeka', stage: 'Modul 1', dates: '13.–14.2.' },
           { city: 'Zagreb', stage: 'Modul 2', dates: '10.–11.4.' },
         ]}
         price="Early Bird od 490 €"
