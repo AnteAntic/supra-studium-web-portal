@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import GlobalHeader from "./components/layout/GlobalHeader";
 import ScrollToTop from "./components/ScrollToTop";
 import BackToTopButton from "./components/BackToTopButton";
+import { ReducedMotionMedia } from "./components/ReducedMotionMedia";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 // CoursesPage retired — /tecajevi redirects to /skola-manualne-terapije
@@ -34,6 +35,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <ReducedMotionMedia />
           <BackToTopButton />
         <div className="min-h-screen">
           <GlobalHeader />

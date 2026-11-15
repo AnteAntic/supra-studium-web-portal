@@ -12,12 +12,31 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: '1.5rem',
+			// Direction A: one layout axis. Content width = 72rem (max-w-shell).
 			screens: {
-				'2xl': '1400px'
+				sm: '640px',
+				md: '768px',
+				lg: '1024px',
+				xl: '1200px'
 			}
 		},
 		extend: {
+			// Direction A type scale (docs/PLAN-smjer-A-klinicki-casopis.md, D3)
+			fontSize: {
+				label: ['0.6875rem', { lineHeight: '1.4' }],
+				caption: ['0.8125rem', { lineHeight: '1.5' }],
+				'body-s': ['0.875rem', { lineHeight: '1.6' }],
+				body: ['clamp(0.9375rem, 0.91rem + 0.12vw, 1rem)', { lineHeight: '1.7' }],
+				'body-l': ['clamp(1rem, 0.96rem + 0.2vw, 1.0625rem)', { lineHeight: '1.7' }],
+				quote: ['clamp(1.375rem, 1.05rem + 1.25vw, 2rem)', { lineHeight: '1.38' }],
+				h3: ['clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem)', { lineHeight: '1.25' }],
+				h2: ['clamp(1.75rem, 1.2rem + 2.2vw, 3rem)', { lineHeight: '1.12' }],
+				display: ['clamp(2.125rem, 1.2rem + 3.2vw, 3.5rem)', { lineHeight: '1.1' }]
+			},
+			maxWidth: {
+				shell: '72rem'
+			},
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
 				'inter': ['Inter', 'system-ui', 'sans-serif'],

@@ -108,7 +108,6 @@ export default function KlinickaPropedeutikaPage() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -144,7 +143,7 @@ export default function KlinickaPropedeutikaPage() {
     <div className="bg-[#F4F1EA] min-h-screen">
 
       {/* ── Hero ───────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+      <section ref={heroRef} className="relative min-h-hero overflow-hidden -mt-20">
 
         <div className="absolute inset-0 top-[-5rem]">
           <img
@@ -185,18 +184,18 @@ export default function KlinickaPropedeutikaPage() {
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/18 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/22 to-transparent" />
 
-        <motion.div style={{ opacity, y }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-center">
-            <div className="max-w-xl relative w-full" style={{ marginTop: "-3%" }}>
+        <motion.div style={{ opacity }} className="relative z-10">
+          <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-center">
+            <div className="max-w-[54rem] relative w-full" style={{ marginTop: "-3%" }}>
 
               <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
                 <span
-                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block"
+                  className="text-label sm:text-caption font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] block"
                   style={{ color: "rgba(212,175,55,0.92)", textShadow: "0 1px 2px rgba(0,0,0,0.35)" }}
                 >
                   Klinička propedeutika · Split · 2026
@@ -213,13 +212,13 @@ export default function KlinickaPropedeutikaPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: "easeOut" }}
                 className="mb-9"
               >
                 <h1
-                  className="font-playfair font-semibold text-white leading-[1.18] text-[1.75rem] sm:text-[2rem] md:text-[2.1rem]"
+                  className="font-playfair font-semibold text-white leading-[1.18] text-display"
                   style={{ textShadow: "0 1px 12px rgba(0,0,0,0.38), 0 1px 3px rgba(0,0,0,0.22)" }}
                 >
                   Svaku terapiju vodi procjena.
@@ -229,20 +228,20 @@ export default function KlinickaPropedeutikaPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
                 className="mb-5"
               >
-                <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-md">
+                <p className="text-body-l font-normal text-white/65 leading-[1.65] max-w-md">
                   Jednodnevna edukacija o kliničkoj procjeni prije terapije — anamneza, fizikalni pregled,
                   radna dijagnoza i medicinski nalaz, pod vodstvom dr. Aleksandra Stošića.
                 </p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.05, duration: 0.85, ease: "easeOut" }}
                 className="mb-12 flex flex-wrap items-center"
                 style={{ columnGap: "14px", rowGap: "4px" }}
@@ -250,11 +249,11 @@ export default function KlinickaPropedeutikaPage() {
                 {["1 dan · 9–17h", "Anamneza i pregled", "Radna dijagnoza", "Potvrda o edukaciji"].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
-                      <span style={{ color: "rgba(255,255,255,0.32)", fontSize: "11px", lineHeight: 1 }}>·</span>
+                      <span style={{ color: "rgba(255,255,255,0.32)", fontSize: "0.8125rem", lineHeight: 1 }}>·</span>
                     )}
                     <span
                       className="font-medium"
-                      style={{ fontSize: "11px", letterSpacing: "0.11em", color: "rgba(255,255,255,0.78)", textShadow: "0 1px 2px rgba(0,0,0,0.45)" }}
+                      style={{ fontSize: "0.8125rem", letterSpacing: "0.11em", color: "rgba(255,255,255,0.78)", textShadow: "0 1px 2px rgba(0,0,0,0.45)" }}
                     >
                       {item}
                     </span>
@@ -263,8 +262,8 @@ export default function KlinickaPropedeutikaPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.7 }}
                 className="flex flex-row items-center gap-4"
               >
@@ -292,7 +291,7 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Facts Band ─────────────────────────────────────────── */}
       <section className="bg-[#F4F1EA] pt-5">
-        <div className="container mx-auto px-6 md:px-10">
+        <div className="container mx-auto px-6">
           <div
             className="grid grid-cols-2 md:grid-cols-4"
             style={{ borderTop: "1px solid rgba(0,0,0,0.08)", borderBottom: "1px solid rgba(0,0,0,0.08)" }}
@@ -306,13 +305,13 @@ export default function KlinickaPropedeutikaPage() {
                   borderBottom: i < 2 ? "1px solid rgba(0,0,0,0.08)" : "none",
                 }}
               >
-                <div className="text-[9.5px] uppercase tracking-[0.25em] mb-2 font-normal" style={{ color: "#B89A4F" }}>
+                <div className="text-label uppercase tracking-[0.25em] mb-2 font-normal" style={{ color: "#B89A4F" }}>
                   {item.field}
                 </div>
                 <div className="text-[18px] font-medium leading-snug" style={{ color: "#0e0e0e" }}>
                   {item.value}
                 </div>
-                <div className="text-[12px] mt-1 font-normal leading-relaxed" style={{ color: "#3b3b3b" }}>
+                <div className="text-body mt-1 font-normal leading-relaxed" style={{ color: "#3b3b3b" }}>
                   {item.detail}
                 </div>
               </div>
@@ -331,34 +330,34 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Zašto propedeutika ───────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Zašto propedeutika
             </p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug">
+            <h2 className="font-playfair text-[#1F1D1A] leading-snug text-h2">
               Terapeut zna izvesti tehniku. Rijetko ga netko nauči što joj prethodi.
             </h2>
           </motion.div>
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={0.15} viewport={{ once: true }}>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-6">
               U strukovnom obrazovanju fizioterapeut i manualni terapeut uče primijeniti terapiju — ali ne
               i postaviti radnu dijagnozu. To se sustavno prepušta liječniku. Dok terapeut radi u timu,
               praznina je nevidljiva.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-10">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-10">
               Kad radi samostalno, postaje ključna: on vodi razgovor, procjenjuje tegobu i odlučuje kamo
               usmjeriti tretman. Propedeutika je vještina koja dolazi prije tehnike — prikupljanje podataka,
               fizikalni pregled i kliničko zaključivanje koje terapiju čine utemeljenom, a ne nagađanom.
             </p>
 
-            <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-5" style={{ color: "#B89A4F" }}>
+            <p className="text-label uppercase tracking-[0.22em] font-normal mb-5" style={{ color: "#B89A4F" }}>
               Što počinješ primjećivati
             </p>
             <div>
               {primjecujes.map((item, i) => (
                 <div key={i} className="py-4" style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}>
-                  <p className="text-[14px] leading-[1.6] font-normal" style={{ color: "#1F1D1A" }}>
+                  <p className="text-body-l leading-[1.6] font-normal" style={{ color: "#1F1D1A" }}>
                     {item}
                   </p>
                 </div>
@@ -371,7 +370,7 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Observation cards ─────────────────────────────────── */}
       <section className="py-16 px-6 bg-[#FAF8F4]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-3 gap-px bg-[#e3e3e3]">
             {[
               { text: "Procjena nije formalnost prije tretmana. Ona određuje tretman." },
@@ -387,7 +386,7 @@ export default function KlinickaPropedeutikaPage() {
                 viewport={{ once: true }}
                 className="bg-[#FAF8F4] px-8 py-10"
               >
-                <p className="text-sm text-[#1F1D1A] leading-relaxed font-playfair italic">
+                <p className="text-body text-[#1F1D1A] leading-relaxed font-playfair italic">
                   "{card.text}"
                 </p>
               </motion.div>
@@ -398,9 +397,9 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Klinički snapshot (ilustrativni) ─────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-16">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Ilustrativni prikaz
             </p>
             <div className="w-10 h-px bg-[#a58d4e]/30 mb-8" />
@@ -415,11 +414,11 @@ export default function KlinickaPropedeutikaPage() {
               viewport={{ once: true }}
               className="border-l border-[#a58d4e]/30 pl-8"
             >
-              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-4">
+              <p className="text-body text-[#3b3b3b] leading-relaxed mb-4">
                 Pacijent dolazi s bolovima u donjem dijelu leđa, uvjeren da je „nešto s diskom".
                 Bez procjene, tretman kreće na lumbalnu regiju.
               </p>
-              <p className="text-sm text-[#1F1D1A] leading-relaxed font-medium">
+              <p className="text-body text-[#1F1D1A] leading-relaxed font-medium">
                 Ciljana anamneza otkriva da bol budi noćni nemir i prati je gubitak težine — obrazac
                 koji ne pripada mehaničkoj boli.
               </p>
@@ -433,16 +432,16 @@ export default function KlinickaPropedeutikaPage() {
               viewport={{ once: true }}
               className="border-l border-[#a58d4e]/30 pl-8"
             >
-              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-4">
+              <p className="text-body text-[#3b3b3b] leading-relaxed mb-4">
                 Umjesto tretmana, terapeut piše nalaz i upućuje na daljnju obradu.
               </p>
-              <p className="text-sm text-[#1F1D1A] leading-relaxed font-medium">
+              <p className="text-body text-[#1F1D1A] leading-relaxed font-medium">
                 Procjena ovdje nije usporila terapiju. Spriječila je pogrešnu.
               </p>
             </motion.blockquote>
           </div>
 
-          <p className="text-[12px] leading-[1.7] font-normal mt-10 italic" style={{ color: "rgba(0,0,0,0.42)" }}>
+          <p className="text-body leading-[1.7] font-normal mt-10 italic" style={{ color: "rgba(0,0,0,0.42)" }}>
             Ilustrativni primjer za prikaz kliničkog razmišljanja.
           </p>
         </div>
@@ -450,16 +449,16 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Metoda / pristup ─────────────────────────────────── */}
       <section className="py-24 px-6 bg-[#0e0e0e]" id="metoda">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Metoda</p>
-              <h2 className="font-playfair text-3xl text-white leading-snug">
+              <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Metoda</p>
+              <h2 className="font-playfair text-white leading-snug text-h2">
                 Procjena nije korak prije terapije. To je način razmišljanja.
               </h2>
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={0.15} viewport={{ once: true }}>
-              <p className="text-sm text-white/55 leading-relaxed">
+              <p className="text-body text-white/55 leading-relaxed">
                 Cijeli tečaj gradi jedan slijed — od prvog pitanja do zapisanog nalaza. Svaki korak
                 provjerava prethodni i sužava mogućnosti dok ne ostane utemeljena radna dijagnoza.
               </p>
@@ -479,8 +478,8 @@ export default function KlinickaPropedeutikaPage() {
               >
                 <span className="font-playfair text-4xl text-[#9e8a46]/25 leading-none">{p.broj}</span>
                 <div>
-                  <h3 className="text-base font-medium text-[#ede9e3] mb-3">{p.naziv}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(237,233,227,0.55)" }}>{p.opis}</p>
+                  <h3 className="text-body-l font-medium text-[#ede9e3] mb-3">{p.naziv}</h3>
+                  <p className="text-body leading-relaxed" style={{ color: "rgba(237,233,227,0.55)" }}>{p.opis}</p>
                 </div>
               </motion.div>
             ))}
@@ -490,13 +489,13 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Program dana ─────────────────────────────────────── */}
       <section className="py-24 px-6" id="program">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-16">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Program dana</p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug max-w-lg mb-4">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Program dana</p>
+            <h2 className="font-playfair text-[#1F1D1A] leading-snug max-w-lg mb-4 text-h2">
               Jedan dan. Od prvog pitanja do nalaza.
             </h2>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed max-w-lg">
+            <p className="text-body text-[#3b3b3b] leading-relaxed max-w-lg">
               Jednodnevni program, od 9 do 17 sati, kroz sedam koraka procjene — s vježbama i izravnim radom.
             </p>
           </motion.div>
@@ -513,12 +512,12 @@ export default function KlinickaPropedeutikaPage() {
                 className="bg-[#F4F1EA] grid grid-cols-[48px_1fr] md:grid-cols-[80px_1fr] gap-6 md:gap-8 px-8 py-6 items-baseline"
               >
                 <span className="font-playfair text-2xl text-[#9e8a46]/30 leading-none">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-sm text-[#3b3b3b] leading-relaxed">{t}</p>
+                <p className="text-body text-[#3b3b3b] leading-relaxed">{t}</p>
               </motion.div>
             ))}
           </div>
 
-          <p className="text-[12px] leading-[1.7] font-normal mt-6 italic" style={{ color: "rgba(0,0,0,0.42)" }}>
+          <p className="text-body leading-[1.7] font-normal mt-6 italic" style={{ color: "rgba(0,0,0,0.42)" }}>
             Redoslijed je okviran i prilagođava se dinamici grupe.
           </p>
         </div>
@@ -526,7 +525,7 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Dokumentacija rada ───────────────────────────────── */}
       <section className="py-16 px-6 bg-[#FAF8F4]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid grid-cols-3 gap-3">
             {slike.map((img, i) => (
               <motion.figure key={i} variants={fadeUp} initial="hidden" whileInView="visible" custom={i * 0.08} viewport={{ once: true }}>
@@ -539,7 +538,7 @@ export default function KlinickaPropedeutikaPage() {
                     style={{ filter: "grayscale(8%)" }}
                   />
                 </div>
-                <figcaption className="mt-2 text-[10px] text-[#3b3b3b]/50 uppercase tracking-[0.18em]">
+                <figcaption className="mt-2 text-label text-[#3b3b3b]/50 uppercase tracking-[0.18em]">
                   {img.caption}
                 </figcaption>
               </motion.figure>
@@ -550,7 +549,7 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── O predavaču ──────────────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative overflow-hidden">
             <img
               width={933}
@@ -564,31 +563,31 @@ export default function KlinickaPropedeutikaPage() {
           </motion.div>
 
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={0.15} viewport={{ once: true }} className="md:pt-8">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Voditelj tečaja</p>
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Voditelj tečaja</p>
             <div className="w-10 h-px bg-[#a58d4e]/30 mb-8" />
-            <h2 className="font-playfair text-2xl text-[#1F1D1A] mb-3 leading-snug">Dr. Aleksandar Stošić</h2>
-            <p className="text-[11px] uppercase tracking-[0.16em] text-[#3b3b3b]/60 mb-8 leading-[1.7]">
+            <h2 className="font-playfair text-[#1F1D1A] mb-3 leading-snug text-h2">Dr. Aleksandar Stošić</h2>
+            <p className="text-body tracking-[0.02em] text-[#3b3b3b]/75 mb-8 leading-[1.7]">
               Mr. sc., dr. med. · specijalist ortopedske kirurgije i ortopedske manualne terapije (KE-OMT) · sportski liječnik · osteopat (DO)
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-5">
               Više od 47 godina medicinskog iskustva — od čega 27 u Kliničkom bolničkom centru Rijeka i 14
               godina kao predstojnik Zavoda za dječju ortopediju Kantrida. Kliničar koji je procjenu,
               dijagnozu i terapijsku odluku donosio desetljećima.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-8">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-8">
               Istu logiku prenosi terapeutima kroz Školu manualne terapije i ovu edukaciju — ne kao teoriju,
               nego kao način razmišljanja koji se koristi svaki radni dan.
             </p>
             <Link
               to="/skola-manualne-terapije"
-              className="text-[10px] uppercase tracking-[0.20em] font-normal"
+              className="text-label uppercase tracking-[0.20em] font-normal"
               style={{ color: "#B89A4F" }}
             >
               Vodi i Školu manualne terapije →
             </Link>
 
             <blockquote className="border-l border-[#a58d4e]/30 pl-5 mt-10">
-              <p className="text-sm text-[#3b3b3b]/70 leading-relaxed italic font-playfair">
+              <p className="text-body text-[#3b3b3b]/70 leading-relaxed italic font-playfair">
                 "Terapija bez procjene je pogađanje. Procjena je ono što od dodira čini medicinu."
               </p>
               <p className="text-xs text-[#3b3b3b]/45 mt-3 uppercase tracking-[0.18em]">
@@ -601,14 +600,14 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── Kotizacija ───────────────────────────────────────── */}
       <section className="py-24 px-6 bg-[#141311]" id="kotizacija">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
 
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-12">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#9e8a46] mb-5">Termini i kotizacija</p>
-            <h2 className="font-playfair text-3xl text-[#ede9e3] leading-snug mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#9e8a46] mb-5">Termini i kotizacija</p>
+            <h2 className="font-playfair text-[#ede9e3] leading-snug mb-6 text-h2">
               Split, 31. listopada. Prvi put u Hrvatskoj.
             </h2>
-            <p className="text-[13.5px] leading-[1.82]" style={{ color: "rgba(237,233,227,0.60)", maxWidth: "54ch" }}>
+            <p className="text-body-l leading-[1.82]" style={{ color: "rgba(237,233,227,0.60)", maxWidth: "54ch" }}>
               Jednodnevna klinička edukacija u maloj grupi — procjena, radna dijagnoza i pisanje nalaza,
               s vježbama i izravnim radom.
             </p>
@@ -630,20 +629,20 @@ export default function KlinickaPropedeutikaPage() {
                   <p className="font-playfair font-semibold leading-none" style={{ fontSize: "3.4rem", color: "rgba(237,233,227,0.95)", letterSpacing: "-0.02em" }}>
                     300 €
                   </p>
-                  <p className="text-[12px] font-normal" style={{ color: "#c9a832" }}>Early Bird</p>
+                  <p className="text-body font-normal" style={{ color: "#c9a832" }}>Early Bird</p>
                 </div>
-                <p className="text-[12px] font-normal" style={{ color: "rgba(237,233,227,0.30)", textDecoration: "line-through" }}>
+                <p className="text-body font-normal" style={{ color: "rgba(237,233,227,0.30)", textDecoration: "line-through" }}>
                   Redovna cijena: 350 €
                 </p>
               </div>
               <div className="flex gap-10 md:gap-12 md:pb-2">
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>Early Bird</p>
-                  <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>do 01.10.2026.</p>
+                  <p className="text-label uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>Early Bird</p>
+                  <p className="text-body-l font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>do 01.10.2026.</p>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>Grupa</p>
-                  <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>Max. 20 polaznika</p>
+                  <p className="text-label uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>Grupa</p>
+                  <p className="text-body-l font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>Max. 20 polaznika</p>
                 </div>
               </div>
             </div>
@@ -651,7 +650,7 @@ export default function KlinickaPropedeutikaPage() {
 
           {/* Termini list */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={0.12} viewport={{ once: true }} className="mb-14">
-            <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-2" style={{ color: "#9e8a46" }}>Termini</p>
+            <p className="text-label uppercase tracking-[0.22em] font-normal mb-2" style={{ color: "#9e8a46" }}>Termini</p>
 
             <div
               className="py-7 grid gap-5 md:gap-8 md:grid-cols-[1fr_auto] md:items-center"
@@ -660,12 +659,12 @@ export default function KlinickaPropedeutikaPage() {
               <div>
                 <div className="flex items-baseline gap-3 mb-1.5">
                   <p className="font-playfair font-medium text-[1.15rem] leading-tight" style={{ color: "rgba(237,233,227,0.92)" }}>Split</p>
-                  <p className="text-[13px] font-normal" style={{ color: "rgba(237,233,227,0.72)" }}>31.10.2026. · 9–17h</p>
+                  <p className="text-body-l font-normal" style={{ color: "rgba(237,233,227,0.72)" }}>31.10.2026. · 9–17h</p>
                 </div>
-                <p className="text-[12px] font-normal leading-[1.6] mb-2" style={{ color: "rgba(237,233,227,0.42)" }}>
+                <p className="text-body font-normal leading-[1.6] mb-2" style={{ color: "rgba(237,233,227,0.42)" }}>
                   Centar za ortopedsku manualnu terapiju Majce &amp; Stojanović, Žnjanska 6, Split
                 </p>
-                <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: "#c9a832" }}>
+                <p className="text-label uppercase tracking-[0.14em] font-medium" style={{ color: "#c9a832" }}>
                   Early Bird do 01.10.2026.
                 </p>
               </div>
@@ -673,7 +672,7 @@ export default function KlinickaPropedeutikaPage() {
                 href="https://tally.so/r/wA5kvD"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] text-[11px] uppercase tracking-[0.12em] font-medium px-6 py-2.5 rounded-sm transition-colors duration-500 md:justify-self-end"
+                className="inline-flex items-center justify-center bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] text-caption uppercase tracking-[0.12em] font-medium px-6 py-2.5 rounded-sm transition-colors duration-500 md:justify-self-end"
               >
                 Prijavi se
               </a>
@@ -686,9 +685,9 @@ export default function KlinickaPropedeutikaPage() {
               <div>
                 <div className="flex items-baseline gap-3 mb-1.5">
                   <p className="font-playfair font-medium text-[1.15rem] leading-tight" style={{ color: "rgba(237,233,227,0.55)" }}>Ostali gradovi</p>
-                  <p className="text-[13px] font-normal" style={{ color: "rgba(237,233,227,0.45)" }}>u najavi</p>
+                  <p className="text-body-l font-normal" style={{ color: "rgba(237,233,227,0.45)" }}>u najavi</p>
                 </div>
-                <p className="text-[12px] font-normal leading-[1.6]" style={{ color: "rgba(237,233,227,0.42)" }}>
+                <p className="text-body font-normal leading-[1.6]" style={{ color: "rgba(237,233,227,0.42)" }}>
                   Termine za druge gradove objavljujemo uskoro — javi interes putem prijave.
                 </p>
               </div>
@@ -697,11 +696,11 @@ export default function KlinickaPropedeutikaPage() {
 
           {/* Rok prijave */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={0.16} viewport={{ once: true }} className="mb-16">
-            <p className="text-[12px] leading-[1.65] font-normal" style={{ color: "rgba(237,233,227,0.42)" }}>
+            <p className="text-body leading-[1.65] font-normal" style={{ color: "rgba(237,233,227,0.42)" }}>
               Early Bird cijena vrijedi do 01.10.2026. Prijave se u pravilu zatvaraju
               najkasnije 30 dana prije termina kako bismo na vrijeme organizirali održavanje tečaja.
             </p>
-            <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: "rgba(237,233,227,0.42)" }}>
+            <p className="text-body leading-[1.65] font-normal mt-2" style={{ color: "rgba(237,233,227,0.42)" }}>
               Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{" "}
               <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: "#c9a832" }}>info@uciliste-suprastudium.hr</a>
               {" "}ili nazovi{" "}
@@ -720,12 +719,12 @@ export default function KlinickaPropedeutikaPage() {
             className="pt-12"
             style={{ borderTop: "1px solid rgba(237,233,227,0.08)" }}
           >
-            <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-6" style={{ color: "#9e8a46" }}>Uključeno u kotizaciju</p>
+            <p className="text-label uppercase tracking-[0.22em] font-normal mb-6" style={{ color: "#9e8a46" }}>Uključeno u kotizaciju</p>
             <div className="grid sm:grid-cols-2 gap-x-10">
               {ukljuceno.map((item, i) => (
                 <div key={i} className="py-4 flex gap-3" style={{ borderTop: "1px solid rgba(237,233,227,0.08)" }}>
-                  <span className="flex-shrink-0 mt-[3px]" style={{ color: "rgba(201,168,50,0.55)", fontSize: "11px" }}>—</span>
-                  <p className="text-[13.5px] leading-[1.55] font-normal" style={{ color: "rgba(237,233,227,0.68)" }}>{item}</p>
+                  <span className="flex-shrink-0 mt-[3px]" style={{ color: "rgba(201,168,50,0.55)", fontSize: "0.8125rem" }}>—</span>
+                  <p className="text-body-l leading-[1.55] font-normal" style={{ color: "rgba(237,233,227,0.68)" }}>{item}</p>
                 </div>
               ))}
             </div>
@@ -736,20 +735,20 @@ export default function KlinickaPropedeutikaPage() {
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
       <section className="py-24 px-6" id="faq">
-        <div className="max-w-3xl mx-auto">
+        <div className="shell-narrow">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-12">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Česta pitanja</p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A]">Najčešća pitanja prije početka.</h2>
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">Česta pitanja</p>
+            <h2 className="font-playfair text-[#1F1D1A] text-h2">Najčešća pitanja prije početka.</h2>
           </motion.div>
 
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={0.1} viewport={{ once: true }}>
             <Accordion type="single" collapsible className="w-full">
               {faq.map((item, i) => (
                 <AccordionItem key={i} value={`item-${i}`} className="border-b border-[#e3e3e3]">
-                  <AccordionTrigger className="text-sm font-medium text-[#1F1D1A] hover:no-underline py-5 text-left">
+                  <AccordionTrigger className="text-body font-medium text-[#1F1D1A] hover:no-underline py-5 text-left">
                     {item.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm text-[#3b3b3b] leading-relaxed pb-5">
+                  <AccordionContent className="text-body text-[#3b3b3b] leading-relaxed pb-5">
                     {item.a}
                   </AccordionContent>
                 </AccordionItem>

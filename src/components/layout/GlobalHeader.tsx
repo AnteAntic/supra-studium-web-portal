@@ -53,10 +53,19 @@ const GlobalHeader = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Hysteresis: turn the light header on at 64 px, off below 24 px, so an
+    // elastic bounce near the top does not flip it back and forth.
+    let scrolled = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const y = window.scrollY;
+      const next = scrolled ? y > 24 : y > 64;
+      if (next !== scrolled) {
+        scrolled = next;
+        setIsScrolled(next);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -80,15 +89,13 @@ const GlobalHeader = () => {
         onLight ? 'border-b border-black/[0.08]' : 'border-b border-transparent'
       )}
       style={onLight ? {
-        background: 'rgba(250,248,244,0.97)',
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
+        background: 'rgba(250,248,244,0.985)',
       } : {
         background: 'transparent',
       }}
     >
       <nav data-state={menuState && 'active'} className="group">
-        <div className="mx-auto max-w-6xl px-6 lg:px-12">
+        <div className="container mx-auto px-6">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
 
             {/* Logo + hamburger */}
@@ -127,14 +134,14 @@ const GlobalHeader = () => {
             </div>
 
             {/* Mobile panel */}
-            <div className="group-data-[state=active]:block hidden w-full lg:hidden mb-2 pt-5 pb-5 border-t border-black/[0.08]">
+            <div className="group-data-[state=active]:block hidden w-full lg:hidden mb-2 pt-5 pb-5 border-t border-black/[0.08] max-h-[calc(100svh-4.5rem)] overflow-y-auto overscroll-contain">
               <ul className="space-y-5">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     {item.name === 'KONTAKT' ? (
                       <button
                         onClick={() => { scrollToSection('kontakt'); }}
-                        className="relative inline-block text-[13px] uppercase tracking-[0.14em] font-medium text-[#1F1D1A]/60 hover:text-[#1F1D1A] transition-colors duration-200 group/mitem"
+                        className="relative inline-block text-body-l uppercase tracking-[0.14em] font-medium text-[#1F1D1A]/60 hover:text-[#1F1D1A] transition-colors duration-200 group/mitem"
                       >
                         {item.name}
                         <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#B89A4F] transition-all duration-300 group-hover/mitem:w-full" />
@@ -143,7 +150,7 @@ const GlobalHeader = () => {
                       <div>
                         <button
                           onClick={() => setExpandedMobile(expandedMobile === item.name ? null : item.name)}
-                          className="relative inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] font-medium text-[#1F1D1A]/60 hover:text-[#1F1D1A] transition-colors duration-200 group/mitem"
+                          className="relative inline-flex items-center gap-2 text-body-l uppercase tracking-[0.14em] font-medium text-[#1F1D1A]/60 hover:text-[#1F1D1A] transition-colors duration-200 group/mitem"
                         >
                           {item.name}
                           <ChevronDown
@@ -161,7 +168,7 @@ const GlobalHeader = () => {
                                 <Link
                                   to={sub.href}
                                   onClick={() => { setMenuState(false); setExpandedMobile(null); }}
-                                  className="text-[12px] tracking-[0.06em] font-normal text-[#1F1D1A]/55 hover:text-[#B89A4F] transition-colors duration-200"
+                                  className="text-body tracking-[0.06em] font-normal text-[#1F1D1A]/55 hover:text-[#B89A4F] transition-colors duration-200"
                                 >
                                   {sub.name}
                                 </Link>
@@ -174,7 +181,7 @@ const GlobalHeader = () => {
                       <Link
                         to={item.href}
                         onClick={() => setMenuState(false)}
-                        className="relative inline-block text-[13px] uppercase tracking-[0.14em] font-medium text-[#1F1D1A]/60 hover:text-[#1F1D1A] transition-colors duration-200 group/mitem"
+                        className="relative inline-block text-body-l uppercase tracking-[0.14em] font-medium text-[#1F1D1A]/60 hover:text-[#1F1D1A] transition-colors duration-200 group/mitem"
                       >
                         {item.name}
                         <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#B89A4F] transition-all duration-300 group-hover/mitem:w-full" />

@@ -1,0 +1,162 @@
+{
+ "/": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI",
+    "button|",
+    "button|"
+   ]
+  },
+  "images": {
+   "added": [
+    "/lovable-uploads/cmc-2026-duo-masaza.webp|Natjecanje — duo masaža leđa pred publikom",
+    "/lovable-uploads/cmc-2026-ruke-closeup.webp|Natjecanje — ruke natjecateljice na leđima",
+    "/lovable-uploads/cmc-2026-suci-dvorana.webp|Natjecanje — suci promatraju rad u dvorani",
+    "/lovable-uploads/cmc-official-seal.webp|Official Croatian Massage Championship",
+    "https://i.ytimg.com/vi/-oBdblqBztk/hqdefault.jpg|",
+    "https://i.ytimg.com/vi/HCA6DKciCoM/hqdefault.jpg|"
+   ],
+   "removed": [
+    "/lovable-uploads/cmc-dvorana-panorama.webp|Natjecanje — dvorana i publika",
+    "/lovable-uploads/cmc-sajo-dry-ice-v2.webp|Natjecanje — Sajo dry ice duo masaža"
+   ]
+  },
+  "iframes": {
+   "removed": [
+    "https://www.youtube.com/embed/-oBdblqBztk?rel=0&modestbranding=1|Day 1 Recap",
+    "https://www.youtube.com/embed/HCA6DKciCoM?rel=0&modestbranding=1|Day 2 — Championship"
+   ]
+  }
+ },
+ "/skola-manualne-terapije": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI",
+    "button|"
+   ]
+  },
+  "images": {
+   "added": [
+    "https://i.ytimg.com/vi/y3OMngp9MRg/hqdefault.jpg|"
+   ]
+  },
+  "iframes": {
+   "removed": [
+    "https://www.youtube-nocookie.com/embed/y3OMngp9MRg|Mr.sc. A. Stošić — intervju o manualnoj terapiji"
+   ]
+  }
+ },
+ "/crossfriction-funkcionalna-masaza": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI",
+    "button|"
+   ]
+  },
+  "images": {
+   "added": [
+    "https://i.ytimg.com/vi/5mOaGUuDrWU/hqdefault.jpg|"
+   ]
+  },
+  "iframes": {
+   "removed": [
+    "https://www.youtube.com/embed/5mOaGUuDrWU?rel=0&modestbranding=1&iv_load_policy=3&color=white|CFM Body Reset — Modul II"
+   ]
+  }
+ },
+ "/akupresura-trigger-point": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/cupping-terapija": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/lomi-lomi": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/calabash-certifikacija": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/3d-advanced-therapeutic-stretching": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/klinicka-propedeutika": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/raspored": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/o-ucilistu": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "/kontakt": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  },
+  "texts": {
+   "removed": [
+    "Kontakt"
+   ]
+  },
+  "headings": {
+   "added": [
+    "H1|Kontakt"
+   ],
+   "removed": [
+    "H1|KontaktKontakt"
+   ]
+  },
+  "fullText": true
+ },
+ "/ne-postoji": {
+  "buttons": {
+   "added": [
+    "button|TEČAJEVI"
+   ]
+  }
+ },
+ "_comment": {
+  "buttons button|TEČAJEVI": "Courses menu trigger is now a real <button> so it is reachable by keyboard (was a non-focusable <li>). Label text is unchanged.",
+  "facades": "YouTube iframes replaced by click-to-load facades: iframe entry removed, one empty-text button and one i.ytimg.com thumbnail (empty alt) added.",
+  "home images": "Home Championship section: official seal and three 2026 frames added; two strip images removed.",
+  "kontakt h1": "The old TextShimmer hero rendered the h1 text twice (\"KontaktKontakt\"); the h1 now contains the word once.",
+  "/prijava": "RegistrationPage redirects at once to https://tally.so/r/wA5kvD, so the capture for this route is the external Tally form, not this app. The app header (and its TEČAJEVI button) is never in that capture; no allowance is needed.",
+  "/prijava fullText": "External Tally page: its embedded Next.js buildId changed between captures (Rkmm9nPAHH6C4ZbnlYg4Q -> yINtKpgnc5TnNg1F2NC8S, 2026-11-15). All visible text nodes, links and fields are identical."
+ },
+ "/prijava": {
+  "fullText": true
+ }
+}

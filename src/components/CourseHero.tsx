@@ -42,12 +42,11 @@ export function CourseHero({
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+      <section ref={heroRef} className="relative min-h-hero overflow-hidden -mt-20">
 
         {/* Video */}
         <div className="absolute inset-0 top-[-5rem]">
@@ -101,19 +100,19 @@ export function CourseHero({
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/22 to-transparent" />
 
         {/* Text content */}
-        <motion.div style={{ opacity, y }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-center">
-            <div className="max-w-xl relative w-full" style={{ marginTop: '-3%' }}>
+        <motion.div style={{ opacity }} className="relative z-10">
+          <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-center">
+            <div className="max-w-[54rem] relative w-full" style={{ marginTop: '-3%' }}>
 
               {/* Eyebrow */}
               <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
                 <span
-                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block"
+                  className="text-label sm:text-caption font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] block"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
                   {category}
@@ -132,13 +131,13 @@ export function CourseHero({
 
               {/* Headline */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: 'easeOut' }}
                 className="mb-9"
               >
                 <h1
-                  className="font-playfair font-semibold text-white leading-[1.18] text-[1.75rem] sm:text-[2rem] md:text-[2.1rem]"
+                  className="font-playfair font-semibold text-white leading-[1.18] text-display"
                   style={{ textShadow: '0 1px 12px rgba(0,0,0,0.38), 0 1px 3px rgba(0,0,0,0.22)' }}
                 >
                   {headline}
@@ -147,20 +146,20 @@ export function CourseHero({
 
               {/* Subheadline */}
               <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
                 className="mb-10"
               >
-                <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-sm">
+                <p className="text-body-l font-normal text-white/65 leading-[1.65] max-w-sm">
                   {subheadline}
                 </p>
               </motion.div>
 
               {/* CTA group */}
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.7 }}
                 className="flex flex-row items-center gap-4"
               >
@@ -191,7 +190,7 @@ export function CourseHero({
 
       {/* ── Facts Band ─────────────────────────────────────────── */}
       <section className="bg-[#F4F1EA] pt-5">
-        <div className="container mx-auto px-6 md:px-10">
+        <div className="container mx-auto px-6">
           <div
             className="grid grid-cols-2 md:grid-cols-4"
             style={{
@@ -213,7 +212,7 @@ export function CourseHero({
                 }}
               >
                 <div
-                  className="text-[9.5px] uppercase tracking-[0.25em] mb-2 font-normal"
+                  className="text-label uppercase tracking-[0.25em] mb-2 font-normal"
                   style={{ color: '#B89A4F' }}
                 >
                   {item.field}
@@ -225,7 +224,7 @@ export function CourseHero({
                   {item.value}
                 </div>
                 <div
-                  className="text-[12px] mt-1 font-normal leading-relaxed"
+                  className="text-body mt-1 font-normal leading-relaxed"
                   style={{ color: '#3b3b3b' }}
                 >
                   {item.detail}

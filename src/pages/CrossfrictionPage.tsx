@@ -1,3 +1,4 @@
+import { YouTubeFacade } from '@/components/ui/YouTubeFacade';
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -58,7 +59,7 @@ const CrossfrictionPage = () => {
       {/* CFM Four Systems — Methodology Framework */}
       <section style={{ background: '#F4F1EA' }} className="py-24 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
             <div className="grid lg:grid-cols-[1fr_1.25fr] gap-16 lg:gap-24 items-start">
 
               {/* Left — Editorial anchor */}
@@ -69,22 +70,22 @@ const CrossfrictionPage = () => {
                 viewport={{ once: true }}
                 className="lg:sticky lg:top-32"
               >
-                <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                   Metodologija rada
                 </p>
                 <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.30)' }} />
                 <h2
-                  className="font-playfair font-semibold leading-[1.18] mb-10 text-[1.85rem] md:text-[2.05rem]"
+                  className="font-playfair font-semibold leading-[1.18] mb-10 text-h2"
                   style={{ color: '#1F1D1A' }}
                 >
                   Terapija počinje<br />
                   kada simptom postane<br />
                   dio obrasca.
                 </h2>
-                <p className="text-[14px] leading-[1.82] font-normal mb-10" style={{ color: '#5F5A52', maxWidth: '38ch' }}>
+                <p className="text-body-l leading-[1.82] font-normal mb-10" style={{ color: '#5F5A52', maxWidth: '38ch' }}>
                   CFM Body Reset Method nije skup tehnika. To je okvir kliničkog razmišljanja koji palpatorni nalaz, tkivnu napetost i funkcionalne odnose pretvara u jednu terapijsku odluku.
                 </p>
-                <p className="text-[13px] leading-[1.72] font-normal" style={{ color: '#8A8580', maxWidth: '36ch' }}>
+                <p className="text-body-l leading-[1.72] font-normal" style={{ color: '#8A8580', maxWidth: '36ch' }}>
                   Četiri sustava. Jedan okvir. Svaki tretman počinje ovdje.
                 </p>
               </motion.div>
@@ -129,26 +130,26 @@ const CrossfrictionPage = () => {
                     <div className="flex items-baseline gap-4 mb-3">
                       <span
                         className="font-normal shrink-0"
-                        style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(0,0,0,0.28)' }}
+                        style={{ fontSize: '0.6875rem', letterSpacing: '0.18em', color: 'rgba(0,0,0,0.28)' }}
                       >
                         {system.num}
                       </span>
                       <span
                         className="font-normal uppercase"
-                        style={{ fontSize: '10px', letterSpacing: '0.22em', color: '#B89A4F' }}
+                        style={{ fontSize: '0.6875rem', letterSpacing: '0.22em', color: '#B89A4F' }}
                       >
                         {system.name}
                       </span>
                     </div>
                     <p
                       className="font-playfair font-normal leading-[1.55] mb-4"
-                      style={{ fontSize: '15px', fontStyle: 'italic', color: '#1F1D1A' }}
+                      style={{ fontSize: '1rem', fontStyle: 'italic', color: '#1F1D1A' }}
                     >
                       {system.quote}
                     </p>
                     <p
                       className="font-normal leading-[1.72]"
-                      style={{ fontSize: '13px', color: '#5F5A52' }}
+                      style={{ fontSize: '1rem', color: '#5F5A52' }}
                     >
                       {system.body}
                     </p>
@@ -178,7 +179,7 @@ const CrossfrictionPage = () => {
         />
 
         <div className="container mx-auto px-6 relative">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
             <div className="grid lg:grid-cols-[1fr_1.35fr] gap-16 lg:gap-24 items-start">
 
               {/* Left — Sticky editorial anchor */}
@@ -190,7 +191,7 @@ const CrossfrictionPage = () => {
                 className="lg:sticky lg:top-32"
               >
                 <p
-                  className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5"
+                  className="text-label uppercase tracking-[0.28em] font-normal mb-5"
                   style={{ color: 'rgba(184,154,79,0.65)' }}
                 >
                   Klinički pomak
@@ -200,7 +201,7 @@ const CrossfrictionPage = () => {
                   style={{ backgroundColor: 'rgba(184,154,79,0.22)' }}
                 />
                 <h2
-                  className="font-playfair font-semibold leading-[1.17] mb-10 text-[1.85rem] md:text-[2.05rem]"
+                  className="font-playfair font-semibold leading-[1.17] mb-10 text-h2"
                   style={{ color: 'rgba(255,255,255,0.92)' }}
                 >
                   Kliničko razmišljanje<br />
@@ -208,7 +209,7 @@ const CrossfrictionPage = () => {
                   prestane biti jedina informacija.
                 </h2>
                 <p
-                  className="text-[14px] leading-[1.82] font-normal"
+                  className="text-body-l leading-[1.82] font-normal"
                   style={{ color: 'rgba(255,255,255,0.56)', maxWidth: '36ch' }}
                 >
                   CFM ne mijenja samo način rada. Mijenja način na koji terapeut interpretira ono što vidi, osjeća i povezuje tijekom tretmana.
@@ -278,7 +279,7 @@ const CrossfrictionPage = () => {
       {/* Body Reset Method — Three Procedural Phases */}
       <section style={{ background: '#F4F1EA' }} className="py-24 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
             <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 lg:gap-24 items-start">
 
               {/* Left — Sticky anchor */}
@@ -289,19 +290,19 @@ const CrossfrictionPage = () => {
                 viewport={{ once: true }}
                 className="lg:sticky lg:top-32"
               >
-                <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                   Body Reset Method
                 </p>
                 <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.30)' }} />
                 <h2
-                  className="font-playfair font-semibold leading-[1.18] mb-12 text-[1.85rem] md:text-[2.05rem]"
+                  className="font-playfair font-semibold leading-[1.18] mb-12 text-h2"
                   style={{ color: '#1F1D1A' }}
                 >
                   Tri faze jednog<br />
                   terapijskog okvira.
                 </h2>
                 <p
-                  className="text-[14.5px] leading-[1.82] font-normal mb-5"
+                  className="text-body-l leading-[1.82] font-normal mb-5"
                   style={{ color: '#5F5A52', maxWidth: '42ch' }}
                 >
                   Body Reset nije skup tehnika koje se dodaju jedna na drugu. To je redoslijed odluka: prvo procjena, zatim terapijski reset, zatim provjera funkcije.
@@ -347,27 +348,27 @@ const CrossfrictionPage = () => {
                       <div className="flex items-baseline gap-4 mb-4">
                         <span
                           className="font-normal shrink-0"
-                          style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(0,0,0,0.25)' }}
+                          style={{ fontSize: '0.6875rem', letterSpacing: '0.18em', color: 'rgba(0,0,0,0.25)' }}
                         >
                           {item.num}
                         </span>
                         <span
                           className="font-normal uppercase"
-                          style={{ fontSize: '10px', letterSpacing: '0.22em', color: '#B89A4F' }}
+                          style={{ fontSize: '0.6875rem', letterSpacing: '0.22em', color: '#B89A4F' }}
                         >
                           {item.phase}
                         </span>
                       </div>
                       <p
                         className="font-playfair font-normal leading-[1.52] mb-1"
-                        style={{ fontSize: '17px', color: '#1F1D1A' }}
+                        style={{ fontSize: '1.0625rem', color: '#1F1D1A' }}
                       >
                         {lines[0]}
                       </p>
                       {lines[1] && (
                         <p
                           className="font-playfair font-normal leading-[1.52] mb-5"
-                          style={{ fontSize: '17px', color: '#1F1D1A', fontStyle: 'italic', opacity: 0.55 }}
+                          style={{ fontSize: '1.0625rem', color: '#1F1D1A', fontStyle: 'italic', opacity: 0.55 }}
                         >
                           {lines[1]}
                         </p>
@@ -375,7 +376,7 @@ const CrossfrictionPage = () => {
                       {!lines[1] && <div className="mb-5" />}
                       <p
                         className="font-normal leading-[1.72]"
-                        style={{ fontSize: '13px', color: '#5F5A52' }}
+                        style={{ fontSize: '1rem', color: '#5F5A52' }}
                       >
                         {item.body}
                       </p>
@@ -393,7 +394,7 @@ const CrossfrictionPage = () => {
       {/* Klinička observacija */}
       <section className="bg-white pt-24 pb-0">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-14 items-start max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-14 items-start max-w-shell mx-auto">
 
             {/* Left: Editorial text */}
             <motion.div
@@ -402,33 +403,33 @@ const CrossfrictionPage = () => {
               transition={{ duration: 0.9, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-7" style={{ color: '#B89A4F' }}>
                 Metodika rada
               </p>
               <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.30)' }} />
               <h2
-                className="font-playfair font-semibold leading-[1.22] mb-6 text-[1.9rem] md:text-[2.15rem]"
+                className="font-playfair font-semibold leading-[1.22] mb-6 text-h2"
                 style={{ color: '#1F1D1A' }}
               >
                 Procjena i tretman<br />
                 prestaju biti<br />
                 odvojeni procesi.
               </h2>
-              <p className="text-[14px] leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52' }}>
+              <p className="text-body-l leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52' }}>
                 Terapijska informacija više ne dolazi samo iz simptoma. Dolazi iz odnosa između pokreta, zaštite i odgovora tijela tijekom tretmana.
               </p>
 
-              <p className="text-[14.5px] leading-[1.78] font-normal mb-7" style={{ color: '#3D3A35' }}>
+              <p className="text-body-l leading-[1.78] font-normal mb-7" style={{ color: '#3D3A35' }}>
                 Cross friction i funkcionalna masaža nisu dvije zasebne metode. To je jedan klinički pristup s dva ulaza: tkivna restrikcija i funkcionalno ograničenje kretanja.
               </p>
 
-              <p className="text-[14.5px] leading-[1.78] font-normal mb-14" style={{ color: '#5F5A52' }}>
+              <p className="text-body-l leading-[1.78] font-normal mb-14" style={{ color: '#5F5A52' }}>
                 Palpatorni nalaz počinje određivati smjer tretmana — ne anatomska lokalizacija simptoma.
               </p>
 
               <div className="w-6 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.25)' }} />
 
-              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.22em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 Što počinješ primjećivati
               </p>
               <div>
@@ -439,7 +440,7 @@ const CrossfrictionPage = () => {
                   'Granicu između mehaničke restrikcije i regulatornog odgovora tkiva',
                 ].map((item, i) => (
                   <div key={i} className="py-4" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-                    <p className="text-[14px] leading-[1.6] font-normal" style={{ color: '#1F1D1A' }}>
+                    <p className="text-body-l leading-[1.6] font-normal" style={{ color: '#1F1D1A' }}>
                       {item}
                     </p>
                   </div>
@@ -488,14 +489,14 @@ const CrossfrictionPage = () => {
             style={{ maxWidth: '22rem' }}
           >
             <div className="h-px w-8 mx-auto mb-10" style={{ backgroundColor: 'rgba(0,0,0,0.12)' }} />
-            <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#2A2723' }}>
+            <p className="text-body-l leading-[1.85] font-normal" style={{ color: '#2A2723' }}>
               Fascija pamti.
             </p>
-            <p className="text-[14px] leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
+            <p className="text-body-l leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
               Svaka adherencija je trag:<br />
               ozljede, kompenzacije, ponavljanja.
             </p>
-            <p className="text-[14px] leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
+            <p className="text-body-l leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
               Razlika nije u jačini pritiska,<br />
               nego u preciznosti lociranja i čitanja odgovora.
             </p>
@@ -506,7 +507,7 @@ const CrossfrictionPage = () => {
       {/* Moduli kliničkog razvoja */}
       <section id="program" style={{ background: '#F4F1EA' }} className="pt-4 pb-0">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="shell-narrow">
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -515,18 +516,18 @@ const CrossfrictionPage = () => {
               viewport={{ once: true }}
               className="mb-20"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Edukacijski program
               </p>
               <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
               <h2
-                className="font-playfair font-semibold leading-[1.22] text-[1.9rem] md:text-[2.2rem]"
+                className="font-playfair font-semibold leading-[1.22] text-h2"
                 style={{ color: '#1F1D1A' }}
               >
                 Tri razine kliničke<br />
                 kompetencije.
               </h2>
-              <p className="text-[14px] leading-[1.82] font-normal mt-8" style={{ color: '#7A7570', maxWidth: '46ch' }}>
+              <p className="text-body-l leading-[1.82] font-normal mt-8" style={{ color: '#7A7570', maxWidth: '46ch' }}>
                 Program ne gradi samo tehnički repertoar — gradi sposobnost prepoznavanja kako tijelo kompenzira, reagira i može se terapijski resetirati kao cjelina.
               </p>
             </motion.div>
@@ -581,11 +582,11 @@ const CrossfrictionPage = () => {
                 <div className="grid lg:grid-cols-[13rem_1fr] gap-10 lg:gap-16">
 
                   <div className="lg:pt-1">
-                    <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-4" style={{ color: '#B89A4F' }}>
+                    <p className="text-label uppercase tracking-[0.28em] font-normal mb-4" style={{ color: '#B89A4F' }}>
                       {mod.label}
                     </p>
                     {mod.note && (
-                      <p className="text-[12px] leading-[1.72] font-normal mt-6 hidden lg:block" style={{ color: 'rgba(0,0,0,0.38)', maxWidth: '17ch' }}>
+                      <p className="text-body leading-[1.72] font-normal mt-6 hidden lg:block" style={{ color: 'rgba(0,0,0,0.38)', maxWidth: '17ch' }}>
                         {mod.note}
                       </p>
                     )}
@@ -593,23 +594,23 @@ const CrossfrictionPage = () => {
 
                   <div>
                     <h3
-                      className="font-playfair font-semibold leading-[1.26] mb-5 text-[1.35rem] md:text-[1.52rem]"
+                      className="font-playfair font-semibold leading-[1.26] mb-5 text-h3"
                       style={{ color: '#1F1D1A' }}
                     >
                       {mod.title}
                     </h3>
-                    <p className="text-[14px] leading-[1.78] font-normal mb-10" style={{ color: '#5F5A52' }}>
+                    <p className="text-body-l leading-[1.78] font-normal mb-10" style={{ color: '#5F5A52' }}>
                       {mod.desc}
                     </p>
                     {mod.note && (
-                      <p className="text-[12px] leading-[1.72] font-normal mb-8 lg:hidden" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                      <p className="text-body leading-[1.72] font-normal mb-8 lg:hidden" style={{ color: 'rgba(0,0,0,0.42)' }}>
                         {mod.note}
                       </p>
                     )}
                     <div>
                       {mod.items.map((item, j) => (
                         <div key={j} className="py-4" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-                          <p className="text-[13.5px] leading-[1.65] font-normal" style={{ color: '#3D3A35' }}>{item}</p>
+                          <p className="text-body-l leading-[1.65] font-normal" style={{ color: '#3D3A35' }}>{item}</p>
                         </div>
                       ))}
                       <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
@@ -626,7 +627,7 @@ const CrossfrictionPage = () => {
       {/* Weekend Intensive Structure */}
       <section style={{ background: '#F4F1EA' }} className="pt-20 pb-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="shell-narrow">
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -635,11 +636,11 @@ const CrossfrictionPage = () => {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Modul I · Struktura vikenda
               </p>
               <h2
-                className="font-playfair font-semibold leading-[1.22] text-[1.6rem] md:text-[1.85rem]"
+                className="font-playfair font-semibold leading-[1.22] text-h2"
                 style={{ color: '#1F1D1A' }}
               >
                 Dva dana kliničke integracije.
@@ -682,16 +683,16 @@ const CrossfrictionPage = () => {
                   className={`py-10 ${dayIdx === 0 ? 'md:pr-14' : 'md:pl-14'}`}
                   style={{ borderTop: '1px solid rgba(0,0,0,0.09)' }}
                 >
-                  <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-4" style={{ color: 'rgba(0,0,0,0.38)' }}>
+                  <p className="text-label uppercase tracking-[0.22em] font-normal mb-4" style={{ color: 'rgba(0,0,0,0.38)' }}>
                     {day.day}
                   </p>
                   <h3
-                    className="font-playfair font-semibold leading-[1.28] mb-4 text-[1.15rem] md:text-[1.28rem]"
+                    className="font-playfair font-semibold leading-[1.28] mb-4 text-h3"
                     style={{ color: '#1F1D1A' }}
                   >
                     {day.title}
                   </h3>
-                  <p className="text-[13.5px] leading-[1.72] font-normal mb-8" style={{ color: '#5F5A52' }}>
+                  <p className="text-body-l leading-[1.72] font-normal mb-8" style={{ color: '#5F5A52' }}>
                     {day.desc}
                   </p>
                   <div>
@@ -701,10 +702,10 @@ const CrossfrictionPage = () => {
                         className="grid gap-5 py-4"
                         style={{ borderTop: '1px solid rgba(0,0,0,0.07)', gridTemplateColumns: '1.6rem 1fr' }}
                       >
-                        <span className="text-[11px] font-normal tabular-nums pt-0.5" style={{ color: '#B89A4F' }}>
+                        <span className="text-caption font-normal tabular-nums pt-0.5" style={{ color: '#B89A4F' }}>
                           {String(i + 1).padStart(2, '0')}
                         </span>
-                        <p className="text-[13.5px] leading-[1.6] font-normal" style={{ color: '#3D3A35' }}>{item}</p>
+                        <p className="text-body-l leading-[1.6] font-normal" style={{ color: '#3D3A35' }}>{item}</p>
                       </div>
                     ))}
                     <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
@@ -720,7 +721,7 @@ const CrossfrictionPage = () => {
       {/* Atmosfera edukacije — Modul II */}
       <section style={{ background: '#F4F1EA' }} className="py-20 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="shell-narrow">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -728,7 +729,7 @@ const CrossfrictionPage = () => {
               viewport={{ once: true }}
               className="mb-10"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 Atmosfera edukacije
               </p>
               <div className="w-8 h-px" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
@@ -740,22 +741,13 @@ const CrossfrictionPage = () => {
               viewport={{ once: true }}
             >
               <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-                <iframe
-                  src="https://www.youtube.com/embed/5mOaGUuDrWU?rel=0&modestbranding=1&iv_load_policy=3&color=white"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    border: 'none',
-                  }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                <YouTubeFacade
+                  id="5mOaGUuDrWU"
                   title="CFM Body Reset — Modul II"
+                  embedSrc="https://www.youtube.com/embed/5mOaGUuDrWU?rel=0&modestbranding=1&iv_load_policy=3&color=white"
                 />
               </div>
-              <p className="mt-4 text-[11px] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
+              <p className="mt-4 text-caption font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
                 CFM Body Reset Method — Modul II · Rameni pojas i cervikalna regija
               </p>
             </motion.div>
@@ -772,24 +764,24 @@ const CrossfrictionPage = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto mb-12"
+            className="shell-narrow mb-12"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+            <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
               Edukacijska praksa
             </p>
             <div className="w-10 h-px mb-7" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
             <h2
-              className="font-playfair font-semibold leading-[1.22] mb-5 text-[1.6rem] md:text-[1.85rem]"
+              className="font-playfair font-semibold leading-[1.22] mb-5 text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Klinički rad tijekom edukacije.
             </h2>
-            <p className="text-[14px] leading-[1.72] font-normal" style={{ color: '#5F5A52' }}>
+            <p className="text-body-l leading-[1.72] font-normal" style={{ color: '#5F5A52' }}>
               Edukacija se gradi oko promatranja, korekcije i ponavljanja stvarnog rada rukama.
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="shell-narrow">
 
             {/* Image 1 — cinematic hero, full width */}
             <motion.div
@@ -808,7 +800,7 @@ const CrossfrictionPage = () => {
               </div>
               <div className="mt-3 flex items-start gap-3">
                 <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
-                <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
+                <p className="text-caption leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
                   Pritisak se ne pojačava. Mijenja se smjer.
                 </p>
               </div>
@@ -834,7 +826,7 @@ const CrossfrictionPage = () => {
                 </div>
                 <div className="mt-3 flex items-start gap-3">
                   <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
-                  <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
+                  <p className="text-caption leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
                     Promjena se prvo osjeti pod rukom. Tek onda postaje odluka.
                   </p>
                 </div>
@@ -861,7 +853,7 @@ const CrossfrictionPage = () => {
                 </div>
                 <div className="mt-3 flex items-start gap-3">
                   <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
-                  <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
+                  <p className="text-caption leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
                     Nitko u prostoriji ne promatra pasivno.
                   </p>
                 </div>
@@ -880,11 +872,11 @@ const CrossfrictionPage = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.1, ease: 'easeOut' }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
+            className="shell-narrow"
           >
             <h2
-              className="font-playfair font-semibold leading-[1.30]"
-              style={{ fontSize: 'clamp(1.65rem, 3.2vw, 2.15rem)', color: 'rgba(255,255,255,0.88)' }}
+              className="font-playfair font-semibold leading-[1.30] text-h2"
+              style={{ color: 'rgba(255,255,255,0.88)' }}
             >
               Terapijska odluka ne nastaje iz protokola.
               <br />
@@ -910,7 +902,7 @@ const CrossfrictionPage = () => {
         />
 
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-12 lg:gap-16 items-start">
 
@@ -966,7 +958,7 @@ const CrossfrictionPage = () => {
                 viewport={{ once: true }}
                 className="lg:pt-10 lg:sticky lg:top-32"
               >
-                <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                   Metodološki pristup
                 </p>
                 <div className="w-10 h-px mb-11" style={{ backgroundColor: 'rgba(184,154,79,0.32)' }} />
@@ -974,8 +966,8 @@ const CrossfrictionPage = () => {
                 <div className="w-8 h-px mb-10" style={{ backgroundColor: 'rgba(0,0,0,0.10)' }} />
 
                 <h2
-                  className="font-playfair font-semibold leading-[1.22] mb-14"
-                  style={{ fontSize: 'clamp(1.65rem, 2.6vw, 2.05rem)', color: '#1F1D1A' }}
+                  className="font-playfair font-semibold leading-[1.22] mb-14 text-h2"
+                  style={{ color: '#1F1D1A' }}
                 >
                   CFM Body Reset<br />
                   nije tehnika.<br />
@@ -986,10 +978,10 @@ const CrossfrictionPage = () => {
                 <div className="mb-10" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
 
                 <div style={{ maxWidth: '38ch' }}>
-                  <p className="text-[13px] leading-[1.92] font-normal mb-10" style={{ color: '#7A7570' }}>
+                  <p className="text-body-l leading-[1.92] font-normal mb-10" style={{ color: '#7A7570' }}>
                     Razvijen iz višegodišnjeg rada s prezentacijama gdje tkivni nalaz nije odgovarao predviđenom redoslijedu. Gdje je funkcionalni odgovor bio jedini pouzdan vodič.
                   </p>
-                  <p className="text-[13px] leading-[1.92] font-normal mb-16" style={{ color: '#7A7570' }}>
+                  <p className="text-body-l leading-[1.92] font-normal mb-16" style={{ color: '#7A7570' }}>
                     Spaja cross friction, palpacijsku preciznost i razumijevanje tkivnih odnosa u jedan klinički dijalog s tijelom.
                   </p>
 
@@ -1002,7 +994,7 @@ const CrossfrictionPage = () => {
                     <p
                       className="font-playfair font-normal"
                       style={{
-                        fontSize: 'clamp(1.12rem, 1.9vw, 1.3rem)',
+                        fontSize: 'clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem)',
                         lineHeight: '1.60',
                         color: '#1F1D1A',
                         fontStyle: 'italic',
@@ -1016,14 +1008,14 @@ const CrossfrictionPage = () => {
                 </div>
 
                 <p
-                  className="text-[12.5px] leading-[1.75] font-normal mt-14"
+                  className="text-body leading-[1.75] font-normal mt-14"
                   style={{ color: 'rgba(0,0,0,0.36)', maxWidth: '42ch', fontStyle: 'italic' }}
                 >
                   Taj proces odvija se vikendom, u parovima — u jednakom kliničkom formatu bez obzira na lokaciju.
                 </p>
                 <div className="mt-8" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
                 <p
-                  className="text-[10px] uppercase tracking-[0.22em] font-normal mt-5"
+                  className="text-label uppercase tracking-[0.22em] font-normal mt-5"
                   style={{ color: 'rgba(0,0,0,0.20)' }}
                 >
                   Ante Antić · CFM Body Reset Method
@@ -1039,7 +1031,7 @@ const CrossfrictionPage = () => {
       {/* Field observations */}
       <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="py-10 md:py-12">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             <div
               className="grid md:grid-cols-3"
@@ -1076,18 +1068,18 @@ const CrossfrictionPage = () => {
                 >
                   <p
                     className="font-playfair font-normal leading-[1.68] mb-7"
-                    style={{ fontSize: '17px', fontStyle: 'italic', color: '#1F1D1A' }}
+                    style={{ fontSize: '1.0625rem', fontStyle: 'italic', color: '#1F1D1A' }}
                   >
                     "{item.statement}"
                   </p>
                   <p
-                    className="text-[10.5px] uppercase tracking-[0.24em] font-normal"
+                    className="text-label uppercase tracking-[0.24em] font-normal"
                     style={{ color: 'rgba(0,0,0,0.40)' }}
                   >
                     {item.ime}
                   </p>
                   <p
-                    className="text-[10px] uppercase tracking-[0.18em] font-normal mt-1"
+                    className="text-label uppercase tracking-[0.18em] font-normal mt-1"
                     style={{ color: 'rgba(0,0,0,0.26)' }}
                   >
                     {item.struka}
@@ -1107,7 +1099,7 @@ const CrossfrictionPage = () => {
         className="pt-16 pb-28"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             {/* Header */}
             <motion.div
@@ -1117,11 +1109,11 @@ const CrossfrictionPage = () => {
               viewport={{ once: true }}
               className="mb-14"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Kotizacija edukacije
               </p>
               <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
-              <p className="text-[14px] leading-[1.82] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+              <p className="text-body-l leading-[1.82] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                 CFM Body Reset Method nije običan tečaj masaže — to je strukturirani sustav kliničkog razmišljanja kroz tri modula. Svaki modul gradi na prethodnom. Možeš se prijaviti na jedan modul ili rezervirati sva tri odjednom uz posebnu cijenu.
               </p>
             </motion.div>
@@ -1137,7 +1129,7 @@ const CrossfrictionPage = () => {
             >
               {/* Card: 1 modul */}
               <div className="p-10" style={{ background: 'white', borderRight: '1px solid rgba(0,0,0,0.08)' }}>
-                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-7" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.24em] font-normal mb-7" style={{ color: '#B89A4F' }}>
                   Jedan modul
                 </p>
                 <p
@@ -1146,13 +1138,13 @@ const CrossfrictionPage = () => {
                 >
                   460 €
                 </p>
-                <p className="text-[12px] font-normal mb-1" style={{ color: '#B89A4F' }}>
+                <p className="text-body font-normal mb-1" style={{ color: '#B89A4F' }}>
                   Early Bird cijena
                 </p>
-                <p className="text-[12px] font-normal mb-2" style={{ color: 'rgba(0,0,0,0.30)', textDecoration: 'line-through' }}>
+                <p className="text-body font-normal mb-2" style={{ color: 'rgba(0,0,0,0.30)', textDecoration: 'line-through' }}>
                   Redovna cijena: 500 €
                 </p>
-                <p className="text-[11px] uppercase tracking-[0.16em] font-medium mb-8" style={{ color: '#B89A4F' }}>
+                <p className="text-caption uppercase tracking-[0.16em] font-medium mb-8" style={{ color: '#B89A4F' }}>
                   Early Bird do 23.12.2026.
                 </p>
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} className="pt-7 space-y-4">
@@ -1161,17 +1153,17 @@ const CrossfrictionPage = () => {
                     { bold: 'Ostatak kotizacije', rest: ' plaća se najkasnije 30 dana prije edukacije.' },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
-                      <span className="flex-shrink-0 mt-[3px]" style={{ color: '#B89A4F', fontSize: '11px' }}>—</span>
-                      <p className="text-[13px] leading-[1.68] font-normal" style={{ color: '#5F5A52' }}>
+                      <span className="flex-shrink-0 mt-[3px]" style={{ color: '#B89A4F', fontSize: '0.8125rem' }}>—</span>
+                      <p className="text-body-l leading-[1.68] font-normal" style={{ color: '#5F5A52' }}>
                         <span style={{ color: '#1F1D1A', fontWeight: 500 }}>{item.bold}</span>{item.rest}
                       </p>
                     </div>
                   ))}
                 </div>
-                <p className="text-[12px] leading-[1.65] font-normal mt-6" style={{ color: 'rgba(0,0,0,0.40)' }}>
+                <p className="text-body leading-[1.65] font-normal mt-6" style={{ color: 'rgba(0,0,0,0.40)' }}>
                   Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
                 </p>
-                <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(0,0,0,0.40)' }}>
+                <p className="text-body leading-[1.65] font-normal mt-2" style={{ color: 'rgba(0,0,0,0.40)' }}>
                   Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
                   <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: '#B89A4F' }}>info@uciliste-suprastudium.hr</a>
                   {' '}ili nazovi{' '}
@@ -1182,7 +1174,7 @@ const CrossfrictionPage = () => {
 
               {/* Card: 3 modula */}
               <div className="p-10" style={{ background: '#1F1D1A' }}>
-                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-7" style={{ color: 'rgba(184,154,79,0.75)' }}>
+                <p className="text-label uppercase tracking-[0.24em] font-normal mb-7" style={{ color: 'rgba(184,154,79,0.75)' }}>
                   Paket — sva 3 modula
                 </p>
                 <p
@@ -1191,14 +1183,14 @@ const CrossfrictionPage = () => {
                 >
                   1.290 €
                 </p>
-                <p className="text-[12px] font-normal mb-1" style={{ color: 'rgba(184,154,79,0.75)' }}>
+                <p className="text-body font-normal mb-1" style={{ color: 'rgba(184,154,79,0.75)' }}>
                   Ušteda 210 €
                 </p>
-                <p className="text-[12px] font-normal mb-8" style={{ color: 'rgba(255,255,255,0.25)', textDecoration: 'line-through' }}>
+                <p className="text-body font-normal mb-8" style={{ color: 'rgba(255,255,255,0.25)', textDecoration: 'line-through' }}>
                   Redovna cijena: 1.500 €
                 </p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }} className="pt-7">
-                  <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.52)' }}>
+                  <p className="text-body-l leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.52)' }}>
                     Rezerviraj sva tri modula unaprijed i uštedi 210 €. CFM sustav daje punu kliničku sliku tek kada se prođe kroz sve tri razine — od palpacije do funkcionalne integracije.
                   </p>
                 </div>
@@ -1217,17 +1209,17 @@ const CrossfrictionPage = () => {
               >
                 <p
                   className="font-playfair font-normal mb-6"
-                  style={{ fontSize: 'clamp(0.9rem, 1.1vw, 0.97rem)', lineHeight: '1.75', color: '#3D3935', fontStyle: 'italic', maxWidth: '40ch' }}
+                  style={{ fontSize: '1rem', lineHeight: '1.75', color: '#3D3935', fontStyle: 'italic', maxWidth: '40ch' }}
                 >
                   Broj mjesta ograničen je kvalitetom praktičnog rada — ne kapacitetom dvorane.
                 </p>
-                <p className="font-normal mb-12" style={{ fontSize: '12.5px', lineHeight: '1.78', color: 'rgba(0,0,0,0.50)', maxWidth: '40ch' }}>
+                <p className="font-normal mb-12" style={{ fontSize: '0.9375rem', lineHeight: '1.78', color: 'rgba(0,0,0,0.50)', maxWidth: '40ch' }}>
                   Edukacija je organizirana u malim grupama s fokusom na individualni feedback i praktičnu korekciju rada.
                 </p>
-                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.24em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                   Termini i lokacije
                 </p>
-                <p className="text-[13px] leading-[1.78] font-normal mb-7" style={{ color: '#5F5A52' }}>
+                <p className="text-body-l leading-[1.78] font-normal mb-7" style={{ color: '#5F5A52' }}>
                   CFM se izvodi u dvije grupe — riječka je već u tijeku, zagrebačka kreće od prvog modula.
                 </p>
                 <div>
@@ -1237,24 +1229,24 @@ const CrossfrictionPage = () => {
                   ].map((loc, i) => (
                     <div key={i} className="py-5" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
                       <div className="flex items-baseline justify-between mb-1.5">
-                        <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.1rem', color: '#1F1D1A' }}>
+                        <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.0625rem', color: '#1F1D1A' }}>
                           {loc.city}
                         </p>
-                        <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: '#B89A4F' }}>
+                        <p className="text-label uppercase tracking-[0.14em] font-medium" style={{ color: '#B89A4F' }}>
                           {loc.status}
                         </p>
                       </div>
-                      <p className="text-[12.5px] font-normal" style={{ color: '#5F5A52' }}>
+                      <p className="text-body font-normal" style={{ color: '#5F5A52' }}>
                         {loc.note}
                       </p>
-                      <p className="text-[11px] font-normal mt-0.5" style={{ color: 'rgba(0,0,0,0.38)' }}>
+                      <p className="text-caption font-normal mt-0.5" style={{ color: 'rgba(0,0,0,0.38)' }}>
                         {loc.mjesto}
                       </p>
                     </div>
                   ))}
                   <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', marginBottom: '1.8rem' }} />
                 </div>
-                <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.38)', fontStyle: 'italic' }}>
+                <p className="text-body font-normal" style={{ color: 'rgba(0,0,0,0.38)', fontStyle: 'italic' }}>
                   Slavonski Brod i ostali gradovi — termini na upit.
                 </p>
               </motion.div>
@@ -1267,7 +1259,7 @@ const CrossfrictionPage = () => {
                 viewport={{ once: true }}
                 className="lg:pt-2"
               >
-                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-8" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.24em] font-normal mb-8" style={{ color: '#B89A4F' }}>
                   Što uključuje edukacija
                 </p>
                 <div>
@@ -1279,8 +1271,8 @@ const CrossfrictionPage = () => {
                     { title: 'Trajni pristup materijalima', note: 'Svi edukacijski materijali dostupni bez vremenskog ograničenja.' },
                   ].map((item, i) => (
                     <div key={i} className="py-6" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-                      <p className="text-[14.5px] leading-snug font-medium mb-2" style={{ color: '#1F1D1A' }}>{item.title}</p>
-                      <p className="text-[12.5px] leading-[1.70] font-normal" style={{ color: '#8A8480' }}>{item.note}</p>
+                      <p className="text-body-l leading-snug font-medium mb-2" style={{ color: '#1F1D1A' }}>{item.title}</p>
+                      <p className="text-body leading-[1.70] font-normal" style={{ color: '#8A8480' }}>{item.note}</p>
                     </div>
                   ))}
                   <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
@@ -1298,11 +1290,11 @@ const CrossfrictionPage = () => {
               className="pt-16"
               style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Bonus za prvih 8 prijavljenih
               </p>
               <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
-              <p className="text-[14px] leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '52ch' }}>
+              <p className="text-body-l leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '52ch' }}>
                 Prvih 8 polaznika koji rezerviraju mjesto dobivaju četiri dodatna resursa koja nisu dio standardnog programa.
               </p>
               <div className="grid md:grid-cols-2" style={{ border: '1px solid rgba(0,0,0,0.07)' }}>
@@ -1340,10 +1332,10 @@ const CrossfrictionPage = () => {
                     <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
                       {bonus.n}
                     </p>
-                    <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                    <p className="text-body-l leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
                       {bonus.title}
                     </p>
-                    <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                    <p className="text-body leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
                       {bonus.note}
                     </p>
                   </div>
@@ -1353,19 +1345,19 @@ const CrossfrictionPage = () => {
 
             {/* CTA */}
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: true }}
               className="mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-5"
             >
               <a
                 href="https://tally.so/r/wA5kvD"
-                className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-8 py-3 text-[10px] font-medium rounded-sm tracking-[0.18em] uppercase transition-colors duration-300 inline-block"
+                className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-8 py-3 text-label font-medium rounded-sm tracking-[0.18em] uppercase transition-colors duration-300 inline-block"
               >
                 Rezerviraj svoje mjesto
               </a>
-              <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.40)', fontStyle: 'italic' }}>
+              <p className="text-body font-normal" style={{ color: 'rgba(0,0,0,0.40)', fontStyle: 'italic' }}>
                 Akontacija 100 € potvrđuje rezervaciju. Ostatak se plaća 30 dana prije edukacije.
               </p>
             </motion.div>
@@ -1380,7 +1372,7 @@ const CrossfrictionPage = () => {
         className="pt-28 pb-36"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto">
+          <div className="shell-narrow">
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -1389,16 +1381,16 @@ const CrossfrictionPage = () => {
               viewport={{ once: true }}
               className="mb-14"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Pitanja i odgovori
               </p>
               <h2
-                className="font-playfair font-semibold leading-[1.20] mb-8"
-                style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#1F1D1A' }}
+                className="font-playfair font-semibold leading-[1.20] mb-8 text-h2"
+                style={{ color: '#1F1D1A' }}
               >
                 Informacije o edukaciji.
               </h2>
-              <p className="text-[13.5px] leading-[1.85] font-normal" style={{ color: '#7A7570', maxWidth: '52ch' }}>
+              <p className="text-body-l leading-[1.85] font-normal" style={{ color: '#7A7570', maxWidth: '52ch' }}>
                 Sve ključne informacije o organizaciji, prijavi i praktičnom radu.
               </p>
             </motion.div>
@@ -1413,13 +1405,13 @@ const CrossfrictionPage = () => {
 
                 <AccordionItem value="item-0" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Na kojoj lokaciji se održava edukacija?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       CFM se izvodi u dvije grupe. Riječka grupa je u tijeku — sljedeći je modul 3 (7.–8.11.2026., Udruga Eterico, Rijeka). Zagrebačka grupa (modul 1) je u najavi — termin objavljujemo uskoro (Poliklinika Medical Body Balance, Frane Kesterčaneka 2b). Edukacije se povremeno organiziraju i u Slavonskom Brodu te Splitu prema interesu.
                     </p>
                   </AccordionContent>
@@ -1427,18 +1419,18 @@ const CrossfrictionPage = () => {
 
                 <AccordionItem value="item-1" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Je li potrebno prethodno iskustvo?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal mb-4" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal mb-4" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       Program je namijenjen polaznicima s osnovnim poznavanjem anatomije i fiziologije:
                     </p>
                     <ul className="space-y-2">
                       {['fizioterapeuti, maseri i kineziolozi', 'studenti i terapeuti s praktičnim iskustvom u radu s tijelom'].map((item, i) => (
-                        <li key={i} className="text-[13.5px] leading-[1.85] flex gap-3" style={{ color: '#5F5A52' }}>
+                        <li key={i} className="text-body-l leading-[1.85] flex gap-3" style={{ color: '#5F5A52' }}>
                           <span style={{ color: 'rgba(0,0,0,0.18)', flexShrink: 0 }}>—</span>
                           <span>{item}</span>
                         </li>
@@ -1449,13 +1441,13 @@ const CrossfrictionPage = () => {
 
                 <AccordionItem value="item-2" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Dobiva li se certifikat nakon edukacije?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       Nakon završetka programa izdaje se potvrda o edukaciji koja se može evidentirati u e-radnoj knjižici kao dodatno stručno obrazovanje. Program je priznat od strane World Massage Federation.
                     </p>
                   </AccordionContent>
@@ -1463,7 +1455,7 @@ const CrossfrictionPage = () => {
 
                 <AccordionItem value="item-3" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Što je uključeno u kotizaciju?
@@ -1477,7 +1469,7 @@ const CrossfrictionPage = () => {
                         'Pristup materijalima za ponavljanje gradiva',
                         'Potvrda o edukaciji',
                       ].map((item, i) => (
-                        <li key={i} className="text-[13.5px] leading-[1.85] flex gap-3" style={{ color: '#5F5A52' }}>
+                        <li key={i} className="text-body-l leading-[1.85] flex gap-3" style={{ color: '#5F5A52' }}>
                           <span style={{ color: 'rgba(0,0,0,0.18)', flexShrink: 0 }}>—</span>
                           <span>{item}</span>
                         </li>
@@ -1488,13 +1480,13 @@ const CrossfrictionPage = () => {
 
                 <AccordionItem value="item-4" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Po čemu se razlikuje ovaj program?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       Program kombinira cross friction (Cyriax metoda rada na fasciji, adherencijama i ožiljcima) s funkcionalnom masažom u jedan klinički protokol. Fokus nije samo na tehnici, nego na palpacijskoj preciznosti i kliničkoj odluci o metodi i redoslijedu intervencije.
                     </p>
                   </AccordionContent>
@@ -1513,21 +1505,21 @@ const CrossfrictionPage = () => {
               className="mt-24 pt-12"
               style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Kontakt
               </p>
               <p
                 className="font-playfair font-semibold leading-[1.30] mb-6"
-                style={{ fontSize: '1.4rem', color: '#1F1D1A' }}
+                style={{ fontSize: 'clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem)', color: '#1F1D1A' }}
               >
                 Imate dodatnih pitanja?
               </p>
-              <p className="text-[13.5px] leading-[1.85] font-normal mb-10" style={{ color: '#7A7570', maxWidth: '46ch' }}>
+              <p className="text-body-l leading-[1.85] font-normal mb-10" style={{ color: '#7A7570', maxWidth: '46ch' }}>
                 Za sve informacije o edukaciji, prijavi i organizaciji slobodno nam se obratite direktno.
               </p>
               <a
                 href="mailto:info@uciliste-suprastudium.hr"
-                className="text-[14px] font-normal"
+                className="text-body-l font-normal"
                 style={{
                   color: '#3D3935',
                   textDecoration: 'none',

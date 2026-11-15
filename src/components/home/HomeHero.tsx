@@ -1,15 +1,10 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { fadeIn } from './reveal';
 
 export function HomeHero() {
-  const heroRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-
   return (
-    <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+    <section className="on-dark relative min-h-hero overflow-hidden -mt-20">
 
       {/* Video */}
       <div className="absolute inset-0">
@@ -29,78 +24,47 @@ export function HomeHero() {
       </div>
 
       {/* Base tonal settle */}
-      <div className="absolute inset-0 bg-black/12" />
+      <div className="absolute inset-0" style={{ background: 'rgba(15,12,8,0.12)' }} />
 
-      {/* Desktop: cinematic left text zone */}
+      {/* Desktop: directional text zone — dark left, atmospheric right */}
       <div
         className="absolute inset-0 hidden md:block"
         style={{
           background:
-            'linear-gradient(to right, rgba(15,12,8,0.84) 0%, rgba(15,12,8,0.64) 30%, rgba(15,12,8,0.22) 56%, rgba(15,12,8,0.04) 70%, transparent 82%)',
+            'linear-gradient(100deg, rgba(15,12,8,0.86) 0%, rgba(15,12,8,0.70) 34%, rgba(15,12,8,0.34) 58%, rgba(15,12,8,0.08) 74%, transparent 86%)',
         }}
       />
 
-      {/* Desktop: radial depth behind headline */}
-      <div
-        className="absolute inset-0 hidden md:block"
-        style={{
-          background:
-            'radial-gradient(ellipse 55% 75% at 10% 62%, rgba(8,5,2,0.38) 0%, transparent 100%)',
-        }}
-      />
-
-      {/* Mobile: vertical gradient */}
+      {/* Mobile: vertical gradient, darkest where the text sits */}
       <div
         className="absolute inset-0 md:hidden"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(15,12,8,0.74) 0%, rgba(15,12,8,0.58) 25%, rgba(15,12,8,0.38) 55%, rgba(15,12,8,0.26) 75%, rgba(15,12,8,0.40) 100%)',
+            'linear-gradient(to bottom, rgba(15,12,8,0.62) 0%, rgba(15,12,8,0.30) 28%, rgba(15,12,8,0.46) 55%, rgba(15,12,8,0.80) 100%)',
         }}
       />
 
-      {/* Top vignette */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/20 to-transparent" />
-
       {/* Content */}
-      <motion.div style={{ opacity, y }} className="absolute inset-0">
-        <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[20%] md:pb-[12%]">
-          <div className="max-w-xl w-full">
+      <div className="relative z-10">
+        <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-end pb-[18%] md:pb-[9%]">
+          <div className="w-full max-w-[52rem]">
 
             {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="mb-6"
-            >
+            <motion.div {...fadeIn(0.2)} className="mb-6 flex items-center gap-4">
+              <span className="block w-10 h-px bg-[#d4af37]/60" aria-hidden="true" />
               <span
-                className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.24em] sm:tracking-[0.30em]"
-                style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
+                className="text-label font-normal uppercase tracking-[0.30em]"
+                style={{ color: 'rgba(212,175,55,0.95)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
               >
                 Supra Studium · Učilište
               </span>
             </motion.div>
 
-            {/* Separator */}
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
-              className="origin-left mb-8"
-            >
-              <div className="w-10 h-px bg-[#B89A4F]/45" />
-            </motion.div>
-
             {/* Headline */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.9, ease: 'easeOut' }}
-              className="mb-8"
-            >
+            <motion.div {...fadeIn(0.35)} className="mb-7 md:mb-8">
               <h1
-                className="font-playfair font-semibold text-white leading-[1.18] text-[1.85rem] sm:text-[2.1rem] md:text-[2.3rem]"
-                style={{ textShadow: '0 2px 16px rgba(0,0,0,0.42), 0 1px 4px rgba(0,0,0,0.28)' }}
+                className="font-playfair font-semibold text-[#f4f0e8] text-display"
+                style={{ textShadow: '0 2px 22px rgba(0,0,0,0.45)', textWrap: 'balance' } as React.CSSProperties}
               >
                 Dobar terapeut zna tehniku.<br />
                 Odličan zna što traži.
@@ -108,36 +72,24 @@ export function HomeHero() {
             </motion.div>
 
             {/* Subheadline */}
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
-              className="mb-10"
-            >
-              <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-sm">
+            <motion.div {...fadeIn(0.55)} className="mb-9 md:mb-10">
+              <p className="text-body-l font-normal text-[#ede9e3]/80 max-w-[34rem]">
                 Edukacija kroz palpaciju, kliničku procjenu i razumijevanje tkivnog odgovora.
               </p>
             </motion.div>
 
             {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.7 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5"
-            >
+            <motion.div {...fadeIn(0.75)} className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-7">
               <Link
                 to="/skola-manualne-terapije"
-                className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-7 py-2.5 text-xs font-medium rounded-sm tracking-wider uppercase transition-colors duration-300 inline-block"
+                className="bg-[#c9a832]/90 hover:bg-[#c9a832] active:bg-[#b8992b] text-[#1F1D1A] px-8 py-3.5 text-xs font-medium rounded-sm tracking-[0.16em] uppercase transition-colors duration-300 inline-block"
               >
                 Pogledaj edukacije
               </Link>
               <Link
                 to="/o-ucilistu"
-                className="text-xs font-normal tracking-[0.12em]"
-                style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.72)'; }}
+                className="press-line pb-1 text-body-s font-normal tracking-[0.08em] text-[#ede9e3]/80 hover:text-[#ede9e3]"
+                style={{ textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
               >
                 — O učilištu
               </Link>
@@ -145,7 +97,7 @@ export function HomeHero() {
 
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

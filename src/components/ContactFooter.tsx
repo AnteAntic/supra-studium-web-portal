@@ -9,12 +9,11 @@ const inputBase: React.CSSProperties = {
   background: 'rgba(255,255,255,0.02)',
   color: 'rgba(255,255,255,0.82)',
   transition: 'border-color 0.45s ease',
-  outline: 'none',
 };
 
 const labelStyle: React.CSSProperties = {
   color: 'rgba(255,255,255,0.36)',
-  fontSize: '10px',
+  fontSize: '0.6875rem',
   letterSpacing: '0.2em',
   textTransform: 'uppercase' as const,
   display: 'block',
@@ -23,7 +22,6 @@ const labelStyle: React.CSSProperties = {
 
 const focusBorder = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   e.currentTarget.style.borderColor = 'rgba(184,154,79,0.55)';
-  e.currentTarget.style.outline = 'none';
 };
 const blurBorder = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)';
@@ -50,7 +48,7 @@ export const ContactFooter = () => {
       />
 
       <div className="container relative mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
 
           {/* Header */}
           <motion.div
@@ -60,16 +58,16 @@ export const ContactFooter = () => {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+            <p className="text-label uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
               Kontakt
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.75rem] leading-[1.32] mb-8"
+              className="font-playfair font-semibold leading-[1.32] mb-8 text-h2"
               style={{ color: 'rgba(255,255,255,0.88)' }}
             >
               Informacije i prijave.
             </h2>
-            <p className="text-[14px] leading-[1.75] font-normal" style={{ color: 'rgba(255,255,255,0.54)', maxWidth: '34ch' }}>
+            <p className="text-body-l leading-[1.75] font-normal" style={{ color: 'rgba(255,255,255,0.54)', maxWidth: '34ch' }}>
               Za informacije o edukaciji, prijavi i raspoloživim terminima kontaktirajte nas direktno.
             </p>
           </motion.div>
@@ -85,24 +83,24 @@ export const ContactFooter = () => {
               viewport={{ once: true }}
             >
               <div className="pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                <p className="text-[10px] uppercase tracking-[0.22em] mb-3 font-normal" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.22em] mb-3 font-normal" style={{ color: '#B89A4F' }}>
                   Telefon
                 </p>
-                <p className="text-[16px] font-medium" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                <p className="text-body-l font-medium" style={{ color: 'rgba(255,255,255,0.88)' }}>
                   +385 95 85 58 953
                 </p>
-                <p className="text-[11.5px] mt-1.5 font-normal" style={{ color: 'rgba(255,255,255,0.30)' }}>
+                <p className="text-caption mt-1.5 font-normal" style={{ color: 'rgba(255,255,255,0.30)' }}>
                   WhatsApp · Viber
                 </p>
               </div>
 
               <div className="py-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                <p className="text-[10px] uppercase tracking-[0.22em] mb-3 font-normal" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.22em] mb-3 font-normal" style={{ color: '#B89A4F' }}>
                   Email
                 </p>
                 <a
                   href="mailto:info@uciliste-suprastudium.hr"
-                  className="text-[16px] font-medium"
+                  className="text-body-l font-medium"
                   style={{
                     color: 'rgba(255,255,255,0.88)',
                     textDecoration: 'none',
@@ -126,14 +124,14 @@ export const ContactFooter = () => {
               </div>
 
               <div className="pt-8">
-                <p className="text-[13px] leading-[1.75] font-normal mb-7" style={{ color: 'rgba(255,255,255,0.38)' }}>
+                <p className="text-body-l leading-[1.75] font-normal mb-7" style={{ color: 'rgba(255,255,255,0.38)' }}>
                   Odgovaramo radnim danom,<br />
                   najčešće unutar 24 sata.
                 </p>
                 <p
                   className="font-playfair font-normal leading-[1.65]"
                   style={{
-                    fontSize: '14px',
+                    fontSize: '1rem',
                     color: 'rgba(255,255,255,0.62)',
                     fontStyle: 'italic',
                     maxWidth: '28ch',
@@ -165,7 +163,7 @@ export const ContactFooter = () => {
                       onFocus={focusBorder}
                       onBlur={blurBorder}
                       required
-                      className="w-full px-4 py-3 text-[14px] placeholder-white/[0.14]"
+                      className="w-full px-4 py-3 text-body-l placeholder-white/[0.14]"
                       style={inputBase}
                       placeholder="Ime"
                     />
@@ -181,7 +179,7 @@ export const ContactFooter = () => {
                       onFocus={focusBorder}
                       onBlur={blurBorder}
                       required
-                      className="w-full px-4 py-3 text-[14px] placeholder-white/[0.14]"
+                      className="w-full px-4 py-3 text-body-l placeholder-white/[0.14]"
                       style={inputBase}
                       placeholder="Prezime"
                     />
@@ -199,7 +197,7 @@ export const ContactFooter = () => {
                     onFocus={focusBorder}
                     onBlur={blurBorder}
                     required
-                    className="w-full px-4 py-3 text-[14px] placeholder-white/[0.14]"
+                    className="w-full px-4 py-3 text-body-l placeholder-white/[0.14]"
                     style={inputBase}
                     placeholder="email@adresa.hr"
                   />
@@ -216,7 +214,7 @@ export const ContactFooter = () => {
                     onFocus={focusBorder}
                     onBlur={blurBorder}
                     required
-                    className="w-full px-4 py-3 text-[14px] placeholder-white/[0.14] resize-none"
+                    className="w-full px-4 py-3 text-body-l placeholder-white/[0.14] resize-none"
                     style={inputBase}
                     placeholder="Poruka"
                   />
@@ -224,7 +222,7 @@ export const ContactFooter = () => {
 
                 <button
                   type="submit"
-                  className="w-full text-[10.5px] uppercase tracking-[0.12em] font-normal py-3.5"
+                  className="w-full text-label uppercase tracking-[0.12em] font-normal py-3.5"
                   style={{
                     border: '1px solid rgba(184,154,79,0.45)',
                     color: 'rgba(255,255,255,0.65)',
@@ -275,7 +273,7 @@ export const ContactFooter = () => {
               <RouterLink
                 key={to}
                 to={to}
-                className="text-[11px] font-normal py-1 transition-colors duration-300 hover:text-[#B89A4F]"
+                className="text-caption font-normal py-1 transition-colors duration-300 hover:text-[#B89A4F]"
                 style={{ color: 'rgba(255,255,255,0.40)' }}
               >
                 {label}
@@ -312,10 +310,10 @@ export const ContactFooter = () => {
             </div>
 
             <div className="text-right">
-              <p className="text-[11px] font-normal" style={{ color: 'rgba(255,255,255,0.36)' }}>
+              <p className="text-caption font-normal" style={{ color: 'rgba(255,255,255,0.36)' }}>
                 © 2026 Supra Studium
               </p>
-              <p className="text-[11px] font-normal mt-0.5" style={{ color: 'rgba(255,255,255,0.26)' }}>
+              <p className="text-caption font-normal mt-0.5" style={{ color: 'rgba(255,255,255,0.26)' }}>
                 Učilište za manualne terapije i edukacije
               </p>
             </div>

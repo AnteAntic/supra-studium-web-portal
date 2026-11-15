@@ -121,7 +121,6 @@ export default function RasporedPage() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y       = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -145,7 +144,7 @@ export default function RasporedPage() {
       `}</style>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden">
+      <section ref={heroRef} className="relative min-h-hero overflow-hidden">
 
         {/* Photo */}
         <img fetchPriority="high" width={1920} height={1280}
@@ -195,19 +194,19 @@ export default function RasporedPage() {
         <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#141311] to-transparent" />
 
         {/* Content */}
-        <motion.div style={{ opacity, y }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[22%] md:pb-[13%]">
-            <div className="max-w-xl w-full">
+        <motion.div style={{ opacity }} className="relative z-10">
+          <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-end pb-[22%] md:pb-[13%]">
+            <div className="max-w-[54rem] w-full">
 
               {/* Eyebrow */}
               <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-5"
               >
                 <span
-                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.26em] sm:tracking-[0.32em]"
+                  className="text-label sm:text-caption font-normal uppercase tracking-[0.26em] sm:tracking-[0.32em]"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
                   Supra Studium
@@ -226,13 +225,13 @@ export default function RasporedPage() {
 
               {/* Headline */}
               <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: 'easeOut' }}
                 className="mb-5"
               >
                 <h1
-                  className="font-playfair font-semibold text-white leading-[1.14] text-[1.9rem] sm:text-[2.2rem] md:text-[2.55rem]"
+                  className="font-playfair font-semibold text-white leading-[1.14] text-display"
                   style={{ textShadow: '0 2px 18px rgba(0,0,0,0.50), 0 1px 5px rgba(0,0,0,0.30)' }}
                 >
                   Raspored edukacija
@@ -241,13 +240,13 @@ export default function RasporedPage() {
 
               {/* Subline */}
               <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.65, duration: 0.8 }}
                 className="mb-3"
               >
                 <p
-                  className="text-[13px] font-normal leading-[1.6]"
+                  className="text-body-l font-normal leading-[1.6]"
                   style={{ color: 'rgba(255,255,255,0.90)', textShadow: '0 1px 3px rgba(0,0,0,0.55)' }}
                 >
                   Svi termini potvrđeni — rujan 2026. do travnja 2027.
@@ -256,13 +255,13 @@ export default function RasporedPage() {
 
               {/* Paragraph */}
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.78, duration: 0.8 }}
                 className="mb-10"
               >
                 <p
-                  className="text-[12px] font-normal leading-[1.72] max-w-sm"
+                  className="text-body font-normal leading-[1.72] max-w-sm"
                   style={{ color: 'rgba(255,255,255,0.65)', textShadow: '0 1px 2px rgba(0,0,0,0.40)' }}
                 >
                   Specijalizirane edukacije manualne terapije, funkcionalnog rada i terapeutskih pristupa.
@@ -271,8 +270,8 @@ export default function RasporedPage() {
 
               {/* CTAs */}
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.95, duration: 0.7 }}
                 className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
               >
@@ -280,13 +279,13 @@ export default function RasporedPage() {
                   href="https://tally.so/r/wA5kvD"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-7 py-2.5 text-[10px] font-medium rounded-sm tracking-[0.18em] uppercase transition-colors duration-300 inline-block"
+                  className="bg-[#B89A4F]/90 hover:bg-[#B89A4F] text-white px-7 py-2.5 text-label font-medium rounded-sm tracking-[0.18em] uppercase transition-colors duration-300 inline-block"
                 >
                   Prijavi interes
                 </a>
                 <a
                   href="#jesen-2026"
-                  className="text-[10px] font-normal tracking-[0.14em] uppercase"
+                  className="text-label font-normal tracking-[0.14em] uppercase"
                   style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
                   onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.95)')}
                   onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.72)')}
@@ -307,21 +306,21 @@ export default function RasporedPage() {
           <div className="container mx-auto px-6 py-5">
             <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2.5">
               <span
-                className="text-[10px] uppercase tracking-[0.18em] font-normal"
+                className="text-label uppercase tracking-[0.18em] font-normal"
                 style={{ color: 'rgba(184,154,79,0.90)' }}
               >
                 Zagreb · Rijeka · Split
               </span>
               <span className="hidden sm:block w-px h-3 bg-[#3a3530]" />
               <span
-                className="text-[10px] uppercase tracking-[0.16em] font-normal text-center sm:text-left"
+                className="text-label uppercase tracking-[0.16em] font-normal text-center sm:text-left"
                 style={{ color: 'rgba(237,233,227,0.72)' }}
               >
                 3D · 19.9. — Cupping · 25.10. — Propedeutika · 31.10. — CFM3 · 7.11. — MT1 · 20.11. — ATP · 15.1. — Kalabaš · 20.2. — Cupping ZG · 17.4.
               </span>
               <span className="hidden sm:block w-px h-3 bg-[#3a3530]" />
               <span
-                className="text-[10px] uppercase tracking-[0.18em] font-normal"
+                className="text-label uppercase tracking-[0.18em] font-normal"
                 style={{ color: 'rgba(184,154,79,0.72)' }}
               >
                 Ograničene grupe
@@ -340,7 +339,7 @@ export default function RasporedPage() {
           {[...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
             <span
               key={i}
-              className="inline-flex items-center text-[10px] tracking-[0.18em] font-normal px-8 flex-shrink-0"
+              className="inline-flex items-center text-label tracking-[0.18em] font-normal px-8 flex-shrink-0"
               style={{ color: 'rgba(184,154,79,0.55)' }}
             >
               {item}
@@ -365,11 +364,11 @@ export default function RasporedPage() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-4">Programi</p>
-            <h2 className="font-playfair font-semibold text-4xl sm:text-5xl text-[#1F1D1A] leading-[1.15] max-w-lg mb-5">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-4">Programi</p>
+            <h2 className="font-playfair font-semibold text-[#1F1D1A] leading-[1.15] max-w-lg mb-5 text-h2">
               Edukacijski putevi.
             </h2>
-            <p className="text-[11px] text-[#5a5450] leading-[1.72] max-w-[46ch]">
+            <p className="text-body-l text-[#5a5450] leading-[1.72] max-w-[46ch]">
               Programi razvijani kroz dugogodišnji praktični rad i edukaciju terapeuta iz Hrvatske i inozemstva.
             </p>
           </motion.div>
@@ -384,7 +383,7 @@ export default function RasporedPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.08}
-                className={`flex flex-col-reverse ${path.flip ? 'md:flex-row-reverse' : 'md:flex-row'} border-t border-[#e3e0d8] pb-10 md:pb-0 md:min-h-[22rem] md:max-h-[24rem]`}
+                className={`flex flex-col-reverse ${path.flip ? 'md:flex-row-reverse' : 'md:flex-row'} border-t border-[#e3e0d8] pb-10 md:pb-0 md:min-h-[26rem]`}
               >
                 {/* Photo */}
                 <div className={`w-full md:w-[54%] md:aspect-auto overflow-hidden ${path.id === 'holisticki' ? 'aspect-[3/2]' : 'aspect-[4/3]'}`}>
@@ -409,15 +408,15 @@ export default function RasporedPage() {
                   `}
                 >
                   <p
-                    className="text-[9px] uppercase tracking-[0.28em] font-normal mb-4"
+                    className="text-label uppercase tracking-[0.28em] font-normal mb-4"
                     style={{ color: 'rgba(184,154,79,0.65)' }}
                   >
                     {path.num}
                   </p>
-                  <h3 className="font-playfair text-xl sm:text-2xl font-semibold text-[#1F1D1A] mb-3 leading-[1.3]">
+                  <h3 className="font-playfair font-semibold text-[#1F1D1A] mb-3 leading-[1.3] text-h3">
                     {path.label}
                   </h3>
-                  <p className="text-[12px] text-[#5a5450] leading-[1.72] mb-7 max-w-[34ch]">
+                  <p className="text-body text-[#5a5450] leading-[1.72] mb-7 max-w-[34ch]">
                     {path.tagline}
                   </p>
                   <ul className="space-y-3 mb-9">
@@ -438,7 +437,7 @@ export default function RasporedPage() {
                             ) : course.text;
                           })()}
                           {'sub' in course && course.sub && (
-                            <span className="block text-[11px] mt-0.5" style={{ color: 'rgba(90,84,80,0.65)' }}>
+                            <span className="block text-caption mt-0.5" style={{ color: 'rgba(90,84,80,0.65)' }}>
                               {course.sub}
                             </span>
                           )}
@@ -448,7 +447,7 @@ export default function RasporedPage() {
                       );
 
                       return (
-                        <li key={ci} className={`flex items-start gap-3 text-[12px] leading-[1.6] ${isAdvanced ? '' : 'text-[#3b3b3b]'}`}
+                        <li key={ci} className={`flex items-start gap-3 text-body leading-[1.6] ${isAdvanced ? '' : 'text-[#3b3b3b]'}`}
                           style={isAdvanced ? { color: 'rgba(59,57,54,0.82)' } : undefined}
                         >
                           <span
@@ -470,7 +469,7 @@ export default function RasporedPage() {
                   </ul>
                   <div className="flex items-center gap-6">
                     <span
-                      className="text-[9px] uppercase tracking-[0.24em] font-normal"
+                      className="text-label uppercase tracking-[0.24em] font-normal"
                       style={{ color: 'rgba(184,154,79,0.58)' }}
                     >
                       Termini uskoro
@@ -481,7 +480,7 @@ export default function RasporedPage() {
                           const el = document.getElementById(path.ctaHref.slice(1));
                           if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }}
-                        className="text-[10px] uppercase tracking-[0.18em] font-normal transition-colors duration-300 cursor-pointer"
+                        className="text-label uppercase tracking-[0.18em] font-normal transition-colors duration-300 cursor-pointer"
                         style={{ color: 'rgba(31,29,26,0.52)' }}
                         onMouseEnter={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.85)')}
                         onMouseLeave={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.52)')}
@@ -491,7 +490,7 @@ export default function RasporedPage() {
                     ) : (
                       <Link
                         to={path.ctaHref}
-                        className="text-[10px] uppercase tracking-[0.18em] font-normal transition-colors duration-300"
+                        className="text-label uppercase tracking-[0.18em] font-normal transition-colors duration-300"
                         style={{ color: 'rgba(31,29,26,0.52)' }}
                         onMouseEnter={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.85)')}
                         onMouseLeave={e => (e.currentTarget.style.color = 'rgba(31,29,26,0.52)')}
@@ -519,8 +518,8 @@ export default function RasporedPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#9e8a46] mb-4">Raspored</p>
-            <h2 className="font-playfair text-3xl sm:text-4xl text-[#ede9e3] leading-[1.2]">
+            <p className="text-label uppercase tracking-[0.28em] text-[#9e8a46] mb-4">Raspored</p>
+            <h2 className="font-playfair text-[#ede9e3] leading-[1.2] text-h2">
               Jesen 2026. — Proljeće 2027.
             </h2>
           </motion.div>
@@ -547,7 +546,7 @@ export default function RasporedPage() {
               >
                 <div className="pt-0.5">
                   <p
-                    className="text-[9px] uppercase tracking-[0.24em] mb-1.5"
+                    className="text-label uppercase tracking-[0.24em] mb-1.5"
                     style={{ color: 'rgba(184,154,79,0.52)' }}
                   >
                     {item.code} / {item.year}
@@ -558,13 +557,13 @@ export default function RasporedPage() {
                 </div>
                 <div className="border-l border-[#2e2b27] group-hover:border-[#B89A4F]/30 transition-colors duration-300 pl-6 md:pl-8 pt-0.5">
                   <p
-                    className="text-[11px] uppercase tracking-[0.14em] mb-2"
+                    className="text-caption uppercase tracking-[0.14em] mb-2"
                     style={{ color: 'rgba(237,233,227,0.58)' }}
                   >
                     {item.status}
                   </p>
                   <p
-                    className="text-[13px] leading-[1.6]"
+                    className="text-body-l leading-[1.6]"
                     style={{ color: 'rgba(237,233,227,0.62)' }}
                   >
                     {item.sub}
@@ -583,7 +582,7 @@ export default function RasporedPage() {
             className="mt-10"
           >
             <p
-              className="text-[13px] leading-[1.7] mb-8 max-w-md"
+              className="text-body-l leading-[1.7] mb-8 max-w-md"
               style={{ color: 'rgba(237,233,227,0.62)' }}
             >
               Edukacije se održavaju u Zagrebu, Rijeci i Splitu u manjim praktičnim grupama.
@@ -592,7 +591,7 @@ export default function RasporedPage() {
               href="https://tally.so/r/wA5kvD"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-[11px] uppercase tracking-[0.16em] font-normal border px-6 py-3 rounded-sm transition-colors duration-300"
+              className="inline-block text-caption uppercase tracking-[0.16em] font-normal border px-6 py-3 rounded-sm transition-colors duration-300"
               style={{
                 color: 'rgba(237,233,227,0.72)',
                 borderColor: 'rgba(237,233,227,0.28)',
@@ -660,7 +659,7 @@ export default function RasporedPage() {
 
       {/* ── FAQ ───────────────────────────────────────────────────── */}
       <section className="bg-[#FAF8F4] py-24 px-6">
-        <div className="max-w-2xl mx-auto">
+        <div className="shell-narrow">
 
           <motion.div
             variants={fadeUp}
@@ -669,8 +668,8 @@ export default function RasporedPage() {
             viewport={{ once: true }}
             className="mb-14"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-5">Česta pitanja</p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-[1.25]">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-5">Česta pitanja</p>
+            <h2 className="font-playfair text-[#1F1D1A] leading-[1.25] text-h2">
               Najčešća pitanja prije početka.
             </h2>
           </motion.div>
@@ -691,12 +690,12 @@ export default function RasporedPage() {
                   style={{ borderColor: 'rgba(0,0,0,0.08)' }}
                 >
                   <AccordionTrigger className="py-6 text-left hover:no-underline group">
-                    <span className="text-[14px] font-medium text-[#1F1D1A] leading-[1.5] group-hover:text-[#B89A4F] transition-colors duration-300 pr-6">
+                    <span className="text-body-l font-medium text-[#1F1D1A] leading-[1.5] group-hover:text-[#B89A4F] transition-colors duration-300 pr-6">
                       {item.q}
                     </span>
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[12px] text-[#3b3b3b] leading-[1.78]">
+                    <p className="text-body text-[#3b3b3b] leading-[1.78]">
                       {item.a}
                     </p>
                   </AccordionContent>
@@ -717,14 +716,14 @@ export default function RasporedPage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#9e8a46] mb-8">
+            <p className="text-label uppercase tracking-[0.28em] text-[#9e8a46] mb-8">
               Jesen 2026.
             </p>
-            <h2 className="font-playfair text-3xl sm:text-4xl text-[#ede9e3] leading-[1.25] mb-5">
+            <h2 className="font-playfair text-[#ede9e3] leading-[1.25] mb-5 text-h2">
               Novi termini dolaze uskoro.
             </h2>
             <p
-              className="text-[13px] leading-[1.72] mb-11 max-w-[32ch] mx-auto"
+              className="text-body-l leading-[1.72] mb-11 max-w-[32ch] mx-auto"
               style={{ color: 'rgba(237,233,227,0.68)' }}
             >
               Prijavi interes i primi informacije među prvima.
@@ -733,12 +732,12 @@ export default function RasporedPage() {
               href="https://tally.so/r/wA5kvD"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] px-8 py-3 text-[10px] font-medium rounded-sm tracking-[0.20em] uppercase transition-colors duration-300"
+              className="inline-block bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] px-8 py-3 text-label font-medium rounded-sm tracking-[0.20em] uppercase transition-colors duration-300"
             >
               Prijavi interes
             </a>
             <p
-              className="text-[11px] mt-5 tracking-[0.06em]"
+              className="text-caption mt-5 tracking-[0.06em]"
               style={{ color: 'rgba(237,233,227,0.48)' }}
             >
               Manje grupe. Praktičan rad. Individualni pristup.

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
 interface CourseLocation {
   city: string;
@@ -29,11 +28,36 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > window.innerHeight * 0.9);
+    // The threshold is measured once (and again only when the width changes,
+    // i.e. rotation). window.innerHeight alone changes whenever the mobile
+    // browser bar collapses or expands, which made the bar pop in and out.
+    // A 48 px band (hysteresis) keeps a resting thumb from toggling it.
+    let threshold = window.innerHeight * 0.9;
+    let width = window.innerWidth;
+    let visible = false;
+    const BAND = 48;
+    const update = () => {
+      const y = window.scrollY;
+      const next = visible ? y > threshold - BAND : y > threshold + BAND;
+      if (next !== visible) {
+        visible = next;
+        setIsVisible(next);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onResize = () => {
+      if (window.innerWidth !== width) {
+        width = window.innerWidth;
+        threshold = window.innerHeight * 0.9;
+        update();
+      }
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   const handleCTA = () => {
@@ -46,33 +70,28 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
     }
   };
 
-  if (!isVisible) return null;
-
   return (
-    <motion.div
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -100, opacity: 0 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      className={`fixed top-[57px] md:top-20 left-0 right-0 z-40 ${className}`}
+    <div
+      className={`fixed top-[57px] md:top-20 left-0 right-0 z-40 transition-[transform,opacity] duration-300 ease-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'} ${className}`}
       style={{
-        backgroundColor: 'rgba(250,248,244,0.94)',
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)',
+        backgroundColor: 'rgba(250,248,244,0.985)',
         borderBottom: '1px solid rgba(0,0,0,0.06)',
       }}
       role="region"
       aria-label="Detalji termina i prijava"
+      aria-hidden={!isVisible}
+      // Hidden bar must not be reachable by keyboard.
+      {...(!isVisible ? { inert: '' as unknown as boolean } : {})}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div className="container mx-auto px-6">
 
         {/* Desktop */}
         <div className="hidden md:flex items-center justify-between gap-8 py-1.5">
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-1 min-w-0">
             {locations.map((location, i) => (
               <span
                 key={i}
-                className="text-[10px] uppercase tracking-[0.22em] font-normal"
+                className="text-label uppercase tracking-[0.22em] font-normal whitespace-nowrap"
                 style={{ color: '#5F5A52' }}
               >
                 <span style={{ color: '#B89A4F' }}>{location.city}</span>
@@ -81,7 +100,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
                 {location.dates}
                 {soldOut && (
                   <span
-                    className="ml-3 text-[10px] uppercase tracking-[0.18em]"
+                    className="ml-3 text-label uppercase tracking-[0.18em]"
                     style={{ color: '#B89A4F', opacity: 0.65 }}
                   >
                     Rasprodano
@@ -92,13 +111,13 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
           </div>
 
           {price && (
-            <span className="flex-shrink-0 text-[13px] font-medium" style={{ color: '#1F1D1A' }}>
+            <span className="flex-shrink-0 text-body-l font-medium" style={{ color: '#1F1D1A' }}>
               {price}
             </span>
           )}
 
           <button
-            className="flex-shrink-0 text-[10px] uppercase tracking-[0.22em] font-normal py-3 px-8 rounded-none"
+            className="flex-shrink-0 text-label uppercase tracking-[0.22em] font-normal py-3 px-8 rounded-none"
             style={{
               border: '1px solid rgba(0,0,0,0.14)',
               color: '#3D3A35',
@@ -130,7 +149,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
 
         {/* Mobile */}
         <div className="md:hidden flex items-center justify-between gap-4 py-1.5">
-          <span className="text-[10px] uppercase tracking-[0.15em] font-normal leading-none" style={{ color: '#5F5A52' }}>
+          <span className="text-label uppercase tracking-[0.15em] font-normal leading-none" style={{ color: '#5F5A52' }}>
             {locations.length === 1 ? (
               <>
                 <span style={{ color: '#B89A4F' }}>{locations[0].city}</span>
@@ -141,7 +160,7 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
             )}
           </span>
           <button
-            className="flex-shrink-0 text-[10px] uppercase tracking-[0.15em] font-normal py-2 px-5"
+            className="flex-shrink-0 text-label uppercase tracking-[0.15em] font-normal py-2 px-5"
             style={{
               border: '1px solid rgba(0,0,0,0.14)',
               color: '#3D3A35',
@@ -169,6 +188,6 @@ export const CourseStickyBar: React.FC<CourseStickyBarProps> = ({
         </div>
 
       </div>
-    </motion.div>
+    </div>
   );
 };

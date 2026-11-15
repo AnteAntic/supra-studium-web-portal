@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { reveal } from './reveal';
 
 const flagshipProgram = {
   title: 'Škola manualne terapije dr. Stošića',
@@ -32,117 +33,93 @@ const secondaryPrograms = [
   { title: 'Klinička propedeutika', href: '/klinicka-propedeutika', image: '/lovable-uploads/propedeutika-stosic-model.webp' },
 ];
 
+function Arrow() {
+  return (
+    <svg width="22" height="10" viewBox="0 0 22 10" fill="none" aria-hidden="true" className="flex-shrink-0">
+      <path d="M0 5h20M16 1l4 4-4 4" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
 export function HomeProgramsSection() {
   return (
-    <section style={{ background: '#FAF8F4' }} className="py-20 md:py-28">
+    <section style={{ background: '#FAF8F4' }} className="pt-20 pb-20 md:pt-32 md:pb-28">
       <div className="container mx-auto px-6">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mb-16 md:mb-20"
-        >
-          <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+        <motion.div {...reveal()} className="mb-14 md:mb-20">
+          <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
             Edukacije
           </p>
-          <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
-          <h2 className="font-playfair font-semibold text-[1.65rem] md:text-[2rem] leading-[1.22]" style={{ color: '#1F1D1A' }}>
+          <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.45)' }} />
+          <h2 className="font-playfair font-semibold text-h2" style={{ color: '#1F1D1A' }}>
             Osam programa. Jedan pristup radu.
           </h2>
         </motion.div>
 
-        {/* CFM Flagship */}
+        {/* Flagship — text column, dominant frame */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-5 gap-0 mb-5 md:mb-6"
-          style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
+          {...reveal()}
+          className="grid md:grid-cols-12 gap-y-8 md:gap-x-8 pt-8 md:pt-10"
+          style={{ borderTop: '1px solid rgba(31,29,26,0.14)' }}
         >
-          {/* Text */}
-          <div className="md:col-span-2 flex flex-col justify-between py-10 md:py-12 md:pr-12">
+          <div className="md:col-span-5 lg:col-span-4 flex flex-col justify-between">
             <div>
-              <p className="text-[9px] uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 {flagshipProgram.label}
               </p>
-              <h3
-                className="font-playfair font-semibold leading-[1.2] mb-5 text-[1.55rem] md:text-[1.75rem]"
-                style={{ color: '#1F1D1A' }}
-              >
+              <h3 className="font-playfair font-semibold mb-5 text-h3" style={{ color: '#1F1D1A' }}>
                 {flagshipProgram.title}
               </h3>
-              <p className="text-[13px] leading-[1.72] font-normal mb-8" style={{ color: '#5F5A52' }}>
+              <p className="text-body-l font-normal mb-8" style={{ color: '#4A463F' }}>
                 {flagshipProgram.text}
               </p>
             </div>
             <Link
               to={flagshipProgram.href}
-              className="text-[10px] uppercase tracking-[0.22em] font-normal self-start py-3 px-8 rounded-none transition-colors duration-300"
-              style={{
-                border: '1px solid rgba(0,0,0,0.14)',
-                color: '#3D3A35',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.background = 'rgba(184,154,79,0.10)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(184,154,79,0.40)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.background = 'transparent';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,0,0,0.14)';
-              }}
+              className="press whitespace-nowrap text-label uppercase tracking-[0.22em] font-normal self-start py-3.5 px-8 rounded-none border border-[#1F1D1A]/20 text-[#1F1D1A]"
             >
               Pogledaj program
             </Link>
           </div>
-
-          {/* Image — dominant */}
-          <div className="md:col-span-3 overflow-hidden" style={{ aspectRatio: '16/10' }}>
+          <div className="frame md:col-span-7 lg:col-span-8 lg:col-start-5 order-first md:order-none" style={{ aspectRatio: '3/2' }}>
             <img
               src={flagshipProgram.image}
               alt={flagshipProgram.title}
-              className="w-full h-full object-cover"
+              width={1600}
+              height={1066}
               loading="lazy"
             />
           </div>
         </motion.div>
 
-        {/* MT + ATP — secondary features */}
-        <div className="grid md:grid-cols-2 gap-5 mb-5">
+        {/* Two featured programs — staggered pair */}
+        <div className="grid md:grid-cols-12 gap-y-14 md:gap-x-8 mt-16 md:mt-24">
           {featuredPrograms.map((prog, i) => (
             <motion.div
               key={prog.href}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: i * 0.08 }}
-              viewport={{ once: true }}
-              style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
+              {...reveal(i * 0.08)}
+              className={i === 0 ? 'md:col-span-7' : 'md:col-span-5 md:mt-16 lg:mt-28'}
             >
-              <div className="overflow-hidden" style={{ aspectRatio: '4/3' }}>
+              <div className="frame" style={{ aspectRatio: i === 0 ? '3/2' : '4/3' }}>
                 <img
                   src={prog.image}
                   alt={prog.title}
-                  className="w-full h-full object-cover"
+                  width={i === 0 ? 1600 : 1280}
+                  height={i === 0 ? 1066 : 714}
                   loading="lazy"
                 />
               </div>
-              <div className="pt-7 pb-8">
-                <h3
-                  className="font-playfair font-semibold text-[1.2rem] leading-[1.25] mb-3"
-                  style={{ color: '#1F1D1A' }}
-                >
+              <div className="pt-7">
+                <h3 className="font-playfair font-semibold mb-3 text-h3" style={{ color: '#1F1D1A' }}>
                   {prog.title}
                 </h3>
-                <p className="text-[12.5px] leading-[1.68] font-normal mb-6" style={{ color: '#5F5A52' }}>
+                <p className="text-body-l font-normal mb-6 max-w-[34rem]" style={{ color: '#4A463F' }}>
                   {prog.text}
                 </p>
                 <Link
                   to={prog.href}
-                  className="text-[10px] uppercase tracking-[0.20em] font-normal"
-                  style={{ color: '#B89A4F' }}
+                  className="press-line pb-1 text-label uppercase tracking-[0.20em] font-normal text-[#8a7436] hover:text-[#1F1D1A]"
                 >
                   Pogledaj program →
                 </Link>
@@ -151,34 +128,23 @@ export function HomeProgramsSection() {
           ))}
         </div>
 
-        {/* Secondary trio — Cupping, Lomi, Kalabaš */}
-        <div
-          className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-5"
-          style={{ borderTop: '1px solid rgba(0,0,0,0.07)', paddingTop: '20px' }}
-        >
+        {/* Remaining programs — typographic index */}
+        <div className="mt-16 md:mt-28" style={{ borderTop: '1px solid rgba(31,29,26,0.14)' }}>
           {secondaryPrograms.map((prog, i) => (
-            <motion.div
-              key={prog.href}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: i * 0.06 }}
-              viewport={{ once: true }}
-            >
-              <Link to={prog.href} className="block group">
-                <div className="overflow-hidden" style={{ aspectRatio: '1/1' }}>
-                  <img
-                    src={prog.image}
-                    alt={prog.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
+            <motion.div key={prog.href} {...reveal(i * 0.05)} style={{ borderBottom: '1px solid rgba(31,29,26,0.14)' }}>
+              <Link
+                to={prog.href}
+                className="press group flex items-center gap-5 md:gap-10 py-4 md:py-5 md:px-4 md:-mx-4 text-[#1F1D1A]"
+              >
+                <div className="frame w-16 h-16 md:w-24 md:h-[4.5rem] flex-shrink-0">
+                  <img src={prog.image} alt={prog.title} loading="lazy" />
                 </div>
-                <p
-                  className="text-[11px] font-normal mt-3 leading-snug"
-                  style={{ color: '#3D3A35' }}
-                >
+                <p className="font-playfair font-normal text-h3 flex-1">
                   {prog.title}
                 </p>
+                <span className="text-[#B89A4F] transition-transform duration-500 group-hover:translate-x-1 group-focus-visible:translate-x-1">
+                  <Arrow />
+                </span>
               </Link>
             </motion.div>
           ))}

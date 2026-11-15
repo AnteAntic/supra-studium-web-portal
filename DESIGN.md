@@ -250,3 +250,40 @@ Ne koristiti na course pages:
 | Cijena u primarnom CTA gumbu | Zabranjeno |
 | Pure `#ffffff` text na tamnoj pozadini | Koristiti `#ede9e3` |
 | Pure `bg-black` ili `#000000` | Koristiti `#141311` ili `#0e0e0e` |
+
+---
+
+## 11. SMJER A — "KLINIČKI ČASOPIS" (2026-11-13)
+
+> Odabrao Ante 12.11.2026. Dopunjuje gornje obrasce; gdje se razlikuje, vrijedi ovo.
+> Plan i review: `docs/PLAN-smjer-A-klinicki-casopis.md`, `docs/PLAN-smjer-A-REVIEW-LOG.md`.
+
+**Tipografska ljestvica** (tokeni u `tailwind.config.ts`; ne koristiti `text-[13px]` i slične proizvoljne veličine):
+
+| Token | Veličina | Namjena |
+|---|---|---|
+| `text-display` | 34–56 px | svaki `h1` (zamjenjuje zaključanih 2rem za hero naslov) |
+| `text-h2` | 28–48 px | Playfair `h2` |
+| `text-h3` | 20–26 px | Playfair `h3`, retci indeksa |
+| `text-quote` | 22–32 px | izdvojeni citati |
+| `text-body-l` | 16–17 px | glavni tekst |
+| `text-body` | 15–16 px | sekundarni tekst |
+| `text-body-s` | 14 px | samo kratki meta podaci (datum, napomena u jednom retku) |
+| `text-caption` | 13 px | potpisi slika, navigacija |
+| `text-label` | 11 px | uppercase eyebrow / oznake |
+
+Pravila: nijedan vidljiv tekst ispod 11 px; odlomak od 80+ znakova najmanje 15 px.
+
+**Jedna lijeva os.** `container mx-auto px-6` (sadržaj 72rem) je jedini rub stranice. Unutarnji omotači: `max-w-shell mx-auto` ili `shell-narrow` (ista os, mjera do 50rem). Ne koristiti `max-w-3xl mx-auto` i slične centrirane omotače. Dvokolonske sekcije: `md:grid-cols-12`, drugi stupac počinje na 7. koloni.
+
+**Prvenstvo = zaseban brend.** Tamno "izdanje" (`#141311`), službeni pečat (`cmc-official-seal.webp`, min. 120 px), Championship Red `#C4161C` samo kao linija (ne kao boja teksta). Brass ostaje edukacijama. Fotografije s prvenstva ne ilustriraju edukacijske programe.
+
+**Pokret.** Samo opacity (`src/components/home/reveal.ts`); bez parallaxa i y-pomaka. `prefers-reduced-motion`: framer-motion animacije se preskaču (`src/main.tsx`), autoplay video stoji na posteru (`ReducedMotionMedia`).
+
+**Fokus i pritisak.** Globalni `:focus-visible` obrub (brass). Klase `.press` (outline CTA, retci) i `.press-line` (tekstualne poveznice) daju isto stanje za hover, fokus i pritisak. Ne koristiti inline `onMouseEnter` za boje.
+
+**YouTube.** Sadržajni videi idu kroz `YouTubeFacade` (učitava se tek na klik).
+
+**CTA na tamnoj podlozi:** `bg-[#c9a832]/90 text-[#1F1D1A]` (bijeli tekst na brassu ne zadovoljava kontrast).
+
+**Provjere prije commita:** `python3 scripts/qa/content-integrity.py compare <baseline> scripts/qa/allow-redesign-a.json` i `python3 scripts/qa/type-audit.py`.

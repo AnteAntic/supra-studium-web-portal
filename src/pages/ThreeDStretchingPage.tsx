@@ -62,10 +62,9 @@ function ThreeDHero({
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const opacity = useTransform(scrollYProgress, [0, 0.72], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '42%']);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+    <section ref={heroRef} className="relative min-h-hero overflow-hidden -mt-20">
 
       {/* Static image background */}
       <div className="absolute inset-0">
@@ -120,19 +119,19 @@ function ThreeDHero({
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/22 to-transparent" />
 
       {/* Content */}
-      <motion.div style={{ opacity, y }} className="absolute inset-0">
-        <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[8%]">
-          <div className="w-full" style={{ maxWidth: '50rem' }}>
+      <motion.div style={{ opacity }} className="relative z-10">
+        <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-end pb-[18%] md:pb-[8%]">
+          <div className="w-full" style={{ maxWidth: '54rem' }}>
 
             {/* Category label */}
             <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.35, duration: 0.9, ease: 'easeOut' }}
               className="mb-6"
             >
               <span
-                className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.28em] block"
+                className="text-label sm:text-caption font-normal uppercase tracking-[0.28em] block"
                 style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
               >
                 3D Advanced Therapeutic Stretching · Zagreb
@@ -151,13 +150,13 @@ function ThreeDHero({
 
             {/* Headline */}
             <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.65, duration: 1.05, ease: 'easeOut' }}
               className="mb-9"
             >
               <h1
-                className="font-playfair font-semibold text-white leading-[1.17] text-[2.05rem] sm:text-[2.35rem] md:text-[2.7rem]"
+                className="font-playfair font-semibold text-white leading-[1.17] text-display"
                 style={{
                   textShadow: '0 2px 24px rgba(0,0,0,0.72), 0 1px 6px rgba(0,0,0,0.40)',
                 }}
@@ -169,13 +168,13 @@ function ThreeDHero({
 
             {/* Subheadline */}
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.85, duration: 0.95, ease: 'easeOut' }}
               className="mb-9"
             >
               <p
-                className="text-[13.5px] sm:text-[14px] font-normal leading-[1.75]"
+                className="text-body-l font-normal leading-[1.75]"
                 style={{ color: 'rgba(255,255,255,0.58)', maxWidth: '44ch' }}
               >
                 Terapijski stretching kao klinički alat za terapeute koji žele preciznije razumjeti mobilnost, kompenzacijske obrasce i odgovor tkiva na pokret.
@@ -184,8 +183,8 @@ function ThreeDHero({
 
             {/* Meta strip */}
             <motion.div
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 1.05, duration: 0.85, ease: 'easeOut' }}
               className="mb-14 flex flex-wrap items-center"
               style={{ columnGap: '14px', rowGap: '4px' }}
@@ -193,11 +192,11 @@ function ThreeDHero({
               {['2 dana', '16 sati', 'Rad u paru', 'Certifikat'].map((item, i) => (
                 <React.Fragment key={item}>
                   {i > 0 && (
-                    <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '11px', lineHeight: 1 }}>·</span>
+                    <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '0.8125rem', lineHeight: 1 }}>·</span>
                   )}
                   <span
                     className="font-medium"
-                    style={{ fontSize: '11px', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
+                    style={{ fontSize: '0.8125rem', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
                   >
                     {item}
                   </span>
@@ -207,8 +206,8 @@ function ThreeDHero({
 
             {/* CTA group */}
             <motion.div
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 1.25, duration: 0.80, ease: 'easeOut' }}
               className="flex flex-col sm:flex-row items-start sm:items-center gap-5"
             >
@@ -216,7 +215,7 @@ function ThreeDHero({
               <button
                 className="font-normal uppercase cursor-pointer whitespace-nowrap"
                 style={{
-                  fontSize: '11px',
+                  fontSize: '0.8125rem',
                   letterSpacing: '0.12em',
                   padding: '8px 20px',
                   borderRadius: '4px',
@@ -236,7 +235,7 @@ function ThreeDHero({
               <button
                 className="font-normal uppercase cursor-pointer bg-transparent border-0 p-0 flex items-center gap-3"
                 style={{
-                  fontSize: '11px',
+                  fontSize: '0.8125rem',
                   letterSpacing: '0.16em',
                   color: 'rgba(255,255,255,0.72)',
                   textShadow: '0 1px 2px rgba(0,0,0,0.45)',
@@ -279,7 +278,7 @@ function FactsBand() {
 
   return (
     <section className="bg-[#F4F1EA] pt-5">
-      <div className="container mx-auto px-6 md:px-10">
+      <div className="container mx-auto px-6">
         <div
           className="grid grid-cols-2 md:grid-cols-4"
           style={{
@@ -296,13 +295,13 @@ function FactsBand() {
                 borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.08)' : 'none',
               }}
             >
-              <div className="text-[9.5px] uppercase tracking-[0.25em] mb-2 font-normal" style={{ color: '#B89A4F' }}>
+              <div className="text-label uppercase tracking-[0.25em] mb-2 font-normal" style={{ color: '#B89A4F' }}>
                 {item.field}
               </div>
               <div className="text-[18px] font-medium leading-snug" style={{ color: '#0e0e0e' }}>
                 {item.value}
               </div>
-              <div className="text-[12px] mt-1 font-normal leading-relaxed" style={{ color: '#3b3b3b' }}>
+              <div className="text-body mt-1 font-normal leading-relaxed" style={{ color: '#3b3b3b' }}>
                 {item.detail}
               </div>
             </div>
@@ -366,7 +365,7 @@ const ThreeDStretchingPage = () => {
       {/* ── Metodika rada ─────────────────────────────────────────── */}
       <section className="bg-white pt-24 pb-0">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-start max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20 items-start max-w-shell mx-auto">
 
             {/* Left: editorial text */}
             <motion.div
@@ -375,24 +374,24 @@ const ThreeDStretchingPage = () => {
               transition={{ duration: 0.9, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-7" style={{ color: '#B89A4F' }}>
                 Metodika rada
               </p>
               <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.30)' }} />
               <h2
-                className="font-playfair font-semibold leading-[1.22] mb-6 text-[1.9rem] md:text-[2.15rem]"
+                className="font-playfair font-semibold leading-[1.22] mb-6 text-h2"
                 style={{ color: '#1F1D1A' }}
               >
                 Mobilnost nije cilj.<br />Mobilnost je mjera<br />onoga što tijelo dopušta.
               </h2>
-              <p className="text-[14px] leading-[1.65] font-normal mb-10" style={{ color: '#5F5A52' }}>
+              <p className="text-body-l leading-[1.65] font-normal mb-10" style={{ color: '#5F5A52' }}>
                 Razlika između pasivnog rastezanja i terapijskog stretchinga nije u snazi povlačenja — nego u razumijevanju zašto je tkivo gdje jest.
               </p>
-              <p className="text-[15px] leading-[1.78] font-normal mb-12" style={{ color: '#3D3A35' }}>
+              <p className="text-body-l leading-[1.78] font-normal mb-12" style={{ color: '#3D3A35' }}>
                 MET, STR i PNF nisu zasebni protokoli. To su ulazi u isti razgovor s tkivom — svaki iz drugog kuta, svaki s drugačijim odgovorom.
               </p>
 
-              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.22em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 Što počinješ primjećivati
               </p>
               <div>
@@ -403,7 +402,7 @@ const ThreeDStretchingPage = () => {
                   'Tjelesnu mehaniku terapeuta koja produljuje preciznost i štiti vlastite zglobove',
                 ].map((item, i) => (
                   <div key={i} className="py-4" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-                    <p className="text-[14px] leading-[1.6] font-normal" style={{ color: '#1F1D1A' }}>
+                    <p className="text-body-l leading-[1.6] font-normal" style={{ color: '#1F1D1A' }}>
                       {item}
                     </p>
                   </div>
@@ -452,15 +451,15 @@ const ThreeDStretchingPage = () => {
             style={{ maxWidth: '22rem' }}
           >
             <div className="h-px w-8 mx-auto mb-10" style={{ backgroundColor: 'rgba(0,0,0,0.12)' }} />
-            <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#2A2723' }}>
+            <p className="text-body-l leading-[1.85] font-normal" style={{ color: '#2A2723' }}>
               Tkivo pamti obrazac.
             </p>
-            <p className="text-[14px] leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
+            <p className="text-body-l leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
               Svako kompenzacijsko skraćenje<br />
               ima razlog koji pasivno istezanje<br />
               ne doseže.
             </p>
-            <p className="text-[14px] leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
+            <p className="text-body-l leading-[1.85] font-normal mt-6" style={{ color: '#5F5A52' }}>
               Razlika je u pristupu,<br />
               ne u snazi.
             </p>
@@ -483,7 +482,7 @@ const ThreeDStretchingPage = () => {
         />
 
         <div className="container mx-auto px-6 relative">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
             <div className="grid lg:grid-cols-[1fr_1.35fr] gap-16 lg:gap-24 items-start">
 
               {/* Left — sticky anchor */}
@@ -495,14 +494,14 @@ const ThreeDStretchingPage = () => {
                 className="lg:sticky lg:top-32"
               >
                 <p
-                  className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5"
+                  className="text-label uppercase tracking-[0.28em] font-normal mb-5"
                   style={{ color: 'rgba(184,154,79,0.65)' }}
                 >
                   Terapijski pomak
                 </p>
                 <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.22)' }} />
                 <h2
-                  className="font-playfair font-semibold leading-[1.17] mb-10 text-[1.85rem] md:text-[2.05rem]"
+                  className="font-playfair font-semibold leading-[1.17] mb-10 text-h2"
                   style={{ color: 'rgba(255,255,255,0.92)' }}
                 >
                   Stretching koji<br />
@@ -510,7 +509,7 @@ const ThreeDStretchingPage = () => {
                   tkivo ne pusti.
                 </h2>
                 <p
-                  className="text-[14px] leading-[1.82] font-normal"
+                  className="text-body-l leading-[1.82] font-normal"
                   style={{ color: 'rgba(255,255,255,0.56)', maxWidth: '36ch' }}
                 >
                   Neurofizioloski principi, fascijalni sustav i tjelesna mehanika terapeuta kao jedan integrirani okvir.
@@ -575,7 +574,7 @@ const ThreeDStretchingPage = () => {
       {/* ── Program ───────────────────────────────────────────────── */}
       <section id="program" style={{ background: '#F4F1EA' }} className="py-24 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="shell-narrow">
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -584,18 +583,18 @@ const ThreeDStretchingPage = () => {
               viewport={{ once: true }}
               className="mb-20"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Edukacijski program
               </p>
               <div className="w-10 h-px mb-8" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
               <h2
-                className="font-playfair font-semibold leading-[1.22] text-[1.9rem] md:text-[2.2rem]"
+                className="font-playfair font-semibold leading-[1.22] text-h2"
                 style={{ color: '#1F1D1A' }}
               >
                 Dva dana kliničke<br />
                 integracije u pokretu.
               </h2>
-              <p className="text-[14px] leading-[1.82] font-normal mt-8" style={{ color: '#7A7570', maxWidth: '46ch' }}>
+              <p className="text-body-l leading-[1.82] font-normal mt-8" style={{ color: '#7A7570', maxWidth: '46ch' }}>
                 Program gradi terapijsku kompetenciju od neurofizioloskih temelja do kliničke primjene na cijelom tijelu — 80% praktičnog rada u paru.
               </p>
             </motion.div>
@@ -637,16 +636,16 @@ const ThreeDStretchingPage = () => {
                   className={`py-10 ${dayIdx === 0 ? 'md:pr-14' : 'md:pl-14'}`}
                   style={{ borderTop: '1px solid rgba(0,0,0,0.09)', borderLeft: dayIdx === 1 ? '1px solid rgba(0,0,0,0.07)' : 'none' }}
                 >
-                  <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-4" style={{ color: 'rgba(0,0,0,0.38)' }}>
+                  <p className="text-label uppercase tracking-[0.22em] font-normal mb-4" style={{ color: 'rgba(0,0,0,0.38)' }}>
                     {day.day}
                   </p>
                   <h3
-                    className="font-playfair font-semibold leading-[1.28] mb-4 text-[1.15rem] md:text-[1.28rem]"
+                    className="font-playfair font-semibold leading-[1.28] mb-4 text-h3"
                     style={{ color: '#1F1D1A' }}
                   >
                     {day.title}
                   </h3>
-                  <p className="text-[13.5px] leading-[1.72] font-normal mb-8" style={{ color: '#5F5A52' }}>
+                  <p className="text-body-l leading-[1.72] font-normal mb-8" style={{ color: '#5F5A52' }}>
                     {day.desc}
                   </p>
                   <div>
@@ -656,10 +655,10 @@ const ThreeDStretchingPage = () => {
                         className="grid gap-5 py-4"
                         style={{ borderTop: '1px solid rgba(0,0,0,0.07)', gridTemplateColumns: '1.6rem 1fr' }}
                       >
-                        <span className="text-[11px] font-normal tabular-nums pt-0.5" style={{ color: '#B89A4F' }}>
+                        <span className="text-caption font-normal tabular-nums pt-0.5" style={{ color: '#B89A4F' }}>
                           {String(i + 1).padStart(2, '0')}
                         </span>
-                        <p className="text-[13.5px] leading-[1.6] font-normal" style={{ color: '#3D3A35' }}>{item}</p>
+                        <p className="text-body-l leading-[1.6] font-normal" style={{ color: '#3D3A35' }}>{item}</p>
                       </div>
                     ))}
                     <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
@@ -681,24 +680,24 @@ const ThreeDStretchingPage = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto mb-12"
+            className="shell-narrow mb-12"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+            <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
               Edukacijska praksa
             </p>
             <div className="w-10 h-px mb-7" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
             <h2
-              className="font-playfair font-semibold leading-[1.22] mb-5 text-[1.6rem] md:text-[1.85rem]"
+              className="font-playfair font-semibold leading-[1.22] mb-5 text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Rad koji ne stane na demonstraciju.
             </h2>
-            <p className="text-[14px] leading-[1.72] font-normal" style={{ color: '#5F5A52' }}>
+            <p className="text-body-l leading-[1.72] font-normal" style={{ color: '#5F5A52' }}>
               Svaki polaznik radi, prima, osjeća razliku i vraća se u ulogu terapeuta s tim iskustvom.
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="shell-narrow">
 
             {/* Image 1 — wide */}
             <motion.div
@@ -718,7 +717,7 @@ const ThreeDStretchingPage = () => {
               </div>
               <div className="mt-3 flex items-start gap-3">
                 <div className="w-4 h-px mt-[9px] flex-shrink-0" style={{ backgroundColor: 'rgba(0,0,0,0.14)' }} />
-                <p className="text-[11.5px] leading-[1.6] font-normal" style={{ color: '#9A9590', letterSpacing: '0.02em' }}>
+                <p className="text-body leading-[1.6] font-normal" style={{ color: '#6f6a63', letterSpacing: '0.01em' }}>
                   Tehnika se primjenjuje u tri dimenzije — elongacija, rotacija i laterofleksija kao jedan pokret.
                 </p>
               </div>
@@ -737,11 +736,11 @@ const ThreeDStretchingPage = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.1, ease: 'easeOut' }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
+            className="shell-narrow"
           >
             <h2
-              className="font-playfair font-semibold leading-[1.30]"
-              style={{ fontSize: 'clamp(1.65rem, 3.2vw, 2.15rem)', color: 'rgba(255,255,255,0.88)' }}
+              className="font-playfair font-semibold leading-[1.30] text-h2"
+              style={{ color: 'rgba(255,255,255,0.88)' }}
             >
               Tijelo ne odolijeva rastezanju<br />
               jer je slabo. Odolijeva jer ima razlog.
@@ -765,7 +764,7 @@ const ThreeDStretchingPage = () => {
         />
 
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
             <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-12 lg:gap-16 items-start">
 
               {/* Left — portrait */}
@@ -810,20 +809,20 @@ const ThreeDStretchingPage = () => {
                 viewport={{ once: true }}
                 className="lg:pt-10 lg:sticky lg:top-32"
               >
-                <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                   Instruktor
                 </p>
                 <div className="w-10 h-px mb-10" style={{ backgroundColor: 'rgba(184,154,79,0.32)' }} />
 
                 <h2
-                  className="font-playfair font-semibold leading-[1.22] mb-4"
-                  style={{ fontSize: 'clamp(1.65rem, 2.6vw, 2.05rem)', color: '#1F1D1A' }}
+                  className="font-playfair font-semibold leading-[1.22] mb-4 text-h2"
+                  style={{ color: '#1F1D1A' }}
                 >
                   Dr. Awudi Atitsogbui
                 </h2>
 
                 <p
-                  className="text-[10.5px] uppercase tracking-[0.22em] font-normal mb-10"
+                  className="text-label uppercase tracking-[0.22em] font-normal mb-10"
                   style={{ color: 'rgba(0,0,0,0.36)' }}
                 >
                   BAMS · OMT · Međunarodni edukator
@@ -832,13 +831,13 @@ const ThreeDStretchingPage = () => {
                 <div className="mb-10" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }} />
 
                 <div style={{ maxWidth: '40ch' }}>
-                  <p className="text-[13px] leading-[1.92] font-normal mb-8" style={{ color: '#7A7570' }}>
+                  <p className="text-body-l leading-[1.92] font-normal mb-8" style={{ color: '#7A7570' }}>
                     Dr. Awudi Atitsogbui doktor je ayurvedske medicine (BAMS) i ortopedski manualni terapeut (OMT) s višegodišnjim iskustvom u edukaciji terapeuta na međunarodnoj razini.
                   </p>
-                  <p className="text-[13px] leading-[1.92] font-normal mb-8" style={{ color: '#7A7570' }}>
+                  <p className="text-body-l leading-[1.92] font-normal mb-8" style={{ color: '#7A7570' }}>
                     Njegova edukacija gradi se na razumijevanju neurofizioloskih principa, fascijalnih odnosa i biomehanike kretanja — s posebnim naglaskom na primjenjivost u svakodnevnoj terapijskoj praksi.
                   </p>
-                  <p className="text-[13px] leading-[1.92] font-normal mb-12" style={{ color: '#7A7570' }}>
+                  <p className="text-body-l leading-[1.92] font-normal mb-12" style={{ color: '#7A7570' }}>
                     3D Advanced Therapeutic Stretching program je razvijen iz njegova kliničkog rada i didaktičke filozofije: tehnika je samo alat — razumijevanje onoga što tijelo pokazuje jest kompetencija.
                   </p>
 
@@ -851,7 +850,7 @@ const ThreeDStretchingPage = () => {
                     <p
                       className="font-playfair font-normal"
                       style={{
-                        fontSize: 'clamp(1.05rem, 1.8vw, 1.22rem)',
+                        fontSize: 'clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem)',
                         lineHeight: '1.62',
                         color: '#1F1D1A',
                         fontStyle: 'italic',
@@ -866,7 +865,7 @@ const ThreeDStretchingPage = () => {
                 </div>
 
                 <p
-                  className="text-[10px] uppercase tracking-[0.22em] font-normal mt-10"
+                  className="text-label uppercase tracking-[0.22em] font-normal mt-10"
                   style={{ color: 'rgba(0,0,0,0.20)' }}
                 >
                   Dr. Awudi Atitsogbui · BAMS · OMT
@@ -881,7 +880,7 @@ const ThreeDStretchingPage = () => {
       {/* ── Za koga je edukacija ──────────────────────────────────── */}
       <section style={{ background: '#F4F1EA' }} className="py-24 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
             <div className="grid lg:grid-cols-[1fr_1.25fr] gap-16 lg:gap-24 items-start">
 
               {/* Left — sticky anchor */}
@@ -892,18 +891,18 @@ const ThreeDStretchingPage = () => {
                 viewport={{ once: true }}
                 className="lg:sticky lg:top-32"
               >
-                <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.28em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                   Za koga
                 </p>
                 <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.30)' }} />
                 <h2
-                  className="font-playfair font-semibold leading-[1.18] mb-10 text-[1.85rem] md:text-[2.05rem]"
+                  className="font-playfair font-semibold leading-[1.18] mb-10 text-h2"
                   style={{ color: '#1F1D1A' }}
                 >
                   Edukacija za one<br />
                   koji već rade s tijelom.
                 </h2>
-                <p className="text-[14px] leading-[1.82] font-normal" style={{ color: '#5F5A52', maxWidth: '36ch' }}>
+                <p className="text-body-l leading-[1.82] font-normal" style={{ color: '#5F5A52', maxWidth: '36ch' }}>
                   Program pretpostavlja osnovno anatomsko razumijevanje i iskustvo u terapijskom radu s klijentima.
                 </p>
               </motion.div>
@@ -946,17 +945,17 @@ const ThreeDStretchingPage = () => {
                     style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}
                   >
                     <div className="flex items-baseline gap-4 mb-3">
-                      <span className="font-normal shrink-0" style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(0,0,0,0.28)' }}>
+                      <span className="font-normal shrink-0" style={{ fontSize: '0.6875rem', letterSpacing: '0.18em', color: 'rgba(0,0,0,0.28)' }}>
                         {group.num}
                       </span>
-                      <span className="font-normal uppercase" style={{ fontSize: '10px', letterSpacing: '0.22em', color: '#B89A4F' }}>
+                      <span className="font-normal uppercase" style={{ fontSize: '0.6875rem', letterSpacing: '0.22em', color: '#B89A4F' }}>
                         {group.name}
                       </span>
                     </div>
-                    <p className="font-playfair font-normal leading-[1.55] mb-4" style={{ fontSize: '15px', fontStyle: 'italic', color: '#1F1D1A' }}>
+                    <p className="font-playfair font-normal leading-[1.55] mb-4" style={{ fontSize: '1rem', fontStyle: 'italic', color: '#1F1D1A' }}>
                       {group.quote}
                     </p>
-                    <p className="font-normal leading-[1.72]" style={{ fontSize: '13px', color: '#5F5A52' }}>
+                    <p className="font-normal leading-[1.72]" style={{ fontSize: '1rem', color: '#5F5A52' }}>
                       {group.body}
                     </p>
                   </motion.div>
@@ -976,7 +975,7 @@ const ThreeDStretchingPage = () => {
         className="pt-16 pb-28"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
               {/* Left — pricing + locations */}
@@ -986,12 +985,12 @@ const ThreeDStretchingPage = () => {
                 transition={{ duration: 0.9, ease: 'easeOut' }}
                 viewport={{ once: true }}
               >
-                <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                   Kotizacija edukacije
                 </p>
                 <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
 
-                <p className="text-[14px] leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '40ch' }}>
+                <p className="text-body-l leading-[1.82] font-normal mb-12" style={{ color: '#5F5A52', maxWidth: '40ch' }}>
                   Dvodnevna klinička edukacija. 80% praktičnog rada u paru, demonstracija i individualna korekcija.
                 </p>
 
@@ -1004,9 +1003,9 @@ const ThreeDStretchingPage = () => {
                     >
                       450 €
                     </p>
-                    <p className="text-[12px] font-normal" style={{ color: '#B89A4F' }}>Early Bird</p>
+                    <p className="text-body font-normal" style={{ color: '#B89A4F' }}>Early Bird</p>
                   </div>
-                  <p className="text-[13px] font-normal" style={{ color: 'rgba(0,0,0,0.32)', textDecoration: 'line-through' }}>
+                  <p className="text-body-l font-normal" style={{ color: 'rgba(0,0,0,0.32)', textDecoration: 'line-through' }}>
                     Redovna cijena: 500 €
                   </p>
                 </div>
@@ -1017,18 +1016,18 @@ const ThreeDStretchingPage = () => {
                     { bold: 'Broj mjesta', rest: ' ograničen je na maksimalno 12 polaznika.' },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
-                      <span className="flex-shrink-0 mt-[3px]" style={{ color: '#B89A4F', fontSize: '11px' }}>—</span>
-                      <p className="text-[13px] leading-[1.68] font-normal" style={{ color: '#5F5A52' }}>
+                      <span className="flex-shrink-0 mt-[3px]" style={{ color: '#B89A4F', fontSize: '0.8125rem' }}>—</span>
+                      <p className="text-body-l leading-[1.68] font-normal" style={{ color: '#5F5A52' }}>
                         <span style={{ color: '#1F1D1A', fontWeight: 500 }}>{item.bold}</span>{item.rest}
                       </p>
                     </div>
                   ))}
                 </div>
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '1.8rem', marginBottom: '2.4rem' }}>
-                  <p className="text-[12px] leading-[1.65] font-normal" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                  <p className="text-body leading-[1.65] font-normal" style={{ color: 'rgba(0,0,0,0.42)' }}>
                     Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
                   </p>
-                  <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                  <p className="text-body leading-[1.65] font-normal mt-2" style={{ color: 'rgba(0,0,0,0.42)' }}>
                     Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
                     <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: '#B89A4F' }}>info@uciliste-suprastudium.hr</a>
                     {' '}ili nazovi{' '}
@@ -1040,7 +1039,7 @@ const ThreeDStretchingPage = () => {
                 <p
                   className="font-playfair font-normal mb-6"
                   style={{
-                    fontSize: 'clamp(0.9rem, 1.1vw, 0.97rem)',
+                    fontSize: '1rem',
                     lineHeight: '1.75',
                     color: '#3D3935',
                     fontStyle: 'italic',
@@ -1052,13 +1051,13 @@ const ThreeDStretchingPage = () => {
 
                 <p
                   className="font-normal mb-14"
-                  style={{ fontSize: '12.5px', lineHeight: '1.78', color: 'rgba(0,0,0,0.50)', maxWidth: '40ch' }}
+                  style={{ fontSize: '0.9375rem', lineHeight: '1.78', color: 'rgba(0,0,0,0.50)', maxWidth: '40ch' }}
                 >
                   Edukacija se organizira u manjim grupama s fokusom na individualni feedback i praktičnu korekciju.
                 </p>
 
                 {/* Termini */}
-                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.24em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                   Termini i lokacije
                 </p>
                 <div>
@@ -1069,17 +1068,17 @@ const ThreeDStretchingPage = () => {
                       style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
                     >
                       <div className="flex items-baseline justify-between mb-1.5">
-                        <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.1rem', color: '#1F1D1A' }}>
+                        <p className="font-playfair font-medium leading-tight" style={{ fontSize: '1.0625rem', color: '#1F1D1A' }}>
                           {loc.city}
                         </p>
-                        <p className="text-[11px] font-normal" style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}>
+                        <p className="text-caption font-normal" style={{ color: 'rgba(0,0,0,0.35)', letterSpacing: '0.01em' }}>
                           {loc.date}
                         </p>
                       </div>
-                      <p className="text-[12px] font-normal" style={{ color: 'rgba(0,0,0,0.42)' }}>
+                      <p className="text-body font-normal" style={{ color: 'rgba(0,0,0,0.42)' }}>
                         {loc.venue}
                       </p>
-                      <p className="text-[10px] uppercase tracking-[0.14em] font-medium mt-1.5" style={{ color: '#B89A4F' }}>
+                      <p className="text-label uppercase tracking-[0.14em] font-medium mt-1.5" style={{ color: '#B89A4F' }}>
                         Early Bird do {loc.eb}
                       </p>
                     </div>
@@ -1096,7 +1095,7 @@ const ThreeDStretchingPage = () => {
                 viewport={{ once: true }}
                 className="lg:pt-2"
               >
-                <p className="text-[10px] uppercase tracking-[0.24em] font-normal mb-8" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.24em] font-normal mb-8" style={{ color: '#B89A4F' }}>
                   Što uključuje edukacija
                 </p>
                 <div>
@@ -1123,10 +1122,10 @@ const ThreeDStretchingPage = () => {
                     },
                   ].map((item, i) => (
                     <div key={i} className="py-6" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-                      <p className="text-[14.5px] leading-snug font-medium mb-2" style={{ color: '#1F1D1A' }}>
+                      <p className="text-body-l leading-snug font-medium mb-2" style={{ color: '#1F1D1A' }}>
                         {item.title}
                       </p>
-                      <p className="text-[12.5px] leading-[1.70] font-normal" style={{ color: '#8A8480' }}>
+                      <p className="text-body leading-[1.70] font-normal" style={{ color: '#8A8480' }}>
                         {item.note}
                       </p>
                     </div>
@@ -1146,27 +1145,27 @@ const ThreeDStretchingPage = () => {
         className="pt-24 pb-28"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
               viewport={{ once: true }}
               className="mb-12"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Bonus za prva 3 prijavljena
               </p>
               <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
-              <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
+              <p className="text-body-l leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
                 Prva 3 polaznika koja rezerviraju mjesto dobivaju dodatne resurse koji nisu dio standardnog programa.
               </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
@@ -1184,16 +1183,16 @@ const ThreeDStretchingPage = () => {
                     <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
                       {bonus.n}
                     </p>
-                    <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                    <p className="text-body-l leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
                       {bonus.title}
                     </p>
-                    <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                    <p className="text-body leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
                       {bonus.note}
                     </p>
                     {bonus.bullets && (
                       <ul className="mt-4 space-y-2">
                         {bonus.bullets.map((b, j) => (
-                          <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
+                          <li key={j} className="flex gap-3 text-body leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
                             <span className="flex-shrink-0" style={{ color: 'rgba(184,154,79,0.55)' }}>—</span>
                             <span>{b}</span>
                           </li>
@@ -1201,7 +1200,7 @@ const ThreeDStretchingPage = () => {
                       </ul>
                     )}
                     {bonus.disclaimer && (
-                      <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
+                      <p className="text-body leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
                         {bonus.disclaimer}
                       </p>
                     )}
@@ -1220,7 +1219,7 @@ const ThreeDStretchingPage = () => {
         className="pt-28 pb-36"
       >
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto">
+          <div className="shell-narrow">
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -1229,16 +1228,16 @@ const ThreeDStretchingPage = () => {
               viewport={{ once: true }}
               className="mb-14"
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.28em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Pitanja i odgovori
               </p>
               <h2
-                className="font-playfair font-semibold leading-[1.20] mb-8"
-                style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#1F1D1A' }}
+                className="font-playfair font-semibold leading-[1.20] mb-8 text-h2"
+                style={{ color: '#1F1D1A' }}
               >
                 Informacije o edukaciji.
               </h2>
-              <p className="text-[13.5px] leading-[1.85] font-normal" style={{ color: '#7A7570', maxWidth: '52ch' }}>
+              <p className="text-body-l leading-[1.85] font-normal" style={{ color: '#7A7570', maxWidth: '52ch' }}>
                 Sve ključne informacije o organizaciji, prijavi i praktičnom radu.
               </p>
             </motion.div>
@@ -1253,13 +1252,13 @@ const ThreeDStretchingPage = () => {
 
                 <AccordionItem value="item-0" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Je li potrebno prethodno iskustvo u terapijskom stretchingu?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       Prethodno iskustvo u stretchingu nije preduvjet. Program gradi razumijevanje od temelja — neurofizioloski principi objašnjeni su kroz praktičan rad, ne teorijskim predavanjem. Potrebno je osnovno anatomsko znanje i iskustvo u terapijskom radu s klijentima.
                     </p>
                   </AccordionContent>
@@ -1267,13 +1266,13 @@ const ThreeDStretchingPage = () => {
 
                 <AccordionItem value="item-1" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Tko može pohađati edukaciju?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal mb-4" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal mb-4" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       Program je namijenjen svima koji profesionalno rade s tijelom:
                     </p>
                     <ul className="space-y-2">
@@ -1283,7 +1282,7 @@ const ThreeDStretchingPage = () => {
                         'osteopatski i manualni terapeuti',
                         'bodywork praktičari s iskustvom u radu s klijentima',
                       ].map((item, i) => (
-                        <li key={i} className="text-[13.5px] leading-[1.85] flex gap-3" style={{ color: '#5F5A52' }}>
+                        <li key={i} className="text-body-l leading-[1.85] flex gap-3" style={{ color: '#5F5A52' }}>
                           <span style={{ color: 'rgba(0,0,0,0.18)', flexShrink: 0 }}>—</span>
                           <span>{item}</span>
                         </li>
@@ -1294,13 +1293,13 @@ const ThreeDStretchingPage = () => {
 
                 <AccordionItem value="item-2" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Kako izgleda praktičan rad na edukaciji?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       80% programa odvija se u praktičnom radu u paru. Svaki polaznik naizmjence radi i prima tretman — što znači da doživljava tehnike iz obje perspektive. Instruktor korigira položaj, kontakt i primjenu u tijeku samog rada, a ne samo kroz verbalnu uputu.
                     </p>
                   </AccordionContent>
@@ -1308,13 +1307,13 @@ const ThreeDStretchingPage = () => {
 
                 <AccordionItem value="item-3" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Mogu li primijeniti naučeno odmah u praksi?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       Da. Program je dizajniran za neposrednu kliničku primjenjivost. Full Body 3D Flow sekvenca, MET i STR protokoli mogu se uključiti u tretman već idući tjedan — bez posebnih pomagala ili opreme. Jedino što je potrebno jest razumijevanje koje polaznik stječe kroz dva dana rada.
                     </p>
                   </AccordionContent>
@@ -1322,13 +1321,13 @@ const ThreeDStretchingPage = () => {
 
                 <AccordionItem value="item-4" className="border-0" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                   <AccordionTrigger
-                    className="py-7 text-left hover:no-underline text-[15px] font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
+                    className="py-7 text-left hover:no-underline text-body-l font-normal leading-snug transition-colors duration-500 hover:text-[#5F5A52] [&>svg]:h-3 [&>svg]:w-3 [&>svg]:opacity-30 [&>svg]:duration-500"
                     style={{ color: '#1F1D1A' }}
                   >
                     Kako se prijaviti?
                   </AccordionTrigger>
                   <AccordionContent className="pb-8">
-                    <p className="text-[13.5px] leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
+                    <p className="text-body-l leading-[1.92] font-normal" style={{ color: '#5F5A52', maxWidth: '56ch' }}>
                       Prijava se vrši putem online obrasca. Termini: Split (19.–20.09.2026., Centar za ortopedsku manualnu terapiju Majce & Stojanović), Rijeka (26.–27.09.2026., Udruga Eterico), Zagreb (10.–11.10.2026., Poliklinika Medical Body Balance) i Slavonski Brod (12.–13.12.2026., HK Studio). Rezervacija se potvrđuje akontacijom od 100 €. Za pitanja: info@uciliste-suprastudium.hr ili 095 855 89 53.
                     </p>
                   </AccordionContent>

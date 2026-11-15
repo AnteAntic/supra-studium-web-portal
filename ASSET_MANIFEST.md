@@ -61,3 +61,20 @@ Reused: `mt-palpacija-lumbalna.jpg` (dokumentarni grid). Ušteda: 11.4 MB → 27
 ## Propedeutika — rotacija slike (2026-07-21)
 
 `propedeutika-stosic-model.webp` rotirana 90° u smjeru kazaljke sata (stol je bio dijagonalan, sad je ravan/horizontalan). Format promijenjen iz 1400×933 (landscape) u 933×1400 (portrait), 58KB. Korištena na Home (kvadratna kartica, object-cover center — bez promjene koda) i na propedeutika stranici "Voditelj tečaja" (promijenjeno iz aspect-[4/3] u aspect-[4/5], po uzoru na CuppingPage instruktorsku sliku).
+
+---
+
+# ASSET MANIFEST — Smjer A redizajn (2026-11-13, lokalno, nije deployano)
+
+Novi asseti kopirani iz `/Users/ante/01_Projekti/Adria Reset summit/` (izvor nije mijenjan). Konverzija: WebP, max 1920 px (pečat 480 px), EXIF orijentacija primijenjena. Rollback: obrisati navedene datoteke i vratiti `src/components/home/HomeChampionshipSection.tsx` (stara verzija: `_archive_code/redesign-a/`).
+
+| Izvor (Adria Reset summit) | Novo ime | Putanja | Koristi se u | Prije | Poslije |
+|---|---|---|---|---|---|
+| 08_Brand/logo/championship_official_transparent.png | cmc-official-seal.webp | public/lovable-uploads | src/components/home/HomeChampionshipSection.tsx | 2111 KB | 72 KB |
+| 07_Media/Championship_2026/foto/CMC2026_natjecanje_leda_duo_masaza_publika.jpg | cmc-2026-duo-masaza.webp | public/lovable-uploads | src/components/home/HomeChampionshipSection.tsx | 929 KB | 109 KB |
+| 07_Media/Championship_2026/foto/CMC2026_natjecanje_leda_masaza_closeup_ruke_tetovaza.jpg | cmc-2026-ruke-closeup.webp | public/lovable-uploads | src/components/home/HomeChampionshipSection.tsx | 700 KB | 44 KB |
+| 07_Media/Championship_2026/foto/CMC2026_natjecanje_dvorana_panorama_suci_promatraju.jpg | cmc-2026-suci-dvorana.webp | public/lovable-uploads | src/components/home/HomeChampionshipSection.tsx | 890 KB | 88 KB |
+
+Više se ne koriste na naslovnici (datoteke ostaju na mjestu, nisu brisane): `cmc-sajo-dry-ice-v2.webp`, `cmc-dvorana-panorama.webp`, `cmc-ceremonija.webp`, `cmc-proslava-trofej.webp`, `cmc-pobjednici.webp`.
+
+Napomena za deploy: `deploy-quick.sh` preskače `lovable-uploads/` — četiri nove datoteke treba uploadati ručno ili punim deployem.

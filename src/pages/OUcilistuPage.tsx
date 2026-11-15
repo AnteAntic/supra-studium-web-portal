@@ -47,7 +47,6 @@ export default function OUcilistuPage() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y       = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,7 +62,7 @@ export default function OUcilistuPage() {
     <div className="bg-[#F4F1EA] min-h-screen">
 
       {/* ── Hero ───────────────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+      <section ref={heroRef} className="relative min-h-hero overflow-hidden -mt-20">
 
         <div className="absolute inset-0 top-[-5rem]">
           <video
@@ -105,18 +104,18 @@ export default function OUcilistuPage() {
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/24 to-transparent" />
 
-        <motion.div style={{ opacity, y }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[14%]">
-            <div className="max-w-xl relative w-full">
+        <motion.div style={{ opacity }} className="relative z-10">
+          <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-end pb-[18%] md:pb-[14%]">
+            <div className="max-w-[54rem] relative w-full">
 
               <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
                 <span
-                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.24em] sm:tracking-[0.30em]"
+                  className="text-label sm:text-caption font-normal uppercase tracking-[0.24em] sm:tracking-[0.30em]"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
                   O učilištu · Supra Studium
@@ -133,20 +132,20 @@ export default function OUcilistuPage() {
               </motion.div>
 
               <motion.h1
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: "easeOut" }}
-                className="font-playfair font-semibold text-white leading-[1.18] text-[1.75rem] sm:text-[2rem] md:text-[2.15rem] mb-7"
+                className="font-playfair font-semibold text-white leading-[1.18] text-display mb-7"
                 style={{ textShadow: "0 1px 14px rgba(0,0,0,0.36), 0 1px 4px rgba(0,0,0,0.20)" }}
               >
                 Učilište nastalo iz<br className="hidden sm:block" /> rada rukama.
               </motion.h1>
 
               <motion.p
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
-                className="text-[13px] font-normal leading-[1.68] max-w-[38ch] mb-9"
+                className="text-body-l font-normal leading-[1.68] max-w-[38ch] mb-9"
                 style={{ color: 'rgba(255,255,255,0.80)' }}
               >
                 Supra Studium povezuje kliničku preciznost, manualnu terapiju,
@@ -155,14 +154,14 @@ export default function OUcilistuPage() {
               </motion.p>
 
               <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.7 }}
                 className="flex items-center gap-5"
               >
                 <Link
                   to="/#edukacije"
-                  className="text-[10.5px] uppercase tracking-[0.14em] font-normal py-3 px-7 transition-colors duration-300"
+                  className="text-label uppercase tracking-[0.14em] font-normal py-3 px-7 transition-colors duration-300"
                   style={{
                     border: '1px solid rgba(184,154,79,0.55)',
                     color: 'rgba(255,255,255,0.85)',
@@ -181,7 +180,7 @@ export default function OUcilistuPage() {
                 </Link>
                 <a
                   href="#pristup"
-                  className="text-[10.5px] uppercase tracking-[0.14em] font-normal"
+                  className="text-label uppercase tracking-[0.14em] font-normal"
                   style={{ color: 'rgba(255,255,255,0.72)', textShadow: '0 1px 2px rgba(0,0,0,0.45)', transition: 'color 0.3s ease' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.72)'; }}
@@ -197,7 +196,7 @@ export default function OUcilistuPage() {
 
       {/* ── Facts band ─────────────────────────────────────────────────── */}
       <section className="bg-[#F4F1EA] pt-5 pb-2">
-        <div className="container mx-auto px-6 md:px-10">
+        <div className="container mx-auto px-6">
           <div
             className="grid grid-cols-2 md:grid-cols-4"
             style={{
@@ -214,13 +213,13 @@ export default function OUcilistuPage() {
                   borderBottom: i < 2   ? "1px solid rgba(0,0,0,0.08)" : "none",
                 }}
               >
-                <div className="text-[9.5px] uppercase tracking-[0.25em] mb-2 font-normal" style={{ color: "#B89A4F" }}>
+                <div className="text-label uppercase tracking-[0.25em] mb-2 font-normal" style={{ color: "#B89A4F" }}>
                   {item.field}
                 </div>
                 <div className="text-[18px] font-medium leading-snug" style={{ color: "#0e0e0e" }}>
                   {item.value}
                 </div>
-                <div className="text-[12px] mt-1 font-normal leading-relaxed" style={{ color: "#3b3b3b" }}>
+                <div className="text-body mt-1 font-normal leading-relaxed" style={{ color: "#3b3b3b" }}>
                   {item.detail}
                 </div>
               </div>
@@ -231,17 +230,17 @@ export default function OUcilistuPage() {
 
       {/* ── Što je Supra Studium ────────────────────────────────────────── */}
       <section id="pristup" className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Što je Supra Studium
             </p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug" style={{ textWrap: 'balance' } as React.CSSProperties}>
+            <h2 className="font-playfair text-[#1F1D1A] leading-snug text-h2" style={{ textWrap: 'balance' } as React.CSSProperties}>
               Nije seminar. Nije tečaj vikend formata.
             </h2>
           </motion.div>
@@ -252,18 +251,18 @@ export default function OUcilistuPage() {
             custom={0.15}
             viewport={{ once: true }}
           >
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-6">
               Supra Studium je edukacijsko okruženje za hands-on terapeute koji žele bolje
               kliničko rasuđivanje, precizniji dodir i strukturiran praktičan rad. Svaki
               program razvijen je iz kliničke prakse — ne iz prevedenih stranih materijala.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-6">
               Polaznici rade u malim grupama, s izravnom korekcijom tehnike i stalnom
               povratnom informacijom. CFM Body Reset Method, manualna terapija po dr. Stošiću,
               akupresura i trigger point terapija — svaki program ima jasno definiran klinički
               cilj i primjenjivu strukturu.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed">
+            <p className="text-body text-[#3b3b3b] leading-relaxed">
               Cilj je da terapeut sutradan u ordinaciji radi drukčije nego dan prije.
             </p>
           </motion.div>
@@ -272,7 +271,7 @@ export default function OUcilistuPage() {
 
       {/* ── Observation cards ──────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-[#FAF8F4]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-3 gap-px bg-[#e3e3e3]">
             {[
               { text: "Praktičan rad u parovima od prvog sata. Ne demonstracija — iskustvo u ruci." },
@@ -288,7 +287,7 @@ export default function OUcilistuPage() {
                 viewport={{ once: true }}
                 className="bg-[#FAF8F4] px-8 py-10"
               >
-                <p className="text-sm text-[#1F1D1A] leading-relaxed font-playfair italic">
+                <p className="text-body text-[#1F1D1A] leading-relaxed font-playfair italic">
                   "{card.text}"
                 </p>
               </motion.div>
@@ -299,7 +298,7 @@ export default function OUcilistuPage() {
 
       {/* ── Osnivač ────────────────────────────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -335,34 +334,34 @@ export default function OUcilistuPage() {
             viewport={{ once: true }}
             className="md:pt-8"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Osnivač
             </p>
             <div className="w-10 h-px bg-[#a58d4e]/30 mb-8" />
-            <h2 className="font-playfair text-2xl text-[#1F1D1A] mb-2 leading-snug">
+            <h2 className="font-playfair text-[#1F1D1A] mb-2 leading-snug text-h2">
               Ante Antić
             </h2>
             <p className="text-xs uppercase tracking-[0.2em] text-[#3b3b3b]/60 mb-8">
               Terapeut · Predavač · Osnivač Supra Studium
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-5">
               Ante Antić radi kao terapeut od 2008. godine. Klinički rad s kroničnom
               boli, fascijalnim restrikcijama i funkcionalnim ograničenjima postao je
               temelj edukacijskog smjera Supra Studija. Specijalizirao se za palpatornu
               dijagnostiku, trigger point terapiju i CFM Body Reset Method.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-5">
               Edukacijski rad započeo je 2012. kao direktan nastavak rada s pacijentima.
               U sklopu učilišta predaje akupresuru, trigger point terapiju, cupping
               terapiju te cross-friction i funkcionalnu masažu. Sudjelovao je u razvoju
               Škole manualne terapije s dr. Stošićem.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-5">
               Potpredsjednik je Svjetske federacije masaže, manualne terapije i Nuad
               Thaia (WFMMT) za Hrvatsku. Sudjeluje kao međunarodni sudac na natjecanjima
               iz masaže i manualne terapije — u Hrvatskoj, Italiji i Bugarskoj.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed">
+            <p className="text-body text-[#3b3b3b] leading-relaxed">
               Gostujući predavač na Holos World Congressu u Lecceu, Italija.
             </p>
           </motion.div>
@@ -371,7 +370,7 @@ export default function OUcilistuPage() {
 
       {/* ── Praksa i međunarodni kontekst — image grid ─────────────────── */}
       <section className="py-24 px-6 bg-[#FAF8F4]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
             <motion.div
               variants={fadeUp}
@@ -379,10 +378,10 @@ export default function OUcilistuPage() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+              <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
                 Metode i utjecaji
               </p>
-              <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug" style={{ textWrap: 'balance' } as React.CSSProperties}>
+              <h2 className="font-playfair text-[#1F1D1A] leading-snug text-h2" style={{ textWrap: 'balance' } as React.CSSProperties}>
                 Klinički rad, natjecanja i međunarodna suradnja.
               </h2>
             </motion.div>
@@ -393,12 +392,12 @@ export default function OUcilistuPage() {
               custom={0.15}
               viewport={{ once: true }}
             >
-              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
+              <p className="text-body text-[#3b3b3b] leading-relaxed mb-5">
                 Program škole temelji se na manualnoj terapiji, palpaciji, kliničkoj
                 procjeni i strukturiranom praktičnom radu. Svaki program ima jasno
                 definiran klinički cilj i primjenjivu strukturu.
               </p>
-              <p className="text-sm text-[#3b3b3b] leading-relaxed">
+              <p className="text-body text-[#3b3b3b] leading-relaxed">
                 Međunarodna suradnja i stručna događanja dodatno proširuju edukacijski
                 kontekst škole — kroz rad s federacijama, sudjelovanje na natjecanjima
                 i razmjenu stručnih standarda.
@@ -442,7 +441,7 @@ export default function OUcilistuPage() {
                     style={{ filter: "grayscale(8%)" }}
                   />
                 </div>
-                <figcaption className="mt-2 text-[10px] text-[#3b3b3b]/50 uppercase tracking-[0.18em]">
+                <figcaption className="mt-2 text-label text-[#3b3b3b]/50 uppercase tracking-[0.18em]">
                   {img.caption}
                 </figcaption>
               </motion.figure>
@@ -453,7 +452,7 @@ export default function OUcilistuPage() {
 
       {/* ── Polaznici — editorial statements ──────────────────────────── */}
       <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -461,7 +460,7 @@ export default function OUcilistuPage() {
             viewport={{ once: true }}
             className="mb-10"
           >
-            <p className="text-[10px] uppercase tracking-[0.38em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.38em] text-[#B89A4F] mb-6">
               Polaznici
             </p>
             <div className="w-10 h-px bg-[#a58d4e]/30" />
@@ -478,14 +477,14 @@ export default function OUcilistuPage() {
                 viewport={{ once: true }}
                 className="bg-[#F4F1EA] grid md:grid-cols-[1fr_auto] gap-6 px-8 py-5 items-baseline"
               >
-                <p className="text-sm text-[#1F1D1A] leading-relaxed font-playfair italic">
+                <p className="text-body text-[#1F1D1A] leading-relaxed font-playfair italic">
                   "{item.text}"
                 </p>
                 <div className="text-right">
-                  <span className="block text-[11px] font-medium tracking-[0.08em] text-[#1F1D1A]/70 whitespace-nowrap">
+                  <span className="block text-caption font-medium tracking-[0.08em] text-[#1F1D1A]/70 whitespace-nowrap">
                     {item.ime}
                   </span>
-                  <span className="block text-[10px] uppercase tracking-[0.18em] text-[#3b3b3b]/45 whitespace-nowrap mt-0.5">
+                  <span className="block text-label uppercase tracking-[0.18em] text-[#3b3b3b]/45 whitespace-nowrap mt-0.5">
                     {item.struka}
                   </span>
                 </div>
@@ -497,7 +496,7 @@ export default function OUcilistuPage() {
 
       {/* ── Formalni okvir — dark section ─────────────────────────────── */}
       <section className="py-24 px-6 bg-[rgb(20,18,16)]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
             <motion.div
               variants={fadeUp}
@@ -505,10 +504,10 @@ export default function OUcilistuPage() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#9e8a46] mb-6">
+              <p className="text-label uppercase tracking-[0.28em] text-[#9e8a46] mb-6">
                 Status i suradnje
               </p>
-              <h2 className="font-playfair text-3xl text-[#ede9e3] leading-snug">
+              <h2 className="font-playfair text-[#ede9e3] leading-snug text-h2">
                 Formalni okvir edukacije.
               </h2>
             </motion.div>
@@ -519,12 +518,12 @@ export default function OUcilistuPage() {
               custom={0.15}
               viewport={{ once: true }}
             >
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(237,233,227,0.68)" }}>
+              <p className="text-body leading-relaxed mb-4" style={{ color: "rgba(237,233,227,0.68)" }}>
                 Učilište Supra Studium registrirano je učilište za obrazovanje odraslih.
                 Po završetku programa polaznici dobivaju potvrdu s urudžbenim brojem,
                 klasom i pečatom ustanove.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(237,233,227,0.54)" }}>
+              <p className="text-body leading-relaxed" style={{ color: "rgba(237,233,227,0.54)" }}>
                 Pohađanje se može evidentirati u e-radnoj knjižici pod kategorijom
                 dodatnog obrazovanja, sukladno važećem administrativnom postupku.
               </p>
@@ -559,8 +558,8 @@ export default function OUcilistuPage() {
                 viewport={{ once: true }}
                 className="bg-[rgb(20,18,16)] px-8 py-7"
               >
-                <p className="text-sm font-medium text-[#ede9e3] mb-2">{item.naziv}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(237,233,227,0.58)" }}>
+                <p className="text-body font-medium text-[#ede9e3] mb-2">{item.naziv}</p>
+                <p className="text-body leading-relaxed" style={{ color: "rgba(237,233,227,0.58)" }}>
                   {item.opis}
                 </p>
               </motion.div>
@@ -571,7 +570,7 @@ export default function OUcilistuPage() {
 
       {/* ── Natjecanja ─────────────────────────────────────────────────── */}
       <section className="py-20 px-6 bg-[#F4F1EA]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               variants={fadeUp}
@@ -579,15 +578,15 @@ export default function OUcilistuPage() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+              <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
                 Natjecanja
               </p>
               <div className="w-10 h-px bg-[#B89A4F]/28 mb-8" />
-              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-4">
+              <p className="text-body text-[#3b3b3b] leading-relaxed mb-4">
                 Polaznici Supra Studija sudjeluju i osvajaju medalje na hrvatskim i
                 međunarodnim natjecanjima masaže i manualne terapije.
               </p>
-              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
+              <p className="text-body text-[#3b3b3b] leading-relaxed mb-6">
                 Sudjelovanje na natjecanjima dio je razvoja terapeuta kroz evaluaciju
                 pod pritiskom, međunarodnu razmjenu tehnike i povratnu informaciju
                 od licenciranih sudaca.
@@ -596,7 +595,7 @@ export default function OUcilistuPage() {
                 href="https://fh-participants-7z477wy.gamma.site/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] uppercase tracking-[0.22em] transition-colors duration-200"
+                className="text-caption uppercase tracking-[0.22em] transition-colors duration-200"
                 style={{ color: "rgba(184,154,79,0.70)" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#B89A4F'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(184,154,79,0.70)'; }}

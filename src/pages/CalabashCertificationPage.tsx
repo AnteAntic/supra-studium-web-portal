@@ -6,11 +6,11 @@ import { CourseRecommendations } from '@/components/course/CourseRecommendations
 import { CourseFooter } from '@/components/CourseFooter';
 import { setPageMeta, setJsonLd, courseSchema, courseBreadcrumb, faqSchema } from '@/lib/seo';
 
+// Documentary reveal: opacity only (02_WEB_SYSTEM.md §11).
 const fadeIn = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0 },
   visible: (delay: number = 0) => ({
     opacity: 1,
-    y: 0,
     transition: { duration: 0.75, ease: 'easeOut', delay },
   }),
 };
@@ -153,7 +153,6 @@ const CalabashCertificationPage: React.FC = () => {
   });
 
   const heroOpacity = useTransform(scrollYProgress, [0, 0.72], [1, 0]);
-  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '42%']);
 
   useEffect(() => {
     setPageMeta({
@@ -191,7 +190,7 @@ const CalabashCertificationPage: React.FC = () => {
       />
 
       {/* Hero */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+      <section ref={heroRef} className="relative min-h-hero overflow-hidden -mt-20">
 
         <motion.div
           className="absolute inset-0 top-[-5rem] overflow-hidden"
@@ -231,18 +230,18 @@ const CalabashCertificationPage: React.FC = () => {
           }}
         />
 
-        <motion.div style={{ opacity: heroOpacity, y: heroY }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[8%]">
-            <div className="w-full" style={{ maxWidth: '50rem' }}>
+        <motion.div style={{ opacity: heroOpacity }} className="relative z-10">
+          <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-end pb-[18%] md:pb-[8%]">
+            <div className="w-full" style={{ maxWidth: '54rem' }}>
 
               <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.35, duration: 0.9, ease: 'easeOut' }}
                 className="mb-6"
               >
                 <span
-                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.28em] block"
+                  className="text-label sm:text-caption font-normal uppercase tracking-[0.28em] block"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
                   Kalabaš Certifikacija · 2026 – 2027
@@ -259,13 +258,13 @@ const CalabashCertificationPage: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.65, duration: 1.05, ease: 'easeOut' }}
                 className="mb-9"
               >
                 <h1
-                  className="font-playfair font-semibold text-white leading-[1.17] text-[2.05rem] sm:text-[2.35rem] md:text-[2.7rem]"
+                  className="font-playfair font-semibold text-white leading-[1.17] text-display"
                   style={{ textShadow: '0 2px 24px rgba(0,0,0,0.72), 0 1px 6px rgba(0,0,0,0.40)' }}
                 >
                   Dubina bez sile.<br />
@@ -274,13 +273,13 @@ const CalabashCertificationPage: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.85, duration: 0.95, ease: 'easeOut' }}
                 className="mb-9"
               >
                 <p
-                  className="text-[13.5px] sm:text-[14px] font-normal leading-[1.75]"
+                  className="text-body-l font-normal leading-[1.75]"
                   style={{ color: 'rgba(255,255,255,0.58)', maxWidth: '44ch' }}
                 >
                   Precizna mehanika vektora i miofascijalnog kontakta —
@@ -289,8 +288,8 @@ const CalabashCertificationPage: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.05, duration: 0.85, ease: 'easeOut' }}
                 className="mb-14 flex flex-wrap items-center"
                 style={{ columnGap: '14px', rowGap: '4px' }}
@@ -298,11 +297,11 @@ const CalabashCertificationPage: React.FC = () => {
                 {['2 dana', '18 sati', 'Rad s alatom', 'Certifikat'].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
-                      <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '11px', lineHeight: 1 }}>·</span>
+                      <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '0.8125rem', lineHeight: 1 }}>·</span>
                     )}
                     <span
                       className="font-medium"
-                      style={{ fontSize: '11px', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
+                      style={{ fontSize: '0.8125rem', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
                     >
                       {item}
                     </span>
@@ -311,15 +310,15 @@ const CalabashCertificationPage: React.FC = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.25, duration: 0.80, ease: 'easeOut' }}
                 className="flex flex-col sm:flex-row items-start sm:items-center gap-5"
               >
                 <button
                   className="font-normal uppercase cursor-pointer whitespace-nowrap"
                   style={{
-                    fontSize: '11px',
+                    fontSize: '0.8125rem',
                     letterSpacing: '0.12em',
                     padding: '8px 20px',
                     borderRadius: '4px',
@@ -338,7 +337,7 @@ const CalabashCertificationPage: React.FC = () => {
                 <button
                   className="font-normal uppercase cursor-pointer bg-transparent border-0 p-0 flex items-center gap-3"
                   style={{
-                    fontSize: '11px',
+                    fontSize: '0.8125rem',
                     letterSpacing: '0.16em',
                     color: 'rgba(255,255,255,0.72)',
                     textShadow: '0 1px 2px rgba(0,0,0,0.45)',
@@ -380,10 +379,10 @@ const CalabashCertificationPage: React.FC = () => {
                 className="py-8 px-6 md:px-8"
                 style={{ borderRight: '1px solid rgba(0,0,0,0.07)' }}
               >
-                <p className="text-[9px] uppercase tracking-[0.22em] mb-2 font-normal" style={{ color: '#B89A4F' }}>
+                <p className="text-label uppercase tracking-[0.22em] mb-2 font-normal" style={{ color: '#B89A4F' }}>
                   {item.label}
                 </p>
-                <p className="text-[13.5px] font-normal leading-snug" style={{ color: '#1F1D1A' }}>
+                <p className="text-body-l font-normal leading-snug" style={{ color: '#1F1D1A' }}>
                   {item.value}
                 </p>
               </div>
@@ -395,7 +394,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Klinička observacija */}
       <section style={{ background: '#FAF8F4' }} className="pt-28 pb-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr_0.9fr] gap-16 md:gap-24 items-start">
+          <div className="max-w-shell mx-auto grid md:grid-cols-[1fr_0.9fr] gap-16 md:gap-24 items-start">
 
             <motion.div
               variants={fadeIn}
@@ -404,10 +403,10 @@ const CalabashCertificationPage: React.FC = () => {
               viewport={{ once: true }}
               custom={0}
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-8" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-8" style={{ color: '#B89A4F' }}>
                 Klinička perspektiva
               </p>
-              <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22] mb-0" style={{ color: '#1F1D1A' }}>
+              <h2 className="font-playfair font-semibold leading-[1.22] mb-0 text-h2" style={{ color: '#1F1D1A' }}>
                 Kalabaš nije<br />
                 modni detalj tretmana.
               </h2>
@@ -421,12 +420,12 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0.15}
               className="pt-1 md:pt-16"
             >
-              <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
+              <p className="text-body-l leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
                 Kalabaš je produžetak ruke s vektorom koji standardnom zahvatu nije dostupan.
                 Rezultat nije dramatičan — ali je opipljiv i ponovljiv. Tkivo reagira drukčije
                 na alat nego na dlan.
               </p>
-              <p className="text-[12px] leading-[1.75] font-normal" style={{ color: '#B89A4F', letterSpacing: '0.01em' }}>
+              <p className="text-body leading-[1.75] font-normal" style={{ color: '#B89A4F', letterSpacing: '0.01em' }}>
                 Tehnika koja se rijetko podučava u Europi —<br className="hidden md:block" />
                 a gotovo nikada u strukturiranom kliničkom formatu.
               </p>
@@ -434,7 +433,7 @@ const CalabashCertificationPage: React.FC = () => {
           </div>
 
           {/* Observation rows */}
-          <div className="max-w-5xl mx-auto mt-20">
+          <div className="max-w-shell mx-auto mt-20">
             {[
               {
                 label: 'Terapeut i karijera',
@@ -463,7 +462,7 @@ const CalabashCertificationPage: React.FC = () => {
                 style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
               >
                 <div>
-                  <p className="text-[9px] uppercase tracking-[0.22em] font-normal" style={{ color: '#B89A4F' }}>
+                  <p className="text-label uppercase tracking-[0.22em] font-normal" style={{ color: '#B89A4F' }}>
                     {row.label}
                   </p>
                 </div>
@@ -471,7 +470,7 @@ const CalabashCertificationPage: React.FC = () => {
                   <p className="font-playfair font-semibold text-[1.05rem] leading-[1.35] mb-4" style={{ color: '#1F1D1A' }}>
                     {row.heading}
                   </p>
-                  <p className="text-[13px] leading-[1.82] font-normal" style={{ color: '#7A7570' }}>
+                  <p className="text-body-l leading-[1.82] font-normal" style={{ color: '#7A7570' }}>
                     {row.body}
                   </p>
                 </div>
@@ -504,7 +503,7 @@ const CalabashCertificationPage: React.FC = () => {
             style={{ background: 'linear-gradient(to top, rgba(8,6,3,0.35) 0%, transparent 40%)' }}
           />
           <div className="absolute bottom-6 left-8">
-            <p className="text-[11px] uppercase tracking-[0.14em] font-normal" style={{ color: 'rgba(255,255,255,0.62)' }}>
+            <p className="text-caption uppercase tracking-[0.14em] font-normal" style={{ color: 'rgba(255,255,255,0.62)' }}>
               Zagreb, studeni 2025.
             </p>
           </div>
@@ -514,7 +513,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Metoda — dark */}
       <section style={{ background: '#1A1814' }} className="pt-24 pb-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+          <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
 
             <motion.div
               variants={fadeIn}
@@ -523,14 +522,14 @@ const CalabashCertificationPage: React.FC = () => {
               viewport={{ once: true }}
               custom={0}
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-8" style={{ color: 'rgba(184,154,79,0.65)' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-8" style={{ color: 'rgba(184,154,79,0.65)' }}>
                 Metoda
               </p>
-              <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22] mb-6" style={{ color: 'rgba(255,255,255,0.88)' }}>
+              <h2 className="font-playfair font-semibold leading-[1.22] mb-6 text-h2" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 Metodologija<br />
                 u dva dana.
               </h2>
-              <p className="text-[13px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              <p className="text-body-l leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Razumijevanje tkiva dolazi prije tehnike. Alat se uvodi tek kad je palpacijska slika jasna — ne ranije.
               </p>
             </motion.div>
@@ -564,7 +563,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Program */}
       <section ref={programRef} style={{ background: '#FAF8F4' }} className="pt-24 pb-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             <motion.div
               variants={fadeIn}
@@ -574,10 +573,10 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0}
               className="mb-14"
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 Program
               </p>
-              <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: '#1F1D1A' }}>
+              <h2 className="font-playfair font-semibold leading-[1.22] text-h2" style={{ color: '#1F1D1A' }}>
                 Struktura programa.
               </h2>
             </motion.div>
@@ -604,14 +603,14 @@ const CalabashCertificationPage: React.FC = () => {
                     {m.broj}
                   </p>
                   <div>
-                    <p className="text-[15px] font-medium mb-2 leading-snug" style={{ color: '#1F1D1A' }}>
+                    <p className="text-body-l font-medium mb-2 leading-snug" style={{ color: '#1F1D1A' }}>
                       {m.naziv}
                     </p>
-                    <p className="text-[13px] leading-[1.75] font-normal" style={{ color: '#7A7570', maxWidth: '52ch' }}>
+                    <p className="text-body-l leading-[1.75] font-normal" style={{ color: '#7A7570', maxWidth: '52ch' }}>
                       {m.opis}
                     </p>
                   </div>
-                  <p className="text-[11px] uppercase tracking-[0.14em] font-normal whitespace-nowrap" style={{ color: '#B89A4F' }}>
+                  <p className="text-caption uppercase tracking-[0.14em] font-normal whitespace-nowrap" style={{ color: '#B89A4F' }}>
                     {m.trajanje}
                   </p>
                 </div>
@@ -673,7 +672,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Predavač */}
       <section style={{ background: '#F0EDE6' }} className="pt-24 pb-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-[0.7fr_1fr] gap-16 md:gap-24 items-start">
+          <div className="max-w-shell mx-auto grid md:grid-cols-[0.7fr_1fr] gap-16 md:gap-24 items-start">
 
             <motion.div
               variants={fadeIn}
@@ -700,23 +699,23 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0.12}
               className="pt-2 md:pt-8"
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Voditelj edukacije
               </p>
-              <h2 className="font-playfair font-semibold text-[1.6rem] md:text-[1.9rem] leading-[1.22] mb-6" style={{ color: '#1F1D1A' }}>
+              <h2 className="font-playfair font-semibold leading-[1.22] mb-6 text-h2" style={{ color: '#1F1D1A' }}>
                 Dr. Awudi Atitsogbui
               </h2>
-              <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
+              <p className="text-body-l leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
                 Awudi kalabaš masažu nije preuzeo iz tradicije kao spektakl — razvio je kao sustavnu metodu.
                 Sa jasno definiranom mehanikom drže, vektora sile i pozicioniranja tijela koje štiti
                 terapeuta jednako koliko i klijenta.
               </p>
-              <p className="text-[13.5px] leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
+              <p className="text-body-l leading-[1.88] font-normal mb-5" style={{ color: '#7A7570' }}>
                 Terapeuti mu vjeruju jer ne radi razliku između demonstracije i prenošenja znanja.
                 Svaki zahvat objašnjava kao biomehanički događaj: što se događa u tkivu, zašto taj vektor,
                 zašto ta brzina. Polaznici odlaze s razumijevanjem, ne s receptom.
               </p>
-              <p className="text-[13.5px] leading-[1.88] font-normal" style={{ color: '#7A7570' }}>
+              <p className="text-body-l leading-[1.88] font-normal" style={{ color: '#7A7570' }}>
                 Njegovo središnje pitanje nije "što se radi" — nego "zašto to tijelo terapeuta može raditi
                 desetljećima bez kompromisa na dubini." Na edukaciji u Zagrebu radi u malim grupama,
                 s direktnom povratnom informacijom na svaki zahvat.
@@ -730,7 +729,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Iz prakse */}
       <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="pt-24 pb-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             <motion.div
               variants={fadeIn}
@@ -740,7 +739,7 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0}
               className="mb-16"
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 Iz prakse
               </p>
             </motion.div>
@@ -775,7 +774,7 @@ const CalabashCertificationPage: React.FC = () => {
                 >
                   "{item.quote}"
                 </p>
-                <p className="text-[11px] uppercase tracking-[0.18em] font-normal" style={{ color: '#B89A4F' }}>
+                <p className="text-caption uppercase tracking-[0.18em] font-normal" style={{ color: '#B89A4F' }}>
                   {item.attribution}
                 </p>
               </motion.div>
@@ -789,7 +788,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Kotizacija */}
       <section ref={kotizacijaRef} id="kotizacija" style={{ background: '#1A1814' }} className="pt-24 pb-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             {/* Header + intro */}
             <motion.div
@@ -800,13 +799,13 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0}
               className="mb-12"
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-5" style={{ color: 'rgba(184,154,79,0.65)' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-5" style={{ color: 'rgba(184,154,79,0.65)' }}>
                 Termini i kotizacija
               </p>
-              <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22] mb-6" style={{ color: 'rgba(255,255,255,0.88)' }}>
+              <h2 className="font-playfair font-semibold leading-[1.22] mb-6 text-h2" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 Tri grada. Dva dana.
               </h2>
-              <p className="text-[13.5px] leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '54ch' }}>
+              <p className="text-body-l leading-[1.82] font-normal" style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '54ch' }}>
                 Kalabaš edukacija traje dva dana i održava se u malim grupama kako bi svaki polaznik dobio dovoljno praktičnog rada i individualne korekcije.
               </p>
             </motion.div>
@@ -827,28 +826,28 @@ const CalabashCertificationPage: React.FC = () => {
                     <p className="font-playfair font-semibold leading-none" style={{ fontSize: '3.4rem', color: 'rgba(255,255,255,0.95)', letterSpacing: '-0.02em' }}>
                       490 €
                     </p>
-                    <p className="text-[12px] font-normal" style={{ color: 'rgba(184,154,79,0.85)' }}>
+                    <p className="text-body font-normal" style={{ color: 'rgba(184,154,79,0.85)' }}>
                       Early Bird
                     </p>
                   </div>
-                  <p className="text-[12px] font-normal" style={{ color: 'rgba(255,255,255,0.30)', textDecoration: 'line-through' }}>
+                  <p className="text-body font-normal" style={{ color: 'rgba(255,255,255,0.30)', textDecoration: 'line-through' }}>
                     Redovna cijena: 540 €
                   </p>
                 </div>
                 <div className="flex gap-10 md:gap-12 md:pb-2">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                    <p className="text-label uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: 'rgba(184,154,79,0.65)' }}>
                       Akontacija
                     </p>
-                    <p className="text-[15px] font-normal" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                    <p className="text-body-l font-normal" style={{ color: 'rgba(255,255,255,0.88)' }}>
                       100 €
                     </p>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: 'rgba(184,154,79,0.65)' }}>
+                    <p className="text-label uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: 'rgba(184,154,79,0.65)' }}>
                       Grupa
                     </p>
-                    <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                    <p className="text-body-l font-normal whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.88)' }}>
                       Max. 12 polaznika
                     </p>
                   </div>
@@ -865,7 +864,7 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0.12}
               className="mb-14"
             >
-              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-2" style={{ color: 'rgba(184,154,79,0.65)' }}>
+              <p className="text-label uppercase tracking-[0.22em] font-normal mb-2" style={{ color: 'rgba(184,154,79,0.65)' }}>
                 Termini
               </p>
               {terminiKalabas.map((t, i) => (
@@ -882,14 +881,14 @@ const CalabashCertificationPage: React.FC = () => {
                       <p className="font-playfair font-medium text-[1.15rem] leading-tight" style={{ color: 'rgba(255,255,255,0.92)' }}>
                         {t.grad}
                       </p>
-                      <p className="text-[13px] font-normal" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                      <p className="text-body-l font-normal" style={{ color: 'rgba(255,255,255,0.72)' }}>
                         {t.datum}
                       </p>
                     </div>
-                    <p className="text-[12px] font-normal leading-[1.6] mb-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
+                    <p className="text-body font-normal leading-[1.6] mb-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
                       {t.lokacija}
                     </p>
-                    <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: 'rgba(184,154,79,0.85)' }}>
+                    <p className="text-label uppercase tracking-[0.14em] font-medium" style={{ color: 'rgba(184,154,79,0.85)' }}>
                       Early Bird do {t.earlyBird}
                     </p>
                   </div>
@@ -899,7 +898,7 @@ const CalabashCertificationPage: React.FC = () => {
                     rel="noopener noreferrer"
                     className="font-normal uppercase cursor-pointer whitespace-nowrap inline-block text-center md:justify-self-end"
                     style={{
-                      fontSize: '11px',
+                      fontSize: '0.8125rem',
                       letterSpacing: '0.12em',
                       padding: '9px 24px',
                       borderRadius: '4px',
@@ -926,10 +925,10 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0.16}
               className="mb-16"
             >
-              <p className="text-[12px] leading-[1.65] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
+              <p className="text-body leading-[1.65] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
                 Preostali iznos kotizacije plaća se najkasnije 30 dana prije početka edukacije. Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
               </p>
-              <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
+              <p className="text-body leading-[1.65] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
                 Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
                 <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: 'rgba(184,154,79,0.85)' }}>info@uciliste-suprastudium.hr</a>
                 {' '}ili nazovi{' '}
@@ -948,7 +947,7 @@ const CalabashCertificationPage: React.FC = () => {
               className="pt-12"
               style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
             >
-              <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-6" style={{ color: 'rgba(184,154,79,0.65)' }}>
+              <p className="text-label uppercase tracking-[0.22em] font-normal mb-6" style={{ color: 'rgba(184,154,79,0.65)' }}>
                 Uključeno u kotizaciju
               </p>
 
@@ -956,8 +955,8 @@ const CalabashCertificationPage: React.FC = () => {
                 className="p-6 mb-8 flex items-start gap-4"
                 style={{ border: '1px solid rgba(184,154,79,0.30)', background: 'rgba(184,154,79,0.06)' }}
               >
-                <span className="flex-shrink-0 mt-[2px]" style={{ color: 'rgba(184,154,79,0.85)', fontSize: '13px' }}>◆</span>
-                <p className="text-[14px] leading-[1.6] font-medium" style={{ color: 'rgba(255,255,255,0.90)' }}>
+                <span className="flex-shrink-0 mt-[2px]" style={{ color: 'rgba(184,154,79,0.85)', fontSize: '1rem' }}>◆</span>
+                <p className="text-body-l leading-[1.6] font-medium" style={{ color: 'rgba(255,255,255,0.90)' }}>
                   U cijenu su uključena 2 originalna ručno izrađena Kalabaš alata.
                 </p>
               </div>
@@ -965,8 +964,8 @@ const CalabashCertificationPage: React.FC = () => {
               <div className="grid sm:grid-cols-2 gap-x-10">
                 {ukljuceno.map((item, i) => (
                   <div key={i} className="py-4 flex gap-3" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                    <span className="flex-shrink-0 mt-[3px]" style={{ color: 'rgba(184,154,79,0.55)', fontSize: '11px' }}>—</span>
-                    <p className="text-[13.5px] leading-[1.55] font-normal" style={{ color: 'rgba(255,255,255,0.68)' }}>
+                    <span className="flex-shrink-0 mt-[3px]" style={{ color: 'rgba(184,154,79,0.55)', fontSize: '0.8125rem' }}>—</span>
+                    <p className="text-body-l leading-[1.55] font-normal" style={{ color: 'rgba(255,255,255,0.68)' }}>
                       {item}
                     </p>
                   </div>
@@ -981,7 +980,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* Bonus za prva 3 prijavljena */}
       <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="pt-24 pb-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             <motion.div
               variants={fadeIn}
@@ -991,11 +990,11 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0}
               className="mb-12"
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-6" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-6" style={{ color: '#B89A4F' }}>
                 Bonus za prva 3 prijavljena
               </p>
               <div className="w-10 h-px mb-9" style={{ backgroundColor: 'rgba(184,154,79,0.28)' }} />
-              <p className="text-[14px] leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
+              <p className="text-body-l leading-[1.85] font-normal" style={{ color: '#5F5A52', maxWidth: '54ch' }}>
                 Prva 3 polaznika koja rezerviraju mjesto dobivaju dodatne resurse koji nisu dio standardnog programa.
               </p>
             </motion.div>
@@ -1021,16 +1020,16 @@ const CalabashCertificationPage: React.FC = () => {
                     <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: '2rem', color: 'rgba(184,154,79,0.28)' }}>
                       {bonus.n}
                     </p>
-                    <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
+                    <p className="text-body-l leading-snug font-medium mb-3" style={{ color: '#1F1D1A' }}>
                       {bonus.title}
                     </p>
-                    <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
+                    <p className="text-body leading-[1.72] font-normal" style={{ color: '#8A8480' }}>
                       {bonus.note}
                     </p>
                     {bonus.bullets && (
                       <ul className="mt-4 space-y-2">
                         {bonus.bullets.map((b, j) => (
-                          <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
+                          <li key={j} className="flex gap-3 text-body leading-[1.6] font-normal" style={{ color: '#8A8480' }}>
                             <span className="flex-shrink-0" style={{ color: 'rgba(184,154,79,0.55)' }}>—</span>
                             <span>{b}</span>
                           </li>
@@ -1038,7 +1037,7 @@ const CalabashCertificationPage: React.FC = () => {
                       </ul>
                     )}
                     {bonus.disclaimer && (
-                      <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
+                      <p className="text-body leading-[1.7] font-normal mt-5" style={{ color: 'rgba(0,0,0,0.42)', fontStyle: 'italic' }}>
                         {bonus.disclaimer}
                       </p>
                     )}
@@ -1054,7 +1053,7 @@ const CalabashCertificationPage: React.FC = () => {
       {/* FAQ */}
       <section style={{ background: '#FAF8F4', borderTop: '1px solid rgba(0,0,0,0.05)' }} className="pt-24 pb-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-shell mx-auto">
 
             <motion.div
               variants={fadeIn}
@@ -1064,10 +1063,10 @@ const CalabashCertificationPage: React.FC = () => {
               custom={0}
               className="mb-12"
             >
-              <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
+              <p className="text-label uppercase tracking-[0.25em] font-normal mb-5" style={{ color: '#B89A4F' }}>
                 Česta pitanja
               </p>
-              <h2 className="font-playfair font-semibold text-[1.75rem] md:text-[2.1rem] leading-[1.22]" style={{ color: '#1F1D1A' }}>
+              <h2 className="font-playfair font-semibold leading-[1.22] text-h2" style={{ color: '#1F1D1A' }}>
                 Što vas zanima.
               </h2>
             </motion.div>
@@ -1087,13 +1086,13 @@ const CalabashCertificationPage: React.FC = () => {
                     style={{ borderTop: '1px solid rgba(0,0,0,0.07)', borderBottom: 'none' }}
                   >
                     <AccordionTrigger
-                      className="py-5 text-left font-normal text-[14px] hover:no-underline"
+                      className="py-5 text-left font-normal text-body-l hover:no-underline"
                       style={{ color: '#1F1D1A' }}
                     >
                       {item.pitanje}
                     </AccordionTrigger>
                     <AccordionContent
-                      className="pb-5 text-[13px] leading-[1.85] font-normal"
+                      className="pb-5 text-body-l leading-[1.85] font-normal"
                       style={{ color: '#7A7570' }}
                     >
                       {item.odgovor}

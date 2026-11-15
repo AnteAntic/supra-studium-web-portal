@@ -1,3 +1,4 @@
+import { YouTubeFacade } from '@/components/ui/YouTubeFacade';
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -166,7 +167,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Facts band */}
       <div style={{ borderBottom: '1px solid rgba(0,0,0,0.07)', backgroundColor: '#FAF8F4' }}>
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-shell mx-auto px-6">
           <div className="flex flex-wrap items-stretch">
             {[
               { field: 'Razine', value: '5 stupnjeva' },
@@ -182,13 +183,13 @@ export default function ManualTherapySchoolPage() {
                 }}
               >
                 <p
-                  className="text-[9px] uppercase tracking-[0.24em] font-normal mb-1.5"
+                  className="text-label uppercase tracking-[0.24em] font-normal mb-1.5"
                   style={{ color: '#9A9590' }}
                 >
                   {fact.field}
                 </p>
                 <p
-                  className="text-[13.5px] font-normal"
+                  className="text-body-l font-normal"
                   style={{ color: '#1F1D1A' }}
                 >
                   {fact.value}
@@ -201,7 +202,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Klinička observacija */}
       <section className="pt-24 pb-20 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -209,13 +210,13 @@ export default function ManualTherapySchoolPage() {
             viewport={{ once: true }}
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-7"
               style={{ color: '#B89A4F' }}
             >
               Klinička perspektiva
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.75rem] md:text-[2rem] leading-[1.2]"
+              className="font-playfair font-semibold leading-[1.2] text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Većina terapeuta naučila je dovoljno tehnika.
@@ -230,7 +231,7 @@ export default function ManualTherapySchoolPage() {
             className="md:pt-2"
           >
             <p
-              className="text-[13.5px] leading-[1.82] font-normal mb-5"
+              className="text-body-l leading-[1.82] font-normal mb-5"
               style={{ color: '#5F5A52' }}
             >
               Problem koji se ponavlja u praksi nije nedostatak tehnika — nego znati kada, na koga i
@@ -238,7 +239,7 @@ export default function ManualTherapySchoolPage() {
               osnove radi dobre tretmane slučajno, a ne sustavno.
             </p>
             <p
-              className="text-[13.5px] leading-[1.82] font-normal"
+              className="text-body-l leading-[1.82] font-normal"
               style={{ color: '#5F5A52' }}
             >
               Škola manualne terapije počinje tamo gdje se obično staje — dijagnozom. Svaki stupanj
@@ -250,7 +251,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Observation rows — editorial pairs, no boxes */}
       <section className="pb-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           {[
             {
               situacija: 'Bol u leđima koja se ne poboljšava — i terapeut koji ne zna zašto.',
@@ -276,13 +277,13 @@ export default function ManualTherapySchoolPage() {
               style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
             >
               <p
-                className="text-[14px] leading-[1.75] font-normal"
+                className="text-body-l leading-[1.75] font-normal"
                 style={{ color: '#1F1D1A' }}
               >
                 {row.situacija}
               </p>
               <p
-                className="text-[13.5px] leading-[1.78] font-normal"
+                className="text-body-l leading-[1.78] font-normal"
                 style={{ color: '#7A7570' }}
               >
                 {row.observacija}
@@ -314,7 +315,7 @@ export default function ManualTherapySchoolPage() {
           />
           <div className="absolute bottom-8 left-8 md:left-14">
             <p
-              className="text-[10px] uppercase tracking-[0.16em] font-normal"
+              className="text-label uppercase tracking-[0.16em] font-normal"
               style={{ color: 'rgba(255,255,255,0.65)' }}
             >
               Praktični rad · Stupanj I
@@ -325,7 +326,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Postupnik manualnog terapeuta */}
       <section className="pt-24 pb-20 px-6" style={{ backgroundColor: '#FAF8F4' }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -334,19 +335,19 @@ export default function ManualTherapySchoolPage() {
             className="mb-16"
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-7"
               style={{ color: '#B89A4F' }}
             >
               Klinički algoritam
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.75rem] md:text-[2rem] leading-[1.2] mb-6"
+              className="font-playfair font-semibold leading-[1.2] mb-6 text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Postupnik manualnog terapeuta.
             </h2>
             <p
-              className="text-[13.5px] leading-[1.82] font-normal"
+              className="text-body-l leading-[1.82] font-normal"
               style={{ color: '#7A7570', maxWidth: '52ch' }}
             >
               Pet koraka kliničke procjene koje svaki polaznik usvaja kao radni okvir.
@@ -373,13 +374,13 @@ export default function ManualTherapySchoolPage() {
                   {korak.broj}
                 </span>
                 <p
-                  className="text-[14px] font-normal pt-1"
+                  className="text-body-l font-normal pt-1"
                   style={{ color: '#1F1D1A' }}
                 >
                   {korak.naziv}
                 </p>
                 <p
-                  className="text-[13.5px] leading-[1.78] font-normal pt-0.5"
+                  className="text-body-l leading-[1.78] font-normal pt-0.5"
                   style={{ color: '#7A7570' }}
                 >
                   {korak.opis}
@@ -393,7 +394,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Dr. Stošić interview — cinematic placeholder until video is ready */}
       <section className="pt-12 pb-20 px-6" style={{ backgroundColor: '#F0EDE6' }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -402,13 +403,13 @@ export default function ManualTherapySchoolPage() {
             className="mb-6"
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-5"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-5"
               style={{ color: '#B89A4F' }}
             >
               Razgovor s voditeljem
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.55rem] md:text-[1.8rem] leading-[1.25]"
+              className="font-playfair font-semibold leading-[1.25] text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Mr.sc. A. Stošić, dr.med — o dijagnostici i manualnoj terapiji.
@@ -424,14 +425,10 @@ export default function ManualTherapySchoolPage() {
             className="relative w-full mb-5"
             style={{ paddingBottom: '56.25%' }}
           >
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube-nocookie.com/embed/y3OMngp9MRg"
+            <YouTubeFacade
+              id="y3OMngp9MRg"
               title="Mr.sc. A. Stošić — intervju o manualnoj terapiji"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-              style={{ border: 'none' }}
+              embedSrc="https://www.youtube-nocookie.com/embed/y3OMngp9MRg"
             />
           </motion.div>
 
@@ -441,7 +438,7 @@ export default function ManualTherapySchoolPage() {
             whileInView="visible"
             custom={0.2}
             viewport={{ once: true }}
-            className="text-[11px] font-normal"
+            className="text-caption font-normal"
             style={{ color: 'rgba(31,29,26,0.42)' }}
           >
             Intervju i reportaža objavljeni na portalu Extravagant.{' '}
@@ -463,7 +460,7 @@ export default function ManualTherapySchoolPage() {
         className="py-24 px-6"
         style={{ backgroundColor: '#1A1814' }}
       >
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -471,19 +468,19 @@ export default function ManualTherapySchoolPage() {
             viewport={{ once: true }}
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-7"
               style={{ color: '#B89A4F' }}
             >
               Metoda
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.75rem] md:text-[2rem] leading-[1.2] mb-6"
+              className="font-playfair font-semibold leading-[1.2] mb-6 text-h2"
               style={{ color: 'rgba(237,233,227,0.92)' }}
             >
               Što je manualna terapija na ovoj školi.
             </h2>
             <p
-              className="text-[13.5px] leading-[1.82] font-normal"
+              className="text-body-l leading-[1.82] font-normal"
               style={{ color: 'rgba(237,233,227,0.68)' }}
             >
               Svaka tehnika je klinički alat s indikacijom i kontraindikacijom. Program ih ne
@@ -505,7 +502,7 @@ export default function ManualTherapySchoolPage() {
                 style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
               >
                 <p
-                  className="text-[13px] font-normal"
+                  className="text-body-l font-normal"
                   style={{ color: 'rgba(237,233,227,0.72)', lineHeight: '1.5' }}
                 >
                   {m}
@@ -519,7 +516,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Program — 5 stupnjeva */}
       <section ref={programRef} className="py-24 px-6" style={{ backgroundColor: '#FAF8F4' }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -528,13 +525,13 @@ export default function ManualTherapySchoolPage() {
             className="mb-16"
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-7"
               style={{ color: '#B89A4F' }}
             >
               Program
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.75rem] md:text-[2rem] leading-[1.2]"
+              className="font-playfair font-semibold leading-[1.2] text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Pet stupnjeva. Progresivno.
@@ -561,19 +558,19 @@ export default function ManualTherapySchoolPage() {
                 </span>
                 <div>
                   <p
-                    className="text-[10px] uppercase tracking-[0.20em] font-normal mb-2"
+                    className="text-label uppercase tracking-[0.20em] font-normal mb-2"
                     style={{ color: 'rgba(31,29,26,0.38)' }}
                   >
                     {s.label}
                   </p>
                   <h3
-                    className="text-[14.5px] font-medium mb-3 leading-snug"
+                    className="text-body-l font-medium mb-3 leading-snug"
                     style={{ color: '#1F1D1A' }}
                   >
                     {s.title}
                   </h3>
                   <p
-                    className="text-[13px] leading-[1.78] font-normal"
+                    className="text-body-l leading-[1.78] font-normal"
                     style={{ color: '#7A7570', maxWidth: '58ch' }}
                   >
                     {s.body}
@@ -581,7 +578,7 @@ export default function ManualTherapySchoolPage() {
                 </div>
                 <div className="flex flex-col items-end gap-3 md:pt-1">
                   <span
-                    className="text-[11px] font-normal whitespace-nowrap"
+                    className="text-caption font-normal whitespace-nowrap"
                     style={{ color: 'rgba(31,29,26,0.38)' }}
                   >
                     {s.duration}
@@ -590,7 +587,7 @@ export default function ManualTherapySchoolPage() {
                     href={pdfLinks[(i + 1) as keyof typeof pdfLinks]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] uppercase tracking-[0.20em] font-normal whitespace-nowrap transition-colors duration-300"
+                    className="text-label uppercase tracking-[0.20em] font-normal whitespace-nowrap transition-colors duration-300"
                     style={{ color: '#B89A4F' }}
                     onMouseEnter={e => (e.currentTarget.style.color = '#1F1D1A')}
                     onMouseLeave={e => (e.currentTarget.style.color = '#B89A4F')}
@@ -607,7 +604,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Dokumentacija — editorial variable-width layout */}
       <section className="pb-20 px-6" style={{ backgroundColor: '#FAF8F4' }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-[1fr_0.62fr] gap-3">
             <motion.figure
               variants={fadeIn}
@@ -625,7 +622,7 @@ export default function ManualTherapySchoolPage() {
                 />
               </div>
               <figcaption
-                className="mt-2.5 text-[10px] uppercase tracking-[0.18em] font-normal"
+                className="mt-2.5 text-label uppercase tracking-[0.18em] font-normal"
                 style={{ color: 'rgba(31,29,26,0.38)' }}
               >
                 Mr.sc. A. Stošić · anatomska demonstracija
@@ -651,7 +648,7 @@ export default function ManualTherapySchoolPage() {
                   />
                 </div>
                 <figcaption
-                  className="mt-2.5 text-[10px] uppercase tracking-[0.18em] font-normal"
+                  className="mt-2.5 text-label uppercase tracking-[0.18em] font-normal"
                   style={{ color: 'rgba(31,29,26,0.38)' }}
                 >
                   Parovi u praktičnom radu
@@ -676,7 +673,7 @@ export default function ManualTherapySchoolPage() {
                   />
                 </div>
                 <figcaption
-                  className="mt-2.5 text-[10px] uppercase tracking-[0.18em] font-normal"
+                  className="mt-2.5 text-label uppercase tracking-[0.18em] font-normal"
                   style={{ color: 'rgba(31,29,26,0.38)' }}
                 >
                   Palpacija lumbalne regije
@@ -689,7 +686,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* O predavaču */}
       <section className="py-24 px-6" style={{ backgroundColor: '#F0EDE6' }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -722,7 +719,7 @@ export default function ManualTherapySchoolPage() {
             className="md:pt-8"
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-7"
               style={{ color: '#B89A4F' }}
             >
               Voditelj škole
@@ -732,19 +729,19 @@ export default function ManualTherapySchoolPage() {
               style={{ backgroundColor: 'rgba(184,154,79,0.35)' }}
             />
             <h2
-              className="font-playfair font-semibold text-[1.6rem] leading-snug mb-2"
+              className="font-playfair font-semibold leading-snug mb-2 text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Mr.sc. A. Stošić, dr.med
             </h2>
             <p
-              className="text-[10px] uppercase tracking-[0.20em] font-normal mb-10"
+              className="text-label uppercase tracking-[0.20em] font-normal mb-10"
               style={{ color: 'rgba(31,29,26,0.45)' }}
             >
               OMT · DO · Licencirani manualni terapeut
             </p>
             <p
-              className="text-[13.5px] leading-[1.82] font-normal mb-5"
+              className="text-body-l leading-[1.82] font-normal mb-5"
               style={{ color: '#5F5A52' }}
             >
               Liječnik specijaliziran za ortopedsku manualnu terapiju i osteopatiju. Razvio je
@@ -752,14 +749,14 @@ export default function ManualTherapySchoolPage() {
               križoboljom — algoritam koji čini okosnicu ovog programa.
             </p>
             <p
-              className="text-[13.5px] leading-[1.82] font-normal mb-5"
+              className="text-body-l leading-[1.82] font-normal mb-5"
               style={{ color: '#5F5A52' }}
             >
               Predaje u malim grupama. Program nije namijenjen masovnoj edukaciji — namijenjen
               je terapeutima koji žele razumjeti uzrok, ne samo tretirati simptom.
             </p>
             <p
-              className="text-[13px] leading-[1.78] font-normal"
+              className="text-body-l leading-[1.78] font-normal"
               style={{ color: 'rgba(31,29,26,0.42)' }}
             >
               Ante Antić — organizator i koordinator škole.
@@ -770,7 +767,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* Field observations — 3 practitioner voices */}
       <section className="py-24 px-6" style={{ backgroundColor: '#FAF8F4' }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -779,7 +776,7 @@ export default function ManualTherapySchoolPage() {
             className="mb-14"
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal"
+              className="text-label uppercase tracking-[0.28em] font-normal"
               style={{ color: '#B89A4F' }}
             >
               Iz prakse
@@ -816,7 +813,7 @@ export default function ManualTherapySchoolPage() {
                 {obs.text}
               </p>
               <p
-                className="text-[9.5px] uppercase tracking-[0.20em] font-normal"
+                className="text-label uppercase tracking-[0.20em] font-normal"
                 style={{ color: 'rgba(31,29,26,0.40)' }}
               >
                 {obs.attr}
@@ -834,7 +831,7 @@ export default function ManualTherapySchoolPage() {
         className="py-24 px-6"
         style={{ backgroundColor: '#1A1814' }}
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -843,13 +840,13 @@ export default function ManualTherapySchoolPage() {
             className="mb-16"
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-7"
               style={{ color: '#B89A4F' }}
             >
               Termini i kotizacija
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.75rem] md:text-[2rem] leading-[1.2]"
+              className="font-playfair font-semibold leading-[1.2] text-h2"
               style={{ color: 'rgba(237,233,227,0.92)' }}
             >
               Pet razina. Vlastiti tempo.
@@ -870,33 +867,33 @@ export default function ManualTherapySchoolPage() {
               >
                 <div>
                   <p
-                    className="text-[13.5px] font-normal"
+                    className="text-body-l font-normal"
                     style={{ color: 'rgba(237,233,227,0.88)' }}
                   >
                     {t.stupanj}
                   </p>
                   <p
-                    className="text-[12px] mt-0.5 font-normal"
+                    className="text-body mt-0.5 font-normal"
                     style={{ color: 'rgba(237,233,227,0.56)' }}
                   >
                     {t.lokacija}
                   </p>
                 </div>
                 <p
-                  className="hidden md:block text-[12px] uppercase tracking-[0.08em] font-normal"
+                  className="hidden md:block text-body-s uppercase tracking-[0.08em] font-normal whitespace-nowrap"
                   style={{ color: 'rgba(237,233,227,0.62)' }}
                 >
                   {t.datum}
                 </p>
                 <p
-                  className="hidden md:block text-[13.5px] font-normal"
+                  className="hidden md:block text-body-l font-normal"
                   style={{ color: 'rgba(237,233,227,0.88)' }}
                 >
                   {t.cijena}
                 </p>
                 <div className="flex flex-col md:flex-row items-end md:items-center gap-1 md:gap-0">
                   <p
-                    className="md:hidden text-[13px] font-normal"
+                    className="md:hidden text-body-l font-normal"
                     style={{ color: 'rgba(237,233,227,0.88)' }}
                   >
                     {t.cijena}
@@ -905,7 +902,7 @@ export default function ManualTherapySchoolPage() {
                     href={t.pdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] uppercase tracking-[0.20em] font-normal transition-colors duration-300 whitespace-nowrap"
+                    className="text-label uppercase tracking-[0.20em] font-normal transition-colors duration-300 whitespace-nowrap"
                     style={{ color: '#B89A4F' }}
                     onMouseEnter={e => (e.currentTarget.style.color = 'rgba(237,233,227,0.88)')}
                     onMouseLeave={e => (e.currentTarget.style.color = '#B89A4F')}
@@ -932,7 +929,7 @@ export default function ManualTherapySchoolPage() {
               rel="noopener noreferrer"
               className="font-normal uppercase whitespace-nowrap"
               style={{
-                fontSize: '11px',
+                fontSize: '0.8125rem',
                 letterSpacing: '0.12em',
                 padding: '8px 22px',
                 borderRadius: '4px',
@@ -958,7 +955,7 @@ export default function ManualTherapySchoolPage() {
               rel="noopener noreferrer"
               className="font-normal uppercase"
               style={{
-                fontSize: '11px',
+                fontSize: '0.8125rem',
                 letterSpacing: '0.12em',
                 color: 'rgba(255,255,255,0.62)',
                 transition: 'color 0.35s ease',
@@ -984,10 +981,10 @@ export default function ManualTherapySchoolPage() {
             className="mt-10 pt-8"
             style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
           >
-            <p className="text-[12px] leading-[1.65] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
+            <p className="text-body leading-[1.65] font-normal" style={{ color: 'rgba(255,255,255,0.42)' }}>
               Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
             </p>
-            <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
+            <p className="text-body leading-[1.65] font-normal mt-2" style={{ color: 'rgba(255,255,255,0.42)' }}>
               Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{' '}
               <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: '#B89A4F' }}>info@uciliste-suprastudium.hr</a>
               {' '}ili nazovi{' '}
@@ -1000,7 +997,7 @@ export default function ManualTherapySchoolPage() {
 
       {/* FAQ */}
       <section id="faq" className="py-24 px-6" style={{ backgroundColor: '#FAF8F4' }}>
-        <div className="max-w-3xl mx-auto">
+        <div className="shell-narrow">
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -1009,13 +1006,13 @@ export default function ManualTherapySchoolPage() {
             className="mb-12"
           >
             <p
-              className="text-[10px] uppercase tracking-[0.28em] font-normal mb-7"
+              className="text-label uppercase tracking-[0.28em] font-normal mb-7"
               style={{ color: '#B89A4F' }}
             >
               Česta pitanja
             </p>
             <h2
-              className="font-playfair font-semibold text-[1.75rem] md:text-[2rem] leading-[1.2]"
+              className="font-playfair font-semibold leading-[1.2] text-h2"
               style={{ color: '#1F1D1A' }}
             >
               Najčešća pitanja prije početka.
@@ -1038,13 +1035,13 @@ export default function ManualTherapySchoolPage() {
                   className="border-b-0"
                 >
                   <AccordionTrigger
-                    className="text-[13.5px] font-normal hover:no-underline py-5 text-left"
+                    className="text-body-l font-normal hover:no-underline py-5 text-left"
                     style={{ color: '#1F1D1A' }}
                   >
                     {item.q}
                   </AccordionTrigger>
                   <AccordionContent
-                    className="text-[13px] leading-[1.82] font-normal pb-5"
+                    className="text-body-l leading-[1.82] font-normal pb-5"
                     style={{ color: '#7A7570' }}
                   >
                     {item.a}

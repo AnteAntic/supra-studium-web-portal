@@ -50,7 +50,7 @@ const COLOR = {
   active:   (onLight: boolean) => onLight ? '#1F1D1A'             : '#ffffff',
 };
 
-const LABEL = 'text-[13px] uppercase tracking-[0.12em] font-medium';
+const LABEL = 'text-caption uppercase tracking-[0.14em] font-medium';
 
 // ─── Tečajevi dropdown ───────────────────────────────────────────────────────
 const TecajeviDropdown = ({
@@ -77,31 +77,32 @@ const TecajeviDropdown = ({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        {/* Color lives on the <li> so the inner <span> inherits it */}
-        <li
-          className="relative group list-none cursor-pointer outline-none select-none"
-          style={{ color: defaultColor, transition: 'color 200ms' }}
-          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = hoverColor; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = defaultColor; }}
-        >
-          <span className={`flex items-center gap-1 px-4 py-2.5 ${LABEL}`}>
+      {/* Color lives on the <li> so the trigger inherits it */}
+      <li
+        className="relative group list-none select-none"
+        style={{ color: defaultColor, transition: 'color 200ms' }}
+        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = hoverColor; }}
+        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = defaultColor; }}
+      >
+        {/* A real button: reachable with Tab, opens with Enter / Space / Arrow keys */}
+        <DropdownMenuTrigger asChild>
+          <button type="button" className={`flex items-center gap-1 px-4 py-2.5 cursor-pointer ${LABEL}`}>
             TEČAJEVI
-            <ChevronDown className="w-3 h-3 opacity-70 mt-px" />
-          </span>
-          {/* Active underline */}
-          {isActive && (
-            <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#B89A4F]" />
-          )}
-          {/* Hover underline */}
-          {!isActive && (
-            <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#B89A4F] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-          )}
-        </li>
-      </DropdownMenuTrigger>
+            <ChevronDown className="w-3 h-3 opacity-70 mt-px" aria-hidden="true" />
+          </button>
+        </DropdownMenuTrigger>
+        {/* Active underline */}
+        {isActive && (
+          <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#B89A4F] pointer-events-none" />
+        )}
+        {/* Hover underline */}
+        {!isActive && (
+          <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#B89A4F] scale-x-0 group-hover:scale-x-100 group-focus-within:scale-x-100 transition-transform duration-200 origin-left pointer-events-none" />
+        )}
+      </li>
 
       <DropdownMenuContent
-        className="w-52 border z-50 rounded-none p-0"
+        className="w-72 border z-50 rounded-none p-0"
         style={{
           background: 'rgba(243,238,230,0.92)',
           borderColor: 'rgba(184,154,79,0.10)',
@@ -119,7 +120,7 @@ const TecajeviDropdown = ({
               <DropdownMenuItem key={index} asChild>
                 <Link
                   to={course.href}
-                  className="flex items-center px-4 py-3 text-[13px] font-normal cursor-pointer focus:outline-none"
+                  className="flex items-center px-4 py-3 text-body font-normal cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#B89A4F] focus-visible:-outline-offset-2"
                   style={{
                     color: itemActive ? '#1F1D1A' : '#3D3A35',
                     background: itemActive ? 'rgba(184,154,79,0.14)' : 'transparent',
@@ -146,7 +147,6 @@ const TecajeviDropdown = ({
                     el.style.background = 'rgba(184,154,79,0.10)';
                     el.style.color = '#1F1D1A';
                     el.style.boxShadow = 'inset 1px 0 0 rgba(184,154,79,0.7)';
-                    el.style.outline = 'none';
                   }}
                   onBlur={e => {
                     if (itemActive) return;

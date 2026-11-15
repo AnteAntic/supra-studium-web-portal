@@ -121,7 +121,6 @@ export default function CuppingPage() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -151,7 +150,7 @@ export default function CuppingPage() {
     <div className="bg-[#F4F1EA] min-h-screen">
 
       {/* ── Hero ───────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+      <section ref={heroRef} className="relative min-h-hero overflow-hidden -mt-20">
 
         {/* Image */}
         <div className="absolute inset-0 top-[-5rem]">
@@ -200,19 +199,19 @@ export default function CuppingPage() {
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/22 to-transparent" />
 
         {/* Text content */}
-        <motion.div style={{ opacity, y }} className="absolute inset-0">
-          <div className="container mx-auto px-6 relative z-10 h-full flex items-center">
-            <div className="max-w-xl relative w-full" style={{ marginTop: "-3%" }}>
+        <motion.div style={{ opacity }} className="relative z-10">
+          <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-center">
+            <div className="max-w-[54rem] relative w-full" style={{ marginTop: "-3%" }}>
 
               {/* Eyebrow */}
               <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="mb-6"
               >
                 <span
-                  className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] whitespace-nowrap overflow-hidden block"
+                  className="text-label sm:text-caption font-normal uppercase tracking-[0.2em] sm:tracking-[0.28em] block"
                   style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
                 >
                   Cupping Edukacija · Zagreb
@@ -231,13 +230,13 @@ export default function CuppingPage() {
 
               {/* Headline */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: "easeOut" }}
                 className="mb-9"
               >
                 <h1
-                  className="font-playfair font-semibold text-white leading-[1.18] text-[1.75rem] sm:text-[2rem] md:text-[2.1rem]"
+                  className="font-playfair font-semibold text-white leading-[1.18] text-display"
                   style={{ textShadow: "0 1px 12px rgba(0,0,0,0.38), 0 1px 3px rgba(0,0,0,0.22)" }}
                 >
                   Negativni pritisak.
@@ -248,20 +247,20 @@ export default function CuppingPage() {
 
               {/* Subheadline */}
               <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
                 className="mb-5"
               >
-                <p className="text-[13px] font-normal text-white/65 leading-[1.65] max-w-sm">
+                <p className="text-body-l font-normal text-white/65 leading-[1.65] max-w-sm">
                   Jednodnevna edukacija koja obuhvaća 9 kliznih tehnika, 3 specijalizirana protokola i TKM integraciju.
                 </p>
               </motion.div>
 
               {/* Meta strip */}
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.05, duration: 0.85, ease: 'easeOut' }}
                 className="mb-12 flex flex-wrap items-center"
                 style={{ columnGap: '14px', rowGap: '4px' }}
@@ -269,11 +268,11 @@ export default function CuppingPage() {
                 {['1 dan', 'Rad u paru', 'Certifikat', '9 kliznih tehnika'].map((item, i) => (
                   <React.Fragment key={item}>
                     {i > 0 && (
-                      <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '11px', lineHeight: 1 }}>·</span>
+                      <span style={{ color: 'rgba(255,255,255,0.32)', fontSize: '0.8125rem', lineHeight: 1 }}>·</span>
                     )}
                     <span
                       className="font-medium"
-                      style={{ fontSize: '11px', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
+                      style={{ fontSize: '0.8125rem', letterSpacing: '0.11em', color: 'rgba(255,255,255,0.78)', textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
                     >
                       {item}
                     </span>
@@ -283,8 +282,8 @@ export default function CuppingPage() {
 
               {/* CTA group */}
               <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.7 }}
                 className="flex flex-row items-center gap-4"
               >
@@ -315,7 +314,7 @@ export default function CuppingPage() {
 
       {/* ── Facts Band ─────────────────────────────────────────── */}
       <section className="bg-[#F4F1EA] pt-5">
-        <div className="container mx-auto px-6 md:px-10">
+        <div className="container mx-auto px-6">
           <div
             className="grid grid-cols-2 md:grid-cols-4"
             style={{
@@ -337,7 +336,7 @@ export default function CuppingPage() {
                 }}
               >
                 <div
-                  className="text-[9.5px] uppercase tracking-[0.25em] mb-2 font-normal"
+                  className="text-label uppercase tracking-[0.25em] mb-2 font-normal"
                   style={{ color: "#B89A4F" }}
                 >
                   {item.field}
@@ -349,7 +348,7 @@ export default function CuppingPage() {
                   {item.value}
                 </div>
                 <div
-                  className="text-[12px] mt-1 font-normal leading-relaxed"
+                  className="text-body mt-1 font-normal leading-relaxed"
                   style={{ color: "#3b3b3b" }}
                 >
                   {item.detail}
@@ -373,17 +372,17 @@ export default function CuppingPage() {
 
       {/* ── Klinička observacija ─────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Klinička perspektiva
             </p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug">
+            <h2 className="font-playfair text-[#1F1D1A] leading-snug text-h2">
               Vakuum nije masaža. Radi drugačije.
             </h2>
           </motion.div>
@@ -394,11 +393,11 @@ export default function CuppingPage() {
             custom={0.15}
             viewport={{ once: true }}
           >
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-6">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-6">
               Svaka tehnika masaže komprimira tkivo — pritišće prema dole. Cupping radi obrnuto:
               negativni pritisak podiže fasciju, odvaja slojeve, otvara prostor za cirkulaciju i limfu.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed">
+            <p className="text-body text-[#3b3b3b] leading-relaxed">
               Terapeuti koji prvi put rade s čašama opisuju isto iznenađenje — tkivo reagira na mjestima
               gdje manualni pritisak nije dostizao. Tečaj počinje razumijevanjem tog mehanizma.
             </p>
@@ -408,7 +407,7 @@ export default function CuppingPage() {
 
       {/* ── Observation cards ─────────────────────────────────── */}
       <section className="py-16 px-6 bg-[#FAF8F4]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-3 gap-px bg-[#e3e3e3]">
             {[
               { text: "Vakuum podiže tkivo — ne komprimira. Fascija se mobilizira drukčije nego pod rukom." },
@@ -424,7 +423,7 @@ export default function CuppingPage() {
                 viewport={{ once: true }}
                 className="bg-[#FAF8F4] px-8 py-10"
               >
-                <p className="text-sm text-[#1F1D1A] leading-relaxed font-playfair italic">
+                <p className="text-body text-[#1F1D1A] leading-relaxed font-playfair italic">
                   "{card.text}"
                 </p>
               </motion.div>
@@ -435,7 +434,7 @@ export default function CuppingPage() {
 
       {/* ── Clinical snapshot ─────────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -443,7 +442,7 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Klinička situacija
             </p>
             <div className="w-10 h-px bg-[#a58d4e]/30 mb-8" />
@@ -458,12 +457,12 @@ export default function CuppingPage() {
               viewport={{ once: true }}
               className="border-l border-[#a58d4e]/30 pl-8"
             >
-              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-4">
+              <p className="text-body text-[#3b3b3b] leading-relaxed mb-4">
                 Pacijentica s kroničnom napetošću trapezija, prethodno tretirana standardnom
                 masažom bez trajnog poboljšanja. Manualni pritisak smanjuje tonus na sat-dva.
                 Na sljedećem terminu — ista napetost.
               </p>
-              <p className="text-sm text-[#1F1D1A] leading-relaxed font-medium">
+              <p className="text-body text-[#1F1D1A] leading-relaxed font-medium">
                 Flash cupping + klizanje po fascijskoj liniji — napetost se nije vraćala tjedan dana.
                 Nije bila u mišiću. Bila je u fasciji iznad njega.
               </p>
@@ -477,11 +476,11 @@ export default function CuppingPage() {
               viewport={{ once: true }}
               className="border-l border-[#a58d4e]/30 pl-8"
             >
-              <p className="text-sm text-[#3b3b3b] leading-relaxed mb-4">
+              <p className="text-body text-[#3b3b3b] leading-relaxed mb-4">
                 Terapeut koji završi tečaj ne zna samo tehniku — zna mehanizam iza nje.
                 Zna kada primijeniti statički, kada klizni, kada ne primijeniti cupping uopće.
               </p>
-              <p className="text-sm text-[#1F1D1A] leading-relaxed font-medium">
+              <p className="text-body text-[#1F1D1A] leading-relaxed font-medium">
                 Kontraindikacije su jednako važne kao i indikacije. To je dio programa.
               </p>
             </motion.blockquote>
@@ -511,7 +510,7 @@ export default function CuppingPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0e0e0e]/55 via-[#0e0e0e]/20 to-transparent" />
         <div className="absolute bottom-10 left-8 md:left-16">
-          <p className="text-[10px] uppercase tracking-[0.28em] text-white/50">
+          <p className="text-label uppercase tracking-[0.28em] text-white/50">
             Primjena · vakuumska čaša
           </p>
         </div>
@@ -519,7 +518,7 @@ export default function CuppingPage() {
 
       {/* ── Metoda — 3 protokola ─────────────────────────────── */}
       <section className="py-24 px-6 bg-[#0e0e0e]" id="metoda">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
             <motion.div
               variants={fadeUp}
@@ -527,10 +526,10 @@ export default function CuppingPage() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+              <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
                 Metoda
               </p>
-              <h2 className="font-playfair text-3xl text-white leading-snug">
+              <h2 className="font-playfair text-white leading-snug text-h2">
                 Tri protokola razvijena iz kliničke prakse.
               </h2>
             </motion.div>
@@ -541,7 +540,7 @@ export default function CuppingPage() {
               custom={0.15}
               viewport={{ once: true }}
             >
-              <p className="text-sm text-white/55 leading-relaxed">
+              <p className="text-body text-white/55 leading-relaxed">
                 Program nije preuzet iz stranih edukacija. Razvijen je iz kliničke prakse kroz
                 više godina rada s pacijentima.
               </p>
@@ -579,8 +578,8 @@ export default function CuppingPage() {
                   {p.broj}
                 </span>
                 <div>
-                  <h3 className="text-base font-medium text-[#ede9e3] mb-3">{p.naziv}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(237,233,227,0.55)" }}>
+                  <h3 className="text-body-l font-medium text-[#ede9e3] mb-3">{p.naziv}</h3>
+                  <p className="text-body leading-relaxed" style={{ color: "rgba(237,233,227,0.55)" }}>
                     {p.opis}
                   </p>
                 </div>
@@ -592,7 +591,7 @@ export default function CuppingPage() {
 
       {/* ── 9 tehnika ────────────────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -600,10 +599,10 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Program
             </p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A] leading-snug max-w-lg">
+            <h2 className="font-playfair text-[#1F1D1A] leading-snug max-w-lg text-h2">
               Devet tehnika. Jedan dan.
             </h2>
           </motion.div>
@@ -619,8 +618,8 @@ export default function CuppingPage() {
                 viewport={{ once: true }}
                 className="bg-[#F4F1EA] grid md:grid-cols-[200px_1fr] gap-8 px-8 py-6 items-start"
               >
-                <p className="text-sm font-medium text-[#1F1D1A]">{t.naziv}</p>
-                <p className="text-sm text-[#3b3b3b] leading-relaxed">{t.opis}</p>
+                <p className="text-body font-medium text-[#1F1D1A]">{t.naziv}</p>
+                <p className="text-body text-[#3b3b3b] leading-relaxed">{t.opis}</p>
               </motion.div>
             ))}
           </div>
@@ -629,7 +628,7 @@ export default function CuppingPage() {
 
       {/* ── Dokumentacija rada ───────────────────────────────── */}
       <section className="py-16 px-6 bg-[#FAF8F4]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
           <div className="grid grid-cols-3 gap-3">
             {[
               { src: "/lovable-uploads/cup-grid-lumbar.webp", caption: "Vakuumska aplikacija — lumbalna regija" },
@@ -653,7 +652,7 @@ export default function CuppingPage() {
                     style={{ filter: "grayscale(8%)" }}
                   />
                 </div>
-                <figcaption className="mt-2 text-[10px] text-[#3b3b3b]/50 uppercase tracking-[0.18em]">
+                <figcaption className="mt-2 text-label text-[#3b3b3b]/50 uppercase tracking-[0.18em]">
                   {img.caption}
                 </figcaption>
               </motion.figure>
@@ -664,7 +663,7 @@ export default function CuppingPage() {
 
       {/* ── O predavaču ──────────────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-shell mx-auto grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -694,29 +693,29 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="md:pt-8"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Voditelj tečaja
             </p>
             <div className="w-10 h-px bg-[#a58d4e]/30 mb-8" />
-            <h2 className="font-playfair text-2xl text-[#1F1D1A] mb-2 leading-snug">
+            <h2 className="font-playfair text-[#1F1D1A] mb-2 leading-snug text-h2">
               Ante Antić
             </h2>
             <p className="text-xs uppercase tracking-[0.2em] text-[#3b3b3b]/60 mb-8">
               Masažni terapeut · Predavač · Osnivač Supra Studium
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-5">
               Program nije nastao iz certificiranih skripti ili prevedenih materijala. Razvijen je
               kroz godine rada s kroničnom napetošću, fascijalnim restrikcijama i klijentima kod kojih
               klasična masaža nije donosila promjenu. Svaka tehnika u programu ima klinički razlog
               postojanja — indikaciju, mehanizam i granicu primjene.
             </p>
-            <p className="text-sm text-[#3b3b3b] leading-relaxed mb-5">
+            <p className="text-body text-[#3b3b3b] leading-relaxed mb-5">
               Edukacija se odvija u malim grupama. Svaki polaznik prolazi tehnike u paru, s izravnom
               korekcijom. Cilj nije demonstracija — cilj je da polaznik razumije što radi i zašto,
               i da to može ponoviti sljedeći dan u ordinaciji.
             </p>
             <blockquote className="border-l border-[#a58d4e]/30 pl-5 mt-8">
-              <p className="text-sm text-[#3b3b3b]/70 leading-relaxed italic font-playfair">
+              <p className="text-body text-[#3b3b3b]/70 leading-relaxed italic font-playfair">
                 "Cupping je jedinstven jer radi u smjeru koji ruka ne može imitirati. Ne zamjenjuje
                 masažu — proširuje ono što masaža može postići."
               </p>
@@ -730,7 +729,7 @@ export default function CuppingPage() {
 
       {/* ── Kotizacija ───────────────────────────────────────── */}
       <section className="py-24 px-6 bg-[#141311]" id="kotizacija">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
 
           {/* Header + intro */}
           <motion.div
@@ -740,13 +739,13 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#9e8a46] mb-5">
+            <p className="text-label uppercase tracking-[0.28em] text-[#9e8a46] mb-5">
               Termini i kotizacija
             </p>
-            <h2 className="font-playfair text-3xl text-[#ede9e3] leading-snug mb-6">
+            <h2 className="font-playfair text-[#ede9e3] leading-snug mb-6 text-h2">
               Dva grada. Jedan dan.
             </h2>
-            <p className="text-[13.5px] leading-[1.82]" style={{ color: "rgba(237,233,227,0.60)", maxWidth: "54ch" }}>
+            <p className="text-body-l leading-[1.82]" style={{ color: "rgba(237,233,227,0.60)", maxWidth: "54ch" }}>
               Jednodnevna klinička edukacija u malim grupama — 9 kliznih tehnika, 3 specijalizirana protokola i TKM integracija, s izravnom korekcijom rada.
             </p>
           </motion.div>
@@ -767,28 +766,28 @@ export default function CuppingPage() {
                   <p className="font-playfair font-semibold leading-none" style={{ fontSize: "3.4rem", color: "rgba(237,233,227,0.95)", letterSpacing: "-0.02em" }}>
                     350 €
                   </p>
-                  <p className="text-[12px] font-normal" style={{ color: "#c9a832" }}>
+                  <p className="text-body font-normal" style={{ color: "#c9a832" }}>
                     Early Bird
                   </p>
                 </div>
-                <p className="text-[12px] font-normal" style={{ color: "rgba(237,233,227,0.30)", textDecoration: "line-through" }}>
+                <p className="text-body font-normal" style={{ color: "rgba(237,233,227,0.30)", textDecoration: "line-through" }}>
                   Redovna cijena: 400 €
                 </p>
               </div>
               <div className="flex gap-10 md:gap-12 md:pb-2">
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>
+                  <p className="text-label uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>
                     Akontacija
                   </p>
-                  <p className="text-[15px] font-normal" style={{ color: "rgba(237,233,227,0.88)" }}>
+                  <p className="text-body-l font-normal" style={{ color: "rgba(237,233,227,0.88)" }}>
                     100 €
                   </p>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>
+                  <p className="text-label uppercase tracking-[0.18em] font-normal mb-1.5" style={{ color: "rgba(201,168,50,0.75)" }}>
                     Grupa
                   </p>
-                  <p className="text-[15px] font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>
+                  <p className="text-body-l font-normal whitespace-nowrap" style={{ color: "rgba(237,233,227,0.88)" }}>
                     Max. 12 polaznika
                   </p>
                 </div>
@@ -805,7 +804,7 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="mb-14"
           >
-            <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-2" style={{ color: "#9e8a46" }}>
+            <p className="text-label uppercase tracking-[0.22em] font-normal mb-2" style={{ color: "#9e8a46" }}>
               Termini
             </p>
             {termini.map((t, i) => (
@@ -822,14 +821,14 @@ export default function CuppingPage() {
                     <p className="font-playfair font-medium text-[1.15rem] leading-tight" style={{ color: "rgba(237,233,227,0.92)" }}>
                       {t.grad}
                     </p>
-                    <p className="text-[13px] font-normal" style={{ color: "rgba(237,233,227,0.72)" }}>
+                    <p className="text-body-l font-normal" style={{ color: "rgba(237,233,227,0.72)" }}>
                       {t.datum}
                     </p>
                   </div>
-                  <p className="text-[12px] font-normal leading-[1.6] mb-2" style={{ color: "rgba(237,233,227,0.42)" }}>
+                  <p className="text-body font-normal leading-[1.6] mb-2" style={{ color: "rgba(237,233,227,0.42)" }}>
                     {t.lokacija}
                   </p>
-                  <p className="text-[10px] uppercase tracking-[0.14em] font-medium" style={{ color: "#c9a832" }}>
+                  <p className="text-label uppercase tracking-[0.14em] font-medium" style={{ color: "#c9a832" }}>
                     Early Bird do {t.earlyBird}
                   </p>
                 </div>
@@ -837,7 +836,7 @@ export default function CuppingPage() {
                   href="https://tally.so/r/wA5kvD"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] text-[11px] uppercase tracking-[0.12em] font-medium px-6 py-2.5 rounded-sm transition-colors duration-500 md:justify-self-end"
+                  className="inline-flex items-center justify-center bg-[#c9a832]/90 hover:bg-[#c9a832] text-[#1F1D1A] text-caption uppercase tracking-[0.12em] font-medium px-6 py-2.5 rounded-sm transition-colors duration-500 md:justify-self-end"
                 >
                   Prijavi se
                 </a>
@@ -854,10 +853,10 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-[12px] leading-[1.65] font-normal" style={{ color: "rgba(237,233,227,0.42)" }}>
+            <p className="text-body leading-[1.65] font-normal" style={{ color: "rgba(237,233,227,0.42)" }}>
               Preostali iznos kotizacije plaća se najkasnije 30 dana prije početka edukacije. Prijave se u pravilu zatvaraju 45 dana prije početka pojedine edukacije kako bismo na vrijeme organizirali održavanje tečaja.
             </p>
-            <p className="text-[12px] leading-[1.65] font-normal mt-2" style={{ color: "rgba(237,233,227,0.42)" }}>
+            <p className="text-body leading-[1.65] font-normal mt-2" style={{ color: "rgba(237,233,227,0.42)" }}>
               Ako se javljaš nakon isteka tog roka, slobodno nas kontaktiraj na{" "}
               <a href="mailto:info@uciliste-suprastudium.hr" style={{ color: "#c9a832" }}>info@uciliste-suprastudium.hr</a>
               {" "}ili nazovi{" "}
@@ -876,20 +875,20 @@ export default function CuppingPage() {
             className="pt-12"
             style={{ borderTop: "1px solid rgba(237,233,227,0.08)" }}
           >
-            <p className="text-[10px] uppercase tracking-[0.22em] font-normal mb-6" style={{ color: "#9e8a46" }}>
+            <p className="text-label uppercase tracking-[0.22em] font-normal mb-6" style={{ color: "#9e8a46" }}>
               Uključeno u kotizaciju
             </p>
             <div className="grid sm:grid-cols-2 gap-x-10">
               {ukljuceno.map((item, i) => (
                 <div key={i} className="py-4 flex gap-3" style={{ borderTop: "1px solid rgba(237,233,227,0.08)" }}>
-                  <span className="flex-shrink-0 mt-[3px]" style={{ color: "rgba(201,168,50,0.55)", fontSize: "11px" }}>—</span>
-                  <p className="text-[13.5px] leading-[1.55] font-normal" style={{ color: "rgba(237,233,227,0.68)" }}>
+                  <span className="flex-shrink-0 mt-[3px]" style={{ color: "rgba(201,168,50,0.55)", fontSize: "0.8125rem" }}>—</span>
+                  <p className="text-body-l leading-[1.55] font-normal" style={{ color: "rgba(237,233,227,0.68)" }}>
                     {item}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="text-[12px] leading-[1.7] font-normal mt-6" style={{ color: "rgba(237,233,227,0.38)", fontStyle: "italic" }}>
+            <p className="text-body leading-[1.7] font-normal mt-6" style={{ color: "rgba(237,233,227,0.38)", fontStyle: "italic" }}>
               Set čaša za rad nabavlja se zasebno — preporuke dobivaš pri prijavi.
             </p>
           </motion.div>
@@ -899,7 +898,7 @@ export default function CuppingPage() {
 
       {/* ── Bonus za prva 3 prijavljena ──────────────────────── */}
       <section className="py-24 px-6" style={{ background: "#FAF8F4", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-shell mx-auto">
 
           <motion.div
             variants={fadeUp}
@@ -908,11 +907,11 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="text-[10px] uppercase tracking-[0.25em] font-normal mb-6" style={{ color: "#B89A4F" }}>
+            <p className="text-label uppercase tracking-[0.25em] font-normal mb-6" style={{ color: "#B89A4F" }}>
               Bonus za prva 3 prijavljena
             </p>
             <div className="w-10 h-px mb-9" style={{ backgroundColor: "rgba(184,154,79,0.28)" }} />
-            <p className="text-[14px] leading-[1.85] font-normal" style={{ color: "#5F5A52", maxWidth: "54ch" }}>
+            <p className="text-body-l leading-[1.85] font-normal" style={{ color: "#5F5A52", maxWidth: "54ch" }}>
               Prva 3 polaznika koja rezerviraju mjesto dobivaju dodatne resurse koji nisu dio standardnog programa.
             </p>
           </motion.div>
@@ -938,16 +937,16 @@ export default function CuppingPage() {
                   <p className="font-playfair font-normal leading-none mb-5" style={{ fontSize: "2rem", color: "rgba(184,154,79,0.28)" }}>
                     {bonus.n}
                   </p>
-                  <p className="text-[14.5px] leading-snug font-medium mb-3" style={{ color: "#1F1D1A" }}>
+                  <p className="text-body-l leading-snug font-medium mb-3" style={{ color: "#1F1D1A" }}>
                     {bonus.title}
                   </p>
-                  <p className="text-[12.5px] leading-[1.72] font-normal" style={{ color: "#8A8480" }}>
+                  <p className="text-body leading-[1.72] font-normal" style={{ color: "#8A8480" }}>
                     {bonus.note}
                   </p>
                   {bonus.bullets && (
                     <ul className="mt-4 space-y-2">
                       {bonus.bullets.map((b, j) => (
-                        <li key={j} className="flex gap-3 text-[12.5px] leading-[1.6] font-normal" style={{ color: "#8A8480" }}>
+                        <li key={j} className="flex gap-3 text-body leading-[1.6] font-normal" style={{ color: "#8A8480" }}>
                           <span className="flex-shrink-0" style={{ color: "rgba(184,154,79,0.55)" }}>—</span>
                           <span>{b}</span>
                         </li>
@@ -955,7 +954,7 @@ export default function CuppingPage() {
                     </ul>
                   )}
                   {bonus.disclaimer && (
-                    <p className="text-[12px] leading-[1.7] font-normal mt-5" style={{ color: "rgba(0,0,0,0.42)", fontStyle: "italic" }}>
+                    <p className="text-body leading-[1.7] font-normal mt-5" style={{ color: "rgba(0,0,0,0.42)", fontStyle: "italic" }}>
                       {bonus.disclaimer}
                     </p>
                   )}
@@ -969,7 +968,7 @@ export default function CuppingPage() {
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
       <section className="py-24 px-6" id="faq">
-        <div className="max-w-3xl mx-auto">
+        <div className="shell-narrow">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -977,10 +976,10 @@ export default function CuppingPage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
+            <p className="text-label uppercase tracking-[0.28em] text-[#B89A4F] mb-6">
               Česta pitanja
             </p>
-            <h2 className="font-playfair text-3xl text-[#1F1D1A]">
+            <h2 className="font-playfair text-[#1F1D1A] text-h2">
               Najčešća pitanja prije početka.
             </h2>
           </motion.div>
@@ -999,10 +998,10 @@ export default function CuppingPage() {
                   value={`item-${i}`}
                   className="border-b border-[#e3e3e3]"
                 >
-                  <AccordionTrigger className="text-sm font-medium text-[#1F1D1A] hover:no-underline py-5 text-left">
+                  <AccordionTrigger className="text-body font-medium text-[#1F1D1A] hover:no-underline py-5 text-left">
                     {item.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm text-[#3b3b3b] leading-relaxed pb-5">
+                  <AccordionContent className="text-body text-[#3b3b3b] leading-relaxed pb-5">
                     {item.a}
                   </AccordionContent>
                 </AccordionItem>

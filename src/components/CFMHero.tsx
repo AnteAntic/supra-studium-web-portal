@@ -15,10 +15,9 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.72], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '42%']);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen overflow-hidden -mt-20">
+    <section ref={heroRef} className="relative min-h-hero overflow-hidden -mt-20">
 
       {/* Background — YouTube video, Modul I */}
       <motion.div
@@ -34,7 +33,7 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: 'max(100%, calc(100vh * 1.7778))',
+            width: 'max(100%, calc(100svh * 1.7778))',
             height: 'max(100%, calc(100vw * 0.5625))',
             pointerEvents: 'none',
             border: 'none',
@@ -112,19 +111,19 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
       />
 
       {/* Content — bottom-left, documentary positioning */}
-      <motion.div style={{ opacity, y }} className="absolute inset-0">
-        <div className="container mx-auto px-6 relative z-10 h-full flex items-end pb-[18%] md:pb-[8%]">
-          <div className="w-full" style={{ maxWidth: '50rem' }}>
+      <motion.div style={{ opacity }} className="relative z-10">
+        <div className="container mx-auto px-6 relative z-10 min-h-hero pt-28 md:pt-32 flex items-end pb-[18%] md:pb-[8%]">
+          <div className="w-full" style={{ maxWidth: '54rem' }}>
 
             {/* Category label */}
             <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.35, duration: 0.9, ease: 'easeOut' }}
               className="mb-6"
             >
               <span
-                className="text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.28em] block"
+                className="text-label sm:text-caption font-normal uppercase tracking-[0.28em] block"
                 style={{ color: 'rgba(212,175,55,0.92)', textShadow: '0 1px 2px rgba(0,0,0,0.35)' }}
               >
                 CFM Body Reset Method
@@ -146,13 +145,13 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
 
             {/* Headline — weighted clinical observation */}
             <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.65, duration: 1.05, ease: 'easeOut' }}
               className="mb-9"
             >
               <h1
-                className="font-playfair font-semibold text-white leading-[1.17] text-[2.05rem] sm:text-[2.35rem] md:text-[2.7rem]"
+                className="font-playfair font-semibold text-white leading-[1.17] text-display"
                 style={{
                   textShadow:
                     '0 2px 24px rgba(0,0,0,0.72), 0 1px 6px rgba(0,0,0,0.40)',
@@ -175,13 +174,13 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
 
             {/* Subheadline */}
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.85, duration: 0.95, ease: 'easeOut' }}
               className="mb-9"
             >
               <p
-                className="text-[13.5px] sm:text-[14px] font-normal leading-[1.75]"
+                className="text-body-l font-normal leading-[1.75]"
                 style={{ color: 'rgba(255,255,255,0.58)', maxWidth: '44ch' }}
               >
                 Metodologija palpacije i funkcionalnog razmišljanja za terapeute
@@ -191,8 +190,8 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
 
             {/* Meta strip */}
             <motion.div
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 1.05, duration: 0.85, ease: 'easeOut' }}
               className="mb-14 flex flex-wrap items-center"
               style={{ columnGap: '14px', rowGap: '4px' }}
@@ -208,7 +207,7 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
                     <span
                       style={{
                         color: 'rgba(255,255,255,0.32)',
-                        fontSize: '11px',
+                        fontSize: '0.8125rem',
                         lineHeight: 1,
                       }}
                     >
@@ -218,7 +217,7 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
                   <span
                     className="font-medium"
                     style={{
-                      fontSize: '11px',
+                      fontSize: '0.8125rem',
                       letterSpacing: '0.11em',
                       color: 'rgba(255,255,255,0.78)',
                       textShadow: '0 1px 2px rgba(0,0,0,0.45)',
@@ -232,8 +231,8 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
 
             {/* CTA group */}
             <motion.div
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 1.25, duration: 0.80, ease: 'easeOut' }}
               className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-5"
             >
@@ -241,7 +240,7 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
               <button
                 className="font-normal uppercase cursor-pointer whitespace-nowrap"
                 style={{
-                  fontSize: '11px',
+                  fontSize: '0.8125rem',
                   letterSpacing: '0.12em',
                   padding: '8px 20px',
                   borderRadius: '4px',
@@ -266,7 +265,7 @@ export function CFMHero({ onScrollToProgram, onScrollToLocations }: CFMHeroProps
               <button
                 className="font-normal uppercase cursor-pointer bg-transparent border-0 p-0"
                 style={{
-                  fontSize: '11px',
+                  fontSize: '0.8125rem',
                   letterSpacing: '0.12em',
                   color: 'rgba(255,255,255,0.72)',
                   textShadow: '0 1px 2px rgba(0,0,0,0.45)',
