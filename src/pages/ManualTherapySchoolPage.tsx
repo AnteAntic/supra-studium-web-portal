@@ -73,11 +73,11 @@ const postupnikKoraci = [
 ];
 
 const termini = [
-  { stupanj: 'Stupanj I', datum: '20.–22.11.2026. · 9–18 h', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[1] },
-  { stupanj: 'Stupanj II', datum: '12.–13.12.2026. · 9–17 h', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
-  { stupanj: 'Stupanj III', datum: '30.–31.01.2027. · 9–17 h', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[3] },
+  { stupanj: 'Stupanj I', datum: '20.–22.11.2026.', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[1] },
+  { stupanj: 'Stupanj II', datum: '12.–13.12.2026.', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[2] },
+  { stupanj: 'Stupanj III', datum: '30.–31.01.2027.', lokacija: 'Poliklinika Medical Body Balance, Zagreb', cijena: '390 €', pdf: pdfLinks[3] },
   { stupanj: 'Stupanj IV', datum: 'Na upit', lokacija: 'Zagreb', cijena: '390 €', pdf: pdfLinks[4] },
-  { stupanj: 'Stupanj V', datum: '14.02.2027. · 9–17 h', lokacija: 'Prostor bivše fizikalne terapije, Rijeka', cijena: '550 €', pdf: pdfLinks[5] },
+  { stupanj: 'Stupanj V', datum: '14.02.2027.', lokacija: 'Prostor bivše fizikalne terapije, Rijeka', cijena: '550 €', pdf: pdfLinks[5] },
 ];
 
 const faq = [
@@ -862,7 +862,7 @@ export default function ManualTherapySchoolPage() {
                 whileInView="visible"
                 custom={i * 0.07}
                 viewport={{ once: true }}
-                className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_120px_80px_auto] gap-4 md:gap-8 py-7 items-center"
+                className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_80px_auto] gap-4 md:gap-8 py-7 items-center"
                 style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
               >
                 <div>
